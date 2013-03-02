@@ -1,22 +1,22 @@
 établir -- 创立；建立；确立
-établirsur qch -- 建立在... 上
+établirsur qch -- 建立在...上
 étendre -- 展开；伸开
 s'étendre -- 伸展，展开；直躺着
 disparaître -- 消失；消散
 célèbre -- 著名的；出名的
-être célèbre pour -- 以... 闻名
+être célèbre pour -- 以...闻名
 augmenter -- 增加；增长
 autant -- 同样；同样多
 autour -- 在周围；在附近
 exprimer -- 表达；表示；表现出
 s'exprimer -- 表达，表现；显露
 face -- 脸
-enface de -- 在... 对面
+enface de -- 在...对面
 faceà face -- 面对面
 fâché,e -- 生气的；恼火的
 façon -- 方式；方法
 detoute façon -- 无论如何
-àla façon -- 按... 的方式
+àla façon -- 按...的方式
 defaçon à +inf -- 以便于
 gagner -- 赚；赢得；获得
 garde -- （阴性名词）保管；保卫
@@ -30,33 +30,33 @@ toutà l'heure -- 刚才
 debonne heure -- 大清早；早
 heureusement -- 幸好；完美地
 heureux,se -- 幸福的，高兴的，幸运的
-inférieur,e -- 低于... 
-etreinférieur à -- 低于... 
+inférieur,e -- 低于...
+etreinférieur à -- 低于...
 informer -- 通知，告知
 s'informerde -- 打听
-lit -- （阳性名词） -- 床
+lit -- （阳性名词）床
 être au lit -- 在床上
 allerau lit -- 去睡觉
 livrer -- 交付；交出
 selivrer à -- 沉湎于；放任自己
 loger -- 住
 longtemps -- 长久地；很久
-lutter contre -- 与... 斗争；反对... 
-lutterpour -- 为... 而奋斗
+lutter contre -- 与...斗争；反对...
+lutterpour -- 为...而奋斗
 àla maison -- 在家里
-laisser qch/qn à qn -- 把某物/ -- 某人留下；托付给某人
-laisser qch/qn+ -- 表语 -- 让某物/ -- 某人保持（某种状态）
-laisser+inf + qch/qn -- 让某人做... 。任凭某物... 
+laisser qch/qn à qn -- 把某物/某人留下；托付给某人
+laisser qch/qn+ -- 表语,让某物/某人保持（某种状态）
+laisser+inf + qch/qn -- 让某人做... 任凭某物...
 marquer -- 标出；划出；指明；指示
 même -- 相同的；同样的
 passionné,e -- 热情的；热烈的
 congé -- （阳性名词）假期；离职
-prendreun congé (sans...) -- 休假（不带... ）
-prendrecongé de qn... 向某人告别
+prendreun congé (sans...) -- 休假（不带...）
+prendrecongé de qn... -- 向某人告别
 connaîtreqn -- 认识某人
 connaîtreun lieu -- 熟悉某地
-défendre -- 保卫；为... 辩护；禁止
-défendreà qn... +inf -- 禁止某人做
+défendre -- 保卫；为...辩护；禁止
+défendreà qn...+inf -- 禁止某人做
 Bonappétit ! -- 祝你好胃口！
 unocéan -- 海洋
 lavariation -- 变化
@@ -73,22 +73,22 @@ uneautoroute -- 高速公路
 unechemin de fer -- 铁路
 unavion -- 飞机
 unedimension -- 大小；尺寸；体积
-richede... 富有... 的
+richede... -- 富有...的
 uneculture -- 文化
 International,e,aux -- 国际的
 unéchange -- 交流；交换
-faireconnaissance avec qn... 和某人相识
+faireconnaissance avec qn... -- 和某人相识
 situer -- 定位；测定位置
 précisément -- 准确地
 seprésenter -- 呈现；显现
-sousla forme de... 以... 的形式，面貌（出现）
+sousla forme de... -- 以...的形式，面貌（出现）
 régulier,ère -- 规则的；规律的
 àpeu près -- 大约；差不多
 unestructure -- 结构；构造
 unangle -- 角；角度
 toutà fait -- 完全地
-border -- 围绕；沿着... 的边缘
-être border par -- 被... 环绕
+border -- 围绕；沿着...的边缘
+être border par -- 被...环绕
 moyen,ne -- 中等的
 unsouffle -- （一口）气，气息，呼吸
 permanent,e -- 经常的；永久的
@@ -100,7 +100,7 @@ unepoche -- 口袋
 unelampe de poche -- 手电筒
 montrer -- 指示；指出
 unrang -- 行；排
-montrerqch... à qn -- 给某人指某物
+montrerqch...à qn -- 给某人指某物
 pourle moment -- 此刻；此时
 unpoint -- 一点
 lamusique -- 音乐
@@ -119,11 +119,11 @@ le mélange -- 混合
 lefranglais -- 英式法语
 lemot -- 字，词
 uneinterview -- 采访
-l'email -- 电子邮件（n...m... ）
+l'email -- 电子邮件（n...m...）
 unécrivain -- 作家
 unsavant -- 学者；科学家
 legouverment -- 政府
-l'anglicisme -- 英语表达方式 -- （n...m... ）
+l'anglicisme -- 英语表达方式-（n...m...）
 lechangement -- 改变
 lamodernisation -- 现代化
 lemoyen -- 方法；手段
@@ -136,11 +136,9 @@ intéresser -- 使感兴趣
 impressionner -- 给人以深刻印象
 frapper -- 使激动；使震惊
 persuader -- 使信服；使相信
-distinguer -- 区分
 porter -- 穿；戴
 seressembler -- 相像，相似
 appeler -- 取名；成为
-abonder -- 大量出现
 kidnapper -- 绑架
 s'indigner(de) -- 感到气愤
 décréter -- 颁布法令
@@ -152,10 +150,10 @@ moderne -- 现代的
 cher,ère -- 亲爱的；珍贵的
 jeune -- 年轻的
 délavé,e -- 洗褪色的；淡蓝色的
-ça fait... 已经... 时间
+ça fait... -- 已经...时间
 absolument -- 绝对地
 exactement -- 真实的，确切的
-aubout de ... 之后
+aubout de -- ...之后
 quoi -- 什么；什么事
 contre -- 反对
 affectueusement -- 亲热地；深情地
@@ -171,24 +169,24 @@ généraliste -- 普通科医生
 lecabinet -- 诊所，办公室
 malade -- 患者
 ledomicile -- 住所
-l'avenir -- 未来 -- （n...m... ）
-lesoreillons -- 腮腺炎（n...m...pl... ）
+l'avenir -- 未来
+lesoreillons -- 腮腺炎
 lagorge -- 喉咙
 lalangue -- 舌头
-lec -- œur -- 心脏
+cœur -- 心脏
 lepoumon -- 肺
 lestéthoscope -- 听诊器
 lepouls -- 脉搏
 uneattitude -- 态度
-repondre -- 回答 -- （变位同attrendre -- ）
+repondre -- 回答（变位同attrendre）
 poser -- 提出；放置
 plaire(à) -- 使高兴；使中意
 hésiter -- 犹豫
-s'intéresser (à) -- 对... 感兴趣
+s'intéresser (à) -- 对...感兴趣
 admirer -- 钦佩
 soigner -- 治疗
 décider -- 决定
-guérir -- 治愈 -- （第二组动词）
+guérir -- 治愈（第二组动词）
 commencer -- 开始
 examiner -- 检查
 ausculter -- 听诊
@@ -217,13 +215,13 @@ cheville -- 脚踝
 chic -- 漂亮的，潇洒的
 glisser -- 滑动；塞入
 impensable -- 不可想象的，难以相信的
-succéder -- 继... 而来；紧接着... 而来
+succéder -- 继...而来；紧接着...而来
 oignon -- 洋葱
 capot -- 汽车引擎盖；防护罩
 caprice -- 任性，反复无常
 capricieux,euse -- 任性的（人），反复无常的（人）
 concours -- 合作；帮助；考试；竞赛
-concorde -- 和谐； -- 融洽
+concorde -- 和谐；融洽
 jaloux,ouse -- 嫉妒的
 jaillir -- 喷出；涌出
 inciter -- 促使（激励。煽动）某人
@@ -235,9 +233,9 @@ stable -- 稳定的；沉着的
 dépiter -- 使气恼
 dépit -- 气恼
 endépit de -- 尽管，虽然；不管，不顾
-cene sont pas tes oignons It's none of your business... 
+cene sont pas tes oignons -- It's none of your business...
 grâceau concours du maire -- 由于市长的帮助
-concoursde beaute / de chant -- 选美/ -- 唱歌比赛
+concoursde beaute / de chant -- 选美/唱歌比赛
 bienfait -- 善行；善举
 bijou -- 首饰；亲爱的
 disque -- 唱片；光盘
@@ -255,10 +253,10 @@ soupirer -- 叹息，叹息
 modèle -- 模范，榜样，典范
 lancer -- 扔，投掷，发射
 géant -- 巨人
-entrée -- 进入，进来 -- 
+entrée -- 进入，进来
 cri -- 惊叫声，呼喊声
 chaperon -- 兜帽，风帽
-nouer -- 把... 打结，系... 
+nouer -- 把...打结，系...
 nouerses lacets -- 系鞋带
 nouille -- 面条
 nourrir -- 喂养；供养
@@ -289,7 +287,7 @@ recommencerà nouveau -- 重新开始
  denouveau -- 重又
 collège -- 中学。学院
 collègue -- 同事，同行
-débouché -- 出口，销路 -- 
+débouché -- 出口，销路
 mélanger -- 混合，搞乱
 mélange -- 混合，混合物
 bandit -- 强盗，匪徒
@@ -311,13 +309,13 @@ coupure -- 割破的伤口；小额的纸币
 billet -- 便条
 emploi -- 职业，职位
 bêtise -- 愚蠢，糊涂
-àl'abri de -- 躲避，在... 的遮掩下
+àl'abri de -- 躲避，在...的遮掩下
 àl'issue de -- 结束后，完成时
 ànoter que -- 要注意到
 centriste -- 中间派的
 cérémonie -- 仪式，典礼
 certes -- 的确
-àpart -- 除... 以外
+àpart -- 除...以外
 artiste -- 艺术家
 artistique -- 艺术的
 ascenseur -- 电梯
@@ -357,7 +355,7 @@ encre -- 墨水
 encrier -- 墨水瓶
 ride -- 皱纹；波纹；涟漪
 rideau -- 窗帘，幕
-transpirer -- 出汗，流汗；（书） -- 泄露，走漏
+transpirer -- 出汗，流汗；（书）泄露，走漏
 venirsur -- 加油
 dévorer -- 吞食，贪婪地吃；耗尽
 compliment -- 道贺，祝词
@@ -383,7 +381,7 @@ enchaîné,e -- 连贯的
 enchanté -- 喜悦的，高兴的
 enchère -- （拍卖时出高价）
 regard -- 眼神
-auregard de -- 在... 眼中，就... 而言
+auregard de -- 在...眼中，就...而言
 aujourd'hui -- 今天
 aumône -- 施舍，恩惠
 stade -- 体育场
@@ -416,7 +414,7 @@ nuire -- 损害，危害；妨碍
 encombrer -- 阻塞；充满
 enceinte -- 怀孕的人
 encens -- （供焚烧的）香，奉承
-encenser -- 向... 奉香
+encenser -- 向...奉香
 encensoir -- 香炉
 juteux,euse -- 多汁的
 bête -- 兽，牲口
@@ -444,11 +442,11 @@ chasseur -- 猎人
 àbientôt -- 再见
 àcause de -- 因为，由于
 àce moment -- 在此刻
-àcôté de -- 在... 旁边
+àcôté de -- 在...旁边
 àdistance -- 隔一段距离
 àfond -- 完全地，彻底地
- àgauche -- 在左边
-àl'exclusion de ... 除外
+àgauche -- 在左边
+àl'exclusion de ... -- 除...外
 abaisser -- 放低，放下；降低，减低
 abaissement -- 放低，下降
 abandonner -- 废弃不用，放弃
@@ -457,7 +455,7 @@ abandon -- 抛弃，放弃
 abominable -- 可恶的；很坏的，糟透的
 abondance -- 大量，充裕；富足
 abondant,e -- 丰富的，大量的
-abonder -- 充裕，盛产
+abonder -- 充裕，盛产, 大量出现
 abonner -- 给人预约，给人预定
 abonné,e -- 预定的；订阅者，用户
 abonnement -- 预定，预约
