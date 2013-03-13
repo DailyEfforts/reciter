@@ -78,7 +78,7 @@ public class DBA extends SQLiteOpenHelper {
 		}
 		return result;
 	}
-	
+
 	public void beginTransaction() {
 		getWritableDatabase().beginTransaction();
 	}

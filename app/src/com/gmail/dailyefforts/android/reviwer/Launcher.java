@@ -4,23 +4,67 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.content.res.AssetManager;
+import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 public class Launcher extends Activity {
 
 	private static final String TAG = Launcher.class.getSimpleName();
+	private Button btnStart;
+	private static Map<Integer, Word> map = new HashMap<Integer, Word>();
+
+	public class Word {
+		private String word;
+		private String meaning;
+
+		public Word(String word, String meaning) {
+			super();
+			this.word = word;
+			this.meaning = meaning;
+		}
+
+		public String getWord() {
+			return word;
+		}
+
+		public String getMeaning() {
+			return meaning;
+		}
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_luncher);
 		new LoadWordsList().execute();
+
+		btnStart = (Button) findViewById(R.id.btn_start);
+		btnStart.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (Debuger.DEBUG) {
+					Log.d(TAG, "onClick() map.size()" + map.size());
+				}
+				Intent intent = new Intent(Launcher.this, TestPage.class);
+				startActivity(intent);
+			}
+		});
+	}
+
+	public static Map<Integer, Word> getMap() {
+		return map;
 	}
 
 	private class LoadWordsList extends AsyncTask<Void, Integer, Boolean> {
@@ -43,14 +87,42 @@ public class Launcher extends Activity {
 					if (arr != null && arr.length == 2) {
 						String word = arr[0].trim();
 						String meanning = arr[1].trim();
-						values.clear();
-						values.put(DBA.COLUMN_WORD, word);
-						values.put(DBA.COLUMN_MEANING, meanning);
-						dba.insert(DBA.TABLE_NAME, null, values);
+
+						String sql = "select " + DBA.COLUMN_WORD + " from "
+								+ DBA.TABLE_NAME + " where " + DBA.COLUMN_WORD
+								+ "=?;";
+						Cursor cursor = dba
+								.rawQuery(sql, new String[] { word });
+						if (cursor == null) {
+							values.clear();
+							values.put(DBA.COLUMN_WORD, word);
+							values.put(DBA.COLUMN_MEANING, meanning);
+							dba.insert(DBA.TABLE_NAME, null, values);
+						}
 					}
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
+			}
+
+			Cursor cursor = dba.query(DBA.TABLE_NAME, new String[] {
+					DBA.COLUMN_ID, DBA.COLUMN_WORD, DBA.COLUMN_MEANING }, null,
+					null, null, null, null);
+			if (cursor != null && cursor.moveToFirst()) {
+				map.clear();
+				int idx = 0;
+				while (!cursor.isAfterLast()) {
+					String word = cursor.getString(cursor
+							.getColumnIndex(DBA.COLUMN_WORD));
+					String meanning = cursor.getString(cursor
+							.getColumnIndex(DBA.COLUMN_MEANING));
+					if (Debuger.DEBUG) {
+						Log.d(TAG, "update() idx: " + idx + ", word: " + word);
+					}
+					Word newWord = new Word(word, meanning);
+					map.put(idx++, newWord);
+					cursor.moveToNext();
+				}
 			}
 			return true;
 		}
