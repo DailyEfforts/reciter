@@ -38,6 +38,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="0dip"
         android:textStyle="italic"
+        android:background="@drawable/opt_btn_bg"
+        android:layout_margin="2dp"
         android:layout_weight="1" />
 
     <Button
