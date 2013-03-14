@@ -7,14 +7,18 @@ import java.util.Random;
 import java.util.Set;
 
 import android.app.Activity;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class TestPage extends Activity {
 
 	private TextView tv;
+
+	private Button btnOpt0;
+	private Button btnOpt1;
+	private Button btnOpt2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,10 @@ public class TestPage extends Activity {
 		setContentView(R.layout.activity_test_page);
 
 		tv = (TextView) findViewById(R.id.tv_word);
+
+		btnOpt0 = (Button) findViewById(R.id.btn_option_0);
+		btnOpt1 = (Button) findViewById(R.id.btn_option_1);
+		btnOpt2 = (Button) findViewById(R.id.btn_option_2);
 
 		Map<Integer, Launcher.Word> map = Launcher.getMap();
 
@@ -45,8 +53,11 @@ public class TestPage extends Activity {
 			}
 		}
 
-		tv.setText(String.format("word: %s\nmeaning:\n1. %s\n2. %s\n3. %s",
-				word, meaning, randArr.get(0), randArr.get(1)));
+		tv.setText(word);
+		btnOpt0.setText(meaning);
+		btnOpt1.setText(randArr.get(0));
+		btnOpt2.setText(randArr.get(1));
+		
 	}
 
 	@Override

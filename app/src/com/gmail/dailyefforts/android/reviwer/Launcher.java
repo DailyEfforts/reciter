@@ -47,7 +47,6 @@ public class Launcher extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_luncher);
-		new LoadWordsList().execute();
 
 		btnStart = (Button) findViewById(R.id.btn_start);
 		btnStart.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +60,7 @@ public class Launcher extends Activity {
 				startActivity(intent);
 			}
 		});
+		new LoadWordsList().execute();
 	}
 
 	public static Map<Integer, Word> getMap() {
@@ -72,6 +72,9 @@ public class Launcher extends Activity {
 		@Override
 		protected Boolean doInBackground(Void... params) {
 			AssetManager assetMngr = getAssets();
+			if (Debuger.DEBUG) {
+				Log.d(TAG, "doInBackground() assetMngr: " + assetMngr);
+			}
 			if (assetMngr == null) {
 				return false;
 			}
@@ -93,7 +96,10 @@ public class Launcher extends Activity {
 								+ "=?;";
 						Cursor cursor = dba
 								.rawQuery(sql, new String[] { word });
-						if (cursor == null) {
+						if (Debuger.DEBUG) {
+							Log.d(TAG, "doInBackground() " + word + " - " + meanning + ", cursor " + cursor);
+						}
+						if (cursor != null && !cursor.moveToFirst()) {
 							values.clear();
 							values.put(DBA.COLUMN_WORD, word);
 							values.put(DBA.COLUMN_MEANING, meanning);
@@ -108,6 +114,9 @@ public class Launcher extends Activity {
 			Cursor cursor = dba.query(DBA.TABLE_NAME, new String[] {
 					DBA.COLUMN_ID, DBA.COLUMN_WORD, DBA.COLUMN_MEANING }, null,
 					null, null, null, null);
+			if (Debuger.DEBUG) {
+				Log.d(TAG, "doInBackground() cursor: " + cursor);
+			}
 			if (cursor != null && cursor.moveToFirst()) {
 				map.clear();
 				int idx = 0;
