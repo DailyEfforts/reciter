@@ -50,9 +50,11 @@ public class Launcher extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_luncher);
-		btnStart = (Button) findViewById(R.id.btn_start);
+		
 		prograssBar = (ProgressBar) findViewById(R.id.pb_loading);
 		tvLoading = (TextView) findViewById(R.id.tv_loading);
+		btnStart = (Button) findViewById(R.id.btn_start);
+		
 		if (btnStart != null) {
 			btnStart.setOnClickListener(new View.OnClickListener() {
 
@@ -66,6 +68,7 @@ public class Launcher extends Activity {
 				}
 			});
 		}
+		
 		new LoadWordsList().execute();
 	}
 
@@ -86,15 +89,6 @@ public class Launcher extends Activity {
 					prograssBar.setVisibility(View.GONE);
 					btnStart.setEnabled(true);
 				}
-			}
-		}
-
-		@Override
-		protected void onProgressUpdate(Integer... values) {
-			super.onProgressUpdate(values);
-			if (tvLoading != null) {
-				tvLoading.setText(String.format(getText(R.string.loading)
-						+ "%d / %d", values[0], values[1]));
 			}
 		}
 
@@ -153,8 +147,6 @@ public class Launcher extends Activity {
 			if (cursor != null && cursor.moveToFirst()) {
 				map.clear();
 				int idx = 0;
-				int count = cursor.getCount();
-				int counter = 0;
 				while (!cursor.isAfterLast()) {
 					String word = cursor.getString(cursor
 							.getColumnIndex(DBA.COLUMN_WORD));
@@ -165,7 +157,6 @@ public class Launcher extends Activity {
 					}
 					Word newWord = new Word(word, meanning);
 					map.put(idx++, newWord);
-					publishProgress(++counter, count);
 					cursor.moveToNext();
 				}
 			}
