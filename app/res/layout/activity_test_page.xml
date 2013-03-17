@@ -12,44 +12,51 @@
         android:layout_height="0dip"
         android:layout_gravity="center"
         android:layout_marginBottom="6dp"
-        android:textStyle="bold"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_weight="1"
-        android:text="@string/hello_world" />
+        android:text="@string/hello_world"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btn_option_0"
         android:layout_width="match_parent"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="0dip"
-        android:layout_weight="1" />
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        android:background="@color/opt_btn_bg_normal"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/opt_btn_txt_color" />
 
     <Button
         android:id="@+id/btn_option_1"
         android:layout_width="match_parent"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="0dip"
-        android:textStyle="italic"
-        android:layout_weight="1" />
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        android:background="@color/opt_btn_bg_normal"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/opt_btn_txt_color"
+        android:textStyle="italic" />
 
     <Button
         android:id="@+id/btn_option_2"
         android:layout_width="match_parent"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_height="0dip"
-        android:textStyle="italic"
-        android:layout_margin="2dp"
-        android:layout_weight="1" />
+        android:layout_margin="6dp"
+        android:layout_weight="1"
+        android:background="@color/opt_btn_bg_normal"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/opt_btn_txt_color" />
 
     <Button
         android:id="@+id/tv_tip"
         android:layout_width="match_parent"
-        android:textAppearance="@android:style/TextAppearance.Small"
         android:layout_height="0dip"
-        android:layout_marginTop="6dp"
-        android:textStyle="italic"
         android:layout_gravity="center"
-        android:layout_weight="1"
-        android:text="tip" />
+        android:layout_marginTop="6dp"
+        android:layout_weight="0"
+        android:text="tip"
+        android:textAppearance="@android:style/TextAppearance.Small"
+        android:textStyle="italic" />
 
 </LinearLayout>

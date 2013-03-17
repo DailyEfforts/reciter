@@ -3,21 +3,25 @@ package com.gmail.dailyefforts.android.reviwer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reviwer.Launcher.Word;
 
-public class TestPage extends Activity implements OnClickListener {
+public class TestPage extends Activity implements OnTouchListener {
 
 	private TextView tv;
 
@@ -33,7 +37,11 @@ public class TestPage extends Activity implements OnClickListener {
 
 	private SparseArray<Word> map;
 
-	private HashMap<String, String> pageMap;
+	private HashMap<Integer, Word> pageMap;
+	
+	private int bgColorNormal;
+	private int bgColorPressedBingo;
+	private int bgColorPressedWarning;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +53,21 @@ public class TestPage extends Activity implements OnClickListener {
 		btnOpt0 = (Button) findViewById(R.id.btn_option_0);
 		btnOpt1 = (Button) findViewById(R.id.btn_option_1);
 		btnOpt2 = (Button) findViewById(R.id.btn_option_2);
+		
+		bgColorNormal = getResources().getColor(R.color.opt_btn_bg_normal);
+		bgColorPressedBingo = getResources().getColor(R.color.opt_btn_bg_pressed_bingo);
+		bgColorPressedWarning = getResources().getColor(R.color.opt_btn_bg_pressed_warning);
 
 		if (btnOpt0 != null) {
-			btnOpt0.setOnClickListener(this);
+			btnOpt0.setOnTouchListener(this);
 		}
 		if (btnOpt1 != null) {
-			btnOpt1.setOnClickListener(this);
+			btnOpt1.setOnTouchListener(this);
 		}
 		if (btnOpt2 != null) {
-			btnOpt2.setOnClickListener(this);
+			btnOpt2.setOnTouchListener(this);
 		}
-		
+
 		tvTip = (TextView) findViewById(R.id.tv_tip);
 
 		map = Launcher.getMap();
@@ -73,21 +85,14 @@ public class TestPage extends Activity implements OnClickListener {
 		meaning = map.get(idx).getMeaning();
 		tv.setText(word);
 
-		pageMap = new HashMap<String, String>();
-		pageMap.put(meaning, word);
-
-		ArrayList<String> randArr = new ArrayList<String>();
+		pageMap = new HashMap<Integer, Word>();
 
 		// two another different words' meaning
-		Set<Integer> intSet = new HashSet<Integer>();
-		while (intSet.size() < 2) {
+		ArrayList<Integer> arrList = new ArrayList<Integer>();
+		while (arrList.size() < 2) {
 			int tmp = random.nextInt(map.size());
-			if (tmp != idx) {
-				if (intSet.add(tmp)) {
-					randArr.add(map.get(tmp).getMeaning());
-					pageMap.put(map.get(tmp).getMeaning(), map.get(tmp)
-							.getWord());
-				}
+			if (tmp != idx && !arrList.contains(tmp)) {
+				arrList.add(tmp);
 			}
 		}
 
@@ -95,26 +100,50 @@ public class TestPage extends Activity implements OnClickListener {
 		switch (rand % 3) {
 		case 0:
 			btnOpt0.setText(meaning);
-			btnOpt1.setText(randArr.get(0));
-			btnOpt2.setText(randArr.get(1));
+			pageMap.put(btnOpt0.getId(), map.get(idx));
+
+			btnOpt1.setText(getMeaningByIdx(arrList.get(0)));
+			pageMap.put(btnOpt1.getId(), map.get(arrList.get(0)));
+
+			btnOpt2.setText(getMeaningByIdx(arrList.get(1)));
+			pageMap.put(btnOpt2.getId(), map.get(arrList.get(1)));
 			break;
 		case 1:
-			btnOpt0.setText(randArr.get(0));
+			btnOpt0.setText(getMeaningByIdx(arrList.get(0)));
+			pageMap.put(btnOpt0.getId(), map.get(arrList.get(0)));
+
 			btnOpt1.setText(meaning);
-			btnOpt2.setText(randArr.get(1));
+			pageMap.put(btnOpt1.getId(), map.get(idx));
+
+			btnOpt2.setText(getMeaningByIdx(arrList.get(1)));
+			pageMap.put(btnOpt2.getId(), map.get(arrList.get(1)));
 			break;
 		case 2:
-			btnOpt0.setText(randArr.get(0));
-			btnOpt1.setText(randArr.get(1));
+			btnOpt0.setText(getMeaningByIdx(arrList.get(0)));
+			pageMap.put(btnOpt0.getId(), map.get(arrList.get(0)));
+
+			btnOpt1.setText(getMeaningByIdx(arrList.get(1)));
+			pageMap.put(btnOpt1.getId(), map.get(arrList.get(1)));
+
 			btnOpt2.setText(meaning);
+			pageMap.put(btnOpt2.getId(), map.get(idx));
 			break;
 		default:
 			break;
 		}
-		
+
 		if (tvTip != null) {
 			tvTip.setText("");
 		}
+		
+	}
+
+	private String getMeaningByIdx(int idx) {
+		if (idx >= 0 && map != null && idx < map.size()) {
+			return map.get(idx).getMeaning();
+		}
+		return null;
+
 	}
 
 	@Override
@@ -126,22 +155,39 @@ public class TestPage extends Activity implements OnClickListener {
 	}
 
 	@Override
-	public void onClick(View v) {
-
-		switch (v.getId()) {
-		case R.id.btn_option_0:
-		case R.id.btn_option_1:
-		case R.id.btn_option_2:
-			CharSequence text = ((Button) v).getText();
-			if (meaning != null && meaning.equals(text)) {
-				buildTestCase();
-			} else {
-				if (tvTip != null) {
-					tvTip.setText(pageMap.get(text));
+	public boolean onTouch(View v, MotionEvent event) {
+		boolean returnValue = false;
+		boolean bingGo = false;
+		if (v != null && event != null) {
+			Word w = pageMap.get(v.getId());
+			if (w != null) {
+				if (word != null && word.equals(w.getWord())) {
+					bingGo = true;
 				}
 			}
-			break;
-
+			switch (event.getActionMasked()) {
+			case MotionEvent.ACTION_DOWN:
+				((Button) v).setText(w.getWord());
+				if (bingGo) {
+					v.setBackgroundColor(bgColorPressedBingo);
+				} else {
+					v.setBackgroundColor(bgColorPressedWarning);
+				}
+				returnValue = true;
+				break;
+			case MotionEvent.ACTION_UP:
+				if (bingGo) {
+					buildTestCase();
+				} else {
+					((Button) v).setText(w.getMeaning());
+				}
+				v.setBackgroundColor(bgColorNormal);
+				returnValue = true;
+				break;
+			default:
+				break;
+			}
 		}
+		return returnValue;
 	}
 }
