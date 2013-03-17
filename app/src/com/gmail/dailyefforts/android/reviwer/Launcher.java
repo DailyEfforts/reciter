@@ -92,7 +92,6 @@ public class Launcher extends Activity {
 		@Override
 		protected void onProgressUpdate(Integer... values) {
 			super.onProgressUpdate(values);
-			System.out.println("Launcher.LoadWordsList.onProgressUpdate()" + tvLoading);
 			if (tvLoading != null) {
 				tvLoading.setText(String.format(getText(R.string.loading)
 						+ "%d / %d", values[0], values[1]));
@@ -115,6 +114,7 @@ public class Launcher extends Activity {
 				BufferedReader reader = new BufferedReader(inReader);
 				String str = null;
 				ContentValues values = new ContentValues();
+				dba.beginTransaction();
 				while ((str = reader.readLine()) != null) {
 					String[] arr = str.split("--");
 					if (arr != null && arr.length == 2) {
@@ -128,7 +128,7 @@ public class Launcher extends Activity {
 								.rawQuery(sql, new String[] { word });
 						if (Debuger.DEBUG) {
 							Log.d(TAG, "doInBackground() " + word + " - "
-									+ meanning + ", cursor " + cursor);
+									+ meanning + ", exist: " + cursor.moveToFirst());
 						}
 						if (cursor != null && !cursor.moveToFirst()) {
 							values.clear();
@@ -138,6 +138,8 @@ public class Launcher extends Activity {
 						}
 					}
 				}
+				dba.setTransactionSuccessful();
+				dba.endTransaction();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -163,8 +165,6 @@ public class Launcher extends Activity {
 					}
 					Word newWord = new Word(word, meanning);
 					map.put(idx++, newWord);
-					System.out
-							.println("Launcher.LoadWordsList.doInBackground()");
 					publishProgress(++counter, count);
 					cursor.moveToNext();
 				}

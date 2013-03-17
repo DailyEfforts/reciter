@@ -1,3 +1,4 @@
+total=619
 établir -- 创立；建立；确立
 établirsur qch -- 建立在...上
 étendre -- 展开；伸开
@@ -497,3 +498,123 @@ décoller -- 扯下；揭下
 décollerde la réalité -- 脱离现实
 décollage -- 起飞
 zéro -- 零
+doter -- 给嫁妆；赋予；捐赠
+douane -- 海关，关税
+douanier ,ère -- 海关的；海关职员
+double -- 双重的，双倍的
+mener une -- double vie 过着一种双重生活
+doublé ,e -- 译制的；加衬里的
+doubler -- 超车；加快；留级；重读
+doubler le pas -- 加快步伐
+exterminer -- 歼灭，根除，灭绝
+externe -- 外用的，外部的
+extra -- 优等的，杰出的
+durer -- 延续，持续
+durant -- 在期间
+durée -- 期间，持续期间
+pendant la durée -- 在期间
+rédiger -- 编写，撰写
+rédacteur ,trice -- 编辑，编撰者
+rédaction -- 编辑，编写
+format -- 大小，规格，尺寸
+formation -- 形成，构成
+ébranler -- 震动，动摇，使感动
+reconstituer -- 重新构成，使复原
+récupérer -- 收回
+reconnaître -- 认出，承认，确认
+reconnaissance -- 感恩，感激，承认
+recopier -- 重抄
+infirme -- 残疾的（人）
+infirmerie -- 医务室
+infirmier,ère -- 护士
+infirmière en chef -- 护士长
+doucement -- 温和地，小心地，温柔地
+chameau -- 骆驼
+champ -- 田野
+sur le champ -- 马上
+fatiguer -- 使疲劳
+fatigant ,e -- 累人的，令人讨厌的
+fatigue -- 疲惫，疲倦
+fatigué ,e -- 疲劳的
+boulier -- 算盘
+boulot -- 工作
+chemise -- 衬衫
+chèque -- 支票
+cher ère -- 亲爱的，昂贵的
+bête -- 愚蠢的，可惜的，遗憾的
+besoin -- 需要
+au besoin on connaît l'ami -- 患难见真知
+avoir besoin de faire qch -- 需要做某事
+concret,ère -- 具体的，实际的
+condamner -- 判刑，禁止，谴责
+condamnation -- 判决，判刑，谴责
+condamner qn à mort -- 判处某人死刑
+condamné -- 被判刑的人
+malade condamné -- 患绝症的人
+à moins de /que -- 除非，如果不
+au moins, du moins -- 至少
+élaborer -- 制作，制定，拟定
+élancer -- 冲向，奔向
+élargir -- 加宽，加大
+crème -- 奶油
+crémerie -- 乳品商店
+décrocher -- 拿起电话听筒，得到，获得
+flash -- 闪光灯
+flatter -- 奉承，恭维
+se flatter de -- 以自荣
+chauffeur -- 司机
+chausser -- 穿鞋
+agrandir -- 扩大，放大
+agréer -- 同意，赞成，接受，允许
+agréable -- 令人愉快的，可爱的
+mouton -- 羊肉
+natation -- 游泳
+nation -- 民族，国家
+national,e -- 民族的，国家的
+nationalité -- 国籍
+costume -- 服装，戏装
+costume de bain -- 浴袍
+ajouter -- 增加，补充
+aimer -- 爱，喜爱
+aimable -- 可爱的，亲切的
+ajourner -- 延期，推迟
+colonie -- 殖民地，夏令营
+combien -- 多少，多远，多长，多么
+combine -- 办法，手段，计策
+combiner -- 结合
+jambe -- 腿
+écran -- 屏幕
+écraser -- 压碎，压垮，击败
+écrasant ,e -- 沉重的，繁重的
+écrasé ,e -- 被压碎的，被打垮的
+écrasement -- 压碎，崩溃
+enfant -- 孩子般的；孩子
+enfance -- 童年
+épreuve -- 考验，考试
+éprouvé ,e -- 经过考验的，遭受苦难的
+bille -- 弹子，钢珠
+billet -- 票，钞票
+attirer -- 拖，拉；吸引；招致
+soupçonné -- 猜疑，猜想
+soupe -- 浓汤
+souper -- 吃夜宵，夜点心
+dopage -- （体育比赛中使用的）兴奋剂
+dopant,e -- 兴奋剂的/兴奋剂
+modeste -- 卑下的，谦虚的
+modestie -- 谦虚，虚心 
+fracas -- 喧哗，议论，爆炸声
+attaquer -- 攻击，进攻
+attaque -- 攻击
+boîte -- 箱，盒，听，罐
+boîte noire -- 黑匣子
+boîte de nuit -- 夜总会
+boiter -- 蹒跚，跛行
+boiteux ,euse -- 跛的，跛子
+cristal -- 水晶
+critère -- 标准
+culture -- 耕作，农作物，文化，文明
+culturel,elle -- 文化的
+débrancher -- 切断，拔掉插头
+débrancher une prise -- 切断电源
+modifier -- 修改，改变
+contrée -- 地方，地区
