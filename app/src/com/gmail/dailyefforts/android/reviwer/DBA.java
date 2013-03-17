@@ -55,14 +55,14 @@ public class DBA extends SQLiteOpenHelper {
 		}
 		return dba;
 	}
-
+	
 	public Cursor query(String table, String[] columns, String selection,
 			String[] selectionArgs, String groupBy, String having,
 			String orderBy) {
 		return getReadableDatabase().query(table, columns, selection,
 				selectionArgs, groupBy, having, orderBy);
 	}
-
+	
 	public Cursor rawQuery(String sql, String[] selectionArgs) {
 		return getReadableDatabase().rawQuery(sql, selectionArgs);
 	}

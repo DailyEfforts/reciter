@@ -2,15 +2,17 @@ package com.gmail.dailyefforts.android.reviwer;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.SparseArray;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.gmail.dailyefforts.android.reviwer.Launcher.Word;
 
 public class TestPage extends Activity {
 
@@ -31,7 +33,7 @@ public class TestPage extends Activity {
 		btnOpt1 = (Button) findViewById(R.id.btn_option_1);
 		btnOpt2 = (Button) findViewById(R.id.btn_option_2);
 
-		Map<Integer, Launcher.Word> map = Launcher.getMap();
+		SparseArray<Word> map = Launcher.getMap();
 
 		Random random = new Random();
 

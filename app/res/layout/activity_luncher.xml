@@ -10,6 +10,29 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Start" />
+        android:enabled="false"
+        android:text="@string/start_testing" />
+
+    <RelativeLayout
+        android:id="@+id/rl_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/tv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pb_loading"
+            android:layout_centerHorizontal="true"
+            android:text="@string/loading" />
+    </RelativeLayout>
 
 </RelativeLayout>

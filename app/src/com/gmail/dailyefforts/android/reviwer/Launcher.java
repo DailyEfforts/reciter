@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -15,14 +13,19 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class Launcher extends Activity {
 
 	private static final String TAG = Launcher.class.getSimpleName();
 	private Button btnStart;
-	private static Map<Integer, Word> map = new HashMap<Integer, Word>();
+	private ProgressBar prograssBar;
+	private TextView tvLoading;
+	private static SparseArray<Word> map = new SparseArray<Word>();
 
 	public class Word {
 		private String word;
@@ -47,27 +50,54 @@ public class Launcher extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_luncher);
-
 		btnStart = (Button) findViewById(R.id.btn_start);
-		btnStart.setOnClickListener(new View.OnClickListener() {
+		prograssBar = (ProgressBar) findViewById(R.id.pb_loading);
+		tvLoading = (TextView) findViewById(R.id.tv_loading);
+		if (btnStart != null) {
+			btnStart.setOnClickListener(new View.OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				if (Debuger.DEBUG) {
-					Log.d(TAG, "onClick() map.size()" + map.size());
+				@Override
+				public void onClick(View v) {
+					if (Debuger.DEBUG) {
+						Log.d(TAG, "onClick() map.size()" + map.size());
+					}
+					Intent intent = new Intent(Launcher.this, TestPage.class);
+					startActivity(intent);
 				}
-				Intent intent = new Intent(Launcher.this, TestPage.class);
-				startActivity(intent);
-			}
-		});
+			});
+		}
 		new LoadWordsList().execute();
 	}
 
-	public static Map<Integer, Word> getMap() {
+	public static SparseArray<Word> getMap() {
 		return map;
 	}
 
 	private class LoadWordsList extends AsyncTask<Void, Integer, Boolean> {
+
+		@Override
+		protected void onPostExecute(Boolean result) {
+			super.onPostExecute(result);
+
+			if (result) {
+				if (prograssBar != null && tvLoading != null
+						&& btnStart != null) {
+					tvLoading.setVisibility(View.GONE);
+					prograssBar.setVisibility(View.GONE);
+					btnStart.setEnabled(true);
+				}
+			}
+		}
+
+		@Override
+		protected void onProgressUpdate(Integer... values) {
+			super.onProgressUpdate(values);
+			System.out.println("Launcher.LoadWordsList.onProgressUpdate()" + tvLoading);
+			if (tvLoading != null) {
+				tvLoading.setText(String.format(getText(R.string.loading)
+						+ "%d / %d", values[0], values[1]));
+			}
+		}
 
 		@Override
 		protected Boolean doInBackground(Void... params) {
@@ -97,7 +127,8 @@ public class Launcher extends Activity {
 						Cursor cursor = dba
 								.rawQuery(sql, new String[] { word });
 						if (Debuger.DEBUG) {
-							Log.d(TAG, "doInBackground() " + word + " - " + meanning + ", cursor " + cursor);
+							Log.d(TAG, "doInBackground() " + word + " - "
+									+ meanning + ", cursor " + cursor);
 						}
 						if (cursor != null && !cursor.moveToFirst()) {
 							values.clear();
@@ -120,6 +151,8 @@ public class Launcher extends Activity {
 			if (cursor != null && cursor.moveToFirst()) {
 				map.clear();
 				int idx = 0;
+				int count = cursor.getCount();
+				int counter = 0;
 				while (!cursor.isAfterLast()) {
 					String word = cursor.getString(cursor
 							.getColumnIndex(DBA.COLUMN_WORD));
@@ -130,6 +163,9 @@ public class Launcher extends Activity {
 					}
 					Word newWord = new Word(word, meanning);
 					map.put(idx++, newWord);
+					System.out
+							.println("Launcher.LoadWordsList.doInBackground()");
+					publishProgress(++counter, count);
 					cursor.moveToNext();
 				}
 			}
