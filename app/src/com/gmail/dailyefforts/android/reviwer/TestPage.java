@@ -7,12 +7,13 @@ import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.SparseArray;
-import android.view.Menu;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Launcher.Word;
 
@@ -154,15 +155,28 @@ public class TestPage extends Activity implements OnTouchListener {
 		return null;
 
 	}
+	
+	private long lastPressedTime;
+	private static final int PERIOD = 2000;
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_test_page, menu);
-
-		return true;
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+			switch (event.getAction()) {
+			case KeyEvent.ACTION_DOWN:
+				if (event.getDownTime() - lastPressedTime < PERIOD) {
+					finish();
+				} else {
+					Toast.makeText(getApplicationContext(),
+							"Press again to exit.", Toast.LENGTH_SHORT).show();
+					lastPressedTime = event.getEventTime();
+				}
+				break;
+			}
+			return true;
+		}
+		return false;
 	}
-
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
 		boolean returnValue = false;
