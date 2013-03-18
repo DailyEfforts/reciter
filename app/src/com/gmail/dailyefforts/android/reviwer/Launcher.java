@@ -50,11 +50,11 @@ public class Launcher extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_luncher);
-		
+
 		prograssBar = (ProgressBar) findViewById(R.id.pb_loading);
 		tvLoading = (TextView) findViewById(R.id.tv_loading);
 		btnStart = (Button) findViewById(R.id.btn_start);
-		
+
 		if (btnStart != null) {
 			btnStart.setOnClickListener(new View.OnClickListener() {
 
@@ -68,7 +68,7 @@ public class Launcher extends Activity {
 				}
 			});
 		}
-		
+
 		new LoadWordsList().execute();
 	}
 
@@ -121,14 +121,21 @@ public class Launcher extends Activity {
 						Cursor cursor = dba
 								.rawQuery(sql, new String[] { word });
 						if (Debuger.DEBUG) {
-							Log.d(TAG, "doInBackground() " + word + " - "
-									+ meanning + ", exist: " + cursor.moveToFirst());
+							Log.d(TAG,
+									"doInBackground() " + word + " - "
+											+ meanning + ", exist: "
+											+ cursor.getCount());
 						}
-						if (cursor != null && !cursor.moveToFirst()) {
+						if (cursor != null && cursor.getCount() == 0) {
 							values.clear();
 							values.put(DBA.COLUMN_WORD, word);
 							values.put(DBA.COLUMN_MEANING, meanning);
 							dba.insert(DBA.TABLE_NAME, null, values);
+						}
+						
+						if (cursor != null) {
+							cursor.close();
+							cursor = null;
 						}
 					}
 				}
@@ -160,9 +167,11 @@ public class Launcher extends Activity {
 					cursor.moveToNext();
 				}
 			}
+			if (cursor != null) {
+				cursor.close();
+			}
 			return true;
 		}
-
 	}
 
 	// @Override

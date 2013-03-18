@@ -3,27 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="5"
+    android:weightSum="9"
     tools:context=".TestPage" >
 
-    <Button
-        android:id="@+id/tv_word"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_gravity="center"
-        android:layout_marginBottom="6dp"
-        android:layout_weight="1"
-        android:text="@string/hello_world"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold" />
+        android:layout_weight="3"
+        android:background="#ff000000" >
+
+        <Button
+            android:id="@+id/tv_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:text="@string/hello_world"
+            android:textColor="@color/word_txt_color"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_bingo_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="2dp"
+            android:textColor="@color/bingo_rate_text_color"
+            android:textStyle="italic" />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btn_option_0"
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_margin="6dp"
-        android:layout_weight="1"
-        android:background="@color/opt_btn_bg_normal"
+        android:layout_margin="@dimen/opt_btn_margin"
+        android:layout_weight="2"
+        android:background="@drawable/opt_btn_bg_normal"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/opt_btn_txt_color" />
 
@@ -31,32 +48,20 @@
         android:id="@+id/btn_option_1"
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_margin="6dp"
-        android:layout_weight="1"
-        android:background="@color/opt_btn_bg_normal"
+        android:layout_margin="@dimen/opt_btn_margin"
+        android:layout_weight="2"
+        android:background="@drawable/opt_btn_bg_normal"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/opt_btn_txt_color"
-        android:textStyle="italic" />
+        android:textColor="@color/opt_btn_txt_color" />
 
     <Button
         android:id="@+id/btn_option_2"
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_margin="6dp"
-        android:layout_weight="1"
-        android:background="@color/opt_btn_bg_normal"
+        android:layout_margin="@dimen/opt_btn_margin"
+        android:layout_weight="2"
+        android:background="@drawable/opt_btn_bg_normal"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/opt_btn_txt_color" />
-
-    <Button
-        android:id="@+id/tv_tip"
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_gravity="center"
-        android:layout_marginTop="6dp"
-        android:layout_weight="0"
-        android:text="tip"
-        android:textAppearance="@android:style/TextAppearance.Small"
-        android:textStyle="italic" />
 
 </LinearLayout>

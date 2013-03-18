@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="opt_btn_margin">2dp</dimen>
+    <dimen name="rect_corners_radius">2dp</dimen>
+    <dimen name="rect_padding">1dp</dimen>
+    <dimen name="rect_stroke_width">1dp</dimen>
+    
+</resources>

@@ -1,20 +1,15 @@
 package com.gmail.dailyefforts.android.reviwer;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Random;
-import java.util.Set;
 
 import android.app.Activity;
-import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,7 +24,7 @@ public class TestPage extends Activity implements OnTouchListener {
 	private Button btnOpt1;
 	private Button btnOpt2;
 
-	private TextView tvTip;
+	private TextView tvBingoRate;
 
 	private String word;
 
@@ -37,11 +32,15 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	private SparseArray<Word> map;
 
-	private HashMap<Integer, Word> pageMap;
-	
-	private int bgColorNormal;
-	private int bgColorPressedBingo;
-	private int bgColorPressedWarning;
+	private SparseArray<Word> pageMap;
+
+	private Drawable bgColorNormal;
+	private Drawable bgColorPressedBingo;
+	private Drawable bgColorPressedWarning;
+	private int totalNum;
+	private int bingoNum;
+
+	private boolean isFirstTouch;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +52,13 @@ public class TestPage extends Activity implements OnTouchListener {
 		btnOpt0 = (Button) findViewById(R.id.btn_option_0);
 		btnOpt1 = (Button) findViewById(R.id.btn_option_1);
 		btnOpt2 = (Button) findViewById(R.id.btn_option_2);
-		
-		bgColorNormal = getResources().getColor(R.color.opt_btn_bg_normal);
-		bgColorPressedBingo = getResources().getColor(R.color.opt_btn_bg_pressed_bingo);
-		bgColorPressedWarning = getResources().getColor(R.color.opt_btn_bg_pressed_warning);
+
+		bgColorNormal = getResources()
+				.getDrawable(R.drawable.opt_btn_bg_normal);
+		bgColorPressedBingo = getResources().getDrawable(
+				R.drawable.opt_btn_bg_pressed_bingo);
+		bgColorPressedWarning = getResources().getDrawable(
+				R.drawable.opt_btn_bg_pressed_warning);
 
 		if (btnOpt0 != null) {
 			btnOpt0.setOnTouchListener(this);
@@ -68,7 +70,7 @@ public class TestPage extends Activity implements OnTouchListener {
 			btnOpt2.setOnTouchListener(this);
 		}
 
-		tvTip = (TextView) findViewById(R.id.tv_tip);
+		tvBingoRate = (TextView) findViewById(R.id.tv_bingo_rate);
 
 		map = Launcher.getMap();
 
@@ -85,7 +87,7 @@ public class TestPage extends Activity implements OnTouchListener {
 		meaning = map.get(idx).getMeaning();
 		tv.setText(word);
 
-		pageMap = new HashMap<Integer, Word>();
+		pageMap = new SparseArray<Word>();
 
 		// two another different words' meaning
 		ArrayList<Integer> arrList = new ArrayList<Integer>();
@@ -131,11 +133,18 @@ public class TestPage extends Activity implements OnTouchListener {
 		default:
 			break;
 		}
+		totalNum++;
+		isFirstTouch = true;
 
-		if (tvTip != null) {
-			tvTip.setText("");
+		if (tvBingoRate != null) {
+			if (totalNum <= 0) {
+				tvBingoRate.setText("");
+			} else {
+				tvBingoRate.setText(String.format("%d / %d  %.0f%%", bingoNum,
+						totalNum, bingoNum * 100.0f / totalNum));
+			}
 		}
-		
+
 	}
 
 	private String getMeaningByIdx(int idx) {
@@ -169,9 +178,12 @@ public class TestPage extends Activity implements OnTouchListener {
 			case MotionEvent.ACTION_DOWN:
 				((Button) v).setText(w.getWord());
 				if (bingGo) {
-					v.setBackgroundColor(bgColorPressedBingo);
+					if (isFirstTouch) {
+						bingoNum++;
+					}
+					v.setBackgroundDrawable(bgColorPressedBingo);
 				} else {
-					v.setBackgroundColor(bgColorPressedWarning);
+					v.setBackgroundDrawable(bgColorPressedWarning);
 				}
 				returnValue = true;
 				break;
@@ -179,9 +191,10 @@ public class TestPage extends Activity implements OnTouchListener {
 				if (bingGo) {
 					buildTestCase();
 				} else {
+					isFirstTouch = false;
 					((Button) v).setText(w.getMeaning());
 				}
-				v.setBackgroundColor(bgColorNormal);
+				v.setBackgroundDrawable(bgColorNormal);
 				returnValue = true;
 				break;
 			default:
