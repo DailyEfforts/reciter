@@ -26,9 +26,8 @@ public class TestPage extends Activity implements OnTouchListener {
 	private Button btnOpt2;
 
 	private TextView tvBingoRate;
-
+	
 	private String word;
-
 	private String meaning;
 
 	private SparseArray<Word> map;
@@ -38,6 +37,7 @@ public class TestPage extends Activity implements OnTouchListener {
 	private Drawable bgColorNormal;
 	private Drawable bgColorPressedBingo;
 	private Drawable bgColorPressedWarning;
+	
 	private int totalNum;
 	private int bingoNum;
 
@@ -134,7 +134,6 @@ public class TestPage extends Activity implements OnTouchListener {
 		default:
 			break;
 		}
-		totalNum++;
 		isFirstTouch = true;
 
 		if (tvBingoRate != null) {
@@ -146,6 +145,7 @@ public class TestPage extends Activity implements OnTouchListener {
 			}
 		}
 
+		totalNum++;
 	}
 
 	private String getMeaningByIdx(int idx) {
