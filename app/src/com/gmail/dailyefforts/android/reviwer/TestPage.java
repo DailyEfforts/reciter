@@ -6,12 +6,14 @@ import java.util.Random;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,14 +21,16 @@ import com.gmail.dailyefforts.android.reviwer.Launcher.Word;
 
 public class TestPage extends Activity implements OnTouchListener {
 
+	private static final String TAG = TestPage.class.getSimpleName();
+
 	private TextView tv;
 
-	private Button btnOpt0;
-	private Button btnOpt1;
-	private Button btnOpt2;
+	private OptBtn btnOpt0;
+	private OptBtn btnOpt1;
+	private OptBtn btnOpt2;
 
 	private TextView tvBingoRate;
-	
+
 	private String word;
 	private String meaning;
 
@@ -37,11 +41,15 @@ public class TestPage extends Activity implements OnTouchListener {
 	private Drawable bgColorNormal;
 	private Drawable bgColorPressedBingo;
 	private Drawable bgColorPressedWarning;
-	
+
 	private int totalNum;
 	private int bingoNum;
 
 	private boolean isFirstTouch;
+
+	private LinearLayout optCat;
+
+	private ArrayList<OptBtn> mOptList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +58,28 @@ public class TestPage extends Activity implements OnTouchListener {
 
 		tv = (TextView) findViewById(R.id.tv_word);
 
-		btnOpt0 = (Button) findViewById(R.id.btn_option_0);
-		btnOpt1 = (Button) findViewById(R.id.btn_option_1);
-		btnOpt2 = (Button) findViewById(R.id.btn_option_2);
+		optCat = (LinearLayout) findViewById(R.id.opt_category);
 
+		/*
+		 * btnOpt0 = (Button) findViewById(R.id.btn_option_0); btnOpt1 =
+		 * (Button) findViewById(R.id.btn_option_1); btnOpt2 = (Button)
+		 * findViewById(R.id.btn_option_2);
+		 */
+
+		mOptList = new ArrayList<OptBtn>();
+
+		btnOpt0 = new OptBtn(this, 0);
+		btnOpt1 = new OptBtn(this, 1);
+		btnOpt2 = new OptBtn(this, 2);
+
+		mOptList.add(btnOpt0);
+		mOptList.add(btnOpt1);
+		mOptList.add(btnOpt2);
+
+		for (OptBtn tmp : mOptList) {
+			optCat.addView(tmp);
+		}
+		
 		bgColorNormal = getResources()
 				.getDrawable(R.drawable.opt_btn_bg_normal);
 		bgColorPressedBingo = getResources().getDrawable(
@@ -153,36 +179,18 @@ public class TestPage extends Activity implements OnTouchListener {
 			return map.get(idx).getMeaning();
 		}
 		return null;
-
 	}
-	
-	private long lastPressedTime;
-	private static final int PERIOD = 2000;
 
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-			switch (event.getAction()) {
-			case KeyEvent.ACTION_DOWN:
-				if (event.getDownTime() - lastPressedTime < PERIOD) {
-					finish();
-				} else {
-					Toast.makeText(getApplicationContext(),
-							"Press again to exit.", Toast.LENGTH_SHORT).show();
-					lastPressedTime = event.getEventTime();
-				}
-				break;
-			}
-			return true;
-		}
-		return false;
-	}
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
 		boolean returnValue = false;
 		boolean bingGo = false;
 		if (v != null && event != null) {
 			Word w = pageMap.get(v.getId());
+			if (Debuger.DEBUG) {
+				Log.d(TAG,
+						"onTouch() id: " + v.getId() + " word: " + w.toString());
+			}
 			if (w != null) {
 				if (word != null && word.equals(w.getWord())) {
 					bingGo = true;
@@ -216,5 +224,27 @@ public class TestPage extends Activity implements OnTouchListener {
 			}
 		}
 		return returnValue;
+	}
+
+	private long lastPressedTime;
+	private static final int PERIOD = 2000;
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+			switch (event.getAction()) {
+			case KeyEvent.ACTION_DOWN:
+				if (event.getDownTime() - lastPressedTime < PERIOD) {
+					finish();
+				} else {
+					Toast.makeText(getApplicationContext(),
+							"Press again to exit.", Toast.LENGTH_SHORT).show();
+					lastPressedTime = event.getEventTime();
+				}
+				break;
+			}
+			return true;
+		}
+		return false;
 	}
 }

@@ -40,6 +40,12 @@ public class Launcher extends Activity {
 		public String getMeaning() {
 			return meaning;
 		}
+
+		@Override
+		public String toString() {
+			return "Word [word=" + word + ", meaning=" + meaning + "]";
+		}
+		
 	}
 
 	@Override

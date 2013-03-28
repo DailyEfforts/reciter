@@ -19,8 +19,8 @@
             android:layout_centerInParent="true"
             android:background="@android:color/transparent"
             android:text="@string/hello_world"
-            android:textColor="@color/word_txt_color"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/word_txt_color"
             android:textStyle="bold" />
 
         <TextView
@@ -34,34 +34,13 @@
             android:textStyle="italic" />
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/btn_option_0"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_margin="@dimen/opt_btn_margin"
-        android:layout_weight="2"
-        android:background="@drawable/opt_btn_bg_normal"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/opt_btn_txt_color" />
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:id="@+id/opt_category"
+        android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/btn_option_1"
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_margin="@dimen/opt_btn_margin"
-        android:layout_weight="2"
-        android:background="@drawable/opt_btn_bg_normal"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/opt_btn_txt_color" />
-
-    <Button
-        android:id="@+id/btn_option_2"
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_margin="@dimen/opt_btn_margin"
-        android:layout_weight="2"
-        android:background="@drawable/opt_btn_bg_normal"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/opt_btn_txt_color" />
+    </LinearLayout>
 
 </LinearLayout>
