@@ -18,7 +18,7 @@ public class OptBtn extends Button {
 		
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		params.height = 0;
-		params.weight = 2;
+		params.weight = 1;
 		setLayoutParams(params);
 		setId(id);
 	}
