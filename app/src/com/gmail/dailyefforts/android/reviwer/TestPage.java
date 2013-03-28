@@ -51,7 +51,7 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	private ArrayList<OptBtn> mOptList;
 
-	private static final int OPTION_NUMBER = 3;
+	private static final int OPTION_NUMBER = 6;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
