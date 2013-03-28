@@ -12,11 +12,11 @@ public class OptBtn extends Button {
 		// TODO Auto-generated constructor stub
 		setBackgroundDrawable(getResources().getDrawable(
 				R.drawable.opt_btn_bg_normal));
-		setTextAppearance(context,
-				android.R.style.TextAppearance_DeviceDefault_Medium);
+		setTextAppearance(context, android.R.style.TextAppearance_Medium);
 		setTextColor(getResources().getColor(R.color.opt_btn_txt_color));
-		
-		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+
+		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
+				LayoutParams.WRAP_CONTENT);
 		params.height = 0;
 		params.weight = 1;
 		setLayoutParams(params);
