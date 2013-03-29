@@ -30,6 +30,7 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
         </activity>
+        <activity android:name=".settings.SettingsActivity"></activity>
     </application>
 
 </manifest>

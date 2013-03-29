@@ -14,13 +14,21 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseArray;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import com.gmail.dailyefforts.android.reviwer.settings.SettingsActivity;
 
 public class Launcher extends Activity {
 
 	private static final String TAG = Launcher.class.getSimpleName();
-//	private Button btnStart;
-//	private ProgressBar prograssBar;
-//	private TextView tvLoading;
+	private Button btnStart;
+	private ProgressBar prograssBar;
+	private TextView tvLoading;
 	private static SparseArray<Word> map = new SparseArray<Word>();
 
 	public class Word {
@@ -45,7 +53,7 @@ public class Launcher extends Activity {
 		public String toString() {
 			return "Word [word=" + word + ", meaning=" + meaning + "]";
 		}
-		
+
 	}
 
 	@Override
@@ -53,29 +61,50 @@ public class Launcher extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_luncher);
 
-//		prograssBar = (ProgressBar) findViewById(R.id.pb_loading);
-//		tvLoading = (TextView) findViewById(R.id.tv_loading);
-//		btnStart = (Button) findViewById(R.id.btn_start);
-//
-//		if (btnStart != null) {
-//			btnStart.setOnClickListener(new View.OnClickListener() {
-//
-//				@Override
-//				public void onClick(View v) {
-//					if (Debuger.DEBUG) {
-//						Log.d(TAG, "onClick() map.size()" + map.size());
-//					}
-//					Intent intent = new Intent(Launcher.this, TestPage.class);
-//					startActivity(intent);
-//				}
-//			});
-//		}
+		prograssBar = (ProgressBar) findViewById(R.id.pb_loading);
+		tvLoading = (TextView) findViewById(R.id.tv_loading);
+		btnStart = (Button) findViewById(R.id.btn_start);
+
+		if (btnStart != null) {
+			btnStart.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					if (Debuger.DEBUG) {
+						Log.d(TAG, "onClick() map.size()" + map.size());
+					}
+					Intent intent = new Intent(Launcher.this, TestPage.class);
+					startActivity(intent);
+				}
+			});
+		}
 
 		new LoadWordsList().execute();
 	}
 
 	public static SparseArray<Word> getMap() {
 		return map;
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.activity_luncher, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		boolean isConsumed = false;
+		switch (item.getItemId()) {
+		case R.id.menu_settings:
+			Intent intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
+			isConsumed = true;
+			break;
+		default:
+			break;
+		}
+		return isConsumed;
 	}
 
 	private class LoadWordsList extends AsyncTask<Void, Integer, Boolean> {
@@ -85,15 +114,12 @@ public class Launcher extends Activity {
 			super.onPostExecute(result);
 
 			if (result) {
-//				if (prograssBar != null && tvLoading != null
-//						&& btnStart != null) {
-//					tvLoading.setVisibility(View.GONE);
-//					prograssBar.setVisibility(View.GONE);
-//					btnStart.setEnabled(true);
-//				}
-				Intent intent = new Intent(Launcher.this, TestPage.class);
-				startActivity(intent);
-				Launcher.this.finish();
+				if (prograssBar != null && tvLoading != null
+						&& btnStart != null) {
+					tvLoading.setVisibility(View.GONE);
+					prograssBar.setVisibility(View.GONE);
+					btnStart.setEnabled(true);
+				}
 			}
 		}
 
@@ -137,7 +163,7 @@ public class Launcher extends Activity {
 							values.put(DBA.COLUMN_MEANING, meanning);
 							dba.insert(DBA.TABLE_NAME, null, values);
 						}
-						
+
 						if (cursor != null) {
 							cursor.close();
 							cursor = null;

@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
@@ -18,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Launcher.Word;
+import com.gmail.dailyefforts.android.reviwer.settings.SettingsActivity;
 
 public class TestPage extends Activity implements OnTouchListener {
 
@@ -47,7 +51,9 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	private ArrayList<OptBtn> mOptList;
 
-	private static final int OPTION_NUMBER = 6;
+	private SharedPreferences mSharedPref;
+
+	int optNum;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,12 +62,24 @@ public class TestPage extends Activity implements OnTouchListener {
 
 		tv = (TextView) findViewById(R.id.tv_word);
 
+		mSharedPref = PreferenceManager
+				.getDefaultSharedPreferences(getApplicationContext());
+
+		optNum = mSharedPref.getInt(SettingsActivity.KEY_OPTION_NUMBER, SettingsActivity.DEFAULT_OPTION_NUMBER);
+//		if (optNum == -1) {
+//			Editor editor = mSharedPref.edit();
+//			editor.putInt(SettingsActivity.KEY_OPTION_NUMBER,
+//					SettingsActivity.DEFAULT_OPTION_NUMBER);
+//			editor.commit();
+//			optNum = SettingsActivity.DEFAULT_OPTION_NUMBER;
+//		}
+
 		optCat = (LinearLayout) findViewById(R.id.opt_category);
-		optCat.setWeightSum(OPTION_NUMBER);
+		optCat.setWeightSum(optNum);
 
 		mOptList = new ArrayList<OptBtn>();
-		
-		for (int i = 0; i< OPTION_NUMBER; i++) {
+
+		for (int i = 0; i < optNum; i++) {
 			OptBtn btn = new OptBtn(this, i);
 			mOptList.add(btn);
 		}
@@ -82,11 +100,11 @@ public class TestPage extends Activity implements OnTouchListener {
 
 		map = Launcher.getMap();
 
-		buildTestCase();
+		buildTestCase(optNum);
 
 	}
 
-	private void buildTestCase() {
+	private void buildTestCase(int optNum) {
 		Random random = new Random();
 
 		int idx = random.nextInt(map.size());
@@ -99,14 +117,14 @@ public class TestPage extends Activity implements OnTouchListener {
 
 		// two another different words' meaning
 		ArrayList<Integer> arrList = new ArrayList<Integer>();
-		while (arrList.size() < OPTION_NUMBER - 1) {
+		while (arrList.size() < optNum - 1) {
 			int tmp = random.nextInt(map.size());
 			if (tmp != idx && !arrList.contains(tmp)) {
 				arrList.add(tmp);
 			}
 		}
 
-		int answerIdx = random.nextInt(OPTION_NUMBER);
+		int answerIdx = random.nextInt(optNum);
 
 		for (int i = 0; i < mOptList.size(); i++) {
 			OptBtn btn = mOptList.get(i);
@@ -149,7 +167,8 @@ public class TestPage extends Activity implements OnTouchListener {
 			if (Debuger.DEBUG) {
 				Log.d(TAG, "onTouch() id: " + v.getId());
 				for (int i = 0; i < pageMap.size(); i++) {
-					Log.d(TAG, String.format("onTouch() %d: %s", i, pageMap.get(i).toString()));
+					Log.d(TAG, String.format("onTouch() %d: %s", i, pageMap
+							.get(i).toString()));
 				}
 			}
 			Word w = pageMap.get(v.getId());
@@ -173,7 +192,7 @@ public class TestPage extends Activity implements OnTouchListener {
 				break;
 			case MotionEvent.ACTION_UP:
 				if (bingGo) {
-					buildTestCase();
+					buildTestCase(optNum);
 				} else {
 					isFirstTouch = false;
 					((Button) v).setText(w.getMeaning());
