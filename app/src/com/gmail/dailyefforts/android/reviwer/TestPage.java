@@ -25,10 +25,6 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	private TextView tv;
 
-//	private OptBtn btnOpt0;
-//	private OptBtn btnOpt1;
-//	private OptBtn btnOpt2;
-
 	private TextView tvBingoRate;
 
 	private String word;
@@ -62,12 +58,6 @@ public class TestPage extends Activity implements OnTouchListener {
 
 		optCat = (LinearLayout) findViewById(R.id.opt_category);
 		optCat.setWeightSum(OPTION_NUMBER);
-
-		/*
-		 * btnOpt0 = (Button) findViewById(R.id.btn_option_0); btnOpt1 =
-		 * (Button) findViewById(R.id.btn_option_1); btnOpt2 = (Button)
-		 * findViewById(R.id.btn_option_2);
-		 */
 
 		mOptList = new ArrayList<OptBtn>();
 		
