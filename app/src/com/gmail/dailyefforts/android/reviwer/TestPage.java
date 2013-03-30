@@ -5,7 +5,6 @@ import java.util.Random;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -21,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Launcher.Word;
-import com.gmail.dailyefforts.android.reviwer.settings.SettingsActivity;
+import com.gmail.dailyefforts.android.reviwer.settings.Prefs;
 
 public class TestPage extends Activity implements OnTouchListener {
 
@@ -65,7 +64,7 @@ public class TestPage extends Activity implements OnTouchListener {
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
 
-		optNum = mSharedPref.getInt(SettingsActivity.KEY_OPTION_NUMBER, SettingsActivity.DEFAULT_OPTION_NUMBER);
+		optNum = mSharedPref.getInt(Prefs.KEY_OPTION_NUMBER, Prefs.DEFAULT_OPTION_NUMBER);
 //		if (optNum == -1) {
 //			Editor editor = mSharedPref.edit();
 //			editor.putInt(SettingsActivity.KEY_OPTION_NUMBER,
