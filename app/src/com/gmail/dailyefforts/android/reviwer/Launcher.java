@@ -21,7 +21,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.gmail.dailyefforts.android.reviwer.settings.SettingsActivity;
+import com.gmail.dailyefforts.android.reviwer.settings.PrefsActivity;
 
 public class Launcher extends Activity {
 
@@ -97,7 +97,7 @@ public class Launcher extends Activity {
 		boolean isConsumed = false;
 		switch (item.getItemId()) {
 		case R.id.menu_settings:
-			Intent intent = new Intent(this, SettingsActivity.class);
+			Intent intent = new Intent(this, PrefsActivity.class);
 			startActivity(intent);
 			isConsumed = true;
 			break;

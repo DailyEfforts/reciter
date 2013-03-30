@@ -12,7 +12,7 @@ import android.preference.PreferenceManager;
 
 import com.gmail.dailyefforts.android.reviwer.R;
 
-public class SettingsActivity extends PreferenceActivity {
+public class PrefsActivity extends PreferenceActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class SettingsActivity extends PreferenceActivity {
 			super.onCreate(savedInstanceState);
 
 			// Load the preferences from an XML resource
-			addPreferencesFromResource(R.xml.settings);
+			addPreferencesFromResource(R.xml.preferences);
 			mSharedPref = PreferenceManager
 					.getDefaultSharedPreferences(getActivity()
 							.getApplicationContext());
