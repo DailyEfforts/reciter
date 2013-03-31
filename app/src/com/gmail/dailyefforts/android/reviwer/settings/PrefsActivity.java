@@ -1,7 +1,6 @@
 package com.gmail.dailyefforts.android.reviwer.settings;
 
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -28,7 +27,7 @@ public class PrefsActivity extends PreferenceActivity {
 			OnPreferenceChangeListener {
 
 		private ListPreference mListPref;
-		private SharedPreferences mSharedPref;
+		private Prefs mPrefs;
 
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
@@ -36,15 +35,16 @@ public class PrefsActivity extends PreferenceActivity {
 
 			// Load the preferences from an XML resource
 			addPreferencesFromResource(R.xml.preferences);
-			mSharedPref = PreferenceManager
+			SharedPreferences sharedPref = PreferenceManager
 					.getDefaultSharedPreferences(getActivity()
 							.getApplicationContext());
 
+			mPrefs = Prefs.getInstance(sharedPref);
+
 			mListPref = (ListPreference) findPreference(getString(R.string.pref_key_options_number));
-			if (mListPref != null && mSharedPref != null) {
+			if (mListPref != null && mPrefs != null) {
 				mListPref.setOnPreferenceChangeListener(this);
-				String value = String.valueOf(mSharedPref.getInt(
-						Prefs.KEY_OPTION_NUMBER, Prefs.DEFAULT_OPTION_NUMBER));
+				String value = String.valueOf(mPrefs.getOptionNumber());
 				mListPref.setValue(value);
 				mListPref.setSummary(String.valueOf(mListPref.getSummary())
 						.replace("**", value));
@@ -56,6 +56,7 @@ public class PrefsActivity extends PreferenceActivity {
 			if (preference == null) {
 				return false;
 			}
+			
 			String key = preference.getKey();
 
 			if (key == null || mListPref == null) {
@@ -63,11 +64,11 @@ public class PrefsActivity extends PreferenceActivity {
 			}
 
 			if (key.equals(mListPref.getKey())) {
+				if (mPrefs != null) {
+					mPrefs.setOptionNumber(Integer.valueOf(String
+							.valueOf(newValue)));
+				}
 
-				Editor editor = mSharedPref.edit();
-				editor.putInt(Prefs.KEY_OPTION_NUMBER,
-						Integer.parseInt(String.valueOf(newValue)));
-				editor.commit();
 			}
 			return false;
 		}
