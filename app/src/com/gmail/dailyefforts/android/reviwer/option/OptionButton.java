@@ -1,13 +1,15 @@
-package com.gmail.dailyefforts.android.reviwer;
+package com.gmail.dailyefforts.android.reviwer.option;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.Button;
 import android.widget.LinearLayout.LayoutParams;
 
-public class OptBtn extends Button {
+import com.gmail.dailyefforts.android.reviwer.R;
 
-	public OptBtn(Context context, int id) {
+public class OptionButton extends Button {
+
+	public OptionButton(Context context, int id) {
 		super(context);
 		// TODO Auto-generated constructor stub
 		setBackgroundDrawable(getResources().getDrawable(
@@ -23,7 +25,7 @@ public class OptBtn extends Button {
 		setId(id);
 	}
 
-	private OptBtn(Context context, AttributeSet attrs) {
+	private OptionButton(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 	}

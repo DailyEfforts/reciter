@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer;
+package com.gmail.dailyefforts.android.reviwer.db;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

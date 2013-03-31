@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.gmail.dailyefforts.android.reviwer.db.DBA;
+import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.prefs.PrefsActivity;
 
 public class Launcher extends Activity {

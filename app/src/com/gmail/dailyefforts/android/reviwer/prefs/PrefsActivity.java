@@ -56,7 +56,7 @@ public class PrefsActivity extends PreferenceActivity {
 			if (preference == null) {
 				return false;
 			}
-			
+
 			String key = preference.getKey();
 
 			if (key == null || mListPref == null) {

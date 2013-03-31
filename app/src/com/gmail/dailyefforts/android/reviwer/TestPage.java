@@ -20,6 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Launcher.Word;
+import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
+import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
 import com.gmail.dailyefforts.android.reviwer.prefs.Prefs;
 
 public class TestPage extends Activity implements OnTouchListener {
@@ -48,7 +50,7 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	private LinearLayout optCat;
 
-	private ArrayList<OptBtn> mOptList;
+	private ArrayList<OptionButton> mOptList;
 
 	private SharedPreferences mSharedPref;
 
@@ -64,26 +66,27 @@ public class TestPage extends Activity implements OnTouchListener {
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
 
-		optNum = mSharedPref.getInt(Prefs.KEY_OPTION_NUMBER, Prefs.DEFAULT_OPTION_NUMBER);
-//		if (optNum == -1) {
-//			Editor editor = mSharedPref.edit();
-//			editor.putInt(SettingsActivity.KEY_OPTION_NUMBER,
-//					SettingsActivity.DEFAULT_OPTION_NUMBER);
-//			editor.commit();
-//			optNum = SettingsActivity.DEFAULT_OPTION_NUMBER;
-//		}
+		optNum = mSharedPref.getInt(Prefs.KEY_OPTION_NUMBER,
+				Prefs.DEFAULT_OPTION_NUMBER);
+		// if (optNum == -1) {
+		// Editor editor = mSharedPref.edit();
+		// editor.putInt(SettingsActivity.KEY_OPTION_NUMBER,
+		// SettingsActivity.DEFAULT_OPTION_NUMBER);
+		// editor.commit();
+		// optNum = SettingsActivity.DEFAULT_OPTION_NUMBER;
+		// }
 
 		optCat = (LinearLayout) findViewById(R.id.opt_category);
 		optCat.setWeightSum(optNum);
 
-		mOptList = new ArrayList<OptBtn>();
+		mOptList = new ArrayList<OptionButton>();
 
 		for (int i = 0; i < optNum; i++) {
-			OptBtn btn = new OptBtn(this, i);
+			OptionButton btn = new OptionButton(this, i);
 			mOptList.add(btn);
 		}
 
-		for (OptBtn tmp : mOptList) {
+		for (OptionButton tmp : mOptList) {
 			optCat.addView(tmp);
 			tmp.setOnTouchListener(this);
 		}
@@ -126,7 +129,7 @@ public class TestPage extends Activity implements OnTouchListener {
 		int answerIdx = random.nextInt(optNum);
 
 		for (int i = 0; i < mOptList.size(); i++) {
-			OptBtn btn = mOptList.get(i);
+			OptionButton btn = mOptList.get(i);
 			if (i == answerIdx) {
 				btn.setText(meaning);
 				pageMap.put(btn.getId(), map.get(idx));
