@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer.settings;
+package com.gmail.dailyefforts.android.reviwer.prefs;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;

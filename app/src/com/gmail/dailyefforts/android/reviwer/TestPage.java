@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Launcher.Word;
-import com.gmail.dailyefforts.android.reviwer.settings.Prefs;
+import com.gmail.dailyefforts.android.reviwer.prefs.Prefs;
 
 public class TestPage extends Activity implements OnTouchListener {
 
