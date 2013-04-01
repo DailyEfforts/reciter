@@ -46,8 +46,8 @@ public class PrefsActivity extends PreferenceActivity {
 				mListPref.setOnPreferenceChangeListener(this);
 				String value = String.valueOf(mPrefs.getOptionNumber());
 				mListPref.setValue(value);
-				mListPref.setSummary(String.valueOf(mListPref.getSummary())
-						.replace("**", value));
+				mListPref.setSummary(String.format(mListPref.getSummary()
+						.toString(), value));
 			}
 		}
 
