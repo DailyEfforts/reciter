@@ -21,3 +21,6 @@ app/.project
 app/.settings/
 app/proguard-project.txt
 app/project.properties
+
+# backup files
+*.bak
