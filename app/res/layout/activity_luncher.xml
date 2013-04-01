@@ -4,14 +4,16 @@
     android:layout_height="match_parent"
     tools:context=".Luncher" >
 
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="wrap_content"
+    <GridView
+        android:id="@+id/gv_unit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:enabled="false"
-        android:text="@string/start_testing" />
+        android:horizontalSpacing="3dp"
+        android:numColumns="3"
+        android:visibility="gone"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="3dp" >
+    </GridView>
 
     <RelativeLayout
         android:id="@+id/rl_loading"
@@ -34,5 +36,14 @@
             android:layout_centerHorizontal="true"
             android:text="@string/loading" />
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:enabled="false"
+        android:text="@string/start_testing" />
 
 </RelativeLayout>
