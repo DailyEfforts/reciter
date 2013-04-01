@@ -19,10 +19,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gmail.dailyefforts.android.reviwer.Launcher.Word;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
 import com.gmail.dailyefforts.android.reviwer.setting.Settings;
+import com.gmail.dailyefforts.android.reviwer.unit.UnitView;
 
 public class TestPage extends Activity implements OnTouchListener {
 
@@ -94,7 +94,7 @@ public class TestPage extends Activity implements OnTouchListener {
 
 		tvBingoRate = (TextView) findViewById(R.id.tv_bingo_rate);
 
-		map = Launcher.getMap();
+		map = UnitView.getMap();
 
 		buildTestCase(optNum);
 

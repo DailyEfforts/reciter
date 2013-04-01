@@ -67,6 +67,11 @@ public class DBA extends SQLiteOpenHelper {
 		return getReadableDatabase().rawQuery(sql, selectionArgs);
 	}
 
+	public int getCount() {
+		Cursor cursor = rawQuery("SELECT * FROM " + TABLE_NAME, null);
+		return cursor.getCount();
+	}
+
 	public long insert(String table, String nullColumnHack, ContentValues values) {
 		long result = -1L;
 		try {

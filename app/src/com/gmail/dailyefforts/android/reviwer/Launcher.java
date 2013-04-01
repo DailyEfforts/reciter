@@ -17,41 +17,76 @@ import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.RelativeLayout;
 
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.setting.SettingsActivity;
+import com.gmail.dailyefforts.android.reviwer.unit.UnitView;
 
 public class Launcher extends Activity {
 
 	private static final String TAG = Launcher.class.getSimpleName();
 	private Button btnStart;
 	private RelativeLayout loadingTip;
+	private GridView mGridView;
+	private DBA dba;
 	private static SparseArray<Word> map = new SparseArray<Word>();
 
-	public class Word {
-		private String word;
-		private String meaning;
+	private static final int UNIT = 50;
 
-		public Word(String word, String meaning) {
-			super();
-			this.word = word;
-			this.meaning = meaning;
-		}
+	private class UnitAdapter extends BaseAdapter {
 
-		public String getWord() {
-			return word;
-		}
+		private int mCount;
 
-		public String getMeaning() {
-			return meaning;
+		public UnitAdapter(int count) {
+			mCount = count;
 		}
 
 		@Override
-		public String toString() {
-			return "Word [word=" + word + ", meaning=" + meaning + "]";
+		public int getCount() {
+			return mCount;
+		}
+
+		@Override
+		public Object getItem(int position) {
+			return null;
+		}
+
+		@Override
+		public long getItemId(int position) {
+			return 0;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup container) {
+			View view = null;
+			if (convertView == null) {
+				// view = getLayoutInflater().inflate(R.layout.view_unit, null);
+				view = new UnitView(Launcher.this);
+			} else {
+				view = convertView;
+			}
+
+			if (view instanceof UnitView) {
+				// TODO dba non-null check
+				UnitView tmp = ((UnitView) view);
+				tmp.id = position;
+				tmp.start = position * UNIT;
+				tmp.end = position == mCount - 1 ? dba.getCount()
+						: (position + 1) * UNIT - 1;
+
+				tmp.setText(String.format("Unit-%02d\n(%d ~ %d)", position + 1,
+						tmp.start + 1, tmp.end));
+			}
+
+			return view;
 		}
 
 	}
@@ -63,6 +98,10 @@ public class Launcher extends Activity {
 
 		loadingTip = (RelativeLayout) findViewById(R.id.rl_loading);
 		btnStart = (Button) findViewById(R.id.btn_start);
+
+		dba = DBA.getInstance(getApplicationContext());
+
+		mGridView = (GridView) findViewById(R.id.gv_unit);
 
 		if (btnStart != null) {
 			btnStart.setOnClickListener(new View.OnClickListener() {
@@ -117,7 +156,25 @@ public class Launcher extends Activity {
 					loadingTip.setVisibility(View.GONE);
 					btnStart.setEnabled(true);
 				}
+				if (mGridView != null && dba != null) {
+					if (Debuger.DEBUG) {
+						Log.d(TAG, "onPostExecute() " + dba.getCount());
+					}
+
+					int count = dba.getCount();
+
+					int unitSize = count % UNIT == 0 ? count / UNIT : count
+							/ UNIT + 1;
+
+					mGridView.setAdapter(new UnitAdapter(unitSize));
+					mGridView.setVisibility(View.VISIBLE);
+				}
 			}
+		}
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
 		}
 
 		@Override
@@ -126,10 +183,9 @@ public class Launcher extends Activity {
 			if (Debuger.DEBUG) {
 				Log.d(TAG, "doInBackground() assetMngr: " + assetMngr);
 			}
-			if (assetMngr == null) {
+			if (assetMngr == null || dba == null) {
 				return false;
 			}
-			DBA dba = DBA.getInstance(getApplicationContext());
 			try {
 				InputStream in = assetMngr.open("mot.txt");
 				InputStreamReader inReader = new InputStreamReader(in);
@@ -173,31 +229,6 @@ public class Launcher extends Activity {
 				e.printStackTrace();
 			}
 
-			Cursor cursor = dba.query(DBA.TABLE_NAME, new String[] {
-					DBA.COLUMN_ID, DBA.COLUMN_WORD, DBA.COLUMN_MEANING }, null,
-					null, null, null, null);
-			if (Debuger.DEBUG) {
-				Log.d(TAG, "doInBackground() cursor: " + cursor);
-			}
-			if (cursor != null && cursor.moveToFirst()) {
-				map.clear();
-				int idx = 0;
-				while (!cursor.isAfterLast()) {
-					String word = cursor.getString(cursor
-							.getColumnIndex(DBA.COLUMN_WORD));
-					String meanning = cursor.getString(cursor
-							.getColumnIndex(DBA.COLUMN_MEANING));
-					if (Debuger.DEBUG) {
-						Log.d(TAG, "update() idx: " + idx + ", word: " + word);
-					}
-					Word newWord = new Word(word, meanning);
-					map.put(idx++, newWord);
-					cursor.moveToNext();
-				}
-			}
-			if (cursor != null) {
-				cursor.close();
-			}
 			return true;
 		}
 	}
