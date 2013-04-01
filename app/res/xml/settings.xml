@@ -6,6 +6,7 @@
         android:entries="@array/pref_options_number_list_entries"
         android:entryValues="@array/pref_options_number_list_entry_values"
         android:key="@string/pref_key_options_number"
+        android:persistent="true"
         android:summary="@string/pref_summary_options_number"
         android:title="@string/option_number" />
 

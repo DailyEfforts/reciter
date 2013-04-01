@@ -66,15 +66,9 @@ public class TestPage extends Activity implements OnTouchListener {
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
 
-		optNum = mSharedPref.getInt(Settings.KEY_OPTION_NUMBER,
-				Settings.DEFAULT_OPTION_NUMBER);
-		// if (optNum == -1) {
-		// Editor editor = mSharedPref.edit();
-		// editor.putInt(SettingsActivity.KEY_OPTION_NUMBER,
-		// SettingsActivity.DEFAULT_OPTION_NUMBER);
-		// editor.commit();
-		// optNum = SettingsActivity.DEFAULT_OPTION_NUMBER;
-		// }
+		optNum = Integer.valueOf(mSharedPref.getString(
+				getString(R.string.pref_key_options_number),
+				Settings.DEFAULT_OPTION_NUMBER));
 
 		optCat = (LinearLayout) findViewById(R.id.opt_category);
 		optCat.setWeightSum(optNum);
