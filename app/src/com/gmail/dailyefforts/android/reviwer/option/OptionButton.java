@@ -12,8 +12,7 @@ public class OptionButton extends Button {
 	public OptionButton(Context context, int id) {
 		super(context);
 		// TODO Auto-generated constructor stub
-		setBackgroundDrawable(getResources().getDrawable(
-				R.drawable.opt_btn_bg_normal));
+		extracted();
 		setTextAppearance(context, android.R.style.TextAppearance_Medium);
 		setTextColor(getResources().getColor(R.color.opt_btn_txt_color));
 
@@ -23,6 +22,12 @@ public class OptionButton extends Button {
 		params.weight = 1;
 		setLayoutParams(params);
 		setId(id);
+	}
+
+	@SuppressWarnings("deprecation")
+	private void extracted() {
+		setBackgroundDrawable(getResources().getDrawable(
+				R.drawable.opt_btn_bg_normal));
 	}
 
 	private OptionButton(Context context, AttributeSet attrs) {

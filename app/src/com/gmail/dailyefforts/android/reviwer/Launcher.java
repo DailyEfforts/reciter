@@ -18,8 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
@@ -29,8 +28,7 @@ public class Launcher extends Activity {
 
 	private static final String TAG = Launcher.class.getSimpleName();
 	private Button btnStart;
-	private ProgressBar prograssBar;
-	private TextView tvLoading;
+	private RelativeLayout loadingTip;
 	private static SparseArray<Word> map = new SparseArray<Word>();
 
 	public class Word {
@@ -63,8 +61,7 @@ public class Launcher extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_luncher);
 
-		prograssBar = (ProgressBar) findViewById(R.id.pb_loading);
-		tvLoading = (TextView) findViewById(R.id.tv_loading);
+		loadingTip = (RelativeLayout) findViewById(R.id.rl_loading);
 		btnStart = (Button) findViewById(R.id.btn_start);
 
 		if (btnStart != null) {
@@ -116,10 +113,8 @@ public class Launcher extends Activity {
 			super.onPostExecute(result);
 
 			if (result) {
-				if (prograssBar != null && tvLoading != null
-						&& btnStart != null) {
-					tvLoading.setVisibility(View.GONE);
-					prograssBar.setVisibility(View.GONE);
+				if (loadingTip != null) {
+					loadingTip.setVisibility(View.GONE);
 					btnStart.setEnabled(true);
 				}
 			}
