@@ -22,7 +22,7 @@ import android.widget.Toast;
 import com.gmail.dailyefforts.android.reviwer.Launcher.Word;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
-import com.gmail.dailyefforts.android.reviwer.prefs.Prefs;
+import com.gmail.dailyefforts.android.reviwer.setting.Settings;
 
 public class TestPage extends Activity implements OnTouchListener {
 
@@ -66,8 +66,8 @@ public class TestPage extends Activity implements OnTouchListener {
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
 
-		optNum = mSharedPref.getInt(Prefs.KEY_OPTION_NUMBER,
-				Prefs.DEFAULT_OPTION_NUMBER);
+		optNum = mSharedPref.getInt(Settings.KEY_OPTION_NUMBER,
+				Settings.DEFAULT_OPTION_NUMBER);
 		// if (optNum == -1) {
 		// Editor editor = mSharedPref.edit();
 		// editor.putInt(SettingsActivity.KEY_OPTION_NUMBER,

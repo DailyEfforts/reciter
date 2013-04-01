@@ -23,7 +23,7 @@ import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.prefs.PrefsActivity;
+import com.gmail.dailyefforts.android.reviwer.setting.SettingsActivity;
 
 public class Launcher extends Activity {
 
@@ -99,7 +99,7 @@ public class Launcher extends Activity {
 		boolean isConsumed = false;
 		switch (item.getItemId()) {
 		case R.id.menu_settings:
-			Intent intent = new Intent(this, PrefsActivity.class);
+			Intent intent = new Intent(this, SettingsActivity.class);
 			startActivity(intent);
 			isConsumed = true;
 			break;

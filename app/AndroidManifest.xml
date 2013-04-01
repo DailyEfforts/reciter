@@ -31,7 +31,7 @@
             android:theme="@android:style/Theme.Black.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.gmail.dailyefforts.android.reviwer.prefs.PrefsActivity"
+            android:name="com.gmail.dailyefforts.android.reviwer.setting.SettingsActivity"
             android:theme="@android:style/Theme.DeviceDefault" >
         </activity>
     </application>

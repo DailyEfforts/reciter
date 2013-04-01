@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer.prefs;
+package com.gmail.dailyefforts.android.reviwer.setting;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.preference.PreferenceManager;
 
 import com.gmail.dailyefforts.android.reviwer.R;
 
-public class PrefsActivity extends PreferenceActivity {
+public class SettingsActivity extends PreferenceActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,19 +27,19 @@ public class PrefsActivity extends PreferenceActivity {
 			OnPreferenceChangeListener {
 
 		private ListPreference mListPref;
-		private Prefs mPrefs;
+		private Settings mPrefs;
 
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 
 			// Load the preferences from an XML resource
-			addPreferencesFromResource(R.xml.preferences);
+			addPreferencesFromResource(R.xml.settings);
 			SharedPreferences sharedPref = PreferenceManager
 					.getDefaultSharedPreferences(getActivity()
 							.getApplicationContext());
 
-			mPrefs = Prefs.getInstance(sharedPref);
+			mPrefs = Settings.getInstance(sharedPref);
 
 			mListPref = (ListPreference) findPreference(getString(R.string.pref_key_options_number));
 			if (mListPref != null && mPrefs != null) {
