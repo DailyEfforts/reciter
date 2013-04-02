@@ -8,11 +8,12 @@
         android:id="@+id/gv_unit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:horizontalSpacing="3dp"
+        android:layout_above="@+id/menu"
+        android:horizontalSpacing="2dp"
         android:numColumns="3"
-        android:visibility="gone"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="3dp" >
+        android:verticalSpacing="2dp"
+        android:visibility="visible" >
     </GridView>
 
     <RelativeLayout
@@ -37,13 +38,30 @@
             android:text="@string/loading" />
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:enabled="false"
-        android:text="@string/start_testing" />
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/btn_start"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/start_testing" />
+
+        <Button
+            android:id="@+id/btn_word_book"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/new_word_book" />
+    </LinearLayout>
 
 </RelativeLayout>

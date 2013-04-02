@@ -13,13 +13,10 @@ import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
@@ -37,9 +34,9 @@ public class Launcher extends Activity {
 	private RelativeLayout loadingTip;
 	private GridView mGridView;
 	private DBA dba;
-	private static SparseArray<Word> map = new SparseArray<Word>();
+	private Button btnWordBook;
 
-	private static final int UNIT = 50;
+	private static final int UNIT = 30;
 
 	private class UnitAdapter extends BaseAdapter {
 
@@ -80,7 +77,7 @@ public class Launcher extends Activity {
 				tmp.id = position;
 				tmp.start = position * UNIT;
 				tmp.end = position == mCount - 1 ? dba.getCount()
-						: (position + 1) * UNIT - 1;
+						: (position + 1) * UNIT;
 
 				tmp.setText(String.format("Unit-%02d\n(%d ~ %d)", position + 1,
 						tmp.start + 1, tmp.end));
@@ -98,6 +95,7 @@ public class Launcher extends Activity {
 
 		loadingTip = (RelativeLayout) findViewById(R.id.rl_loading);
 		btnStart = (Button) findViewById(R.id.btn_start);
+		btnWordBook = (Button) findViewById(R.id.btn_word_book);
 
 		dba = DBA.getInstance(getApplicationContext());
 
@@ -108,20 +106,23 @@ public class Launcher extends Activity {
 
 				@Override
 				public void onClick(View v) {
-					if (Debuger.DEBUG) {
-						Log.d(TAG, "onClick() map.size()" + map.size());
-					}
 					Intent intent = new Intent(Launcher.this, TestPage.class);
 					startActivity(intent);
 				}
 			});
 		}
+		
+		if (btnWordBook != null) {
+			btnWordBook.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					
+				}
+			});
+		}
 
 		new LoadWordsList().execute();
-	}
-
-	public static SparseArray<Word> getMap() {
-		return map;
 	}
 
 	@Override
@@ -152,9 +153,10 @@ public class Launcher extends Activity {
 			super.onPostExecute(result);
 
 			if (result) {
-				if (loadingTip != null) {
+				if (loadingTip != null && btnStart != null && btnWordBook != null) {
 					loadingTip.setVisibility(View.GONE);
 					btnStart.setEnabled(true);
+					btnWordBook.setEnabled(true);
 				}
 				if (mGridView != null && dba != null) {
 					if (Debuger.DEBUG) {

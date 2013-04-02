@@ -1,5 +1,9 @@
 package com.gmail.dailyefforts.android.reviwer.db;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -8,6 +12,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.gmail.dailyefforts.android.reviwer.Word;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 
 public class DBA extends SQLiteOpenHelper {
@@ -51,13 +56,16 @@ public class DBA extends SQLiteOpenHelper {
 			if (Debuger.DEBUG) {
 				Log.d(TAG, "star() star: " + star);
 			}
-			String update = "update " + TABLE_NAME + " set " + COLUMN_STAR
-					+ "=" + (++star) + " where " + COLUMN_WORD + "='" + word
-					+ "';";
-			getWritableDatabase().execSQL(update);
+			String timestamp = new SimpleDateFormat(Word.TIMESTAMP_FORMAT,
+					Locale.getDefault()).format(Calendar.getInstance().getTime());
+			ContentValues values = new ContentValues();
+			values.put(COLUMN_TIMESTAMP, timestamp);
+			values.put(COLUMN_STAR, ++star);
+			getWritableDatabase().update(TABLE_NAME, values,
+					COLUMN_WORD + "=?", new String[] { word });
 		}
 	}
-	
+
 	public void resetStar(final String word) {
 		String sql = "select " + COLUMN_ID + ", " + COLUMN_WORD + ", "
 				+ COLUMN_STAR + " from " + TABLE_NAME + " where " + COLUMN_WORD
@@ -66,8 +74,7 @@ public class DBA extends SQLiteOpenHelper {
 
 		if (cursor != null && cursor.moveToFirst()) {
 			String update = "update " + TABLE_NAME + " set " + COLUMN_STAR
-					+ "=" + 0 + " where " + COLUMN_WORD + "='" + word
-					+ "';";
+					+ "=" + 0 + " where " + COLUMN_WORD + "='" + word + "';";
 			getWritableDatabase().execSQL(update);
 		}
 	}

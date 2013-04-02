@@ -3,6 +3,7 @@ package com.gmail.dailyefforts.android.reviwer.unit;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
@@ -21,16 +22,14 @@ public class UnitView extends Button implements View.OnClickListener {
 	public int end;
 	private DBA dba;
 
-	private static SparseArray<Word> map = new SparseArray<Word>();
 
 	public UnitView(Context context) {
-		super(context);
-
-		setOnClickListener(this);
+		this(context, null);
 	}
 
-	public static SparseArray<Word> getMap() {
-		return map;
+	public UnitView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		setOnClickListener(this);
 	}
 
 	@Override
@@ -52,6 +51,7 @@ public class UnitView extends Button implements View.OnClickListener {
 						String.valueOf(this.end) });
 
 		if (cursor != null && cursor.moveToFirst()) {
+			SparseArray<Word> map = Word.getMap();
 			map.clear();
 			int idx = 0;
 			while (!cursor.isAfterLast()) {

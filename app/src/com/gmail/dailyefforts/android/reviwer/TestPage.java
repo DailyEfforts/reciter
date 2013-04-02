@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +24,6 @@ import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
 import com.gmail.dailyefforts.android.reviwer.setting.Settings;
-import com.gmail.dailyefforts.android.reviwer.unit.UnitView;
 
 public class TestPage extends Activity implements OnTouchListener {
 
@@ -44,7 +44,6 @@ public class TestPage extends Activity implements OnTouchListener {
 	private Drawable bgColorPressedBingo;
 	private Drawable bgColorPressedWarning;
 
-	private int totalNum;
 	private int bingoNum;
 
 	private boolean isFirstTouch;
@@ -59,12 +58,15 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	private DBA dba;
 
+	private ProgressBar pb;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_test_page);
 
 		tv = (TextView) findViewById(R.id.tv_word);
+		pb = (ProgressBar) findViewById(R.id.pb);
 
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
@@ -98,19 +100,24 @@ public class TestPage extends Activity implements OnTouchListener {
 
 		tvBingoRate = (TextView) findViewById(R.id.tv_bingo_rate);
 
-		map = UnitView.getMap();
+		map = Word.getMap();
+		
+		if (pb != null) {
+			pb.setMax(map.size());
+			pb.setAlpha(128);
+		}
 
 		buildTestCase(optNum);
 
 	}
 
+	int wordIdx = 0;
+
 	private void buildTestCase(int optNum) {
 		Random random = new Random();
 
-		int idx = random.nextInt(map.size());
-
-		word = map.get(idx).getWord();
-		meaning = map.get(idx).getMeaning();
+		word = map.get(wordIdx).getWord();
+		meaning = map.get(wordIdx).getMeaning();
 		tv.setText(word);
 
 		pageMap = new SparseArray<Word>();
@@ -119,7 +126,7 @@ public class TestPage extends Activity implements OnTouchListener {
 		ArrayList<Integer> arrList = new ArrayList<Integer>();
 		while (arrList.size() < optNum - 1) {
 			int tmp = random.nextInt(map.size());
-			if (tmp != idx && !arrList.contains(tmp)) {
+			if (tmp != wordIdx && !arrList.contains(tmp)) {
 				arrList.add(tmp);
 			}
 		}
@@ -130,7 +137,7 @@ public class TestPage extends Activity implements OnTouchListener {
 			OptionButton btn = mOptList.get(i);
 			if (i == answerIdx) {
 				btn.setText(meaning);
-				pageMap.put(btn.getId(), map.get(idx));
+				pageMap.put(btn.getId(), map.get(wordIdx));
 			} else {
 				int tmp = random.nextInt(map.size());
 				btn.setText(getMeaningByIdx(tmp));
@@ -141,15 +148,17 @@ public class TestPage extends Activity implements OnTouchListener {
 		isFirstTouch = true;
 
 		if (tvBingoRate != null) {
-			if (totalNum <= 0) {
+			if (wordIdx <= 0) {
 				tvBingoRate.setText("");
 			} else {
 				tvBingoRate.setText(String.format("%d / %d  %.0f%%", bingoNum,
-						totalNum, bingoNum * 100.0f / totalNum));
+						wordIdx, bingoNum * 100.0f / wordIdx));
 			}
 		}
-
-		totalNum++;
+		if (pb != null) {
+			pb.setProgress(wordIdx);
+		}
+		wordIdx++;
 	}
 
 	private String getMeaningByIdx(int idx) {
@@ -195,7 +204,13 @@ public class TestPage extends Activity implements OnTouchListener {
 				break;
 			case MotionEvent.ACTION_UP:
 				if (bingGo) {
-					buildTestCase(optNum);
+					if (wordIdx == map.size()) {
+						Toast.makeText(getApplicationContext(), "Done.",
+								Toast.LENGTH_SHORT).show();
+						finish();
+					} else {
+						buildTestCase(optNum);
+					}
 				} else {
 					isFirstTouch = false;
 					((Button) v).setText(w.getMeaning());
