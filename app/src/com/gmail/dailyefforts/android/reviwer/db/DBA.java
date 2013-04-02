@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
+
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();
 	private static final String DATABASE_NAME = "wot.db";
@@ -38,11 +40,36 @@ public class DBA extends SQLiteOpenHelper {
 
 	private static DBA dba = null;
 
-	public int update(String table, ContentValues values, String whereClause,
-			String[] whereArgs) {
-		return getWritableDatabase().update(table, values, whereClause,
-				whereArgs);
+	public void star(final String word) {
+		String sql = "select " + COLUMN_ID + ", " + COLUMN_WORD + ", "
+				+ COLUMN_STAR + " from " + TABLE_NAME + " where " + COLUMN_WORD
+				+ "=?;";
+		Cursor cursor = dba.rawQuery(sql, new String[] { word });
 
+		if (cursor != null && cursor.moveToFirst()) {
+			int star = cursor.getInt(cursor.getColumnIndex(COLUMN_STAR));
+			if (Debuger.DEBUG) {
+				Log.d(TAG, "star() star: " + star);
+			}
+			String update = "update " + TABLE_NAME + " set " + COLUMN_STAR
+					+ "=" + (++star) + " where " + COLUMN_WORD + "='" + word
+					+ "';";
+			getWritableDatabase().execSQL(update);
+		}
+	}
+	
+	public void resetStar(final String word) {
+		String sql = "select " + COLUMN_ID + ", " + COLUMN_WORD + ", "
+				+ COLUMN_STAR + " from " + TABLE_NAME + " where " + COLUMN_WORD
+				+ "=?;";
+		Cursor cursor = dba.rawQuery(sql, new String[] { word });
+
+		if (cursor != null && cursor.moveToFirst()) {
+			String update = "update " + TABLE_NAME + " set " + COLUMN_STAR
+					+ "=" + 0 + " where " + COLUMN_WORD + "='" + word
+					+ "';";
+			getWritableDatabase().execSQL(update);
+		}
 	}
 
 	private DBA(Context context) {

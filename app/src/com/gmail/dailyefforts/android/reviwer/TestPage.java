@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
 import com.gmail.dailyefforts.android.reviwer.setting.Settings;
@@ -56,6 +57,8 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	int optNum;
 
+	private DBA dba;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -70,6 +73,7 @@ public class TestPage extends Activity implements OnTouchListener {
 				getString(R.string.pref_key_options_number),
 				Settings.DEFAULT_OPTION_NUMBER));
 
+		dba = DBA.getInstance(getApplicationContext());
 		optCat = (LinearLayout) findViewById(R.id.opt_category);
 		optCat.setWeightSum(optNum);
 
@@ -183,6 +187,9 @@ public class TestPage extends Activity implements OnTouchListener {
 					v.setBackgroundDrawable(bgColorPressedBingo);
 				} else {
 					v.setBackgroundDrawable(bgColorPressedWarning);
+					if (dba != null) {
+						dba.star(w.getWord());
+					}
 				}
 				returnValue = true;
 				break;
