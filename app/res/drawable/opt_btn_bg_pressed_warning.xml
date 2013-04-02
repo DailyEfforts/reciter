@@ -16,6 +16,6 @@
         android:width="@dimen/rect_stroke_width"
         android:color="@color/rect_stroke_color" />
 
-    <solid android:color="@color/opt_btn_bg_pressed_warning" />
+    <solid android:color="@color/yellow" />
 
 </shape>

@@ -3,12 +3,14 @@ package com.gmail.dailyefforts.android.reviwer.unit;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
 
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.TestPage;
 import com.gmail.dailyefforts.android.reviwer.Word;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
@@ -22,7 +24,6 @@ public class UnitView extends Button implements View.OnClickListener {
 	public int end;
 	private DBA dba;
 
-
 	public UnitView(Context context) {
 		this(context, null);
 	}
@@ -30,6 +31,9 @@ public class UnitView extends Button implements View.OnClickListener {
 	public UnitView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		setOnClickListener(this);
+		setBackgroundDrawable(getResources().getDrawable(
+				R.drawable.unit_view_bg));
+		setTextColor(getResources().getColor(R.color.unit_view_txt_color));
 	}
 
 	@Override

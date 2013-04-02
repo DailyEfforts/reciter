@@ -8,12 +8,12 @@
         android:id="@+id/gv_unit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_above="@+id/menu"
-        android:horizontalSpacing="2dp"
+        android:horizontalSpacing="1dp"
         android:numColumns="3"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="2dp"
-        android:visibility="visible" >
+        android:verticalSpacing="1dp" >
     </GridView>
 
     <RelativeLayout
