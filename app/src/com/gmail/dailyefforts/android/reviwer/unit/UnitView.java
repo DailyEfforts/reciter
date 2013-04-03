@@ -3,7 +3,6 @@ package com.gmail.dailyefforts.android.reviwer.unit;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
