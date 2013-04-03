@@ -4,6 +4,7 @@
     <color name="blue">#094AB2</color>
     <color name="green">#00CC00</color>
     <color name="yellow">#FFBB33</color>
+    <color name="gray">#aaa</color>
     <color name="opt_btn_txt_color">#aaa</color>
     <color name="unit_view_txt_color">#aaa</color>
     <color name="word_txt_color">#ff99cc00</color>

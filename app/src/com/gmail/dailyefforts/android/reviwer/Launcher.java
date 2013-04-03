@@ -30,7 +30,7 @@ import com.gmail.dailyefforts.android.reviwer.unit.UnitView;
 public class Launcher extends Activity {
 
 	private static final String TAG = Launcher.class.getSimpleName();
-	private Button btnStart;
+	private Button btnSetting;
 	private RelativeLayout loadingTip;
 	private GridView mGridView;
 	private DBA dba;
@@ -94,30 +94,34 @@ public class Launcher extends Activity {
 		setContentView(R.layout.activity_luncher);
 
 		loadingTip = (RelativeLayout) findViewById(R.id.rl_loading);
-		btnStart = (Button) findViewById(R.id.btn_start);
+		btnSetting = (Button) findViewById(R.id.btn_setting);
 		btnWordBook = (Button) findViewById(R.id.btn_word_book);
 
 		dba = DBA.getInstance(getApplicationContext());
 
 		mGridView = (GridView) findViewById(R.id.gv_unit);
 
-		if (btnStart != null) {
-			btnStart.setOnClickListener(new View.OnClickListener() {
+		if (btnSetting != null) {
+			btnSetting.setOnClickListener(new View.OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
-					Intent intent = new Intent(Launcher.this, TestPage.class);
+					Intent intent = new Intent(Launcher.this,
+							SettingsActivity.class);
 					startActivity(intent);
 				}
 			});
 		}
-		
+
 		if (btnWordBook != null) {
 			btnWordBook.setOnClickListener(new View.OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
-					
+//					dba.getStar();
+					Intent intent = new Intent(Launcher.this,
+							WordBookActivity.class);
+					startActivity(intent);
 				}
 			});
 		}
@@ -140,6 +144,9 @@ public class Launcher extends Activity {
 			startActivity(intent);
 			isConsumed = true;
 			break;
+		case R.id.menu_exit:
+			finish();
+			break;
 		default:
 			break;
 		}
@@ -153,9 +160,10 @@ public class Launcher extends Activity {
 			super.onPostExecute(result);
 
 			if (result) {
-				if (loadingTip != null && btnStart != null && btnWordBook != null) {
+				if (loadingTip != null && btnSetting != null
+						&& btnWordBook != null) {
 					loadingTip.setVisibility(View.GONE);
-					btnStart.setEnabled(true);
+					btnSetting.setEnabled(true);
 					btnWordBook.setEnabled(true);
 				}
 				if (mGridView != null && dba != null) {
@@ -234,5 +242,5 @@ public class Launcher extends Activity {
 			return true;
 		}
 	}
-	
+
 }

@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
+import android.util.Log;
+
+import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 
 public class DbProvider extends ContentProvider {
 	private DBA dba;
@@ -13,10 +16,14 @@ public class DbProvider extends ContentProvider {
 	private static final String BASE_PATH = DBA.TABLE_NAME; // wordlist
 	public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY
 			+ "/" + BASE_PATH);
+	private static final String TAG = DbProvider.class.getSimpleName();
 
 	@Override
 	public boolean onCreate() {
 		dba = DBA.getInstance(getContext().getApplicationContext());
+		if (Debuger.DEBUG) {
+			Log.d(TAG, "onCreate()" + (dba == null ? "null" : dba.getCount()));
+		}
 		return true;
 	}
 
