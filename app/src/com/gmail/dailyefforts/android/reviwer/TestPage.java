@@ -12,6 +12,7 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
@@ -190,6 +191,7 @@ public class TestPage extends Activity implements OnTouchListener {
 			case MotionEvent.ACTION_DOWN:
 				((Button) v).setText(w.getWord());
 				if (bingGo) {
+					((Button) v).playSoundEffect(SoundEffectConstants.CLICK);
 					if (isFirstTouch) {
 						bingoNum++;
 					}
