@@ -40,15 +40,17 @@ public class Launcher extends Activity {
 
 	private class UnitAdapter extends BaseAdapter {
 
-		private int mCount;
+		private int mUnitCount;
+		private int mDbSize;
 
-		public UnitAdapter(int count) {
-			mCount = count;
+		public UnitAdapter(int count, int dbSize) {
+			mUnitCount = count;
+			mDbSize = dbSize;
 		}
 
 		@Override
 		public int getCount() {
-			return mCount;
+			return mUnitCount;
 		}
 
 		@Override
@@ -76,11 +78,16 @@ public class Launcher extends Activity {
 				UnitView tmp = ((UnitView) view);
 				tmp.id = position;
 				tmp.start = position * UNIT;
-				tmp.end = position == mCount - 1 ? dba.getCount()
-						: (position + 1) * UNIT;
+				tmp.end = position == mUnitCount - 1 ? mDbSize - 1 : (position + 1)
+						* UNIT - 1;
 
-				tmp.setText(String.format("Unit-%02d\n(%d ~ %d)", position + 1,
-						tmp.start + 1, tmp.end));
+				if (Debuger.DEBUG) {
+					Log.d(TAG, String.format("getView() id: %d, s: %d, e: %d ",
+							tmp.id, tmp.start, tmp.end));
+				}
+
+				tmp.setText(String.format("Unit-%02d\n(%d)", position + 1,
+						tmp.end - tmp.start + 1));
 			}
 
 			return view;
@@ -118,7 +125,7 @@ public class Launcher extends Activity {
 
 				@Override
 				public void onClick(View v) {
-//					dba.getStar();
+					// dba.getStar();
 					Intent intent = new Intent(Launcher.this,
 							WordBookActivity.class);
 					startActivity(intent);
@@ -176,7 +183,7 @@ public class Launcher extends Activity {
 					int unitSize = count % UNIT == 0 ? count / UNIT : count
 							/ UNIT + 1;
 
-					mGridView.setAdapter(new UnitAdapter(unitSize));
+					mGridView.setAdapter(new UnitAdapter(unitSize, count));
 					mGridView.setVisibility(View.VISIBLE);
 				}
 			}
@@ -204,7 +211,7 @@ public class Launcher extends Activity {
 				ContentValues values = new ContentValues();
 				dba.beginTransaction();
 				while ((str = reader.readLine()) != null) {
-					String[] arr = str.split("--");
+					String[] arr = str.split(Word.WORD_MEANING_SPLIT);
 					if (arr != null && arr.length == 2) {
 						String word = arr[0].trim();
 						String meanning = arr[1].trim();

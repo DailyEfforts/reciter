@@ -1,620 +1,830 @@
-total=619
-établir -- 创立；建立；确立
-établirsur qch -- 建立在...上
-étendre -- 展开；伸开
-s'étendre -- 伸展，展开；直躺着
-disparaître -- 消失；消散
-célèbre -- 著名的；出名的
-être célèbre pour -- 以...闻名
-augmenter -- 增加；增长
-autant -- 同样；同样多
-autour -- 在周围；在附近
-exprimer -- 表达；表示；表现出
-s'exprimer -- 表达，表现；显露
-face -- 脸
-enface de -- 在...对面
-faceà face -- 面对面
-fâché,e -- 生气的；恼火的
-façon -- 方式；方法
-detoute façon -- 无论如何
-àla façon -- 按...的方式
-defaçon à +inf -- 以便于
-gagner -- 赚；赢得；获得
-garde -- （阴性名词）保管；保卫
-prendregarde à -- 提防；小心
-goût -- 爱好；味道
-goûter -- 尝；欣赏
-grâce -- （阴性名词）恩惠；感激；优雅
-grâceà -- 多亏；由于
-heure -- 小时；点钟
-toutà l'heure -- 刚才
-debonne heure -- 大清早；早
-heureusement -- 幸好；完美地
-heureux,se -- 幸福的，高兴的，幸运的
-inférieur,e -- 低于...
-etreinférieur à -- 低于...
-informer -- 通知，告知
-s'informerde -- 打听
-lit -- （阳性名词）床
-être au lit -- 在床上
-allerau lit -- 去睡觉
-livrer -- 交付；交出
-selivrer à -- 沉湎于；放任自己
-loger -- 住
-longtemps -- 长久地；很久
-lutter contre -- 与...斗争；反对...
-lutterpour -- 为...而奋斗
-àla maison -- 在家里
-laisser qch/qn à qn -- 把某物/某人留下；托付给某人
-laisser qch/qn+ -- 表语,让某物/某人保持（某种状态）
-laisser+inf + qch/qn -- 让某人做... 任凭某物...
-marquer -- 标出；划出；指明；指示
-même -- 相同的；同样的
-passionné,e -- 热情的；热烈的
-congé -- （阳性名词）假期；离职
-prendreun congé (sans...) -- 休假（不带...）
-prendrecongé de qn... -- 向某人告别
-connaîtreqn -- 认识某人
-connaîtreun lieu -- 熟悉某地
-défendre -- 保卫；为...辩护；禁止
-défendreà qn...+inf -- 禁止某人做
-Bonappétit ! -- 祝你好胃口！
-unocéan -- 海洋
-lavariation -- 变化
-local,e,aux -- 地方的；地区的
-parcourir -- 跑遍；流经
-varié,e -- 多变的
-lecommerce -- 商业；贸易
-industriel,le -- 工业的
-unsiège -- 所在地；位置
-unparlement -- 议会
-Européen,ne -- 欧洲的
-relier -- 连接
-uneautoroute -- 高速公路
-unechemin de fer -- 铁路
-unavion -- 飞机
-unedimension -- 大小；尺寸；体积
-richede... -- 富有...的
-uneculture -- 文化
-International,e,aux -- 国际的
-unéchange -- 交流；交换
-faireconnaissance avec qn... -- 和某人相识
-situer -- 定位；测定位置
-précisément -- 准确地
-seprésenter -- 呈现；显现
-sousla forme de... -- 以...的形式，面貌（出现）
-régulier,ère -- 规则的；规律的
-àpeu près -- 大约；差不多
-unestructure -- 结构；构造
-unangle -- 角；角度
-toutà fait -- 完全地
-border -- 围绕；沿着...的边缘
-être border par -- 被...环绕
-moyen,ne -- 中等的
-unsouffle -- （一口）气，气息，呼吸
-permanent,e -- 经常的；永久的
-quelques instants -- 一刻；一会儿
-obsur,e -- 黑暗的
-tenir -- 拿着
-unelampe -- 灯
-unepoche -- 口袋
-unelampe de poche -- 手电筒
-montrer -- 指示；指出
-unrang -- 行；排
-montrerqch...à qn -- 给某人指某物
-pourle moment -- 此刻；此时
-unpoint -- 一点
-lamusique -- 音乐
-l'américanisation -- 美国化
-leboulevard -- 大街
-laterrasse -- （道旁）露天座
-uneinfluence -- 影响
-leblue-jean -- 牛仔裤
-letee-shirt t -- 恤衫
-unesorte -- 种类
-lecoca-cola -- 可口可乐
-lechewing-gum -- 口香糖
-leposter -- 海报
-lamusique pop -- 流行音乐
-le mélange -- 混合
-lefranglais -- 英式法语
-lemot -- 字，词
-uneinterview -- 采访
-l'email -- 电子邮件（n...m...）
-unécrivain -- 作家
-unsavant -- 学者；科学家
-legouverment -- 政府
-l'anglicisme -- 英语表达方式-（n...m...）
-lechangement -- 改变
-lamodernisation -- 现代化
-lemoyen -- 方法；手段
-lacommunication -- 联系。通讯
-lanécessité -- 必要性
-lacondition -- 条件
-levocabulaire -- 词汇
-unavis -- 看法，意见
-intéresser -- 使感兴趣
-impressionner -- 给人以深刻印象
-frapper -- 使激动；使震惊
-persuader -- 使信服；使相信
-porter -- 穿；戴
-seressembler -- 相像，相似
-appeler -- 取名；成为
-kidnapper -- 绑架
-s'indigner(de) -- 感到气愤
-décréter -- 颁布法令
-s'employer -- 被使用
-lutter -- 斗争
-s'adapter(à) -- 适应
-continuer(à) -- 继续
-moderne -- 现代的
-cher,ère -- 亲爱的；珍贵的
-jeune -- 年轻的
-délavé,e -- 洗褪色的；淡蓝色的
-ça fait... -- 已经...时间
-absolument -- 绝对地
-exactement -- 真实的，确切的
-aubout de -- ...之后
-quoi -- 什么；什么事
-contre -- 反对
-affectueusement -- 亲热地；深情地
-laprofession -- 职业
-ledocteur -- 医生
-lamédecine -- 医学
-lascience -- 科学
-ladécouverte -- 发现；发明
-leremède -- 药，治疗方法
-lamaladie -- 疾病
-lasouffrance -- 痛苦；苦难
-généraliste -- 普通科医生
-lecabinet -- 诊所，办公室
-malade -- 患者
-ledomicile -- 住所
-l'avenir -- 未来
-lesoreillons -- 腮腺炎
-lagorge -- 喉咙
-lalangue -- 舌头
-cœur -- 心脏
-lepoumon -- 肺
-lestéthoscope -- 听诊器
-lepouls -- 脉搏
-uneattitude -- 态度
-repondre -- 回答（变位同attrendre）
-poser -- 提出；放置
-plaire(à) -- 使高兴；使中意
-hésiter -- 犹豫
-s'intéresser (à) -- 对...感兴趣
-admirer -- 钦佩
-soigner -- 治疗
-décider -- 决定
-guérir -- 治愈（第二组动词）
-commencer -- 开始
-examiner -- 检查
-ausculter -- 听诊
-toucher -- 使感动
-possible -- 可能的
-patient,e -- 耐心的
-aimable -- 亲切的
-certainement -- 当然
-avec -- 随着
-pourquoi -- 为什么
-ehbien -- 好吧
-c'est-à-dire -- 换言之
-gravement -- 严重的
-lasanté -- 健康
-lagare -- 火车站
-laprovince -- 省，外省，外地
-habitant -- 居民
-provincial -- 外省人
-laguerre -- 战争
-étourdie -- 轻率的，冒失的，丢三落四的
-étourdir -- 使头昏眼花；使厌倦
-filer -- （蚕）吐丝，（蜘蛛）结网
-pourboire -- 小费
-pourcentage -- 百分比，佣金
-cheville -- 脚踝
-chic -- 漂亮的，潇洒的
-glisser -- 滑动；塞入
-impensable -- 不可想象的，难以相信的
-succéder -- 继...而来；紧接着...而来
-oignon -- 洋葱
-capot -- 汽车引擎盖；防护罩
-caprice -- 任性，反复无常
-capricieux,euse -- 任性的（人），反复无常的（人）
-concours -- 合作；帮助；考试；竞赛
-concorde -- 和谐；融洽
-jaloux,ouse -- 嫉妒的
-jaillir -- 喷出；涌出
-inciter -- 促使（激励。煽动）某人
-inaugurer -- 举行开幕仪式
-agiter -- 搅动；使不安
-agonie -- 临终；垂危
-souvent -- 常常；经常
-stable -- 稳定的；沉着的
-dépiter -- 使气恼
-dépit -- 气恼
-endépit de -- 尽管，虽然；不管，不顾
-cene sont pas tes oignons -- It's none of your business...
-grâceau concours du maire -- 由于市长的帮助
-concoursde beaute / de chant -- 选美/唱歌比赛
-bienfait -- 善行；善举
-bijou -- 首饰；亲爱的
-disque -- 唱片；光盘
-dissimuler -- 掩饰；隐瞒
-dissiper -- 驱散；使分心
-parapluie -- 雨伞
-parfum -- 香气，香水
-gauche -- 左的，笨拙的
-gaule -- 钓竿，长竿
-soudain,e -- 突然的；预料之外的
-souhaiter -- 希望，祝愿
-souhait -- 愿望，心愿
-soupir -- 叹气；叹息
-soupirer -- 叹息，叹息
-modèle -- 模范，榜样，典范
-lancer -- 扔，投掷，发射
-géant -- 巨人
-entrée -- 进入，进来
-cri -- 惊叫声，呼喊声
-chaperon -- 兜帽，风帽
-nouer -- 把...打结，系...
-nouerses lacets -- 系鞋带
-nouille -- 面条
-nourrir -- 喂养；供养
-member -- 肢；成员
-mêler -- 混合；弄乱
-semêler -- 混合；混入
-alarmant,e -- 令人惊慌的，令人不安的
-alarmer -- 发警报；使惊慌，使不安
-alarme -- 警报
-album -- 影集；专辑
-alcool -- 含酒精的饮料
-cadet,ette -- 小的，年幼的；最小的孩子
-cadeau -- 礼物
-citer -- 引用，提到，提及
-manger -- 吃
-manier -- 使用，运用，操作
-manière -- 方式，方法，风格
-jardin -- 花园，公园
-itinéraire -- 行程，路线
-ennemi,e -- 敌人
-ennuyer -- 使烦恼，使厌倦
-énoncer -- 陈述，发表，说明
-tente -- 帐篷
-tenter -- 试图；尝试
-nouveau -- 新的
-ànouveau -- 重新
-recommencerà nouveau -- 重新开始
- denouveau -- 重又
-collège -- 中学。学院
-collègue -- 同事，同行
-débouché -- 出口，销路
-mélanger -- 混合，搞乱
-mélange -- 混合，混合物
-bandit -- 强盗，匪徒
-banlieue -- 郊区
-bannir -- 放逐，驱逐出境
-signifier -- 表示，意味着
-signe -- 首饰，象征，征兆
-déboucher -- 疏通。开通，拔塞子
-fragile -- 脆的，易碎的
-fragment -- 碎片；片段；章节
-bureau,x -- 书桌，办公室，事务所
-consulat -- 领事馆
-pancarte -- 告示牌
-annonce -- 通知
-affiche -- 广告
-panneau,x -- 指示牌，路标
-loup -- 狼，伪善的人
-coupure -- 割破的伤口；小额的纸币
-billet -- 便条
-emploi -- 职业，职位
-bêtise -- 愚蠢，糊涂
-àl'abri de -- 躲避，在...的遮掩下
-àl'issue de -- 结束后，完成时
-ànoter que -- 要注意到
-centriste -- 中间派的
-cérémonie -- 仪式，典礼
-certes -- 的确
-àpart -- 除...以外
-artiste -- 艺术家
-artistique -- 艺术的
-ascenseur -- 电梯
-chat -- 猫
-chaussée -- 马路
-chef de rang -- 高级厨师
-dépendre -- 取决于；依赖于
-dépendant -- 依赖的
-département -- 部门；系；处
-démission -- 辞职；放弃
-demeurer -- 居住；停留；依然是
-pivot -- 轴；枢纽；主心骨
-pizza -- 比萨饼
-placement -- 安置；销售；投资
-placer -- 安防；安置
-plage -- 海滩
-planète -- 行星
-vacancier,ère -- 度假的人
-vague -- 模糊的，朦胧的
-vallée -- 山谷；河谷
-frais -- 费用；开支
-frais,fraîche -- 新鲜的，凉爽的
-arriver -- 到达
-arrivée -- 到达
-délicatement -- 精致地；微妙地
-déguster -- 品尝，品味
-ultra -- 最上等的，极端的
-univers -- 宇宙，世界
-universitaire -- 大学的
-urbain,e -- 城市的
-ustensile -- 用具，器皿
-chien de mer -- 鲨鱼
-chiper -- 偷盗
-chômage -- 失业
-encourager -- 鼓励；激励
-encre -- 墨水
-encrier -- 墨水瓶
-ride -- 皱纹；波纹；涟漪
-rideau -- 窗帘，幕
-transpirer -- 出汗，流汗；（书）泄露，走漏
-venirsur -- 加油
-dévorer -- 吞食，贪婪地吃；耗尽
-compliment -- 道贺，祝词
-compliquer -- 使复杂化
-orient -- 东方，东方国家
-Oriental,e -- 东方的，东方国家的
-orientation -- 定位，方向
-orienter -- 指引，指导
-saisir -- 抓住；理解，领会
-baie -- 海湾
-bain -- 洗澡，游泳
-distraire -- 使分心
-encadrer -- 装以框子；环绕；围绕
-encaissé,e -- 库存的，入库的
-encart -- 插页，附页
-ail -- 大蒜
-aile -- 翅膀，机翼
-ailleurs -- 别处，它处
-bon,bonne -- 好的
-bonbon -- 糖果
-bondé...e -- 塞满的，充满的
-enchaîné,e -- 连贯的
-enchanté -- 喜悦的，高兴的
-enchère -- （拍卖时出高价）
-regard -- 眼神
-auregard de -- 在...眼中，就...而言
-aujourd'hui -- 今天
-aumône -- 施舍，恩惠
-stade -- 体育场
-stage -- 培训期，实习期
-station -- 车站
-stationnement -- 停留，停车
-stationner -- 停留，停车
-animation -- 生气勃勃，活跃
-animé,e -- 活泼的，生动的
-anneau -- 环，戒指
-baiser -- 吻，接吻
-baisser -- 放下
-distinguer -- 区分
-distinction -- 区分，辨别
-distingué,e -- 优雅的，高贵的
-baigner -- 洗澡；流经；浸透
-sebaigner -- 洗澡；游泳
-baignade -- 洗澡，浴场
-baignoire -- 浴缸
-économe -- 经济的，节约的
-économie -- 经济，经济学
-économique -- 经济的，便宜的
-économiser -- 节省，储蓄
-économiste -- 经济学家
-gronder -- 低沉的嚎叫；责备，斥责
-grossier,ère -- 粗俗的，粗劣的
-grossir -- 变胖，增加
-nu,e -- 赤身的，光秃秃的
-nuire -- 损害，危害；妨碍
-encombrer -- 阻塞；充满
-enceinte -- 怀孕的人
-encens -- （供焚烧的）香，奉承
-encenser -- 向...奉香
-encensoir -- 香炉
-juteux,euse -- 多汁的
-bête -- 兽，牲口
-théâtre -- 剧院
-panier -- 篮子，球篮
-gendarme -- 宪兵，警察
-acrobate -- 杂技演员，高手，老手
-tigre -- 老虎
-roulant -- 滚动的，有轮子的
-pompe -- 抽水机，泵
-panne -- 故障，抛锚
-moineau -- 麻雀
-lapin -- 兔
-génial -- 奇妙的，天才的，绝妙的
-enveloppe -- 包裹物，包皮
-crocodile -- 鳄鱼
-chasser -- 打猎；驱逐；赶走
-laine -- 羊毛；毛织品
-laisser -- 留下；允许；让
-lait -- 奶
-record -- 最高纪录
-recourir -- 再跑；重新跑
-envers -- 反面，背面
-chasseur -- 猎人
-àbientôt -- 再见
-àcause de -- 因为，由于
-àce moment -- 在此刻
-àcôté de -- 在...旁边
-àdistance -- 隔一段距离
-àfond -- 完全地，彻底地
-àgauche -- 在左边
-àl'exclusion de ... -- 除...外
-abaisser -- 放低，放下；降低，减低
-abaissement -- 放低，下降
-abandonner -- 废弃不用，放弃
-s'abandonner -- 陷于，沉溺于
-abandon -- 抛弃，放弃
-abominable -- 可恶的；很坏的，糟透的
-abondance -- 大量，充裕；富足
-abondant,e -- 丰富的，大量的
-abonder -- 充裕，盛产, 大量出现
-abonner -- 给人预约，给人预定
-abonné,e -- 预定的；订阅者，用户
-abonnement -- 预定，预约
-abord -- 接近，靠近
-d'abord -- 首先
-abordable -- 平易近人的；买得起的
-aborder -- 靠近某人与其交谈；开始从事，着手
-aboutir(à) -- 到达；通向；导致
-aboyer -- 狗叫
-abréger -- 缩短；删节
-abrégé -- 摘要；简介
-dû,due -- 应付给的；归功于；由于
-duo -- 二重唱
-durement -- 严酷地；严峻地
-météo -- 气象台；气象
-méthodique -- 有条理的，有次序的
-seau -- 桶，水桶
-savoir -- 知道，记得
-savant,e -- 博学的；学者，科学家
-séance -- 会议，开庭；（从事某项活动的）一段时间，表演
-duper -- 欺骗
-slience -- 安静；沉默
-sliencieux,euse -- 沉默的
-complexe -- 复杂的
-complexité -- 复杂；复杂性
-complet,ère -- 完全的；满的
-compléter -- 使完全，使完整
-complètement -- 完全地，彻底地
-denrée -- 食品，食料
-dense -- 浓厚的；稠密的
-dent -- 牙齿
-dentiste -- 牙医
-gare -- 车站
-garer -- 停放（车辆，船只），把（车）开进站
-segarer -- （车辆）停放
-garage -- 停车场
-frère -- 兄弟
-décoller -- 扯下；揭下
-décollerde la réalité -- 脱离现实
-décollage -- 起飞
-zéro -- 零
-doter -- 给嫁妆；赋予；捐赠
-douane -- 海关，关税
-douanier ,ère -- 海关的；海关职员
-double -- 双重的，双倍的
-mener une -- double vie 过着一种双重生活
-doublé ,e -- 译制的；加衬里的
-doubler -- 超车；加快；留级；重读
-doubler le pas -- 加快步伐
-exterminer -- 歼灭，根除，灭绝
-externe -- 外用的，外部的
-extra -- 优等的，杰出的
-durer -- 延续，持续
-durant -- 在期间
-durée -- 期间，持续期间
-pendant la durée -- 在期间
-rédiger -- 编写，撰写
-rédacteur ,trice -- 编辑，编撰者
-rédaction -- 编辑，编写
-format -- 大小，规格，尺寸
-formation -- 形成，构成
-ébranler -- 震动，动摇，使感动
-reconstituer -- 重新构成，使复原
-récupérer -- 收回
-reconnaître -- 认出，承认，确认
-reconnaissance -- 感恩，感激，承认
-recopier -- 重抄
-infirme -- 残疾的（人）
-infirmerie -- 医务室
-infirmier,ère -- 护士
-infirmière en chef -- 护士长
-doucement -- 温和地，小心地，温柔地
-chameau -- 骆驼
-champ -- 田野
-sur le champ -- 马上
-fatiguer -- 使疲劳
-fatigant ,e -- 累人的，令人讨厌的
-fatigue -- 疲惫，疲倦
-fatigué ,e -- 疲劳的
-boulier -- 算盘
-boulot -- 工作
-chemise -- 衬衫
-chèque -- 支票
-cher ère -- 亲爱的，昂贵的
-bête -- 愚蠢的，可惜的，遗憾的
-besoin -- 需要
-au besoin on connaît l'ami -- 患难见真知
-avoir besoin de faire qch -- 需要做某事
-concret,ère -- 具体的，实际的
-condamner -- 判刑，禁止，谴责
-condamnation -- 判决，判刑，谴责
-condamner qn à mort -- 判处某人死刑
-condamné -- 被判刑的人
-malade condamné -- 患绝症的人
-à moins de /que -- 除非，如果不
-au moins, du moins -- 至少
-élaborer -- 制作，制定，拟定
-élancer -- 冲向，奔向
-élargir -- 加宽，加大
-crème -- 奶油
-crémerie -- 乳品商店
-décrocher -- 拿起电话听筒，得到，获得
-flash -- 闪光灯
-flatter -- 奉承，恭维
-se flatter de -- 以自荣
-chauffeur -- 司机
-chausser -- 穿鞋
-agrandir -- 扩大，放大
-agréer -- 同意，赞成，接受，允许
-agréable -- 令人愉快的，可爱的
-mouton -- 羊肉
-natation -- 游泳
-nation -- 民族，国家
-national,e -- 民族的，国家的
-nationalité -- 国籍
-costume -- 服装，戏装
-costume de bain -- 浴袍
-ajouter -- 增加，补充
-aimer -- 爱，喜爱
-aimable -- 可爱的，亲切的
-ajourner -- 延期，推迟
-colonie -- 殖民地，夏令营
-combien -- 多少，多远，多长，多么
-combine -- 办法，手段，计策
-combiner -- 结合
-jambe -- 腿
-écran -- 屏幕
-écraser -- 压碎，压垮，击败
-écrasant ,e -- 沉重的，繁重的
-écrasé ,e -- 被压碎的，被打垮的
-écrasement -- 压碎，崩溃
-enfant -- 孩子般的；孩子
-enfance -- 童年
-épreuve -- 考验，考试
-éprouvé ,e -- 经过考验的，遭受苦难的
-bille -- 弹子，钢珠
-billet -- 票，钞票
-attirer -- 拖，拉；吸引；招致
-soupçonné -- 猜疑，猜想
-soupe -- 浓汤
-souper -- 吃夜宵，夜点心
-dopage -- （体育比赛中使用的）兴奋剂
-dopant,e -- 兴奋剂的/兴奋剂
-modeste -- 卑下的，谦虚的
-modestie -- 谦虚，虚心 
-fracas -- 喧哗，议论，爆炸声
-attaquer -- 攻击，进攻
-attaque -- 攻击
-boîte -- 箱，盒，听，罐
-boîte noire -- 黑匣子
-boîte de nuit -- 夜总会
-boiter -- 蹒跚，跛行
-boiteux ,euse -- 跛的，跛子
-cristal -- 水晶
-critère -- 标准
-culture -- 耕作，农作物，文化，文明
-culturel,elle -- 文化的
-débrancher -- 切断，拔掉插头
-débrancher une prise -- 切断电源
-modifier -- 修改，改变
-contrée -- 地方，地区
+total=829
+établir@立；建立；确立
+établirsur qch@立在...上
+étendre@开；伸开
+s'étendre@展，展开；直躺着
+disparaître@失；消散
+célèbre@名的；出名的
+être célèbre pour@...闻名
+augmenter@加；增长
+autant@样；同样多
+autour@周围；在附近
+exprimer@达；表示；表现出
+s'exprimer@达，表现；显露
+face@脸
+enface de@...对面
+faceà face@对面
+fâché,e@气的；恼火的
+façon@式；方法
+detoute façon@论如何
+àla façon@...的方式
+defaçon à +inf@便于
+gagner@；赢得；获得
+garde@阴性名词）保管；保卫
+prendregarde à@防；小心
+goût@好；味道
+goûter@；欣赏
+grâce@阴性名词）恩惠；感激；优雅
+grâceà@亏；由于
+heure@时；点钟
+toutà l'heure@才
+debonne heure@清早；早
+heureusement@好；完美地
+heureux,se@福的，高兴的，幸运的
+inférieur,e@于...
+etreinférieur à@于...
+informer@知，告知
+s'informerde@听
+lit@阳性名词）床
+être au lit@床上
+allerau lit@睡觉
+livrer@付；交出
+selivrer à@湎于；放任自己
+loger@
+longtemps@久地；很久
+lutter contre@...斗争；反对...
+lutterpour@...而奋斗
+àla maison@家里
+laisser qch/qn à qn@某物/某人留下；托付给某人
+laisser qch/qn+@语,让某物/某人保持（某种状态）
+laisser+inf + qch/qn@某人做... 任凭某物...
+marquer@出；划出；指明；指示
+même@同的；同样的
+passionné,e@情的；热烈的
+congé@阳性名词）假期；离职
+prendreun congé (sans...)@假（不带...）
+prendrecongé de qn...@某人告别
+connaîtreqn@识某人
+connaîtreun lieu@悉某地
+défendre@卫；为...辩护；禁止
+défendreà qn...+inf@止某人做
+Bonappétit !@你好胃口！
+unocéan@洋
+lavariation@化
+local,e,aux@方的；地区的
+parcourir@遍；流经
+varié,e@变的
+lecommerce@业；贸易
+industriel,le@业的
+unsiège@在地；位置
+unparlement@会
+Européen,ne@洲的
+relier@接
+uneautoroute@速公路
+unechemin de fer@路
+unavion@机
+unedimension@小；尺寸；体积
+richede...@有...的
+uneculture@化
+International,e,aux@际的
+unéchange@流；交换
+faireconnaissance avec qn...@某人相识
+situer@位；测定位置
+précisément@确地
+seprésenter@现；显现
+sousla forme de...@...的形式，面貌（出现）
+régulier,ère@则的；规律的
+àpeu près@约；差不多
+unestructure@构；构造
+unangle@；角度
+toutà fait@全地
+border@绕；沿着...的边缘
+être border par@...环绕
+moyen,ne@等的
+unsouffle@一口）气，气息，呼吸
+permanent,e@常的；永久的
+quelques instants@刻；一会儿
+obsur,e@暗的
+tenir@着
+unelampe@
+unepoche@袋
+unelampe de poche@电筒
+montrer@示；指出
+unrang@；排
+montrerqch...à qn@某人指某物
+pourle moment@刻；此时
+unpoint@点
+lamusique@乐
+l'américanisation@国化
+leboulevard@街
+laterrasse@道旁）露天座
+uneinfluence@响
+leblue-jean@仔裤
+letee-shirt t@衫
+unesorte@类
+lecoca-cola@口可乐
+lechewing-gum@香糖
+leposter@报
+lamusique pop@行音乐
+le mélange@合
+lefranglais@式法语
+lemot@，词
+uneinterview@访
+l'email@子邮件（n...m...）
+unécrivain@家
+unsavant@者；科学家
+legouverment@府
+l'anglicisme@语表达方式-（n...m...）
+lechangement@变
+lamodernisation@代化
+lemoyen@法；手段
+lacommunication@系。通讯
+lanécessité@要性
+lacondition@件
+levocabulaire@汇
+unavis@法，意见
+intéresser@感兴趣
+impressionner@人以深刻印象
+frapper@激动；使震惊
+persuader@信服；使相信
+porter@；戴
+seressembler@像，相似
+appeler@名；成为
+kidnapper@架
+s'indigner(de)@到气愤
+décréter@布法令
+s'employer@使用
+lutter@争
+s'adapter(à)@应
+continuer(à)@续
+moderne@代的
+cher,ère@爱的；珍贵的
+jeune@轻的
+délavé,e@褪色的；淡蓝色的
+ça fait...@经...时间
+absolument@对地
+exactement@实的，确切的
+aubout de@...之后
+quoi@么；什么事
+contre@对
+affectueusement@热地；深情地
+laprofession@业
+ledocteur@生
+lamédecine@学
+lascience@学
+ladécouverte@现；发明
+leremède@，治疗方法
+lamaladie@病
+lasouffrance@苦；苦难
+généraliste@通科医生
+lecabinet@所，办公室
+malade@者
+ledomicile@所
+l'avenir@来
+lesoreillons@腺炎
+lagorge@咙
+lalangue@头
+cœur@脏
+lepoumon@
+lestéthoscope@诊器
+lepouls@搏
+uneattitude@度
+repondre@答（变位同attrendre）
+poser@出；放置
+plaire(à)@高兴；使中意
+hésiter@豫
+s'intéresser (à)@...感兴趣
+admirer@佩
+soigner@疗
+décider@定
+guérir@愈（第二组动词）
+commencer@始
+examiner@查
+ausculter@诊
+toucher@感动
+possible@能的
+patient,e@心的
+aimable@切的
+certainement@然
+avec@着
+pourquoi@什么
+ehbien@吧
+c'est-à-dire@言之
+gravement@重的
+lasanté@康
+lagare@车站
+laprovince@，外省，外地
+habitant@民
+provincial@省人
+laguerre@争
+étourdie@率的，冒失的，丢三落四的
+étourdir@头昏眼花；使厌倦
+filer@蚕）吐丝，（蜘蛛）结网
+pourboire@费
+pourcentage@分比，佣金
+cheville@踝
+chic@亮的，潇洒的
+glisser@动；塞入
+impensable@可想象的，难以相信的
+succéder@...而来；紧接着...而来
+oignon@葱
+capot@车引擎盖；防护罩
+caprice@性，反复无常
+capricieux,euse@性的（人），反复无常的（人）
+concours@作；帮助；考试；竞赛
+concorde@谐；融洽
+jaloux,ouse@妒的
+jaillir@出；涌出
+inciter@使（激励。煽动）某人
+inaugurer@行开幕仪式
+agiter@动；使不安
+agonie@终；垂危
+souvent@常；经常
+stable@定的；沉着的
+dépiter@气恼
+dépit@恼
+endépit de@管，虽然；不管，不顾
+cene sont pas tes oignons@It's none of your business...
+grâceau concours du maire@于市长的帮助
+concoursde beaute / de chant@美/唱歌比赛
+bienfait@行；善举
+bijou@饰；亲爱的
+disque@片；光盘
+dissimuler@饰；隐瞒
+dissiper@散；使分心
+parapluie@伞
+parfum@气，香水
+gauche@的，笨拙的
+gaule@竿，长竿
+soudain,e@然的；预料之外的
+souhaiter@望，祝愿
+souhait@望，心愿
+soupir@气；叹息
+soupirer@息，叹息
+modèle@范，榜样，典范
+lancer@，投掷，发射
+géant@人
+entrée@入，进来
+cri@叫声，呼喊声
+chaperon@帽，风帽
+nouer@...打结，系...
+nouerses lacets@鞋带
+nouille@条
+nourrir@养；供养
+member@；成员
+mêler@合；弄乱
+semêler@合；混入
+alarmant,e@人惊慌的，令人不安的
+alarmer@警报；使惊慌，使不安
+alarme@报
+album@集；专辑
+alcool@酒精的饮料
+cadet,ette@的，年幼的；最小的孩子
+cadeau@物
+citer@用，提到，提及
+manger@
+manier@用，运用，操作
+manière@式，方法，风格
+jardin@园，公园
+itinéraire@程，路线
+ennemi,e@人
+ennuyer@烦恼，使厌倦
+énoncer@述，发表，说明
+tente@篷
+tenter@图；尝试
+nouveau@的
+ànouveau@新
+recommencerà nouveau@新开始
+ denouveau@又
+collège@学。学院
+collègue@事，同行
+débouché@口，销路
+mélanger@合，搞乱
+mélange@合，混合物
+bandit@盗，匪徒
+banlieue@区
+bannir@逐，驱逐出境
+signifier@示，意味着
+signe@饰，象征，征兆
+déboucher@通。开通，拔塞子
+fragile@的，易碎的
+fragment@片；片段；章节
+bureau,x@桌，办公室，事务所
+consulat@事馆
+pancarte@示牌
+annonce@知
+affiche@告
+panneau,x@示牌，路标
+loup@，伪善的人
+coupure@破的伤口；小额的纸币
+billet@条
+emploi@业，职位
+bêtise@蠢，糊涂
+àl'abri de@避，在...的遮掩下
+àl'issue de@束后，完成时
+ànoter que@注意到
+centriste@间派的
+cérémonie@式，典礼
+certes@确
+àpart@...以外
+artiste@术家
+artistique@术的
+ascenseur@梯
+chat@
+chaussée@路
+chef de rang@级厨师
+dépendre@决于；依赖于
+dépendant@赖的
+département@门；系；处
+démission@职；放弃
+demeurer@住；停留；依然是
+pivot@；枢纽；主心骨
+pizza@萨饼
+placement@置；销售；投资
+placer@防；安置
+plage@滩
+planète@星
+vacancier,ère@假的人
+vague@糊的，朦胧的
+vallée@谷；河谷
+frais@用；开支
+frais,fraîche@鲜的，凉爽的
+arriver@达
+arrivée@达
+délicatement@致地；微妙地
+déguster@尝，品味
+ultra@上等的，极端的
+univers@宙，世界
+universitaire@学的
+urbain,e@市的
+ustensile@具，器皿
+chien de mer@鱼
+chiper@盗
+chômage@业
+encourager@励；激励
+encre@水
+encrier@水瓶
+ride@纹；波纹；涟漪
+rideau@帘，幕
+transpirer@汗，流汗；（书）泄露，走漏
+venirsur@油
+dévorer@食，贪婪地吃；耗尽
+compliment@贺，祝词
+compliquer@复杂化
+orient@方，东方国家
+Oriental,e@方的，东方国家的
+orientation@位，方向
+orienter@引，指导
+saisir@住；理解，领会
+baie@湾
+bain@澡，游泳
+distraire@分心
+encadrer@以框子；环绕；围绕
+encaissé,e@存的，入库的
+encart@页，附页
+ail@蒜
+aile@膀，机翼
+ailleurs@处，它处
+bon,bonne@的
+bonbon@果
+bondé...e@满的，充满的
+enchaîné,e@贯的
+enchanté@悦的，高兴的
+enchère@拍卖时出高价）
+regard@神
+auregard de@...眼中，就...而言
+aujourd'hui@天
+aumône@舍，恩惠
+stade@育场
+stage@训期，实习期
+station@站
+stationnement@留，停车
+stationner@留，停车
+animation@气勃勃，活跃
+animé,e@泼的，生动的
+anneau@，戒指
+baiser@，接吻
+baisser@下
+distinguer@分
+distinction@分，辨别
+distingué,e@雅的，高贵的
+baigner@澡；流经；浸透
+sebaigner@澡；游泳
+baignade@澡，浴场
+baignoire@缸
+économe@济的，节约的
+économie@济，经济学
+économique@济的，便宜的
+économiser@省，储蓄
+économiste@济学家
+gronder@沉的嚎叫；责备，斥责
+grossier,ère@俗的，粗劣的
+grossir@胖，增加
+nu,e@身的，光秃秃的
+nuire@害，危害；妨碍
+encombrer@塞；充满
+enceinte@孕的人
+encens@供焚烧的）香，奉承
+encenser@...奉香
+encensoir@炉
+juteux,euse@汁的
+bête@，牲口
+théâtre@院
+panier@子，球篮
+gendarme@兵，警察
+acrobate@技演员，高手，老手
+tigre@虎
+roulant@动的，有轮子的
+pompe@水机，泵
+panne@障，抛锚
+moineau@雀
+lapin@
+génial@妙的，天才的，绝妙的
+enveloppe@裹物，包皮
+crocodile@鱼
+chasser@猎；驱逐；赶走
+laine@毛；毛织品
+laisser@下；允许；让
+lait@
+record@高纪录
+recourir@跑；重新跑
+envers@面，背面
+chasseur@人
+àbientôt@见
+àcause de@为，由于
+àce moment@此刻
+àcôté de@...旁边
+àdistance@一段距离
+àfond@全地，彻底地
+àgauche@左边
+àl'exclusion de ...@...外
+abaisser@低，放下；降低，减低
+abaissement@低，下降
+abandonner@弃不用，放弃
+s'abandonner@于，沉溺于
+abandon@弃，放弃
+abominable@恶的；很坏的，糟透的
+abondance@量，充裕；富足
+abondant,e@富的，大量的
+abonder@裕，盛产, 大量出现
+abonner@人预约，给人预定
+abonné,e@定的；订阅者，用户
+abonnement@定，预约
+abord@近，靠近
+d'abord@先
+abordable@易近人的；买得起的
+aborder@近某人与其交谈；开始从事，着手
+aboutir(à)@达；通向；导致
+aboyer@叫
+abréger@短；删节
+abrégé@要；简介
+dû,due@付给的；归功于；由于
+duo@重唱
+durement@酷地；严峻地
+météo@象台；气象
+méthodique@条理的，有次序的
+seau@，水桶
+savoir@道，记得
+savant,e@学的；学者，科学家
+séance@议，开庭；（从事某项活动的）一段时间，表演
+duper@骗
+slience@静；沉默
+sliencieux,euse@默的
+complexe@杂的
+complexité@杂；复杂性
+complet,ère@全的；满的
+compléter@完全，使完整
+complètement@全地，彻底地
+denrée@品，食料
+dense@厚的；稠密的
+dent@齿
+dentiste@医
+gare@站
+garer@放（车辆，船只），把（车）开进站
+segarer@车辆）停放
+garage@车场
+frère@弟
+décoller@下；揭下
+décollerde la réalité@离现实
+décollage@飞
+zéro@
+doter@嫁妆；赋予；捐赠
+douane@关，关税
+douanier ,ère@关的；海关职员
+double@重的，双倍的
+mener une@double vie着一种双重生活
+doublé ,e@制的；加衬里的
+doubler@车；加快；留级；重读
+doubler le pas@快步伐
+exterminer@灭，根除，灭绝
+externe@用的，外部的
+extra@等的，杰出的
+durer@续，持续
+durant@期间
+durée@间，持续期间
+pendant la durée@期间
+rédiger@写，撰写
+rédacteur ,trice@辑，编撰者
+rédaction@辑，编写
+format@小，规格，尺寸
+formation@成，构成
+ébranler@动，动摇，使感动
+reconstituer@新构成，使复原
+récupérer@回
+reconnaître@出，承认，确认
+reconnaissance@恩，感激，承认
+recopier@抄
+infirme@疾的（人）
+infirmerie@务室
+infirmier,ère@士
+infirmière en chef@士长
+doucement@和地，小心地，温柔地
+chameau@驼
+champ@野
+sur le champ@上
+fatiguer@疲劳
+fatigant ,e@人的，令人讨厌的
+fatigue@惫，疲倦
+fatigué ,e@劳的
+boulier@盘
+boulot@作
+chemise@衫
+chèque@票
+cher ère@爱的，昂贵的
+bête@蠢的，可惜的，遗憾的
+besoin@要
+au besoin on connaît l'ami@难见真知
+avoir besoin de faire qch@要做某事
+concret,ère@体的，实际的
+condamner@刑，禁止，谴责
+condamnation@决，判刑，谴责
+condamner qn à mort@处某人死刑
+condamné@判刑的人
+malade condamné@绝症的人
+à moins de /que@非，如果不
+au moins, du moins@少
+élaborer@作，制定，拟定
+élancer@向，奔向
+élargir@宽，加大
+crème@油
+crémerie@品商店
+décrocher@起电话听筒，得到，获得
+flash@光灯
+flatter@承，恭维
+se flatter de@自荣
+chauffeur@机
+chausser@鞋
+agrandir@大，放大
+agréer@意，赞成，接受，允许
+agréable@人愉快的，可爱的
+mouton@肉
+natation@泳
+nation@族，国家
+national,e@族的，国家的
+nationalité@籍
+costume@装，戏装
+costume de bain@袍
+ajouter@加，补充
+aimer@，喜爱
+aimable@爱的，亲切的
+ajourner@期，推迟
+colonie@民地，夏令营
+combien@少，多远，多长，多么
+combine@法，手段，计策
+combiner@合
+jambe@
+écran@幕
+écraser@碎，压垮，击败
+écrasant ,e@重的，繁重的
+écrasé ,e@压碎的，被打垮的
+écrasement@碎，崩溃
+enfant@子般的；孩子
+enfance@年
+épreuve@验，考试
+éprouvé ,e@过考验的，遭受苦难的
+bille@子，钢珠
+billet@，钞票
+attirer@，拉；吸引；招致
+soupçonné@疑，猜想
+soupe@汤
+souper@夜宵，夜点心
+dopage@体育比赛中使用的）兴奋剂
+dopant,e@奋剂的/兴奋剂
+modeste@下的，谦虚的
+modestie@虚，虚心 
+fracas@哗，议论，爆炸声
+attaquer@击，进攻
+attaque@击
+boîte@，盒，听，罐
+boîte noire@匣子
+boîte de nuit@总会
+boiter@跚，跛行
+boiteux ,euse@的，跛子
+cristal@晶
+critère@准
+culture@作，农作物，文化，文明
+culturel,elle@化的
+débrancher@断，拔掉插头
+débrancher une prise@断电源
+modifier@改，改变
+contrée@方，地区
+métier@业，行业，技巧，经验
+métal@属
+métallique@属的
+balcon@台
+baliverne@话，空话
+balle@弹，小球
+avarice@啬，贪财
+sursaut@跳
+sursauter@跳，惊起
+surtout@别，尤其
+crise@机
+la crise de la quarantaine@年的危机
+crise économique@济危机
+croire@信，认为
+Il faut le voir pour le croire.@见为实
+chien,chienne@（母狗）
+bétail@畜
+bal@舞，舞会
+balader@（人）闲逛
+se balader@逛，游览
+citadin,e@民
+cité@市，住宅区
+chambre@间，卧室，议院
+terme@束，终结
+terminer@束，完成
+vide@的
+âge@龄，时代，年纪
+âgé ,e@了年纪的，老年的
+former@立，创造
+forme@状，方式，体型
+croyable@信的
+croyance@信，确信
+dissuader@阻，说服，使放弃
+distance@离，间距
+distant.e@离的，冷淡的，傲慢的
+parvenirà@到达，抵达，成名
+parvenir à faire qch@功做成某事
+abriter@蔽，掩护
+abri@藏处，躲避处
+à l'abri de@避，在...保护之下
+cœur@脏；勇气
+de bon cœur@意地
+de tout cœur@心全意地
+par cœur@住，牢记
+décoloré ,e@色的
+cerveau@脑
+fondre@融化，使溶解
+fonds@金
+minuit@夜，半夜
+minute@钟
+sable，@沙滩
+sac，@包
+aspirer@气
+aspiration@入，愿望，向往
+jupe@子
+jurer@誓，起誓
+juré ,e@过誓的，不可和解的
+cou@子
+bâiller@哈欠
+jadis@前，过去
+jambon@腿
+annexer@加，兼并
+frictionner@擦
+friction@身，摩擦，矛盾
+tenir@着
+bondir@跃，扑向
+bond@跳
+riche@的，丰富的
+richesse@富
+ambition@心，抱负
+ambitieux ,euse@野心的； 野心家
+inouï ,e@所未闻的，过分的
+trente@十的；三十
+trentaine@十左右
+trentième@十分之一
+vrai,e@的
+vraiment@正地；确定地
+rappeler@起
+se rappeler@想起，记起
+améliorer@进，提高
+amélioration@良，改善
+espèce@种，品种
+numéro@码
+numéroter@...编号
+graver，@雕刻
+capital，e@要的
+amour，@爱人
+fissur@缝
+fixer@固定
+bouquet@束
+devoir@业，义务，职责
+attendre@待，期望
+attendrir@变软；使感动；使同情
+réagir@反应；反抗，抵抗
+sauce@味汁
+savon@皂
+irriter@怒，使生气
+isoler@使孤立；隔离
+élève@生
+élever@养，教育，提高
+camper@营
+camp@地
+sort@运
+sorte@类，类型
+tendre@柔的，嫩的 
+monter@上；提高
+montrer@人看，出示
+dormir@觉
+décor@饰；环境；背景
+décoration@饰；勋章；奖章
+décorer@饰；授勋
+stylo@笔
+subir@受，忍受
+dégât@坏，损失
+consolider@强，巩固
+relation@系，联系
+relatif ,ive@对的，比较的
+violer@反，违背
+étrange@怪的
+étranger .ère@国的，不熟悉的；陌生人
+sauf@除了...之外，除非
+sauf que@除了...以外，只是
+académie@学院，学术协会
+accès@入，到达，接近
+assessible@进入的，可理解的
+voyage@行，旅程
+voyager@行
+voyageur,euse@客，旅行者
+inévitable@可避免的
+infini ,e@限的，无穷的
+concentrer@中，集合
+faculté@院，系，能力
+tête，@脸
+avoir de la tête@头脑，有见识；记忆力强
+faire la tête à qn@某人脸色看
+abuser (+de)@度使用，利用
+abus@度使用，利用
+voisin ,e@近的，相似的
+Bon voisin , bon jour.@上好的邻居等于遇上好天气。
+difficile@的
+difficulté@难
+étude@习，研究
+étudiant ,e@学生
+étudier@习，研究
+comparer@较
+comparable@比较的，类似的
+comparaison@较，对照
+livre；@半公斤，磅
+à livre ouvert@一眼就能...， 流畅地
+vaisselle@具
+rassurer@安心，使放心
+rat@鼠
+évacuer@泄；排出；疏散
+évader@走，溜走
+évadé ,e@狱的；逃犯
+journal@纸；日记；日志
+journaliste@闻记者
+barbier@发师
+donner@予；留出
+donner sur@瞰
+se donner@予，允许；宣称
+drôle@稽的，可笑的
+drôlement@稽地，可笑地
+sauver@，挽救
+se sauver@跑，逃走
+vol@，飞行
+voix@音，呼声
+voiture@车
+diffuser@散开；传播；发行
+journée@，白昼
+joyeux ,euse@兴的，快乐的
+scolaire@校的，乏味的
+disposer@置，布置，使用
+disposer de@有，支配
+tribune@台，论坛
+absorber@收，喝，吃，使专心致志
+s'absorber@吸收；专心于，全神贯注于
+justification@实，证明
+justifier...@辩护
+apéritif@胃酒
+tenue@戴；仪表；姿态
+bière@酒，棺材
+rapporter@来；带回
+se rapporter à...@有关
+éveiller@醒；引起
+s'éveiller@醒；觉醒
+éveillé ,e@着的；活跃的
+natal,e@乡的；祖国的
+apéritif ,ive@胃的
+camion@车，货车
+campagne@村，战役
+écouter@听
+écouteur@机
+ventre@部，肚子
+barbe@须
+ébahi ,e@为惊讶的
+ébauche@图
+tension@张，紧张状态
+tentative@图，企图
+natte@子，席子
+nature@然；本性
+laisser faire la nature@其自然
+naturel,elle@然的，天生的；理所当然的
+naturellement@然地；本性地；理所当然地
+croiser@交叉
+croisée@户
+croisement@叉，十字路口
+abstrait,e@象的
+absurde@谬的，荒诞的
+absurdité@谬，荒诞 
