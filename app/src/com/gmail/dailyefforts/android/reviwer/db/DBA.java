@@ -57,7 +57,8 @@ public class DBA extends SQLiteOpenHelper {
 				Log.d(TAG, "star() star: " + star);
 			}
 			String timestamp = new SimpleDateFormat(Word.TIMESTAMP_FORMAT,
-					Locale.getDefault()).format(Calendar.getInstance().getTime());
+					Locale.getDefault()).format(Calendar.getInstance()
+					.getTime());
 			ContentValues values = new ContentValues();
 			values.put(COLUMN_TIMESTAMP, timestamp);
 			values.put(COLUMN_STAR, ++star);
@@ -65,28 +66,32 @@ public class DBA extends SQLiteOpenHelper {
 					COLUMN_WORD + "=?", new String[] { word });
 		}
 	}
-	
+
 	public void getStar() {
 
-		String sql = "select " + DBA.COLUMN_ID + ", "
-				+ DBA.COLUMN_WORD + ", " + DBA.COLUMN_MEANING
-				+ ", " + DBA.COLUMN_STAR + " from "
-				+ DBA.TABLE_NAME + " where " + DBA.COLUMN_STAR
-				+ ">?;";
+		String sql = "select " + DBA.COLUMN_ID + ", " + DBA.COLUMN_WORD + ", "
+				+ DBA.COLUMN_MEANING + ", " + DBA.COLUMN_STAR + " from "
+				+ DBA.TABLE_NAME + " where " + DBA.COLUMN_STAR + ">?;";
 		Cursor cursor = rawQuery(sql, new String[] { "0" });
 		if (cursor != null && cursor.moveToFirst()) {
 			while (!cursor.isAfterLast()) {
-				String word = cursor.getString(cursor.getColumnIndex(DBA.COLUMN_WORD));
-				String meaning = cursor.getString(cursor.getColumnIndex(DBA.COLUMN_MEANING));
-				int star = cursor.getInt(cursor.getColumnIndex(DBA.COLUMN_STAR));
-				
+				String word = cursor.getString(cursor
+						.getColumnIndex(DBA.COLUMN_WORD));
+				String meaning = cursor.getString(cursor
+						.getColumnIndex(DBA.COLUMN_MEANING));
+				int star = cursor
+						.getInt(cursor.getColumnIndex(DBA.COLUMN_STAR));
+
 				if (Debuger.DEBUG) {
-					Log.d(TAG, "getStar()" + String.format("%s-%s-%d", word, meaning, star));
+					Log.d(TAG,
+							"getStar()"
+									+ String.format("%s-%s-%d", word, meaning,
+											star));
 				}
 				cursor.moveToNext();
 			}
 		}
-	
+
 	}
 
 	public void resetStar(final String word) {

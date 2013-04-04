@@ -46,7 +46,6 @@
         android:layout_alignParentBottom="true"
         android:weightSum="3" >
 
-
         <Button
             android:id="@+id/btn_setting"
             style="?android:attr/buttonBarButtonStyle"
@@ -54,8 +53,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:enabled="false"
-            android:text="@string/btn_txt_setting" />
-        
+            android:text="@string/btn_txt_setting"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
         <Button
             android:id="@+id/btn_exit"
             style="?android:attr/buttonBarButtonStyle"
@@ -63,7 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:enabled="false"
-            android:text="@string/btn_txt_exit" />
+            android:text="@string/btn_txt_exit"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
 
         <Button
             android:id="@+id/btn_word_book"
@@ -72,7 +73,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:enabled="false"
-            android:text="@string/new_word_book" />
+            android:text="@string/new_word_book"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -155,10 +155,10 @@ public class Launcher extends Activity {
 				}
 			});
 		}
-		
+
 		if (btnExit != null) {
 			btnExit.setOnClickListener(new View.OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					finish();
@@ -169,29 +169,29 @@ public class Launcher extends Activity {
 		new LoadWordsList().execute();
 	}
 
-//	@Override
-//	public boolean onCreateOptionsMenu(Menu menu) {
-//		getMenuInflater().inflate(R.menu.activity_luncher, menu);
-//		return true;
-//	}
-//
-//	@Override
-//	public boolean onOptionsItemSelected(MenuItem item) {
-//		boolean isConsumed = false;
-//		switch (item.getItemId()) {
-//		case R.id.menu_settings:
-//			Intent intent = new Intent(this, SettingsActivity.class);
-//			startActivity(intent);
-//			isConsumed = true;
-//			break;
-//		case R.id.menu_exit:
-//			finish();
-//			break;
-//		default:
-//			break;
-//		}
-//		return isConsumed;
-//	}
+	// @Override
+	// public boolean onCreateOptionsMenu(Menu menu) {
+	// getMenuInflater().inflate(R.menu.activity_luncher, menu);
+	// return true;
+	// }
+	//
+	// @Override
+	// public boolean onOptionsItemSelected(MenuItem item) {
+	// boolean isConsumed = false;
+	// switch (item.getItemId()) {
+	// case R.id.menu_settings:
+	// Intent intent = new Intent(this, SettingsActivity.class);
+	// startActivity(intent);
+	// isConsumed = true;
+	// break;
+	// case R.id.menu_exit:
+	// finish();
+	// break;
+	// default:
+	// break;
+	// }
+	// return isConsumed;
+	// }
 
 	private class LoadWordsList extends AsyncTask<Void, Integer, Boolean> {
 
