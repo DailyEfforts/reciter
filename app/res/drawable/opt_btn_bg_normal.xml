@@ -11,11 +11,15 @@
         android:top="@dimen/rect_padding" />
 
     <stroke
-        android:dashGap="1dp"
+        android:dashGap="@dimen/dash_gap"
         android:dashWidth="1dp"
         android:width="@dimen/rect_stroke_width"
-        android:color="@color/rect_stroke_color" />
+        android:color="@color/holo_green_light" />
 
-    <solid android:color="@color/blue" />
+    <gradient
+        android:endColor="#696969"
+        android:gradientRadius="360"
+        android:startColor="@color/dark"
+        android:type="radial" />
 
 </shape>

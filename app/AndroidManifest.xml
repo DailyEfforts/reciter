@@ -32,8 +32,8 @@
         </activity>
         <activity
             android:name="WordBookActivity"
-            android:label=""
-            android:theme="@style/ActivityTheme.TranslucentDarkActionBar" >
+            android:label="@string/label_word_book"
+             >
         </activity>
 
         <provider

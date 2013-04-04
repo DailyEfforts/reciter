@@ -829,7 +829,6 @@ absurde@谬的，荒诞的
 absurdité@谬，荒诞
 téléphone@手机
 ordinateur@电脑
-portatif@笔记本电脑
 journal@日记本
 bus@公交车
 métro@地铁

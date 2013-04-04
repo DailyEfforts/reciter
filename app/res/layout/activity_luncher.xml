@@ -8,12 +8,12 @@
         android:id="@+id/gv_unit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_above="@+id/menu"
-        android:horizontalSpacing="1dp"
+        android:layout_alignParentTop="true"
+        android:horizontalSpacing="@dimen/horizontal_spacing"
         android:numColumns="3"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="1dp" >
+        android:verticalSpacing="@dimen/vertical_spacing" >
     </GridView>
 
     <RelativeLayout
@@ -40,11 +40,12 @@
 
     <LinearLayout
         android:id="@+id/menu"
+        style="?android:attr/buttonBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="?android:attr/buttonBarStyle"
         android:layout_alignParentBottom="true"
-        android:weightSum="2" >
+        android:weightSum="3" >
+
 
         <Button
             android:id="@+id/btn_setting"
@@ -54,6 +55,15 @@
             android:layout_weight="1"
             android:enabled="false"
             android:text="@string/btn_txt_setting" />
+        
+        <Button
+            android:id="@+id/btn_exit"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/btn_txt_exit" />
 
         <Button
             android:id="@+id/btn_word_book"

@@ -39,6 +39,7 @@ public class Launcher extends Activity {
 	private DBA dba;
 	private Button btnWordBook;
 	private SharedPreferences mSharedPref;
+	private Button btnExit;
 
 	private static final int UNIT = 30;
 
@@ -121,6 +122,7 @@ public class Launcher extends Activity {
 		loadingTip = (RelativeLayout) findViewById(R.id.rl_loading);
 		btnSetting = (Button) findViewById(R.id.btn_setting);
 		btnWordBook = (Button) findViewById(R.id.btn_word_book);
+		btnExit = (Button) findViewById(R.id.btn_exit);
 
 		dba = DBA.getInstance(getApplicationContext());
 
@@ -153,33 +155,43 @@ public class Launcher extends Activity {
 				}
 			});
 		}
+		
+		if (btnExit != null) {
+			btnExit.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					finish();
+				}
+			});
+		}
 
 		new LoadWordsList().execute();
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_luncher, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		boolean isConsumed = false;
-		switch (item.getItemId()) {
-		case R.id.menu_settings:
-			Intent intent = new Intent(this, SettingsActivity.class);
-			startActivity(intent);
-			isConsumed = true;
-			break;
-		case R.id.menu_exit:
-			finish();
-			break;
-		default:
-			break;
-		}
-		return isConsumed;
-	}
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		getMenuInflater().inflate(R.menu.activity_luncher, menu);
+//		return true;
+//	}
+//
+//	@Override
+//	public boolean onOptionsItemSelected(MenuItem item) {
+//		boolean isConsumed = false;
+//		switch (item.getItemId()) {
+//		case R.id.menu_settings:
+//			Intent intent = new Intent(this, SettingsActivity.class);
+//			startActivity(intent);
+//			isConsumed = true;
+//			break;
+//		case R.id.menu_exit:
+//			finish();
+//			break;
+//		default:
+//			break;
+//		}
+//		return isConsumed;
+//	}
 
 	private class LoadWordsList extends AsyncTask<Void, Integer, Boolean> {
 
@@ -189,10 +201,11 @@ public class Launcher extends Activity {
 
 			if (result) {
 				if (loadingTip != null && btnSetting != null
-						&& btnWordBook != null) {
+						&& btnWordBook != null && btnExit != null) {
 					loadingTip.setVisibility(View.GONE);
 					btnSetting.setEnabled(true);
 					btnWordBook.setEnabled(true);
+					btnExit.setEnabled(true);
 				}
 				if (mGridView != null && dba != null) {
 					if (Debuger.DEBUG) {
