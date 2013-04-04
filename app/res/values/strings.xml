@@ -11,7 +11,7 @@
     <string name="option_number">Option number</string>
     <string name="pref_summary_options_number">There are %1$s options for each subject now.</string>
     <string name="pref_key_options_number" translatable="false">pref_key_options_number</string>
-    <string name="new_word_book">Word Book</string>
+    <string name="new_word_book">Book</string>
     <string name="btn_txt_exit">Exit</string>
     <string name="menu_exit">Exit</string>
     <string name="tip_empty">Empty</string>
