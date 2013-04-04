@@ -8,10 +8,12 @@ import java.io.InputStreamReader;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,6 +26,7 @@ import android.widget.RelativeLayout;
 
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
+import com.gmail.dailyefforts.android.reviwer.setting.Settings;
 import com.gmail.dailyefforts.android.reviwer.setting.SettingsActivity;
 import com.gmail.dailyefforts.android.reviwer.unit.UnitView;
 
@@ -35,6 +38,7 @@ public class Launcher extends Activity {
 	private GridView mGridView;
 	private DBA dba;
 	private Button btnWordBook;
+	private SharedPreferences mSharedPref;
 
 	private static final int UNIT = 30;
 
@@ -78,8 +82,22 @@ public class Launcher extends Activity {
 				UnitView tmp = ((UnitView) view);
 				tmp.id = position;
 				tmp.start = position * UNIT;
-				tmp.end = position == mUnitCount - 1 ? mDbSize - 1 : (position + 1)
-						* UNIT - 1;
+				tmp.end = position == mUnitCount - 1 ? mDbSize - 1
+						: (position + 1) * UNIT - 1;
+
+				int wordCount = tmp.end - tmp.start + 1;
+
+				int mini = 7;
+				if (mSharedPref != null) {
+					mini = Integer.valueOf(mSharedPref.getString(
+							getString(R.string.pref_key_options_number),
+							Settings.DEFAULT_OPTION_NUMBER)) + 1;
+				}
+
+				if (wordCount < mini) {
+					tmp.start = tmp.end - mini + 1;
+					wordCount = mini;
+				}
 
 				if (Debuger.DEBUG) {
 					Log.d(TAG, String.format("getView() id: %d, s: %d, e: %d ",
@@ -87,7 +105,7 @@ public class Launcher extends Activity {
 				}
 
 				tmp.setText(String.format("Unit-%02d\n(%d)", position + 1,
-						tmp.end - tmp.start + 1));
+						wordCount));
 			}
 
 			return view;
@@ -107,6 +125,9 @@ public class Launcher extends Activity {
 		dba = DBA.getInstance(getApplicationContext());
 
 		mGridView = (GridView) findViewById(R.id.gv_unit);
+
+		mSharedPref = PreferenceManager
+				.getDefaultSharedPreferences(getApplicationContext());
 
 		if (btnSetting != null) {
 			btnSetting.setOnClickListener(new View.OnClickListener() {

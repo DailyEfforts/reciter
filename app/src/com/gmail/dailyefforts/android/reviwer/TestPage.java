@@ -102,7 +102,7 @@ public class TestPage extends Activity implements OnTouchListener {
 		tvBingoRate = (TextView) findViewById(R.id.tv_bingo_rate);
 
 		map = Word.getMap();
-		
+
 		if (pb != null) {
 			pb.setMax(map.size());
 			pb.setAlpha(128);
@@ -123,7 +123,7 @@ public class TestPage extends Activity implements OnTouchListener {
 
 		pageMap = new SparseArray<Word>();
 
-		// two another different words' meaning
+		// make sure the option is not duplicate.
 		ArrayList<Integer> arrList = new ArrayList<Integer>();
 		while (arrList.size() < optNum - 1) {
 			int tmp = random.nextInt(map.size());
@@ -140,8 +140,18 @@ public class TestPage extends Activity implements OnTouchListener {
 				btn.setText(meaning);
 				pageMap.put(btn.getId(), map.get(wordIdx));
 			} else {
-				int tmp = random.nextInt(map.size());
+
+				int tmp = 0;
+
+				if (arrList != null && arrList.size() > 0) {
+					tmp = arrList.get(0);
+					arrList.remove(0);
+				} else {
+					tmp = random.nextInt(map.size());
+				}
+
 				btn.setText(getMeaningByIdx(tmp));
+
 				pageMap.put(btn.getId(), map.get(tmp));
 			}
 		}
