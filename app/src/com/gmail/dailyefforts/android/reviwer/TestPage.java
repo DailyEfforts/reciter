@@ -183,7 +183,7 @@ public class TestPage extends Activity implements OnTouchListener {
 	public boolean onTouch(View v, MotionEvent event) {
 		boolean returnValue = false;
 		boolean bingGo = false;
-		if (v != null && event != null) {
+		if (v != null && (v instanceof Button) && event != null) {
 			if (Debuger.DEBUG) {
 				Log.d(TAG, "onTouch() id: " + v.getId());
 				for (int i = 0; i < pageMap.size(); i++) {
@@ -200,8 +200,8 @@ public class TestPage extends Activity implements OnTouchListener {
 			switch (event.getActionMasked()) {
 			case MotionEvent.ACTION_DOWN:
 				((Button) v).setText(w.getWord());
+				((Button) v).playSoundEffect(SoundEffectConstants.CLICK);
 				if (bingGo) {
-					((Button) v).playSoundEffect(SoundEffectConstants.CLICK);
 					if (isFirstTouch) {
 						bingoNum++;
 					}
