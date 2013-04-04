@@ -232,7 +232,7 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+		if (false && event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
 			switch (event.getAction()) {
 			case KeyEvent.ACTION_DOWN:
 				if (event.getDownTime() - lastPressedTime < PERIOD) {
@@ -246,6 +246,6 @@ public class TestPage extends Activity implements OnTouchListener {
 			}
 			return true;
 		}
-		return false;
+		return super.onKeyDown(keyCode, event);
 	}
 }
