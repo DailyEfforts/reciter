@@ -1,4 +1,3 @@
-total=829
 établir@立；建立；确立
 établirsur qch@立在...上
 étendre@开；伸开
@@ -827,4 +826,14 @@ croisée@户
 croisement@叉，十字路口
 abstrait,e@象的
 absurde@谬的，荒诞的
-absurdité@谬，荒诞 
+absurdité@谬，荒诞
+téléphone@手机
+ordinateur@电脑
+portatif@笔记本电脑
+journal@日记本
+bus@公交车
+métro@地铁
+cravate@领带
+page@页、页面
+abeille@蜜蜂
+chanson@歌曲、小调
