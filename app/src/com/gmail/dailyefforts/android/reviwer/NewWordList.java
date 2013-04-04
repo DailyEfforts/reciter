@@ -15,7 +15,8 @@ import android.widget.SimpleCursorAdapter;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.db.DbProvider;
 
-public class NewWordList extends ListFragment implements LoaderCallbacks<Cursor> {
+public class NewWordList extends ListFragment implements
+		LoaderCallbacks<Cursor> {
 	private static final String TAG = NewWordList.class.getSimpleName();
 	private Cursor mCursor = null;
 	private SimpleCursorAdapter mAdapter;
@@ -48,10 +49,11 @@ public class NewWordList extends ListFragment implements LoaderCallbacks<Cursor>
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		// Intent intent = new Intent(getActivity(), ImageViewer.class);
 		if (mCursor != null) {
-		/*	Images.update(mCursor);
-			Intent intent = new Intent(getActivity(), ImgPager.class);
-			intent.putExtra(Images.POSITION, position);
-			startActivity(intent);*/
+			/*
+			 * Images.update(mCursor); Intent intent = new Intent(getActivity(),
+			 * ImgPager.class); intent.putExtra(Images.POSITION, position);
+			 * startActivity(intent);
+			 */
 		}
 	}
 

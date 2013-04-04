@@ -32,8 +32,9 @@ public class UnitView extends Button implements View.OnClickListener {
 		setOnClickListener(this);
 		setBackgroundDrawable(getResources().getDrawable(
 				R.drawable.unit_view_bg));
-//		setTextColor(getResources().getColor(R.color.gray_light));
-		setTextAppearance(context, android.R.style.TextAppearance_DeviceDefault_Small);
+		// setTextColor(getResources().getColor(R.color.gray_light));
+		setTextAppearance(context,
+				android.R.style.TextAppearance_DeviceDefault_Small);
 	}
 
 	@Override
