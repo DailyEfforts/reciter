@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.gmail.dailyefforts.android.reviwer.R;
@@ -29,7 +30,9 @@ public class SettingsActivity extends PreferenceActivity {
 			OnSharedPreferenceChangeListener {
 
 		private ListPreference mOptNumListPref;
-		private String mOptNumSumm;
+		private ListPreference mWordCountInOneUnitPref;
+		private String mOptNumSummary;
+		private String mWordCountInOneUnitSummary;
 		private SharedPreferences mSharedPref;
 
 		@Override
@@ -40,11 +43,16 @@ public class SettingsActivity extends PreferenceActivity {
 			addPreferencesFromResource(R.xml.settings);
 
 			mOptNumListPref = (ListPreference) findPreference(getString(R.string.pref_key_options_number));
+			mWordCountInOneUnitPref = (ListPreference) findPreference(getString(R.string.pref_key_word_count_in_one_unit));
 
-			mSharedPref = mOptNumListPref.getSharedPreferences();
+			mSharedPref = PreferenceManager
+					.getDefaultSharedPreferences(getActivity()
+							.getApplicationContext());
 
-			mOptNumSumm = String.valueOf(getResources().getText(
+			mOptNumSummary = String.valueOf(getResources().getText(
 					R.string.pref_summary_options_number));
+			mWordCountInOneUnitSummary = String.valueOf(getResources().getText(
+					R.string.pref_summary_word_count));
 
 			String value = mOptNumListPref.getValue();
 
@@ -52,8 +60,16 @@ public class SettingsActivity extends PreferenceActivity {
 				value = Settings.DEFAULT_OPTION_NUMBER;
 				mOptNumListPref.setValue(value);
 			}
+			
+			value = mWordCountInOneUnitPref.getValue();
+
+			if (value == null && mWordCountInOneUnitPref != null) {
+				value = Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT;
+				mWordCountInOneUnitPref.setValue(value);
+			}
 
 			setOptNumSummary();
+			setWordCountSummary();
 		}
 
 		@Override
@@ -76,21 +92,37 @@ public class SettingsActivity extends PreferenceActivity {
 		public void onSharedPreferenceChanged(
 				SharedPreferences sharedPreferences, String key) {
 
-			if (key != null && mOptNumListPref != null) {
+			if (key != null && mOptNumListPref != null
+					&& mWordCountInOneUnitPref != null) {
 				if (key.equals(mOptNumListPref.getKey())) {
 					setOptNumSummary();
+				} else if (key.equals(mWordCountInOneUnitPref.getKey())) {
+					setWordCountSummary();
 				}
 			}
 		}
 
 		private void setOptNumSummary() {
 			if (mOptNumListPref != null) {
-				mOptNumListPref.setSummary(String.format(mOptNumSumm,
+				mOptNumListPref.setSummary(String.format(mOptNumSummary,
 						mOptNumListPref.getValue()));
 
 				if (Debuger.DEBUG) {
 					Log.d(TAG,
 							"setOptNumSummary() " + mOptNumListPref.getValue());
+				}
+			}
+		}
+
+		private void setWordCountSummary() {
+			if (mWordCountInOneUnitPref != null) {
+				mWordCountInOneUnitPref.setSummary(String.format(
+						mWordCountInOneUnitSummary,
+						mWordCountInOneUnitPref.getValue()));
+
+				if (Debuger.DEBUG) {
+					Log.d(TAG, "setWordCountSummary() "
+							+ mWordCountInOneUnitPref.getValue());
 				}
 			}
 		}

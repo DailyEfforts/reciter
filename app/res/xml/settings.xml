@@ -9,5 +9,13 @@
         android:persistent="true"
         android:summary="@string/pref_summary_options_number"
         android:title="@string/option_number" />
+    <ListPreference
+        android:dialogTitle="@string/word_count"
+        android:entries="@array/pref_word_count_list_entries"
+        android:entryValues="@array/pref_word_count_list_entry_values"
+        android:key="@string/pref_key_word_count_in_one_unit"
+        android:persistent="true"
+        android:summary="@string/pref_summary_word_count"
+        android:title="@string/word_count" />
 
 </PreferenceScreen>

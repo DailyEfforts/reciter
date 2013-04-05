@@ -7,12 +7,25 @@
         <item>5</item>
         <item>6</item>
     </string-array>
-
     <string-array name="pref_options_number_list_entry_values">
         <item>3</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
+    </string-array>
+    <string-array name="pref_word_count_list_entries">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+    </string-array>
+    <string-array name="pref_word_count_list_entry_values">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
     </string-array>
 
 </resources>

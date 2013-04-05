@@ -15,8 +15,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -39,8 +37,10 @@ public class Launcher extends Activity {
 	private DBA dba;
 	private Button btnWordBook;
 	private Button btnExit;
+	private SharedPreferences mSharedPref;
 
-	private static final int UNIT = 30;
+	private static int UNIT = Integer
+			.valueOf(Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT);
 
 	private class UnitAdapter extends BaseAdapter {
 
@@ -113,6 +113,14 @@ public class Launcher extends Activity {
 
 		mGridView = (GridView) findViewById(R.id.gv_unit);
 
+		mSharedPref = PreferenceManager
+				.getDefaultSharedPreferences(getApplicationContext());
+		if (mSharedPref != null) {
+			UNIT = Integer.valueOf(mSharedPref.getString(
+					getString(R.string.pref_key_word_count_in_one_unit),
+					Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT));
+		}
+
 		if (btnSetting != null) {
 			btnSetting.setOnClickListener(new View.OnClickListener() {
 
@@ -149,31 +157,36 @@ public class Launcher extends Activity {
 		}
 
 		new LoadWordsList().execute();
+
+		if (Debuger.DEBUG) {
+			Log.d(TAG, "onCreate()");
+		}
 	}
 
-	// @Override
-	// public boolean onCreateOptionsMenu(Menu menu) {
-	// getMenuInflater().inflate(R.menu.activity_luncher, menu);
-	// return true;
-	// }
-	//
-	// @Override
-	// public boolean onOptionsItemSelected(MenuItem item) {
-	// boolean isConsumed = false;
-	// switch (item.getItemId()) {
-	// case R.id.menu_settings:
-	// Intent intent = new Intent(this, SettingsActivity.class);
-	// startActivity(intent);
-	// isConsumed = true;
-	// break;
-	// case R.id.menu_exit:
-	// finish();
-	// break;
-	// default:
-	// break;
-	// }
-	// return isConsumed;
-	// }
+	@Override
+	protected void onRestart() {
+		super.onRestart();
+
+		if (Debuger.DEBUG) {
+			Log.d(TAG, "onRestart()");
+		}
+
+		if (mGridView != null && dba != null) {
+			if (Debuger.DEBUG) {
+				Log.d(TAG, "onPostExecute() " + dba.getCount());
+			}
+
+			UNIT = Integer.valueOf(mSharedPref.getString(
+					getString(R.string.pref_key_word_count_in_one_unit),
+					Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT));
+
+			int count = dba.getCount();
+
+			int unitSize = count % UNIT == 0 ? count / UNIT : count / UNIT + 1;
+
+			mGridView.setAdapter(new UnitAdapter(unitSize, count));
+		}
+	}
 
 	private class LoadWordsList extends AsyncTask<Void, Integer, Boolean> {
 
