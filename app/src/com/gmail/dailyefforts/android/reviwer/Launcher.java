@@ -17,6 +17,8 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
@@ -38,6 +40,7 @@ public class Launcher extends Activity {
 	private Button btnWordBook;
 	private Button btnExit;
 	private SharedPreferences mSharedPref;
+	private Animation mAnimation;
 
 	private static int UNIT = Integer
 			.valueOf(Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT);
@@ -112,6 +115,9 @@ public class Launcher extends Activity {
 		dba = DBA.getInstance(getApplicationContext());
 
 		mGridView = (GridView) findViewById(R.id.gv_unit);
+		
+		mAnimation = AnimationUtils.loadAnimation(this,
+				R.anim.zoom_in);
 
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
@@ -185,6 +191,8 @@ public class Launcher extends Activity {
 			int unitSize = count % UNIT == 0 ? count / UNIT : count / UNIT + 1;
 
 			mGridView.setAdapter(new UnitAdapter(unitSize, count));
+			
+			mGridView.startAnimation(mAnimation);
 		}
 	}
 
@@ -214,6 +222,8 @@ public class Launcher extends Activity {
 
 					mGridView.setAdapter(new UnitAdapter(unitSize, count));
 					mGridView.setVisibility(View.VISIBLE);
+					
+					mGridView.startAnimation(mAnimation);
 				}
 			}
 		}

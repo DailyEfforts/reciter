@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/test_page"
     android:weightSum="9"
     tools:context=".TestPage" >
 
@@ -40,7 +41,7 @@
             android:background="@android:color/transparent"
             android:text="@string/hello_world"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/word_txt_color"
+            android:textColor="@color/holo_green_light"
             android:textStyle="bold" />
     </RelativeLayout>
 
