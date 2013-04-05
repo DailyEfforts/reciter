@@ -58,6 +58,14 @@ public class NewWordList extends ListFragment implements
 	}
 
 	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if (mCursor != null) {
+			mCursor.close();
+		}
+	}
+
+	@Override
 	public Loader<Cursor> onCreateLoader(int id, Bundle args) {
 		Uri uri = DbProvider.CONTENT_URI;
 		String[] projection = null;

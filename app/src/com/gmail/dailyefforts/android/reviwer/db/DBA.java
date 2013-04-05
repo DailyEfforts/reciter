@@ -92,6 +92,28 @@ public class DBA extends SQLiteOpenHelper {
 			}
 		}
 
+		if (cursor != null) {
+			cursor.close();
+		}
+
+	}
+
+	public Word getWordByIdx(int idx) {
+		String sql = "select " + COLUMN_ID + ", " + COLUMN_WORD + ", "
+				+ COLUMN_MEANING + " from " + TABLE_NAME + " where "
+				+ COLUMN_ID + "=?;";
+		Cursor cursor = dba.rawQuery(sql, new String[] { String.valueOf(idx) });
+		String word = "";
+		String meaning = "";
+		if (cursor != null && cursor.moveToFirst()) {
+			word = cursor.getString(cursor.getColumnIndex(COLUMN_WORD));
+			meaning = cursor.getString(cursor.getColumnIndex(COLUMN_MEANING));
+		}
+
+		if (cursor != null) {
+			cursor.close();
+		}
+		return new Word(word, meaning);
 	}
 
 	public void resetStar(final String word) {
@@ -104,6 +126,10 @@ public class DBA extends SQLiteOpenHelper {
 			String update = "update " + TABLE_NAME + " set " + COLUMN_STAR
 					+ "=" + 0 + " where " + COLUMN_WORD + "='" + word + "';";
 			getWritableDatabase().execSQL(update);
+		}
+
+		if (cursor != null) {
+			cursor.close();
 		}
 	}
 

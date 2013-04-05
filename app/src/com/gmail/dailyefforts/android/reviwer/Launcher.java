@@ -38,7 +38,6 @@ public class Launcher extends Activity {
 	private GridView mGridView;
 	private DBA dba;
 	private Button btnWordBook;
-	private SharedPreferences mSharedPref;
 	private Button btnExit;
 
 	private static final int UNIT = 30;
@@ -86,27 +85,13 @@ public class Launcher extends Activity {
 				tmp.end = position == mUnitCount - 1 ? mDbSize - 1
 						: (position + 1) * UNIT - 1;
 
-				int wordCount = tmp.end - tmp.start + 1;
-
-				int mini = 7;
-				if (mSharedPref != null) {
-					mini = Integer.valueOf(mSharedPref.getString(
-							getString(R.string.pref_key_options_number),
-							Settings.DEFAULT_OPTION_NUMBER)) + 1;
-				}
-
-				if (wordCount < mini) {
-					tmp.start = tmp.end - mini + 1;
-					wordCount = mini;
-				}
-
 				if (Debuger.DEBUG) {
 					Log.d(TAG, String.format("getView() id: %d, s: %d, e: %d ",
 							tmp.id, tmp.start, tmp.end));
 				}
 
 				tmp.setText(String.format("Unit-%02d\n(%d)", position + 1,
-						wordCount));
+						tmp.end - tmp.start + 1));
 			}
 
 			return view;
@@ -127,9 +112,6 @@ public class Launcher extends Activity {
 		dba = DBA.getInstance(getApplicationContext());
 
 		mGridView = (GridView) findViewById(R.id.gv_unit);
-
-		mSharedPref = PreferenceManager
-				.getDefaultSharedPreferences(getApplicationContext());
 
 		if (btnSetting != null) {
 			btnSetting.setOnClickListener(new View.OnClickListener() {

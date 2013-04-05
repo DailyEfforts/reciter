@@ -61,6 +61,8 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	private ProgressBar pb;
 
+	private int mDbCount;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -77,6 +79,8 @@ public class TestPage extends Activity implements OnTouchListener {
 				Settings.DEFAULT_OPTION_NUMBER));
 
 		dba = DBA.getInstance(getApplicationContext());
+
+		mDbCount = dba.getCount();
 		optCat = (LinearLayout) findViewById(R.id.opt_category);
 		optCat.setWeightSum(optNum);
 
@@ -126,7 +130,7 @@ public class TestPage extends Activity implements OnTouchListener {
 		// make sure the option is not duplicate.
 		ArrayList<Integer> arrList = new ArrayList<Integer>();
 		while (arrList.size() < optNum - 1) {
-			int tmp = random.nextInt(map.size());
+			int tmp = random.nextInt(mDbCount);
 			if (tmp != wordIdx && !arrList.contains(tmp)) {
 				arrList.add(tmp);
 			}
@@ -150,9 +154,11 @@ public class TestPage extends Activity implements OnTouchListener {
 					tmp = random.nextInt(map.size());
 				}
 
-				btn.setText(getMeaningByIdx(tmp));
-
-				pageMap.put(btn.getId(), map.get(tmp));
+				if (dba != null) {
+					Word word = dba.getWordByIdx(tmp);
+					btn.setText(word.getMeaning());
+					pageMap.put(btn.getId(), word);
+				}
 			}
 		}
 
