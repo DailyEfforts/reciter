@@ -60,6 +60,10 @@ public class DBA extends SQLiteOpenHelper {
 			getWritableDatabase().update(TABLE_NAME, values,
 					COLUMN_WORD + "=?", new String[] { word });
 		}
+
+		if (cursor != null) {
+			cursor.close();
+		}
 	}
 
 	public void getStar() {
@@ -144,7 +148,12 @@ public class DBA extends SQLiteOpenHelper {
 
 	public int getCount() {
 		Cursor cursor = rawQuery("SELECT * FROM " + TABLE_NAME, null);
-		return cursor.getCount();
+		int count = 0;
+		if (cursor != null) {
+			count = cursor.getCount();
+			cursor.close();
+		}
+		return count;
 	}
 
 	public long insert(String table, String nullColumnHack, ContentValues values) {

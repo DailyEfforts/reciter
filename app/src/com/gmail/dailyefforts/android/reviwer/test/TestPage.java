@@ -22,10 +22,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.R;
-import com.gmail.dailyefforts.android.reviwer.R.drawable;
-import com.gmail.dailyefforts.android.reviwer.R.id;
-import com.gmail.dailyefforts.android.reviwer.R.layout;
-import com.gmail.dailyefforts.android.reviwer.R.string;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
@@ -83,7 +79,7 @@ public class TestPage extends Activity implements OnTouchListener {
 		optNum = Integer.valueOf(mSharedPref.getString(
 				getString(R.string.pref_key_options_count),
 				Settings.DEFAULT_OPTION_COUNT));
-
+		
 		dba = DBA.getInstance(getApplicationContext());
 
 		mDbCount = dba.getCount();
@@ -183,13 +179,13 @@ public class TestPage extends Activity implements OnTouchListener {
 		}
 		wordIdx++;
 	}
-
+/*
 	private String getMeaningByIdx(int idx) {
 		if (idx >= 0 && map != null && idx < map.size()) {
 			return map.get(idx).getMeaning();
 		}
 		return null;
-	}
+	}*/
 
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {

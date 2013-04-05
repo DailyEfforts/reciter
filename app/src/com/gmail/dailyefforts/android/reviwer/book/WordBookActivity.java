@@ -1,6 +1,5 @@
 package com.gmail.dailyefforts.android.reviwer.book;
 
-import android.R.array;
 import android.app.Activity;
 import android.app.ListFragment;
 import android.app.LoaderManager.LoaderCallbacks;
@@ -21,11 +20,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.CheckedTextView;
-import android.widget.CursorAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,7 +51,6 @@ public class WordBookActivity extends Activity {
 			LoaderCallbacks<Cursor> {
 		private static final String TAG = WordBookList.class.getSimpleName();
 		private Cursor mCursor = null;
-		private SimpleCursorAdapter mAdapter;
 		private ListAdapter mLisAdapter;
 		private LayoutInflater mLayoutInflater;
 		private DBA dba;
@@ -65,12 +60,6 @@ public class WordBookActivity extends Activity {
 			super.onActivityCreated(savedInstanceState);
 
 			setEmptyText(getActivity().getText(R.string.tip_empty));
-
-			mAdapter = new SimpleCursorAdapter(getActivity(),
-					android.R.layout.simple_list_item_2, mCursor, new String[] {
-							DBA.COLUMN_WORD, DBA.COLUMN_TIMESTAMP }, new int[] {
-							android.R.id.text1, android.R.id.text2 },
-					CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
 
 			mLayoutInflater = getActivity().getLayoutInflater();
 
@@ -300,8 +289,6 @@ public class WordBookActivity extends Activity {
 					System.out.println("WordBookList.onListItemClick() "
 							+ mCursor.getString(mCursor
 									.getColumnIndex(DBA.COLUMN_TIMESTAMP)));
-					String timeStr = mCursor.getString(mCursor
-							.getColumnIndex(DBA.COLUMN_TIMESTAMP));
 					Toast.makeText(
 							getActivity(),
 							mCursor.getString(mCursor
