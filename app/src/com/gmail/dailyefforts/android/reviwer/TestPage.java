@@ -206,7 +206,6 @@ public class TestPage extends Activity implements OnTouchListener {
 			switch (event.getActionMasked()) {
 			case MotionEvent.ACTION_DOWN:
 				((Button) v).setText(w.getWord());
-				((Button) v).playSoundEffect(SoundEffectConstants.CLICK);
 				if (bingGo) {
 					if (isFirstTouch) {
 						bingoNum++;
@@ -221,6 +220,7 @@ public class TestPage extends Activity implements OnTouchListener {
 				returnValue = true;
 				break;
 			case MotionEvent.ACTION_UP:
+				((Button) v).playSoundEffect(SoundEffectConstants.CLICK);
 				if (bingGo) {
 					if (wordIdx == map.size()) {
 						Toast.makeText(getApplicationContext(), "Done.",
