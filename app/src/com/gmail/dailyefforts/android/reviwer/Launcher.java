@@ -115,9 +115,8 @@ public class Launcher extends Activity {
 		dba = DBA.getInstance(getApplicationContext());
 
 		mGridView = (GridView) findViewById(R.id.gv_unit);
-		
-		mAnimation = AnimationUtils.loadAnimation(this,
-				R.anim.zoom_in);
+
+		mAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom_in);
 
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
@@ -191,7 +190,7 @@ public class Launcher extends Activity {
 			int unitSize = count % UNIT == 0 ? count / UNIT : count / UNIT + 1;
 
 			mGridView.setAdapter(new UnitAdapter(unitSize, count));
-			
+
 			mGridView.startAnimation(mAnimation);
 		}
 	}
@@ -222,7 +221,7 @@ public class Launcher extends Activity {
 
 					mGridView.setAdapter(new UnitAdapter(unitSize, count));
 					mGridView.setVisibility(View.VISIBLE);
-					
+
 					mGridView.startAnimation(mAnimation);
 				}
 			}
@@ -242,11 +241,24 @@ public class Launcher extends Activity {
 			if (assetMngr == null || dba == null) {
 				return false;
 			}
+			BufferedReader reader = null;
 			try {
-				InputStream in = assetMngr.open("mot.txt");
-				InputStreamReader inReader = new InputStreamReader(in);
-				BufferedReader reader = new BufferedReader(inReader);
+				reader = new BufferedReader(new InputStreamReader(
+						assetMngr.open("mot.txt")));
 				String str = null;
+				str = reader.readLine();
+				if (str != null && str.startsWith("total=")) {
+					int total = Integer
+							.valueOf(str.substring(str.indexOf("=") + 1));
+
+					if (Debuger.DEBUG) {
+						Log.d(TAG, "doInBackground() total mot.txt: " + total
+								+ ", db: " + dba.getCount());
+					}
+					if (dba.getCount() > total - 100) {
+						return true;
+					}
+				}
 				ContentValues values = new ContentValues();
 				dba.beginTransaction();
 				while ((str = reader.readLine()) != null) {
@@ -283,6 +295,14 @@ public class Launcher extends Activity {
 				dba.endTransaction();
 			} catch (IOException e) {
 				e.printStackTrace();
+			} finally {
+				if (reader != null) {
+					try {
+						reader.close();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
 			}
 
 			return true;
