@@ -1,18 +1,17 @@
 package com.gmail.dailyefforts.android.reviwer.book;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
 import android.app.ListFragment;
 import android.app.LoaderManager.LoaderCallbacks;
-import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.format.DateUtils;
 import android.util.Log;
+import android.util.TimeUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -27,7 +26,6 @@ import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.db.DbProvider;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class WordBookList extends ListFragment implements
 		LoaderCallbacks<Cursor> {
@@ -35,7 +33,7 @@ public class WordBookList extends ListFragment implements
 	private Cursor mCursor = null;
 	private SimpleCursorAdapter mAdapter;
 	private ListAdapter mLisAdapter;
-	private SimpleDateFormat mSimpleDateFormat;
+	private LayoutInflater mLayoutInflater;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -43,15 +41,15 @@ public class WordBookList extends ListFragment implements
 
 		setEmptyText(getActivity().getText(R.string.tip_empty));
 
-		// mAdapter = new MyCursorAdapter(getActivity(),
-		// android.R.layout.simple_list_item_2, mCursor, new String[] {
-		// DBA.COLUMN_WORD, DBA.COLUMN_TIMESTAMP }, new int[] {
-		// android.R.id.text1, android.R.id.text2 },
-		// CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+		mAdapter = new SimpleCursorAdapter(getActivity(),
+				android.R.layout.simple_list_item_2, mCursor, new String[] {
+						DBA.COLUMN_WORD, DBA.COLUMN_TIMESTAMP }, new int[] {
+						android.R.id.text1, android.R.id.text2 },
+				CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+
+		mLayoutInflater = getActivity().getLayoutInflater();
 
 		setListShown(false);
-
-		mSimpleDateFormat = new SimpleDateFormat(Word.TIMESTAMP_FORMAT);
 
 		getLoaderManager().initLoader(0, null, this);
 	}
@@ -77,15 +75,31 @@ public class WordBookList extends ListFragment implements
 		public View getView(int position, View convertView, ViewGroup parent) {
 			View view = null;
 			if (convertView == null) {
-				view = new TextView(getActivity());
-				if (view instanceof TextView) {
-					if (mCursor != null && mCursor.moveToPosition(position)) {
-						((TextView) view).setText(mCursor.getString(mCursor
-								.getColumnIndex(DBA.COLUMN_WORD)));
-					}
+				String word = null;
+				long time = 0L;
+				if (mCursor != null && mCursor.moveToPosition(position)) {
+					word = mCursor.getString(mCursor
+							.getColumnIndex(DBA.COLUMN_WORD));
+					time = mCursor.getLong(mCursor
+							.getColumnIndex(DBA.COLUMN_TIMESTAMP));
+				}
+
+				view = mLayoutInflater.inflate(R.layout.book_item, null);
+
+				TextView tv1 = (TextView) view
+						.findViewById(R.id.tv_book_item_word);
+				TextView tv2 = (TextView) view
+						.findViewById(R.id.tv_book_item_timestamp);
+				if (tv1 != null && tv2 != null) {
+					tv1.setText(word);
+					tv2.setText(DateUtils.getRelativeTimeSpanString(time));
 				}
 			} else {
 				view = convertView;
+			}
+			
+			if ((position & 0x01) == 0) {
+				view.setAlpha(128);
 			}
 			return view;
 		}
@@ -117,22 +131,6 @@ public class WordBookList extends ListFragment implements
 								.getColumnIndex(DBA.COLUMN_TIMESTAMP)));
 				String timeStr = mCursor.getString(mCursor
 						.getColumnIndex(DBA.COLUMN_TIMESTAMP));
-
-				if (mSimpleDateFormat != null) {
-					long time;
-					try {
-						time = mSimpleDateFormat.parse(timeStr).getTime();
-						String str = DateUtils.getRelativeTimeSpanString(time,
-								System.currentTimeMillis(),
-								DateUtils.MINUTE_IN_MILLIS,
-								DateUtils.FORMAT_NUMERIC_DATE).toString();
-						System.out.println("WordBookList.onListItemClick() "
-								+ str);
-
-					} catch (ParseException e) {
-						e.printStackTrace();
-					}
-				}
 				Toast.makeText(
 						getActivity(),
 						mCursor.getString(mCursor
@@ -178,5 +176,8 @@ public class WordBookList extends ListFragment implements
 
 	@Override
 	public void onLoaderReset(Loader<Cursor> loader) {
+		if (mCursor != null) {
+			mCursor.close();
+		}
 	}
 }

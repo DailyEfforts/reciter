@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    tools:context=".Luncher" >
+
+    <CheckBox
+        android:id="@+id/cb_book_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="6dip" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="2dip"
+        android:layout_toRightOf="@+id/cb_book_item" >
+
+        <TextView
+            android:id="@+id/tv_book_item_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:text="word"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:textIsSelectable="false" />
+
+        <TextView
+            android:id="@+id/tv_book_item_timestamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_book_item_word"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp"
+            android:text="timestamp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/gray"
+            android:textIsSelectable="false" />
+    </RelativeLayout>
+
+</RelativeLayout>
