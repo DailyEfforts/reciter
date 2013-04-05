@@ -220,7 +220,7 @@ public class TestPage extends Activity implements OnTouchListener {
 				} else {
 					v.setBackgroundDrawable(bgColorPressedWarning);
 					if (dba != null) {
-						dba.star(w.getWord());
+						dba.star(word);
 					}
 				}
 				returnValue = true;
