@@ -1,9 +1,5 @@
 package com.gmail.dailyefforts.android.reviwer.db;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -18,7 +14,7 @@ import com.gmail.dailyefforts.android.reviwer.word.Word;
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();
 	private static final String DATABASE_NAME = "wot.db";
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 2;
 	public static final String TABLE_NAME = "wordlist";
 	public static final String COLUMN_ID = "_id";
 	public static final String COLUMN_WORD = "word";
@@ -39,28 +35,27 @@ public class DBA extends SQLiteOpenHelper {
 			+ COLUMN_SAMPLE
 			+ " text, "
 			+ COLUMN_TIMESTAMP
-			+ " datetime default current_timestamp, "
-			+ COLUMN_STAR
-			+ " integer default 0, " + COLUMN_OTHER + " text);";
+			+ " datetime, "
+			+ COLUMN_STAR + " integer default 0, " + COLUMN_OTHER + " text);";
 
 	private static DBA dba = null;
 
 	public void star(final String word) {
 		String sql = "select " + COLUMN_ID + ", " + COLUMN_WORD + ", "
-				+ COLUMN_STAR + " from " + TABLE_NAME + " where " + COLUMN_WORD
-				+ "=?;";
+				+ COLUMN_STAR + ", " + COLUMN_TIMESTAMP + " from " + TABLE_NAME
+				+ " where " + COLUMN_WORD + "=?;";
 		Cursor cursor = dba.rawQuery(sql, new String[] { word });
 
 		if (cursor != null && cursor.moveToFirst()) {
 			int star = cursor.getInt(cursor.getColumnIndex(COLUMN_STAR));
 			if (Debuger.DEBUG) {
+				long timeStamp = cursor.getInt(cursor
+						.getColumnIndex(COLUMN_TIMESTAMP));
 				Log.d(TAG, "star() star: " + star);
+				Log.d(TAG, "star() timeStamp: " + timeStamp);
 			}
-			String timestamp = new SimpleDateFormat(Word.TIMESTAMP_FORMAT,
-					Locale.getDefault()).format(Calendar.getInstance()
-					.getTime());
 			ContentValues values = new ContentValues();
-			values.put(COLUMN_TIMESTAMP, timestamp);
+			values.put(COLUMN_TIMESTAMP, System.currentTimeMillis());
 			values.put(COLUMN_STAR, ++star);
 			getWritableDatabase().update(TABLE_NAME, values,
 					COLUMN_WORD + "=?", new String[] { word });

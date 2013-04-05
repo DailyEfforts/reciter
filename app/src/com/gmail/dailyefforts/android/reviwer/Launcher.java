@@ -283,6 +283,8 @@ public class Launcher extends Activity {
 							values.clear();
 							values.put(DBA.COLUMN_WORD, word);
 							values.put(DBA.COLUMN_MEANING, meanning);
+							values.put(DBA.COLUMN_TIMESTAMP,
+									System.currentTimeMillis());
 							dba.insert(DBA.TABLE_NAME, null, values);
 						}
 
