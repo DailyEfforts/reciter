@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:enabled="false"
-            android:text="@string/btn_txt_setting"
+            android:text="@string/settings"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
 
         <Button
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:enabled="false"
-            android:text="@string/btn_txt_exit"
+            android:text="@string/exit"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
 
         <Button

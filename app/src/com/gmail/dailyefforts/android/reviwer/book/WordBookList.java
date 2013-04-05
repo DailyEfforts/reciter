@@ -7,15 +7,17 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.R;
-import com.gmail.dailyefforts.android.reviwer.R.string;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.db.DbProvider;
+import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 
 public class WordBookList extends ListFragment implements
 		LoaderCallbacks<Cursor> {
@@ -49,13 +51,25 @@ public class WordBookList extends ListFragment implements
 
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
-		// Intent intent = new Intent(getActivity(), ImageViewer.class);
 		if (mCursor != null) {
-			/*
-			 * Images.update(mCursor); Intent intent = new Intent(getActivity(),
-			 * ImgPager.class); intent.putExtra(Images.POSITION, position);
-			 * startActivity(intent);
-			 */
+			if (Debuger.DEBUG) {
+				Log.d(TAG, "onListItemClick()");
+			}
+
+			if (mCursor.moveToPosition(position)) {
+				System.out.println("WordBookList.onListItemClick() "
+						+ mCursor.getString(mCursor
+								.getColumnIndex(DBA.COLUMN_WORD)));
+				System.out.println("WordBookList.onListItemClick() "
+						+ mCursor.getString(mCursor
+								.getColumnIndex(DBA.COLUMN_MEANING)));
+				Toast.makeText(
+						getActivity(),
+						mCursor.getString(mCursor
+								.getColumnIndex(DBA.COLUMN_MEANING)),
+						Toast.LENGTH_SHORT).show();
+			}
+
 		}
 	}
 

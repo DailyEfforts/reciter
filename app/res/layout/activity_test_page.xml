@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:background="@android:color/transparent"
-            android:text="@string/hello_world"
+            android:text="@string/error_empty"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/holo_green_light"
             android:textStyle="bold" />
