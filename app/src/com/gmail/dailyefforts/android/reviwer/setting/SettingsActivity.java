@@ -42,7 +42,7 @@ public class SettingsActivity extends PreferenceActivity {
 			// Load the preferences from an XML resource
 			addPreferencesFromResource(R.xml.settings);
 
-			mOptNumListPref = (ListPreference) findPreference(getString(R.string.pref_key_options_number));
+			mOptNumListPref = (ListPreference) findPreference(getString(R.string.pref_key_options_count));
 			mWordCountInOneUnitPref = (ListPreference) findPreference(getString(R.string.pref_key_word_count_in_one_unit));
 
 			mSharedPref = PreferenceManager
@@ -50,14 +50,14 @@ public class SettingsActivity extends PreferenceActivity {
 							.getApplicationContext());
 
 			mOptNumSummary = String.valueOf(getResources().getText(
-					R.string.pref_summary_options_number));
+					R.string.pref_summary_options_count));
 			mWordCountInOneUnitSummary = String.valueOf(getResources().getText(
 					R.string.pref_summary_word_count));
 
 			String value = mOptNumListPref.getValue();
 
 			if (value == null && mOptNumListPref != null) {
-				value = Settings.DEFAULT_OPTION_NUMBER;
+				value = Settings.DEFAULT_OPTION_COUNT;
 				mOptNumListPref.setValue(value);
 			}
 			

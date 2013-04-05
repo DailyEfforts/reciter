@@ -75,8 +75,8 @@ public class TestPage extends Activity implements OnTouchListener {
 				.getDefaultSharedPreferences(getApplicationContext());
 
 		optNum = Integer.valueOf(mSharedPref.getString(
-				getString(R.string.pref_key_options_number),
-				Settings.DEFAULT_OPTION_NUMBER));
+				getString(R.string.pref_key_options_count),
+				Settings.DEFAULT_OPTION_COUNT));
 
 		dba = DBA.getInstance(getApplicationContext());
 

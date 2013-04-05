@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="pref_options_number_list_entries">
+    <string-array name="pref_options_count_list_entries">
         <item>3</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
     </string-array>
-    <string-array name="pref_options_number_list_entry_values">
+    <string-array name="pref_options_count_list_entry_values">
         <item>3</item>
         <item>4</item>
         <item>5</item>
