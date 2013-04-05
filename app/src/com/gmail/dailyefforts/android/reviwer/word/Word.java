@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer;
+package com.gmail.dailyefforts.android.reviwer.word;
 
 import android.util.SparseArray;
 

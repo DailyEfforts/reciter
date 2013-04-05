@@ -1,4 +1,5 @@
-package com.gmail.dailyefforts.android.reviwer;
+package com.gmail.dailyefforts.android.reviwer.book;
+
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ public class WordBookActivity extends Activity {
 
 		// Display the fragment as the main content.
 		getFragmentManager().beginTransaction()
-				.replace(android.R.id.content, new NewWordList()).commit();
+				.replace(android.R.id.content, new WordBookList()).commit();
 
 	}
 }

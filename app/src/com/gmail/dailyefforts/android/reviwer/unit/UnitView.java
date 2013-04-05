@@ -10,10 +10,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.gmail.dailyefforts.android.reviwer.R;
-import com.gmail.dailyefforts.android.reviwer.TestPage;
-import com.gmail.dailyefforts.android.reviwer.Word;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
+import com.gmail.dailyefforts.android.reviwer.test.TestPage;
+import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class UnitView extends Button implements View.OnClickListener {
 

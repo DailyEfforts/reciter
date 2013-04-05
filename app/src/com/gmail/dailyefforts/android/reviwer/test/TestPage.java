@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer;
+package com.gmail.dailyefforts.android.reviwer.test;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,10 +21,16 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gmail.dailyefforts.android.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.R.drawable;
+import com.gmail.dailyefforts.android.reviwer.R.id;
+import com.gmail.dailyefforts.android.reviwer.R.layout;
+import com.gmail.dailyefforts.android.reviwer.R.string;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
 import com.gmail.dailyefforts.android.reviwer.setting.Settings;
+import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class TestPage extends Activity implements OnTouchListener {
 

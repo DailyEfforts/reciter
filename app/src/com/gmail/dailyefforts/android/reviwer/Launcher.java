@@ -24,11 +24,13 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
 
+import com.gmail.dailyefforts.android.reviwer.book.WordBookActivity;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.setting.Settings;
 import com.gmail.dailyefforts.android.reviwer.setting.SettingsActivity;
 import com.gmail.dailyefforts.android.reviwer.unit.UnitView;
+import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class Launcher extends Activity {
 

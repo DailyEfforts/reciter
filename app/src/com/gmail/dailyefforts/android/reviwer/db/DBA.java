@@ -12,8 +12,8 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.gmail.dailyefforts.android.reviwer.Word;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
+import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();

@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer;
+package com.gmail.dailyefforts.android.reviwer.book;
 
 import android.app.ListFragment;
 import android.app.LoaderManager.LoaderCallbacks;
@@ -12,12 +12,14 @@ import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
+import com.gmail.dailyefforts.android.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.R.string;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.db.DbProvider;
 
-public class NewWordList extends ListFragment implements
+public class WordBookList extends ListFragment implements
 		LoaderCallbacks<Cursor> {
-	private static final String TAG = NewWordList.class.getSimpleName();
+	private static final String TAG = WordBookList.class.getSimpleName();
 	private Cursor mCursor = null;
 	private SimpleCursorAdapter mAdapter;
 

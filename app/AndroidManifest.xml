@@ -14,8 +14,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.gmail.dailyefforts.android.reviwer.Launcher"
-        android:label="@string/app_name"
+            android:name=".Launcher"
+            android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,21 +24,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.gmail.dailyefforts.android.reviwer.TestPage"
+            android:name=".test.TestPage"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name="com.gmail.dailyefforts.android.reviwer.setting.SettingsActivity" >
+        <activity android:name=".setting.SettingsActivity" >
         </activity>
         <activity
-            android:name="WordBookActivity"
-            android:label="@string/label_word_book"
-             >
+            android:name=".book.WordBookActivity"
+            android:label="@string/label_word_book" >
         </activity>
 
         <provider
-            android:name="com.gmail.dailyefforts.android.reviwer.db.DbProvider"
+            android:name=".db.DbProvider"
             android:authorities="com.gmail.dailyefforts.android.reviwer"
             android:exported="false" >
         </provider>
