@@ -93,6 +93,15 @@ public class DBA extends SQLiteOpenHelper {
 
 	}
 
+	public void resetStar(final String word) {
+
+		ContentValues values = new ContentValues();
+		values.put(DBA.COLUMN_STAR, 0);
+		getWritableDatabase().update(TABLE_NAME, values, COLUMN_WORD + "=?",
+				new String[] { word });
+
+	}
+
 	public Word getWordByIdx(int idx) {
 		String sql = "select " + COLUMN_ID + ", " + COLUMN_WORD + ", "
 				+ COLUMN_MEANING + " from " + TABLE_NAME + " where "
@@ -109,23 +118,6 @@ public class DBA extends SQLiteOpenHelper {
 			cursor.close();
 		}
 		return new Word(word, meaning);
-	}
-
-	public void resetStar(final String word) {
-		String sql = "select " + COLUMN_ID + ", " + COLUMN_WORD + ", "
-				+ COLUMN_STAR + " from " + TABLE_NAME + " where " + COLUMN_WORD
-				+ "=?;";
-		Cursor cursor = dba.rawQuery(sql, new String[] { word });
-
-		if (cursor != null && cursor.moveToFirst()) {
-			String update = "update " + TABLE_NAME + " set " + COLUMN_STAR
-					+ "=" + 0 + " where " + COLUMN_WORD + "='" + word + "';";
-			getWritableDatabase().execSQL(update);
-		}
-
-		if (cursor != null) {
-			cursor.close();
-		}
 	}
 
 	private DBA(Context context) {

@@ -16,5 +16,10 @@
     <string name="label_word_book">Word Book</string>
     <string name="word_count">Word count</string>
     <string name="pref_key_word_count_in_one_unit" translatable="false">pref_key_word_count_in_one_unit</string>
+    <string name="tip_unstared_items">Unstared %1$d item(s).</string>
+    <string name="tip_unstar_items">Unstar %1$d item(s).</string>
+    <string name="tip_select_items_to_unstar">Select items to unstar</string>
+    <string name="tip_1_item_is_selected">1 item is selected</string>
+    <string name="tip_items_are_selected">%1$d items are selected</string>
 
 </resources>
