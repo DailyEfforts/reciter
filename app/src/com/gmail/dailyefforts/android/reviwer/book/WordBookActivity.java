@@ -101,8 +101,6 @@ public class WordBookActivity extends Activity {
 						SparseBooleanArray arr = listView
 								.getCheckedItemPositions();
 						if (arr != null && arr.size() > 0) {
-							getLoaderManager().restartLoader(0, null,
-									WordBookList.this);
 							for (int i = 0; i < arr.size(); i++) {
 								if (Debuger.DEBUG) {
 									Log.d(TAG,
@@ -135,6 +133,8 @@ public class WordBookActivity extends Activity {
 						}
 
 					}
+					getLoaderManager().restartLoader(0, null,
+							WordBookList.this);
 					mode.finish();
 					break;
 				default:
