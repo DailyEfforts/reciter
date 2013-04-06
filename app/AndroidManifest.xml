@@ -32,7 +32,6 @@
         <activity
             android:name=".setting.SettingsActivity"
             android:label="@string/settings" >
->
         </activity>
         <activity
             android:name=".book.WordBookActivity"
