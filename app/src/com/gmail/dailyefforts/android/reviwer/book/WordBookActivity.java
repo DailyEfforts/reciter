@@ -146,46 +146,10 @@ public class WordBookActivity extends Activity {
 			}
 
 			public void onDestroyActionMode(ActionMode mode) {
-				ListView listView = getListView();
-				if (listView != null) {
-					SparseBooleanArray arr = listView.getCheckedItemPositions();
-					for (int i = 0; i < arr.size(); i++) {
-						if (arr != null && arr.size() > 0) {
-							int position = arr.keyAt(i);
-							View view = listView.getChildAt(position);
-							if (view != null) {
-								CheckBox cb = (CheckBox) view
-										.findViewById(R.id.cb_book_item);
-								if (cb != null) {
-									cb.setChecked(false);
-								}
-							}
-						}
-					}
-				}
 			}
 
 			public void onItemCheckedStateChanged(ActionMode mode,
 					int position, long id, boolean checked) {
-				View v = getListView().getChildAt(position);
-				if (v != null) {
-					CheckBox checkBox = (CheckBox) v
-							.findViewById(R.id.cb_book_item);
-					TextView tv = (TextView) v
-							.findViewById(R.id.tv_book_item_word);
-					if (checkBox != null) {
-						checkBox.setChecked(checked);
-					}
-
-					if (Debuger.DEBUG) {
-						Log.d(TAG, "onItemCheckedStateChanged() position: "
-								+ position);
-						Log.d(TAG,
-								"onItemCheckedStateChanged() word: "
-										+ tv.getText());
-					}
-				}
-
 				setSubtitle(mode);
 			}
 

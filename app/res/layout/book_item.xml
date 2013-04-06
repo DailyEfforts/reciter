@@ -2,44 +2,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?android:attr/activatedBackgroundIndicator"
     android:descendantFocusability="blocksDescendants"
+    android:gravity="center_vertical"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:paddingLeft="?android:attr/listPreferredItemPaddingLeft"
+    android:paddingRight="?android:attr/listPreferredItemPaddingRight"
     tools:context=".Luncher" >
 
-    <CheckBox
-        android:id="@+id/cb_book_item"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/tv_book_item_word"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:enabled="false"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="6dip" />
+        android:gravity="center_vertical"
+        android:text="word"
+        android:textAppearance="?android:attr/textAppearanceListItem"
+        android:textColor="@color/orange_dark" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/tv_book_item_timestamp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="2dip"
-        android:layout_toRightOf="@+id/cb_book_item" >
-
-        <TextView
-            android:id="@+id/tv_book_item_word"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="6dp"
-            android:text="word"
-            android:textAppearance="?android:attr/textAppearanceListItem"
-            android:textIsSelectable="false" />
-
-        <TextView
-            android:id="@+id/tv_book_item_timestamp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_book_item_word"
-            android:paddingBottom="3dp"
-            android:paddingTop="3dp"
-            android:text="timestamp"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/gray"
-            android:textIsSelectable="false" />
-    </RelativeLayout>
+        android:layout_below="@+id/tv_book_item_word"
+        android:text="timestamp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/gray"
+        android:textStyle="italic" />
 
 </RelativeLayout>
