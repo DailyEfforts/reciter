@@ -21,5 +21,12 @@
     <string name="tip_select_items_to_unstar">Select items to unstar</string>
     <string name="tip_1_item_is_selected">1 item is selected</string>
     <string name="tip_items_are_selected">%1$d items are selected</string>
+    <string name="function_option">Function Options</string>
+    <string name="version_info">Version Information</string>
+    <string name="pref_key_current_version" translatable="false">pref_key_ver_info</string>
+    <string name="pref_key_check_new_ver" translatable="false">pref_key_check_new_ver</string>
+    <string name="unknown">unknown</string>
+    <string name="check_new_version">Check New Version</string>
+    <string name="current_version">Current_Version</string>
 
 </resources>
