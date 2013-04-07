@@ -279,7 +279,6 @@ public class TestPage extends Activity implements OnTouchListener {
 					} else {
 						if (!isFirstTouch && dba != null && dba.getStar(mWord) <= 0) {
 							dba.star(mWord);
-							toast(String.format(mAddToBook, mWord));
 						}
 						buildTestCase(optNum);
 					}
