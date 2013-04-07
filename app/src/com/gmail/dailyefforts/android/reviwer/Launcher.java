@@ -268,18 +268,7 @@ public class Launcher extends Activity {
 						String word = arr[0].trim();
 						String meanning = arr[1].trim();
 
-						String sql = "select " + DBA.COLUMN_WORD + " from "
-								+ DBA.TABLE_NAME + " where " + DBA.COLUMN_WORD
-								+ "=?;";
-						Cursor cursor = dba
-								.rawQuery(sql, new String[] { word });
-						if (Debuger.DEBUG) {
-							Log.d(TAG,
-									"doInBackground() " + word + " - "
-											+ meanning + ", exist: "
-											+ cursor.getCount());
-						}
-						if (cursor != null && cursor.getCount() == 0) {
+						if (!dba.exist(word)) {
 							values.clear();
 							values.put(DBA.COLUMN_WORD, word);
 							values.put(DBA.COLUMN_MEANING, meanning);
@@ -288,10 +277,6 @@ public class Launcher extends Activity {
 							dba.insert(DBA.TABLE_NAME, null, values);
 						}
 
-						if (cursor != null) {
-							cursor.close();
-							cursor = null;
-						}
 					}
 				}
 				dba.setTransactionSuccessful();

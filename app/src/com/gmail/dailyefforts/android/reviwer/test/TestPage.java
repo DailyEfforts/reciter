@@ -5,22 +5,22 @@ import java.util.Random;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnTouchListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,8 +37,8 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	private TextView tv;
 
-	private String word;
-	private String meaning;
+	private String mWord;
+	private String mMeaning;
 
 	private SparseArray<Word> map;
 
@@ -67,6 +67,27 @@ public class TestPage extends Activity implements OnTouchListener {
 	private int mRate;
 
 	private String mTipAccuracy;
+
+	private String mAddToBook;
+
+	private String mRmFromBook;
+
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		menu.clear();
+		if (dba == null) {
+			return false;
+		}
+		if (dba.getStar(mWord) <= 0) {
+			getMenuInflater().inflate(R.menu.add_to_book, menu);
+		} else {
+			getMenuInflater().inflate(R.menu.rm_from_book, menu);
+		}
+		if (Debuger.DEBUG) {
+			Log.d(TAG, "onPrepareOptionsMenu()");
+		}
+		return true;
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -101,19 +122,22 @@ public class TestPage extends Activity implements OnTouchListener {
 			tmp.setOnTouchListener(this);
 		}
 
-		bgColorNormal = getResources()
-				.getDrawable(R.drawable.opt_btn_bg_normal);
-		bgColorPressedBingo = getResources().getDrawable(
-				R.drawable.opt_btn_bg_pressed_bingo);
-		bgColorPressedWarning = getResources().getDrawable(
-				R.drawable.opt_btn_bg_pressed_warning);
+		Resources res = getResources();
+		bgColorNormal = res.getDrawable(R.drawable.opt_btn_bg_normal);
+		bgColorPressedBingo = res
+				.getDrawable(R.drawable.opt_btn_bg_pressed_bingo);
+		bgColorPressedWarning = res
+				.getDrawable(R.drawable.opt_btn_bg_pressed_warning);
 
 		map = Word.getMap();
 
 		mRate = (Window.PROGRESS_END - Window.PROGRESS_START) / map.size();
 
-		mTipAccuracy = String.valueOf(getResources().getText(
-				R.string.tip_accuracy));
+		mTipAccuracy = String.valueOf(res.getText(R.string.tip_accuracy));
+
+		mAddToBook = String.valueOf(res.getText(R.string.tip_add_to_word_book));
+		mRmFromBook = String.valueOf(res
+				.getText(R.string.tip_remove_from_word_book));
 
 		buildTestCase(optNum);
 
@@ -127,8 +151,26 @@ public class TestPage extends Activity implements OnTouchListener {
 		case android.R.id.home:
 			finish();
 			return true;
+		case R.id.menu_add_to_book:
+			if (dba != null) {
+				dba.star(mWord);
+				toast(String.format(mAddToBook, mWord));
+				invalidateOptionsMenu();
+			}
+			return true;
+		case R.id.menu_rm_from_book:
+			if (dba != null) {
+				dba.unStar(mWord);
+				toast(String.format(mRmFromBook, mWord));
+				invalidateOptionsMenu();
+			}
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	private void toast(String msg) {
+		Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
 	}
 
 	int mWordCounter = 0;
@@ -136,9 +178,11 @@ public class TestPage extends Activity implements OnTouchListener {
 	private void buildTestCase(int optNum) {
 		Random random = new Random();
 
-		word = map.get(mWordCounter).getWord();
-		meaning = map.get(mWordCounter).getMeaning();
-		tv.setText(word);
+		mWord = map.get(mWordCounter).getWord();
+		mMeaning = map.get(mWordCounter).getMeaning();
+		tv.setText(mWord);
+
+		invalidateOptionsMenu();
 
 		pageMap = new SparseArray<Word>();
 
@@ -156,7 +200,7 @@ public class TestPage extends Activity implements OnTouchListener {
 		for (int i = 0; i < mOptList.size(); i++) {
 			OptionButton btn = mOptList.get(i);
 			if (i == answerIdx) {
-				btn.setText(meaning);
+				btn.setText(mMeaning);
 				pageMap.put(btn.getId(), map.get(mWordCounter));
 			} else {
 
@@ -208,7 +252,7 @@ public class TestPage extends Activity implements OnTouchListener {
 			}
 			Word w = pageMap.get(v.getId());
 			if (w != null) {
-				if (word != null && word.equals(w.getWord())) {
+				if (mWord != null && mWord.equals(w.getWord())) {
 					bingGo = true;
 				}
 			}
@@ -222,9 +266,6 @@ public class TestPage extends Activity implements OnTouchListener {
 					v.setBackgroundDrawable(bgColorPressedBingo);
 				} else {
 					v.setBackgroundDrawable(bgColorPressedWarning);
-					if (dba != null) {
-						dba.star(word);
-					}
 				}
 				returnValue = true;
 				break;
@@ -236,6 +277,10 @@ public class TestPage extends Activity implements OnTouchListener {
 								Toast.LENGTH_SHORT).show();
 						finish();
 					} else {
+						if (!isFirstTouch && dba != null && dba.getStar(mWord) <= 0) {
+							dba.star(mWord);
+							toast(String.format(mAddToBook, mWord));
+						}
 						buildTestCase(optNum);
 					}
 				} else {

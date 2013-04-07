@@ -21,13 +21,15 @@
     <string name="tip_select_items_to_unstar">Select items to unstar</string>
     <string name="tip_1_item_is_selected">1 item is selected</string>
     <string name="tip_items_are_selected">%d items are selected</string>
+    <string name="tip_add_to_word_book">Added <b>%s</b> to word book</string>
+    <string name="tip_remove_from_word_book">Remove <b>%s</b> from word book</string>
     <string name="function_option">Function Options</string>
     <string name="version_info">Version Information</string>
     <string name="pref_key_current_version" translatable="false">pref_key_ver_info</string>
     <string name="pref_key_check_new_ver" translatable="false">pref_key_check_new_ver</string>
     <string name="unknown">unknown</string>
     <string name="check_new_version">Check New Version</string>
-    <string name="current_version">Current_Version</string>
+    <string name="current_version">Current Version</string>
     
     <string name="label_accracy">Accracy</string>
     <string name="tip_accuracy">%d%%</string>

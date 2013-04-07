@@ -136,7 +136,7 @@ public class WordBookActivity extends Activity {
 										}
 
 										if (dba != null) {
-											dba.resetStar(word);
+											dba.unStar(word);
 										}
 									}
 								}

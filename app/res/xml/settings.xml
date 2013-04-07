@@ -21,12 +21,10 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/version_info" >
         <Preference
+            style="?android:attr/preferenceInformationStyle"
             android:key="@string/pref_key_current_version"
             android:summary="@string/unknown"
             android:title="@string/current_version" />
-        <Preference
-            android:key="@string/pref_key_check_new_ver"
-            android:title="@string/check_new_version" />
     </PreferenceCategory>
 
 </PreferenceScreen>

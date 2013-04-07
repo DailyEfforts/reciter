@@ -41,10 +41,8 @@ public class DBA extends SQLiteOpenHelper {
 	private static DBA dba = null;
 
 	public void star(final String word) {
-		String sql = "select " + COLUMN_ID + ", " + COLUMN_WORD + ", "
-				+ COLUMN_STAR + ", " + COLUMN_TIMESTAMP + " from " + TABLE_NAME
-				+ " where " + COLUMN_WORD + "=?;";
-		Cursor cursor = dba.rawQuery(sql, new String[] { word });
+		Cursor cursor = query(TABLE_NAME, null, COLUMN_WORD + "=?",
+				new String[] { word }, null, null, null);
 
 		if (cursor != null && cursor.moveToFirst()) {
 			int star = cursor.getInt(cursor.getColumnIndex(COLUMN_STAR));
@@ -66,38 +64,32 @@ public class DBA extends SQLiteOpenHelper {
 		}
 	}
 
-	public void getStar() {
+	public int getStar(final String word) {
+		int star = -1;
+		Cursor cursor = query(TABLE_NAME, null, COLUMN_WORD + "=?",
+				new String[] { word }, null, null, null);
 
-		String sql = "select " + DBA.COLUMN_ID + ", " + DBA.COLUMN_WORD + ", "
-				+ DBA.COLUMN_MEANING + ", " + DBA.COLUMN_STAR + " from "
-				+ DBA.TABLE_NAME + " where " + DBA.COLUMN_STAR + ">?;";
-		Cursor cursor = rawQuery(sql, new String[] { "0" });
 		if (cursor != null && cursor.moveToFirst()) {
-			while (!cursor.isAfterLast()) {
-				String word = cursor.getString(cursor
-						.getColumnIndex(DBA.COLUMN_WORD));
-				String meaning = cursor.getString(cursor
-						.getColumnIndex(DBA.COLUMN_MEANING));
-				int star = cursor
-						.getInt(cursor.getColumnIndex(DBA.COLUMN_STAR));
-
-				if (Debuger.DEBUG) {
-					Log.d(TAG,
-							"getStar()"
-									+ String.format("%s-%s-%d", word, meaning,
-											star));
-				}
-				cursor.moveToNext();
-			}
-		}
-
-		if (cursor != null) {
+			star = cursor.getInt(cursor.getColumnIndex(COLUMN_STAR));
 			cursor.close();
 		}
+		return star;
 
 	}
 
-	public void resetStar(final String word) {
+	public boolean exist(final String word) {
+		Cursor cursor = query(TABLE_NAME, null, COLUMN_WORD + "=?",
+				new String[] { word }, null, null, null);
+
+		if (cursor != null && cursor.moveToFirst()) {
+			cursor.close();
+			return true;
+		}
+
+		return false;
+	}
+
+	public void unStar(final String word) {
 
 		ContentValues values = new ContentValues();
 		values.put(DBA.COLUMN_STAR, 0);
@@ -107,20 +99,18 @@ public class DBA extends SQLiteOpenHelper {
 	}
 
 	public Word getWordByIdx(int idx) {
-		String sql = "select " + COLUMN_ID + ", " + COLUMN_WORD + ", "
-				+ COLUMN_MEANING + " from " + TABLE_NAME + " where "
-				+ COLUMN_ID + "=?;";
-		Cursor cursor = dba.rawQuery(sql, new String[] { String.valueOf(idx) });
+		Cursor cursor = query(TABLE_NAME, null, COLUMN_ID + "=?",
+				new String[] { String.valueOf(idx) }, null, null, null);
+
 		String word = "";
 		String meaning = "";
+
 		if (cursor != null && cursor.moveToFirst()) {
 			word = cursor.getString(cursor.getColumnIndex(COLUMN_WORD));
 			meaning = cursor.getString(cursor.getColumnIndex(COLUMN_MEANING));
-		}
-
-		if (cursor != null) {
 			cursor.close();
 		}
+
 		return new Word(word, meaning);
 	}
 
@@ -147,7 +137,7 @@ public class DBA extends SQLiteOpenHelper {
 	}
 
 	public int getCount() {
-		Cursor cursor = rawQuery("SELECT * FROM " + TABLE_NAME, null);
+		Cursor cursor = query(TABLE_NAME, null, null, null, null, null, null);
 		int count = 0;
 		if (cursor != null) {
 			count = cursor.getCount();
@@ -155,7 +145,7 @@ public class DBA extends SQLiteOpenHelper {
 		}
 		return count;
 	}
-
+	
 	public long insert(String table, String nullColumnHack, ContentValues values) {
 		long result = -1L;
 		try {
