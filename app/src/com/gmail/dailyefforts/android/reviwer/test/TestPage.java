@@ -15,10 +15,12 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,17 +64,17 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	private DBA dba;
 
-	private ProgressBar pb;
-
 	private int mDbCount;
+
+	private int mRate;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_PROGRESS);
 		setContentView(R.layout.activity_test_page);
-
+		setProgressBarVisibility(true);
 		tv = (TextView) findViewById(R.id.tv_word);
-		pb = (ProgressBar) findViewById(R.id.pb);
 
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
@@ -80,7 +82,7 @@ public class TestPage extends Activity implements OnTouchListener {
 		optNum = Integer.valueOf(mSharedPref.getString(
 				getString(R.string.pref_key_options_count),
 				Settings.DEFAULT_OPTION_COUNT));
-		
+
 		dba = DBA.getInstance(getApplicationContext());
 
 		mDbCount = dba.getCount();
@@ -110,10 +112,7 @@ public class TestPage extends Activity implements OnTouchListener {
 
 		map = Word.getMap();
 
-		if (pb != null) {
-			pb.setMax(map.size());
-			pb.setAlpha(128);
-		}
+		mRate = (Window.PROGRESS_END - Window.PROGRESS_START) / map.size();
 
 		buildTestCase(optNum);
 
@@ -131,13 +130,13 @@ public class TestPage extends Activity implements OnTouchListener {
 		return super.onOptionsItemSelected(item);
 	}
 
-	int wordIdx = 0;
+	int mWordCounter = 0;
 
 	private void buildTestCase(int optNum) {
 		Random random = new Random();
 
-		word = map.get(wordIdx).getWord();
-		meaning = map.get(wordIdx).getMeaning();
+		word = map.get(mWordCounter).getWord();
+		meaning = map.get(mWordCounter).getMeaning();
 		tv.setText(word);
 
 		pageMap = new SparseArray<Word>();
@@ -146,7 +145,7 @@ public class TestPage extends Activity implements OnTouchListener {
 		ArrayList<Integer> arrList = new ArrayList<Integer>();
 		while (arrList.size() < optNum - 1) {
 			int tmp = random.nextInt(mDbCount);
-			if (tmp != wordIdx && !arrList.contains(tmp)) {
+			if (tmp != mWordCounter && !arrList.contains(tmp)) {
 				arrList.add(tmp);
 			}
 		}
@@ -157,7 +156,7 @@ public class TestPage extends Activity implements OnTouchListener {
 			OptionButton btn = mOptList.get(i);
 			if (i == answerIdx) {
 				btn.setText(meaning);
-				pageMap.put(btn.getId(), map.get(wordIdx));
+				pageMap.put(btn.getId(), map.get(mWordCounter));
 			} else {
 
 				int tmp = 0;
@@ -180,25 +179,21 @@ public class TestPage extends Activity implements OnTouchListener {
 		isFirstTouch = true;
 
 		if (tvBingoRate != null) {
-			if (wordIdx <= 0) {
+			if (mWordCounter <= 0) {
 				tvBingoRate.setText("");
 			} else {
 				tvBingoRate.setText(String.format("%d / %d  %.0f%%", bingoNum,
-						wordIdx, bingoNum * 100.0f / wordIdx));
+						mWordCounter, bingoNum * 100.0f / mWordCounter));
 			}
 		}
-		if (pb != null) {
-			pb.setProgress(wordIdx);
-		}
-		wordIdx++;
+		setProgress((mWordCounter * mRate));
+		mWordCounter++;
 	}
-/*
-	private String getMeaningByIdx(int idx) {
-		if (idx >= 0 && map != null && idx < map.size()) {
-			return map.get(idx).getMeaning();
-		}
-		return null;
-	}*/
+
+	/*
+	 * private String getMeaningByIdx(int idx) { if (idx >= 0 && map != null &&
+	 * idx < map.size()) { return map.get(idx).getMeaning(); } return null; }
+	 */
 
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
@@ -237,7 +232,7 @@ public class TestPage extends Activity implements OnTouchListener {
 			case MotionEvent.ACTION_UP:
 				((Button) v).playSoundEffect(SoundEffectConstants.CLICK);
 				if (bingGo) {
-					if (wordIdx == map.size()) {
+					if (mWordCounter == map.size()) {
 						Toast.makeText(getApplicationContext(), "Done.",
 								Toast.LENGTH_SHORT).show();
 						finish();
