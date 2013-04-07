@@ -14,7 +14,7 @@ import com.gmail.dailyefforts.android.reviwer.word.Word;
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();
 	private static final String DATABASE_NAME = "wot.db";
-	private static final int DATABASE_VERSION = 2;
+	private static final int DATABASE_VERSION = 3;
 	public static final String TABLE_NAME = "wordlist";
 	public static final String COLUMN_ID = "_id";
 	public static final String COLUMN_WORD = "word";
