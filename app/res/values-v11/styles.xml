@@ -20,9 +20,19 @@
         <item name="android:windowBackground">@android:color/black</item>
         <item name="android:actionBarStyle">@style/TranslucentDarkActionBar</item>
     </style>
+    <style name="ActivityTheme.TranslucentActionBar" parent="AppBaseTheme">
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:actionBarStyle">@style/TranslucentActionBar</item>
+    </style>
 
     <style name="TranslucentDarkActionBar" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:background">#99000000</item>
     </style>
+
+    <style name="TranslucentActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">#00000000</item>
+    </style>
+
 
 </resources>

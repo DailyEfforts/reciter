@@ -7,34 +7,16 @@
     android:weightSum="9"
     tools:context=".TestPage" >
 
-    <RelativeLayout
+    <Button
+        android:id="@+id/tv_word"
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_weight="3"
-        android:background="#ff000000" >
-
-        <TextView
-            android:id="@+id/tv_bingo_rate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="2dp"
-            android:textColor="@color/bingo_rate_text_color"
-            android:textIsSelectable="true"
-            android:textStyle="italic" />
-
-        <Button
-            android:id="@+id/tv_word"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@android:color/transparent"
-            android:text="@string/error_empty"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/holo_green_light"
-            android:textStyle="bold" />
-    </RelativeLayout>
+        android:background="@android:color/transparent"
+        android:text="@string/error_empty"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/holo_green_light"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/opt_category"

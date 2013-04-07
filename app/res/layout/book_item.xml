@@ -26,7 +26,6 @@
         android:layout_below="@+id/tv_book_item_word"
         android:text="timestamp"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/gray"
-        android:textStyle="italic" />
+        android:textColor="@color/gray" />
 
 </RelativeLayout>

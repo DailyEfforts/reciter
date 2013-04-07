@@ -37,8 +37,6 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	private TextView tv;
 
-	private TextView tvBingoRate;
-
 	private String word;
 	private String meaning;
 
@@ -68,6 +66,8 @@ public class TestPage extends Activity implements OnTouchListener {
 
 	private int mRate;
 
+	private String mTipAccuracy;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -75,7 +75,7 @@ public class TestPage extends Activity implements OnTouchListener {
 		setContentView(R.layout.activity_test_page);
 		setProgressBarVisibility(true);
 		tv = (TextView) findViewById(R.id.tv_word);
-
+		getActionBar().setDisplayShowTitleEnabled(false);
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
 
@@ -108,11 +108,12 @@ public class TestPage extends Activity implements OnTouchListener {
 		bgColorPressedWarning = getResources().getDrawable(
 				R.drawable.opt_btn_bg_pressed_warning);
 
-		tvBingoRate = (TextView) findViewById(R.id.tv_bingo_rate);
-
 		map = Word.getMap();
 
 		mRate = (Window.PROGRESS_END - Window.PROGRESS_START) / map.size();
+
+		mTipAccuracy = String.valueOf(getResources().getText(
+				R.string.tip_accuracy));
 
 		buildTestCase(optNum);
 
@@ -178,13 +179,11 @@ public class TestPage extends Activity implements OnTouchListener {
 
 		isFirstTouch = true;
 
-		if (tvBingoRate != null) {
-			if (mWordCounter <= 0) {
-				tvBingoRate.setText("");
-			} else {
-				tvBingoRate.setText(String.format("%d / %d  %.0f%%", bingoNum,
-						mWordCounter, bingoNum * 100.0f / mWordCounter));
-			}
+		if (mWordCounter <= 0) {
+		} else {
+			getActionBar().setSubtitle(
+					String.format(mTipAccuracy,
+							(int) (bingoNum * 100.0f / mWordCounter)));
 		}
 		setProgress((mWordCounter * mRate));
 		mWordCounter++;
