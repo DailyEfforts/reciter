@@ -19,7 +19,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -39,6 +38,18 @@ public class WordBookActivity extends Activity {
 		getFragmentManager().beginTransaction()
 				.replace(android.R.id.content, new WordBookList()).commit();
 
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			finish();
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
@@ -133,8 +144,8 @@ public class WordBookActivity extends Activity {
 						}
 
 					}
-					getLoaderManager().restartLoader(0, null,
-							WordBookList.this);
+					getLoaderManager()
+							.restartLoader(0, null, WordBookList.this);
 					mode.finish();
 					break;
 				default:

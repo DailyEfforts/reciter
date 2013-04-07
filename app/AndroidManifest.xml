@@ -19,20 +19,21 @@
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name=".test.TestPage"
             android:label=""
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:screenOrientation="portrait" >
         </activity>
+        
         <activity
             android:name=".setting.SettingsActivity"
             android:label="@string/settings" >
         </activity>
+        
         <activity
             android:name=".book.WordBookActivity"
             android:label="@string/label_word_book" >
