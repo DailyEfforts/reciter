@@ -9,7 +9,6 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
-import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -164,9 +163,7 @@ public class Launcher extends Activity {
 
 		new LoadWordsList().execute();
 
-		if (Debuger.DEBUG) {
-			Log.d(TAG, "onCreate()");
-		}
+		checkLatestVersion();
 	}
 
 	@Override
@@ -195,7 +192,13 @@ public class Launcher extends Activity {
 			mGridView.startAnimation(mAnimation);
 		}
 	}
-
+	private void checkLatestVersion() {
+		Intent intent = new Intent(Config.ACTION_NAME_CHECK_VERSION);
+		if (Debuger.DEBUG) {
+			Log.d(TAG, "checkLatestVersion()");
+		}
+		startService(intent);
+	}
 	private class LoadWordsList extends AsyncTask<Void, Integer, Boolean> {
 
 		@Override
@@ -224,6 +227,7 @@ public class Launcher extends Activity {
 					mGridView.setVisibility(View.VISIBLE);
 
 					mGridView.startAnimation(mAnimation);
+					
 				}
 			}
 		}
