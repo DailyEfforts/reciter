@@ -19,12 +19,12 @@
             android:summary="@string/pref_summary_word_count"
             android:title="@string/word_count" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/version_info" >
+    <PreferenceCategory android:title="@string/about" >
         <Preference
             style="?android:attr/preferenceInformationStyle"
-            android:key="@string/pref_key_current_version"
+            android:key="@string/pref_key_version"
             android:summary="@string/unknown"
-            android:title="@string/current_version" />
+            android:title="@string/version" />
     </PreferenceCategory>
 
 </PreferenceScreen>

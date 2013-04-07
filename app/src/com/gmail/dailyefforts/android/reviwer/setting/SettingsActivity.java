@@ -60,7 +60,7 @@ public class SettingsActivity extends PreferenceActivity {
 
 			mOptNumListPref = (ListPreference) findPreference(getString(R.string.pref_key_options_count));
 			mWordCountInOneUnitPref = (ListPreference) findPreference(getString(R.string.pref_key_word_count_in_one_unit));
-			mCurrentVersionPref = (Preference) findPreference(getString(R.string.pref_key_current_version));
+			mCurrentVersionPref = (Preference) findPreference(getString(R.string.pref_key_version));
 			if (mCurrentVersionPref != null) {
 				try {
 					String versionName = getActivity().getPackageManager()
