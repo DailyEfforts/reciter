@@ -146,6 +146,14 @@ public class TestPage extends Activity implements OnTouchListener {
 	}
 
 	@Override
+	protected void onPause() {
+		super.onPause();
+		if (!isFirstTouch && dba != null && dba.getStar(mWord) <= 0) {
+			dba.star(mWord);
+		}
+	}
+
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
@@ -277,7 +285,8 @@ public class TestPage extends Activity implements OnTouchListener {
 								Toast.LENGTH_SHORT).show();
 						finish();
 					} else {
-						if (!isFirstTouch && dba != null && dba.getStar(mWord) <= 0) {
+						if (!isFirstTouch && dba != null
+								&& dba.getStar(mWord) <= 0) {
 							dba.star(mWord);
 						}
 						buildTestCase(optNum);
