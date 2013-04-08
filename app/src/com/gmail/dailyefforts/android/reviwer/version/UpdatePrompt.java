@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
@@ -38,7 +37,7 @@ public class UpdatePrompt extends Activity implements OnClickListener {
 		}
 		apk = new File(getIntent().getExtras().getString(
 				Config.INTENT_APK_FILE_PATH));
-		
+
 		String versionName = getIntent().getExtras().getString(
 				Config.INTENT_APK_VERSION_NAME);
 
@@ -47,7 +46,7 @@ public class UpdatePrompt extends Activity implements OnClickListener {
 				versionName));
 
 	}
-    
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -55,10 +54,11 @@ public class UpdatePrompt extends Activity implements OnClickListener {
 			Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
 			intent.setData(Uri.fromFile(apk));
 			intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
-            intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
-            intent.putExtra(Intent.EXTRA_INSTALLER_PACKAGE_NAME,
-                    getApplicationInfo().packageName);
-            startActivity(intent);
+			intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
+			intent.putExtra(Intent.EXTRA_INSTALLER_PACKAGE_NAME,
+					getApplicationInfo().packageName);
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(intent);
 			break;
 		case R.id.btn_update_cancel:
 			finish();
