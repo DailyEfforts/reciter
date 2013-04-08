@@ -66,7 +66,7 @@ public class SettingsActivity extends PreferenceActivity {
 					String versionName = getActivity().getPackageManager()
 							.getPackageInfo(getActivity().getPackageName(),
 									PackageManager.GET_SIGNATURES).versionName;
-					mCurrentVersionPref.setSummary("v" + versionName);
+					mCurrentVersionPref.setSummary(versionName);
 				} catch (NameNotFoundException e) {
 					e.printStackTrace();
 				}
