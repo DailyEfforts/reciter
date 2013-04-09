@@ -40,10 +40,20 @@ public class UpdatePrompt extends Activity implements OnClickListener {
 
 		String versionName = getIntent().getExtras().getString(
 				Config.INTENT_APK_VERSION_NAME);
+		String info = getIntent().getExtras().getString(
+				Config.INTENT_APK_VERSION_INFO);
 
 		setTitle(String.format(
 				String.valueOf(getResources().getText(R.string.update_prompt)),
 				versionName));
+		
+		if (mTv != null) {
+			if (info != null && info.length() > 0) {
+				mTv.setText(info);
+			} else {
+				mTv.setVisibility(View.GONE);
+			}
+		}
 
 	}
 

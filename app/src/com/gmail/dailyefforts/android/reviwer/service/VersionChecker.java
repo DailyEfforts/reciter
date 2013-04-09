@@ -74,11 +74,13 @@ public class VersionChecker extends IntentService {
 	private class Version {
 		private String name;
 		private int code;
+		private String info;
 
-		public Version(String name, int code) {
+		public Version(String name, int code, String info) {
 			super();
 			this.name = name;
 			this.code = code;
+			this.info = info;
 		}
 
 		public String getName() {
@@ -87,6 +89,10 @@ public class VersionChecker extends IntentService {
 
 		public int getCode() {
 			return code;
+		}
+
+		public String getInfo() {
+			return info;
 		}
 
 	}
@@ -107,8 +113,9 @@ public class VersionChecker extends IntentService {
 					int code = Integer.parseInt(jsonObj
 							.getString(Config.JSON_VERSION_CODE));
 					String name = jsonObj.getString(Config.JSON_VERSION_NAME);
+					String info = jsonObj.getString(Config.JSON_VERSION_info);
 
-					ver = new Version(name, code);
+					ver = new Version(name, code, info);
 				} catch (JSONException e) {
 					Log.e(TAG, e.getMessage());
 				}
@@ -149,22 +156,20 @@ public class VersionChecker extends IntentService {
 		return in;
 	}
 
-	private void launchUpdatePrompt(final File apk, final String versionName) {
-		if (apk == null || !apk.exists()) {
+	private void launchUpdatePrompt(final File apk, final Version ver) {
+		if (apk == null || !apk.exists() || ver == null) {
 			return;
 		}
 		Intent intent = new Intent(getApplicationContext(), UpdatePrompt.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		intent.putExtra(Config.INTENT_APK_FILE_PATH, apk.getAbsolutePath());
-		intent.putExtra(Config.INTENT_APK_VERSION_NAME, versionName);
+		intent.putExtra(Config.INTENT_APK_VERSION_NAME, ver.getName());
+		intent.putExtra(Config.INTENT_APK_VERSION_INFO, ver.getInfo());
 		startActivity(intent);
 	}
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
-		if (Debuger.DEBUG) {
-			Log.d(TAG, "onHandleIntent()");
-		}
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 		if (networkInfo != null && networkInfo.isConnected()) {
@@ -190,7 +195,7 @@ public class VersionChecker extends IntentService {
 			if (serverVer.getCode() > currentVersionCode
 					&& currentVersionCode > 0) {
 				File apk = downLoadApk(getInStream(Config.URL_APK));
-				launchUpdatePrompt(apk, serverVer.getName());
+				launchUpdatePrompt(apk, serverVer);
 			}
 		} else {
 			Log.e(TAG, "network is not available now.");
