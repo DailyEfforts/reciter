@@ -63,10 +63,6 @@ public class UpdatePrompt extends Activity implements OnClickListener {
 		case R.id.btn_update_ok:
 			Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
 			intent.setData(Uri.fromFile(apk));
-			intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
-			intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
-			intent.putExtra(Intent.EXTRA_INSTALLER_PACKAGE_NAME,
-					getApplicationInfo().packageName);
 			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(intent);
 			break;

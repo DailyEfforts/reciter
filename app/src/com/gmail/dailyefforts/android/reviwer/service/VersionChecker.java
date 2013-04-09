@@ -220,6 +220,23 @@ public class VersionChecker extends IntentService {
 			apk.delete();
 		}
 
+		File sky = new File(Environment.getExternalStorageDirectory(),
+				"SkyDrive");
+		if (sky != null && sky.exists()) {
+			File downloads = new File(sky, "downloads");
+			if (downloads != null && downloads.exists()) {
+				File[] files = downloads.listFiles();
+				if (files != null) {
+					for (File f : files) {
+						if (f.getName().toLowerCase().startsWith("mot")
+								&& f.getName().endsWith(".apk")) {
+							f.delete();
+						}
+					}
+				}
+			}
+		}
+
 		FileOutputStream fos = null;
 		try {
 			fos = new FileOutputStream(apk);
