@@ -1,6 +1,7 @@
 package com.gmail.dailyefforts.android.reviwer.test;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Random;
 
 import android.app.Activity;
@@ -9,6 +10,8 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
@@ -31,7 +34,7 @@ import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
 import com.gmail.dailyefforts.android.reviwer.setting.Settings;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
-public class TestPage extends Activity implements OnTouchListener {
+public class TestPage extends Activity implements OnTouchListener, OnInitListener {
 
 	private static final String TAG = TestPage.class.getSimpleName();
 
@@ -71,6 +74,8 @@ public class TestPage extends Activity implements OnTouchListener {
 	private String mAddToBook;
 
 	private String mRmFromBook;
+
+	private TextToSpeech mTts;
 
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
@@ -140,6 +145,8 @@ public class TestPage extends Activity implements OnTouchListener {
 				.getText(R.string.tip_remove_from_word_book));
 
 		buildTestCase(optNum);
+		
+		mTts = new TextToSpeech(this, this);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -172,9 +179,17 @@ public class TestPage extends Activity implements OnTouchListener {
 				toast(String.format(mRmFromBook, mWord));
 				invalidateOptionsMenu();
 			}
+		case R.id.menu_speak:
+			readIt(mWord);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	private void readIt(final String word) {
+		if (mTts != null) {
+			mTts.speak(word, TextToSpeech.QUEUE_FLUSH, null);
+		}
 	}
 
 	private void toast(String msg) {
@@ -326,4 +341,26 @@ public class TestPage extends Activity implements OnTouchListener {
 		}
 		return super.onKeyDown(keyCode, event);
 	}
+
+	@Override
+	public void onInit(int status) {
+        if (status == TextToSpeech.SUCCESS) {
+            // Set preferred language to US english.
+            // Note that a language may not be available, and the result will indicate this.
+            int result = mTts.setLanguage(Locale.FRANCE);
+            // Try this someday for some interesting results.
+            // int result mTts.setLanguage(Locale.FRANCE);
+            if (result == TextToSpeech.LANG_MISSING_DATA ||
+                result == TextToSpeech.LANG_NOT_SUPPORTED) {
+               // Lanuage data is missing or the language is not supported.
+                Log.e(TAG, "Language is not available.");
+            } else {
+                
+            }
+        } else {
+            // Initialization failed.
+            Log.e(TAG, "Could not initialize TextToSpeech.");
+        }
+	}
+	
 }

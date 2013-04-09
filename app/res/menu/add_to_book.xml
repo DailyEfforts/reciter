@@ -3,7 +3,11 @@
     <item
         android:id="@+id/menu_add_to_book"
         android:icon="@android:drawable/star_off"
-        android:orderInCategory="100"
         android:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_speak"
+        android:showAsAction="always"
+        android:icon="@drawable/speak">
+    </item>
 
 </menu>

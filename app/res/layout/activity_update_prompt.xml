@@ -6,11 +6,11 @@
 
     <TextView
         android:id="@+id/tv_update_version_info"
-        style="?android:attr/dialogMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:visibility="gone"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingLeft="?android:attr/listPreferredItemPaddingLeft"
         android:textIsSelectable="false" />
 
     <LinearLayout

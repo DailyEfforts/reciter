@@ -163,7 +163,6 @@ public class Launcher extends Activity {
 
 		new LoadWordsList().execute();
 
-		checkLatestVersion();
 	}
 
 	@Override
@@ -192,7 +191,7 @@ public class Launcher extends Activity {
 			mGridView.startAnimation(mAnimation);
 		}
 	}
-	private void checkLatestVersion() {
+	private void launchVersionChecker() {
 		Intent intent = new Intent(Config.ACTION_NAME_CHECK_VERSION);
 		if (Debuger.DEBUG) {
 			Log.d(TAG, "checkLatestVersion()");
@@ -229,6 +228,8 @@ public class Launcher extends Activity {
 					mGridView.startAnimation(mAnimation);
 					
 				}
+				
+				launchVersionChecker();
 			}
 		}
 
