@@ -91,7 +91,6 @@ public class WordBookActivity extends Activity {
 				MenuInflater inflater = getActivity().getMenuInflater();
 				inflater.inflate(R.menu.word_list_select, menu);
 				mode.setTitle(R.string.tip_select_items_to_unstar);
-				setSubtitle(mode);
 				return true;
 			}
 
@@ -102,11 +101,6 @@ public class WordBookActivity extends Activity {
 			public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
 				switch (item.getItemId()) {
 				case R.id.unstar:
-					String tip = String.format(String.valueOf(getResources()
-							.getText(R.string.tip_unstar_items)), getListView()
-							.getCheckedItemCount());
-					Toast.makeText(getActivity(), tip, Toast.LENGTH_SHORT)
-							.show();
 					ListView listView = getListView();
 					if (listView != null) {
 						SparseBooleanArray arr = listView
@@ -161,27 +155,8 @@ public class WordBookActivity extends Activity {
 
 			public void onItemCheckedStateChanged(ActionMode mode,
 					int position, long id, boolean checked) {
-				setSubtitle(mode);
 			}
 
-			private void setSubtitle(ActionMode mode) {
-				final int checkedCount = getListView().getCheckedItemCount();
-				switch (checkedCount) {
-				case 0:
-					mode.setSubtitle(null);
-					break;
-				case 1:
-					mode.setSubtitle(R.string.tip_1_item_is_selected);
-					break;
-				default:
-					String tip = String.format(
-							String.valueOf(getResources().getText(
-									R.string.tip_items_are_selected)),
-							checkedCount);
-					mode.setSubtitle(tip);
-					break;
-				}
-			}
 		}
 
 		private class MyAdapter extends BaseAdapter {

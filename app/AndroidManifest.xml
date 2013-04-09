@@ -29,7 +29,7 @@
         </activity>
         <activity
             android:name="com.gmail.dailyefforts.android.reviwer.test.TestPage"
-            android:label="@string/label_accracy"
+            android:label="@string/accracy"
             android:screenOrientation="portrait"
             android:theme="@style/ActivityTheme.TranslucentActionBar" >
         </activity>
@@ -39,7 +39,7 @@
         </activity>
         <activity
             android:name="com.gmail.dailyefforts.android.reviwer.book.WordBookActivity"
-            android:label="@string/label_word_book" >
+            android:label="@string/my_word_book" >
         </activity>
 
         <provider
@@ -57,8 +57,8 @@
         </service>
 
         <activity
-            android:name="com.gmail.dailyefforts.android.reviwer.version.UpdatePrompt"
-            android:label="@string/title_activity_update_prompt"
+            android:name="com.gmail.dailyefforts.android.reviwer.version.UpdateConfirm"
+            android:label="@string/app_name"
             android:theme="@style/Activity.Dialog" >
         </activity>
     </application>

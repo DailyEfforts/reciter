@@ -27,7 +27,7 @@ import android.util.Log;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.version.UpdatePrompt;
+import com.gmail.dailyefforts.android.reviwer.version.UpdateConfirm;
 
 public class VersionChecker extends IntentService {
 
@@ -160,7 +160,7 @@ public class VersionChecker extends IntentService {
 		if (apk == null || !apk.exists() || ver == null) {
 			return;
 		}
-		Intent intent = new Intent(getApplicationContext(), UpdatePrompt.class);
+		Intent intent = new Intent(getApplicationContext(), UpdateConfirm.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		intent.putExtra(Config.INTENT_APK_FILE_PATH, apk.getAbsolutePath());
 		intent.putExtra(Config.INTENT_APK_VERSION_NAME, ver.getName());
@@ -170,6 +170,12 @@ public class VersionChecker extends IntentService {
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
+		if (Debuger.DEBUG) {
+			File apk = new File(Environment.getExternalStorageDirectory(), "/Mot/Mot.apk");
+			Version serverVer = new Version("1.7.0", 9, "1. a\n2.b");
+			launchUpdatePrompt(apk, serverVer );
+			return;
+		}
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 		if (networkInfo != null && networkInfo.isConnected()) {
