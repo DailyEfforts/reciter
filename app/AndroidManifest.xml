@@ -30,8 +30,7 @@
         <activity
             android:name="com.gmail.dailyefforts.android.reviwer.test.TestPage"
             android:label="@string/accracy"
-            android:screenOrientation="portrait"
-            android:theme="@style/ActivityTheme.TranslucentActionBar" >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.gmail.dailyefforts.android.reviwer.setting.SettingsActivity"

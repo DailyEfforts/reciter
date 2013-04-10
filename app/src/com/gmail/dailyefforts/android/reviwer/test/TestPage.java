@@ -179,6 +179,7 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 				toast(String.format(mRmFromBook, mWord));
 				invalidateOptionsMenu();
 			}
+			return true;
 		case R.id.menu_speak:
 			readIt(mWord);
 			return true;

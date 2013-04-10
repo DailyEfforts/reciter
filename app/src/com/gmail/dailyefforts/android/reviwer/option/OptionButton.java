@@ -15,6 +15,7 @@ public class OptionButton extends Button {
 		// TODO Auto-generated constructor stub
 		extracted();
 		setTextAppearance(context, android.R.style.TextAppearance_Medium);
+		setTextColor(android.R.attr.textColorSecondary);
 		// setTextColor(getResources().getColor(R.color.gray_light));
 
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
