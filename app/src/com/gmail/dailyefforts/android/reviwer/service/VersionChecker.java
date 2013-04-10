@@ -172,7 +172,8 @@ public class VersionChecker extends IntentService {
 	protected void onHandleIntent(Intent intent) {
 		if (Debuger.DEBUG) {
 			File apk = new File(Environment.getExternalStorageDirectory(), "/Mot/Mot.apk");
-			Version serverVer = new Version("1.7.0", 9, "1. a\n2.b");
+			Version serverVer = new Version("1.7.0", 9, "1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n");
+//			Version serverVer = new Version("1.7.0", 9, "1. a\n2.b1. a");
 			launchUpdatePrompt(apk, serverVer );
 			return;
 		}

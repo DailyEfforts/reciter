@@ -1,14 +1,14 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".UpdateConfirm" >
 
     <TextView
         android:id="@+id/tv_update_confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:gravity="center_vertical"
         android:paddingLeft="12dip"
         android:paddingRight="12dip"
@@ -16,23 +16,28 @@
         android:textColor="?android:attr/textColorPrimary"
         android:textIsSelectable="false" />
 
-    <TextView
-        android:id="@+id/tv_update_version_info"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_update_confirm"
-        android:gravity="center_vertical"
-        android:paddingLeft="12dip"
-        android:paddingRight="12dip"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="?android:attr/textColorSecondary"
-        android:textIsSelectable="false" />
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:overScrollMode="ifContentScrolls" >
+
+        <TextView
+            android:id="@+id/tv_update_version_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dip"
+            android:paddingRight="12dip"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textIsSelectable="false" />
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/ll_upate_option"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_update_version_info"
         android:divider="?android:attr/dividerHorizontal"
         android:orientation="vertical"
         android:paddingTop="6dip"
@@ -43,8 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:measureWithLargestChild="true"
-            android:orientation="horizontal"
-            android:weightSum="2" >
+            android:orientation="horizontal" >
 
             <Button
                 android:id="@+id/btn_update_no"
@@ -64,4 +68,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
