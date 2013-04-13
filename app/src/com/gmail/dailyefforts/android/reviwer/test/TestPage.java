@@ -5,6 +5,11 @@ import java.util.Locale;
 import java.util.Random;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -34,7 +39,8 @@ import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
 import com.gmail.dailyefforts.android.reviwer.setting.Settings;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
-public class TestPage extends Activity implements OnTouchListener, OnInitListener {
+public class TestPage extends Activity implements OnTouchListener,
+		OnInitListener {
 
 	private static final String TAG = TestPage.class.getSimpleName();
 
@@ -51,7 +57,7 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 	private Drawable bgColorPressedBingo;
 	private Drawable bgColorPressedWarning;
 
-	private int bingoNum;
+	private int mBingoNum;
 
 	private boolean isFirstTouch;
 
@@ -69,29 +75,87 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 
 	private int mRate;
 
-	private String mTipAccuracy;
-
 	private String mAddToBook;
 
 	private String mRmFromBook;
 
 	private TextToSpeech mTts;
 
+	private String mTestReport;
+
+	private boolean isSpeaking;
+
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
-		menu.clear();
-		if (dba == null) {
+		if (menu != null) {
+			menu.clear();
+		}
+
+		getMenuInflater().inflate(R.menu.action, menu);
+
+		if (dba == null || menu == null) {
 			return false;
 		}
-		if (dba.getStar(mWord) <= 0) {
-			getMenuInflater().inflate(R.menu.add_to_book, menu);
-		} else {
-			getMenuInflater().inflate(R.menu.rm_from_book, menu);
+
+		MenuItem star = menu.findItem(R.id.menu_star);
+		if (star != null) {
+			if (dba.getStar(mWord) <= 0) {
+				star.setIcon(android.R.drawable.star_off);
+				star.setTitle(R.string.add_to_word_book);
+			} else {
+				star.setIcon(android.R.drawable.star_on);
+				star.setTitle(R.string.remove_from_word_book);
+			}
 		}
+
+		MenuItem read = menu.findItem(R.id.menu_read);
+
+		if (read != null) {
+			if (isSpeaking) {
+				read.setIcon(R.drawable.read);
+			} else {
+				read.setIcon(R.drawable.mute);
+			}
+		}
+
 		if (Debuger.DEBUG) {
 			Log.d(TAG, "onPrepareOptionsMenu()");
 		}
 		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			finish();
+			return true;
+		case R.id.menu_read:
+			isSpeaking = !isSpeaking;
+			invalidateOptionsMenu();
+			return true;
+		case R.id.menu_star:
+			if (dba == null) {
+				return false;
+			}
+			if (dba.getStar(mWord) <= 0) {
+				dba.star(mWord);
+				toast(String.format(mAddToBook, mWord));
+				invalidateOptionsMenu();
+			} else {
+				dba.unStar(mWord);
+				toast(String.format(mRmFromBook, mWord));
+				invalidateOptionsMenu();
+			}
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		isSpeaking = false;
 	}
 
 	@Override
@@ -136,19 +200,25 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 
 		map = Word.getMap();
 
+		if (map == null || map.size() <= 0) {
+			return;
+		}
+
 		mRate = (Window.PROGRESS_END - Window.PROGRESS_START) / map.size();
 
-		mTipAccuracy = String.valueOf(res.getText(R.string.tip_accuracy));
+		mTestReport = String.valueOf(res.getText(R.string.test_report_content));
 
 		mAddToBook = String.valueOf(res.getText(R.string.tip_add_to_word_book));
 		mRmFromBook = String.valueOf(res
 				.getText(R.string.tip_remove_from_word_book));
 
 		buildTestCase(optNum);
-		
+
 		mTts = new TextToSpeech(this, this);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+
+		mStartTime = 0L;
 
 	}
 
@@ -160,35 +230,8 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 		}
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			finish();
-			return true;
-		case R.id.menu_add_to_book:
-			if (dba != null) {
-				dba.star(mWord);
-				toast(String.format(mAddToBook, mWord));
-				invalidateOptionsMenu();
-			}
-			return true;
-		case R.id.menu_rm_from_book:
-			if (dba != null) {
-				dba.unStar(mWord);
-				toast(String.format(mRmFromBook, mWord));
-				invalidateOptionsMenu();
-			}
-			return true;
-		case R.id.menu_speak:
-			readIt(mWord);
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
 	private void readIt(final String word) {
-		if (mTts != null) {
+		if (mTts != null && isSpeaking) {
 			mTts.speak(word, TextToSpeech.QUEUE_FLUSH, null);
 		}
 	}
@@ -199,13 +242,15 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 
 	int mWordCounter = 0;
 
+	private long mStartTime;
+
 	private void buildTestCase(int optNum) {
 		Random random = new Random();
 
 		mWord = map.get(mWordCounter).getWord();
 		mMeaning = map.get(mWordCounter).getMeaning();
 		tv.setText(mWord);
-
+		readIt(mWord);
 		invalidateOptionsMenu();
 
 		pageMap = new SparseArray<Word>();
@@ -247,12 +292,6 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 
 		isFirstTouch = true;
 
-		if (mWordCounter <= 0) {
-		} else {
-			getActionBar().setSubtitle(
-					String.format(mTipAccuracy,
-							(int) (bingoNum * 100.0f / mWordCounter)));
-		}
 		setProgress((mWordCounter * mRate));
 		mWordCounter++;
 	}
@@ -285,7 +324,7 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 				((Button) v).setText(w.getWord());
 				if (bingGo) {
 					if (isFirstTouch) {
-						bingoNum++;
+						mBingoNum++;
 					}
 					v.setBackgroundDrawable(bgColorPressedBingo);
 				} else {
@@ -296,10 +335,25 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 			case MotionEvent.ACTION_UP:
 				((Button) v).playSoundEffect(SoundEffectConstants.CLICK);
 				if (bingGo) {
+					// Tested number: %1$d
+					// Correct number: %2$d
+					// Elapsed time: %3$d
+					// Accuracy rating: %4$d
+					// Database Size: %5$d
+					// You may have mastered:%6$d
+
 					if (mWordCounter == map.size()) {
-						Toast.makeText(getApplicationContext(), "Done.",
-								Toast.LENGTH_SHORT).show();
-						finish();
+						setProgress(Window.PROGRESS_END);
+						String message = String
+								.format(mTestReport,
+										mWordCounter,
+										mBingoNum,
+										Math.round((System.currentTimeMillis() - mStartTime) / 1000.0),
+										(int) (mBingoNum * 100.0f / mWordCounter),
+										dba.size(),
+										(int) (dba.size() * (mBingoNum * 1.0f / mWordCounter)));
+						showDialog(getString(R.string.test_report), message);
+
 					} else {
 						if (!isFirstTouch && dba != null
 								&& dba.getStar(mWord) <= 0) {
@@ -311,6 +365,9 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 					isFirstTouch = false;
 					((Button) v).setText(w.getMeaning());
 				}
+				if (mStartTime == 0) {
+					mStartTime = System.currentTimeMillis();
+				}
 				v.setBackgroundDrawable(bgColorNormal);
 				returnValue = true;
 				break;
@@ -319,6 +376,45 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 			}
 		}
 		return returnValue;
+	}
+
+	void showDialog(String title, String message) {
+		DialogFragment newFragment = TestReportFragment.newInstance(title,
+				message);
+		newFragment.show(getFragmentManager(), "dialog");
+	}
+
+	public static class TestReportFragment extends DialogFragment {
+
+		public static TestReportFragment newInstance(String title,
+				String message) {
+			TestReportFragment frag = new TestReportFragment();
+			Bundle args = new Bundle();
+			args.putString("title", title);
+			args.putString("message", message);
+			frag.setArguments(args);
+			return frag;
+		}
+
+		@Override
+		public Dialog onCreateDialog(Bundle savedInstanceState) {
+			String title = getArguments().getString("title");
+			String message = getArguments().getString("message");
+
+			Builder builder = new AlertDialog.Builder(getActivity());
+			builder.setIcon(android.R.drawable.ic_dialog_alert);
+			builder.setTitle(title);
+			builder.setMessage(message);
+			builder.setPositiveButton(android.R.string.ok,
+					new DialogInterface.OnClickListener() {
+
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							getActivity().finish();
+						}
+					});
+			return builder.create();
+		}
 	}
 
 	private long lastPressedTime;
@@ -345,23 +441,24 @@ public class TestPage extends Activity implements OnTouchListener, OnInitListene
 
 	@Override
 	public void onInit(int status) {
-        if (status == TextToSpeech.SUCCESS) {
-            // Set preferred language to US english.
-            // Note that a language may not be available, and the result will indicate this.
-            int result = mTts.setLanguage(Locale.FRANCE);
-            // Try this someday for some interesting results.
-            // int result mTts.setLanguage(Locale.FRANCE);
-            if (result == TextToSpeech.LANG_MISSING_DATA ||
-                result == TextToSpeech.LANG_NOT_SUPPORTED) {
-               // Lanuage data is missing or the language is not supported.
-                Log.e(TAG, "Language is not available.");
-            } else {
-                
-            }
-        } else {
-            // Initialization failed.
-            Log.e(TAG, "Could not initialize TextToSpeech.");
-        }
+		if (status == TextToSpeech.SUCCESS) {
+			// Set preferred language to US english.
+			// Note that a language may not be available, and the result will
+			// indicate this.
+			int result = mTts.setLanguage(Locale.FRANCE);
+			// Try this someday for some interesting results.
+			// int result mTts.setLanguage(Locale.FRANCE);
+			if (result == TextToSpeech.LANG_MISSING_DATA
+					|| result == TextToSpeech.LANG_NOT_SUPPORTED) {
+				// Lanuage data is missing or the language is not supported.
+				Log.e(TAG, "Language is not available.");
+			} else {
+
+			}
+		} else {
+			// Initialization failed.
+			Log.e(TAG, "Could not initialize TextToSpeech.");
+		}
 	}
-	
+
 }

@@ -171,10 +171,14 @@ public class VersionChecker extends IntentService {
 	@Override
 	protected void onHandleIntent(Intent intent) {
 		if (Debuger.DEBUG) {
-			File apk = new File(Environment.getExternalStorageDirectory(), "/Mot/Mot.apk");
-			Version serverVer = new Version("1.7.0", 9, "1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n");
-//			Version serverVer = new Version("1.7.0", 9, "1. a\n2.b1. a");
-			launchUpdatePrompt(apk, serverVer );
+			File apk = new File(Environment.getExternalStorageDirectory(),
+					"/Mot/Mot.apk");
+			Version serverVer = new Version(
+					"1.7.0",
+					9,
+					"1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n");
+			// Version serverVer = new Version("1.7.0", 9, "1. a\n2.b1. a");
+			launchUpdatePrompt(apk, serverVer);
 			return;
 		}
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -279,6 +283,22 @@ public class VersionChecker extends IntentService {
 		}
 
 		return apk;
+	}
+
+	private static char[] DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a',
+			'b', 'c', 'd', 'e', 'f' };
+	
+	private static char[] getMd5Sum(byte[] data) {
+		int len = data.length;
+		
+		char[] out = new char[len << 1];
+		
+		for (int i = 0, j = 0; i < len; i++) {
+			out[j++] = DIGITS[0xF0 & data[i]];
+			out[j++] = DIGITS[0x0F & data[i]];
+		}
+		
+		return out;
 	}
 
 	@Override

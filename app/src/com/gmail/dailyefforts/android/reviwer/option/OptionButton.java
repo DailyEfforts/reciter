@@ -2,6 +2,7 @@ package com.gmail.dailyefforts.android.reviwer.option;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.widget.Button;
 import android.widget.LinearLayout.LayoutParams;
@@ -15,8 +16,7 @@ public class OptionButton extends Button {
 		// TODO Auto-generated constructor stub
 		extracted();
 		setTextAppearance(context, android.R.style.TextAppearance_Medium);
-		setTextColor(android.R.attr.textColorSecondary);
-		// setTextColor(getResources().getColor(R.color.gray_light));
+		setTextColor(Color.LTGRAY);
 
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
 				LayoutParams.WRAP_CONTENT);

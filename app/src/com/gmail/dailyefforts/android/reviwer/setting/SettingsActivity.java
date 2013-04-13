@@ -1,12 +1,18 @@
 package com.gmail.dailyefforts.android.reviwer.setting;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
@@ -42,14 +48,17 @@ public class SettingsActivity extends PreferenceActivity {
 	}
 
 	public static class PrefsFragment extends PreferenceFragment implements
-			OnSharedPreferenceChangeListener {
+			OnSharedPreferenceChangeListener, OnPreferenceClickListener {
 
-		private ListPreference mOptNumListPref;
-		private ListPreference mWordCountInOneUnitPref;
-		private String mOptNumSummary;
-		private String mWordCountInOneUnitSummary;
-		private SharedPreferences mSharedPref;
+		private static ListPreference mOptNumListPref;
+		private static ListPreference mWordCountInOneUnitPref;
+		private static String mOptNumSummary;
+		private static String mWordCountInOneUnitSummary;
+		private static SharedPreferences mSharedPref;
 		private Preference mCurrentVersionPref;
+		private static ListPreference mTimeGapPref;
+		private static String mTimeGapSummay;
+		private static Preference mResetPref;
 
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
@@ -61,42 +70,65 @@ public class SettingsActivity extends PreferenceActivity {
 			mOptNumListPref = (ListPreference) findPreference(getString(R.string.pref_key_options_count));
 			mWordCountInOneUnitPref = (ListPreference) findPreference(getString(R.string.pref_key_word_count_in_one_unit));
 			mCurrentVersionPref = (Preference) findPreference(getString(R.string.pref_key_version));
-			if (mCurrentVersionPref != null) {
-				try {
-					String versionName = getActivity().getPackageManager()
-							.getPackageInfo(getActivity().getPackageName(),
-									PackageManager.GET_SIGNATURES).versionName;
-					mCurrentVersionPref.setSummary(versionName);
-				} catch (NameNotFoundException e) {
-					e.printStackTrace();
-				}
+			mTimeGapPref = (ListPreference) findPreference(getString(R.string.pref_key_slide_show_time_gap));
+			mResetPref = (Preference) findPreference(getString(R.string.pref_key_reset));
+
+			if (mOptNumListPref == null || mCurrentVersionPref == null
+					|| mCurrentVersionPref == null || mTimeGapPref == null
+					|| mResetPref == null) {
+				return;
 			}
+
+			try {
+				String versionName = getActivity().getPackageManager()
+						.getPackageInfo(getActivity().getPackageName(),
+								PackageManager.GET_SIGNATURES).versionName;
+				mCurrentVersionPref.setSummary(versionName);
+			} catch (NameNotFoundException e) {
+				e.printStackTrace();
+			}
+
+			mResetPref.setOnPreferenceClickListener(this);
 
 			mSharedPref = PreferenceManager
 					.getDefaultSharedPreferences(getActivity()
 							.getApplicationContext());
 
-			mOptNumSummary = String.valueOf(getResources().getText(
-					R.string.pref_summary_options_count));
-			mWordCountInOneUnitSummary = String.valueOf(getResources().getText(
-					R.string.pref_summary_word_count));
+			Resources res = getResources();
+			if (res == null) {
+				return;
+			}
+
+			mOptNumSummary = String.valueOf(res
+					.getText(R.string.pref_summary_options_count));
+			mWordCountInOneUnitSummary = String.valueOf(res
+					.getText(R.string.pref_summary_word_count));
+			mTimeGapSummay = String.valueOf(res
+					.getText(R.string.timp_gap_sumarry));
 
 			String value = mOptNumListPref.getValue();
 
-			if (value == null && mOptNumListPref != null) {
+			if (value == null) {
 				value = Settings.DEFAULT_OPTION_COUNT;
 				mOptNumListPref.setValue(value);
 			}
 
 			value = mWordCountInOneUnitPref.getValue();
 
-			if (value == null && mWordCountInOneUnitPref != null) {
+			if (value == null) {
 				value = Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT;
 				mWordCountInOneUnitPref.setValue(value);
 			}
 
+			value = mTimeGapPref.getValue();
+			if (value == null) {
+				value = Settings.DEFAULT_TIME_GAP;
+				mTimeGapPref.setValue(value);
+			}
+
 			setOptNumSummary();
 			setWordCountSummary();
+			setTimeGapPrefSummary();
 		}
 
 		@Override
@@ -120,16 +152,18 @@ public class SettingsActivity extends PreferenceActivity {
 				SharedPreferences sharedPreferences, String key) {
 
 			if (key != null && mOptNumListPref != null
-					&& mWordCountInOneUnitPref != null) {
+					&& mWordCountInOneUnitPref != null && mTimeGapPref != null) {
 				if (key.equals(mOptNumListPref.getKey())) {
 					setOptNumSummary();
 				} else if (key.equals(mWordCountInOneUnitPref.getKey())) {
 					setWordCountSummary();
+				} else if (key.equals(mTimeGapPref.getKey())) {
+					setTimeGapPrefSummary();
 				}
 			}
 		}
 
-		private void setOptNumSummary() {
+		private static void setOptNumSummary() {
 			if (mOptNumListPref != null) {
 				mOptNumListPref.setSummary(String.format(mOptNumSummary,
 						mOptNumListPref.getValue()));
@@ -141,7 +175,20 @@ public class SettingsActivity extends PreferenceActivity {
 			}
 		}
 
-		private void setWordCountSummary() {
+		private static void setTimeGapPrefSummary() {
+			if (mTimeGapPref != null) {
+				mTimeGapPref.setSummary(String.format(mTimeGapSummay,
+						mTimeGapPref.getValue()));
+
+				if (Debuger.DEBUG) {
+					Log.d(TAG,
+							"setTimeGapPrefSummary() "
+									+ mTimeGapPref.getValue());
+				}
+			}
+		}
+
+		private static void setWordCountSummary() {
 			if (mWordCountInOneUnitPref != null) {
 				mWordCountInOneUnitPref.setSummary(String.format(
 						mWordCountInOneUnitSummary,
@@ -151,6 +198,75 @@ public class SettingsActivity extends PreferenceActivity {
 					Log.d(TAG, "setWordCountSummary() "
 							+ mWordCountInOneUnitPref.getValue());
 				}
+			}
+		}
+
+		@Override
+		public boolean onPreferenceClick(Preference preference) {
+			String key = preference.getKey();
+			if (key == null) {
+				return false;
+			}
+
+			if (mResetPref != null && key.equals(mResetPref.getKey())) {
+
+			    DialogFragment newFragment = ResetAlertDialogFragment.newInstance(
+			            R.string.reset_to_default);
+			    newFragment.show(getFragmentManager(), "dialog");
+
+				return true;
+			}
+			return false;
+		}
+
+		private static void reset() {
+			if (mOptNumListPref != null) {
+				mOptNumListPref.setValue(Settings.DEFAULT_OPTION_COUNT);
+			}
+
+			if (mWordCountInOneUnitPref != null) {
+				mWordCountInOneUnitPref
+						.setValue(Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT);
+			}
+
+			if (mTimeGapPref != null) {
+				mTimeGapPref.setValue(Settings.DEFAULT_TIME_GAP);
+			}
+
+			setOptNumSummary();
+			setWordCountSummary();
+			setTimeGapPrefSummary();
+		}
+		
+
+		public static class ResetAlertDialogFragment extends DialogFragment {
+
+			public static ResetAlertDialogFragment newInstance(int title) {
+				ResetAlertDialogFragment frag = new ResetAlertDialogFragment();
+				Bundle args = new Bundle();
+				args.putInt("title", title);
+				args.putInt("message", R.string.reset_sumarry);
+				frag.setArguments(args);
+				return frag;
+			}
+
+			@Override
+			public Dialog onCreateDialog(Bundle savedInstanceState) {
+				int title = getArguments().getInt("title");
+				int message = getArguments().getInt("message");
+
+				return new AlertDialog.Builder(getActivity())
+						.setIcon(android.R.drawable.ic_dialog_alert)
+						.setTitle(title)
+						.setMessage(message)
+						.setPositiveButton(android.R.string.yes,
+								new DialogInterface.OnClickListener() {
+									public void onClick(DialogInterface dialog,
+											int whichButton) {
+										reset();
+									}
+								}).setNegativeButton(android.R.string.no, null)
+						.create();
 			}
 		}
 	}

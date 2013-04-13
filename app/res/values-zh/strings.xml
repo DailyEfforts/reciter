@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">法语词汇</string>
+    <string name="loading">加载中&#8230;</string>
+    <string name="settings">设置</string>
+    <string name="option_count">候选项数目</string>
+    <string name="pref_summary_options_count">每道题有 %s 个候选项</string>
+    <string name="pref_summary_word_count">每个单元中包含 %s 个单词</string>
+    <string name="my_word_book">生词本</string>
+    <string name="exit">退出</string>
+    <string name="tip_empty">空</string>
+    <string name="word_count">单词数目</string>
+    <string name="tip_select_items_to_unstar">选择已掌握的单词</string>
+    <string name="tip_add_to_word_book">已将 %s 添加到生词本中</string>
+    <string name="tip_remove_from_word_book">已将 %s 从生词本中移除</string>
+    <string name="about">关于</string>
+    <string name="version">版本</string>
+    <string name="test_report_content">测试题目数: %1$d\n答对题目数: %2$d\n花费时间: %3$d秒\n准确率: %4$d%%\n数据库中单词总数: %5$d\n估计已掌握单词数: %6$d</string>
+    <string name="update_confirm">需要更新至 %s 吗?</string>
+    <string name="add_to_word_book">添加到生词本</string>
+    <string name="read">朗读</string>
+    <string name="remove_from_word_book">从生词本中移除</string>
+    <string name="recite">背诵</string>
+    <string name="test">测试</string>
+    <string name="unknown">未知</string>
+    <string name="random">随机</string>
+    <string name="tip_word_book_is_empty">生词本为空</string>
+    <string name="test_report">测试报告</string>
+    <string name="time_gap">时间间隔</string>
+    <string name="timp_gap_sumarry">自动播放时两个单词的时间间隔为 %s 秒</string>
+    <string name="other">其它</string>
+    <string name="reset_to_default">重置</string>
+    <string name="reset_sumarry">将所有偏好重置为默认值</string>
+
+</resources>

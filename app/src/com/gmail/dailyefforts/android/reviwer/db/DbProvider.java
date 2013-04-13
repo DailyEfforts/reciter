@@ -13,7 +13,7 @@ import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 public class DbProvider extends ContentProvider {
 	private DBA dba;
 	private static final String AUTHORITY = "com.gmail.dailyefforts.android.reviwer";
-	private static final String BASE_PATH = DBA.TABLE_NAME; // wordlist
+	private static final String BASE_PATH = DBA.TABLE_WORD_LIST; // wordlist
 	public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY
 			+ "/" + BASE_PATH);
 	private static final String TAG = DbProvider.class.getSimpleName();
@@ -34,7 +34,7 @@ public class DbProvider extends ContentProvider {
 		SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
 
 		// Set the table
-		queryBuilder.setTables(DBA.TABLE_NAME);
+		queryBuilder.setTables(DBA.TABLE_WORD_LIST);
 
 		SQLiteDatabase db = dba.getWritableDatabase();
 		Cursor cursor = queryBuilder.query(db, projection, selection,
@@ -59,14 +59,14 @@ public class DbProvider extends ContentProvider {
 	@Override
 	public int delete(Uri uri, String selection, String[] selectionArgs) {
 		SQLiteDatabase db = dba.getWritableDatabase();
-		return db.delete(DBA.TABLE_NAME, selection, selectionArgs);
+		return db.delete(DBA.TABLE_WORD_LIST, selection, selectionArgs);
 	}
 
 	@Override
 	public int update(Uri uri, ContentValues values, String selection,
 			String[] selectionArgs) {
 		SQLiteDatabase db = dba.getWritableDatabase();
-		return db.update(DBA.TABLE_NAME, values, selection, selectionArgs);
+		return db.update(DBA.TABLE_WORD_LIST, values, selection, selectionArgs);
 	}
 
 }

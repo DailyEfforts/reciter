@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="pref_options_count_list_entries">
+    <string-array name="pref_options_count_list_entry_values" translatable="false">
         <item>3</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
     </string-array>
-    <string-array name="pref_options_count_list_entry_values">
+    <string-array name="pref_word_count_list_entry_values" translatable="false">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+    </string-array>
+    <string-array name="pref_word_time_gap_entry_values" translatable="false">
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+        <item>7</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="pref_options_count_list_entries">
         <item>3</item>
         <item>4</item>
         <item>5</item>
@@ -20,12 +34,11 @@
         <item>40</item>
         <item>50</item>
     </string-array>
-    <string-array name="pref_word_count_list_entry_values">
-        <item>10</item>
-        <item>20</item>
-        <item>30</item>
-        <item>40</item>
-        <item>50</item>
+    <string-array name="pref_word_time_gap_entries">
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+        <item>7</item>
+        <item>9</item>
     </string-array>
-
 </resources>
