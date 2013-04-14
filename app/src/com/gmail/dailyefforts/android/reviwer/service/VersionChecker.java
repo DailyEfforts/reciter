@@ -2,14 +2,18 @@ package com.gmail.dailyefforts.android.reviwer.service;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -72,27 +76,33 @@ public class VersionChecker extends IntentService {
 	}
 
 	private class Version {
-		private String name;
-		private int code;
-		private String info;
+		private String verName;
+		private int verCode;
+		private String verInfo;
+		private String md5;
 
-		public Version(String name, int code, String info) {
+		public Version(String name, int code, String info, String md5) {
 			super();
-			this.name = name;
-			this.code = code;
-			this.info = info;
+			this.verName = name;
+			this.verCode = code;
+			this.verInfo = info;
+			this.md5 = md5;
 		}
 
-		public String getName() {
-			return name;
+		public String getVerName() {
+			return verName;
 		}
 
-		public int getCode() {
-			return code;
+		public int getVerCode() {
+			return verCode;
 		}
 
 		public String getInfo() {
-			return info;
+			return verInfo;
+		}
+
+		public String getMd5() {
+			return md5;
 		}
 
 	}
@@ -113,9 +123,14 @@ public class VersionChecker extends IntentService {
 					int code = Integer.parseInt(jsonObj
 							.getString(Config.JSON_VERSION_CODE));
 					String name = jsonObj.getString(Config.JSON_VERSION_NAME);
-					String info = jsonObj.getString(Config.JSON_VERSION_info);
+					String info = jsonObj.getString(Config.JSON_VERSION_INFO);
+					String md5 = null;
+					
+					if (jsonObj.has(Config.JSON_VERSION_MD5)) {
+						md5 = jsonObj.getString(Config.JSON_VERSION_MD5);
+					}
 
-					ver = new Version(name, code, info);
+					ver = new Version(name, code, info, md5);
 				} catch (JSONException e) {
 					Log.e(TAG, e.getMessage());
 				}
@@ -163,7 +178,7 @@ public class VersionChecker extends IntentService {
 		Intent intent = new Intent(getApplicationContext(), UpdateConfirm.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		intent.putExtra(Config.INTENT_APK_FILE_PATH, apk.getAbsolutePath());
-		intent.putExtra(Config.INTENT_APK_VERSION_NAME, ver.getName());
+		intent.putExtra(Config.INTENT_APK_VERSION_NAME, ver.getVerName());
 		intent.putExtra(Config.INTENT_APK_VERSION_INFO, ver.getInfo());
 		startActivity(intent);
 	}
@@ -171,14 +186,30 @@ public class VersionChecker extends IntentService {
 	@Override
 	protected void onHandleIntent(Intent intent) {
 		if (Debuger.DEBUG) {
-			File apk = new File(Environment.getExternalStorageDirectory(),
-					"/Mot/Mot.apk");
-			Version serverVer = new Version(
-					"1.7.0",
-					9,
-					"1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n1. a\n2.b1. a\n");
-			// Version serverVer = new Version("1.7.0", 9, "1. a\n2.b1. a");
-			launchUpdatePrompt(apk, serverVer);
+			File apk;
+			try {
+
+				Version serverVer = new Version("1.7.0", 9, "1. a\n2.b1. a",
+						"ca5fd267ff1f2d0b074d8127fc0f86e4");
+				apk = downLoadApk(new FileInputStream(
+						new File(Environment.getExternalStorageDirectory(),
+								"/Mot/a.apk")));
+
+				if (!getMd5Sum(apk).equalsIgnoreCase(
+						"ca5fd267ff1f2d0b074d8127fc0f86e4")) {
+					apk = downLoadApk(new FileInputStream(new File(
+							Environment.getExternalStorageDirectory(),
+							"/Mot/a.apk")));
+				}
+				launchUpdatePrompt(apk, serverVer);
+				Log.d(TAG, "md5: " + String.valueOf(getMd5Sum(apk)));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			return;
 		}
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -197,15 +228,29 @@ public class VersionChecker extends IntentService {
 						+ currentVersionCode);
 				Log.d(TAG,
 						"onHandleIntent() serverVersionCode: "
-								+ serverVer.getCode());
+								+ serverVer.getVerCode());
 				Log.d(TAG,
 						"onHandleIntent() serverVersionName: "
-								+ serverVer.getName());
+								+ serverVer.getVerName());
 			}
 
-			if (serverVer.getCode() > currentVersionCode
+			if (serverVer.getVerCode() > currentVersionCode
 					&& currentVersionCode > 0) {
 				File apk = downLoadApk(getInStream(Config.URL_APK));
+				String md5 = null;
+				try {
+					md5 = getMd5Sum(apk);
+				} catch (NoSuchAlgorithmException e) {
+					Log.e(TAG, e.getMessage());
+				} catch (IOException e) {
+					Log.e(TAG, e.getMessage());
+				}
+				if (Debuger.DEBUG) {
+					Log.d(TAG, "onHandleIntent() md5: " + md5);
+				}
+				if (md5 != null && !md5.equalsIgnoreCase(serverVer.getMd5())) {
+					apk = downLoadApk(getInStream(Config.URL_APK));
+				}
 				launchUpdatePrompt(apk, serverVer);
 			}
 		} else {
@@ -231,31 +276,16 @@ public class VersionChecker extends IntentService {
 			apk.delete();
 		}
 
-		File sky = new File(Environment.getExternalStorageDirectory(),
-				"SkyDrive");
-		if (sky != null && sky.exists()) {
-			File downloads = new File(sky, "downloads");
-			if (downloads != null && downloads.exists()) {
-				File[] files = downloads.listFiles();
-				if (files != null) {
-					for (File f : files) {
-						if (f.getName().toLowerCase().startsWith("mot")
-								&& f.getName().endsWith(".apk")) {
-							f.delete();
-						}
-					}
-				}
-			}
-		}
-
 		FileOutputStream fos = null;
 		try {
 			fos = new FileOutputStream(apk);
-			int oneByte = -1;
-			while ((oneByte = in.read()) != -1) {
-				fos.write(oneByte);
+			byte[] buf = new byte[1024];
+			int len = 0;
+			while ((len = in.read(buf)) > 0) {
+				fos.write(buf, 0, len);
 				if (Debuger.DEBUG) {
-					Log.d(TAG, "downLoadApk() downloading...");
+					Log.d(TAG, "downLoadApk() downloading..." + buf.length
+							+ ", " + len);
 				}
 			}
 
@@ -285,19 +315,38 @@ public class VersionChecker extends IntentService {
 		return apk;
 	}
 
-	private static char[] DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a',
-			'b', 'c', 'd', 'e', 'f' };
-	
-	private static char[] getMd5Sum(byte[] data) {
-		int len = data.length;
-		
-		char[] out = new char[len << 1];
-		
-		for (int i = 0, j = 0; i < len; i++) {
-			out[j++] = DIGITS[0xF0 & data[i]];
-			out[j++] = DIGITS[0x0F & data[i]];
+	private static char[] DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7',
+			'8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+
+	private static String getMd5Sum(File file) throws NoSuchAlgorithmException,
+			IOException {
+
+		InputStream in = new FileInputStream(file);
+
+		MessageDigest digester = MessageDigest.getInstance("MD5");
+		byte[] bytes = new byte[8192];
+		int byteCount;
+		while ((byteCount = in.read(bytes)) > 0) {
+			digester.update(bytes, 0, byteCount);
 		}
-		
+		byte[] digest = digester.digest();
+
+		BigInteger bigInt = new BigInteger(1, digest);
+		String out = bigInt.toString(16);
+
+		/*
+		 * int len = digest.length;
+		 * 
+		 * char[] out = new char[len << 1];
+		 * 
+		 * 
+		 * for (int i = 0, j = 0; i < len; i++) {
+		 * System.out.println("VersionChecker.getMd5Sum() " + i + ", " +
+		 * digest.length + ", " + (0xF0 & digest[i] >>> 4)); out[j++] =
+		 * DIGITS[0xF0 & digest[i] >>> 4]; out[j++] = DIGITS[0x0F & digest[i]];
+		 * }
+		 */
+
 		return out;
 	}
 

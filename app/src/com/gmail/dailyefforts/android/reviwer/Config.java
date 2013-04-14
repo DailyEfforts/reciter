@@ -8,7 +8,8 @@ public class Config {
 	public static final String APK_NAME = "Mot.apk";
 	public static final String JSON_VERSION_NAME = "name";
 	public static final String JSON_VERSION_CODE = "code";
-	public static final String JSON_VERSION_info = "info";
+	public static final String JSON_VERSION_INFO = "info";
+	public static final String JSON_VERSION_MD5 = "md5";
 	public static final String INTENT_APK_FILE_PATH = "apk_file_path";
 	public static final String INTENT_APK_VERSION_NAME = "version_name";
 	public static final String INTENT_APK_VERSION_INFO = "version_info";

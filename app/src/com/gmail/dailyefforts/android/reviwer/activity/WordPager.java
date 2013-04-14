@@ -62,7 +62,7 @@ public class WordPager extends FragmentActivity implements OnInitListener,
 
 	private SharedPreferences mSharedPref;
 
-	private Animation mAnimation;
+	private static Animation mAnimation;
 
 	private PageHandler mHandler;
 
@@ -244,6 +244,7 @@ public class WordPager extends FragmentActivity implements OnInitListener,
 					// start playing
 					imgBtnPlay
 							.setImageResource(android.R.drawable.ic_media_pause);
+					readIt(mWord);
 					if (mHandler != null) {
 						mHandler.sendMessageDelayed(Message.obtain(mHandler,
 								PageHandler.MSG_PAGE_NEXT), mGapTime * 1000);
@@ -345,6 +346,10 @@ public class WordPager extends FragmentActivity implements OnInitListener,
 										+ w + " - " + m);
 						word.setText(w);
 						meaning.setText(m);
+
+						if (mAnimation != null) {
+							meaning.startAnimation(mAnimation);
+						}
 					}
 				}
 			}

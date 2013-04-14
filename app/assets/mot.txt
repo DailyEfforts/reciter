@@ -448,7 +448,7 @@ chasseur@猎人
 à côté de@在...旁边
 à distance@隔一段距离
 à fond@完全地，彻底地
- à gauche@在左边
+à gauche@在左边
 à l'exclusion de@...除外
 abaisser@放低，放下；降低，减低
 abaissement@放低，下降
@@ -682,7 +682,7 @@ bâiller@打哈欠
 jadis@从前，过去
 jambon@火腿
 annexer@附加，兼并
- frictionner@摩擦
+frictionner@摩擦
 friction@擦身，摩擦，矛盾
 tenir@拿着
 bondir@跳跃，扑向
@@ -738,7 +738,7 @@ consolider@加强，巩固
 relation@关系，联系
 relatif ,ive@相对的，比较的
 violer@违反，违背
- étrange@奇怪的
+étrange@奇怪的
 étranger .ère@外国的，不熟悉的；陌生人
 sauf@除了...之外，除非
 sauf que@除了...以外，只是
@@ -792,7 +792,7 @@ diffuser@使散开；传播；发行
 journée@天，白昼
 joyeux ,euse@高兴的，快乐的
 scolaire@学校的，乏味的
- disposer@放置，布置，使用
+disposer@放置，布置，使用
 disposer de@拥有，支配
 tribune@讲台，论坛
 absorber@吸收，喝，吃，使专心致志
@@ -800,13 +800,13 @@ s'absorber@被吸收；专心于，全神贯注于
 justification@证实，证明
 justifier@为...辩护
 apéritif@开胃酒
- tenue@穿戴；仪表；姿态
+tenue@穿戴；仪表；姿态
 bière@啤酒，棺材
 rapporter@拿来；带回
 se rapporter à@与...有关
 éveiller@吵醒；引起
 s'éveiller@睡醒；觉醒
- éveillé ,e@醒着的；活跃的
+éveillé ,e@醒着的；活跃的
 natal,e@故乡的；祖国的
 apéritif ,ive@开胃的
 camion@卡车，货车
@@ -830,3 +830,213 @@ croisement@交叉，十字路口
 abstrait,e@抽象的
 absurde@荒谬的，荒诞的
 absurdité@荒谬，荒诞
+paresseux,euse@懒惰的
+paresse@懒惰的人
+parents@父母亲
+paysan,anne@农民
+peau@皮肤，果皮
+brosse@刷子
+brosser@刷
+se brosser les dents@刷牙
+se brosser les cheveux@梳头
+joindre@接合，连接
+jeune@年轻人，年轻的
+joli@漂亮的，好的
+sacré,e@神圣的，不可侵犯的
+sacrifice@牺牲，献身
+sacrifier@为...而牺牲，把...用于
+pêche@桃子，捕鱼
+pêcher@桃树；钓鱼
+complication@复杂；纠结
+broder@刺绣，绣花
+bronze@青铜
+bronzé ,e@（皮肤）晒黑的
+détour@拐弯处
+détourner@使改变方向
+horaire@时刻表
+filet@一点；网
+fille@女孩；女儿
+horloge@时钟
+incompatible@不相容的，势不两立的
+incompétence@不够格，不胜任
+bilan@总结，小结
+flétrir@使憔悴；使枯萎
+se flétrir@枯萎，凋谢
+flétri ,e@憔悴的，枯萎的
+fleurir@开花；繁荣，兴旺
+fleur@花
+couard , e@胆怯的，胆小鬼
+couardise@胆怯，怯懦
+discuter@讨论，争论
+discussion@讨论，商讨
+discutable@有讨论余地的，可辨的
+fraise@草莓
+franc@法郎；坦率地
+franc,franche@坦率的；真诚的
+franchement@明确地，坦率地
+rire@笑
+français@法国的，法语的
+Francais,e@法国人
+sage@好的，听话的‘明智的
+sagesse@谨慎；智慧
+déposer@放下，放置
+dépositaire@受托人；保管人
+dépôt@存放，寄放处
+déranger@弄乱，搞乱
+dernier ,ère@最后的，最近的
+la dernière  édition@最新电影版本
+impact@碰撞，冲击；影响，作用
+impair ,e@奇数的，单数的
+incertain ,e@不定的，不明确的
+incertitude@不确定，不肯定
+incapable@无才能的，无能的人
+dortoir@宿舍，集体宿舍
+dos@背
+vingt@二十
+vintaine@二十左右，二十来个
+vintième@第二十
+amateur@爱好者，业余爱好者
+bague@戒指
+éloquence@雄辩，口才
+divorce@离婚
+divorcer@离婚（动词）
+formulaire@表格
+lâche@怯懦的；松弛的；懦夫
+lâcher@松开，放松
+toujours@总是；仍然
+pour toujours@永远
+déborder@溢出，泛滥
+débloquer@开禁；解冻
+férié ,e@放假的
+ferme@农场
+fermer@关闭，关上
+fermé ,e@被关闭的；闭上的
+différer@有差别，有分歧
+différent ,e@不同的，有差别的
+tousser@咳嗽
+toutefois@然而，可是
+tempéré ,e@温和的（天气）
+temple@庙宇
+temporaire@暂时的
+sincère@真诚的，真挚的
+sincérité@真诚，真挚
+déblayer@清理
+débit@零售，零售店
+refuser@拒绝
+refus@（阳性名词） 拒绝
+résultat@结果，结局
+résumé@摘要，梗概
+en résumé@简言之，总之
+résumer@概括，概述
+fenêtre@窗户
+fente@裂缝，缝隙
+fer@铁
+toxique@有毒的（东西）
+tendu,e@绷紧的；紧张的
+temps@天气；时间，时节
+tempête@风暴；暴风雨
+porte- monnaie@小钱包
+porte- parole@发言人，代言人
+résider@住，居住
+résider  dans@在于，存在于
+résidence  @住宅，居住
+résigner@放弃；辞去；让出
+se résigner@顺从，听任
+flanquer@投，掷；带来
+juste@公正的，正确的
+justement@正好，恰好，正义地，正确地
+effectif@全体人员
+effectif ,ive@实际的，确实的
+effectivement@事实上，实际上
+confection@制造；烹调
+conférence@会议，讲座
+diable@魔鬼；究竟（表语气）
+diabolique@恶魔般的
+diagnostic@诊断，判断
+dialecte@方言，土话
+coude@肘；转弯处，拐角
+coudre@缝
+gloire@名誉，光荣
+glorieux, euse@光荣的
+idole@偶像
+ignoble@卑劣的，无耻的
+ignorer@不知道，不理会
+militaire@军人，军事的
+miracle@奇迹，奇事
+miraculeux ,euse@奇迹般的，令人惊叹的
+jamais@从不；曾经；历来
+portefeuille@皮夹子，公文包
+porter@负担；拿来；带来，写
+porteur,euse@搬运工
+portrait@肖像；照片
+dialogue@对话，对白
+diamant@钻石
+accabler@压坏，压倒
+accablant ,e@沉重的，难以忍受的
+accéder  à@进入，通向，登上，终于达到
+effectuer@实现，执行
+effet@效果；影响；效应
+en effet@实际上，因为，由于
+confier@信任，托付
+se  confier@信任，信赖
+confiance@信任，信心
+poser@放，摆；提出；问
+positif , ive@肯定的，积极的；客观的
+dévot ,e@虔诚的（人）
+se dévouer@献身；致力于
+dévoué ,e@忠诚的，忠实的
+dévouement@献身，忠诚
+flamme@火焰；光芒；热情
+flanc@侧面
+flancher@动摇，退让
+flâner@漫步，闲逛，无所事事
+condenser@压缩
+condiment  @调味品
+condition@条件，状况
+conditionner@决定，制约
+sous  (la)  condition  que@以...为条件
+accélérer@加速，加快
+accent@口音，重音
+accentuer@重音；突出，强调
+accepter@接受，领受
+acceptable@可接受的，令人满意的
+réservoir@水库；容器
+conférencier ,ère@演讲人，报告人
+confidence@隐情，知心话，秘密
+confidentiel ,elle@秘密的，私下的
+espiègle@调皮的，淘气的
+espoir@希望
+esprit@思想，头脑
+couchette@（火车，船上的）卧铺
+réserver@保留，预定
+se réserver@（为自己）保留
+résister@抗拒，抵制，忍受，经得起
+résistance@抵抗；阻力；反对
+résistant ,e@坚固的；有抵抗力的
+flacon@小瓶
+flairer@闻，嗅；意识到，察觉到
+flamboyer@冒出火焰，燃烧，闪耀
+frotter@摩，擦
+frottement@摩擦，矛盾，不和
+fruit@水果
+clan@氏族，派系
+clandestin ,e@秘密的，地下的
+clarté@光，明白，清楚，清澈
+classe@教室，班级，课，等级
+flamber@燃烧；挥霍
+micro@麦克风
+conduire@带领，引导，驾驶
+conducteur ,trice@驾驶员
+conduite@驾驶，领导；品行，举止
+glouton , onne@贪婪的（人），暴食的（人）
+gomme@橡皮
+habiller@给...穿衣
+s'habiller@穿衣
+habilleur , euse@服装师
+habit@服装
+île@岛，岛屿
+illégal ,e@非法的，违法的
+milieu@中间，当中；环境
+au milieu de@在...中间
+fusion@溶解，合并
+futile@无关紧要的，微不足道的
