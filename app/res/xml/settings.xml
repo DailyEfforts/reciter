@@ -10,6 +10,14 @@
             android:persistent="true"
             android:summary="@string/pref_summary_word_count"
             android:title="@string/word_count" />
+        <ListPreference
+            android:dialogTitle="@string/time_gap"
+            android:entries="@array/pref_word_time_gap_entries"
+            android:entryValues="@array/pref_word_time_gap_entry_values"
+            android:key="@string/pref_key_slide_show_time_gap"
+            android:persistent="true"
+            android:summary="@string/timp_gap_sumarry"
+            android:title="@string/time_gap" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/test" >
         <ListPreference
@@ -20,14 +28,6 @@
             android:persistent="true"
             android:summary="@string/pref_summary_options_count"
             android:title="@string/option_count" />
-        <ListPreference
-            android:dialogTitle="@string/time_gap"
-            android:entries="@array/pref_word_time_gap_entries"
-            android:entryValues="@array/pref_word_time_gap_entry_values"
-            android:key="@string/pref_key_slide_show_time_gap"
-            android:persistent="true"
-            android:summary="@string/timp_gap_sumarry"
-            android:title="@string/time_gap" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/other" >
         <Preference

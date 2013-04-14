@@ -22,23 +22,23 @@
         <item>9</item>
     </string-array>
     <string-array name="pref_options_count_list_entries">
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
+        <item>3 options</item>
+        <item>4 options</item>
+        <item>5 options</item>
+        <item>6 options</item>
     </string-array>
     <string-array name="pref_word_count_list_entries">
-        <item>10</item>
-        <item>20</item>
-        <item>30</item>
-        <item>40</item>
-        <item>50</item>
+        <item>10 words</item>
+        <item>20 words</item>
+        <item>30 words</item>
+        <item>40 words</item>
+        <item>50 words</item>
     </string-array>
     <string-array name="pref_word_time_gap_entries">
-        <item>1</item>
-        <item>3</item>
-        <item>5</item>
-        <item>7</item>
-        <item>9</item>
+        <item>1 second</item>
+        <item>3 seconds</item>
+        <item>5 seconds</item>
+        <item>7 seconds</item>
+        <item>9 seconds</item>
     </string-array>
 </resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pref_options_count_list_entries">
+        <item>3 个</item>
+        <item>4 个</item>
+        <item>5 个</item>
+        <item>6 个</item>
+    </string-array>
+    <string-array name="pref_word_count_list_entries">
+        <item>10 个</item>
+        <item>20 个</item>
+        <item>30 个</item>
+        <item>40 个</item>
+        <item>50 个</item>
+    </string-array>
+    <string-array name="pref_word_time_gap_entries">
+        <item>1 秒</item>
+        <item>3 秒</item>
+        <item>5 秒</item>
+        <item>7 秒</item>
+        <item>9 秒</item>
+    </string-array>
+</resources>

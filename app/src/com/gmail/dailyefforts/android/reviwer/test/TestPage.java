@@ -334,6 +334,9 @@ public class TestPage extends Activity implements OnTouchListener,
 				break;
 			case MotionEvent.ACTION_UP:
 				((Button) v).playSoundEffect(SoundEffectConstants.CLICK);
+				if (mStartTime == 0) {
+					mStartTime = System.currentTimeMillis();
+				}
 				if (bingGo) {
 					// Tested number: %1$d
 					// Correct number: %2$d
@@ -365,9 +368,7 @@ public class TestPage extends Activity implements OnTouchListener,
 					isFirstTouch = false;
 					((Button) v).setText(w.getMeaning());
 				}
-				if (mStartTime == 0) {
-					mStartTime = System.currentTimeMillis();
-				}
+
 				v.setBackgroundDrawable(bgColorNormal);
 				returnValue = true;
 				break;
