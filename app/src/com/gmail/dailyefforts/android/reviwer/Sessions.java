@@ -3,7 +3,10 @@ package com.gmail.dailyefforts.android.reviwer;
 import java.util.Locale;
 
 import android.app.ActionBar;
+import android.app.AlarmManager;
 import android.app.FragmentTransaction;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -82,6 +85,25 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 					.setTabListener(this));
 		}
 		launchVersionChecker();
+
+		RUNNING = true;
+
+		AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+		PendingIntent sender = PendingIntent.getBroadcast(this, 0, new Intent(
+				Config.ACTION_REVIEW), PendingIntent.FLAG_CANCEL_CURRENT);
+		am.setRepeating(AlarmManager.RTC, System.currentTimeMillis(),
+				Config.INTERVAL_TIME_TO_TIP_REVIEW, sender);
+	}
+
+	public static boolean RUNNING;
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		if (Debuger.DEBUG) {
+			Log.d(TAG, "onDestroy()");
+		}
+		RUNNING = false;
 	}
 
 	private void launchVersionChecker() {

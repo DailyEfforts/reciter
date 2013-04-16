@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
@@ -19,6 +20,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 
@@ -56,6 +58,7 @@ public class SettingsActivity extends PreferenceActivity {
 		private static String mWordCountInOneUnitSummary;
 		private static SharedPreferences mSharedPref;
 		private Preference mCurrentVersionPref;
+		private CheckBoxPreference mReviewNotification;
 		private static ListPreference mTimeGapPref;
 		private static String mTimeGapSummay;
 		private static Preference mResetPref;
@@ -66,16 +69,20 @@ public class SettingsActivity extends PreferenceActivity {
 
 			// Load the preferences from an XML resource
 			addPreferencesFromResource(R.xml.settings);
-
+			mSharedPref = PreferenceManager
+					.getDefaultSharedPreferences(getActivity()
+							.getApplicationContext());
 			mOptNumListPref = (ListPreference) findPreference(getString(R.string.pref_key_options_count));
 			mWordCountInOneUnitPref = (ListPreference) findPreference(getString(R.string.pref_key_word_count_in_one_unit));
 			mCurrentVersionPref = (Preference) findPreference(getString(R.string.pref_key_version));
 			mTimeGapPref = (ListPreference) findPreference(getString(R.string.pref_key_slide_show_time_gap));
 			mResetPref = (Preference) findPreference(getString(R.string.pref_key_reset));
+			mReviewNotification = (CheckBoxPreference) findPreference(getString(R.string.pref_key_review_notification));
 
-			if (mOptNumListPref == null || mCurrentVersionPref == null
+			if (mSharedPref == null || mOptNumListPref == null
+					|| mCurrentVersionPref == null
 					|| mCurrentVersionPref == null || mTimeGapPref == null
-					|| mResetPref == null) {
+					|| mResetPref == null || mReviewNotification == null) {
 				return;
 			}
 
@@ -89,10 +96,6 @@ public class SettingsActivity extends PreferenceActivity {
 			}
 
 			mResetPref.setOnPreferenceClickListener(this);
-
-			mSharedPref = PreferenceManager
-					.getDefaultSharedPreferences(getActivity()
-							.getApplicationContext());
 
 			Resources res = getResources();
 			if (res == null) {
@@ -125,6 +128,10 @@ public class SettingsActivity extends PreferenceActivity {
 				value = Settings.DEFAULT_TIME_GAP;
 				mTimeGapPref.setValue(value);
 			}
+			
+			mReviewNotification.setChecked(mSharedPref.getBoolean(
+					getString(R.string.pref_key_review_notification),
+					Settings.DEFAULT_ALLOW_REVIEW_NOTIFICATION));
 
 			setOptNumSummary();
 			setWordCountSummary();
@@ -152,7 +159,7 @@ public class SettingsActivity extends PreferenceActivity {
 				SharedPreferences sharedPreferences, String key) {
 
 			if (key != null && mOptNumListPref != null
-					&& mWordCountInOneUnitPref != null && mTimeGapPref != null) {
+					&& mWordCountInOneUnitPref != null && mTimeGapPref != null && mReviewNotification != null) {
 				if (key.equals(mOptNumListPref.getKey())) {
 					setOptNumSummary();
 				} else if (key.equals(mWordCountInOneUnitPref.getKey())) {
@@ -210,9 +217,9 @@ public class SettingsActivity extends PreferenceActivity {
 
 			if (mResetPref != null && key.equals(mResetPref.getKey())) {
 
-			    DialogFragment newFragment = ResetAlertDialogFragment.newInstance(
-			            R.string.reset_to_default);
-			    newFragment.show(getFragmentManager(), "dialog");
+				DialogFragment newFragment = ResetAlertDialogFragment
+						.newInstance(R.string.reset_to_default);
+				newFragment.show(getFragmentManager(), "dialog");
 
 				return true;
 			}
@@ -237,7 +244,6 @@ public class SettingsActivity extends PreferenceActivity {
 			setWordCountSummary();
 			setTimeGapPrefSummary();
 		}
-		
 
 		public static class ResetAlertDialogFragment extends DialogFragment {
 

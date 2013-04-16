@@ -29,6 +29,18 @@
             android:summary="@string/pref_summary_options_count"
             android:title="@string/option_count" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/background" >
+        <!-- 
+        <CheckBoxPreference
+            android:key="@string/pref_key_allow_auto_check_version"
+            android:summary="@string/allow_to_check_latest_version_automatically"
+            android:title="@string/auto_check_latest_version" />
+             -->
+        <CheckBoxPreference
+            android:key="@string/pref_key_review_notification"
+            android:summary="@string/notify_to_review_in_regular_time"
+            android:title="@string/notify" />
+    </PreferenceCategory>
     <PreferenceCategory android:title="@string/other" >
         <Preference
             android:key="@string/pref_key_reset"
@@ -40,6 +52,7 @@
             style="?android:attr/preferenceInformationStyle"
             android:key="@string/pref_key_version"
             android:summary="@string/unknown"
+            android:persistent="true"
             android:title="@string/version" />
     </PreferenceCategory>
 

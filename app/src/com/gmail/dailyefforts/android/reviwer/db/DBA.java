@@ -74,23 +74,25 @@ public class DBA extends SQLiteOpenHelper {
 		Cursor cursor = query(TABLE_WORD_LIST, null, WORD_WORD + "=?",
 				new String[] { word }, null, null, null);
 
-		if (cursor != null && cursor.moveToFirst()) {
-			int star = cursor.getInt(cursor.getColumnIndex(WORD_STAR));
-			if (Debuger.DEBUG) {
-				long timeStamp = cursor.getInt(cursor
-						.getColumnIndex(WORD_TIMESTAMP));
-				Log.d(TAG, "star() star: " + star);
-				Log.d(TAG, "star() timeStamp: " + timeStamp);
-			}
-			ContentValues values = new ContentValues();
-			values.put(WORD_TIMESTAMP, System.currentTimeMillis());
-			values.put(WORD_STAR, ++star);
-			getWritableDatabase().update(TABLE_WORD_LIST, values,
-					WORD_WORD + "=?", new String[] { word });
-		}
-
 		if (cursor != null) {
-			cursor.close();
+			try {
+				if (cursor.moveToFirst()) {
+					int star = cursor.getInt(cursor.getColumnIndex(WORD_STAR));
+					if (Debuger.DEBUG) {
+						long timeStamp = cursor.getInt(cursor
+								.getColumnIndex(WORD_TIMESTAMP));
+						Log.d(TAG, "star() star: " + star);
+						Log.d(TAG, "star() timeStamp: " + timeStamp);
+					}
+					ContentValues values = new ContentValues();
+					values.put(WORD_TIMESTAMP, System.currentTimeMillis());
+					values.put(WORD_STAR, ++star);
+					getWritableDatabase().update(TABLE_WORD_LIST, values,
+							WORD_WORD + "=?", new String[] { word });
+				}
+			} finally {
+				cursor.close();
+			}
 		}
 	}
 
@@ -99,8 +101,10 @@ public class DBA extends SQLiteOpenHelper {
 		Cursor cursor = query(TABLE_WORD_LIST, null, WORD_WORD + "=?",
 				new String[] { word }, null, null, null);
 
-		if (cursor != null && cursor.moveToFirst()) {
-			star = cursor.getInt(cursor.getColumnIndex(WORD_STAR));
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				star = cursor.getInt(cursor.getColumnIndex(WORD_STAR));
+			}
 			cursor.close();
 		}
 		return star;
@@ -110,13 +114,17 @@ public class DBA extends SQLiteOpenHelper {
 	public boolean exist(final String word) {
 		Cursor cursor = query(TABLE_WORD_LIST, null, WORD_WORD + "=?",
 				new String[] { word }, null, null, null);
+		boolean exist = false;
+		if (cursor != null) {
 
-		if (cursor != null && cursor.moveToFirst()) {
+			if (cursor.getCount() > 0) {
+				exist = true;
+			}
+
 			cursor.close();
-			return true;
 		}
 
-		return false;
+		return exist;
 	}
 
 	public void unStar(final String word) {
@@ -135,9 +143,11 @@ public class DBA extends SQLiteOpenHelper {
 		String word = "";
 		String meaning = "";
 
-		if (cursor != null && cursor.moveToFirst()) {
-			word = cursor.getString(cursor.getColumnIndex(WORD_WORD));
-			meaning = cursor.getString(cursor.getColumnIndex(WORD_MEANING));
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				word = cursor.getString(cursor.getColumnIndex(WORD_WORD));
+				meaning = cursor.getString(cursor.getColumnIndex(WORD_MEANING));
+			}
 			cursor.close();
 		}
 

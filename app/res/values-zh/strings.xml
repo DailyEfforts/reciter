@@ -33,4 +33,12 @@
     <string name="reset_to_default">重置</string>
     <string name="reset_sumarry">将所有偏好重置为默认值</string>
 
+        
+    <string name="time_to_review">该复习了</string>
+    <string name="time_to_review_words">现在就去复习法语单词吧</string>
+    <string name="background">后台</string>
+    <string name="notify_to_review_in_regular_time">允许定期通知复习</string>
+    <string name="notify">通知</string>
+    <string name="allow_to_check_latest_version_automatically">允许自动检测最新版本</string>
+    <string name="auto_check_latest_version">自动检测最新版本</string>
 </resources>

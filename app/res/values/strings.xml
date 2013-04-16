@@ -38,5 +38,16 @@
     <string name="other">Other</string>
     <string name="reset_to_default">Reset to default</string>
     <string name="reset_sumarry">Reset all perferences to default ones</string>
+    
+    <string name="pref_key_review_notification"  translatable="false">pref_key_review_notification</string>
+    <string name="pref_key_allow_auto_check_version"  translatable="false">pref_key_allow_auto_check_version</string>
+    
+    <string name="time_to_review">Time to review</string>
+    <string name="time_to_review_words">Time to review words</string>
+    <string name="background">background</string>
+    <string name="notify_to_review_in_regular_time">Notify to review in regular time</string>
+    <string name="notify">Notify</string>
+    <string name="allow_to_check_latest_version_automatically">Allow to check latest version automatically</string>
+    <string name="auto_check_latest_version">Auto check latest version</string>
 
 </resources>
