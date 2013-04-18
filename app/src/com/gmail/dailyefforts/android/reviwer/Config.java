@@ -15,6 +15,10 @@ public class Config {
 	public static final String INTENT_APK_VERSION_NAME = "version_name";
 	public static final String INTENT_APK_VERSION_INFO = "version_info";
 	public static final long INTERVAL_TIME_TO_TIP_REVIEW = 5 * 60 * 60 * 1000;
-	
+	public static final String DEFAULT_OPTION_COUNT = "4";
+	public static final String DEFAULT_WORD_COUNT_OF_ONE_UNIT = "20";
+	public static final String DEFAULT_TIME_GAP = "3";
+	public static final String DEFAULT_RANDOM_TEST_SIZE = "30";
+	public static final boolean DEFAULT_ALLOW_REVIEW_NOTIFICATION = true;
 
 }

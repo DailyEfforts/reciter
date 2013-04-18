@@ -31,10 +31,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.setting.Settings;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class WordPager extends FragmentActivity implements OnInitListener,
@@ -166,7 +166,7 @@ public class WordPager extends FragmentActivity implements OnInitListener,
 
 		mGapTime = Integer.valueOf(mSharedPref.getString(getResources()
 				.getString(R.string.pref_key_slide_show_time_gap),
-				Settings.DEFAULT_TIME_GAP));
+				Config.DEFAULT_TIME_GAP));
 
 		dba = DBA.getInstance(getApplicationContext());
 

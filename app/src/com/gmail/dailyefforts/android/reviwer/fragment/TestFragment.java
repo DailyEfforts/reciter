@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
-import com.gmail.dailyefforts.android.reviwer.setting.Settings;
 import com.gmail.dailyefforts.android.reviwer.test.TestPage;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
@@ -38,12 +37,12 @@ public class TestFragment extends Fragment implements View.OnClickListener {
 		try {
 			String tmp = mSharedPref.getString(getActivity().getResources()
 					.getString(R.string.pref_key_random_test_question_number),
-					Settings.DEFAULT_RANDOM_TEST_SIZE);
+					Config.DEFAULT_RANDOM_TEST_SIZE);
 			size = Integer.valueOf(tmp);
 		} catch (Exception e) {
 		} finally {
 			if (size <= 0) {
-				size = Integer.valueOf(Settings.DEFAULT_RANDOM_TEST_SIZE);
+				size = Integer.valueOf(Config.DEFAULT_RANDOM_TEST_SIZE);
 			}
 		}
 		if (view != null) {

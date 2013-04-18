@@ -21,10 +21,10 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
 
+import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.setting.Settings;
 import com.gmail.dailyefforts.android.reviwer.unit.UnitButton;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
@@ -37,7 +37,7 @@ public class UnitSetFragment extends Fragment {
 	private Animation mAnimation;
 
 	private static int UNIT = Integer
-			.valueOf(Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT);
+			.valueOf(Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT);
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,7 +58,7 @@ public class UnitSetFragment extends Fragment {
 		if (mSharedPref != null) {
 			UNIT = Integer.valueOf(mSharedPref.getString(
 					getString(R.string.pref_key_word_count_in_one_unit),
-					Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT));
+					Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT));
 		}
 
 		new LoadWordsList().execute();
@@ -75,7 +75,7 @@ public class UnitSetFragment extends Fragment {
 
 			int newUnit = Integer.valueOf(mSharedPref.getString(
 					getString(R.string.pref_key_word_count_in_one_unit),
-					Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT));
+					Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT));
 			if (UNIT == newUnit) {
 				return;
 			} else {

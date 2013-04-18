@@ -119,32 +119,32 @@ public class SettingsActivity extends PreferenceActivity {
 			String value = mOptNumListPref.getValue();
 
 			if (value == null) {
-				value = Settings.DEFAULT_OPTION_COUNT;
+				value = Config.DEFAULT_OPTION_COUNT;
 				mOptNumListPref.setValue(value);
 			}
 
 			value = mWordCountInOneUnitPref.getValue();
 
 			if (value == null) {
-				value = Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT;
+				value = Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT;
 				mWordCountInOneUnitPref.setValue(value);
 			}
 
 			value = mTimeGapPref.getValue();
 			if (value == null) {
-				value = Settings.DEFAULT_TIME_GAP;
+				value = Config.DEFAULT_TIME_GAP;
 				mTimeGapPref.setValue(value);
 			}
 
 			value = mRandomTestSizePref.getValue();
 			if (value == null) {
-				value = Settings.DEFAULT_RANDOM_TEST_SIZE;
+				value = Config.DEFAULT_RANDOM_TEST_SIZE;
 				mRandomTestSizePref.setValue(value);
 			}
 
 			mReviewNotification.setChecked(mSharedPref.getBoolean(
 					getString(R.string.pref_key_review_notification),
-					Settings.DEFAULT_ALLOW_REVIEW_NOTIFICATION));
+					Config.DEFAULT_ALLOW_REVIEW_NOTIFICATION));
 
 			setOptNumSummary();
 			setWordCountSummary();
@@ -254,20 +254,20 @@ public class SettingsActivity extends PreferenceActivity {
 
 		private static void reset() {
 			if (mOptNumListPref != null) {
-				mOptNumListPref.setValue(Settings.DEFAULT_OPTION_COUNT);
+				mOptNumListPref.setValue(Config.DEFAULT_OPTION_COUNT);
 			}
 
 			if (mWordCountInOneUnitPref != null) {
 				mWordCountInOneUnitPref
-						.setValue(Settings.DEFAULT_WORD_COUNT_OF_ONE_UNIT);
+						.setValue(Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT);
 			}
 
 			if (mTimeGapPref != null) {
-				mTimeGapPref.setValue(Settings.DEFAULT_TIME_GAP);
+				mTimeGapPref.setValue(Config.DEFAULT_TIME_GAP);
 			}
 
 			if (mRandomTestSizePref != null) {
-				mRandomTestSizePref.setValue(Settings.DEFAULT_RANDOM_TEST_SIZE);
+				mRandomTestSizePref.setValue(Config.DEFAULT_RANDOM_TEST_SIZE);
 			}
 
 			setOptNumSummary();
@@ -277,7 +277,7 @@ public class SettingsActivity extends PreferenceActivity {
 
 			if (mReviewNotification != null) {
 				mReviewNotification
-						.setChecked(Settings.DEFAULT_ALLOW_REVIEW_NOTIFICATION);
+						.setChecked(Config.DEFAULT_ALLOW_REVIEW_NOTIFICATION);
 			}
 		}
 

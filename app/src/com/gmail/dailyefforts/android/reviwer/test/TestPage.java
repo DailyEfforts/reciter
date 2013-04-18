@@ -25,19 +25,19 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnTouchListener;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
-import com.gmail.dailyefforts.android.reviwer.setting.Settings;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class TestPage extends Activity implements OnTouchListener,
@@ -173,7 +173,7 @@ public class TestPage extends Activity implements OnTouchListener,
 
 		optNum = Integer.valueOf(mSharedPref.getString(
 				getString(R.string.pref_key_options_count),
-				Settings.DEFAULT_OPTION_COUNT));
+				Config.DEFAULT_OPTION_COUNT));
 
 		dba = DBA.getInstance(getApplicationContext());
 
