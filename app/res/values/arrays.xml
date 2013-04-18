@@ -21,6 +21,13 @@
         <item>7</item>
         <item>9</item>
     </string-array>
+    <string-array name="pref_random_test_question_number_entry_values" translatable="false">
+        <item>10</item>
+        <item>30</item>
+        <item>50</item>
+        <item>70</item>
+        <item>100</item>
+    </string-array>
     <string-array name="pref_options_count_list_entries">
         <item>3 options</item>
         <item>4 options</item>
@@ -41,4 +48,12 @@
         <item>7 seconds</item>
         <item>9 seconds</item>
     </string-array>
+    <string-array name="pref_random_test_question_number_entries" translatable="false">
+        <item>10 questions</item>
+        <item>30 questions</item>
+        <item>50 questions</item>
+        <item>70 questions</item>
+        <item>100 questions</item>
+    </string-array>
+
 </resources>

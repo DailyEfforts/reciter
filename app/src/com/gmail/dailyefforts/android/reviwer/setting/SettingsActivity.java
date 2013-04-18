@@ -58,7 +58,9 @@ public class SettingsActivity extends PreferenceActivity {
 		private static String mWordCountInOneUnitSummary;
 		private static SharedPreferences mSharedPref;
 		private Preference mCurrentVersionPref;
-		private CheckBoxPreference mReviewNotification;
+		private static CheckBoxPreference mReviewNotification;
+		private static ListPreference mRandomTestSizePref;
+		private static String mRandomTestSizeSummary;
 		private static ListPreference mTimeGapPref;
 		private static String mTimeGapSummay;
 		private static Preference mResetPref;
@@ -78,11 +80,13 @@ public class SettingsActivity extends PreferenceActivity {
 			mTimeGapPref = (ListPreference) findPreference(getString(R.string.pref_key_slide_show_time_gap));
 			mResetPref = (Preference) findPreference(getString(R.string.pref_key_reset));
 			mReviewNotification = (CheckBoxPreference) findPreference(getString(R.string.pref_key_review_notification));
+			mRandomTestSizePref = (ListPreference) findPreference(getString(R.string.pref_key_random_test_question_number));
 
 			if (mSharedPref == null || mOptNumListPref == null
 					|| mCurrentVersionPref == null
 					|| mCurrentVersionPref == null || mTimeGapPref == null
-					|| mResetPref == null || mReviewNotification == null) {
+					|| mResetPref == null || mReviewNotification == null
+					|| mRandomTestSizePref == null) {
 				return;
 			}
 
@@ -109,6 +113,9 @@ public class SettingsActivity extends PreferenceActivity {
 			mTimeGapSummay = String.valueOf(res
 					.getText(R.string.timp_gap_sumarry));
 
+			mRandomTestSizeSummary = String.valueOf(res
+					.getText(R.string.build_x_question_in_each_test_case));
+
 			String value = mOptNumListPref.getValue();
 
 			if (value == null) {
@@ -128,7 +135,13 @@ public class SettingsActivity extends PreferenceActivity {
 				value = Settings.DEFAULT_TIME_GAP;
 				mTimeGapPref.setValue(value);
 			}
-			
+
+			value = mRandomTestSizePref.getValue();
+			if (value == null) {
+				value = Settings.DEFAULT_RANDOM_TEST_SIZE;
+				mRandomTestSizePref.setValue(value);
+			}
+
 			mReviewNotification.setChecked(mSharedPref.getBoolean(
 					getString(R.string.pref_key_review_notification),
 					Settings.DEFAULT_ALLOW_REVIEW_NOTIFICATION));
@@ -136,6 +149,15 @@ public class SettingsActivity extends PreferenceActivity {
 			setOptNumSummary();
 			setWordCountSummary();
 			setTimeGapPrefSummary();
+			setRandomTestSizeSummary();
+		}
+
+		private static void setRandomTestSizeSummary() {
+			if (mRandomTestSizePref != null) {
+				mRandomTestSizePref
+						.setSummary(String.format(mRandomTestSizeSummary,
+								mRandomTestSizePref.getValue()));
+			}
 		}
 
 		@Override
@@ -159,13 +181,17 @@ public class SettingsActivity extends PreferenceActivity {
 				SharedPreferences sharedPreferences, String key) {
 
 			if (key != null && mOptNumListPref != null
-					&& mWordCountInOneUnitPref != null && mTimeGapPref != null && mReviewNotification != null) {
+					&& mWordCountInOneUnitPref != null && mTimeGapPref != null
+					&& mReviewNotification != null
+					&& mRandomTestSizePref != null) {
 				if (key.equals(mOptNumListPref.getKey())) {
 					setOptNumSummary();
 				} else if (key.equals(mWordCountInOneUnitPref.getKey())) {
 					setWordCountSummary();
 				} else if (key.equals(mTimeGapPref.getKey())) {
 					setTimeGapPrefSummary();
+				} else if (key.equals(mRandomTestSizePref.getKey())) {
+					setRandomTestSizeSummary();
 				}
 			}
 		}
@@ -240,9 +266,19 @@ public class SettingsActivity extends PreferenceActivity {
 				mTimeGapPref.setValue(Settings.DEFAULT_TIME_GAP);
 			}
 
+			if (mRandomTestSizePref != null) {
+				mRandomTestSizePref.setValue(Settings.DEFAULT_RANDOM_TEST_SIZE);
+			}
+
 			setOptNumSummary();
 			setWordCountSummary();
 			setTimeGapPrefSummary();
+			setRandomTestSizeSummary();
+
+			if (mReviewNotification != null) {
+				mReviewNotification
+						.setChecked(Settings.DEFAULT_ALLOW_REVIEW_NOTIFICATION);
+			}
 		}
 
 		public static class ResetAlertDialogFragment extends DialogFragment {

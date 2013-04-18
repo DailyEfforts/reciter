@@ -37,8 +37,11 @@
     <string name="time_to_review">该复习了</string>
     <string name="time_to_review_words">现在就去复习法语单词吧</string>
     <string name="background">后台</string>
-    <string name="notify_to_review_in_regular_time">允许定期通知复习</string>
-    <string name="notify">通知</string>
+    <string name="notify_to_review_in_regular_time">允许定期提醒复习</string>
+    <string name="notify">提醒</string>
     <string name="allow_to_check_latest_version_automatically">允许自动检测最新版本</string>
     <string name="auto_check_latest_version">自动检测最新版本</string>
+    
+   	<string name="random_test_question_number">随机测试问题数目</string>
+    <string name="build_x_question_in_each_test_case">每次随机测试时生成 %s 道题</string>
 </resources>

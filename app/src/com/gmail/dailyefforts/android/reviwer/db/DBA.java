@@ -154,7 +154,7 @@ public class DBA extends SQLiteOpenHelper {
 		return new Word(word, meaning);
 	}
 
-	public void buildRandomTest() {
+	public void buildRandomTest(final int size) {
 		SparseArray<Word> map = Word.getMap();
 		map.clear();
 
@@ -163,7 +163,7 @@ public class DBA extends SQLiteOpenHelper {
 		Random random = new Random();
 		int dbSize = getCount();
 
-		while (set.size() < 50) {
+		while (set.size() < size) {
 			set.add(random.nextInt(dbSize));
 		}
 
