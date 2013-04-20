@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.activity.TestPage;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.test.TestPage;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class TestFragment extends Fragment implements View.OnClickListener {

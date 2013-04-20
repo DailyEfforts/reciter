@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer.test;
+package com.gmail.dailyefforts.android.reviwer.activity;
 
 import java.util.ArrayList;
 import java.util.Collections;
