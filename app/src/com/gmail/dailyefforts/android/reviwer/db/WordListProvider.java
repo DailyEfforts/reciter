@@ -10,13 +10,13 @@ import android.util.Log;
 
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 
-public class DbProvider extends ContentProvider {
+public class WordListProvider extends ContentProvider {
 	private DBA dba;
-	private static final String AUTHORITY = "com.gmail.dailyefforts.android.reviwer";
+	private static final String AUTHORITY = "com.gmail.dailyefforts.android.reviwer.wordlist";
 	private static final String BASE_PATH = DBA.TABLE_WORD_LIST; // wordlist
 	public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY
 			+ "/" + BASE_PATH);
-	private static final String TAG = DbProvider.class.getSimpleName();
+	private static final String TAG = WordListProvider.class.getSimpleName();
 
 	@Override
 	public boolean onCreate() {

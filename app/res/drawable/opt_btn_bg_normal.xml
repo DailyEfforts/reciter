@@ -19,7 +19,8 @@
     <gradient
         android:endColor="#696969"
         android:gradientRadius="360"
-        android:startColor="@color/dark"
+        android:centerColor="@color/dark"
+        android:startColor="@color/black"
         android:type="radial" />
 
 </shape>

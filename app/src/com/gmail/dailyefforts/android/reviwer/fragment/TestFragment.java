@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,51 +16,78 @@ import android.widget.Toast;
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
+import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.test.TestPage;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class TestFragment extends Fragment implements View.OnClickListener {
 	private static final String TAG = TestFragment.class.getSimpleName();
-	private Button btnRandom;
-	private Button btnMyWordBook;
+	private Button mBtnRandom;
+	private Button mBtnMyWordBook;
 	private SharedPreferences mSharedPref;
-	private int size;
+	private int mTestWordsSize;
 
 	private static final int RANDOM_TEST = 0;
 	private static final int MY_WORD_TEST = 1;
+/*
+ 	@Override
+	public void onDestroyView() {
+		super.onDestroyView();
+
+		Fragment fragment = getFragmentManager().findFragmentById(
+				R.id.fragment_test_report_record);
+		if (fragment != null) {
+			int result = getFragmentManager().beginTransaction()
+					.remove(fragment).commit();
+			if (Debuger.DEBUG) {
+				Log.d(TAG,
+						"onDestroyView() remove old test report fragment, result: "
+								+ result);
+			}
+		}
+	} */
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_test, container, false);
-		mSharedPref = PreferenceManager
-				.getDefaultSharedPreferences(getActivity());
-		try {
-			String tmp = mSharedPref.getString(getActivity().getResources()
-					.getString(R.string.pref_key_random_test_question_number),
-					Config.DEFAULT_RANDOM_TEST_SIZE);
-			size = Integer.valueOf(tmp);
-		} catch (Exception e) {
-		} finally {
-			if (size <= 0) {
-				size = Integer.valueOf(Config.DEFAULT_RANDOM_TEST_SIZE);
-			}
+		if (Debuger.DEBUG) {
+			Log.d(TAG, "onCreateView() savedInstanceState: " + savedInstanceState);
 		}
+	
 		if (view != null) {
-			btnRandom = (Button) view.findViewById(R.id.btn_test_random);
-			btnMyWordBook = (Button) view
+			mBtnRandom = (Button) view.findViewById(R.id.btn_test_random);
+			mBtnMyWordBook = (Button) view
 					.findViewById(R.id.btn_test_my_word_book);
 
-			if (btnMyWordBook != null) {
-				btnMyWordBook.setOnClickListener(this);
+			if (mBtnMyWordBook != null) {
+				mBtnMyWordBook.setOnClickListener(this);
 			}
 
-			if (btnRandom != null) {
-				btnRandom.setOnClickListener(this);
+			if (mBtnRandom != null) {
+				mBtnRandom.setOnClickListener(this);
 			}
 		}
 
 		return view;
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		try {
+			mSharedPref = PreferenceManager
+					.getDefaultSharedPreferences(getActivity());
+			String tmp = mSharedPref.getString(getActivity().getResources()
+					.getString(R.string.pref_key_random_test_question_number),
+					Config.DEFAULT_RANDOM_TEST_SIZE);
+			mTestWordsSize = Integer.valueOf(tmp);
+		} catch (Exception e) {
+		} finally {
+			if (mTestWordsSize <= 0) {
+				mTestWordsSize = Integer.valueOf(Config.DEFAULT_RANDOM_TEST_SIZE);
+			}
+		}
 	}
 
 	public class TestCaseBuilder extends AsyncTask<Integer, Void, Boolean> {
@@ -93,7 +121,7 @@ public class TestFragment extends Fragment implements View.OnClickListener {
 			}
 			switch (mTestKind) {
 			case RANDOM_TEST:
-				dba.buildRandomTest(size);
+				dba.buildRandomTest(mTestWordsSize);
 				break;
 			case MY_WORD_TEST:
 				dba.buildMyWordBookTest();

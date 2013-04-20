@@ -48,7 +48,7 @@
         <item>7 seconds</item>
         <item>9 seconds</item>
     </string-array>
-    <string-array name="pref_random_test_question_number_entries" translatable="false">
+    <string-array name="pref_random_test_question_number_entries">
         <item>10 questions</item>
         <item>30 questions</item>
         <item>50 questions</item>

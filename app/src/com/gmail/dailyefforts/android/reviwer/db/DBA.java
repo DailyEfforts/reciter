@@ -19,7 +19,7 @@ import com.gmail.dailyefforts.android.reviwer.word.Word;
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();
 	private static final String DATABASE_NAME = "wot.db";
-	private static final int DATABASE_VERSION = 3;
+	private static final int DATABASE_VERSION = 4;
 	public static final String TABLE_WORD_LIST = "wordlist";
 	public static final String WORD_ID = "_id";
 	public static final String WORD_WORD = "word";
@@ -47,9 +47,11 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String TEST_REPORT_ID = "_id";
 	public static final String TEST_TESTED_NUMBER = "tested_number";
 	public static final String TEST_CORRECT_NUMBER = "correct_number";
+	public static final String TEST_ACCURACY = "accuracy";
 	public static final String TEST_DB_SIZE = "db_size";
 	public static final String TEST_ELAPSED_TIME = "elapsed_time";
 	public static final String TEST_TIMESTAMP = "time_stamp";
+	public static final String TEST_WRONG_WORD_LIST = "wrong_word_list";
 	public static final String TEST_OTHER = "other";
 
 	private static final String CREATE_TABLE_TEST_REPORT = "CREATE TABLE IF NOT EXISTS "
@@ -61,12 +63,15 @@ public class DBA extends SQLiteOpenHelper {
 			+ " INTEGER DEFAULT 0, "
 			+ TEST_CORRECT_NUMBER
 			+ " INTEGER DEFAULT 0, "
+			+ TEST_ACCURACY
+			+ " INTEGER DEFAULT 0, "
 			+ TEST_DB_SIZE
 			+ " INTEGER DEFAULT 0, "
 			+ TEST_ELAPSED_TIME
 			+ " INTEGER DEFAULT 0, "
 			+ TEST_TIMESTAMP
-			+ " DATETIME, " + TEST_OTHER + " TEXT);";
+			+ " DATETIME, "
+			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
 
 	private static DBA dba = null;
 
@@ -240,6 +245,10 @@ public class DBA extends SQLiteOpenHelper {
 		try {
 			result = getWritableDatabase()
 					.insert(table, nullColumnHack, values);
+
+			if (Debuger.DEBUG) {
+				Log.d(TAG, "insert() " + result);
+			}
 		} catch (SQLiteException e) {
 			// let go.
 			Log.e(TAG, e.getMessage());
@@ -271,7 +280,7 @@ public class DBA extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORD_LIST);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEST_REPORT);
 		onCreate(db);
 	}
 

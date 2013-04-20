@@ -25,7 +25,7 @@ import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
-import com.gmail.dailyefforts.android.reviwer.db.DbProvider;
+import com.gmail.dailyefforts.android.reviwer.db.WordListProvider;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 
 public class WordBookFragment extends ListFragment implements
@@ -196,15 +196,6 @@ public class WordBookFragment extends ListFragment implements
 			}
 
 			if (mCursor.moveToPosition(position)) {
-				System.out.println("WordBookList.onListItemClick() "
-						+ mCursor.getString(mCursor
-								.getColumnIndex(DBA.WORD_WORD)));
-				System.out.println("WordBookList.onListItemClick() "
-						+ mCursor.getString(mCursor
-								.getColumnIndex(DBA.WORD_MEANING)));
-				System.out.println("WordBookList.onListItemClick() "
-						+ mCursor.getString(mCursor
-								.getColumnIndex(DBA.WORD_TIMESTAMP)));
 				Toast.makeText(
 						getActivity(),
 						mCursor.getString(mCursor
@@ -226,7 +217,7 @@ public class WordBookFragment extends ListFragment implements
 
 	@Override
 	public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-		Uri uri = DbProvider.CONTENT_URI;
+		Uri uri = WordListProvider.CONTENT_URI;
 		String[] projection = null;
 		String selection = DBA.WORD_STAR + ">?";
 		String[] selectionArgs = new String[] { "0" };

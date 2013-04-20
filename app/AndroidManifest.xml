@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gmail.dailyefforts.android.reviwer"
-    android:versionCode="7"
-    android:versionName="1.10.0" >
+    android:versionCode="8"
+    android:versionName="1.11.0" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -34,8 +34,13 @@
         </activity>
 
         <provider
-            android:name="com.gmail.dailyefforts.android.reviwer.db.DbProvider"
-            android:authorities="com.gmail.dailyefforts.android.reviwer"
+            android:name="com.gmail.dailyefforts.android.reviwer.db.WordListProvider"
+            android:authorities="com.gmail.dailyefforts.android.reviwer.wordlist"
+            android:exported="false" >
+        </provider>
+        <provider
+            android:name=".db.TestReportsProvider"
+            android:authorities="com.gmail.dailyefforts.android.reviwer.testreport"
             android:exported="false" >
         </provider>
 

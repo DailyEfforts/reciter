@@ -1,6 +1,7 @@
 package com.gmail.dailyefforts.android.reviwer.test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Locale;
 import java.util.Random;
 
@@ -9,6 +10,7 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -85,6 +87,8 @@ public class TestPage extends Activity implements OnTouchListener,
 	private String mTestReport;
 
 	private boolean isSpeaking;
+
+	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
 
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
@@ -222,6 +226,10 @@ public class TestPage extends Activity implements OnTouchListener,
 
 		mStartTime = 0L;
 
+		if (mWrongWordList != null) {
+			mWrongWordList.clear();
+		}
+
 	}
 
 	@Override
@@ -330,6 +338,19 @@ public class TestPage extends Activity implements OnTouchListener,
 					}
 					v.setBackgroundDrawable(bgColorPressedBingo);
 				} else {
+					if (isFirstTouch && dba != null
+							&& dba.getStar(mWord) <= 0) {
+						dba.star(mWord);
+						if (Debuger.DEBUG) {
+							Log.d(TAG, "onTouch() down: mWord: " + mWord + ", ");
+						}
+					}
+					if (mWrongWordList != null && !mWrongWordList.contains(mWord)) {
+						mWrongWordList.add(mWord);
+						if (Debuger.DEBUG) {
+							Log.d(TAG, "onTouch() mWord: " + mWord + ", set: " + mWrongWordList.toString());
+						}
+					}
 					v.setBackgroundDrawable(bgColorPressedWarning);
 				}
 				returnValue = true;
@@ -349,21 +370,39 @@ public class TestPage extends Activity implements OnTouchListener,
 
 					if (mWordCounter == map.size()) {
 						setProgress(Window.PROGRESS_END);
+
+						long elapsedTime = Math.round((System
+								.currentTimeMillis() - mStartTime) / 1000.0);
+						int accuracy = (int) (mBingoNum * 100.0f / mWordCounter);
+
+						if (dba != null) {
+							ContentValues values = new ContentValues();
+							values.put(DBA.TEST_TESTED_NUMBER, mWordCounter);
+							values.put(DBA.TEST_CORRECT_NUMBER, mBingoNum);
+							values.put(DBA.TEST_ELAPSED_TIME, elapsedTime);
+							values.put(DBA.TEST_ACCURACY, accuracy);
+							values.put(DBA.TEST_DB_SIZE, dba.size());
+							values.put(DBA.TEST_TIMESTAMP,
+									System.currentTimeMillis());
+							if (mWrongWordList != null) {
+								Collections.sort(mWrongWordList);
+								values.put(DBA.TEST_WRONG_WORD_LIST,
+										mWrongWordList.toString());
+							}
+							dba.insert(DBA.TABLE_TEST_REPORT, null, values);
+						}
+
 						String message = String
 								.format(mTestReport,
 										mWordCounter,
 										mBingoNum,
-										Math.round((System.currentTimeMillis() - mStartTime) / 1000.0),
-										(int) (mBingoNum * 100.0f / mWordCounter),
+										elapsedTime,
+										accuracy,
 										dba.size(),
 										(int) (dba.size() * (mBingoNum * 1.0f / mWordCounter)));
 						showDialog(getString(R.string.test_report), message);
 
 					} else {
-						if (!isFirstTouch && dba != null
-								&& dba.getStar(mWord) <= 0) {
-							dba.star(mWord);
-						}
 						buildTestCase(optNum);
 					}
 				} else {

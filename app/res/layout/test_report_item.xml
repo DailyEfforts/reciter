@@ -3,29 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:attr/activatedBackgroundIndicator"
-    android:descendantFocusability="blocksDescendants"
-    android:gravity="center_vertical"
-    android:minHeight="?android:attr/listPreferredItemHeightSmall"
     android:paddingLeft="?android:attr/listPreferredItemPaddingLeft"
     android:paddingRight="?android:attr/listPreferredItemPaddingRight" >
 
     <TextView
-        android:id="@+id/tv_book_item_word"
+        android:id="@+id/tv_test_report_item_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/orange_dark"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:textIsSelectable="false" />
 
     <TextView
-        android:id="@+id/tv_book_item_timestamp"
+        android:id="@+id/tv_test_report_item_wrong_word_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_book_item_word"
+        android:layout_below="@+id/tv_test_report_item_time"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/gray"
-        android:textIsSelectable="false" />
+        android:textColor="@color/orange_dark"
+        android:textIsSelectable="true" />
 
 </RelativeLayout>

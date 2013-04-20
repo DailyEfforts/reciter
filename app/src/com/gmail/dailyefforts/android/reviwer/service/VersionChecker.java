@@ -334,19 +334,6 @@ public class VersionChecker extends IntentService {
 		BigInteger bigInt = new BigInteger(1, digest);
 		String out = bigInt.toString(16);
 
-		/*
-		 * int len = digest.length;
-		 * 
-		 * char[] out = new char[len << 1];
-		 * 
-		 * 
-		 * for (int i = 0, j = 0; i < len; i++) {
-		 * System.out.println("VersionChecker.getMd5Sum() " + i + ", " +
-		 * digest.length + ", " + (0xF0 & digest[i] >>> 4)); out[j++] =
-		 * DIGITS[0xF0 & digest[i] >>> 4]; out[j++] = DIGITS[0x0F & digest[i]];
-		 * }
-		 */
-
 		return out;
 	}
 

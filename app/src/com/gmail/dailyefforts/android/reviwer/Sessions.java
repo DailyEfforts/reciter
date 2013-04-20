@@ -45,6 +45,10 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sessions);
+		
+		if (Debuger.DEBUG) {
+			Log.d(TAG, "onCreate() savedInstanceState: " + savedInstanceState);
+		}
 
 		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
@@ -170,6 +174,9 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 				fragment = new WordBookFragment();
 				break;
 			case 2:
+				if (Debuger.DEBUG) {
+					Log.d(TAG, "getItem() TestFragment: ");
+				}
 				fragment = new TestFragment();
 				break;
 			}

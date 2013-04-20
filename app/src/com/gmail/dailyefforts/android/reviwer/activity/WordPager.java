@@ -42,16 +42,12 @@ public class WordPager extends FragmentActivity implements OnInitListener,
 
 	private static final String TAG = WordPager.class.getSimpleName();
 
-	private TextView tv;
-
 	private String mWord;
 	private String mMeaning;
 
 	private static SparseArray<Word> map;
 
 	private DBA dba;
-
-	private int mDbCount;
 
 	private String mAddToBook;
 
@@ -159,7 +155,6 @@ public class WordPager extends FragmentActivity implements OnInitListener,
 		imgBtnPlay = (ImageButton) findViewById(R.id.ib_play);
 		setProgressBarVisibility(true);
 
-		tv = (TextView) findViewById(R.id.tv_word);
 		getActionBar().setDisplayShowTitleEnabled(false);
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
@@ -169,8 +164,6 @@ public class WordPager extends FragmentActivity implements OnInitListener,
 				Config.DEFAULT_TIME_GAP));
 
 		dba = DBA.getInstance(getApplicationContext());
-
-		mDbCount = dba.getCount();
 
 		Resources res = getResources();
 
@@ -344,9 +337,6 @@ public class WordPager extends FragmentActivity implements OnInitListener,
 					if (idx < map.size()) {
 						String w = map.get(idx).getWord();
 						String m = map.get(idx).getMeaning();
-						System.out
-								.println("WordPager.WordFragment.onCreateView() "
-										+ w + " - " + m);
 						word.setText(w);
 						meaning.setText(m);
 
