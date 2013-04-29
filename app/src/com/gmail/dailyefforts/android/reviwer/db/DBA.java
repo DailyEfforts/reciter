@@ -12,6 +12,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.util.SparseArray;
+import android.webkit.WebChromeClient.CustomViewCallback;
 
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
@@ -76,10 +77,15 @@ public class DBA extends SQLiteOpenHelper {
 	private static DBA dba = null;
 
 	public void star(final String word) {
+		
+		if (word == null) {
+			return;
+		}
+		
 		Cursor cursor = query(TABLE_WORD_LIST, null, WORD_WORD + "=?",
 				new String[] { word }, null, null, null);
 
-		if (cursor != null) {
+		if (cursor != null && cursor.getCount() > 0) {
 			try {
 				if (cursor.moveToFirst()) {
 					int star = cursor.getInt(cursor.getColumnIndex(WORD_STAR));
@@ -102,11 +108,16 @@ public class DBA extends SQLiteOpenHelper {
 	}
 
 	public int getStar(final String word) {
+		
 		int star = -1;
+		
+		if (word == null) {
+			return -1;
+		}
 		Cursor cursor = query(TABLE_WORD_LIST, null, WORD_WORD + "=?",
 				new String[] { word }, null, null, null);
 
-		if (cursor != null) {
+		if (cursor != null && cursor.getCount() > 0) {
 			if (cursor.moveToFirst()) {
 				star = cursor.getInt(cursor.getColumnIndex(WORD_STAR));
 			}
@@ -147,16 +158,18 @@ public class DBA extends SQLiteOpenHelper {
 
 		String word = "";
 		String meaning = "";
-
+int id = -1;
 		if (cursor != null) {
 			if (cursor.moveToFirst()) {
+				id = cursor.getInt(cursor.getColumnIndex(WORD_ID));
+
 				word = cursor.getString(cursor.getColumnIndex(WORD_WORD));
 				meaning = cursor.getString(cursor.getColumnIndex(WORD_MEANING));
 			}
 			cursor.close();
 		}
 
-		return new Word(word, meaning);
+		return new Word(id, word, meaning);
 	}
 
 	public void buildRandomTest(final int size) {
@@ -191,11 +204,13 @@ public class DBA extends SQLiteOpenHelper {
 		int i = 0;
 		String word = "";
 		String meaning = "";
+		int id = -1;
 		if (cursor != null) {
 			while (cursor.moveToNext()) {
+				id = cursor.getInt(cursor.getColumnIndex(WORD_ID));
 				word = cursor.getString(cursor.getColumnIndex(WORD_WORD));
 				meaning = cursor.getString(cursor.getColumnIndex(WORD_MEANING));
-				Word value = new Word(word, meaning);
+				Word value = new Word(id, word, meaning);
 				map.put(i++, value);
 			}
 			cursor.close();
@@ -280,7 +295,7 @@ public class DBA extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEST_REPORT);
+//		db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEST_REPORT);
 		onCreate(db);
 	}
 

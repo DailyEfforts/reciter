@@ -78,6 +78,7 @@
                 <action android:name="com.gmail.dailyefforts.android.reviwer.review" />
             </intent-filter>
         </receiver>
+        <activity android:name=".drag.DragAndDropActivity"></activity>
     </application>
 
 </manifest>

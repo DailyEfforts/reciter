@@ -20,6 +20,7 @@ public class ReviewReciver extends BroadcastReceiver {
 
 	private static final String TAG = ReviewReciver.class.getSimpleName();
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onReceive(Context context, Intent intent) {
 

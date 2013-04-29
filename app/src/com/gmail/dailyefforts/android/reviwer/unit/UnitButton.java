@@ -10,9 +10,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.gmail.dailyefforts.android.reviwer.R;
-import com.gmail.dailyefforts.android.reviwer.activity.WordPager;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
+import com.gmail.dailyefforts.android.reviwer.drag.DragAndDropActivity;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class UnitButton extends Button implements View.OnClickListener {
@@ -27,6 +27,7 @@ public class UnitButton extends Button implements View.OnClickListener {
 		this(context, null);
 	}
 
+	@SuppressWarnings("deprecation")
 	public UnitButton(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		setOnClickListener(this);
@@ -54,7 +55,7 @@ public class UnitButton extends Button implements View.OnClickListener {
 				sql,
 				new String[] { String.valueOf(this.start),
 						String.valueOf(this.end) });
-		
+
 		if (Debuger.DEBUG) {
 			Log.d(TAG, "onClick() start: " + this.start + ", end: " + this.end);
 		}
@@ -73,13 +74,13 @@ public class UnitButton extends Button implements View.OnClickListener {
 					Log.d(TAG, String.format("id: %d, word: %s, meanning: %s",
 							id, word, meanning));
 				}
-				Word newWord = new Word(word, meanning);
+				Word newWord = new Word(id, word, meanning);
 				map.put(idx++, newWord);
 			}
 			cursor.close();
 		}
 
-		Intent intent = new Intent(getContext(), WordPager.class);
+		Intent intent = new Intent(getContext(), DragAndDropActivity.class);
 		this.getContext().startActivity(intent);
 	}
 

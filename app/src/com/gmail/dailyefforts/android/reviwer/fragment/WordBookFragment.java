@@ -145,12 +145,13 @@ public class WordBookFragment extends ListFragment implements
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			View view = null;
 			String word = null;
 			long time = 0L;
+
+			ViewHolder viewHolder = null;
+
 			if (mCursor != null && mCursor.moveToPosition(position)) {
-				word = mCursor.getString(mCursor
-						.getColumnIndex(DBA.WORD_WORD));
+				word = mCursor.getString(mCursor.getColumnIndex(DBA.WORD_WORD));
 				time = mCursor.getLong(mCursor
 						.getColumnIndex(DBA.WORD_TIMESTAMP));
 				if (Debuger.DEBUG) {
@@ -159,27 +160,36 @@ public class WordBookFragment extends ListFragment implements
 									+ String.format("%d - %s", position, word));
 				}
 			}
+			
 			if (convertView == null) {
 
-				view = mLayoutInflater.inflate(R.layout.book_item, null);
+				convertView = mLayoutInflater.inflate(R.layout.book_item, null);
+
+				viewHolder = new ViewHolder();
+				viewHolder.word = (TextView) convertView
+						.findViewById(R.id.tv_book_item_word);
+				viewHolder.timestamp = (TextView) convertView
+						.findViewById(R.id.tv_book_item_timestamp);
+				convertView.setTag(viewHolder);
 
 			} else {
-				view = convertView;
+				viewHolder = (ViewHolder) convertView.getTag();
 			}
-			if (view != null) {
-				TextView tv1 = (TextView) view
-						.findViewById(R.id.tv_book_item_word);
-				TextView tv2 = (TextView) view
-						.findViewById(R.id.tv_book_item_timestamp);
-				if (tv1 != null && tv2 != null) {
-					tv1.setText(word);
-					tv2.setText(DateUtils.getRelativeTimeSpanString(time));
-				}
+			
+			if (viewHolder != null) {
+				viewHolder.word.setText(word);
+				viewHolder.timestamp.setText(DateUtils
+						.getRelativeTimeSpanString(time));
 			}
 
-			return view;
+			return convertView;
 		}
 
+	}
+
+	private static class ViewHolder {
+		TextView word;
+		TextView timestamp;
 	}
 
 	@Override
