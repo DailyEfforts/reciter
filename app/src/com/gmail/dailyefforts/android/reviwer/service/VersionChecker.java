@@ -1,19 +1,6 @@
 package com.gmail.dailyefforts.android.reviwer.service;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.math.BigInteger;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,6 +18,8 @@ import android.util.Log;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
+import com.gmail.dailyefforts.android.reviwer.helper.DownloadHelper;
+import com.gmail.dailyefforts.android.reviwer.helper.FileChecker;
 import com.gmail.dailyefforts.android.reviwer.version.UpdateConfirm;
 
 public class VersionChecker extends IntentService {
@@ -53,63 +42,27 @@ public class VersionChecker extends IntentService {
 		return versionCode;
 	}
 
-	private String getVerJsonStr(final InputStream in) {
-		if (in == null) {
-			Log.e(TAG, "getVerJsonStr() in is NULL.");
-			return null;
-		}
-		String jsonStr = null;
-		BufferedReader reader = null;
-		reader = new BufferedReader(new InputStreamReader(in));
-		StringBuffer sb = new StringBuffer();
-		String str = null;
-		try {
-			while ((str = reader.readLine()) != null) {
-				sb.append(str);
-			}
-			jsonStr = sb.toString();
-		} catch (IOException e) {
-			Log.e(TAG, e.getMessage());
-		}
-
-		return jsonStr;
-	}
-
 	private class Version {
-		private String verName;
-		private int verCode;
-		private String verInfo;
-		private String md5;
+		public String name;
+		public int code;
+		public int size;
+		public String info;
+		public String md5;
 
-		public Version(String name, int code, String info, String md5) {
-			super();
-			this.verName = name;
-			this.verCode = code;
-			this.verInfo = info;
+		public Version(final String name, final int code, final int size,
+				final String info, final String md5) {
+			this.name = name;
+			this.code = code;
+			this.size = size;
+			this.info = info;
 			this.md5 = md5;
 		}
 
-		public String getVerName() {
-			return verName;
-		}
-
-		public int getVerCode() {
-			return verCode;
-		}
-
-		public String getInfo() {
-			return verInfo;
-		}
-
-		public String getMd5() {
-			return md5;
-		}
-
 	}
 
-	private Version getServerVersionCode(final String urlStr) {
+	private Version getLatestVerInfo(final String urlStr) {
 		Version ver = null;
-		String jsonStr = getVerJsonStr(getInStream(urlStr));
+		String jsonStr = DownloadHelper.downloadJsonStr(urlStr);
 		if (jsonStr == null) {
 			return null;
 		}
@@ -120,17 +73,22 @@ public class VersionChecker extends IntentService {
 				JSONObject jsonObj;
 				try {
 					jsonObj = array.getJSONObject(0);
-					int code = Integer.parseInt(jsonObj
-							.getString(Config.JSON_VERSION_CODE));
+
+					int code = jsonObj.getInt(Config.JSON_VERSION_CODE);
 					String name = jsonObj.getString(Config.JSON_VERSION_NAME);
 					String info = jsonObj.getString(Config.JSON_VERSION_INFO);
 					String md5 = null;
-					
+					int size = 0; // KB
+
 					if (jsonObj.has(Config.JSON_VERSION_MD5)) {
 						md5 = jsonObj.getString(Config.JSON_VERSION_MD5);
 					}
 
-					ver = new Version(name, code, info, md5);
+					if (jsonObj.has(Config.JSON_VERSION_SIZE)) {
+						size = jsonObj.getInt(Config.JSON_VERSION_SIZE);
+					}
+
+					ver = new Version(name, code, size, info, md5);
 				} catch (JSONException e) {
 					Log.e(TAG, e.getMessage());
 				}
@@ -143,82 +101,49 @@ public class VersionChecker extends IntentService {
 
 	}
 
-	private InputStream getInStream(final String urlStr) {
-		InputStream in = null;
-		URL url = null;
-		try {
-			url = new URL(urlStr);
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			conn.setReadTimeout(10000 /* milliseconds */);
-			conn.setConnectTimeout(15000 /* milliseconds */);
-			conn.setRequestMethod("GET");
-			conn.setDoInput(true);
-			// Starts the query
-			conn.connect();
-			int response = conn.getResponseCode();
-			if (Debuger.DEBUG) {
-				Log.d(TAG, "onHandleIntent() The response is: " + response);
-			}
-			if (response == HttpURLConnection.HTTP_OK) {
-				in = conn.getInputStream();
-			}
-		} catch (MalformedURLException e) {
-			Log.e(TAG, e.getMessage());
-		} catch (IOException e) {
-			Log.e(TAG, e.getMessage());
-		}
-
-		return in;
-	}
-
-	private void launchUpdatePrompt(final File apk, final Version ver) {
-		if (apk == null || !apk.exists() || ver == null) {
+	private void launchUpdatePrompt(final Version ver) {
+		if (  ver == null) {
+			Log.e(TAG,  "ver: " + ver);
 			return;
 		}
 		Intent intent = new Intent(getApplicationContext(), UpdateConfirm.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		intent.putExtra(Config.INTENT_APK_FILE_PATH, apk.getAbsolutePath());
-		intent.putExtra(Config.INTENT_APK_VERSION_NAME, ver.getVerName());
-		intent.putExtra(Config.INTENT_APK_VERSION_INFO, ver.getInfo());
+		intent.putExtra(Config.INTENT_APK_VERSION_NAME, ver.name);
+		intent.putExtra(Config.INTENT_APK_VERSION_INFO, ver.info);
+		intent.putExtra(Config.INTENT_APK_VERSION_SIZE, ver.size);
+		intent.putExtra(Config.INTENT_APK_VERSION_SIZE, ver.size);
+		intent.putExtra(Config.INTENT_APK_VERSION_MD5, ver.md5);
 		startActivity(intent);
 	}
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
-		if (Debuger.DEBUG) {
-			File apk;
-			try {
+		if (false && Debuger.DEBUG) {
+			File apk = new File(Environment.getExternalStorageDirectory(),
+					"/Mot/Mot.apk");
 
-				Version serverVer = new Version("1.7.0", 9, "1. a\n2.b1. a",
-						"ca5fd267ff1f2d0b074d8127fc0f86e4");
-				apk = downLoadApk(new FileInputStream(
-						new File(Environment.getExternalStorageDirectory(),
-								"/Mot/a.apk")));
-
-				if (!getMd5Sum(apk).equalsIgnoreCase(
-						"ca5fd267ff1f2d0b074d8127fc0f86e4")) {
-					apk = downLoadApk(new FileInputStream(new File(
-							Environment.getExternalStorageDirectory(),
-							"/Mot/a.apk")));
-				}
-				launchUpdatePrompt(apk, serverVer);
-				Log.d(TAG, "md5: " + String.valueOf(getMd5Sum(apk)));
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (NoSuchAlgorithmException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			Version serverVer = new Version("1.7.0", 9, 234, "1. a\n2.b1. a",
+					"658cd1d2a92f58e6d289266222dff37d");
+			/*
+			 * apk = downLoadApk(new FileInputStream( new
+			 * File(Environment.getExternalStorageDirectory(), "/Mot/a.apk")));
+			 * 
+			 * if (!getMd5Sum(apk).equalsIgnoreCase(
+			 * "ca5fd267ff1f2d0b074d8127fc0f86e4")) { apk = downLoadApk(new
+			 * FileInputStream(new File(
+			 * Environment.getExternalStorageDirectory(), "/Mot/a.apk"))); }
+			 */
+			Log.d(TAG, "onHandleIntent: " + apk.exists());
+			launchUpdatePrompt(serverVer);
 			return;
 		}
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 		if (networkInfo != null && networkInfo.isConnected()) {
 			int currentVersionCode = getCurrentVersionCode();
-			Version serverVer = getServerVersionCode(Config.URL_VER_JSON);
+			Version newVersion = getLatestVerInfo(Config.URL_VER_JSON);
 
-			if (serverVer == null) {
+			if (newVersion == null) {
 				Log.e(TAG, "onHandleIntent() serverVer is null");
 				return;
 			}
@@ -226,115 +151,25 @@ public class VersionChecker extends IntentService {
 			if (Debuger.DEBUG) {
 				Log.d(TAG, "onHandleIntent() currentVersionCode: "
 						+ currentVersionCode);
-				Log.d(TAG,
-						"onHandleIntent() serverVersionCode: "
-								+ serverVer.getVerCode());
-				Log.d(TAG,
-						"onHandleIntent() serverVersionName: "
-								+ serverVer.getVerName());
+				Log.d(TAG, "onHandleIntent() serverVersionCode: "
+						+ newVersion.code);
+				Log.d(TAG, "onHandleIntent() serverVersionName: "
+						+ newVersion.name);
 			}
 
-			if (serverVer.getVerCode() > currentVersionCode
-					&& currentVersionCode > 0) {
-				File apk = downLoadApk(getInStream(Config.URL_APK));
-				String md5 = null;
-				try {
-					md5 = getMd5Sum(apk);
-				} catch (NoSuchAlgorithmException e) {
-					Log.e(TAG, e.getMessage());
-				} catch (IOException e) {
-					Log.e(TAG, e.getMessage());
-				}
-				if (Debuger.DEBUG) {
-					Log.d(TAG, "onHandleIntent() md5: " + md5);
-				}
-				if (md5 != null && !md5.equalsIgnoreCase(serverVer.getMd5())) {
-					apk = downLoadApk(getInStream(Config.URL_APK));
-				}
-				launchUpdatePrompt(apk, serverVer);
+			if (newVersion.code > currentVersionCode && currentVersionCode > 0) {
+				/*File apk = DownloadHelper.downloadApkFile(Config.REMOTE_APK_FILE_URL);
+
+				if (FileChecker.isValid(apk, newVersion.md5)) {
+					// re-download
+					apk = DownloadHelper.downloadApkFile(Config.REMOTE_APK_FILE_URL);
+				}*/
+				launchUpdatePrompt(newVersion);
 			}
 		} else {
 			Log.e(TAG, "network is not available now.");
 		}
 
-	}
-
-	private File downLoadApk(final InputStream in) {
-		if (in == null) {
-			Log.e(TAG, "downLoadApk() InputStream is null.");
-		}
-		File dir = new File(Environment.getExternalStorageDirectory(),
-				Config.SDCARD_FOLDER_NAME);
-
-		if (!dir.exists()) {
-			dir.mkdir();
-		}
-
-		File apk = new File(dir, Config.APK_NAME);
-
-		if (apk.exists()) {
-			apk.delete();
-		}
-
-		FileOutputStream fos = null;
-		try {
-			fos = new FileOutputStream(apk);
-			byte[] buf = new byte[1024];
-			int len = 0;
-			while ((len = in.read(buf)) > 0) {
-				fos.write(buf, 0, len);
-				if (Debuger.DEBUG) {
-					Log.d(TAG, "downLoadApk() downloading..." + buf.length
-							+ ", " + len);
-				}
-			}
-
-			fos.flush();
-		} catch (FileNotFoundException e) {
-			Log.e(TAG, e.getMessage());
-		} catch (IOException e) {
-			Log.e(TAG, e.getMessage());
-		} finally {
-			if (in != null) {
-				try {
-					in.close();
-				} catch (IOException e) {
-					Log.e(TAG, e.getMessage());
-				}
-			}
-
-			if (fos != null) {
-				try {
-					fos.close();
-				} catch (IOException e) {
-					Log.e(TAG, e.getMessage());
-				}
-			}
-		}
-
-		return apk;
-	}
-
-	private static char[] DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7',
-			'8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
-
-	private static String getMd5Sum(File file) throws NoSuchAlgorithmException,
-			IOException {
-
-		InputStream in = new FileInputStream(file);
-
-		MessageDigest digester = MessageDigest.getInstance("MD5");
-		byte[] bytes = new byte[8192];
-		int byteCount;
-		while ((byteCount = in.read(bytes)) > 0) {
-			digester.update(bytes, 0, byteCount);
-		}
-		byte[] digest = digester.digest();
-
-		BigInteger bigInt = new BigInteger(1, digest);
-		String out = bigInt.toString(16);
-
-		return out;
 	}
 
 	@Override

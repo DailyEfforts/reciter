@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gmail.dailyefforts.android.reviwer"
-    android:versionCode="8"
+    android:versionCode="7"
     android:versionName="1.11.0" >
 
     <uses-sdk
         android:minSdkVersion="15"
-        android:targetSdkVersion="16" />
+        android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -54,8 +54,9 @@
 
         <activity
             android:name="com.gmail.dailyefforts.android.reviwer.version.UpdateConfirm"
-            android:label="@string/app_name"
-            android:theme="@style/Activity.Dialog" >
+            android:theme="@style/ActivityTheme.Translucent"
+            android:label=""
+             >
         </activity>
         <activity
             android:name="com.gmail.dailyefforts.android.reviwer.Sessions"
@@ -79,6 +80,7 @@
             </intent-filter>
         </receiver>
         <activity android:name=".drag.DragAndDropActivity"></activity>
+        <activity android:name=".version.DownloadConfirm"></activity>
     </application>
 
 </manifest>

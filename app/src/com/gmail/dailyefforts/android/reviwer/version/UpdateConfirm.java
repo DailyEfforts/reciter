@@ -1,86 +1,248 @@
 package com.gmail.dailyefforts.android.reviwer.version;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.Window;
+import android.os.Environment;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
+import com.gmail.dailyefforts.android.reviwer.helper.DownloadHelper;
+import com.gmail.dailyefforts.android.reviwer.helper.FileChecker;
 
-public class UpdateConfirm extends Activity implements OnClickListener {
+public class UpdateConfirm extends Activity {
 
-	private Button btnOk;
-	private Button btnCancel;
-	private TextView mVersionInfo;
-	private File apk;
-	private TextView mUpdateConfirm;
+	private String verInfo;
+	private String verName;
+	private int size;
+	private String updatePromptTitle;
+	private static String MD5_SUM;
+
+	private static final int DIALOG_DOWNLOAD_YES_NO = 0;
+	private static final int DIALOG_DOWNLOADING = 1;
+	private static final int INTENT_START_APK_INSTALLER_REQUEST_CODE = 0;
+	private static final String TAG = UpdateConfirm.class.getSimpleName();
+	private static ProgressDialog mDownloadingProgressDialog;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_LEFT_ICON);
 
-		setContentView(R.layout.update_confirm);
+		Bundle extras = getIntent().getExtras();
+		verInfo = extras.getString(Config.INTENT_APK_VERSION_INFO);
 
-		getWindow().setFeatureDrawableResource(Window.FEATURE_LEFT_ICON,
-				R.drawable.ic_launcher);
+		verName = extras.getString(Config.INTENT_APK_VERSION_NAME);
 
-		btnOk = (Button) findViewById(R.id.btn_update_yes);
-		btnCancel = (Button) findViewById(R.id.btn_update_no);
+		size = extras.getInt(Config.INTENT_APK_VERSION_SIZE);
 
-		mVersionInfo = (TextView) findViewById(R.id.tv_update_version_info);
-		mUpdateConfirm = (TextView) findViewById(R.id.tv_update_confirm);
+		MD5_SUM = extras.getString(Config.INTENT_APK_VERSION_MD5);
 
-		if (btnCancel != null && btnOk != null) {
-			btnOk.setOnClickListener(this);
-			btnCancel.setOnClickListener(this);
-		}
-		apk = new File(getIntent().getExtras().getString(
-				Config.INTENT_APK_FILE_PATH));
+		updatePromptTitle = String.format(
+				getString(R.string.update_to_latest_version), verName);
 
-		String verInfo = getIntent().getExtras().getString(
-				Config.INTENT_APK_VERSION_INFO);
-		String verName = getIntent().getExtras().getString(
-				Config.INTENT_APK_VERSION_NAME);
-
-		if (mVersionInfo != null) {
-			if (verInfo != null && verInfo.length() > 0) {
-				mVersionInfo.setText(verInfo);
-			} else {
-				mVersionInfo.setVisibility(View.GONE);
-			}
-		}
-
-		if (mUpdateConfirm != null) {
-			mUpdateConfirm.setText(String.format(
-					String.valueOf(getResources().getText(
-							R.string.update_confirm)), verName));
-		}
-
+		showDialog(DIALOG_DOWNLOAD_YES_NO, null);
 	}
 
 	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.btn_update_yes:
-			Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-			intent.setData(Uri.fromFile(apk));
-			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(intent);
-			break;
-		case R.id.btn_update_no:
-			finish();
-			break;
-		default:
-			break;
+	protected Dialog onCreateDialog(int id, Bundle args) {
+		switch (id) {
+		case DIALOG_DOWNLOAD_YES_NO:
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+			builder.setTitle(updatePromptTitle);
+			builder.setMessage(verInfo);
+			builder.setPositiveButton(android.R.string.yes,
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int whichButton) {
+							showDialog(DIALOG_DOWNLOADING, null);
+						}
+					});
+			builder.setNegativeButton(android.R.string.no,
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int whichButton) {
+							finish();
+						}
+					});
+
+			return builder.create();
+		case DIALOG_DOWNLOADING:
+			mDownloadingProgressDialog = new ProgressDialog(this);
+			mDownloadingProgressDialog.setTitle("Downloading...");
+			mDownloadingProgressDialog
+					.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+			mDownloadingProgressDialog.setMax(size);
+			mDownloadingProgressDialog.setButton(
+					DialogInterface.BUTTON_NEGATIVE,
+					getText(android.R.string.no),
+					new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,
+								int whichButton) {
+
+							/* User clicked No so do some stuff */
+						}
+					});
+
+			mDownloadingProgressDialog
+					.setOnShowListener(new DialogInterface.OnShowListener() {
+
+						@Override
+						public void onShow(DialogInterface dialog) {
+							new DownLoadTask(UpdateConfirm.this)
+									.execute(Uri.EMPTY);
+						}
+					});
+
+			return mDownloadingProgressDialog;
+		}
+		return null;
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (Debuger.DEBUG) {
+			Log.d(TAG, String.format(
+					"onActivityResult() requestCode: %d, resultCode: %d",
+					requestCode, requestCode));
+		}
+		if (requestCode == INTENT_START_APK_INSTALLER_REQUEST_CODE) {
+			if (resultCode == Activity.RESULT_CANCELED) {
+				finish();
+			}
 		}
 	}
+
+	public static class DownLoadTask extends AsyncTask<Uri, Integer, File> {
+
+		private static final int ONE_KB = 1024;
+		private static final String TAG = null;
+
+		private Activity mActivity;
+
+		public DownLoadTask(Activity context) {
+			this.mActivity = context;
+		}
+
+		@Override
+		protected void onPostExecute(File apkFile) {
+			super.onPostExecute(apkFile);
+			if (Debuger.DEBUG) {
+				Log.d(TAG,
+						"onPostExecute()"
+								+ FileChecker.isValid(apkFile, MD5_SUM));
+			}
+			if (apkFile != null && apkFile.exists()
+					&& FileChecker.isValid(apkFile, MD5_SUM)) {
+				Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
+				intent.setData(Uri.fromFile(apkFile));
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				// startActivity(intent);
+
+				if (mActivity != null) {
+					mDownloadingProgressDialog.dismiss();
+					// mActivity.startActivity(intent);
+					mActivity.startActivityForResult(intent,
+							INTENT_START_APK_INSTALLER_REQUEST_CODE);
+				} else {
+					Log.e(TAG, "onPostExecute() context it null: " + mActivity);
+				}
+			}
+		}
+
+		@Override
+		protected void onProgressUpdate(Integer... values) {
+			super.onProgressUpdate(values);
+
+			if (mDownloadingProgressDialog != null) {
+				mDownloadingProgressDialog.setProgress(values[0]);
+			}
+		}
+
+		@Override
+		protected File doInBackground(Uri... params) {
+			File apk = null;
+
+			InputStream in = DownloadHelper
+					.getInStreamFromUrl(Config.REMOTE_APK_FILE_URL);
+
+			if (in != null) {
+				File dir = new File(Environment.getExternalStorageDirectory(),
+						Config.SDCARD_FOLDER_NAME);
+
+				if (!dir.exists()) {
+					dir.mkdirs();
+				}
+				
+				apk = new File(dir, Config.APK_NAME);
+
+				if (apk.exists()) {
+					if (FileChecker.isValid(apk, MD5_SUM)) {
+						// have downloaded the latest apk.
+						return apk;
+					} else {
+						apk.delete();
+					}
+				}
+
+				FileOutputStream fos = null;
+
+				int iKB = 0;
+
+				try {
+					fos = new FileOutputStream(apk);
+					byte[] buf = new byte[ONE_KB];
+					int len = 0;
+					while ((len = in.read(buf)) > 0) {
+						fos.write(buf, 0, len);
+						iKB++;
+						publishProgress(iKB);
+					}
+
+					fos.flush();
+				} catch (FileNotFoundException e) {
+					Log.e(TAG, e.getMessage());
+				} catch (IOException e) {
+					Log.e(TAG, e.getMessage());
+				} finally {
+					if (in != null) {
+						try {
+							in.close();
+						} catch (IOException e) {
+							Log.e(TAG, e.getMessage());
+						}
+					}
+
+					if (fos != null) {
+						try {
+							fos.close();
+						} catch (IOException e) {
+							Log.e(TAG, e.getMessage());
+						}
+					}
+				}
+				return apk;
+			}
+			return null;
+		}
+
+	}
+
 }

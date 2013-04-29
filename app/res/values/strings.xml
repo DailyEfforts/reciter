@@ -50,6 +50,7 @@
     <string name="notify">Notify</string>
     <string name="allow_to_check_latest_version_automatically">Allow to check latest version automatically</string>
     <string name="auto_check_latest_version">Auto check latest version</string>
+    <string name="update_to_latest_version">Update to %s ?</string>
     
     <string name="random_test_question_number">Random test Q number</string>
     <string name="build_x_question_in_each_test_case">Build %s questions in each random test</string>

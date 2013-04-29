@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <drawable name="translucent_background">#60000000</drawable>
+
     <color name="blue">#094AB2</color>
     <color name="dark">#88000000</color>
     <color name="green">#00CC00</color>
@@ -17,13 +19,12 @@
     <color name="orange_dark">#ff8c00</color>
     <color name="orange_red">#ff4500</color>
     <color name="pink_deep">#ff1493</color>
-    
     <color name="light_beige">#f5f5dc</color>
     <color name="light_wheat">#f5deb3</color>
     <color name="light_tan">#d2b48c</color>
     <color name="light_goldenrod">#eee8aa</color>
-    
-        <!-- A light Holo shade of blue -->
+
+    <!-- A light Holo shade of blue -->
     <color name="holo_blue_light">#ff33b5e5</color>
     <!-- A light Holo shade of green -->
     <color name="holo_green_light">#ff99cc00</color>
@@ -43,6 +44,5 @@
     <color name="holo_orange_dark">#ffff8800</color>
     <!-- A really bright Holo shade of blue -->
     <color name="holo_blue_bright">#ff00ddff</color>
-    
 
 </resources>

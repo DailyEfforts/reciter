@@ -127,6 +127,9 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 		case R.id.settings:
 			startActivity(new Intent(this, SettingsActivity.class));
 			return true;
+		case R.id.exit:
+			finish();
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
