@@ -197,20 +197,15 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 					ClipData dragData = ClipData.newPlainText("label", "text");
 					DragShadowBuilder shadowBuilder = new DragShadowBuilder(v);
 					v.startDrag(dragData, shadowBuilder, v, 0);
+					v.setVisibility(View.INVISIBLE);
 					return true;
+				default:
+					break;
 				}
 				return false;
 			}
 
-			/*
-			 * @Override public boolean onT(View v) { ClipData dragData =
-			 * ClipData.newPlainText("label", "text"); DragShadowBuilder
-			 * shadowBuilder = new DragShadowBuilder(v); v.startDrag(dragData,
-			 * shadowBuilder, v, 0); v.setVisibility(View.INVISIBLE); return
-			 * true; }
-			 */
 		});
-		mBtnCurrentWord.setOnDragListener(this);
 		mBtnOptionTopLeft.setOnDragListener(this);
 		mBtnOptionTopRight.setOnDragListener(this);
 		mBtnOptionBottomLeft.setOnDragListener(this);
@@ -418,12 +413,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		}
 		switch (event.getAction()) {
 		case DragEvent.ACTION_DRAG_STARTED:
-			if (v.getId() == mBtnCurrentWord.getId()) {
-				if (Debuger.DEBUG) {
-					Log.d(TAG, "onDrag() ACTION_DRAG_STARTED");
-				}
-				mBtnCurrentWord.setVisibility(View.INVISIBLE);
-			}
 			break;
 		case DragEvent.ACTION_DRAG_LOCATION:
 			break;
@@ -459,10 +448,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			System.out.println("DragAndDropActivity.onDrag() ACTION_DROP");
 			break;
 		case DragEvent.ACTION_DRAG_ENDED:
-			if (v.getId() == mBtnCurrentWord.getId()) {
-				if (Debuger.DEBUG) {
-					Log.d(TAG, "onDrag() ACTION_DRAG_ENDED");
-				}
+			if (mBtnCurrentWord.getVisibility() == View.INVISIBLE) {
 				mBtnCurrentWord.setVisibility(View.VISIBLE);
 			}
 			break;
