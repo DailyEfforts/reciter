@@ -8,7 +8,7 @@
         android:title="@string/add_to_word_book"/>
     <item
         android:id="@+id/menu_read"
-        android:icon="@drawable/read"
+        android:icon="@drawable/speak"
         android:showAsAction="always"
         android:title="@string/read">
     </item>

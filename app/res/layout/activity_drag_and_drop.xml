@@ -9,18 +9,19 @@
         android:layout_alignParentTop="true"
         android:orientation="horizontal" >
 
-        <Button
+        <com.gmail.dailyefforts.android.reviwer.drag.DragOptBtn
             android:id="@+id/btn_drop_meaning_top_left"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginRight="6dp"
             android:layout_weight="1"
+            android:background="@drawable/drag_opt_btn_bg"
             android:minHeight="80dp"
             android:text="topLeft"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
-        <Button
+        <com.gmail.dailyefforts.android.reviwer.drag.DragOptBtn
             android:id="@+id/btn_drop_meaning_top_right"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -37,8 +38,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:background="@drawable/drag_question_btn_bg"
+        android:textIsSelectable="true"
+        android:text="word"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="word" />
+        android:textColor="@color/light_wheat"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +51,7 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
 
-        <Button
+        <com.gmail.dailyefforts.android.reviwer.drag.DragOptBtn
             android:id="@+id/btn_drop_meaning_bottom_left"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -57,7 +62,7 @@
             android:text="bottomLeft"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
-        <Button
+        <com.gmail.dailyefforts.android.reviwer.drag.DragOptBtn
             android:id="@+id/btn_drop_meaning_bottom_right"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

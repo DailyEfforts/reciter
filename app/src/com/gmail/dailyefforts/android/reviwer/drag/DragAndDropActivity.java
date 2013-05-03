@@ -10,6 +10,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.DragEvent;
@@ -22,9 +23,10 @@ import android.view.View.OnClickListener;
 import android.view.View.OnDragListener;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.R;
@@ -33,24 +35,17 @@ import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class DragAndDropActivity extends Activity implements OnDragListener,
-		OnClickListener {
+		OnClickListener, OnInitListener {
 
 	private static final String TAG = DragAndDropActivity.class.getSimpleName();
 
 	private Button mBtnCurrentWord;
 
 	private String mWord;
-	private String mMeaning;
 
 	private SparseArray<Word> map;
 
 	private SparseArray<Word> pageMap;
-
-	private int mBingoNum;
-
-	private boolean isFirstTouch;
-
-	private LinearLayout optCat;
 
 	private ArrayList<Button> mOptList;
 
@@ -66,10 +61,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 	private TextToSpeech mTts;
 
-	private String mTestReport;
-
-	private boolean isSpeaking;
-
 	private Button mBtnOptionTopLeft;
 
 	private Button mBtnOptionTopRight;
@@ -81,6 +72,12 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 	private ImageButton mBtnArrowLeft;
 
 	private ImageButton mBtnArrowRight;
+
+	private int mColorError;
+
+	private int mColorBingon;
+
+	private Animation animation;
 
 	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
 
@@ -98,25 +95,12 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 		MenuItem star = menu.findItem(R.id.menu_star);
 		if (star != null) {
-			System.out
-					.println("DragAndDropActivity.onPrepareOptionsMenu() mWord: "
-							+ mWord);
 			if (mDBA.getStar(mWord) <= 0) {
 				star.setIcon(android.R.drawable.star_off);
 				star.setTitle(R.string.add_to_word_book);
 			} else {
 				star.setIcon(android.R.drawable.star_on);
 				star.setTitle(R.string.remove_from_word_book);
-			}
-		}
-
-		MenuItem read = menu.findItem(R.id.menu_read);
-
-		if (read != null) {
-			if (isSpeaking) {
-				read.setIcon(R.drawable.read);
-			} else {
-				read.setIcon(R.drawable.mute);
 			}
 		}
 
@@ -127,14 +111,31 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 	}
 
 	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+
+		if (mTts != null) {
+			mTts.shutdown();
+		}
+	}
+
+	private void readIt(final String word) {
+		if (mTts != null) {
+			int result = mTts.speak(word, TextToSpeech.QUEUE_FLUSH, null);
+			if (result != TextToSpeech.SUCCESS) {
+				Log.e(TAG, "speak failed");
+			}
+		}
+	}
+
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
 			finish();
 			return true;
 		case R.id.menu_read:
-			isSpeaking = !isSpeaking;
-			invalidateOptionsMenu();
+			readIt(mWord);
 			return true;
 		case R.id.menu_star:
 			if (mDBA == null) {
@@ -152,12 +153,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	protected void onStart() {
-		super.onStart();
-		isSpeaking = false;
 	}
 
 	@Override
@@ -184,6 +179,8 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			// TODO: handle error here.
 			finish();
 		}
+		animation = AnimationUtils.loadAnimation(getApplicationContext(),
+				R.anim.shake);
 
 		mBtnArrowLeft.setOnClickListener(this);
 		mBtnArrowRight.setOnClickListener(this);
@@ -194,11 +191,19 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			public boolean onTouch(View v, MotionEvent event) {
 				switch (event.getActionMasked()) {
 				case MotionEvent.ACTION_DOWN:
+					if (Debuger.DEBUG) {
+						Log.d(TAG, "onTouch() ACTION_DOWN");
+					}
 					ClipData dragData = ClipData.newPlainText("label", "text");
 					DragShadowBuilder shadowBuilder = new DragShadowBuilder(v);
+					v.clearAnimation();
 					v.startDrag(dragData, shadowBuilder, v, 0);
-					v.setVisibility(View.INVISIBLE);
 					return true;
+				case MotionEvent.ACTION_UP:
+					if (Debuger.DEBUG) {
+						Log.d(TAG, "onTouch() ACTION_UP");
+					}
+					break;
 				default:
 					break;
 				}
@@ -206,10 +211,13 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			}
 
 		});
+
 		mBtnOptionTopLeft.setOnDragListener(this);
 		mBtnOptionTopRight.setOnDragListener(this);
 		mBtnOptionBottomLeft.setOnDragListener(this);
 		mBtnOptionBottomRight.setOnDragListener(this);
+
+		mBtnCurrentWord.setOnDragListener(this);
 
 		mDBA = DBA.getInstance(getApplicationContext());
 
@@ -231,11 +239,12 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 		mRate = (Window.PROGRESS_END - Window.PROGRESS_START) / map.size();
 
-		mTestReport = String.valueOf(res.getText(R.string.test_report_content));
-
 		mAddToBook = String.valueOf(res.getText(R.string.tip_add_to_word_book));
 		mRmFromBook = String.valueOf(res
 				.getText(R.string.tip_remove_from_word_book));
+
+		mColorError = res.getColor(R.color.orange_dark);
+		mColorBingon = res.getColor(R.color.green);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -244,7 +253,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 				mWrongWordList.clear();
 			}
 		}
-		
+
 		Random random = new Random();
 		int optNum = 4;
 
@@ -302,6 +311,33 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			}
 		}
 		buildTestCase();
+
+		mTts = new TextToSpeech(getApplicationContext(), this);
+
+	}
+
+	@Override
+	public void onInit(int status) {
+		if (status == TextToSpeech.SUCCESS) {
+			// Set preferred language to US english.
+			// Note that a language may not be available, and the result will
+			// indicate this.
+			int result = mTts.setLanguage(Locale.FRANCE);
+			// Try this someday for some interesting results.
+			// int result mTts.setLanguage(Locale.FRANCE);
+			if (result == TextToSpeech.LANG_MISSING_DATA
+					|| result == TextToSpeech.LANG_NOT_SUPPORTED) {
+				// Lanuage data is missing or the language is not supported.
+				Log.e(TAG, "Language is not available.");
+			} else {
+				if (Debuger.DEBUG) {
+					Log.d(TAG, "TTS works fine.");
+				}
+			}
+		} else {
+			// Initialization failed.
+			Log.e(TAG, "Could not initialize TextToSpeech.");
+		}
 	}
 
 	private static ArrayList<TestCase> mTestCases = new ArrayList<DragAndDropActivity.TestCase>();
@@ -324,9 +360,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 	@Override
 	protected void onPause() {
 		super.onPause();
-		if (!isFirstTouch && mDBA != null && mDBA.getStar(mWord) <= 0) {
-			mDBA.star(mWord);
-		}
 	}
 
 	private void toast(String msg) {
@@ -334,6 +367,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 	}
 
 	int mWordCounter = 0;
+
 	private static ArrayList<Integer> arrList = new ArrayList<Integer>();
 
 	private void buildTestCase() {
@@ -347,6 +381,8 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 		TestCase testCase = mTestCases.get(mWordCounter);
 
+		mBtnCurrentWord.clearAnimation();
+		mBtnCurrentWord.startAnimation(animation);
 		if (mBtnCurrentWord.getVisibility() != View.VISIBLE) {
 			mBtnCurrentWord.setVisibility(View.VISIBLE);
 		}
@@ -380,15 +416,12 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		pageMap.put(mBtnOptionBottomRight.getId(), bottomRightWord);
 
 		mWord = curentWord.getWord();
-		mMeaning = curentWord.getMeaning();
 		mBtnCurrentWord.setText(mWord);
 
 		mBtnOptionTopLeft.setText(topLeftWord.getMeaning());
 		mBtnOptionTopRight.setText(topRightWord.getMeaning());
 		mBtnOptionBottomLeft.setText(bottomLeftWord.getMeaning());
 		mBtnOptionBottomRight.setText(bottomRightWord.getMeaning());
-
-		isFirstTouch = true;
 
 		setProgress((mWordCounter * mRate));
 
@@ -399,6 +432,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		}
 
 		if (mWordCounter == map.size() - 1) {
+			setProgress(Window.PROGRESS_END);
 			mBtnArrowRight.setVisibility(View.INVISIBLE);
 		} else {
 			mBtnArrowRight.setVisibility(View.VISIBLE);
@@ -413,6 +447,14 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		}
 		switch (event.getAction()) {
 		case DragEvent.ACTION_DRAG_STARTED:
+
+			if (v.getId() == mBtnCurrentWord.getId()) {
+				mBtnCurrentWord.clearAnimation();
+				mBtnCurrentWord.setVisibility(View.INVISIBLE);
+			} else {
+				v.clearAnimation();
+				v.startAnimation(animation);
+			}
 			break;
 		case DragEvent.ACTION_DRAG_LOCATION:
 			break;
@@ -421,39 +463,49 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		case DragEvent.ACTION_DRAG_EXITED:
 			break;
 		case DragEvent.ACTION_DROP:
+			if (v.getId() == mBtnCurrentWord.getId()) {
+				mBtnCurrentWord.setVisibility(View.VISIBLE);
+			} else {
+				if (pageMap != null) {
+					Word word = pageMap.get(v.getId());
+					if (word != null) {
+						String w = word.getWord();
+						String m = word.getMeaning();
+						if (Debuger.DEBUG) {
+							Log.d(TAG, "onDrag() w: " + w + ", m: " + m);
+						}
 
-			if (pageMap != null) {
-				Word word = pageMap.get(v.getId());
-				if (word != null) {
-					String w = word.getWord();
-					String m = word.getMeaning();
-					if (Debuger.DEBUG) {
-						Log.d(TAG, "onDrag() w: " + w + ", m: " + m);
-					}
-
-					if (mWord != null) {
-						if (v instanceof Button) {
-							Button btn = (Button) v;
-							if (mWord.equals(w)) {
-								btn.setTextColor(Color.GREEN);
-							} else {
-								btn.setTextColor(Color.RED);
+						if (mWord != null) {
+							if (v instanceof Button) {
+								Button btn = (Button) v;
+								if (mWord.equals(w)) {
+									btn.setTextColor(mColorBingon);
+								} else {
+									btn.setTextColor(mColorError);
+								}
+								btn.setText(m + "\n" + w);
+								btn.setEnabled(false);
 							}
-							btn.setText(m + "\n" + w);
-							btn.setEnabled(false);
 						}
 					}
 				}
+				v.clearAnimation();
 			}
-			System.out.println("DragAndDropActivity.onDrag() ACTION_DROP");
 			break;
 		case DragEvent.ACTION_DRAG_ENDED:
-			if (mBtnCurrentWord.getVisibility() == View.INVISIBLE) {
+			if (v.getId() == mBtnCurrentWord.getId()) {
 				mBtnCurrentWord.setVisibility(View.VISIBLE);
+				mBtnCurrentWord.startAnimation(animation);
+			} else {
+				v.clearAnimation();
 			}
 			break;
 		}
-		return true;
+		if (v.getId() == mBtnCurrentWord.getId()) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	@Override

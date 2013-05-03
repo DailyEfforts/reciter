@@ -21,7 +21,6 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.util.SparseArray;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -86,8 +85,6 @@ public class TestPage extends Activity implements OnTouchListener,
 
 	private String mTestReport;
 
-	private boolean isSpeaking;
-
 	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
 
 	@Override
@@ -113,16 +110,6 @@ public class TestPage extends Activity implements OnTouchListener,
 			}
 		}
 
-		MenuItem read = menu.findItem(R.id.menu_read);
-
-		if (read != null) {
-			if (isSpeaking) {
-				read.setIcon(R.drawable.read);
-			} else {
-				read.setIcon(R.drawable.mute);
-			}
-		}
-
 		if (Debuger.DEBUG) {
 			Log.d(TAG, "onPrepareOptionsMenu()");
 		}
@@ -136,8 +123,7 @@ public class TestPage extends Activity implements OnTouchListener,
 			finish();
 			return true;
 		case R.id.menu_read:
-			isSpeaking = !isSpeaking;
-			invalidateOptionsMenu();
+			readIt(mWord);
 			return true;
 		case R.id.menu_star:
 			if (dba == null) {
@@ -155,12 +141,6 @@ public class TestPage extends Activity implements OnTouchListener,
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	protected void onStart() {
-		super.onStart();
-		isSpeaking = false;
 	}
 
 	@Override
@@ -220,7 +200,7 @@ public class TestPage extends Activity implements OnTouchListener,
 
 		buildTestCase(optNum);
 
-		mTts = new TextToSpeech(this, this);
+		mTts = new TextToSpeech(getApplicationContext(), this);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -240,9 +220,21 @@ public class TestPage extends Activity implements OnTouchListener,
 		}
 	}
 
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+
+		if (mTts != null) {
+			mTts.shutdown();
+		}
+	}
+
 	private void readIt(final String word) {
-		if (mTts != null && isSpeaking) {
-			mTts.speak(word, TextToSpeech.QUEUE_FLUSH, null);
+		if (mTts != null) {
+			int result = mTts.speak(word, TextToSpeech.QUEUE_FLUSH, null);
+			if (result !=TextToSpeech.SUCCESS) {
+				Log.e(TAG, "speak failed");
+			}
 		}
 	}
 
@@ -260,7 +252,6 @@ public class TestPage extends Activity implements OnTouchListener,
 		mWord = map.get(mWordCounter).getWord();
 		mMeaning = map.get(mWordCounter).getMeaning();
 		tv.setText(mWord);
-		readIt(mWord);
 		invalidateOptionsMenu();
 
 		pageMap = new SparseArray<Word>();
@@ -339,17 +330,18 @@ public class TestPage extends Activity implements OnTouchListener,
 					}
 					v.setBackgroundDrawable(bgColorPressedBingo);
 				} else {
-					if (isFirstTouch && dba != null
-							&& dba.getStar(mWord) <= 0) {
+					if (isFirstTouch && dba != null && dba.getStar(mWord) <= 0) {
 						dba.star(mWord);
 						if (Debuger.DEBUG) {
 							Log.d(TAG, "onTouch() down: mWord: " + mWord + ", ");
 						}
 					}
-					if (mWrongWordList != null && !mWrongWordList.contains(mWord)) {
+					if (mWrongWordList != null
+							&& !mWrongWordList.contains(mWord)) {
 						mWrongWordList.add(mWord);
 						if (Debuger.DEBUG) {
-							Log.d(TAG, "onTouch() mWord: " + mWord + ", set: " + mWrongWordList.toString());
+							Log.d(TAG, "onTouch() mWord: " + mWord + ", set: "
+									+ mWrongWordList.toString());
 						}
 					}
 					v.setBackgroundDrawable(bgColorPressedWarning);
@@ -460,28 +452,6 @@ public class TestPage extends Activity implements OnTouchListener,
 		}
 	}
 
-	private long lastPressedTime;
-	private static final int PERIOD = 2000;
-
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (false && event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-			switch (event.getAction()) {
-			case KeyEvent.ACTION_DOWN:
-				if (event.getDownTime() - lastPressedTime < PERIOD) {
-					finish();
-				} else {
-					Toast.makeText(getApplicationContext(),
-							"Press again to exit.", Toast.LENGTH_SHORT).show();
-					lastPressedTime = event.getEventTime();
-				}
-				break;
-			}
-			return true;
-		}
-		return super.onKeyDown(keyCode, event);
-	}
-
 	@Override
 	public void onInit(int status) {
 		if (status == TextToSpeech.SUCCESS) {
@@ -496,7 +466,9 @@ public class TestPage extends Activity implements OnTouchListener,
 				// Lanuage data is missing or the language is not supported.
 				Log.e(TAG, "Language is not available.");
 			} else {
-
+				if (Debuger.DEBUG) {
+				Log.d(TAG, "TTS works fine.");
+				}
 			}
 		} else {
 			// Initialization failed.

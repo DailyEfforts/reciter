@@ -10,7 +10,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -18,8 +17,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.TextView;
+import android.view.MotionEvent;
+import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
@@ -61,6 +60,12 @@ public class UpdateConfirm extends Activity {
 	}
 
 	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		finish();
+		return true;
+	}
+
+	@Override
 	protected Dialog onCreateDialog(int id, Bundle args) {
 		switch (id) {
 		case DIALOG_DOWNLOAD_YES_NO:
@@ -90,17 +95,18 @@ public class UpdateConfirm extends Activity {
 			mDownloadingProgressDialog
 					.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 			mDownloadingProgressDialog.setMax(size);
-			mDownloadingProgressDialog.setButton(
-					DialogInterface.BUTTON_NEGATIVE,
-					getText(android.R.string.no),
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
 
-							/* User clicked No so do some stuff */
-						}
-					});
-
+			// mDownloadingProgressDialog.setButton(
+			// DialogInterface.BUTTON_NEGATIVE,
+			// getText(android.R.string.no),
+			// new DialogInterface.OnClickListener() {
+			// public void onClick(DialogInterface dialog,
+			// int whichButton) {
+			//
+			// /* User clicked No so do some stuff */
+			// }
+			// });
+			mDownloadingProgressDialog.setProgressNumberFormat("%d KB");
 			mDownloadingProgressDialog
 					.setOnShowListener(new DialogInterface.OnShowListener() {
 
@@ -164,6 +170,12 @@ public class UpdateConfirm extends Activity {
 				} else {
 					Log.e(TAG, "onPostExecute() context it null: " + mActivity);
 				}
+			} else {
+				if (mActivity != null) {
+					Toast.makeText(mActivity.getApplicationContext(),
+							"Download failed, please try again later.",
+							Toast.LENGTH_SHORT).show();
+				}
 			}
 		}
 
@@ -190,7 +202,7 @@ public class UpdateConfirm extends Activity {
 				if (!dir.exists()) {
 					dir.mkdirs();
 				}
-				
+
 				apk = new File(dir, Config.APK_NAME);
 
 				if (apk.exists()) {

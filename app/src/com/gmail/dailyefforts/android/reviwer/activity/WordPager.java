@@ -94,16 +94,6 @@ public class WordPager extends FragmentActivity implements OnInitListener,
 			}
 		}
 
-		MenuItem read = menu.findItem(R.id.menu_read);
-
-		if (read != null) {
-			if (isSpeaking) {
-				read.setIcon(R.drawable.read);
-			} else {
-				read.setIcon(R.drawable.mute);
-			}
-		}
-
 		if (Debuger.DEBUG) {
 			Log.d(TAG, "onPrepareOptionsMenu()");
 		}

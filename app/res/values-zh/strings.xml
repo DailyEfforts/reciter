@@ -41,6 +41,7 @@
     <string name="notify">提醒</string>
     <string name="allow_to_check_latest_version_automatically">允许自动检测最新版本</string>
     <string name="auto_check_latest_version">自动检测最新版本</string>
+        <string name="update_to_latest_version">下载 v%s ?</string>
     
    	<string name="random_test_question_number">随机测试问题数目</string>
     <string name="build_x_question_in_each_test_case">每次随机测试时生成 %s 道题</string>
