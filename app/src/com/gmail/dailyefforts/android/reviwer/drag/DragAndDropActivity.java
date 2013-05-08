@@ -32,6 +32,7 @@ import android.widget.Toast;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
+import com.gmail.dailyefforts.android.reviwer.draw.Paper;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class DragAndDropActivity extends Activity implements OnDragListener,
@@ -78,6 +79,8 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 	private int mColorBingon;
 
 	private Animation animation;
+
+	private Paper mPaper;
 
 	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
 
@@ -171,11 +174,12 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		mBtnOptionBottomRight = (Button) findViewById(R.id.btn_drop_meaning_bottom_right);
 		mBtnArrowLeft = (ImageButton) findViewById(R.id.btn_drop_arrow_left);
 		mBtnArrowRight = (ImageButton) findViewById(R.id.btn_drop_arrow_right);
+		mPaper = (Paper) findViewById(R.id.draw_paper);
 
 		if (mBtnCurrentWord == null || mBtnOptionTopLeft == null
 				|| mBtnOptionTopRight == null || mBtnOptionBottomLeft == null
 				|| mBtnOptionBottomRight == null || mBtnArrowLeft == null
-				|| mBtnArrowRight == null) {
+				|| mBtnArrowRight == null || mPaper == null) {
 			// TODO: handle error here.
 			finish();
 		}
@@ -378,6 +382,8 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			finish();
 			return;
 		}
+		
+		mPaper.clear();
 
 		TestCase testCase = mTestCases.get(mWordCounter);
 
