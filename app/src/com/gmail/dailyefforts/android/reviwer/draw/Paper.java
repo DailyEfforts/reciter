@@ -11,8 +11,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.gmail.dailyefforts.android.reviwer.R;
-
 /**
  * This is our main View class.
  */
@@ -23,7 +21,6 @@ public class Paper extends View {
 	private Path mPath;
 	private Paint mBitmapPaint;
 	private Paint mPaint;
-	private int mPagerBgColor;
 
 	public Paper(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -39,7 +36,6 @@ public class Paper extends View {
 		mPaint.setStrokeCap(Paint.Cap.ROUND);
 		mPaint.setStrokeWidth(6);
 
-		mPagerBgColor = getResources().getColor(R.color.green_transparent);
 	}
 
 	@Override
