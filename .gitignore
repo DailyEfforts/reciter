@@ -24,3 +24,6 @@ app/project.properties
 
 # backup files
 *.bak
+
+# vim temp file
+*.swp
