@@ -168,7 +168,7 @@ public class UnitSetFragment extends Fragment {
 							values.put(DBA.WORD_MEANING, meanning);
 							values.put(DBA.WORD_TIMESTAMP,
 									System.currentTimeMillis());
-							dba.insert(DBA.TABLE_WORD_LIST, null, values);
+							dba.insert(DBA.TABLE, null, values);
 						}
 
 					}

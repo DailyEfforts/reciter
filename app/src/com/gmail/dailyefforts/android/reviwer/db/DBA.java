@@ -74,14 +74,16 @@ public class DBA extends SQLiteOpenHelper {
 			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
 
 	private static DBA dba = null;
+	
+	public static String TABLE = TABLE_WORD_LIST;
 
 	public void star(final String word) {
-		
+
 		if (word == null) {
 			return;
 		}
-		
-		Cursor cursor = query(TABLE_WORD_LIST, null, WORD_WORD + "=?",
+
+		Cursor cursor = query(TABLE, null, WORD_WORD + "=?",
 				new String[] { word }, null, null, null);
 
 		if (cursor != null && cursor.getCount() > 0) {
@@ -97,7 +99,7 @@ public class DBA extends SQLiteOpenHelper {
 					ContentValues values = new ContentValues();
 					values.put(WORD_TIMESTAMP, System.currentTimeMillis());
 					values.put(WORD_STAR, ++star);
-					getWritableDatabase().update(TABLE_WORD_LIST, values,
+					getWritableDatabase().update(TABLE, values,
 							WORD_WORD + "=?", new String[] { word });
 				}
 			} finally {
@@ -107,13 +109,13 @@ public class DBA extends SQLiteOpenHelper {
 	}
 
 	public int getStar(final String word) {
-		
+
 		int star = -1;
-		
+
 		if (word == null) {
 			return -1;
 		}
-		Cursor cursor = query(TABLE_WORD_LIST, null, WORD_WORD + "=?",
+		Cursor cursor = query(TABLE, null, WORD_WORD + "=?",
 				new String[] { word }, null, null, null);
 
 		if (cursor != null && cursor.getCount() > 0) {
@@ -127,7 +129,7 @@ public class DBA extends SQLiteOpenHelper {
 	}
 
 	public boolean exist(final String word) {
-		Cursor cursor = query(TABLE_WORD_LIST, null, WORD_WORD + "=?",
+		Cursor cursor = query(TABLE, null, WORD_WORD + "=?",
 				new String[] { word }, null, null, null);
 		boolean exist = false;
 		if (cursor != null) {
@@ -146,18 +148,18 @@ public class DBA extends SQLiteOpenHelper {
 
 		ContentValues values = new ContentValues();
 		values.put(DBA.WORD_STAR, 0);
-		getWritableDatabase().update(TABLE_WORD_LIST, values, WORD_WORD + "=?",
+		getWritableDatabase().update(TABLE, values, WORD_WORD + "=?",
 				new String[] { word });
 
 	}
 
 	public Word getWordByIdx(int idx) {
-		Cursor cursor = query(TABLE_WORD_LIST, null, WORD_ID + "=?",
+		Cursor cursor = query(TABLE, null, WORD_ID + "=?",
 				new String[] { String.valueOf(idx) }, null, null, null);
 
 		String word = "";
 		String meaning = "";
-int id = -1;
+		int id = -1;
 		if (cursor != null) {
 			if (cursor.moveToFirst()) {
 				id = cursor.getInt(cursor.getColumnIndex(WORD_ID));
@@ -197,7 +199,7 @@ int id = -1;
 		SparseArray<Word> map = Word.getMap();
 		map.clear();
 
-		Cursor cursor = query(TABLE_WORD_LIST, null, WORD_STAR + ">?",
+		Cursor cursor = query(TABLE, null, WORD_STAR + ">?",
 				new String[] { "0" }, null, null, null);
 
 		int i = 0;
@@ -239,8 +241,41 @@ int id = -1;
 		return getReadableDatabase().rawQuery(sql, selectionArgs);
 	}
 
+	public void loadUnitWords(int start, int end) {
+		String sql = "select " + DBA.WORD_ID + ", " + DBA.WORD_WORD + ", "
+				+ DBA.WORD_MEANING + " from " + DBA.TABLE + " where "
+				+ DBA.WORD_ID + ">=? AND " + DBA.WORD_ID + "<=?;";
+
+		Cursor cursor = dba.rawQuery(sql, new String[] { String.valueOf(start),
+				String.valueOf(end) });
+
+		if (Debuger.DEBUG) {
+			Log.d(TAG, "onClick() start: " + start + ", end: " + end);
+		}
+
+		if (cursor != null) {
+			SparseArray<Word> map = Word.getMap();
+			map.clear();
+			int idx = 0;
+			while (cursor.moveToNext()) {
+				int id = cursor.getInt(cursor.getColumnIndex(DBA.WORD_ID));
+				String word = cursor.getString(cursor
+						.getColumnIndex(DBA.WORD_WORD));
+				String meanning = cursor.getString(cursor
+						.getColumnIndex(DBA.WORD_MEANING));
+				if (Debuger.DEBUG) {
+					Log.d(TAG, String.format("id: %d, word: %s, meanning: %s",
+							id, word, meanning));
+				}
+				Word newWord = new Word(id, word, meanning);
+				map.put(idx++, newWord);
+			}
+			cursor.close();
+		}
+	}
+
 	public int getCount() {
-		Cursor cursor = query(TABLE_WORD_LIST, null, null, null, null, null,
+		Cursor cursor = query(TABLE, null, null, null, null, null,
 				null);
 		int count = 0;
 		if (cursor != null) {
@@ -294,7 +329,7 @@ int id = -1;
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//		db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEST_REPORT);
+		// db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEST_REPORT);
 		onCreate(db);
 	}
 
