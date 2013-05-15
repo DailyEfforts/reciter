@@ -9,7 +9,7 @@ public class Word {
 	private String meaning;
 	private int id;
 	public static final String TIMESTAMP_FORMAT = "yyyy-MM-dd HH:mm:ss";
-	public static final String WORD_MEANING_SPLIT = "@";
+	public static final String WORD_MEANING_SPLIT = "\t";
 
 	public Word(int id, String word, String meaning) {
 		this.id = id;
