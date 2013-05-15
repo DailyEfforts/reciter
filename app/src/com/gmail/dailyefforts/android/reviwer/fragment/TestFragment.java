@@ -29,32 +29,27 @@ public class TestFragment extends Fragment implements View.OnClickListener {
 
 	private static final int RANDOM_TEST = 0;
 	private static final int MY_WORD_TEST = 1;
-/*
- 	@Override
-	public void onDestroyView() {
-		super.onDestroyView();
 
-		Fragment fragment = getFragmentManager().findFragmentById(
-				R.id.fragment_test_report_record);
-		if (fragment != null) {
-			int result = getFragmentManager().beginTransaction()
-					.remove(fragment).commit();
-			if (Debuger.DEBUG) {
-				Log.d(TAG,
-						"onDestroyView() remove old test report fragment, result: "
-								+ result);
-			}
-		}
-	} */
+	/*
+	 * @Override public void onDestroyView() { super.onDestroyView();
+	 * 
+	 * Fragment fragment = getFragmentManager().findFragmentById(
+	 * R.id.fragment_test_report_record); if (fragment != null) { int result =
+	 * getFragmentManager().beginTransaction() .remove(fragment).commit(); if
+	 * (Debuger.DEBUG) { Log.d(TAG,
+	 * "onDestroyView() remove old test report fragment, result: " + result); }
+	 * } }
+	 */
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_test, container, false);
 		if (Debuger.DEBUG) {
-			Log.d(TAG, "onCreateView() savedInstanceState: " + savedInstanceState);
+			Log.d(TAG, "onCreateView() savedInstanceState: "
+					+ savedInstanceState);
 		}
-	
+
 		if (view != null) {
 			mBtnRandom = (Button) view.findViewById(R.id.btn_test_random);
 			mBtnMyWordBook = (Button) view
@@ -85,7 +80,8 @@ public class TestFragment extends Fragment implements View.OnClickListener {
 		} catch (Exception e) {
 		} finally {
 			if (mTestWordsSize <= 0) {
-				mTestWordsSize = Integer.valueOf(Config.DEFAULT_RANDOM_TEST_SIZE);
+				mTestWordsSize = Integer
+						.valueOf(Config.DEFAULT_RANDOM_TEST_SIZE);
 			}
 		}
 	}

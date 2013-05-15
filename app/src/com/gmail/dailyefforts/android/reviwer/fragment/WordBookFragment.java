@@ -160,7 +160,7 @@ public class WordBookFragment extends ListFragment implements
 									+ String.format("%d - %s", position, word));
 				}
 			}
-			
+
 			if (convertView == null) {
 
 				convertView = mLayoutInflater.inflate(R.layout.book_item, null);
@@ -175,7 +175,7 @@ public class WordBookFragment extends ListFragment implements
 			} else {
 				viewHolder = (ViewHolder) convertView.getTag();
 			}
-			
+
 			if (viewHolder != null) {
 				viewHolder.word.setText(word);
 				viewHolder.timestamp.setText(DateUtils

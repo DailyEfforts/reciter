@@ -15,14 +15,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.fragment.TestFragment;
 import com.gmail.dailyefforts.android.reviwer.fragment.UnitSetFragment;
 import com.gmail.dailyefforts.android.reviwer.fragment.WordBookFragment;
-import com.gmail.dailyefforts.android.reviwer.setting.SettingsActivity;
 
 public class Sessions extends FragmentActivity implements ActionBar.TabListener {
 
@@ -126,22 +124,9 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-//		getMenuInflater().inflate(R.menu.sessions, menu);
-		return false;
-	}
-
-	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
-			finish();
-			return true;
-		case R.id.settings:
-			startActivity(new Intent(this, SettingsActivity.class));
-			return true;
-		case R.id.exit:
 			finish();
 			return true;
 		}

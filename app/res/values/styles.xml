@@ -5,6 +5,4 @@
 
     <style name="AppTheme" parent="AppBaseTheme"></style>
 
-    <style name="ActivityTheme.TranslucentDarkActionBar" parent="AppBaseTheme"></style>
-
 </resources>

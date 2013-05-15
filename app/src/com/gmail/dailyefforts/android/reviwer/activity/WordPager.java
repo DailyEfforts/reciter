@@ -133,7 +133,7 @@ public class WordPager extends FragmentActivity implements OnInitListener,
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
 		requestWindowFeature(Window.FEATURE_PROGRESS);

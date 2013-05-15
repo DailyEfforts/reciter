@@ -14,7 +14,6 @@
         </shape></item>
     <item><shape android:shape="rectangle">
 
-<!--             <gradient android:endColor="@color/transparent" android:gradientRadius="150" android:startColor="@color/green" android:type="sweep" /> -->
             <solid android:color="@color/dark" />
 
             <corners android:radius="@dimen/radius_unit_view_corner" />

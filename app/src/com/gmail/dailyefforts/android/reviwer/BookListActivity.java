@@ -39,6 +39,8 @@ public class BookListActivity extends ListActivity implements OnClickListener {
 		if (mBtnSettings != null) {
 			mBtnSettings.setOnClickListener(this);
 		}
+
+		setTitle(R.string.book_list);
 	}
 
 	@Override

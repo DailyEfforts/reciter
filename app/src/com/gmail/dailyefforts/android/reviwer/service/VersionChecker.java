@@ -101,8 +101,8 @@ public class VersionChecker extends IntentService {
 	}
 
 	private void launchUpdatePrompt(final Version ver) {
-		if (  ver == null) {
-			Log.e(TAG,  "ver: " + ver);
+		if (ver == null) {
+			Log.e(TAG, "ver: " + ver);
 			return;
 		}
 		Intent intent = new Intent(getApplicationContext(), UpdateConfirm.class);
@@ -157,12 +157,14 @@ public class VersionChecker extends IntentService {
 			}
 
 			if (newVersion.code > currentVersionCode && currentVersionCode > 0) {
-				/*File apk = DownloadHelper.downloadApkFile(Config.REMOTE_APK_FILE_URL);
-
-				if (FileChecker.isValid(apk, newVersion.md5)) {
-					// re-download
-					apk = DownloadHelper.downloadApkFile(Config.REMOTE_APK_FILE_URL);
-				}*/
+				/*
+				 * File apk =
+				 * DownloadHelper.downloadApkFile(Config.REMOTE_APK_FILE_URL);
+				 * 
+				 * if (FileChecker.isValid(apk, newVersion.md5)) { //
+				 * re-download apk =
+				 * DownloadHelper.downloadApkFile(Config.REMOTE_APK_FILE_URL); }
+				 */
 				launchUpdatePrompt(newVersion);
 			}
 		} else {

@@ -47,12 +47,13 @@ public class DownloadHelper {
 
 		return in;
 	}
-	
+
 	public static String downloadJsonStr(final String urlStr) {
-		InputStream in =  getInStreamFromUrl(urlStr);
-		
+		InputStream in = getInStreamFromUrl(urlStr);
+
 		return downloadJsonStr(in);
 	}
+
 	private static String downloadJsonStr(final InputStream in) {
 		if (in == null) {
 			Log.e(TAG, "getVerJsonStr() in is NULL.");
@@ -74,10 +75,12 @@ public class DownloadHelper {
 
 		return jsonStr;
 	}
+
 	public static File downloadApkFile(final String urlStr) {
-		InputStream in =  getInStreamFromUrl(urlStr);
+		InputStream in = getInStreamFromUrl(urlStr);
 		return downloadApkFile(in);
 	}
+
 	private static File downloadApkFile(final InputStream in) {
 		if (in == null) {
 			Log.e(TAG, "downLoadApk() InputStream is null.");

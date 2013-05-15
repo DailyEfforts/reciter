@@ -59,14 +59,16 @@ public class TestReportsProvider extends ContentProvider {
 	@Override
 	public int delete(Uri uri, String selection, String[] selectionArgs) {
 		SQLiteDatabase db = dba.getWritableDatabase();
-		return db.delete(DBA.CURRENT_TEST_REPORT_TABLE, selection, selectionArgs);
+		return db.delete(DBA.CURRENT_TEST_REPORT_TABLE, selection,
+				selectionArgs);
 	}
 
 	@Override
 	public int update(Uri uri, ContentValues values, String selection,
 			String[] selectionArgs) {
 		SQLiteDatabase db = dba.getWritableDatabase();
-		return db.update(DBA.CURRENT_TEST_REPORT_TABLE, values, selection, selectionArgs);
+		return db.update(DBA.CURRENT_TEST_REPORT_TABLE, values, selection,
+				selectionArgs);
 	}
 
 }

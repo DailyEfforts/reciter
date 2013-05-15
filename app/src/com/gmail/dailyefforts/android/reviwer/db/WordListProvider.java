@@ -66,7 +66,8 @@ public class WordListProvider extends ContentProvider {
 	public int update(Uri uri, ContentValues values, String selection,
 			String[] selectionArgs) {
 		SQLiteDatabase db = dba.getWritableDatabase();
-		return db.update(DBA.CURRENT_WORD_TABLE, values, selection, selectionArgs);
+		return db.update(DBA.CURRENT_WORD_TABLE, values, selection,
+				selectionArgs);
 	}
 
 }

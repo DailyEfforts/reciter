@@ -33,7 +33,7 @@ public class Config {
 	public static final String LANG_EN = "en";
 	public static final String LANG_FR = "fr";
 	public static String CURRENT_LANGUAGE = LANG_EN;
-	
+
 	public static final String INTENT_EXTRA_BOOK_NAME_RES_ID = "book_name_res_id";
 
 }

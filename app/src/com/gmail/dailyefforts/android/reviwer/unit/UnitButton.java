@@ -12,7 +12,7 @@ import com.gmail.dailyefforts.android.reviwer.drag.DragAndDropActivity;
 
 public class UnitButton extends Button implements View.OnClickListener {
 
-//	private static final String TAG = UnitButton.class.getSimpleName();
+	// private static final String TAG = UnitButton.class.getSimpleName();
 	public int id;
 	public int start;
 	public int end;

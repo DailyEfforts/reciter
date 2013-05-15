@@ -10,12 +10,6 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
-    <style name="ActivityTheme.TranslucentDarkActionBar" parent="AppBaseTheme">
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:windowBackground">@android:color/black</item>
-        <item name="android:actionBarStyle">@style/TranslucentDarkActionBar</item>
-    </style>
-
     <style name="ActivityTheme.Translucent" parent="AppBaseTheme">
         <item name="android:windowBackground">@drawable/translucent_background</item>
         <item name="android:windowIsTranslucent">true</item>

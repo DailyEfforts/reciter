@@ -14,9 +14,11 @@ public class BootReciver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		AlarmManager am = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-		PendingIntent sender = PendingIntent.getBroadcast(context, 0, new Intent(
-				Config.ACTION_REVIEW), PendingIntent.FLAG_CANCEL_CURRENT);
+		AlarmManager am = (AlarmManager) context
+				.getSystemService(Context.ALARM_SERVICE);
+		PendingIntent sender = PendingIntent.getBroadcast(context, 0,
+				new Intent(Config.ACTION_REVIEW),
+				PendingIntent.FLAG_CANCEL_CURRENT);
 		am.setRepeating(AlarmManager.RTC, Calendar.getInstance()
 				.getTimeInMillis(), Config.INTERVAL_TIME_TO_TIP_REVIEW, sender);
 	}

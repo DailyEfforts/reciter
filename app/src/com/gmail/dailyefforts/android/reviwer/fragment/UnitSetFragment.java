@@ -147,8 +147,9 @@ public class UnitSetFragment extends Fragment {
 							.valueOf(str.substring(str.indexOf("=") + 1));
 
 					if (Debuger.DEBUG) {
-						Log.d(TAG, "doInBackground() total : " + Config.CURRENT_BOOK_NAME + total
-								+ ", db: " + dba.getCount());
+						Log.d(TAG, "doInBackground() total : "
+								+ Config.CURRENT_BOOK_NAME + total + ", db: "
+								+ dba.getCount());
 					}
 					if (dba.getCount() > total - 100) {
 						return true;
@@ -231,8 +232,8 @@ public class UnitSetFragment extends Fragment {
 				UnitButton tmp = ((UnitButton) view);
 				tmp.id = position;
 				tmp.start = position * UNIT + 1;
-				tmp.end = position == mUnitCount - 1 ? mDbSize
-						: (position + 1) * UNIT;
+				tmp.end = position == mUnitCount - 1 ? mDbSize : (position + 1)
+						* UNIT;
 
 				if (Debuger.DEBUG) {
 					Log.d(TAG, String.format("getView() id: %d, s: %d, e: %d ",
