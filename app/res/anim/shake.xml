@@ -5,18 +5,12 @@
 
     <rotate
         android:duration="300"
-        android:fromDegrees="-3"
+        android:fromDegrees="-1"
         android:pivotX="50%"
         android:pivotY="50%"
         android:repeatCount="infinite"
         android:repeatMode="reverse"
-        android:toDegrees="3" />
+        android:toDegrees="1" />
 
-    <alpha
-        android:duration="6000"
-        android:fromAlpha="0.6"
-        android:repeatCount="infinite"
-        android:repeatMode="reverse"
-        android:toAlpha="1.0" />
 
 </set>

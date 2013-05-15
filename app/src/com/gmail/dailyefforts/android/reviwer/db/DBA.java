@@ -19,8 +19,14 @@ import com.gmail.dailyefforts.android.reviwer.word.Word;
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();
 	private static final String DATABASE_NAME = "wot.db";
-	private static final int DATABASE_VERSION = 4;
+	private static final int DATABASE_VERSION = 5;
 	public static final String TABLE_WORD_LIST = "wordlist";
+
+	public static final String TABLE_WORD_LIST_NCE1 = "wordlist_nce1";
+	public static final String TABLE_WORD_LIST_NCE2 = "wordlist_nce2";
+	public static final String TABLE_WORD_LIST_NCE3 = "wordlist_nce3";
+	public static final String TABLE_WORD_LIST_NCE4 = "wordlist_nce4";
+
 	public static final String WORD_ID = "_id";
 	public static final String WORD_WORD = "word";
 	public static final String WORD_MEANING = "meaning";
@@ -43,7 +49,72 @@ public class DBA extends SQLiteOpenHelper {
 			+ " DATETIME, "
 			+ WORD_STAR + " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
 
+	private static final String CREATE_TABLE_WORD_LIST_NCE1 = "CREATE TABLE IF NOT EXISTS "
+			+ TABLE_WORD_LIST_NCE1
+			+ "("
+			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ WORD_WORD
+			+ " TEXT UNIQUE, "
+			+ WORD_MEANING
+			+ " TEXT, "
+			+ WORD_SAMPLE
+			+ " TEXT, "
+			+ WORD_TIMESTAMP
+			+ " DATETIME, "
+			+ WORD_STAR
+			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
+
+	private static final String CREATE_TABLE_WORD_LIST_NCE2 = "CREATE TABLE IF NOT EXISTS "
+			+ TABLE_WORD_LIST_NCE2
+			+ "("
+			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ WORD_WORD
+			+ " TEXT UNIQUE, "
+			+ WORD_MEANING
+			+ " TEXT, "
+			+ WORD_SAMPLE
+			+ " TEXT, "
+			+ WORD_TIMESTAMP
+			+ " DATETIME, "
+			+ WORD_STAR
+			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
+
+	private static final String CREATE_TABLE_WORD_LIST_NCE3 = "CREATE TABLE IF NOT EXISTS "
+			+ TABLE_WORD_LIST_NCE3
+			+ "("
+			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ WORD_WORD
+			+ " TEXT UNIQUE, "
+			+ WORD_MEANING
+			+ " TEXT, "
+			+ WORD_SAMPLE
+			+ " TEXT, "
+			+ WORD_TIMESTAMP
+			+ " DATETIME, "
+			+ WORD_STAR
+			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
+
+	private static final String CREATE_TABLE_WORD_LIST_NCE4 = "CREATE TABLE IF NOT EXISTS "
+			+ TABLE_WORD_LIST_NCE4
+			+ "("
+			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ WORD_WORD
+			+ " TEXT UNIQUE, "
+			+ WORD_MEANING
+			+ " TEXT, "
+			+ WORD_SAMPLE
+			+ " TEXT, "
+			+ WORD_TIMESTAMP
+			+ " DATETIME, "
+			+ WORD_STAR
+			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
+
 	public static final String TABLE_TEST_REPORT = "testreport";
+	public static final String TABLE_TEST_REPORT_NCE1 = "testreport_nce1";
+	public static final String TABLE_TEST_REPORT_NCE2 = "testreport_nce2";
+	public static final String TABLE_TEST_REPORT_NCE3 = "testreport_nce3";
+	public static final String TABLE_TEST_REPORT_NCE4 = "testreport_nce4";
+
 	public static final String TEST_REPORT_ID = "_id";
 	public static final String TEST_TESTED_NUMBER = "tested_number";
 	public static final String TEST_CORRECT_NUMBER = "correct_number";
@@ -73,9 +144,86 @@ public class DBA extends SQLiteOpenHelper {
 			+ " DATETIME, "
 			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
 
+	private static final String CREATE_TABLE_TEST_REPORT_NCE1 = "CREATE TABLE IF NOT EXISTS "
+			+ TABLE_TEST_REPORT_NCE1
+			+ "("
+			+ TEST_REPORT_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ TEST_TESTED_NUMBER
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_CORRECT_NUMBER
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_ACCURACY
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_DB_SIZE
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_ELAPSED_TIME
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_TIMESTAMP
+			+ " DATETIME, "
+			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
+
+	private static final String CREATE_TABLE_TEST_REPORT_NCE2 = "CREATE TABLE IF NOT EXISTS "
+			+ TABLE_TEST_REPORT_NCE2
+			+ "("
+			+ TEST_REPORT_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ TEST_TESTED_NUMBER
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_CORRECT_NUMBER
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_ACCURACY
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_DB_SIZE
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_ELAPSED_TIME
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_TIMESTAMP
+			+ " DATETIME, "
+			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
+
+	private static final String CREATE_TABLE_TEST_REPORT_NCE3 = "CREATE TABLE IF NOT EXISTS "
+			+ TABLE_TEST_REPORT_NCE3
+			+ "("
+			+ TEST_REPORT_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ TEST_TESTED_NUMBER
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_CORRECT_NUMBER
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_ACCURACY
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_DB_SIZE
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_ELAPSED_TIME
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_TIMESTAMP
+			+ " DATETIME, "
+			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
+
+	private static final String CREATE_TABLE_TEST_REPORT_NCE4 = "CREATE TABLE IF NOT EXISTS "
+			+ TABLE_TEST_REPORT_NCE4
+			+ "("
+			+ TEST_REPORT_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ TEST_TESTED_NUMBER
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_CORRECT_NUMBER
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_ACCURACY
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_DB_SIZE
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_ELAPSED_TIME
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_TIMESTAMP
+			+ " DATETIME, "
+			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
+
 	private static DBA dba = null;
-	
-	public static String TABLE = TABLE_WORD_LIST;
+
+	public static String CURRENT_WORD_TABLE = TABLE_WORD_LIST;
+	public static String CURRENT_TEST_REPORT_TABLE = TABLE_TEST_REPORT;
 
 	public void star(final String word) {
 
@@ -83,7 +231,7 @@ public class DBA extends SQLiteOpenHelper {
 			return;
 		}
 
-		Cursor cursor = query(TABLE, null, WORD_WORD + "=?",
+		Cursor cursor = query(CURRENT_WORD_TABLE, null, WORD_WORD + "=?",
 				new String[] { word }, null, null, null);
 
 		if (cursor != null && cursor.getCount() > 0) {
@@ -99,7 +247,7 @@ public class DBA extends SQLiteOpenHelper {
 					ContentValues values = new ContentValues();
 					values.put(WORD_TIMESTAMP, System.currentTimeMillis());
 					values.put(WORD_STAR, ++star);
-					getWritableDatabase().update(TABLE, values,
+					getWritableDatabase().update(CURRENT_WORD_TABLE, values,
 							WORD_WORD + "=?", new String[] { word });
 				}
 			} finally {
@@ -115,7 +263,7 @@ public class DBA extends SQLiteOpenHelper {
 		if (word == null) {
 			return -1;
 		}
-		Cursor cursor = query(TABLE, null, WORD_WORD + "=?",
+		Cursor cursor = query(CURRENT_WORD_TABLE, null, WORD_WORD + "=?",
 				new String[] { word }, null, null, null);
 
 		if (cursor != null && cursor.getCount() > 0) {
@@ -129,7 +277,7 @@ public class DBA extends SQLiteOpenHelper {
 	}
 
 	public boolean exist(final String word) {
-		Cursor cursor = query(TABLE, null, WORD_WORD + "=?",
+		Cursor cursor = query(CURRENT_WORD_TABLE, null, WORD_WORD + "=?",
 				new String[] { word }, null, null, null);
 		boolean exist = false;
 		if (cursor != null) {
@@ -148,13 +296,13 @@ public class DBA extends SQLiteOpenHelper {
 
 		ContentValues values = new ContentValues();
 		values.put(DBA.WORD_STAR, 0);
-		getWritableDatabase().update(TABLE, values, WORD_WORD + "=?",
-				new String[] { word });
+		getWritableDatabase().update(CURRENT_WORD_TABLE, values,
+				WORD_WORD + "=?", new String[] { word });
 
 	}
 
 	public Word getWordByIdx(int idx) {
-		Cursor cursor = query(TABLE, null, WORD_ID + "=?",
+		Cursor cursor = query(CURRENT_WORD_TABLE, null, WORD_ID + "=?",
 				new String[] { String.valueOf(idx) }, null, null, null);
 
 		String word = "";
@@ -199,7 +347,7 @@ public class DBA extends SQLiteOpenHelper {
 		SparseArray<Word> map = Word.getMap();
 		map.clear();
 
-		Cursor cursor = query(TABLE, null, WORD_STAR + ">?",
+		Cursor cursor = query(CURRENT_WORD_TABLE, null, WORD_STAR + ">?",
 				new String[] { "0" }, null, null, null);
 
 		int i = 0;
@@ -243,8 +391,8 @@ public class DBA extends SQLiteOpenHelper {
 
 	public void loadUnitWords(int start, int end) {
 		String sql = "select " + DBA.WORD_ID + ", " + DBA.WORD_WORD + ", "
-				+ DBA.WORD_MEANING + " from " + DBA.TABLE + " where "
-				+ DBA.WORD_ID + ">=? AND " + DBA.WORD_ID + "<=?;";
+				+ DBA.WORD_MEANING + " from " + DBA.CURRENT_WORD_TABLE
+				+ " where " + DBA.WORD_ID + ">=? AND " + DBA.WORD_ID + "<=?;";
 
 		Cursor cursor = dba.rawQuery(sql, new String[] { String.valueOf(start),
 				String.valueOf(end) });
@@ -275,7 +423,7 @@ public class DBA extends SQLiteOpenHelper {
 	}
 
 	public int getCount() {
-		Cursor cursor = query(TABLE, null, null, null, null, null,
+		Cursor cursor = query(CURRENT_WORD_TABLE, null, null, null, null, null,
 				null);
 		int count = 0;
 		if (cursor != null) {
@@ -296,7 +444,7 @@ public class DBA extends SQLiteOpenHelper {
 					.insert(table, nullColumnHack, values);
 
 			if (Debuger.DEBUG) {
-				Log.d(TAG, "insert() " + result);
+				Log.d(TAG, "table: " + table + ", insert() " + result);
 			}
 		} catch (SQLiteException e) {
 			// let go.
@@ -324,7 +472,16 @@ public class DBA extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(CREATE_TABLE_WORD_LIST);
+		db.execSQL(CREATE_TABLE_WORD_LIST_NCE1);
+		db.execSQL(CREATE_TABLE_WORD_LIST_NCE2);
+		db.execSQL(CREATE_TABLE_WORD_LIST_NCE3);
+		db.execSQL(CREATE_TABLE_WORD_LIST_NCE4);
+
 		db.execSQL(CREATE_TABLE_TEST_REPORT);
+		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE1);
+		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE2);
+		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE3);
+		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE4);
 	}
 
 	@Override

@@ -232,7 +232,7 @@ public class TestPage extends Activity implements OnTouchListener,
 	private void readIt(final String word) {
 		if (mTts != null) {
 			int result = mTts.speak(word, TextToSpeech.QUEUE_FLUSH, null);
-			if (result !=TextToSpeech.SUCCESS) {
+			if (result != TextToSpeech.SUCCESS) {
 				Log.e(TAG, "speak failed");
 			}
 		}
@@ -382,7 +382,8 @@ public class TestPage extends Activity implements OnTouchListener,
 								values.put(DBA.TEST_WRONG_WORD_LIST,
 										mWrongWordList.toString());
 							}
-							dba.insert(DBA.TABLE_TEST_REPORT, null, values);
+							dba.insert(DBA.CURRENT_TEST_REPORT_TABLE, null,
+									values);
 						}
 
 						String message = String
@@ -458,7 +459,12 @@ public class TestPage extends Activity implements OnTouchListener,
 			// Set preferred language to US english.
 			// Note that a language may not be available, and the result will
 			// indicate this.
-			int result = mTts.setLanguage(Locale.FRANCE);
+			int result = -1;
+			if (Config.CURRENT_LANGUAGE.equals(Config.LANG_FR)) {
+				result = mTts.setLanguage(Locale.FRANCE);
+			} else {
+				result = mTts.setLanguage(Locale.ENGLISH);
+			}
 			// Try this someday for some interesting results.
 			// int result mTts.setLanguage(Locale.FRANCE);
 			if (result == TextToSpeech.LANG_MISSING_DATA
@@ -467,7 +473,7 @@ public class TestPage extends Activity implements OnTouchListener,
 				Log.e(TAG, "Language is not available.");
 			} else {
 				if (Debuger.DEBUG) {
-				Log.d(TAG, "TTS works fine.");
+					Log.d(TAG, "TTS works fine.");
 				}
 			}
 		} else {

@@ -9,6 +9,8 @@ import android.content.ClipData;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
@@ -29,6 +31,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
@@ -37,6 +40,8 @@ import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class DragAndDropActivity extends Activity implements OnDragListener,
 		OnClickListener, OnInitListener {
+
+	private static final int TIME_DELAY_TO_AUTO_FORWARD = 1000;
 
 	private static final String TAG = DragAndDropActivity.class.getSimpleName();
 
@@ -81,6 +86,8 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 	private Animation animation;
 
 	private Paper mPaper;
+
+	private AutoForwardHandler mAutoForwardHandler;
 
 	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
 
@@ -318,6 +325,21 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 		mTts = new TextToSpeech(getApplicationContext(), this);
 
+		mAutoForwardHandler = new AutoForwardHandler();
+	}
+
+	private class AutoForwardHandler extends Handler {
+		public static final int MSG_MOVE_ON = 0;
+
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+			case MSG_MOVE_ON:
+				forward();
+				removeMessages(MSG_MOVE_ON);
+				break;
+			}
+		}
 	}
 
 	@Override
@@ -326,7 +348,12 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			// Set preferred language to US english.
 			// Note that a language may not be available, and the result will
 			// indicate this.
-			int result = mTts.setLanguage(Locale.FRANCE);
+			int result = -1;
+			if (Config.CURRENT_LANGUAGE.equals(Config.LANG_FR)) {
+				result = mTts.setLanguage(Locale.FRANCE);
+			} else {
+				result = mTts.setLanguage(Locale.ENGLISH);
+			}
 			// Try this someday for some interesting results.
 			// int result mTts.setLanguage(Locale.FRANCE);
 			if (result == TextToSpeech.LANG_MISSING_DATA
@@ -382,7 +409,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			finish();
 			return;
 		}
-		
+
 		mPaper.clear();
 
 		TestCase testCase = mTestCases.get(mWordCounter);
@@ -486,6 +513,12 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 								Button btn = (Button) v;
 								if (mWord.equals(w)) {
 									btn.setTextColor(mColorBingon);
+									if (mAutoForwardHandler != null) {
+										mAutoForwardHandler
+												.sendEmptyMessageDelayed(
+														AutoForwardHandler.MSG_MOVE_ON,
+														TIME_DELAY_TO_AUTO_FORWARD);
+									}
 								} else {
 									btn.setTextColor(mColorError);
 								}
@@ -518,14 +551,22 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btn_drop_arrow_left:
-			mWordCounter--;
-			buildTestCase();
+			backward();
 			break;
 		case R.id.btn_drop_arrow_right:
-			mWordCounter++;
-			buildTestCase();
+			forward();
 			break;
 		}
+	}
+
+	private void forward() {
+		mWordCounter++;
+		buildTestCase();
+	}
+
+	private void backward() {
+		mWordCounter--;
+		buildTestCase();
 	}
 
 }

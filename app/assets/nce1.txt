@@ -1,4 +1,5 @@
-﻿new	a.新的
+﻿total=860
+new	a.新的
 student	n.学生
 French	a.& n.法国人
 German	a.& n.德国人

@@ -45,7 +45,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sessions);
-		
+
 		if (Debuger.DEBUG) {
 			Log.d(TAG, "onCreate() savedInstanceState: " + savedInstanceState);
 		}
@@ -93,6 +93,17 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 				Config.ACTION_REVIEW), PendingIntent.FLAG_CANCEL_CURRENT);
 		am.setRepeating(AlarmManager.RTC, System.currentTimeMillis(),
 				Config.INTERVAL_TIME_TO_TIP_REVIEW, sender);
+
+		Intent intent = getIntent();
+		if (intent != null && intent.getExtras() != null) {
+			int titleId = intent.getExtras().getInt(
+					Config.INTENT_EXTRA_BOOK_NAME_RES_ID);
+			if (titleId != -1) {
+				setTitle(titleId);
+			}
+		}
+
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	public static boolean RUNNING;
@@ -124,6 +135,9 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
+		case android.R.id.home:
+			finish();
+			return true;
 		case R.id.settings:
 			startActivity(new Intent(this, SettingsActivity.class));
 			return true;
@@ -131,7 +145,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 			finish();
 			return true;
 		}
-		return super.onOptionsItemSelected(item);
+		return false;
 	}
 
 	@Override

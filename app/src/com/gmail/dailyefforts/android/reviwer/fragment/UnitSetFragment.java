@@ -139,7 +139,7 @@ public class UnitSetFragment extends Fragment {
 			BufferedReader reader = null;
 			try {
 				reader = new BufferedReader(new InputStreamReader(
-						assetMngr.open("mot.txt")));
+						assetMngr.open(Config.CURRENT_BOOK_NAME)));
 				String str = null;
 				str = reader.readLine();
 				if (str != null && str.contains("total=")) {
@@ -147,7 +147,7 @@ public class UnitSetFragment extends Fragment {
 							.valueOf(str.substring(str.indexOf("=") + 1));
 
 					if (Debuger.DEBUG) {
-						Log.d(TAG, "doInBackground() total mot.txt: " + total
+						Log.d(TAG, "doInBackground() total : " + Config.CURRENT_BOOK_NAME + total
 								+ ", db: " + dba.getCount());
 					}
 					if (dba.getCount() > total - 100) {
@@ -168,7 +168,7 @@ public class UnitSetFragment extends Fragment {
 							values.put(DBA.WORD_MEANING, meanning);
 							values.put(DBA.WORD_TIMESTAMP,
 									System.currentTimeMillis());
-							dba.insert(DBA.TABLE, null, values);
+							dba.insert(DBA.CURRENT_WORD_TABLE, null, values);
 						}
 
 					}

@@ -1,4 +1,5 @@
-﻿ability	n.能力，才干；技能
+﻿total=1147
+ability	n.能力，才干；技能
 able	a.能，会；有才能的
 accept	vt.接受，收领，承担
 accidentally	ad.意外地，偶然地

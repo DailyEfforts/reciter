@@ -55,5 +55,12 @@
         <item>70 questions</item>
         <item>100 questions</item>
     </string-array>
+    <string-array name="books">
+        <item>@string/mot</item>
+        <item>@string/nce1</item>
+        <item>@string/nce2</item>
+        <item>@string/nce3</item>
+        <item>@string/nce4</item>
+    </string-array>
 
 </resources>

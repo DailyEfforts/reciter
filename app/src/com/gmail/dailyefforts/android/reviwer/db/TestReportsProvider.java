@@ -13,7 +13,7 @@ import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 public class TestReportsProvider extends ContentProvider {
 	private DBA dba;
 	private static final String AUTHORITY = "com.gmail.dailyefforts.android.reviwer.testreport";
-	private static final String BASE_PATH = DBA.TABLE_TEST_REPORT; // testreport
+	private static final String BASE_PATH = DBA.CURRENT_TEST_REPORT_TABLE; // testreport
 	public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY
 			+ "/" + BASE_PATH);
 	private static final String TAG = TestReportsProvider.class.getSimpleName();
@@ -34,7 +34,7 @@ public class TestReportsProvider extends ContentProvider {
 		SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
 
 		// Set the table
-		queryBuilder.setTables(DBA.TABLE_TEST_REPORT);
+		queryBuilder.setTables(DBA.CURRENT_TEST_REPORT_TABLE);
 
 		SQLiteDatabase db = dba.getWritableDatabase();
 		Cursor cursor = queryBuilder.query(db, projection, selection,
@@ -59,14 +59,14 @@ public class TestReportsProvider extends ContentProvider {
 	@Override
 	public int delete(Uri uri, String selection, String[] selectionArgs) {
 		SQLiteDatabase db = dba.getWritableDatabase();
-		return db.delete(DBA.TABLE_TEST_REPORT, selection, selectionArgs);
+		return db.delete(DBA.CURRENT_TEST_REPORT_TABLE, selection, selectionArgs);
 	}
 
 	@Override
 	public int update(Uri uri, ContentValues values, String selection,
 			String[] selectionArgs) {
 		SQLiteDatabase db = dba.getWritableDatabase();
-		return db.update(DBA.TABLE_TEST_REPORT, values, selection, selectionArgs);
+		return db.update(DBA.CURRENT_TEST_REPORT_TABLE, values, selection, selectionArgs);
 	}
 
 }

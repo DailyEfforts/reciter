@@ -39,10 +39,8 @@
     <string name="other">Other</string>
     <string name="reset_to_default">Reset to default</string>
     <string name="reset_sumarry">Reset all perferences to default ones</string>
-    
-    <string name="pref_key_review_notification"  translatable="false">pref_key_review_notification</string>
-    <string name="pref_key_allow_auto_check_version"  translatable="false">pref_key_allow_auto_check_version</string>
-    
+    <string name="pref_key_review_notification" translatable="false">pref_key_review_notification</string>
+    <string name="pref_key_allow_auto_check_version" translatable="false">pref_key_allow_auto_check_version</string>
     <string name="time_to_review">Time to review</string>
     <string name="time_to_review_words">Time to review words</string>
     <string name="background">background</string>
@@ -51,8 +49,15 @@
     <string name="allow_to_check_latest_version_automatically">Allow to check latest version automatically</string>
     <string name="auto_check_latest_version">Auto check latest version</string>
     <string name="update_to_latest_version">Download v%s ?</string>
-    
     <string name="random_test_question_number">Random test Q number</string>
     <string name="build_x_question_in_each_test_case">Build %s questions in each random test</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_book_list">BookList</string>
+    <string name="mot">Mot</string>
+    <string name="nce1">New Concept English I</string>
+    <string name="nce2">New Concept English II</string>
+    <string name="nce3">New Concept English III</string>
+    <string name="nce4">New Concept English IV</string>
 
 </resources>

@@ -359,7 +359,12 @@ public class WordPager extends FragmentActivity implements OnInitListener,
 			// Set preferred language to US english.
 			// Note that a language may not be available, and the result will
 			// indicate this.
-			int result = mTts.setLanguage(Locale.FRANCE);
+			int result = -1;
+			if (Config.CURRENT_LANGUAGE.equals(Config.LANG_FR)) {
+				result = mTts.setLanguage(Locale.FRANCE);
+			} else {
+				result = mTts.setLanguage(Locale.ENGLISH);
+			}
 			// Try this someday for some interesting results.
 			// int result mTts.setLanguage(Locale.FRANCE);
 			if (result == TextToSpeech.LANG_MISSING_DATA

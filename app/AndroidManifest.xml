@@ -39,7 +39,7 @@
             android:exported="false" >
         </provider>
         <provider
-            android:name=".db.TestReportsProvider"
+            android:name="com.gmail.dailyefforts.android.reviwer.db.TestReportsProvider"
             android:authorities="com.gmail.dailyefforts.android.reviwer.testreport"
             android:exported="false" >
         </provider>
@@ -60,28 +60,32 @@
         <activity
             android:name="com.gmail.dailyefforts.android.reviwer.Sessions"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".activity.WordPager" >
+        <activity android:name="com.gmail.dailyefforts.android.reviwer.activity.WordPager" >
         </activity>
 
-        <receiver android:name=".receiver.BootReciver" >
+        <receiver android:name="com.gmail.dailyefforts.android.reviwer.receiver.BootReciver" >
         </receiver>
         <receiver
-            android:name=".receiver.ReviewReciver"
+            android:name="com.gmail.dailyefforts.android.reviwer.receiver.ReviewReciver"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.gmail.dailyefforts.android.reviwer.review" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".drag.DragAndDropActivity" >
+        <activity android:name="com.gmail.dailyefforts.android.reviwer.drag.DragAndDropActivity" >
         </activity>
-        <activity android:name=".version.DownloadConfirm" >
+        <activity android:name="com.gmail.dailyefforts.android.reviwer.version.DownloadConfirm" >
+        </activity>
+        <activity
+            android:name="com.gmail.dailyefforts.android.reviwer.BookListActivity"
+            android:label="@string/title_activity_book_list" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
