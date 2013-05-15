@@ -18,6 +18,7 @@ public class BookListActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_book_list);
 
 		String[] books = getResources().getStringArray(R.array.books);
 
