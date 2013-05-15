@@ -128,8 +128,8 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.sessions, menu);
-		return true;
+//		getMenuInflater().inflate(R.menu.sessions, menu);
+		return false;
 	}
 
 	@Override

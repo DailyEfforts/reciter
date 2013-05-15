@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.res.Resources;
@@ -328,6 +329,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		mAutoForwardHandler = new AutoForwardHandler();
 	}
 
+	@SuppressLint("HandlerLeak")
 	private class AutoForwardHandler extends Handler {
 		public static final int MSG_MOVE_ON = 0;
 

@@ -3,17 +3,20 @@ package com.gmail.dailyefforts.android.reviwer;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.setting.SettingsActivity;
 
-public class BookListActivity extends ListActivity {
+public class BookListActivity extends ListActivity implements OnClickListener {
+
+	private Button mBtnExit;
+	private Button mBtnSettings;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,17 @@ public class BookListActivity extends ListActivity {
 		ListAdapter adapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_list_item_1, books);
 		setListAdapter(adapter);
+
+		mBtnExit = (Button) findViewById(R.id.btn_exit);
+		mBtnSettings = (Button) findViewById(R.id.btn_settings);
+
+		if (mBtnExit != null) {
+			mBtnExit.setOnClickListener(this);
+		}
+
+		if (mBtnSettings != null) {
+			mBtnSettings.setOnClickListener(this);
+		}
 	}
 
 	@Override
@@ -74,23 +88,15 @@ public class BookListActivity extends ListActivity {
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.sessions, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.settings:
-			startActivity(new Intent(this, SettingsActivity.class));
-			return true;
-		case R.id.exit:
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.btn_exit:
 			finish();
-			return true;
+			break;
+		case R.id.btn_settings:
+			startActivity(new Intent(this, SettingsActivity.class));
+			break;
 		}
-		return super.onOptionsItemSelected(item);
 	}
 
 }
