@@ -35,12 +35,8 @@ advantage@n.有利条件
 advent@n.出现 
 advertisement@n.广告 
 advertiser@n.做广告的人 
-advise@vt.劝告，建议 
+advise@vt.劝告，建议
 advisory@a.咨询的 
-
-
-
-
 Aegean@a.爱琴海的 
 afflict@vt.使苦恼 
 agonizing@a.使人坐卧不安的 
@@ -211,8 +207,8 @@ bundle@n.包袱
 burglar@n.盗贼 
 burnt@a.烧焦的 
 burriedly@ad.急忙地 
-bus ride乘公共汽车 
-Byron拜伦(英国诗人) 
+bus ride@乘公共汽车 
+Byron@拜伦(英国诗人) 
 cabinet@n.橱 
 cable@n.海底电报；缆索 
 cage@n.鸟笼 
@@ -252,13 +248,13 @@ champagne@n.香槟酒
 chance@n.机会 
 chaos@n.混乱 
 characteristic@n.特征 
-Charlie Chaplin查理·卓别林 
+Charlie Chaplin@查理·卓别林 
 chasm@n.(地壳的)陷窟 
 chat@n.聊天 
 cheerfully@ad.高兴地 
 cherish@vt.抱有(Ｍ? 
 chest@n.箱子 
-Chicago芝加哥(美国城市) 
+Chicago@芝加哥(美国城市) 
 chief@n.头目 
 china@n.瓷器 
 chip@vt.凿 
@@ -408,7 +404,7 @@ dagger@n.匕首
 dangle@vi.摇摇晃晃 
 dash@vi.冲 
 dashboard@n.仪表板 
-Dauphine Alps多芬·阿尔卑斯山 
+Dauphine Alps@多芬·阿尔卑斯山 
 dawdle@vt.慢吞吞地前进 
 dawn@n.黎明 
 dawn@vi.渐被理解 
@@ -499,7 +495,7 @@ disused@vt.废弃，不用
 dive@vi.头先入水地跳入 
 diversion@n.改道 
 diving@n.跳水 
-do-it-yourself自己动手 
+do-it-yourself@自己动手 
 dome@n.穹窿，圆顶 
 domestic@a.家里的 
 don''ts@n.禁止的事 
@@ -550,7 +546,7 @@ efficient@a.效率高的
 effortlessly@a.不费力地 
 elaborate@a.精心构思的 
 elder@n.长辈 
-Electricity Board供电局 
+Electricity Board@供电局 
 electronic@a.电子的 
 element@n.成分 
 embark@vt.着手 
@@ -608,7 +604,7 @@ exhibit@n.陈列品
 exhilarating@a.使人高兴的 
 existence@n.存在 
 experience@vt.经历 
-expert cook烹调能手 
+expert cook@烹调能手 
 explore@vt.考察，勘探 
 express@n.快车 
 expression@n.表达 
@@ -628,7 +624,7 @@ faith@n.信任
 faithfully@ad.诚恳地 
 falter@vi.结结巴巴地说出 
 fame@n.名声，名望 
-family home家乡 
+family home@家乡 
 fanciful@a.想像出来的 
 fancy@vt.喜欢 
 fantastic@a.大得难以置信的 
@@ -678,7 +674,7 @@ float@n.浮船坞
 float@vt.漂浮 
 flood@vt.注满水 
 flooding@n.洪水泛滥 
-Florence佛罗伦萨(意大利城市) 
+Florence@佛罗伦萨(意大利城市) 
 Florentine@n.佛罗伦萨人 
 flourish@n.戏剧性动作 
 fly@n.苍蝇 
@@ -839,7 +835,7 @@ immediately@ad.紧挨着地
 immensity@a.优美的 
 immortal@a.不朽的 
 impatient@a.不耐烦的 
-import duty进口税 
+import duty@进口税 
 impress@vt.印，盖印，留下印象 
 impression@n.印象；压痕 
 impressive@a.给人深刻印象的 
@@ -949,8 +945,8 @@ leisurely@a.悠闲的
 length@n.根，段 
 level@n.水平
 level@n.阶层 
-life work毕生的事业 
- 	life-boat@n.救生艇 
+life work@毕生的事业 
+life-boat@n.救生艇 
 lift@n.电梯
 lift@vt.拿起 
 likely@ad.很可能 
@@ -1027,7 +1023,7 @@ mention@n.提及
 mere@a.仅仅的 
 mete@vt.给予 
 meter@n.电表 
-Miami迈阿密(美国港市) 
+Miami@迈阿密(美国港市) 
 microscopic@a.微小的 
 midday@n.正午 
 midst@n.中部 
@@ -1049,7 +1045,7 @@ missing@a.失踪的
 mistaken@a.错误的 
 mixture@n.混合物 
 model car@n.汽车模型 
-model clothes时装 
+model clothes@时装 
 modern-looking@a.时髦的 
 modest@a.不过分的 
 monastery@n.修道院 
@@ -1091,10 +1087,10 @@ neighbourhood@n.邻近
 nephew@n.侄子 
 net@n.网 
 network@n.网络 
-neverthelessconj.然而，不过 
+nevertheless@conj.然而，不过 
 newly-weds@n.新婚夫妇 
 nightmare@n.恶梦 
-Noah''s ark诺亚方舟 
+Noah''s ark@诺亚方舟 
 noble@n.贵族 
 nomad@n.游牧民 
 northern@a.北部的 
@@ -1186,12 +1182,12 @@ period@n.一段时间
 permanent@a.永久的 
 permission@n.允许 
 perpetual@a.永久的 
-Persia波斯(现称伊朗) 
+Persia@波斯(现称伊朗) 
 personal@a.私人的 
 perturb@vt.使担忧 
 pester@vt.缠扰 
 petrify@vt.使发呆 
-petrol tank汽油箱 
+petrol tank@汽油箱 
 phase@n.(月)相 
 phenomena@n.现象 
 philosopher@n.哲学家 
@@ -1338,7 +1334,7 @@ raise@vt.提起
 raise@vt.筹集 
 rambler@n.漫步者 
 rambling@a.杂乱无章的 
-random signal杂乱信号 
+random signal@杂乱信号 
 ransack@vt.洗劫 
 ransom@n.赎金 
 rapture@n.欣喜若狂 
@@ -1432,7 +1428,7 @@ ring@n.拳击场地
 ring@n.戒指 
 rip@vt.划破 
 rise@n.提高，升高 
-Robinson Crusoe鲁宾逊 
+Robinson Crusoe@鲁宾逊 
 rocket@n.火箭 
 role@n.角色 
 roll@vi.左右摇摆 
@@ -1529,7 +1525,7 @@ sheet@n.被单
 sheet@n.(纸的)张 
 shelter@n.掩蔽处 
 sheltered@a.蔽阴的 
-shifting population流动人口 
+shifting population@流动人口 
 shirt sleeve@n.衬衫袖子 
 shiver@vi.打颤 
 shock@vt.使电震 
@@ -1581,7 +1577,7 @@ snail@n.蜗牛
 snap@vt.突然折断 
 snatch@n.断断续续 
 snob@n.势利小人 
-snow fall下雪 
+snow fall@下雪 
 so-called@a.所谓的 
 solely@ad.唯一地 
 solitude@n.与外界隔绝 
@@ -1594,7 +1590,7 @@ sorry-looking@a.愁容满面的
 sort@vt.拣选出 
 sound@vt.响，发声 
 sound@a.坚实的 
-Southampton南安普敦(英国港市) 
+Southampton@南安普敦(英国港市) 
 southern@a.南方的 
 spacious@a.宽敞的 
 span@n.跨度 
@@ -1708,7 +1704,7 @@ table-cloth@n.桌布
 tanker@n.油轮 
 tape@n.胶带 
 taste@n.鉴赏力 
-Tau Ceti鲸鱼座Ｔ星 
+Tau Ceti@鲸鱼座Ｔ星 
 taunt@n.嘲笑 
 taxcollector@n.税务人员 
 tear@n.眼泪 
@@ -1724,10 +1720,10 @@ tempt@vt.吸引
 tend@vt.趋向 
 terrifying@a.使人害怕的 
 territory@n.地区 
-Texas得克萨斯州(美国州名) 
+Texas@得克萨斯州(美国州名) 
 the air@n.空中 
 the Balkins@n.巴尔干半岛各国 
-the Bastille巴士底狱 
+the Bastille@巴士底狱 
 the Bible@n.《圣经》 
 the press@n.报刊(总称) 
 theatrical@a.演戏似的 
@@ -1815,7 +1811,7 @@ unit@n.部队
 universal@a.普遍的 
 universe@n.宇宙 
 unknown@a.未知的 
-unlessconj.除非 
+unless@conj.除非 
 unlock@vt.开启 
 unmade@a.未经修筑的 
 unpack@vt.打开 
@@ -1846,7 +1842,7 @@ vessel@n.船
 vicinity@n.邻近 
 view@n.见解 
 violent@a.凶暴的 
-Virgin Islands维尔京群岛(拉丁美洲) 
+Virgin Islands@维尔京群岛(拉丁美洲) 
 virtually@ad.实际上 
 virtue@n.优点 
 vivid@a.生动的 
@@ -1868,7 +1864,7 @@ weakness@n.弱点
 wealthy@a.富有的 
 weigh@vt.称...重量 
 weird@a.古怪的 
-West Virginia西弗吉尼亚州 
+West Virginia@西弗吉尼亚州 
 wheel@n.驾驶盘 
 wheelbarrow@n.手推车 
 wickedly@ad.居心叵测地 
