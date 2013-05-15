@@ -26,6 +26,7 @@ import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.helper.DownloadHelper;
 import com.gmail.dailyefforts.android.reviwer.helper.FileChecker;
 
+@SuppressWarnings("deprecation")
 public class UpdateConfirm extends Activity {
 
 	private String verInfo;

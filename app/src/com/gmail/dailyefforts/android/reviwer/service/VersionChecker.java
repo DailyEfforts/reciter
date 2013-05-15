@@ -19,7 +19,6 @@ import android.util.Log;
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.helper.DownloadHelper;
-import com.gmail.dailyefforts.android.reviwer.helper.FileChecker;
 import com.gmail.dailyefforts.android.reviwer.version.UpdateConfirm;
 
 public class VersionChecker extends IntentService {
@@ -118,7 +117,7 @@ public class VersionChecker extends IntentService {
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
-		if (false && Debuger.DEBUG) {
+		if (Debuger.DEBUG) {
 			File apk = new File(Environment.getExternalStorageDirectory(),
 					"/Mot/Mot.apk");
 
