@@ -1,4 +1,4 @@
-﻿total=860
+﻿﻿total=835
 new	a.新的
 student	n.学生
 French	a.& n.法国人
@@ -9,7 +9,6 @@ Japanese	a.& n.日本人
 Korean	a.& n.韩国人
 Chinese	a.& n.中国人
 too	ad.也
-make	n.(产品的)牌号
 Swedish	a.瑞典的
 English	a.英国的
 American	a.美国的
@@ -57,9 +56,7 @@ thin	a.瘦的
 tall	a.高的
 short	a.矮的
 dirty	a.脏的
-clean	a.干净的；v.清洗
 hot	a.热的
-cold	a.冷的
 old	a.老的
 young	a.年轻的
 busy	a.忙的
@@ -118,11 +115,9 @@ boy	n.男孩
 thirsty	a.渴
 mum	n.妈妈
 sit down	坐下
-right	a.好，可以；n.右边
 ice cream	冰淇淋
 big	a.大的
 small	a.小的
-open	a.开着的
 shut	a.关着的
 light	a.轻的
 heavy	a.重的
@@ -139,11 +134,9 @@ large	a.大的
 little	a.小的
 sharp	a.尖的，锋利的
 small	a.小的
-big	a.大的
 blunt	a.钝的
 box	n.盒子，箱子
 glass	n.杯子
-cup	n.茶杯
 bottle	n.瓶子
 tin	n.罐头
 knife	n.刀子
@@ -186,7 +179,6 @@ trousers	n.(复数)长裤
 shut	a.关着的
 bedroom	n.卧室
 untidy	a.乱，不整齐
-must	aux.v.必须，应该
 open	a.开着的
 air	v.使…通风，换换空气
 put	v.放置
@@ -236,7 +228,6 @@ boat	n.船
 river	n.河
 ship	n.轮船
 aeroplane	n.飞机
-fly	v.飞
 sleep	v.睡觉
 shave	v.刮脸
 cry	v.哭，喊
@@ -309,7 +300,6 @@ cake	n.饼，蛋糕
 biscuit	n.饼干
 like	v.喜欢，想要
 want	v.想
-fresh	a.新鲜的
 egg	n.鸡蛋
 butter	n.黄油
 pure	a.纯净的
@@ -318,7 +308,6 @@ ripe	a.成熟的
 banana	n.香蕉
 jam	n.果酱
 sweet	a.甜的
-orange	a.橘黄色的；n.橙
 Scotch whisky	苏格兰威士忌
 choice	a.上等的，精选的
 apple	n.苹果
@@ -347,7 +336,6 @@ grape	n.葡萄
 peach	n.桃
 Greece	n.希腊
 climate	n.气候
-country	n.国家; 乡村
 pleasant	a.宜人的
 weather	n.天气
 spring	n.春季
@@ -391,7 +379,6 @@ west	n.西方
 south	n.南方
 season	n.季节
 best	a. 最好的；ad.最,最好地
-night	n.夜晚
 rise	v.升起
 early	ad.早
 set	v.(太阳)落下去
@@ -524,7 +511,6 @@ way	n.路途
 awful	ad.让人讨厌的，坏的
 telephone	n.电话；v.打电话
 time	n.次(数)
-answer	v.接(电话)
 last	a.最后的，前一次的
 phone	n.电话
 again	ad.又一次地
@@ -611,13 +597,10 @@ worth	prep.值…钱
 penny	n.便士
 still	ad.还，仍旧
 move	v.搬家
-miss	v.想念，思念
 neighbour	n.邻居
 person	n.人
 people	n.人们
-poor	a.可怜的; 贫穷的
 pilot	n.飞行员
-return	v.返回；n.往返
 New York	n.纽约
 Tokyo	n.东京
 Madrid	n.马德里
@@ -637,7 +620,6 @@ platform	n.站台
 plenty	n.大量
 bar	n.酒吧
 station	n.车站，火车站
-catch	v.抓住
 miss	v.想念，思念
 leave	v.离开
 describe	v.描述
@@ -678,7 +660,6 @@ mark	n.分数
 rest	n.其他的东西
 difficult	a.困难的
 hate	v.讨厌
-low	a.低的，矮的
 cheer	v.振作，振奋
 guy	n.家伙，人
 top	n.上方，顶部
@@ -691,7 +672,6 @@ stale	a.变馊的
 low	a.低的，矮的
 loud	a.大声的
 high	a.高的
-hard	ad.努力地
 sweet	a.甜的
 soft	a.软的
 sour	a.酸的
@@ -716,7 +696,6 @@ instead	ad.代替
 advice	n.建议，忠告
 most	最多的
 least	最小的，最少的
-best	a. 最好的；ad.最,最好地
 worse	更坏的
 worst	a.最坏的
 model	n.型号，式样
@@ -749,7 +728,6 @@ asleep	a.睡觉，睡着
 glasses	n.眼镜
 dining room	饭厅
 coin	n.硬币
-mouth	n.嘴
 swallow	v.吞下
 later	ad.后来
 toilet	n.厕所，盥洗室
@@ -790,7 +768,6 @@ famous	a.著名的
 actress	n.女演员
 at least	至少
 actor	n.男演员
-read	v.读
 wave	v.招手
 track	n.跑道
 mile	n.英里
@@ -819,7 +796,6 @@ world	n.世界
 poor	a.可怜的; 贫穷的
 depend	v.依靠
 extra	a.额外的
-engineer	n.工程师
 overseas	a.海外的，国外的
 engineering	n.工程
 company	n.公司
@@ -843,7 +819,6 @@ surround	v.包围
 wood	n.树林
 beauty spot	风景点
 hundred	n.百
-city	n.城市
 through	prep.穿过
 visitor	n.参观者，游客，来访者
 tidy	a.整齐的

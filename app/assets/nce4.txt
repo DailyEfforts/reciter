@@ -1,4 +1,4 @@
-﻿total=1896
+﻿﻿total=1896
 abandon	vt.放弃 
 abruptly	ad.突然 
 absorb	vt.使精神贯注 

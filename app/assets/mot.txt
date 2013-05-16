@@ -1,4 +1,4 @@
-﻿total=1041
+﻿﻿total=1044
 établir	创立；建立；确立
 établir sur qch	建立在...上
 étendre	展开；伸开
@@ -137,7 +137,6 @@ intéresser	使感兴趣
 impressionner	给人以深刻印象
 frapper	使激动；使震惊
 persuader	使信服；使相信
-distinguer	区分
 porter	穿；戴
 se ressembler	相像，相似
 appeler	取名；成为
@@ -684,7 +683,6 @@ jambon	火腿
 annexer	附加，兼并
 frictionner	摩擦
 friction	擦身，摩擦，矛盾
-tenir	拿着
 bondir	跳跃，扑向
 bond	跳
 riche	富的，丰富的
@@ -1040,3 +1038,108 @@ milieu	中间，当中；环境
 au milieu de	在...中间
 fusion	溶解，合并
 futile	无关紧要的，微不足道的
+étrenne	新年礼物
+étroit,e	狭窄的；密切的
+présenter	介绍；提出；提供
+se présenter	自我介绍；出现
+présence	到场，出现
+en presence de	面对着，当面
+croquis	速写，草图
+cru,e	生的，未煮熟的
+défiler	成对行进，游行
+définir	下定义，确定
+sauter	跳，跳跃
+scandale	丑事；耻辱
+scandaleux,euse	可耻的；引起公愤的
+bravo	好，好极了；喝彩
+bref,brève	短暂的，简短的
+presse	报刊；新闻界；繁忙
+brique	砖
+brise	微风
+briser	打破，粉碎，毁灭
+caméra	摄像机
+célèbre	著名的
+célébrer	称赞，颂扬，庆祝
+disponible	可使用的，可支配的
+croquer	嚼，咬 （脆的食物）
+croître	生长，成长；增长
+le danger	危险
+dangereux, euse	危险的
+invincible	不可战胜的；无法克服的
+joue	面颊
+jouer	玩
+président	主席，总统
+presque	几乎，差不多
+innombrable	无数的
+inoubliable	难忘的
+défi	挑战；对抗，藐视
+défiance	不信任，怀疑
+disperser	使分散；分散
+disparaître	消失；失踪
+coûter	花费
+coûte que coûte	不惜一切代价，无论如何
+coûteux ,euse	昂贵的；代价大的
+débattre	商讨；议价
+se débattre	奋斗，努力摆脱困境
+débat	讨论；辩论；争论
+évaluer	估价，估计
+pourtant	然而，但是
+enfin	最后，总之
+tranquillement	平静地，安心地
+tranquille	安静的，安心的
+rapide	快的，迅速的
+rapidement	快地，迅速地
+rapidité	迅速，速度，敏捷
+d'autre part	此外，另一方面
+en dehors de	在...外面
+donc	所以，因此
+facile	容易的；平易近人的
+facilement	轻而易举地
+facilité	容易，简易
+faciliter	使容易
+de plus en plus	越来越
+presser	挤，压；匆忙地做，赶紧
+se presser	赶紧，拥挤
+pressé ,e	被压过的；繁忙的
+pression	压力的
+bloc	大块，堆
+bloquer	阻挡，堵住
+blocus	封锁
+tenir compte de	考虑，重视
+enveloppe	信封
+envelopper	包裹，裹住
+envers	对于；反面，背面
+avoir envie de faire qch.	想要做某事
+s'en prendre à qn	指责，责怪某人
+la jalousie	妒忌；嫉妒怨恨，抱怨某人
+en vouloir à qn	怨恨，抱怨某人
+inquiétant ,e	令人不安的，令人担心的
+inquiet,ère	不安的，担心的
+préjugé	偏见，成见
+prématuré ,e	早产的，时机不成熟
+prendre la mer	出海
+prendre	le bras de qn 抓住某人的胳膊
+croulant,e	要倒塌的，摇摇欲坠的
+hesitant, e	犹豫不决的（人）
+hésitation	犹豫，怀疑
+hésiter	犹豫（动词）
+digérer	消化；理解；容忍
+digne	值得尊敬的，配的上的
+digue	堤，坝
+rater	失败
+déferler	涌现，迸发
+être jaloux,jalouse de qn.	妒忌某人
+le mépris	轻视，蔑视
+la déception	失望
+la prévision	遇见
+un achat	购买
+faire des achats	购物
+acheteur ,euse	顾客
+épicier ,ère	食品杂货商
+le cataclysme	大灾难，大动乱
+catalogue	（商品等）目录，书目
+démarrer	开动，开始，放弃
+fortune	财富，运气，机遇
+fossé	壕沟；分歧
+grandeur	伟大，高尚
+grandir	长大，变化，成长，增长
