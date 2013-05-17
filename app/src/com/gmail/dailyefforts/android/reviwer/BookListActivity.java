@@ -3,6 +3,7 @@ package com.gmail.dailyefforts.android.reviwer;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -17,6 +18,8 @@ public class BookListActivity extends ListActivity implements OnClickListener {
 
 	private Button mBtnExit;
 	private Button mBtnSettings;
+
+	private static final String TAG = BookListActivity.class.getSimpleName();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,13 @@ public class BookListActivity extends ListActivity implements OnClickListener {
 		}
 
 		setTitle(R.string.book_list);
+		launchVersionChecker();
+	}
+
+	private void launchVersionChecker() {
+		Log.i(TAG, "checkLatestVersion()");
+		Intent intent = new Intent(Config.ACTION_NAME_CHECK_VERSION);
+		startService(intent);
 	}
 
 	@Override

@@ -21,7 +21,7 @@
     <string name="add_to_word_book">添加到生词本</string>
     <string name="read">朗读</string>
     <string name="remove_from_word_book">从生词本中移除</string>
-    <string name="recite">背诵</string>
+    <string name="unit">单元</string>
     <string name="test">测试</string>
     <string name="unknown">未知</string>
     <string name="random">随机</string>

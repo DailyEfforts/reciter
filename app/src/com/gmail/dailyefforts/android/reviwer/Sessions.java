@@ -25,14 +25,7 @@ import com.gmail.dailyefforts.android.reviwer.fragment.WordBookFragment;
 public class Sessions extends FragmentActivity implements ActionBar.TabListener {
 
 	private static final String TAG = Sessions.class.getSimpleName();
-	/**
-	 * The {@link android.support.v4.view.PagerAdapter} that will provide
-	 * fragments for each of the sections. We use a
-	 * {@link android.support.v4.app.FragmentPagerAdapter} derivative, which
-	 * will keep every loaded fragment in memory. If this becomes too memory
-	 * intensive, it may be best to switch to a
-	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-	 */
+	
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	/**
 	 * The {@link ViewPager} that will host the section contents.
@@ -82,7 +75,6 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 					.setText(mSectionsPagerAdapter.getPageTitle(i))
 					.setTabListener(this));
 		}
-		launchVersionChecker();
 
 		RUNNING = true;
 
@@ -113,14 +105,6 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 			Log.d(TAG, "onDestroy()");
 		}
 		RUNNING = false;
-	}
-
-	private void launchVersionChecker() {
-		Intent intent = new Intent(Config.ACTION_NAME_CHECK_VERSION);
-		if (Debuger.DEBUG) {
-			Log.d(TAG, "checkLatestVersion()");
-		}
-		startService(intent);
 	}
 
 	@Override
@@ -196,7 +180,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 			Locale l = Locale.getDefault();
 			switch (position) {
 			case 0:
-				return getString(R.string.recite).toUpperCase(l);
+				return getString(R.string.unit).toUpperCase(l);
 			case 1:
 				return getString(R.string.my_word_book).toUpperCase(l);
 			case 2:

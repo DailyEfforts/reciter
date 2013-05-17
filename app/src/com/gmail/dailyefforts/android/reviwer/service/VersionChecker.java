@@ -24,11 +24,9 @@ import com.gmail.dailyefforts.android.reviwer.version.UpdateConfirm;
 public class VersionChecker extends IntentService {
 
 	private static final String TAG = VersionChecker.class.getSimpleName();
-
 	public VersionChecker() {
 		super(TAG);
 	}
-
 	private int getCurrentVersionCode() {
 		int versionCode = -1;
 		try {
@@ -40,7 +38,6 @@ public class VersionChecker extends IntentService {
 
 		return versionCode;
 	}
-
 	private class Version {
 		public String name;
 		public int code;
@@ -56,7 +53,11 @@ public class VersionChecker extends IntentService {
 			this.info = info;
 			this.md5 = md5;
 		}
-
+		@Override
+		public String toString() {
+			return "Version [name=" + name + ", code=" + code + ", size="
+					+ size + ", info=" + info + ", md5=" + md5 + "]";
+		}
 	}
 
 	private Version getLatestVerInfo(final String urlStr) {
@@ -95,7 +96,7 @@ public class VersionChecker extends IntentService {
 		} catch (JSONException e) {
 			Log.e(TAG, e.getMessage());
 		}
-
+		Log.i(TAG, "remote version: " + ver.toString());
 		return ver;
 
 	}
@@ -136,6 +137,7 @@ public class VersionChecker extends IntentService {
 			launchUpdatePrompt(serverVer);
 			return;
 		}
+		Log.i(TAG, "start to download ver.json...");
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 		if (networkInfo != null && networkInfo.isConnected()) {
