@@ -39,30 +39,27 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@drawable/drag_question_btn_bg"
-        android:text="word"
+        android:text="@string/unknown"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/light_wheat"
-        android:textIsSelectable="true"
-        android:textStyle="bold" />
-    
+        android:textColor="@color/green"
+        android:textIsSelectable="true" />
+
     <com.gmail.dailyefforts.android.reviwer.draw.Paper
         android:id="@+id/draw_paper"
-        android:layout_below="@+id/btn_drop_word"
-        android:layout_above="@+id/ll_opt_bottom"
-        android:background="@drawable/paper_bg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
+        android:layout_above="@+id/ll_opt_bottom"
+        android:layout_below="@+id/btn_drop_word"
         android:layout_marginBottom="3dp"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
-        />
-    
+        android:layout_marginTop="3dp"
+        android:background="@drawable/paper_bg" />
 
     <LinearLayout
+        android:id="@+id/ll_opt_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ll_opt_bottom"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
 

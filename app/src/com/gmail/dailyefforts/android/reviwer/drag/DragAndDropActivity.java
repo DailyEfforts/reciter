@@ -42,7 +42,7 @@ import com.gmail.dailyefforts.android.reviwer.word.Word;
 public class DragAndDropActivity extends Activity implements OnDragListener,
 		OnClickListener, OnInitListener {
 
-	private static final int TIME_DELAY_TO_AUTO_FORWARD = 1000;
+	private static final int TIME_DELAY_TO_AUTO_FORWARD = 600;
 
 	private static final String TAG = DragAndDropActivity.class.getSimpleName();
 
@@ -106,6 +106,8 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 		MenuItem star = menu.findItem(R.id.menu_star);
 		if (star != null) {
+			Log.i(TAG, "onPrepareOptionsMenu() mWord: " + mWord + ", star: "
+					+ mDBA.getStar(mWord));
 			if (mDBA.getStar(mWord) <= 0) {
 				star.setIcon(android.R.drawable.star_off);
 				star.setTitle(R.string.add_to_word_book);
@@ -401,6 +403,8 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 	int mWordCounter = 0;
 
+	private boolean mBingo;
+
 	private static ArrayList<Integer> arrList = new ArrayList<Integer>();
 
 	private void buildTestCase() {
@@ -411,6 +415,8 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			finish();
 			return;
 		}
+
+		mBingo = false;
 
 		mPaper.clear();
 
@@ -429,8 +435,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			btn.setEnabled(true);
 			btn.setTextColor(color);
 		}
-
-		invalidateOptionsMenu();
 
 		pageMap = new SparseArray<Word>();
 		int mWordIdx = testCase.wordIdx;
@@ -473,6 +477,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			mBtnArrowRight.setVisibility(View.VISIBLE);
 		}
 
+		invalidateOptionsMenu();
 	}
 
 	@Override
@@ -521,6 +526,8 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 														AutoForwardHandler.MSG_MOVE_ON,
 														TIME_DELAY_TO_AUTO_FORWARD);
 									}
+									mBingo = true;
+									mDBA.setPast(mWord);
 								} else {
 									btn.setTextColor(mColorError);
 								}
@@ -535,8 +542,10 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			break;
 		case DragEvent.ACTION_DRAG_ENDED:
 			if (v.getId() == mBtnCurrentWord.getId()) {
-				mBtnCurrentWord.setVisibility(View.VISIBLE);
-				mBtnCurrentWord.startAnimation(animation);
+				if (!mBingo) {
+					mBtnCurrentWord.setVisibility(View.VISIBLE);
+					mBtnCurrentWord.startAnimation(animation);
+				}
 			} else {
 				v.clearAnimation();
 			}

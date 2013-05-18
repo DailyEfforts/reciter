@@ -256,6 +256,46 @@ public class DBA extends SQLiteOpenHelper {
 		}
 	}
 
+	public boolean isPass(int start, int end) {
+
+		for (int i = start; i < end; i++) {
+			String star = getPassValueByIdx(i);
+			if (Debuger.DEBUG) {
+				Log.d(TAG, "isPass() i: " + i + ", star: " + star);
+			}
+
+			if (!FLAG_PASS.equals(star)) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	public String FLAG_PASS = "p";
+
+	private String getPassValueByIdx(int idx) {
+		String star = null;
+		Cursor cursor = query(CURRENT_WORD_TABLE, null, WORD_ID + "=?",
+				new String[] { String.valueOf(idx) }, null, null, null);
+		if (cursor != null && cursor.getCount() == 1) {
+			if (cursor.moveToFirst()) {
+				star = cursor.getString(cursor.getColumnIndex(WORD_OTHER));
+			}
+			cursor.close();
+		} else {
+			Log.e(TAG, "getStarByIdx: idx: " + idx + ", cursor: " + cursor);
+		}
+		return star;
+	}
+
+	public void setPast(final String word) {
+		ContentValues values = new ContentValues();
+		values.put(DBA.WORD_OTHER, FLAG_PASS);
+		getWritableDatabase().update(CURRENT_WORD_TABLE, values,
+				WORD_WORD + "=?", new String[] { word });
+	}
+
 	public int getStar(final String word) {
 
 		int star = -1;

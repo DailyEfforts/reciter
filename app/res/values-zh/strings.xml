@@ -48,5 +48,5 @@
     <string name="nce2">新概念英语（第二册）</string>
     <string name="nce3">新概念英语（第三册）</string>
     <string name="nce4">新概念英语（第四册）</string>
-
+    <string name="unit_id">第 <b>%d</b> 单元</string>
 </resources>

@@ -57,5 +57,7 @@
     <string name="nce2">New Concept English (II)</string>
     <string name="nce3">New Concept English (III)</string>
     <string name="nce4">New Concept English (IV)</string>
+    <string name="unit_id">Unit-<b>%d</b></string>
+    <string name="unit_contents_num" translatable="false">(%d ~ %d)</string>
 
 </resources>

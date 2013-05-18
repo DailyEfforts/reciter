@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
@@ -17,18 +18,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.unit.UnitButton;
+import com.gmail.dailyefforts.android.reviwer.drag.DragAndDropActivity;
+import com.gmail.dailyefforts.android.reviwer.unit.UnitView;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
-public class UnitSetFragment extends Fragment {
+public class UnitSetFragment extends Fragment implements OnItemClickListener {
 	private static final String TAG = UnitSetFragment.class.getSimpleName();
 	private RelativeLayout loadingTip;
 	private GridView mGridView;
@@ -61,6 +67,8 @@ public class UnitSetFragment extends Fragment {
 					Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT));
 		}
 
+		mGridView.setOnItemClickListener(this);
+
 		new LoadWordsList().execute();
 		return view;
 	}
@@ -68,29 +76,13 @@ public class UnitSetFragment extends Fragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		if (mGridView != null && dba != null) {
-			if (Debuger.DEBUG) {
-				Log.d(TAG, "onPostExecute() " + dba.getCount());
-			}
-
-			int newUnit = Integer.valueOf(mSharedPref.getString(
-					getString(R.string.pref_key_word_count_in_one_unit),
-					Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT));
-			if (UNIT == newUnit) {
-				return;
-			} else {
-				UNIT = newUnit;
-			}
-
-			int count = dba.getCount();
-
-			int unitSize = count % UNIT == 0 ? count / UNIT : count / UNIT + 1;
-
-			mGridView.setAdapter(new UnitAdapter(unitSize, count));
-
+		if (mGridView != null) {
+			mGridView.invalidateViews();
 			mGridView.startAnimation(mAnimation);
 		}
 	}
+
+	private UnitAdapter mUnitAdapter;
 
 	private class LoadWordsList extends AsyncTask<Void, Integer, Boolean> {
 
@@ -112,7 +104,8 @@ public class UnitSetFragment extends Fragment {
 					int unitSize = count % UNIT == 0 ? count / UNIT : count
 							/ UNIT + 1;
 
-					mGridView.setAdapter(new UnitAdapter(unitSize, count));
+					mUnitAdapter = new UnitAdapter(unitSize, count);
+					mGridView.setAdapter(mUnitAdapter);
 					mGridView.setVisibility(View.VISIBLE);
 
 					mGridView.startAnimation(mAnimation);
@@ -192,6 +185,12 @@ public class UnitSetFragment extends Fragment {
 		}
 	}
 
+	static class UnitViewHolder {
+		TextView unit_id;
+		TextView unit_contents_num;
+		ImageView status;
+	}
+
 	private class UnitAdapter extends BaseAdapter {
 
 		private int mUnitCount;
@@ -219,17 +218,26 @@ public class UnitSetFragment extends Fragment {
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup container) {
-			View view = null;
+			UnitViewHolder holder;
 			if (convertView == null) {
-				// view = getLayoutInflater().inflate(R.layout.view_unit, null);
-				view = new UnitButton(getActivity());
+				convertView = getActivity().getLayoutInflater().inflate(
+						R.layout.unit_view, null);
+				holder = new UnitViewHolder();
+				holder.unit_id = (TextView) convertView
+						.findViewById(R.id.unit_id);
+				holder.unit_contents_num = (TextView) convertView
+						.findViewById(R.id.unit_contents_num);
+				holder.status = (ImageView) convertView
+						.findViewById(R.id.unit_status);
+
+				convertView.setTag(holder);
 			} else {
-				view = convertView;
+				holder = (UnitViewHolder) convertView.getTag();
 			}
 
-			if (view instanceof UnitButton) {
+			if (convertView instanceof UnitView) {
 				// TODO dba non-null check
-				UnitButton tmp = ((UnitButton) view);
+				UnitView tmp = ((UnitView) convertView);
 				tmp.id = position;
 				tmp.start = position * UNIT + 1;
 				tmp.end = position == mUnitCount - 1 ? mDbSize : (position + 1)
@@ -240,12 +248,38 @@ public class UnitSetFragment extends Fragment {
 							tmp.id, tmp.start, tmp.end));
 				}
 
-				tmp.setText(String.format("Unit-%02d\n(%d)", position + 1,
-						tmp.end - tmp.start + 1));
+				if (holder.unit_id != null) {
+					holder.unit_id.setText(getResources().getString(
+							R.string.unit_id, position + 1));
+				}
+
+				if (holder.unit_contents_num != null) {
+					holder.unit_contents_num.setText(getResources().getString(
+							R.string.unit_contents_num, tmp.start, tmp.end));
+				}
+
+				if (holder.status != null) {
+					if (dba != null && dba.isPass(tmp.start, tmp.end)) {
+						holder.status.setImageResource(R.drawable.ic_pass);
+					} else {
+						holder.status
+								.setImageResource(R.drawable.ic_waiting_to_pass);
+					}
+				}
 			}
 
-			return view;
+			return convertView;
 		}
 
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		int start = position * UNIT + 1;
+		int end = (position + 1) * UNIT;
+		dba.loadUnitWords(start, end);
+		Intent intent = new Intent(getActivity(), DragAndDropActivity.class);
+		getActivity().startActivity(intent);
 	}
 }

@@ -30,17 +30,6 @@ public class TestFragment extends Fragment implements View.OnClickListener {
 	private static final int RANDOM_TEST = 0;
 	private static final int MY_WORD_TEST = 1;
 
-	/*
-	 * @Override public void onDestroyView() { super.onDestroyView();
-	 * 
-	 * Fragment fragment = getFragmentManager().findFragmentById(
-	 * R.id.fragment_test_report_record); if (fragment != null) { int result =
-	 * getFragmentManager().beginTransaction() .remove(fragment).commit(); if
-	 * (Debuger.DEBUG) { Log.d(TAG,
-	 * "onDestroyView() remove old test report fragment, result: " + result); }
-	 * } }
-	 */
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

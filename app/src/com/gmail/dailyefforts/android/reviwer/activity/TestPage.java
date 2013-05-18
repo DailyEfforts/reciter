@@ -14,7 +14,6 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
@@ -54,10 +53,6 @@ public class TestPage extends Activity implements OnTouchListener,
 	private SparseArray<Word> map;
 
 	private SparseArray<Word> pageMap;
-
-	private Drawable bgColorNormal;
-	private Drawable bgColorPressedBingo;
-	private Drawable bgColorPressedWarning;
 
 	private int mBingoNum;
 
@@ -178,11 +173,6 @@ public class TestPage extends Activity implements OnTouchListener,
 		}
 
 		Resources res = getResources();
-		bgColorNormal = res.getDrawable(R.drawable.opt_btn_bg_normal);
-		bgColorPressedBingo = res
-				.getDrawable(R.drawable.opt_btn_bg_pressed_bingo);
-		bgColorPressedWarning = res
-				.getDrawable(R.drawable.opt_btn_bg_pressed_warning);
 
 		map = Word.getMap();
 
@@ -328,7 +318,6 @@ public class TestPage extends Activity implements OnTouchListener,
 					if (isFirstTouch) {
 						mBingoNum++;
 					}
-					v.setBackgroundDrawable(bgColorPressedBingo);
 				} else {
 					if (isFirstTouch && dba != null && dba.getStar(mWord) <= 0) {
 						dba.star(mWord);
@@ -344,7 +333,6 @@ public class TestPage extends Activity implements OnTouchListener,
 									+ mWrongWordList.toString());
 						}
 					}
-					v.setBackgroundDrawable(bgColorPressedWarning);
 				}
 				returnValue = true;
 				break;
@@ -404,7 +392,6 @@ public class TestPage extends Activity implements OnTouchListener,
 					((Button) v).setText(w.getMeaning());
 				}
 
-				v.setBackgroundDrawable(bgColorNormal);
 				returnValue = true;
 				break;
 			default:
