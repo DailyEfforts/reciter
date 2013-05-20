@@ -43,6 +43,7 @@
     <color name="holo_red_dark">#ffcc0000</color>
     <!-- A Holo shade of purple -->
     <color name="holo_purple">#ffaa66cc</color>
+    <color name="holo_purple_transparent">#aaaa66cc</color>
     <!-- A light Holo shade of orange -->
     <color name="holo_orange_light">#ffffbb33</color>
     <!-- A dark Holo shade of orange -->

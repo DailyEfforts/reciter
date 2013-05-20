@@ -530,6 +530,9 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 									mDBA.setPast(mWord);
 								} else {
 									btn.setTextColor(mColorError);
+									if (mDBA != null) {
+										mDBA.star(mWord);
+									}
 								}
 								btn.setText(m + "\n" + w);
 								btn.setEnabled(false);

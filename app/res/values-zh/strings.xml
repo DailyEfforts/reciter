@@ -49,4 +49,11 @@
     <string name="nce3">新概念英语（第三册）</string>
     <string name="nce4">新概念英语（第四册）</string>
     <string name="unit_id">第 <b>%d</b> 单元</string>
+    <string name="countdown_timer">倒计时器</string>
+    <string name="set_countdown_timer">设置倒计时器</string>
+    <string name="done">完成</string>
+    <string name="countdown_timer_name">倒计时器名称</string>
+    <string name="kaoyan">考研</string>
+    <string name="date">日期</string>
+
 </resources>
