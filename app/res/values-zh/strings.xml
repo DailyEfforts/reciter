@@ -7,7 +7,7 @@
     <string name="option_count">候选项数目</string>
     <string name="pref_summary_options_count">每道题含 %s 个候选项</string>
     <string name="pref_summary_word_count">每个单元中含 %s 个单词</string>
-    <string name="my_word_book">生词本</string>
+    <string name="my_word_book">错题本</string>
     <string name="exit">退出</string>
     <string name="tip_empty">空</string>
     <string name="word_count">单词数目</string>
@@ -43,7 +43,7 @@
     <string name="random_test_question_number">随机测试问题数目</string>
     <string name="build_x_question_in_each_test_case">每次随机测试时生成 %s 道题</string>
     <string name="book_list">书籍列表</string>
-    <string name="mot">基础法语词汇（每天15个）</string>
+    <string name="mot">基础法语词汇</string>
     <string name="nce1">新概念英语（第一册）</string>
     <string name="nce2">新概念英语（第二册）</string>
     <string name="nce3">新概念英语（第三册）</string>

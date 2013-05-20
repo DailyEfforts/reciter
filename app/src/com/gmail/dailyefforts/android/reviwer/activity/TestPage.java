@@ -292,7 +292,6 @@ public class TestPage extends Activity implements OnTouchListener,
 	 * idx < map.size()) { return map.get(idx).getMeaning(); } return null; }
 	 */
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
 		boolean returnValue = false;

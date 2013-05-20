@@ -14,7 +14,7 @@
     <string name="option_count">Option count</string>
     <string name="pref_summary_options_count">There are %s options for each subject now</string>
     <string name="pref_summary_word_count">There are %s words in one unit now</string>
-    <string name="my_word_book">Book</string>
+    <string name="my_word_book">Correction Note</string>
     <string name="exit">Exit</string>
     <string name="tip_empty">Empty</string>
     <string name="word_count">Word count</string>
