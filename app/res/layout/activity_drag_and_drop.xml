@@ -17,7 +17,7 @@
             android:layout_marginRight="6dp"
             android:layout_weight="1"
             android:background="@drawable/drag_opt_btn_bg"
-            android:minHeight="80dp"
+            android:minHeight="@dimen/activity_drag_drop_opt_mini_height"
             android:text="topLeft"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -28,7 +28,7 @@
             android:layout_gravity="right"
             android:layout_marginLeft="6dp"
             android:layout_weight="1"
-            android:minHeight="80dp"
+            android:minHeight="@dimen/activity_drag_drop_opt_mini_height"
             android:text="topRight"
             android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>
@@ -70,7 +70,7 @@
             android:layout_gravity="left"
             android:layout_marginRight="6dp"
             android:layout_weight="1"
-            android:minHeight="80dp"
+            android:minHeight="@dimen/activity_drag_drop_opt_mini_height"
             android:text="bottomLeft"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -81,7 +81,7 @@
             android:layout_gravity="right"
             android:layout_marginLeft="6dp"
             android:layout_weight="1"
-            android:minHeight="80dp"
+            android:minHeight="@dimen/activity_drag_drop_opt_mini_height"
             android:text="meaningRight"
             android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>

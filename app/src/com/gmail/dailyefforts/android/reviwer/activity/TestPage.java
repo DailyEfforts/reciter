@@ -244,6 +244,10 @@ public class TestPage extends Activity implements OnTouchListener,
 		tv.setText(mWord);
 		invalidateOptionsMenu();
 
+		for (Button btn : mOptList) {
+			btn.setEnabled(true);
+		}
+
 		pageMap = new SparseArray<Word>();
 
 		// make sure the option is not duplicate.
@@ -312,7 +316,9 @@ public class TestPage extends Activity implements OnTouchListener,
 			}
 			switch (event.getActionMasked()) {
 			case MotionEvent.ACTION_DOWN:
-				((Button) v).setText(w.getWord());
+				if (v instanceof Button) {
+					((Button) v).setText(w.getWord());
+				}
 				if (bingGo) {
 					if (isFirstTouch) {
 						mBingoNum++;
@@ -331,6 +337,9 @@ public class TestPage extends Activity implements OnTouchListener,
 							Log.d(TAG, "onTouch() mWord: " + mWord + ", set: "
 									+ mWrongWordList.toString());
 						}
+					}
+					if (v instanceof Button) {
+						((Button) v).setEnabled(false);
 					}
 				}
 				returnValue = true;
