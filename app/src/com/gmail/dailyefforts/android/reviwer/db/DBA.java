@@ -19,13 +19,14 @@ import com.gmail.dailyefforts.android.reviwer.word.Word;
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();
 	private static final String DATABASE_NAME = "wot.db";
-	private static final int DATABASE_VERSION = 5;
+	private static final int DATABASE_VERSION = 6;
 	public static final String TABLE_WORD_LIST = "wordlist";
 
 	public static final String TABLE_WORD_LIST_NCE1 = "wordlist_nce1";
 	public static final String TABLE_WORD_LIST_NCE2 = "wordlist_nce2";
 	public static final String TABLE_WORD_LIST_NCE3 = "wordlist_nce3";
 	public static final String TABLE_WORD_LIST_NCE4 = "wordlist_nce4";
+	public static final String TABLE_WORD_LIST_REFLETS1U = "wordlist_reflets1u";
 
 	public static final String WORD_ID = "_id";
 	public static final String WORD_WORD = "word";
@@ -34,6 +35,8 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String WORD_TIMESTAMP = "timestamp";
 	public static final String WORD_STAR = "star";
 	public static final String WORD_OTHER = "other";
+	public static final String WORD_MARKER = "marker";
+	public static final String WORD_TYPE = "type";
 
 	private static final String CREATE_TABLE_WORD_LIST = "CREATE TABLE IF NOT EXISTS "
 			+ TABLE_WORD_LIST
@@ -108,12 +111,33 @@ public class DBA extends SQLiteOpenHelper {
 			+ " DATETIME, "
 			+ WORD_STAR
 			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
+	
+	private static final String CREATE_TABLE_WORD_LIST_REFLETS1U = "CREATE TABLE IF NOT EXISTS "
+			+ TABLE_WORD_LIST_REFLETS1U
+			+ "("
+			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ WORD_WORD
+			+ " TEXT UNIQUE, "
+			+ WORD_MEANING
+			+ " TEXT, "
+			+ WORD_SAMPLE
+			+ " TEXT, "
+			+ WORD_TIMESTAMP
+			+ " DATETIME, "
+			+ WORD_STAR
+			+ " INTEGER DEFAULT 0, " 
+			+ WORD_MARKER
+			+ " TEXT, " 
+			+ WORD_TYPE
+			+ " TEXT, " 
+			+ WORD_OTHER + " TEXT);";
 
 	public static final String TABLE_TEST_REPORT = "testreport";
 	public static final String TABLE_TEST_REPORT_NCE1 = "testreport_nce1";
 	public static final String TABLE_TEST_REPORT_NCE2 = "testreport_nce2";
 	public static final String TABLE_TEST_REPORT_NCE3 = "testreport_nce3";
 	public static final String TABLE_TEST_REPORT_NCE4 = "testreport_nce4";
+	public static final String TABLE_TEST_REPORT_REFLETS1U= "testreport_reflets1u";
 
 	public static final String TEST_REPORT_ID = "_id";
 	public static final String TEST_TESTED_NUMBER = "tested_number";
@@ -203,6 +227,25 @@ public class DBA extends SQLiteOpenHelper {
 
 	private static final String CREATE_TABLE_TEST_REPORT_NCE4 = "CREATE TABLE IF NOT EXISTS "
 			+ TABLE_TEST_REPORT_NCE4
+			+ "("
+			+ TEST_REPORT_ID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ TEST_TESTED_NUMBER
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_CORRECT_NUMBER
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_ACCURACY
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_DB_SIZE
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_ELAPSED_TIME
+			+ " INTEGER DEFAULT 0, "
+			+ TEST_TIMESTAMP
+			+ " DATETIME, "
+			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
+	
+	private static final String CREATE_TABLE_TEST_REPORT_REFLETS1U = "CREATE TABLE IF NOT EXISTS "
+			+ TABLE_TEST_REPORT_REFLETS1U
 			+ "("
 			+ TEST_REPORT_ID
 			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -516,12 +559,14 @@ public class DBA extends SQLiteOpenHelper {
 		db.execSQL(CREATE_TABLE_WORD_LIST_NCE2);
 		db.execSQL(CREATE_TABLE_WORD_LIST_NCE3);
 		db.execSQL(CREATE_TABLE_WORD_LIST_NCE4);
+		db.execSQL(CREATE_TABLE_WORD_LIST_REFLETS1U);
 
 		db.execSQL(CREATE_TABLE_TEST_REPORT);
 		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE1);
 		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE2);
 		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE3);
 		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE4);
+		db.execSQL(CREATE_TABLE_TEST_REPORT_REFLETS1U);
 	}
 
 	@Override

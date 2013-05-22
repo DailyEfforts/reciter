@@ -1,0 +1,59 @@
+﻿total=58
+accord	n.m.#同意
+d'accord	loc.adv.#同意
+agence	n.f.#代理处
+agence de voyages	旅行社
+amusant, e	有趣的
+*arrondissement	n.m.#行政区；(法国大城市的)区
+*assis, e	adj.#坐着的
+aussi	adv.#还，此外
+bon	interj.#好
+Ah bon!	真的！(表示惊奇)
+chanteur, se	n.#歌手，歌唱家
+chez	prép.#在…家，在…那儿
+comme	adv.exclam.#真是在…了；多么
+*content, e	adj.#高兴的
+dans	prép.#在…里面
+de	prép.#表示所属关系或引导名词补语
+employé, e	n.#职员
+enchanté, e	adj.#荣幸的，高兴的
+enfin	adv.#最后；终于；其实(用于明确或更正前面说的话)
+*entrer	v.i.#进入(il entre)
+*fille	n.f.#女孩
+*garçon	n.m.#男孩
+habiter	v.t.#居住(j'habite)
+ici	adv.#这儿
+*immeuble	n.m.#楼房
+joli, e	adj.#漂亮的
+locataire	n.#房屋承租人
+mademoiselle	n.f.#(pl. mesdemoiselles)小姐
+maintenant	adv.#现在
+mais	adv.#但是
+mannequin	n.m.#模特
+monsieur	n.m.#(pl. messieurs)先生(缩写为M.)
+*montrer	v.t.#只是(人或物)(il montre)
+nationalité	n.f.#国籍
+nom	n.m.#姓
+nouveau, nouvelle	adj.#(pl. nouveaux)新的
+*parler	v.i.#说话(il parle)
+*personnage	n.m.#(故事或影片中的)人物
+*porte	n.f.#门
+*poser	v.t.#提出(il pose)
+prénom	n.m.#名字
+quel, le	adj.#interr. 哪一类的；什么样的
+*question	n.f.#问题
+quoi	pron.interr.#什么(que的重读形式)
+*raccompagner	v.t.#送(某人)到(il raccompagne)
+*(se)regarder	v.pr.#互相看(il se regardent)
+revoir	v.t.#再次看见
+Au revoir.	再见。(礼貌用语，用于告别)
+*salon	n.m.#客厅
+*(se)saluer	v.pr.#相互问候，相互打招呼(ils se saluent) 
+*sonner	v.i.#按门铃(il sonne)
+*sourire	v.i.#微笑(ils sourient)
+sûr, e	adj.#肯定的
+sympa	adj.#好相处的，热情的
+sympathique	adj.#好相处的，热情的
+travailler	v.i.#工作，劳动(je travaille)
+vrai, e	adj.#真实的
+vraiment	adv.#真正地

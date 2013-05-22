@@ -288,7 +288,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			arrList.clear();
 			while (arrList.size() <= optNum) {
 				int tmp = random.nextInt(mDbCount);
-				if (tmp != id && !arrList.contains(tmp)) {
+				if (tmp != 0 && tmp != id && !arrList.contains(tmp)) {
 					arrList.add(tmp);
 				}
 			}

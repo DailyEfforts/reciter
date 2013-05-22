@@ -144,7 +144,7 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 								+ Config.CURRENT_BOOK_NAME + total + ", db: "
 								+ dba.getCount());
 					}
-					if (dba.getCount() > total - 100) {
+					if (total > 100 && dba.getCount() > total - 100) {
 						return true;
 					}
 				}
@@ -158,8 +158,25 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 
 						if (!dba.exist(word)) {
 							values.clear();
-							values.put(DBA.WORD_WORD, word);
-							values.put(DBA.WORD_MEANING, meanning);
+							if (Config.CURRENT_BOOK_NAME
+									.equals(Config.BOOK_NAME_REFLETS1U)
+									&& word != null && word.startsWith("*")) {
+								values.put(DBA.WORD_WORD, word.substring(1));
+								values.put(DBA.WORD_MARKER, "u");
+							} else {
+								values.put(DBA.WORD_WORD, word);
+							}
+							if (Config.CURRENT_BOOK_NAME
+									.equals(Config.BOOK_NAME_REFLETS1U)
+									&& meanning != null && meanning.contains("#")) {
+								int indexOf = meanning.indexOf("#");
+								values.put(DBA.WORD_TYPE,
+										meanning.substring(0, indexOf));
+								values.put(DBA.WORD_MEANING,
+										meanning.substring(indexOf + 1));
+							} else {
+								values.put(DBA.WORD_MEANING, meanning);
+							}
 							values.put(DBA.WORD_TIMESTAMP,
 									System.currentTimeMillis());
 							dba.insert(DBA.CURRENT_WORD_TABLE, null, values);

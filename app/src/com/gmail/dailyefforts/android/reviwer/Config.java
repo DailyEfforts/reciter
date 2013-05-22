@@ -29,6 +29,7 @@ public class Config {
 	public static final String BOOK_NAME_NCE2 = "nce2.txt";
 	public static final String BOOK_NAME_NCE3 = "nce3.txt";
 	public static final String BOOK_NAME_NCE4 = "nce4.txt";
+	public static final String BOOK_NAME_REFLETS1U = "reflets1u.txt";
 	public static String CURRENT_BOOK_NAME = BOOK_NAME_MOT;
 	public static final String LANG_EN = "en";
 	public static final String LANG_FR = "fr";

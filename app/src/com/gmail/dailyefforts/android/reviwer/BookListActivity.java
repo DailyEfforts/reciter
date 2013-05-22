@@ -92,6 +92,13 @@ public class BookListActivity extends ListActivity implements OnClickListener {
 			Config.CURRENT_LANGUAGE = Config.LANG_EN;
 			bookNameResId = R.string.nce4;
 			break;
+		case 5:
+			DBA.CURRENT_WORD_TABLE = DBA.TABLE_WORD_LIST_REFLETS1U;
+			DBA.CURRENT_TEST_REPORT_TABLE = DBA.TABLE_TEST_REPORT_REFLETS1U;
+			Config.CURRENT_BOOK_NAME = Config.BOOK_NAME_REFLETS1U;
+			Config.CURRENT_LANGUAGE = Config.LANG_FR;
+			bookNameResId = R.string.reflets_1_uppper;
+			break;
 		}
 
 		Intent intent = new Intent(getApplicationContext(), Sessions.class);

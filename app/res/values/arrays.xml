@@ -61,6 +61,7 @@
         <item>@string/nce2</item>
         <item>@string/nce3</item>
         <item>@string/nce4</item>
+        <item>@string/reflets_1_uppper</item>
     </string-array>
 
 </resources>
