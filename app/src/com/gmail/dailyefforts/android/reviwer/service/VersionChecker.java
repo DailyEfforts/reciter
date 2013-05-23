@@ -96,6 +96,8 @@ public class VersionChecker extends IntentService {
 		} catch (JSONException e) {
 			Log.e(TAG, e.getMessage());
 		}
+		Log.i(TAG, "remote version: " + ver);
+		if (ver != null)
 		Log.i(TAG, "remote version: " + ver.toString());
 		return ver;
 
@@ -118,25 +120,6 @@ public class VersionChecker extends IntentService {
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
-		if (Debuger.DEBUG) {
-			File apk = new File(Environment.getExternalStorageDirectory(),
-					"/Mot/Mot.apk");
-
-			Version serverVer = new Version("1.7.0", 9, 234, "1. a\n2.b1. a",
-					"658cd1d2a92f58e6d289266222dff37d");
-			/*
-			 * apk = downLoadApk(new FileInputStream( new
-			 * File(Environment.getExternalStorageDirectory(), "/Mot/a.apk")));
-			 * 
-			 * if (!getMd5Sum(apk).equalsIgnoreCase(
-			 * "ca5fd267ff1f2d0b074d8127fc0f86e4")) { apk = downLoadApk(new
-			 * FileInputStream(new File(
-			 * Environment.getExternalStorageDirectory(), "/Mot/a.apk"))); }
-			 */
-			Log.d(TAG, "onHandleIntent: " + apk.exists());
-			launchUpdatePrompt(serverVer);
-			return;
-		}
 		Log.i(TAG, "start to download ver.json...");
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();

@@ -316,9 +316,7 @@ public class TestPage extends Activity implements OnTouchListener,
 			}
 			switch (event.getActionMasked()) {
 			case MotionEvent.ACTION_DOWN:
-				if (v instanceof Button) {
-					((Button) v).setText(w.getWord() + "\n" + w.getMeaning());
-				}
+				((Button) v).setText(w.getWord() + "\n" + w.getMeaning());
 				if (bingGo) {
 					if (isFirstTouch) {
 						mBingoNum++;
@@ -338,8 +336,9 @@ public class TestPage extends Activity implements OnTouchListener,
 									+ mWrongWordList.toString());
 						}
 					}
-					if (v instanceof Button) {
-						((Button) v).setEnabled(false);
+					((Button) v).setEnabled(false);
+					if (isFirstTouch) {
+						isFirstTouch = false;
 					}
 				}
 				returnValue = true;
