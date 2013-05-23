@@ -111,7 +111,7 @@ public class DBA extends SQLiteOpenHelper {
 			+ " DATETIME, "
 			+ WORD_STAR
 			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
-	
+
 	private static final String CREATE_TABLE_WORD_LIST_REFLETS1U = "CREATE TABLE IF NOT EXISTS "
 			+ TABLE_WORD_LIST_REFLETS1U
 			+ "("
@@ -125,19 +125,18 @@ public class DBA extends SQLiteOpenHelper {
 			+ WORD_TIMESTAMP
 			+ " DATETIME, "
 			+ WORD_STAR
-			+ " INTEGER DEFAULT 0, " 
+			+ " INTEGER DEFAULT 0, "
 			+ WORD_MARKER
-			+ " TEXT, " 
+			+ " TEXT, "
 			+ WORD_TYPE
-			+ " TEXT, " 
-			+ WORD_OTHER + " TEXT);";
+			+ " TEXT, " + WORD_OTHER + " TEXT);";
 
 	public static final String TABLE_TEST_REPORT = "testreport";
 	public static final String TABLE_TEST_REPORT_NCE1 = "testreport_nce1";
 	public static final String TABLE_TEST_REPORT_NCE2 = "testreport_nce2";
 	public static final String TABLE_TEST_REPORT_NCE3 = "testreport_nce3";
 	public static final String TABLE_TEST_REPORT_NCE4 = "testreport_nce4";
-	public static final String TABLE_TEST_REPORT_REFLETS1U= "testreport_reflets1u";
+	public static final String TABLE_TEST_REPORT_REFLETS1U = "testreport_reflets1u";
 
 	public static final String TEST_REPORT_ID = "_id";
 	public static final String TEST_TESTED_NUMBER = "tested_number";
@@ -243,7 +242,7 @@ public class DBA extends SQLiteOpenHelper {
 			+ TEST_TIMESTAMP
 			+ " DATETIME, "
 			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
-	
+
 	private static final String CREATE_TABLE_TEST_REPORT_REFLETS1U = "CREATE TABLE IF NOT EXISTS "
 			+ TABLE_TEST_REPORT_REFLETS1U
 			+ "("
@@ -414,7 +413,10 @@ public class DBA extends SQLiteOpenHelper {
 		int dbSize = getCount();
 
 		while (set.size() < size) {
-			set.add(random.nextInt(dbSize));
+			int id = random.nextInt(dbSize);
+			if (id != 0) {
+				set.add(id);
+			}
 		}
 
 		Iterator<Integer> it = set.iterator();

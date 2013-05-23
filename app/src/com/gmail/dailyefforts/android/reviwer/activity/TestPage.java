@@ -254,7 +254,7 @@ public class TestPage extends Activity implements OnTouchListener,
 		ArrayList<Integer> arrList = new ArrayList<Integer>();
 		while (arrList.size() < optNum - 1) {
 			int tmp = random.nextInt(mDbCount);
-			if (tmp != mWordCounter && !arrList.contains(tmp)) {
+			if (tmp != 0 && tmp != mWordCounter && !arrList.contains(tmp)) {
 				arrList.add(tmp);
 			}
 		}
@@ -317,7 +317,7 @@ public class TestPage extends Activity implements OnTouchListener,
 			switch (event.getActionMasked()) {
 			case MotionEvent.ACTION_DOWN:
 				if (v instanceof Button) {
-					((Button) v).setText(w.getWord());
+					((Button) v).setText(w.getWord() + "\n" + w.getMeaning());
 				}
 				if (bingGo) {
 					if (isFirstTouch) {
