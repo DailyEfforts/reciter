@@ -26,21 +26,21 @@ ici@adv.#这儿
 *immeuble@n.m.#楼房
 joli, e@adj.#漂亮的
 locataire@n.#房屋承租人
-mademoiselle@n.f.#(pl. mesdemoiselles)小姐
+mademoiselle@n.f. (pl. mesdemoiselles)#小姐
 maintenant@adv.#现在
 mais@adv.#但是
 mannequin@n.m.#模特
-monsieur@n.m.#(pl. messieurs)先生(缩写为M.)
+monsieur@n.m.(pl. messieurs)#先生(缩写为M.)
 *montrer@v.t.#只是(人或物)(il montre)
 nationalité@n.f.#国籍
 nom@n.m.#姓
-nouveau, nouvelle@adj.#(pl. nouveaux)新的
+nouveau, nouvelle@adj.(pl. nouveaux)#新的
 *parler@v.i.#说话(il parle)
 *personnage@n.m.#(故事或影片中的)人物
 *porte@n.f.#门
 *poser@v.t.#提出(il pose)
 prénom@n.m.#名字
-quel, le@adj.#interr. 哪一类的；什么样的
+quel, le@adj. interr.#哪一类的；什么样的
 *question@n.f.#问题
 quoi@pron.interr.#什么(que的重读形式)
 *raccompagner@v.t.#送(某人)到(il raccompagne)
