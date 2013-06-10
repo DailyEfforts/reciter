@@ -3,20 +3,20 @@ accord@同意
 d'accord@同意
 agence@代理处
 agence de voyages@旅行社
-amusant, e@有趣的
+amusant@有趣的
 arrondissement@行政区；区
-assis, e@坐着的
+assis@坐着的
 aussi@还，此外
 bon@好
 Ah bon!@真的！
-chanteur, se@歌手，歌唱家
+chanteur@歌手，歌唱家
 chez@在…家，在…那儿
 comme@真是在…了；多么
-content, e@高兴的
+content@高兴的
 dans@在…里面
 de@表示所属关系或引导名词补语
-employé, e@职员
-enchanté, e@荣幸的，高兴的
+employé@职员
+enchanté@荣幸的，高兴的
 enfin@最后；终于；其实
 entrer@进入
 fille@女孩
@@ -24,7 +24,7 @@ garçon@男孩
 habiter@居住
 ici@这儿
 immeuble@楼房
-joli, e@漂亮的
+joli@漂亮的
 locataire@房屋承租人
 mademoiselle@小姐
 maintenant@现在
@@ -34,13 +34,13 @@ monsieur@先生
 montrer@只是
 nationalité@国籍
 nom@姓
-nouveau, nouvelle@新的
+nouveau@新的
 parler@说话
 personnage@(故事或影片中的)人物
 porte@门
 poser@提出
 prénom@名字
-quel, le@哪一类的；什么样的
+quel@哪一类的；什么样的
 question@问题
 quoi@什么(que的重读形式)
 raccompagner@送(某人)到
@@ -51,18 +51,18 @@ salon@客厅
 saluer@相互问候，相互打招呼 
 sonner@按门铃
 sourire@微笑
-sûr, e@肯定的
+sûr@肯定的
 sympa@好相处的，热情的
 sympathique@好相处的，热情的
 travailler@工作，劳动
-vrai, e@真实的
+vrai@真实的
 vraiment@真正地
 âge@年龄
 air@申请
 avoir l'air@看起来，好像
 alors@那么
-amical, e@友好的
-amusé, e@adj.兴致勃勃的
+amical@友好的
+amusé@adj.兴致勃勃的
 an@年；岁，年龄
 appartement@公寓
 arrêter@停止，停下
@@ -70,11 +70,11 @@ aujourd'hui@今天
 aussi@也，同样
 autre@另外的，别的
 bien@好
-bon, ne@好的
+bon@好的
 ça@pron.dém.@这个，那个
 Ça va ?@你好吗？
 C'est ça.@是这样。
-chacun, e@每个人
+chacun@每个人
 chambre@房间
 chercher@寻找
 chose@事物，东西
@@ -94,7 +94,7 @@ faim@饥饿
 avoir faim@饿
 femme@女人；妻子
 garçon@男孩
-gentil, le@亲切的，客气的
+gentil@亲切的，客气的
 geste@手势
 grand@大的，宽的
 grande@大的，宽的
@@ -137,7 +137,7 @@ rire@笑
 samedi@星期六
 sérieux@认真的
 sérieuse@认真的
-seul, e@单独的
+seul@单独的
 soif@渴
 avoir soif@口渴
 sûrement@肯定地
@@ -174,7 +174,7 @@ carte@卡
 chèque@支票
 chut@嘘！
 classe@等级
-client, e@顾客
+client@顾客
 collègue@同事
 comprendre@理解，明白
 côté@旁，侧
@@ -212,7 +212,7 @@ par@用
 passer@到...去；度过
 passeport@护照
 payer@支付
-petit, e@小的
+petit@小的
 pièce@证件；房间
 plaisanter@开玩笑
 plaisanterie@玩笑
@@ -221,10 +221,10 @@ pourquoi@为什么
 préférer@更喜欢
 premier@第一的
 première@第一的
-pressé, e@匆忙
+pressé@匆忙
 problème@问题
 quand@当...时候
-remplaçant, e@替代者
+remplaçant@替代者
 rendez-vous@约会
 retard@迟到
 être en retard@迟到
@@ -247,7 +247,7 @@ allô@interj.#喂
 anniversaire@n.m.#生日
 après@prép#在…之后
 arriver@到达
-beau, belle @美丽的
+beau@美丽的
 beaucoup@很多，非常
 bien@的确，确定（用于强调肯定语气）
 bientôt@马上，不久
@@ -255,7 +255,7 @@ bouquet@（花）束
 boutique@店铺
 bravo@好！真棒！
 bureau@办公桌
-charmant, e@充满魅力的
+charmant@充满魅力的
 contre@反对；冲着
 courrier@邮件
 découvrir@发现
@@ -264,7 +264,7 @@ dépêcher@赶紧，赶快
 encore@还有
 entrer@进来
 espérer@希望
-fâche, e@生气的
+fâche@生气的
 fleur@花
 fleuriste@花商
 gâteau@蛋糕
@@ -276,15 +276,15 @@ hésiter à + inf.@对做某事犹豫不决
 heureusement@幸亏
 idée@想法，主意
 inséparable@不可分离的
-joyeux, se@快乐的
+joyeux@快乐的
 lettre@信
 lever@举起
-méchant, e@恶意的
+méchant@恶意的
 mériter@配得上
 offrir@赠送，提供
 ordinateur@计算机，电脑
 parfois@有时
-patient, e@耐心的
+patient@耐心的
 poser@放
 prendre@拿
 qualité@优点
@@ -464,7 +464,7 @@ casque@头盔
 cause@原因
 à cause de@因为
 centre@中心
-cher, ère@昂贵的
+cher@昂贵的
 circulation@交通
 combien@多少
 commun@公共的
