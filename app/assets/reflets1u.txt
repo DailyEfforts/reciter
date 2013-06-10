@@ -1,242 +1,235 @@
 ﻿total=241
-accord@n.m.#同意
-d'accord@loc.adv.#同意
-agence@n.f.#代理处
+accord@同意
+d'accord@同意
+agence@代理处
 agence de voyages@旅行社
 amusant, e@有趣的
-*arrondissement@n.m.#行政区；(法国大城市的)区
-*assis, e@adj.#坐着的
-aussi@adv.#还，此外
-bon@interj.#好
+arrondissement@行政区；(法国大城市的)区
+assis, e@坐着的
+aussi@还，此外
+bon@好
 Ah bon!@真的！(表示惊奇)
-chanteur, se@n.#歌手，歌唱家
-chez@prép.#在…家，在…那儿
-comme@adv.exclam.#真是在…了；多么
-*content, e@adj.#高兴的
-dans@prép.#在…里面
-de@prép.#表示所属关系或引导名词补语
-employé, e@n.#职员
-enchanté, e@adj.#荣幸的，高兴的
-enfin@adv.#最后；终于；其实(用于明确或更正前面说的话)
-*entrer@v.i.#进入(il entre)
-*fille@n.f.#女孩
-*garçon@n.m.#男孩
-habiter@v.t.#居住(j'habite)
-ici@adv.#这儿
-*immeuble@n.m.#楼房
-joli, e@adj.#漂亮的
-locataire@n.#房屋承租人
-mademoiselle@n.f. (pl. mesdemoiselles)#小姐
-maintenant@adv.#现在
-mais@adv.#但是
-mannequin@n.m.#模特
-monsieur@n.m.(pl. messieurs)#先生(缩写为M.)
-*montrer@v.t.#只是(人或物)(il montre)
-nationalité@n.f.#国籍
-nom@n.m.#姓
-nouveau, nouvelle@adj.(pl. nouveaux)#新的
-*parler@v.i.#说话(il parle)
-*personnage@n.m.#(故事或影片中的)人物
-*porte@n.f.#门
-*poser@v.t.#提出(il pose)
-prénom@n.m.#名字
-quel, le@adj. interr.#哪一类的；什么样的
-*question@n.f.#问题
-quoi@pron.interr.#什么(que的重读形式)
-*raccompagner@v.t.#送(某人)到(il raccompagne)
-*(se)regarder@v.pr.#互相看(il se regardent)
-revoir@v.t.#再次看见
+chanteur, se@歌手，歌唱家
+chez@在…家，在…那儿
+comme@真是在…了；多么
+content, e@高兴的
+dans@在…里面
+de@表示所属关系或引导名词补语
+employé, e@职员
+enchanté, e@荣幸的，高兴的
+enfin@最后；终于；其实(用于明确或更正前面说的话)
+entrer@进入(il entre)
+fille@女孩
+garçon@男孩
+habiter@居住(j'habite)
+ici@这儿
+immeuble@楼房
+joli, e@漂亮的
+locataire@房屋承租人
+mademoiselle@小姐
+maintenant@现在
+mais@但是
+mannequin@模特
+monsieur@先生(缩写为M.)
+montrer@只是(人或物)(il montre)
+nationalité@国籍
+nom@姓
+nouveau, nouvelle@新的
+parler@说话(il parle)
+personnage@(故事或影片中的)人物
+porte@门
+poser@提出(il pose)
+prénom@名字
+quel, le@哪一类的；什么样的
+question@问题
+quoi@什么(que的重读形式)
+raccompagner@送(某人)到(il raccompagne)
+regarder@互相看(il se regardent)
+revoir@再次看见
 Au revoir.@再见。(礼貌用语，用于告别)
-*salon@n.m.#客厅
-*(se)saluer@v.pr.#相互问候，相互打招呼(ils se saluent) 
-*sonner@v.i.#按门铃(il sonne)
-*sourire@v.i.#微笑(ils sourient)
-sûr, e@adj.#肯定的
-sympa@adj.#好相处的，热情的
-sympathique@adj.#好相处的，热情的
-travailler@v.i.#工作，劳动(je travaille)
-vrai, e@adj.#真实的
-vraiment@adv.#真正地
-âge@n.m.#年龄
-air@n.m.#申请
+salon@客厅
+saluer@相互问候，相互打招呼(ils se saluent) 
+sonner@按门铃(il sonne)
+sourire@微笑(ils sourient)
+sûr, e@肯定的
+sympa@好相处的，热情的
+sympathique@好相处的，热情的
+travailler@工作，劳动(je travaille)
+vrai, e@真实的
+vraiment@真正地
+âge@年龄
+air@申请
 avoir l'air@看起来，好像
-alors@adv.#那么
-*amical, e@adj.#(pl. amicaux)友好的
-*amusé, e@adj.兴致勃勃的
-an@n.m.#年；岁，年龄
-appartement@n.m.#公寓
-arrêter@v.i.#停止，停下
-aujourd'hui@adv.#今天
-aussi@adv.#也，同样
-*autre@adj.#另外的，别的
-bien@adv.#好
-bon, ne@adj.#好的
+alors@那么
+amical, e@(pl. amicaux)友好的
+amusé, e@adj.兴致勃勃的
+an@年；岁，年龄
+appartement@公寓
+arrêter@停止，停下
+aujourd'hui@今天
+aussi@也，同样
+autre@另外的，别的
+bien@好
+bon, ne@好的
 ça@pron.dém.@这个，那个
 Ça va ?@你好吗？
 C'est ça.@是这样。
-chacun, e@pron.indéf.#每个人
-chambre@n.f.#房间
-chercher@v.t.#寻找（il cherche）
-chose@n.f.#事物，东西
-comme@conj.#像…一样
-connaître@v.t#认识
-continuer@v.t.#继续（vous continuez）
-*couloir@n.m.#走廊 
-cuisine@n.f.#厨房；烹饪
-cuisinier@n.#厨师
-cuisinière@n.#厨师
+chacun, e@每个人
+chambre@房间
+chercher@寻找
+chose@事物，东西
+comme@像…一样
+connaître@认识
+continuer@继续
+couloir@走廊 
+cuisine@厨房；烹饪
+cuisinier@厨师
+cuisinière@厨师
 cuisinier en  chef@厨师长
-difficile@adj.#困难的
-*embrasser@v.t.#吻，拥吻
-excuser@v.t.#原谅
+difficile@困难的
+embrasser@吻，拥吻
+excuser@原谅
 Excuse(z)-moi.@请你原谅我
-faim@n.f.#饥饿
+faim@饥饿
 avoir faim@饿
-femme@n.f.#女人；妻子
-garçon@n.m.#男孩
-gentil, le@adj.#亲切的，客气的
-*geste@n.m.#手势
-grand@adj.#大的，宽的
-grande@adj.#大的，宽的
-hein@interj.#嗯
-heure@n.f.#小时；点钟；时间
-heureux@adj.#幸福的
-heureusement@adv.#幸运，幸而
+femme@女人；妻子
+garçon@男孩
+gentil, le@亲切的，客气的
+geste@手势
+grand@大的，宽的
+grande@大的，宽的
+hein@嗯
+heure@小时；点钟；时间
+heureux@幸福的
+heureusement@幸运，幸而
 être  heureux  de  + inf.@很高兴做某事
-homme@n.m.#男人，男子
-*intérieur@n.m.#里面
-là@adv.#那里；这里
-maman@n.f.#妈妈
-manger@v.t.#吃（on manger）
-même@adj.indéf#相同的，一样的
-ménage@n.m.#家务
+homme@男人，男子
+intérieur@里面
+là@那里；这里
+maman@妈妈
+manger@吃
+même@相同的，一样的
+ménage@家务
 femme de ménage@女佣
-mère@n.f.#母亲
-ou@conj.#或者，还是
-*ouvrir@v.t.#打开（il ouvre）
-*(s')ouvrir@v.p.r.#被打开（il s'ouvre）
-papa@n.m#爸爸
-*parents@n.m.pl.#父母
-*partir@v.i.#出发，离开（il part，ils partent）
-père@n.m.#父亲
-peut-être@adv.#或许，可能
-pour@prép#至于
-présenter@v.t.#介绍（je présente）
-quartier@n.m.#街区，一带
-raison@n.f.#道理，清理
+mère@母亲
+ou@或者，还是
+ouvrir@打开
+(s')ouvrir@被打开
+papa@爸爸
+parents@父母
+partir@出发，离开
+père@父亲
+peut-être@或许，可能
+pour@至于
+présenter@介绍
+quartier@街区，一带
+raison@道理，清理
 avoir raison@有道理
-rangé@adj.#整齐的，井井有条的
-rangée@adj.#整齐的，井井有条的
-repas@n.m.#饮食，餐
-*refermer@v.t.#再关上（il referme）
-*repasser@v.t.#熨，烫（il repasse）
-restaurant@n.m.#餐馆
-reste@n.m.#其他
-*rester@v.i.#待，停留（il reste）
-*rire@n.m.#笑
-samedi@n.m.#星期六
-sérieux@adj.#认真的
-sérieuse@adj.#认真的
-seul, e@adj.#单独的
-soif@n.f.#渴
+rangé@整齐的，井井有条的
+rangée@整齐的，井井有条的
+repas@饮食，餐
+refermer@再关上
+repasser@熨，烫
+restaurant@餐馆
+reste@其他
+rester@待，停留
+rire@笑
+samedi@星期六
+sérieux@认真的
+sérieuse@认真的
+seul, e@单独的
+soif@渴
 avoir soif@口渴
-sûrement@adv.#肯定地
-*surpris@adj.#吃惊的，惊讶的
-*surprise@adj.#吃惊的，惊讶的
-tour@n.m.#轮流，轮班
-travail@n.m.#工作
-très@adv.#非常
-venir@v.i.#来（vous venez）
-visiter@v.t.#参观（on visite）
-voilà@prép#这是，这就是
-adorable@adj.#可爱的
-adorer@v.t.#喜爱
-aide@n.f.#帮助
-aider@v.t.#帮助
-ajouter@v.t.#增加
-aller@v.i.#去
-à propos@loc.adv.#对啦，想起来啦
-*(s')asseoir@v.pr.#坐下
-avant@prép.#在...之前
+sûrement@肯定地
+surpris@吃惊的，惊讶的
+surprise@吃惊的，惊讶的
+tour@轮流，轮班
+travail@工作
+très@非常
+venir@来
+visiter@参观
+voilà@这是，这就是
+adorable@可爱的
+adorer@喜爱
+aide@帮助
+aider@帮助
+ajouter@增加
+aller@去
+à propos@对啦，想起来啦
+(s')asseoir@坐下
+avant@在...之前
 avant de +inf.@在做某事之前
-avec@prép.#和...在一起
-avril@n.m.#四月
-bancaire@adj.#银行的
-banque@n.f.#银行
-besoin@n.m.#需要
+avec@和...在一起
+avril@四月
+bancaire@银行的
+banque@银行
+besoin@需要
 avoir besoin de @需要
-bien sûr@loc.adv.#当然
-bienvenue @n.f.#欢迎
-billet@n.m.#机票，火车票
-bureau@n.m#（pl. ~x）办公室；办公桌
-café@n.m.#咖啡
-carte@n.f.#卡
-chèque@n.m.#支票
-chut@interj.#嘘！
-classe@n.f.#等级
-client, e@n.#顾客
-collègue@n.#同事
-comprendre@v.t.#理解，明白（vous comprenez）
-côté@n.m.#旁，侧
-à côté@loc.adv.#在旁边
-déjà@adv.#已经
-demander@v.t.#要求
-*derrière@prép.#在...后面
-écouter@v.t.#听
-emmener@v.t.#带（人）去（j'emmène ）
-*énervé@adj.#恼火的
-*énervée@adj.#恼火的 
-*ensemble@adv.#一起
-escale@n.f.#（飞机）中途停靠
-euro@n.m.#欧元
-franc@n.m.#法郎
-*frapper@v.t.ind.#敲，打
+bien sûr@当然
+bienvenue @欢迎
+billet@机票，火车票
+bureau@办公室；办公桌
+café@咖啡
+carte@卡
+chèque@支票
+chut@嘘！
+classe@等级
+client, e@顾客
+collègue@同事
+comprendre@理解，明白
+côté@旁，侧
+à côté@在旁边
+déjà@已经
+demander@要求
+derrière@在...后面
+écouter@听
+emmener@带（人）去
+énervé@恼火的
+énervée@恼火的 
+ensemble@一起
+escale@（飞机）中途停靠
+euro@欧元
+franc@法郎
+frapper@敲，打
 frapper à là porte@敲门
-Genêve@n.pr.#日内瓦
-identité@n.f.#身份
-incroyable@adj.#令人难以置信的
-jeune@adj.#年轻的
-journée@n.f.#一天
-là-bas@adv.#那边
-*(se) lever@v.pr.#站起来（il se lève ）
-Londres@n.pr.#伦敦
-machine@n.f.#机器
-*main@n.f.#手
-maison@n.f.#家；公司
-matin@n.m.#早晨
+Genêve@日内瓦
+identité@身份
+incroyable@令人难以置信的
+jeune@年轻的
+journée@一天
+là-bas@那边
+lever@站起来
+Londres@伦敦
+machine@机器
+main@手
+maison@家；公司
+matin@早晨
 ce matin@今天早晨
-merci@n.m.#谢谢
-obligatoire@adj.#必须的
-où@adv.interr.#哪里
-par@prép.#用
+merci@谢谢
+obligatoire@必须的
+où@哪里
+par@用
 passer@到...去；度过
-passeport@n.m.#护照
-payer@v.t.#支付
-petit, e@adj.#小的
-pièce@n.f.#证件；房间
-plaisanter@v.i.#开玩笑
-plaisanterie@n.f.#玩笑
-pour@prép.#为了
-pourquoi@adv.interr.#为什么
-préférer@v.t.#更喜欢（je préfère）
-premier@adj.#第一的
-première@adj.#第一的
-pressé, e@adj#匆忙
-problème@n.m.#问题
-quand@conj.#当...时候
-remplaçant, e@n.#替代者
-rendez-vous@n.m.#约会
-retard@n.m.#迟到
+passeport@护照
+payer@支付
+petit, e@小的
+pièce@证件；房间
+plaisanter@开玩笑
+plaisanterie@玩笑
+pour@为了
+pourquoi@为什么
+préférer@更喜欢
+premier@第一的
+première@第一的
+pressé, e@匆忙
+problème@问题
+quand@当...时候
+remplaçant, e@替代者
+rendez-vous@约会
+retard@迟到
 être en retard@迟到
-soir@n.m.#晚上
-souhaiter@v.t.#祝愿
-toujours@adv.#一直，总是
-(se)tutoyer@v.pr.#喜欢用“你”称呼
-une influence@影响
-une sorte@种类
-le boulevard@大街
-le poster@海报
-station@车站
-baiser@吻，接吻
-baisser@放下
-tigre@老虎
+soir@晚上
+souhaiter@祝愿
+toujours@一直，总是
+tutoyer@喜欢用“你”称呼
+
