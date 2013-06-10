@@ -98,15 +98,6 @@ public class UpdateConfirm extends Activity {
 			mDownloadingProgressDialog.setMax(size);
 
 			// mDownloadingProgressDialog.setButton(
-			// DialogInterface.BUTTON_NEGATIVE,
-			// getText(android.R.string.no),
-			// new DialogInterface.OnClickListener() {
-			// public void onClick(DialogInterface dialog,
-			// int whichButton) {
-			//
-			// /* User clicked No so do some stuff */
-			// }
-			// });
 			mDownloadingProgressDialog.setProgressNumberFormat("%d KB");
 			mDownloadingProgressDialog
 					.setOnShowListener(new DialogInterface.OnShowListener() {

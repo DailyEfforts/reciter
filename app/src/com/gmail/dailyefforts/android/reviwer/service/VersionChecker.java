@@ -1,7 +1,5 @@
 package com.gmail.dailyefforts.android.reviwer.service;
 
-import java.io.File;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,7 +11,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Environment;
 import android.util.Log;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
@@ -142,14 +139,6 @@ public class VersionChecker extends IntentService {
 			}
 
 			if (newVersion.code > currentVersionCode && currentVersionCode > 0) {
-				/*
-				 * File apk =
-				 * DownloadHelper.downloadApkFile(Config.REMOTE_APK_FILE_URL);
-				 * 
-				 * if (FileChecker.isValid(apk, newVersion.md5)) { //
-				 * re-download apk =
-				 * DownloadHelper.downloadApkFile(Config.REMOTE_APK_FILE_URL); }
-				 */
 				launchUpdatePrompt(newVersion);
 			}
 		} else {
