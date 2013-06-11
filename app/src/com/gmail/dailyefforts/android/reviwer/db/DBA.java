@@ -43,7 +43,7 @@ public class DBA extends SQLiteOpenHelper {
 			+ "("
 			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
 			+ WORD_WORD
-			+ " TEXT UNIQUE, "
+			+ " TEXT, "
 			+ WORD_MEANING
 			+ " TEXT, "
 			+ WORD_SAMPLE
@@ -57,7 +57,7 @@ public class DBA extends SQLiteOpenHelper {
 			+ "("
 			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
 			+ WORD_WORD
-			+ " TEXT UNIQUE, "
+			+ " TEXT, "
 			+ WORD_MEANING
 			+ " TEXT, "
 			+ WORD_SAMPLE
@@ -72,7 +72,7 @@ public class DBA extends SQLiteOpenHelper {
 			+ "("
 			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
 			+ WORD_WORD
-			+ " TEXT UNIQUE, "
+			+ " TEXT, "
 			+ WORD_MEANING
 			+ " TEXT, "
 			+ WORD_SAMPLE
@@ -87,7 +87,7 @@ public class DBA extends SQLiteOpenHelper {
 			+ "("
 			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
 			+ WORD_WORD
-			+ " TEXT UNIQUE, "
+			+ " TEXT, "
 			+ WORD_MEANING
 			+ " TEXT, "
 			+ WORD_SAMPLE
@@ -102,7 +102,7 @@ public class DBA extends SQLiteOpenHelper {
 			+ "("
 			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
 			+ WORD_WORD
-			+ " TEXT UNIQUE, "
+			+ " TEXT, "
 			+ WORD_MEANING
 			+ " TEXT, "
 			+ WORD_SAMPLE
@@ -117,7 +117,7 @@ public class DBA extends SQLiteOpenHelper {
 			+ "("
 			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
 			+ WORD_WORD
-			+ " TEXT UNIQUE, "
+			+ " TEXT, "
 			+ WORD_MEANING
 			+ " TEXT, "
 			+ WORD_SAMPLE
