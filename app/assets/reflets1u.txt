@@ -1,9 +1,10 @@
-﻿total=865
+﻿total=867
 accord@同意
 d'accord@同意
 agence@代理处
 agence de voyages@旅行社
 amusant@有趣的
+amusante@有趣的
 arrondissement@行政区；区
 assis@坐着的
 aussi@还，此外
@@ -13,6 +14,7 @@ chanteur@歌手，歌唱家
 chez@在…家，在…那儿
 comme@真是在…了；多么
 content@高兴的
+contente@高兴的
 dans@在…里面
 de@表示所属关系或引导名词补语
 employé@职员
@@ -48,7 +50,7 @@ regarder@互相看
 revoir@再次看见
 Au revoir.@再见。
 salon@客厅
-saluer@相互问候，相互打招呼 
+saluer@相互问候，相互打招呼
 sonner@按门铃
 sourire@微笑
 sûr@肯定的
@@ -71,8 +73,8 @@ aussi@也，同样
 autre@另外的，别的
 bien@好
 bon@好的
-ça@pron.dém.@这个，那个
-Ça va ?@你好吗？
+ça@这个，那个
+Ça va?@你好吗？
 C'est ça.@是这样。
 chacun@每个人
 chambre@房间
@@ -81,11 +83,11 @@ chose@事物，东西
 comme@像…一样
 connaître@认识
 continuer@继续
-couloir@走廊 
+couloir@走廊
 cuisine@厨房；烹饪
 cuisinier@厨师
 cuisinière@厨师
-cuisinier en  chef@厨师长
+cuisinier en chef@厨师长
 difficile@困难的
 embrasser@吻，拥吻
 excuser@原谅
@@ -102,7 +104,7 @@ hein@嗯
 heure@小时；点钟；时间
 heureux@幸福的
 heureusement@幸运，幸而
-être  heureux  de  + inf.@很高兴做某事
+être heureux de + inf.@很高兴做某事
 homme@男人，男子
 intérieur@里面
 là@那里；这里
@@ -185,7 +187,7 @@ derrière@在...后面
 écouter@听
 emmener@带（人）去
 énervé@恼火的
-énervée@恼火的 
+énervée@恼火的
 ensemble@一起
 escale@（飞机）中途停靠
 euro@欧元
@@ -269,7 +271,7 @@ fleur@花
 fleuriste@花商
 gâteau@蛋糕
 gêne@不好意思的，尴尬的
-gens@人们@
+gens@人们
 grave@严重的
 hésiter@犹豫，迟疑
 hésiter à + inf.@对做某事犹豫不决
@@ -290,8 +292,8 @@ prendre@拿
 qualité@优点
 quand@什么时候
 remercier@感谢
-Je te remercie !@谢谢你！
-responsible @负责人
+Je te remercie!@谢谢你！
+responsible@负责人
 santé@健康
 secrétaire@秘书
 service@部门
@@ -310,16 +312,16 @@ aborder@靠近某人与其攀谈
 activité@活动
 admiratif@仰慕的，钦佩的
 aller@去
-apprendre@学习@
+apprendre@学习
 approcher@走近，靠近
 campagne@乡村
 chose@东西，事物
 cinéma@电影；电影院
 courage@勇气
-Bon courage !@加油！
+Bon courage!@加油！
 cours@课
 course@购物
-faire des courses@购物@
+faire des courses@购物
 cuisine@烹饪
 faire la cuisine@做饭，做菜
 décourager@泄气
@@ -355,13 +357,13 @@ marcher@行走
 mari@丈夫
 minute@分钟
 mois@月
-musée @博物馆
+musée@博物馆
 musique@音乐
 natation@游泳
 part@份儿，部分
 à part@除了…之外
 passant@路人
-passante@路人@
+passante@路人
 passer@经过
 passionnant@动人的
 peinture@绘画
