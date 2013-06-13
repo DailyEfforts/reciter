@@ -13,7 +13,7 @@ import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 public class TestReportsProvider extends ContentProvider {
 	private DBA dba;
 	private static final String AUTHORITY = "com.gmail.dailyefforts.android.reviwer.testreport";
-	private static final String BASE_PATH = DBA.CURRENT_TEST_REPORT_TABLE; // testreport
+	private static final String BASE_PATH = DBA.CURRENT_TEST_REPORT_TABLE; // Test report
 	public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY
 			+ "/" + BASE_PATH);
 	private static final String TAG = TestReportsProvider.class.getSimpleName();
@@ -30,7 +30,7 @@ public class TestReportsProvider extends ContentProvider {
 	@Override
 	public Cursor query(Uri uri, String[] projection, String selection,
 			String[] selectionArgs, String sortOrder) {
-		// Uisng SQLiteQueryBuilder instead of query() method
+		// Use SQLiteQueryBuilder instead of query() method
 		SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
 
 		// Set the table
@@ -46,13 +46,11 @@ public class TestReportsProvider extends ContentProvider {
 
 	@Override
 	public String getType(Uri uri) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

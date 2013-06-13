@@ -190,11 +190,9 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 				|| mBtnOptionTopRight == null || mBtnOptionBottomLeft == null
 				|| mBtnOptionBottomRight == null || mBtnArrowLeft == null
 				|| mBtnArrowRight == null || mPaper == null) {
-			// TODO: handle error here.
+			Log.e(TAG, "onCreate null pointer");
 			finish();
 		}
-		animation = AnimationUtils.loadAnimation(getApplicationContext(),
-				R.anim.shake);
 
 		mBtnArrowLeft.setOnClickListener(this);
 		mBtnArrowRight.setOnClickListener(this);
@@ -234,6 +232,9 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		mBtnCurrentWord.setOnDragListener(this);
 
 		mDBA = DBA.getInstance(getApplicationContext());
+		
+		animation = AnimationUtils.loadAnimation(getApplicationContext(),
+				R.anim.shake);
 
 		mDbCount = mDBA.getCount();
 
@@ -242,6 +243,10 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		mOptList.add(mBtnOptionTopRight);
 		mOptList.add(mBtnOptionBottomLeft);
 		mOptList.add(mBtnOptionBottomRight);
+		
+		for (Button btn : mOptList) {
+			btn.setOnClickListener(this);
+		}
 
 		Resources res = getResources();
 
@@ -506,41 +511,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			if (v.getId() == mBtnCurrentWord.getId()) {
 				mBtnCurrentWord.setVisibility(View.VISIBLE);
 			} else {
-				if (pageMap != null) {
-					Word word = pageMap.get(v.getId());
-					if (word != null) {
-						String w = word.getWord();
-						String m = word.getMeaning();
-						if (Debuger.DEBUG) {
-							Log.d(TAG, "onDrag() w: " + w + ", m: " + m);
-						}
-
-						if (mWord != null) {
-							if (v instanceof Button) {
-								Button btn = (Button) v;
-								if (mWord.equals(w)) {
-									btn.setTextColor(mColorBingon);
-									if (mAutoForwardHandler != null) {
-										mAutoForwardHandler
-												.sendEmptyMessageDelayed(
-														AutoForwardHandler.MSG_MOVE_ON,
-														TIME_DELAY_TO_AUTO_FORWARD);
-									}
-									mBingo = true;
-									mDBA.setPast(mWord);
-								} else {
-									btn.setTextColor(mColorError);
-									if (mDBA != null) {
-										mDBA.star(mWord);
-									}
-								}
-								btn.setText(m + "\n" + w);
-								btn.setEnabled(false);
-							}
-						}
-					}
-				}
-				v.clearAnimation();
+				judge(v);
 			}
 			break;
 		case DragEvent.ACTION_DRAG_ENDED:
@@ -561,6 +532,48 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		}
 	}
 
+	private void judge(View v) {
+		if (pageMap != null) {
+			Word word = pageMap.get(v.getId());
+			if (word != null) {
+				String w = word.getWord();
+				String m = word.getMeaning();
+				if (Debuger.DEBUG) {
+					Log.d(TAG, "onDrag() w: " + w + ", m: " + m);
+				}
+
+				if (mWord != null) {
+					if (v instanceof Button) {
+						Button btn = (Button) v;
+						if (mWord.equals(w)) {
+							btn.setTextColor(mColorBingon);
+							autoForward();
+							mBingo = true;
+							mDBA.setPast(mWord);
+						} else {
+							btn.setTextColor(mColorError);
+							if (mDBA != null) {
+								mDBA.star(mWord);
+							}
+						}
+						btn.setText(w + "\n" + m);
+						btn.setEnabled(false);
+					}
+				}
+			}
+		}
+		v.clearAnimation();
+	}
+
+	private void autoForward() {
+		if (mAutoForwardHandler != null) {
+			mAutoForwardHandler
+					.sendEmptyMessageDelayed(
+							AutoForwardHandler.MSG_MOVE_ON,
+							TIME_DELAY_TO_AUTO_FORWARD);
+		}
+	}
+
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -569,6 +582,12 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			break;
 		case R.id.btn_drop_arrow_right:
 			forward();
+			break;
+		case R.id.btn_drop_meaning_top_left:
+		case R.id.btn_drop_meaning_top_right:
+		case R.id.btn_drop_meaning_bottom_left:
+		case R.id.btn_drop_meaning_bottom_right:
+			judge(v);
 			break;
 		}
 	}

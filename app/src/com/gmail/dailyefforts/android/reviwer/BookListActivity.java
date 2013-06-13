@@ -32,6 +32,13 @@ public class BookListActivity extends ListActivity implements OnClickListener {
 				android.R.layout.simple_list_item_1, books);
 		setListAdapter(adapter);
 
+		findViewsAndSetListeners();
+
+		setTitle(R.string.book_list);
+		launchVersionChecker();
+	}
+
+	private void findViewsAndSetListeners() {
 		mBtnExit = (Button) findViewById(R.id.btn_exit);
 		mBtnSettings = (Button) findViewById(R.id.btn_settings);
 
@@ -42,9 +49,6 @@ public class BookListActivity extends ListActivity implements OnClickListener {
 		if (mBtnSettings != null) {
 			mBtnSettings.setOnClickListener(this);
 		}
-
-		setTitle(R.string.book_list);
-		launchVersionChecker();
 	}
 
 	private void launchVersionChecker() {

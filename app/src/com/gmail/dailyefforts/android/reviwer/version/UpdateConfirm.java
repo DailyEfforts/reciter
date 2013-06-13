@@ -131,7 +131,7 @@ public class UpdateConfirm extends Activity {
 	public static class DownLoadTask extends AsyncTask<Uri, Integer, File> {
 
 		private static final int ONE_KB = 1024;
-		private static final String TAG = null;
+		private static final String TAG = DownLoadTask.class.getSimpleName();
 
 		private Activity mActivity;
 
@@ -149,25 +149,27 @@ public class UpdateConfirm extends Activity {
 			}
 			if (apkFile != null && apkFile.exists()
 					&& FileChecker.isValid(apkFile, MD5_SUM)) {
-				Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-				intent.setData(Uri.fromFile(apkFile));
-				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				// startActivity(intent);
-
-				if (mActivity != null) {
-					mDownloadingProgressDialog.dismiss();
-					// mActivity.startActivity(intent);
-					mActivity.startActivityForResult(intent,
-							INTENT_START_APK_INSTALLER_REQUEST_CODE);
-				} else {
-					Log.e(TAG, "onPostExecute() context it null: " + mActivity);
-				}
+				launchApkInstaller(apkFile);
 			} else {
 				if (mActivity != null) {
 					Toast.makeText(mActivity.getApplicationContext(),
 							"Download failed, please try again later.",
 							Toast.LENGTH_SHORT).show();
 				}
+			}
+		}
+
+		private void launchApkInstaller(File apkFile) {
+			Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
+			intent.setData(Uri.fromFile(apkFile));
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+			if (mActivity != null) {
+				mDownloadingProgressDialog.dismiss();
+				mActivity.startActivityForResult(intent,
+						INTENT_START_APK_INSTALLER_REQUEST_CODE);
+			} else {
+				Log.e(TAG, "onPostExecute() context it null: " + mActivity);
 			}
 		}
 
