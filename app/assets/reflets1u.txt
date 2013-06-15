@@ -64,7 +64,7 @@ air@申请
 avoir l'air@看起来，好像
 alors@那么
 amical@友好的
-amusé@adj.兴致勃勃的
+amusé@兴致勃勃的
 an@年；岁，年龄
 appartement@公寓
 arrêter@停止，停下
@@ -242,12 +242,12 @@ station@车站
 baiser@吻，接吻
 baisser@放下
 tigre@老虎
-acheter@v.t.#购买
-agaçant@adj.#让人烦的
-aimer@v.t.#爱，喜欢
-allô@interj.#喂
-anniversaire@n.m.#生日
-après@prép#在…之后
+acheter@购买
+agaçant@让人烦的
+aimer@爱，喜欢
+allô@喂
+anniversaire@生日
+après@在…之后
 arriver@到达
 beau@美丽的
 beaucoup@很多，非常
