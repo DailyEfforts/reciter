@@ -16,8 +16,8 @@
         android:background="@android:color/transparent"
         android:text="@string/tip_empty"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/holo_green_light"
-        android:textStyle="bold" />
+        android:textColor="@color/holo_blue_bright"
+        android:textSize="30dp" />
 
     <LinearLayout
         android:id="@+id/opt_category"
@@ -25,7 +25,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="6"
         android:orientation="vertical" >
-
     </LinearLayout>
 
 </LinearLayout>
