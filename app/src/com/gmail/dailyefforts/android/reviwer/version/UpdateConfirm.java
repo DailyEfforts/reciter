@@ -155,6 +155,7 @@ public class UpdateConfirm extends Activity {
 					Toast.makeText(mActivity.getApplicationContext(),
 							"Download failed, please try again later.",
 							Toast.LENGTH_SHORT).show();
+					mActivity.removeDialog(DIALOG_DOWNLOADING);
 				}
 			}
 		}

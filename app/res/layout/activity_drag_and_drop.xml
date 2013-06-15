@@ -39,10 +39,12 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@drawable/drag_question_btn_bg"
+        android:minHeight="?android:attr/listPreferredItemHeight"
         android:text="@string/unknown"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/green"
-        android:textIsSelectable="true" />
+        android:textColor="@color/holo_blue_bright"
+        android:textIsSelectable="true"
+        android:textSize="30dp" />
 
     <com.gmail.dailyefforts.android.reviwer.draw.Paper
         android:id="@+id/draw_paper"
@@ -92,7 +94,7 @@
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btn_drop_word"
         android:layout_centerVertical="true"
         android:src="@drawable/btn_arrow_left" />
 
@@ -102,7 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/btn_drop_word"
         android:src="@drawable/btn_arrow_right" />
 
 </RelativeLayout>

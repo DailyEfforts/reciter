@@ -15,7 +15,7 @@ public class CountdownTimerWidgetProvider extends AppWidgetProvider {
 
 	private static final String TAG = CountdownTimerWidgetProvider.class
 			.getSimpleName();
-
+	
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
@@ -49,13 +49,18 @@ public class CountdownTimerWidgetProvider extends AppWidgetProvider {
 			Log.i(TAG, "curent time: "
 					+ Calendar.getInstance().getTimeInMillis());
 
-			int days = Math.round((targetTime - Calendar.getInstance()
-					.getTimeInMillis()) / WidgetConfig.MillSecondsOfDay + 0.5f);
-
-			rv.setTextViewText(R.id.tv_count_down_label, name);
-			rv.setTextViewText(R.id.tv_countdown_days, String.valueOf(days));
-
-			appWidgetManager.updateAppWidget(widgetId, rv);
+			updateKaoyan(appWidgetManager, rv, widgetId, targetTime, name);
 		}
+	}
+
+	private void updateKaoyan(AppWidgetManager appWidgetManager, RemoteViews rv,
+			int widgetId, long targetTime, String name) {
+		int days = Math.round((targetTime - Calendar.getInstance()
+				.getTimeInMillis()) / WidgetConfig.MillSecondsOfDay + 0.5f);
+
+		rv.setTextViewText(R.id.tv_count_down_label, name);
+		rv.setTextViewText(R.id.tv_countdown_days, String.valueOf(days));
+
+		appWidgetManager.updateAppWidget(widgetId, rv);
 	}
 }

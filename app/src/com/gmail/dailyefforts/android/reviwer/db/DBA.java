@@ -19,7 +19,7 @@ import com.gmail.dailyefforts.android.reviwer.word.Word;
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();
 	private static final String DATABASE_NAME = "wot.db";
-	private static final int DATABASE_VERSION = 6;
+	private static final int DATABASE_VERSION = 7;
 	public static final String TABLE_WORD_LIST = "wordlist";
 
 	public static final String TABLE_WORD_LIST_NCE1 = "wordlist_nce1";
@@ -50,7 +50,8 @@ public class DBA extends SQLiteOpenHelper {
 			+ " TEXT, "
 			+ WORD_TIMESTAMP
 			+ " DATETIME, "
-			+ WORD_STAR + " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
+			+ WORD_STAR
+			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
 
 	private static final String CREATE_TABLE_WORD_LIST_NCE1 = "CREATE TABLE IF NOT EXISTS "
 			+ TABLE_WORD_LIST_NCE1
@@ -574,6 +575,7 @@ public class DBA extends SQLiteOpenHelper {
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEST_REPORT);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORD_LIST_REFLETS1U);
 		onCreate(db);
 	}
 
