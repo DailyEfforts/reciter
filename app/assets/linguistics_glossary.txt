@@ -1,0 +1,318 @@
+accent	口音
+accidental gap	偶然空缺
+abbreviation	缩写（法）
+acronym	首字母缩合词
+acoustic phonetics	声学语音学
+actor	动作者，施事者
+adjacency pair	毗邻语对
+affective meaning	情感意义
+affix	词缀
+affricate	破擦音
+age	年龄（因素）
+agglutinating languages	粘着型语言
+agreement maxim	一致准则
+allomorph	语素变体
+allophone	音位变体
+alveolar	齿龈音
+alveolar ridge	齿龈脊
+ambiguity	歧义
+analytic languages	分析型语言
+anaphora	逆指，上指
+antonymy	反义现象
+applied linguistics	应用语言学
+approach	（教学法）原理，路子
+approbation maxim	表扬准则
+arbitrariness	任意性
+articulatory phonetics	发声语音学
+aspirate	送气
+assimilation	同化
+associative meaning	联想意义
+auditory phonetics	听觉语音学
+
+babbling stage	咿呀学语的阶段
+back-channel signal	反馈提示
+back formation	逆向构词法
+behavioral process	行为过程
+bilabial	双唇音
+bilingualism	双语现象
+blending	缩合法
+bound morpheme	粘着语素
+
+casual (style)	随便	
+cataphora	顺指，下指，顶指
+categorization	范畴化
+circumstance	状况，环境
+clipping	截短法
+coda	音节尾
+code-mixing	语码混合
+code model	代码论
+code-switching	语码转换
+cognitive strategy	认知性策略
+cognitive motivation	认知性动机
+coinage	杜撰
+collocative meaning	搭配意义
+communicative competence	交际能力
+complementary antonyms	互补反义词
+complementary distribution	互补分布
+componential analysis	成分分析
+compounding	复合
+connotative meaning	内涵意义
+consultative (style)	磋商
+context	上下文
+continuant	连续音
+contrastive distribution	对立分布
+contrastive analysis	对立分析
+conversation	转类
+cooperative principle	合作原则
+copying	抄写
+creativity	创造性
+creole	克里奥尔语
+cross-association	联想混淆
+cultural transmission	文化传递
+
+deep structure	深层结构
+deixis	指示语
+deletiom	删除
+derivation	派生
+derivational morpheme	派生词素	
+design	设计，构思
+diacritic	变音符
+diachronic study	历时性研究
+dialect	方言
+diphthong	双元音
+discontinuous constituent	非连续成分
+discourse deixis	话语指示语
+displacement	超时空性
+distinctive feature	区别性特征
+duality	二重性
+
+egressive sounds	挤气音，吐气音
+entailment	蕴涵
+environmentalist	环境论者
+eponym	有由来的名词
+error analysis	错误分析
+euphemism	委婉语
+existent	存在物
+existential process	存在过程
+
+field	场，域
+finite	限定语
+flap	闪音
+form class	形式类
+formal (style)	正式
+free morpheme	自由语素
+free variation	自由变体
+fricative	摩擦音
+frozen style	刻板
+functionalist	功能论者
+
+generosity maxim	慷慨准则
+genetic classification	谱系分类法
+glide	音渡，半元音
+glottal	喉音
+glottis	声门
+goal	受词，对象
+gradable antonyms	分级反义词
+
+hard palate	硬腭
+holophrastic stage	单字句阶段
+homonymy	同音/同形异义
+hyponym	下义词
+hyponymy	上下义关系
+
+ideational function	概念功能
+illocutionary act	言外行为
+image schema	思维图式
+immediate constituent	直接成分
+immediate constituent analysis	直接成分分析
+implication	含意；启示
+implicature	含义，隐含
+inclination	意向
+inconsistent	不一致
+Indo-European family	印欧语系
+inferential model	推论模式
+infix	中缀
+inflectional morpheme	屈折次素
+ingressive sounds	吸气音
+insertion	插入
+insertion sequence	插入语列
+instrumental motivation
+integrative motivation
+interchangeability
+interdental
+interference
+interlanguage
+interpersonal function
+intimate (style)
+intonation
+
+labiodental
+language acquisition
+larynx
+lax vowel
+learning strategy
+lexicon
+linguistic relativity
+liquid
+locutionary act
+
+manner of articulation
+mapping
+marked
+material process
+maxim of relevance
+maxim of manner
+maxim of quality
+maxim of quantity
+mental process
+metacognitive strategy
+metafunction
+metalanguage
+minimal pairs
+minimal sets
+modality
+modalization
+mode
+modesty maxim
+modulation
+monophthong
+mood
+morpheme
+morphology
+motivation
+multilingualism
+
+narrow transcription
+nasal
+nasal cavity
+nativist
+natural class
+node
+nucleus
+
+obligation
+onset
+oral cavity
+overgeneralization
+
+palatal
+paradigmatic relation
+paralinguistic communication
+parsing
+participant
+particle movement
+perlocutionary act
+person deixis
+pharynx
+pharyngeal cavity
+phoneme
+phonetic feature
+phonetics
+phonology
+phrase structure rule
+pidgin
+pitch
+place deixis
+place of articulation
+polarity
+politeness principle
+polysemy
+pragmatics
+pre-announcement
+preferred second part
+prefix
+pre-invitation
+pre-request
+pre-sequence
+principle of relevance
+probability
+procedure
+progressive assimilation
+Proto-Indo-European
+prototype
+psycholinguistics
+
+range
+receiver
+reversal opposites
+recursion
+reference
+referential meaning
+reflected meaning
+reflexivity
+regional dialect
+register
+regressive assimilation
+relational process
+replacement
+residue
+reversal antonyms
+rheme
+root
+
+Sapir-Whorf hypothesis
+sayer
+semantics
+sense
+senser
+simplification
+segment
+sibilant
+signified
+singnifier
+social meaning
+sociolect
+sonorant
+source domain
+speech act
+speech sounds
+standard variety
+stem
+stop
+stress
+subcategorization
+subject
+suffix
+superordinates
+suppletive
+suprasegmental features
+syllabus
+sympathy maxim
+synchronic study
+synonymy
+syntactic category
+syntax
+syntagmatic relation
+synthetic languages
+
+taboo
+tact maxim
+target domain
+tautology
+telegraphic speech stage
+tenor
+tense vowel
+textual function
+theme
+time deixis
+tone
+transfer
+transformational-generative grammar
+transition relevance place
+transitivity
+tree diagram
+turn-taking
+two-word stage
+typological classification
+
+underlying structure
+unmarked
+usuality
+uvula
+
+variety
+velar
+velum
+verbal process
+vocal cords
+voicing
