@@ -9,6 +9,8 @@ import java.io.InputStream;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.DownloadManager;
+import android.app.DownloadManager.Request;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -33,11 +35,11 @@ public class UpdateConfirm extends Activity {
 	private String verName;
 	private int size;
 	private String updatePromptTitle;
+	private DownloadManager dMgr;
 	private static String MD5_SUM;
 
 	private static final int DIALOG_DOWNLOAD_YES_NO = 0;
 	private static final int DIALOG_DOWNLOADING = 1;
-	private static final int INTENT_START_APK_INSTALLER_REQUEST_CODE = 0;
 	private static final String TAG = UpdateConfirm.class.getSimpleName();
 	private static ProgressDialog mDownloadingProgressDialog;
 
@@ -61,9 +63,15 @@ public class UpdateConfirm extends Activity {
 	}
 
 	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		finish();
-		return true;
+	protected void onResume() {
+		super.onResume();
+		dMgr = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		dMgr = null;
 	}
 
 	@Override
@@ -78,178 +86,54 @@ public class UpdateConfirm extends Activity {
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog,
 								int whichButton) {
-							showDialog(DIALOG_DOWNLOADING, null);
+							DownloadManager.Request request = new DownloadManager.Request(
+									Uri.parse(Config.REMOTE_APK_FILE_URL));
+							request.setTitle(getString(R.string.app_name));
+							request.setDescription("Downloading the latest Reciter APK file...");
+							request.setAllowedNetworkTypes(Request.NETWORK_WIFI
+									| Request.NETWORK_WIFI);
+							request.setDestinationInExternalPublicDir(
+									Environment.DIRECTORY_DOWNLOADS,
+									Config.APK_NAME);
+							request.setNotificationVisibility(Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+							Log.i(TAG, "Environment.DIRECTORY_DOWNLOADS: "
+									+ Environment.DIRECTORY_DOWNLOADS);
+							Log.i(TAG, Environment.getExternalStorageDirectory().toString());
+							File down = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+							Log.i(TAG, down.getAbsolutePath());
+							
+							File[] list = down.listFiles();
+							if (list != null) {
+								for (File f : list) {
+/*									if (Config.APK_NAME.equals(f.getName())) {
+										Log.i(TAG, "delete old file " + f.delete());
+									}*/
+									if (f.getName().endsWith(".apk")) {
+										Log.i(TAG, "delete old file " + f.delete());
+									}
+								}
+							}
+							  dMgr.enqueue(request);
 						}
 					});
 			builder.setNegativeButton(android.R.string.no,
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog,
 								int whichButton) {
-							finish();
 						}
 					});
 
-			return builder.create();
-		case DIALOG_DOWNLOADING:
-			mDownloadingProgressDialog = new ProgressDialog(this);
-			mDownloadingProgressDialog.setTitle("Downloading...");
-			mDownloadingProgressDialog
-					.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-			mDownloadingProgressDialog.setMax(size);
+			AlertDialog dialog = builder.create();
+			dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
 
-			// mDownloadingProgressDialog.setButton(
-			mDownloadingProgressDialog.setProgressNumberFormat("%d KB");
-			mDownloadingProgressDialog
-					.setOnShowListener(new DialogInterface.OnShowListener() {
-
-						@Override
-						public void onShow(DialogInterface dialog) {
-							new DownLoadTask(UpdateConfirm.this)
-									.execute(Uri.EMPTY);
-						}
-					});
-
-			return mDownloadingProgressDialog;
+				@Override
+				public void onDismiss(DialogInterface dialog) {
+					finish();
+				}
+			});
+			return dialog;
 		}
 		return null;
-	}
-
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (Debuger.DEBUG) {
-			Log.d(TAG, String.format(
-					"onActivityResult() requestCode: %d, resultCode: %d",
-					requestCode, requestCode));
-		}
-		if (requestCode == INTENT_START_APK_INSTALLER_REQUEST_CODE) {
-			if (resultCode == Activity.RESULT_CANCELED) {
-				finish();
-			}
-		}
-	}
-
-	public static class DownLoadTask extends AsyncTask<Uri, Integer, File> {
-
-		private static final int ONE_KB = 1024;
-		private static final String TAG = DownLoadTask.class.getSimpleName();
-
-		private Activity mActivity;
-
-		public DownLoadTask(Activity context) {
-			this.mActivity = context;
-		}
-
-		@Override
-		protected void onPostExecute(File apkFile) {
-			super.onPostExecute(apkFile);
-			if (Debuger.DEBUG) {
-				Log.d(TAG,
-						"onPostExecute()"
-								+ FileChecker.isValid(apkFile, MD5_SUM));
-			}
-			if (apkFile != null && apkFile.exists()
-					&& FileChecker.isValid(apkFile, MD5_SUM)) {
-				launchApkInstaller(apkFile);
-			} else {
-				if (mActivity != null) {
-					Toast.makeText(mActivity.getApplicationContext(),
-							"Download failed, please try again later.",
-							Toast.LENGTH_SHORT).show();
-					mActivity.finish();
-				}
-			}
-		}
-
-		private void launchApkInstaller(File apkFile) {
-			Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-			intent.setData(Uri.fromFile(apkFile));
-			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-			if (mActivity != null) {
-				mDownloadingProgressDialog.dismiss();
-				mActivity.startActivityForResult(intent,
-						INTENT_START_APK_INSTALLER_REQUEST_CODE);
-			} else {
-				Log.e(TAG, "onPostExecute() context it null: " + mActivity);
-			}
-		}
-
-		@Override
-		protected void onProgressUpdate(Integer... values) {
-			super.onProgressUpdate(values);
-
-			if (mDownloadingProgressDialog != null) {
-				mDownloadingProgressDialog.setProgress(values[0]);
-			}
-		}
-
-		@Override
-		protected File doInBackground(Uri... params) {
-			File apk = null;
-
-			InputStream in = DownloadHelper
-					.getInStreamFromUrl(Config.REMOTE_APK_FILE_URL);
-
-			if (in != null) {
-				File dir = new File(Environment.getExternalStorageDirectory(),
-						Config.SDCARD_FOLDER_NAME);
-
-				if (!dir.exists()) {
-					dir.mkdirs();
-				}
-
-				apk = new File(dir, Config.APK_NAME);
-
-				if (apk.exists()) {
-					if (FileChecker.isValid(apk, MD5_SUM)) {
-						// have downloaded the latest apk.
-						return apk;
-					} else {
-						apk.delete();
-					}
-				}
-
-				FileOutputStream fos = null;
-
-				int iKB = 0;
-
-				try {
-					fos = new FileOutputStream(apk);
-					byte[] buf = new byte[ONE_KB];
-					int len = 0;
-					while ((len = in.read(buf)) > 0) {
-						fos.write(buf, 0, len);
-						iKB++;
-						publishProgress(iKB);
-					}
-
-					fos.flush();
-				} catch (FileNotFoundException e) {
-					Log.e(TAG, e.getMessage());
-				} catch (IOException e) {
-					Log.e(TAG, e.getMessage());
-				} finally {
-					if (in != null) {
-						try {
-							in.close();
-						} catch (IOException e) {
-							Log.e(TAG, e.getMessage());
-						}
-					}
-
-					if (fos != null) {
-						try {
-							fos.close();
-						} catch (IOException e) {
-							Log.e(TAG, e.getMessage());
-						}
-					}
-				}
-				return apk;
-			}
-			return null;
-		}
-
 	}
 
 }
