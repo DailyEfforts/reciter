@@ -299,7 +299,6 @@ public class TestPage extends Activity implements OnInitListener,
 			if (mWord.equals(w.getWord())) {
 				if (isFirstTouch) {
 					mBingoNum++;
-					isFirstTouch = false;
 				}
 				if (mWordCounter == map.size()) {
 					showTestReport();
@@ -309,6 +308,9 @@ public class TestPage extends Activity implements OnInitListener,
 			} else {
 				if (dba != null) {
 					dba.star(mWord);
+				}
+				if (isFirstTouch) {
+					isFirstTouch = false;
 				}
 				remember();
 				((Button) v).setText(w.getWord() + "\n" + w.getMeaning());

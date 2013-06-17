@@ -33,7 +33,7 @@
         android:id="@+id/unit_status"
         android:layout_width="9dp"
         android:layout_height="9dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:src="@android:drawable/presence_away" />
 
