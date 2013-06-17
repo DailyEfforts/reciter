@@ -258,10 +258,11 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 
 				if (holder.status != null) {
 					if (dba != null && dba.isPass(tmp.start, tmp.end)) {
-						holder.status.setImageResource(R.drawable.ic_pass);
+						holder.status
+								.setImageResource(android.R.drawable.presence_online);
 					} else {
 						holder.status
-								.setImageResource(R.drawable.ic_waiting_to_pass);
+								.setImageResource(android.R.drawable.presence_away);
 					}
 				}
 			}

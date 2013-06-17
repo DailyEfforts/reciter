@@ -3,7 +3,7 @@
 
     <drawable name="translucent_background">#60000000</drawable>
 
-    <color name="blue">#094AB2</color>
+    <color name="blue">#0000ff</color>
     <color name="dark">#88000000</color>
     <color name="green">#00ff00</color>
     <color name="green_transparent">#0600ff00</color>

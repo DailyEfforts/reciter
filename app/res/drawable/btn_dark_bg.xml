@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/btn_dark_pressed" android:state_pressed="true"><size android:height="@dimen/height_unit_view" />
+    </item>
+     <item android:drawable="@drawable/btn_disable" android:state_enabled="false"><size android:height="@dimen/height_unit_view" />
+    </item>
+    <item android:drawable="@drawable/btn_dark_normal"><size android:height="@dimen/height_unit_view" />
+    </item>
+
+</selector>

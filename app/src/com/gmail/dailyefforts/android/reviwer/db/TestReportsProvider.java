@@ -13,7 +13,8 @@ import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 public class TestReportsProvider extends ContentProvider {
 	private DBA dba;
 	private static final String AUTHORITY = "com.gmail.dailyefforts.android.reviwer.testreport";
-	private static final String BASE_PATH = DBA.CURRENT_TEST_REPORT_TABLE; // Test report
+	private static final String BASE_PATH = DBA.CURRENT_TEST_REPORT_TABLE; // Test
+																			// report
 	public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY
 			+ "/" + BASE_PATH);
 	private static final String TAG = TestReportsProvider.class.getSimpleName();

@@ -22,10 +22,7 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.SoundEffectConstants;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -40,8 +37,8 @@ import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
-public class TestPage extends Activity implements OnTouchListener,
-		OnInitListener {
+public class TestPage extends Activity implements OnInitListener,
+		View.OnClickListener {
 
 	private static final String TAG = TestPage.class.getSimpleName();
 
@@ -169,7 +166,8 @@ public class TestPage extends Activity implements OnTouchListener,
 
 		for (OptionButton tmp : mOptList) {
 			optCat.addView(tmp);
-			tmp.setOnTouchListener(this);
+			// tmp.setOnTouchListener(this);
+			tmp.setOnClickListener(this);
 		}
 
 		Resources res = getResources();
@@ -291,121 +289,70 @@ public class TestPage extends Activity implements OnTouchListener,
 		mWordCounter++;
 	}
 
-	/*
-	 * private String getMeaningByIdx(int idx) { if (idx >= 0 && map != null &&
-	 * idx < map.size()) { return map.get(idx).getMeaning(); } return null; }
-	 */
-
 	@Override
-	public boolean onTouch(View v, MotionEvent event) {
-		boolean returnValue = false;
-		boolean bingGo = false;
-		if (v != null && (v instanceof Button) && event != null) {
-			if (Debuger.DEBUG) {
-				Log.d(TAG, "onTouch() id: " + v.getId());
-				for (int i = 0; i < pageMap.size(); i++) {
-					Log.d(TAG, String.format("onTouch() %d: %s", i, pageMap
-							.get(i).toString()));
-				}
-			}
-			Word w = pageMap.get(v.getId());
-			if (w != null) {
-				if (mWord != null && mWord.equals(w.getWord())) {
-					bingGo = true;
-				}
-			}
-			switch (event.getActionMasked()) {
-			case MotionEvent.ACTION_DOWN:
-				((Button) v).setText(w.getWord() + "\n" + w.getMeaning());
-				if (bingGo) {
-					if (isFirstTouch) {
-						mBingoNum++;
-					}
-				} else {
-					if (isFirstTouch && dba != null && dba.getStar(mWord) <= 0) {
-						dba.star(mWord);
-						if (Debuger.DEBUG) {
-							Log.d(TAG, "onTouch() down: mWord: " + mWord + ", ");
-						}
-					}
-					if (mWrongWordList != null
-							&& !mWrongWordList.contains(mWord)) {
-						mWrongWordList.add(mWord);
-						if (Debuger.DEBUG) {
-							Log.d(TAG, "onTouch() mWord: " + mWord + ", set: "
-									+ mWrongWordList.toString());
-						}
-					}
-					((Button) v).setEnabled(false);
-					if (isFirstTouch) {
-						isFirstTouch = false;
-					}
-				}
-				returnValue = true;
-				break;
-			case MotionEvent.ACTION_UP:
-				((Button) v).playSoundEffect(SoundEffectConstants.CLICK);
-				if (mStartTime == 0) {
-					mStartTime = System.currentTimeMillis();
-				}
-				if (bingGo) {
-					// Tested number: %1$d
-					// Correct number: %2$d
-					// Elapsed time: %3$d
-					// Accuracy rating: %4$d
-					// Database Size: %5$d
-					// You may have mastered:%6$d
-
-					if (mWordCounter == map.size()) {
-						setProgress(Window.PROGRESS_END);
-
-						long elapsedTime = Math.round((System
-								.currentTimeMillis() - mStartTime) / 1000.0);
-						int accuracy = (int) (mBingoNum * 100.0f / mWordCounter);
-
-						if (dba != null) {
-							ContentValues values = new ContentValues();
-							values.put(DBA.TEST_TESTED_NUMBER, mWordCounter);
-							values.put(DBA.TEST_CORRECT_NUMBER, mBingoNum);
-							values.put(DBA.TEST_ELAPSED_TIME, elapsedTime);
-							values.put(DBA.TEST_ACCURACY, accuracy);
-							values.put(DBA.TEST_DB_SIZE, dba.size());
-							values.put(DBA.TEST_TIMESTAMP,
-									System.currentTimeMillis());
-							if (mWrongWordList != null) {
-								Collections.sort(mWrongWordList);
-								values.put(DBA.TEST_WRONG_WORD_LIST,
-										mWrongWordList.toString());
-							}
-							dba.insert(DBA.CURRENT_TEST_REPORT_TABLE, null,
-									values);
-						}
-
-						String message = String
-								.format(mTestReport,
-										mWordCounter,
-										mBingoNum,
-										elapsedTime,
-										accuracy,
-										dba.size(),
-										(int) (dba.size() * (mBingoNum * 1.0f / mWordCounter)));
-						showDialog(getString(R.string.test_report), message);
-
-					} else {
-						buildTestCase(optNum);
-					}
-				} else {
+	public void onClick(View v) {
+		if (!(v instanceof Button)) {
+			return;
+		}
+		Word w = pageMap.get(v.getId());
+		if (w != null && mWord != null) {
+			if (mWord.equals(w.getWord())) {
+				if (isFirstTouch) {
+					mBingoNum++;
 					isFirstTouch = false;
-					((Button) v).setText(w.getMeaning());
 				}
-
-				returnValue = true;
-				break;
-			default:
-				break;
+				if (mWordCounter == map.size()) {
+					showTestReport();
+				} else {
+					buildTestCase(optNum);
+				}
+			} else {
+				if (dba != null) {
+					dba.star(mWord);
+				}
+				remember();
+				((Button) v).setText(w.getWord() + "\n" + w.getMeaning());
+				((Button) v).setEnabled(false);
 			}
 		}
-		return returnValue;
+
+		if (mStartTime == 0) {
+			mStartTime = System.currentTimeMillis();
+		}
+	}
+
+	private void remember() {
+		if (mWrongWordList != null && !mWrongWordList.contains(mWord)) {
+			mWrongWordList.add(mWord);
+		}
+	}
+
+	private void showTestReport() {
+		setProgress(Window.PROGRESS_END);
+
+		long elapsedTime = Math
+				.round((System.currentTimeMillis() - mStartTime) / 1000.0);
+		int accuracy = (int) (mBingoNum * 100.0f / mWordCounter);
+
+		if (dba != null) {
+			ContentValues values = new ContentValues();
+			values.put(DBA.TEST_TESTED_NUMBER, mWordCounter);
+			values.put(DBA.TEST_CORRECT_NUMBER, mBingoNum);
+			values.put(DBA.TEST_ELAPSED_TIME, elapsedTime);
+			values.put(DBA.TEST_ACCURACY, accuracy);
+			values.put(DBA.TEST_DB_SIZE, dba.size());
+			values.put(DBA.TEST_TIMESTAMP, System.currentTimeMillis());
+			if (mWrongWordList != null) {
+				Collections.sort(mWrongWordList);
+				values.put(DBA.TEST_WRONG_WORD_LIST, mWrongWordList.toString());
+			}
+			dba.insert(DBA.CURRENT_TEST_REPORT_TABLE, null, values);
+		}
+
+		String message = String.format(mTestReport, mWordCounter, mBingoNum,
+				elapsedTime, accuracy, dba.size(),
+				(int) (dba.size() * (mBingoNum * 1.0f / mWordCounter)));
+		showDialog(getString(R.string.test_report), message);
 	}
 
 	void showDialog(String title, String message) {

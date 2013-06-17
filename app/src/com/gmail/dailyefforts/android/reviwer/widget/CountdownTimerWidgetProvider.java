@@ -15,7 +15,7 @@ public class CountdownTimerWidgetProvider extends AppWidgetProvider {
 
 	private static final String TAG = CountdownTimerWidgetProvider.class
 			.getSimpleName();
-	
+
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
@@ -53,8 +53,8 @@ public class CountdownTimerWidgetProvider extends AppWidgetProvider {
 		}
 	}
 
-	private void updateKaoyan(AppWidgetManager appWidgetManager, RemoteViews rv,
-			int widgetId, long targetTime, String name) {
+	private void updateKaoyan(AppWidgetManager appWidgetManager,
+			RemoteViews rv, int widgetId, long targetTime, String name) {
 		int days = Math.round((targetTime - Calendar.getInstance()
 				.getTimeInMillis()) / WidgetConfig.MillSecondsOfDay + 0.5f);
 

@@ -16,7 +16,6 @@
             android:layout_gravity="left"
             android:layout_marginRight="6dp"
             android:layout_weight="1"
-            android:background="@drawable/drag_opt_btn_bg"
             android:minHeight="@dimen/activity_drag_drop_opt_mini_height"
             android:text="topLeft"
             android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -38,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:background="@drawable/drag_question_btn_bg"
+        android:background="@drawable/btn_bg"
         android:minHeight="?android:attr/listPreferredItemHeight"
         android:text="@string/unknown"
         android:textAppearance="?android:attr/textAppearanceLarge"

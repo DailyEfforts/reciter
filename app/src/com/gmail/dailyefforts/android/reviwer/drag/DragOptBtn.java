@@ -10,7 +10,7 @@ public class DragOptBtn extends Button {
 
 	public DragOptBtn(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		setBackgroundResource(R.drawable.drag_opt_btn_bg);
+		setBackgroundResource(R.drawable.btn_dark_bg);
 	}
 
 }

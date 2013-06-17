@@ -16,6 +16,7 @@ public class OptionButton extends Button {
 		// TODO Auto-generated constructor stub
 		setTextAppearance(context, android.R.style.TextAppearance_Medium);
 		setTextColor(Color.LTGRAY);
+		setBackgroundResource(R.drawable.btn_dark_bg);
 
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
 				LayoutParams.WRAP_CONTENT);
@@ -40,7 +41,6 @@ public class OptionButton extends Button {
 		}
 
 	}
-
 
 	private OptionButton(Context context, AttributeSet attrs) {
 		super(context, attrs);

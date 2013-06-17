@@ -98,22 +98,23 @@ public class UpdateConfirm extends Activity {
 							request.setNotificationVisibility(Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 							Log.i(TAG, "Environment.DIRECTORY_DOWNLOADS: "
 									+ Environment.DIRECTORY_DOWNLOADS);
-							Log.i(TAG, Environment.getExternalStorageDirectory().toString());
-							File down = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+							Log.i(TAG, Environment
+									.getExternalStorageDirectory().toString());
+							File down = Environment
+									.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 							Log.i(TAG, down.getAbsolutePath());
-							
+
 							File[] list = down.listFiles();
 							if (list != null) {
 								for (File f : list) {
-/*									if (Config.APK_NAME.equals(f.getName())) {
-										Log.i(TAG, "delete old file " + f.delete());
-									}*/
-									if (f.getName().endsWith(".apk")) {
-										Log.i(TAG, "delete old file " + f.delete());
+									if (Config.APK_NAME.equals(f.getName())) {
+										Log.i(TAG,
+												"delete " + f.getAbsolutePath()
+														+ ", " + f.delete());
 									}
 								}
 							}
-							  dMgr.enqueue(request);
+							dMgr.enqueue(request);
 						}
 					});
 			builder.setNegativeButton(android.R.string.no,

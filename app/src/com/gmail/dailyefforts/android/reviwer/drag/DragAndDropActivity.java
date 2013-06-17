@@ -232,7 +232,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		mBtnCurrentWord.setOnDragListener(this);
 
 		mDBA = DBA.getInstance(getApplicationContext());
-		
+
 		animation = AnimationUtils.loadAnimation(getApplicationContext(),
 				R.anim.shake);
 
@@ -243,7 +243,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		mOptList.add(mBtnOptionTopRight);
 		mOptList.add(mBtnOptionBottomLeft);
 		mOptList.add(mBtnOptionBottomRight);
-		
+
 		for (Button btn : mOptList) {
 			btn.setOnClickListener(this);
 		}
@@ -496,9 +496,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			if (v.getId() == mBtnCurrentWord.getId()) {
 				mBtnCurrentWord.clearAnimation();
 				mBtnCurrentWord.setVisibility(View.INVISIBLE);
-			} else {
-				v.clearAnimation();
-				v.startAnimation(animation);
 			}
 			break;
 		case DragEvent.ACTION_DRAG_LOCATION:
@@ -567,10 +564,8 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 	private void autoForward() {
 		if (mAutoForwardHandler != null) {
-			mAutoForwardHandler
-					.sendEmptyMessageDelayed(
-							AutoForwardHandler.MSG_MOVE_ON,
-							TIME_DELAY_TO_AUTO_FORWARD);
+			mAutoForwardHandler.sendEmptyMessageDelayed(
+					AutoForwardHandler.MSG_MOVE_ON, TIME_DELAY_TO_AUTO_FORWARD);
 		}
 	}
 

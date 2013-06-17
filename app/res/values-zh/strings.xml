@@ -42,7 +42,6 @@
     <string name="update_to_latest_version">下载 v%s ?</string>
     <string name="random_test_question_number">随机测试问题数目</string>
     <string name="build_x_question_in_each_test_case">每次随机测试时生成 %s 道题</string>
-    <string name="book_list">书籍列表</string>
     <string name="mot">基础法语词汇</string>
     <string name="nce1">新概念英语（第一册）</string>
     <string name="nce2">新概念英语（第二册）</string>

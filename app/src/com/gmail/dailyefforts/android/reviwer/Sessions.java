@@ -25,7 +25,7 @@ import com.gmail.dailyefforts.android.reviwer.fragment.WordBookFragment;
 public class Sessions extends FragmentActivity implements ActionBar.TabListener {
 
 	private static final String TAG = Sessions.class.getSimpleName();
-	
+
 	SectionsPagerAdapter mSectionsPagerAdapter;
 	/**
 	 * The {@link ViewPager} that will host the section contents.

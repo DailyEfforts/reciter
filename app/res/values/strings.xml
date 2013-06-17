@@ -51,7 +51,6 @@
     <string name="update_to_latest_version">Download v%s ?</string>
     <string name="random_test_question_number">Random test Q number</string>
     <string name="build_x_question_in_each_test_case">Build %s questions in each random test</string>
-    <string name="book_list">BookList</string>
     <string name="mot">Mot</string>
     <string name="nce1">New Concept English (I)</string>
     <string name="nce2">New Concept English (II)</string>
