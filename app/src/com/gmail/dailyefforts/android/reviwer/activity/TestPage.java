@@ -6,12 +6,8 @@ import java.util.Locale;
 import java.util.Random;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -34,6 +30,7 @@ import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
+import com.gmail.dailyefforts.android.reviwer.fragment.TestReportFragment;
 import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
 import com.gmail.dailyefforts.android.reviwer.word.Word;
 
@@ -42,14 +39,14 @@ public class TestPage extends Activity implements OnInitListener,
 
 	private static final String TAG = TestPage.class.getSimpleName();
 
-	private TextView tv;
+	private TextView mTextViewTestingItem;
 
 	private String mWord;
 	private String mMeaning;
 
 	private SparseArray<Word> map;
 
-	private SparseArray<Word> pageMap;
+	private SparseArray<Word> mWordsMeaningsMap;
 
 	private int mBingoNum;
 
@@ -142,7 +139,7 @@ public class TestPage extends Activity implements OnInitListener,
 		requestWindowFeature(Window.FEATURE_PROGRESS);
 		setContentView(R.layout.activity_test_page);
 		setProgressBarVisibility(true);
-		tv = (TextView) findViewById(R.id.tv_word);
+		mTextViewTestingItem = (TextView) findViewById(R.id.tv_word);
 		getActionBar().setDisplayShowTitleEnabled(false);
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
@@ -156,6 +153,19 @@ public class TestPage extends Activity implements OnInitListener,
 		mDbCount = dba.getCount();
 		optCat = (LinearLayout) findViewById(R.id.opt_category);
 		optCat.setWeightSum(optNum);
+
+		Bundle extras = getIntent().getExtras();
+		int testType = extras.getInt(Config.INTENT_EXTRA_TEST_TYPE);
+		switch (testType) {
+		case Config.RANDOM_TEST_ZH:
+		case Config.MY_WORD_TEST_ZH:
+			FLAG = true;
+			mTextViewTestingItem.setTextSize(mTextViewTestingItem.getTextSize() / 2.0f);
+			break;
+		default:
+			FLAG = false;
+			break;
+		}
 
 		mOptList = new ArrayList<OptionButton>();
 
@@ -239,14 +249,19 @@ public class TestPage extends Activity implements OnInitListener,
 
 		mWord = map.get(mWordCounter).getWord();
 		mMeaning = map.get(mWordCounter).getMeaning();
-		tv.setText(mWord);
+		if (FLAG) {
+			mTextViewTestingItem.setText(mMeaning);
+		} else {
+			mTextViewTestingItem.setText(mWord);
+
+		}
 		invalidateOptionsMenu();
 
 		for (Button btn : mOptList) {
 			btn.setEnabled(true);
 		}
 
-		pageMap = new SparseArray<Word>();
+		mWordsMeaningsMap = new SparseArray<Word>();
 
 		// make sure the option is not duplicate.
 		ArrayList<Integer> arrList = new ArrayList<Integer>();
@@ -262,8 +277,12 @@ public class TestPage extends Activity implements OnInitListener,
 		for (int i = 0; i < mOptList.size(); i++) {
 			OptionButton btn = mOptList.get(i);
 			if (i == answerIdx) {
-				btn.setText(mMeaning);
-				pageMap.put(btn.getId(), map.get(mWordCounter));
+				if (FLAG) {
+					btn.setText(mWord);
+				} else {
+					btn.setText(mMeaning);
+				}
+				mWordsMeaningsMap.put(btn.getId(), map.get(mWordCounter));
 			} else {
 
 				int tmp = 0;
@@ -277,8 +296,13 @@ public class TestPage extends Activity implements OnInitListener,
 
 				if (dba != null) {
 					Word word = dba.getWordByIdx(tmp);
-					btn.setText(word.getMeaning());
-					pageMap.put(btn.getId(), word);
+					if (FLAG) {
+						btn.setText(word.getWord());
+					} else {
+						btn.setText(word.getMeaning());
+
+					}
+					mWordsMeaningsMap.put(btn.getId(), word);
 				}
 			}
 		}
@@ -289,12 +313,14 @@ public class TestPage extends Activity implements OnInitListener,
 		mWordCounter++;
 	}
 
+	private boolean FLAG = false;
+
 	@Override
 	public void onClick(View v) {
 		if (!(v instanceof Button)) {
 			return;
 		}
-		Word w = pageMap.get(v.getId());
+		Word w = mWordsMeaningsMap.get(v.getId());
 		if (w != null && mWord != null) {
 			if (mWord.equals(w.getWord())) {
 				if (isFirstTouch) {
@@ -324,8 +350,12 @@ public class TestPage extends Activity implements OnInitListener,
 	}
 
 	private void remember() {
-		if (mWrongWordList != null && !mWrongWordList.contains(mWord)) {
-			mWrongWordList.add(mWord);
+		if (mWrongWordList != null && !mWrongWordList.contains(mWord) && !mWrongWordList.contains(mMeaning)) {
+			if (FLAG) {
+				mWrongWordList.add(mMeaning);
+			} else {
+				mWrongWordList.add(mWord);
+			}
 		}
 	}
 
@@ -354,46 +384,9 @@ public class TestPage extends Activity implements OnInitListener,
 		String message = String.format(mTestReport, mWordCounter, mBingoNum,
 				elapsedTime, accuracy, dba.size(),
 				(int) (dba.size() * (mBingoNum * 1.0f / mWordCounter)));
-		showDialog(getString(R.string.test_report), message);
-	}
-
-	void showDialog(String title, String message) {
-		DialogFragment newFragment = TestReportFragment.newInstance(title,
-				message);
+		DialogFragment newFragment = TestReportFragment.newInstance(
+				getString(R.string.test_report), message);
 		newFragment.show(getFragmentManager(), "dialog");
-	}
-
-	public static class TestReportFragment extends DialogFragment {
-
-		public static TestReportFragment newInstance(String title,
-				String message) {
-			TestReportFragment frag = new TestReportFragment();
-			Bundle args = new Bundle();
-			args.putString("title", title);
-			args.putString("message", message);
-			frag.setArguments(args);
-			return frag;
-		}
-
-		@Override
-		public Dialog onCreateDialog(Bundle savedInstanceState) {
-			String title = getArguments().getString("title");
-			String message = getArguments().getString("message");
-
-			Builder builder = new AlertDialog.Builder(getActivity());
-			builder.setIcon(android.R.drawable.ic_dialog_alert);
-			builder.setTitle(title);
-			builder.setMessage(message);
-			builder.setPositiveButton(android.R.string.ok,
-					new DialogInterface.OnClickListener() {
-
-						@Override
-						public void onClick(DialogInterface dialog, int which) {
-							getActivity().finish();
-						}
-					});
-			return builder.create();
-		}
 	}
 
 	@Override

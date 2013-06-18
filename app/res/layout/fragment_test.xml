@@ -6,11 +6,10 @@
     android:paddingTop="2dp" >
 
     <fragment
-        android:name="com.gmail.dailyefforts.android.reviwer.fragment.TestReportFragment"
+        android:name="com.gmail.dailyefforts.android.reviwer.fragment.TestReportListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/ll_test_option"
-         />
+        android:layout_above="@+id/ll_test_option" />
 
     <LinearLayout
         android:id="@+id/ll_test_option"
@@ -19,37 +18,16 @@
         android:layout_alignParentBottom="true"
         android:divider="?android:attr/dividerHorizontal"
         android:orientation="vertical"
-        android:paddingTop="6dip"
         android:showDividers="beginning" >
 
-        <LinearLayout
-            style="?android:attr/buttonBarStyle"
+        <Button
+            android:id="@+id/btn_start_testing"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="?android:attr/dividerHorizontal"
-            android:orientation="horizontal"
-            android:showDividers="middle" >
-
-            <Button
-                android:id="@+id/btn_test_random"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:minHeight="?android:attr/listPreferredItemHeightSmall"
-                android:text="@string/random"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <Button
-                android:id="@+id/btn_test_my_word_book"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:minHeight="?android:attr/listPreferredItemHeightSmall"
-                android:text="@string/my_word_book"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-        </LinearLayout>
+            android:onClick="onStartTesting"
+            android:text="@string/start_test"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>
 
 </RelativeLayout>

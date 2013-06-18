@@ -5,7 +5,6 @@
     <string name="pref_key_check_new_ver" translatable="false">pref_key_check_new_ver</string>
     <string name="pref_key_options_count" translatable="false">pref_key_options_count</string>
     <string name="pref_key_word_count_in_one_unit" translatable="false">pref_key_word_count_in_one_unit</string>
-    <string name="pref_key_slide_show_time_gap" translatable="false">pref_key_slide_show_time_gap</string>
     <string name="pref_key_reset" translatable="false">pref_key_reset</string>
     <string name="pref_key_random_test_question_number" translatable="false">pref_key_random_test_question_number</string>
     <string name="app_name">Reciter</string>
@@ -34,8 +33,6 @@
     <string name="random">Random</string>
     <string name="tip_word_book_is_empty">Word book is empty</string>
     <string name="test_report">Test Report</string>
-    <string name="time_gap">Time gap</string>
-    <string name="timp_gap_sumarry">The time gap between two slides is %s\" now</string>
     <string name="other">Other</string>
     <string name="reset_to_default">Reset to default</string>
     <string name="reset_sumarry">Reset all perferences to default ones</string>
@@ -65,5 +62,13 @@
     <string name="countdown_timer_name">Countdown Timer Name</string>
     <string name="kaoyan">考研</string>
     <string name="date">Date</string>
+    <string name="start_test">Start Testing</string>
+    <string name="select_test_type">Select Test Type</string>
+    <string name="click_notification_to_install_when_download_completed">Click notification to install when download completed</string>
+    <string name="click_to_install_reciter">Click to install reciter</string>
+    <string name="test_type_foreign_to_chinese_random">Foreign to Chinese (Random)</string>
+    <string name="test_type_foreign_to_chinese_correction_book">Foreign to Chinese (Correction Book)</string>
+    <string name="test_type_chinese_to_foreign_random">Chinese to Foreign (Random)</string>
+    <string name="test_type_chinese_to_foreign_correction_book">Chinese to Foreign (Correction Book)</string>
 
 </resources>

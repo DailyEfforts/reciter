@@ -14,13 +14,6 @@
         <item>40</item>
         <item>50</item>
     </string-array>
-    <string-array name="pref_word_time_gap_entry_values" translatable="false">
-        <item>1</item>
-        <item>3</item>
-        <item>5</item>
-        <item>7</item>
-        <item>9</item>
-    </string-array>
     <string-array name="pref_random_test_question_number_entry_values" translatable="false">
         <item>10</item>
         <item>30</item>
@@ -41,13 +34,6 @@
         <item>40 words</item>
         <item>50 words</item>
     </string-array>
-    <string-array name="pref_word_time_gap_entries">
-        <item>1 second</item>
-        <item>3 seconds</item>
-        <item>5 seconds</item>
-        <item>7 seconds</item>
-        <item>9 seconds</item>
-    </string-array>
     <string-array name="pref_random_test_question_number_entries">
         <item>10 questions</item>
         <item>30 questions</item>
@@ -62,6 +48,13 @@
         <item>@string/nce3</item>
         <item>@string/nce4</item>
         <item>@string/reflets_1_uppper</item>
+    </string-array>
+    <string-array name="test_types">
+        <item>@string/test_type_foreign_to_chinese_random</item>
+        <item>@string/test_type_foreign_to_chinese_correction_book</item>
+        <item>@string/test_type_chinese_to_foreign_random</item>
+        <item>@string/test_type_chinese_to_foreign_correction_book</item>
+<!--         <item>拼写测试</item> -->
     </string-array>
 
 </resources>

@@ -97,7 +97,7 @@ public class UpdateConfirm extends Activity {
 								int whichButton) {
 							DownloadManager.Request request = new DownloadManager.Request(
 									Uri.parse(Config.REMOTE_APK_FILE_URL));
-							request.setTitle("点击安装新版Reciter");
+							request.setTitle(getString(R.string.click_to_install_reciter));
 							request.setDescription("Downloading the latest Reciter APK file...");
 							request.setAllowedNetworkTypes(Request.NETWORK_WIFI
 									| Request.NETWORK_WIFI);
@@ -125,18 +125,30 @@ public class UpdateConfirm extends Activity {
 							}
 							dMgr.enqueue(request);
 
-							Toast.makeText(getActivity(),
-									"待下载完成后，请点击通知栏进行安装",
+							Toast.makeText(
+									getActivity(),
+									R.string.click_notification_to_install_when_download_completed,
 									Toast.LENGTH_LONG).show();
+							try {
+								File dir = new File(Environment
+										.getExternalStorageDirectory(),
+										Config.SDCARD_FOLDER_NAME);
+								if (dir != null && dir.exists()) {
+									File[] subFiles = dir.listFiles();
+									if (subFiles != null) {
+										for (File f : subFiles) {
+											f.delete();
+										}
+									}
+									dir.delete();
+								}
+							} catch (Exception e) {
+								Log.e(TAG, e.getMessage());
+							}
 
 						}
 					});
-			builder.setNegativeButton(android.R.string.no,
-					new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,
-								int whichButton) {
-						}
-					});
+			builder.setNegativeButton(android.R.string.no, null);
 
 			return builder.create();
 		}

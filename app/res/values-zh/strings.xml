@@ -27,13 +27,11 @@
     <string name="random">随机</string>
     <string name="tip_word_book_is_empty">生词本为空</string>
     <string name="test_report">测试报告</string>
-    <string name="time_gap">时间间隔</string>
-    <string name="timp_gap_sumarry">自动播放时两个单词的时间间隔为 %s 秒</string>
     <string name="other">其它</string>
     <string name="reset_to_default">重置</string>
     <string name="reset_sumarry">将所有偏好重置为默认值</string>
     <string name="time_to_review">该复习了</string>
-    <string name="time_to_review_words">现在就去复习法语单词吧</string>
+    <string name="time_to_review_words">现在就去复习单词吧~</string>
     <string name="background">后台</string>
     <string name="notify_to_review_in_regular_time">允许定期提醒复习</string>
     <string name="notify">提醒</string>
@@ -45,7 +43,7 @@
     <string name="mot">基础法语词汇</string>
     <string name="nce1">新概念英语（第一册）</string>
     <string name="nce2">新概念英语（第二册）</string>
-    <string name="nce3">新概念英语（第三册）</string>
+    <string name="nce3">本书词源有误，请待更新</string>
     <string name="nce4">新概念英语（第四册）</string>
     <string name="reflets_1_uppper">走遍法国（1上）</string>
     <string name="unit_id">第 <b>%d</b> 单元</string>
@@ -55,5 +53,12 @@
     <string name="countdown_timer_name">倒计时器名称</string>
     <string name="kaoyan">考研</string>
     <string name="date">日期</string>
-
+    <string name="start_test">开始测试</string>
+    <string name="select_test_type">选择测试类型</string>
+        <string name="click_notification_to_install_when_download_completed">待下载完成后，请点击通知栏进行安装</string>
+    <string name="click_to_install_reciter">点击安装Reciter</string>
+        <string name="test_type_foreign_to_chinese_random">给外语 选中文 (随机)</string>
+    <string name="test_type_foreign_to_chinese_correction_book">给外语 选中文 (错题本)</string>
+    <string name="test_type_chinese_to_foreign_random">给中文 选外语 (随机)</string>
+    <string name="test_type_chinese_to_foreign_correction_book">给中文 选外语 (错题本)</string>
 </resources>

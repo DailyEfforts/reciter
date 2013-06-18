@@ -4,11 +4,18 @@ import java.util.Locale;
 
 import android.app.ActionBar;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.FragmentTransaction;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -16,11 +23,16 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
+import com.gmail.dailyefforts.android.reviwer.activity.TestPage;
+import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.fragment.TestFragment;
 import com.gmail.dailyefforts.android.reviwer.fragment.UnitSetFragment;
 import com.gmail.dailyefforts.android.reviwer.fragment.WordBookFragment;
+import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class Sessions extends FragmentActivity implements ActionBar.TabListener {
 
@@ -31,6 +43,10 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 	 * The {@link ViewPager} that will host the section contents.
 	 */
 	ViewPager mViewPager;
+
+	private SharedPreferences mSharedPref;
+
+	private static Integer mTestWordsSize;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +110,18 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 		}
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+
+		mTestWordsSize = getRandomTestSize();
+	}
+
+	private int getRandomTestSize() {
+		mSharedPref = PreferenceManager
+				.getDefaultSharedPreferences(getApplicationContext());
+		String tmp = mSharedPref.getString(
+				getResources().getString(
+						R.string.pref_key_random_test_question_number),
+				Config.DEFAULT_RANDOM_TEST_SIZE);
+		return Integer.valueOf(tmp);
 	}
 
 	public static boolean RUNNING;
@@ -190,4 +218,102 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 		}
 	}
 
+	public void onStartTesting(View view) {
+		switch (view.getId()) {
+		case R.id.btn_start_testing:
+			showPromptDialog();
+			break;
+		}
+	}
+
+	private void showPromptDialog() {
+		DialogFragment newFragment = TestTypeListDialogFragment
+				.newInstance(R.string.select_test_type);
+		newFragment.show(getSupportFragmentManager(),
+				"testtypelistdialogfragment");
+	}
+
+	public static class TestTypeListDialogFragment extends DialogFragment {
+
+		public static TestTypeListDialogFragment newInstance(int title) {
+			TestTypeListDialogFragment frag = new TestTypeListDialogFragment();
+			Bundle args = new Bundle();
+			args.putInt("title", title);
+			frag.setArguments(args);
+			return frag;
+		}
+
+		@Override
+		public Dialog onCreateDialog(Bundle savedInstanceState) {
+			int title = getArguments().getInt("title");
+
+			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+			builder.setTitle(title);
+			builder.setItems(R.array.test_types,
+					new DialogInterface.OnClickListener() {
+
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							new TestCaseBuilder(getActivity()).execute(which);
+						}
+					});
+			builder.setNegativeButton(android.R.string.cancel, null);
+			return builder.create();
+		}
+	}
+
+	public static class TestCaseBuilder extends
+			AsyncTask<Integer, Void, Boolean> {
+		private DBA dba;
+		private int mTestType;
+
+		private Context mContext;
+
+		public TestCaseBuilder(Context context) {
+			mContext = context;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			dba = DBA.getInstance(mContext);
+		}
+
+		@Override
+		protected void onPostExecute(Boolean result) {
+			if (result) {
+				Intent intent = new Intent(mContext, TestPage.class);
+				intent.putExtra(Config.INTENT_EXTRA_TEST_TYPE, mTestType);
+
+				mContext.startActivity(intent);
+			} else {
+				if (mTestType == Config.MY_WORD_TEST
+						|| mTestType == Config.MY_WORD_TEST_ZH) {
+					Toast.makeText(mContext, R.string.tip_word_book_is_empty,
+							Toast.LENGTH_LONG).show();
+				}
+			}
+		}
+
+		@Override
+		protected Boolean doInBackground(Integer... params) {
+			mTestType = params[0];
+			if (dba == null) {
+				return null;
+			}
+			switch (mTestType) {
+			case Config.RANDOM_TEST:
+			case Config.RANDOM_TEST_ZH:
+				dba.buildRandomTest(mTestWordsSize);
+				break;
+			case Config.MY_WORD_TEST:
+			case Config.MY_WORD_TEST_ZH:
+				dba.buildMyWordBookTest();
+				break;
+			default:
+				break;
+			}
+			return Word.getMap().size() > 0;
+		}
+
+	}
 }

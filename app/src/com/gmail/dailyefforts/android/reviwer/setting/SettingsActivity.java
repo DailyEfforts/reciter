@@ -61,8 +61,6 @@ public class SettingsActivity extends PreferenceActivity {
 		private static CheckBoxPreference mReviewNotification;
 		private static ListPreference mRandomTestSizePref;
 		private static String mRandomTestSizeSummary;
-		private static ListPreference mTimeGapPref;
-		private static String mTimeGapSummay;
 		private static Preference mResetPref;
 
 		@Override
@@ -77,15 +75,14 @@ public class SettingsActivity extends PreferenceActivity {
 			mOptNumListPref = (ListPreference) findPreference(getString(R.string.pref_key_options_count));
 			mWordCountInOneUnitPref = (ListPreference) findPreference(getString(R.string.pref_key_word_count_in_one_unit));
 			mCurrentVersionPref = (Preference) findPreference(getString(R.string.pref_key_version));
-			mTimeGapPref = (ListPreference) findPreference(getString(R.string.pref_key_slide_show_time_gap));
 			mResetPref = (Preference) findPreference(getString(R.string.pref_key_reset));
 			mReviewNotification = (CheckBoxPreference) findPreference(getString(R.string.pref_key_review_notification));
 			mRandomTestSizePref = (ListPreference) findPreference(getString(R.string.pref_key_random_test_question_number));
 
 			if (mSharedPref == null || mOptNumListPref == null
 					|| mCurrentVersionPref == null
-					|| mCurrentVersionPref == null || mTimeGapPref == null
-					|| mResetPref == null || mReviewNotification == null
+					|| mCurrentVersionPref == null || mResetPref == null
+					|| mReviewNotification == null
 					|| mRandomTestSizePref == null) {
 				return;
 			}
@@ -110,8 +107,6 @@ public class SettingsActivity extends PreferenceActivity {
 					.getText(R.string.pref_summary_options_count));
 			mWordCountInOneUnitSummary = String.valueOf(res
 					.getText(R.string.pref_summary_word_count));
-			mTimeGapSummay = String.valueOf(res
-					.getText(R.string.timp_gap_sumarry));
 
 			mRandomTestSizeSummary = String.valueOf(res
 					.getText(R.string.build_x_question_in_each_test_case));
@@ -130,12 +125,6 @@ public class SettingsActivity extends PreferenceActivity {
 				mWordCountInOneUnitPref.setValue(value);
 			}
 
-			value = mTimeGapPref.getValue();
-			if (value == null) {
-				value = Config.DEFAULT_TIME_GAP;
-				mTimeGapPref.setValue(value);
-			}
-
 			value = mRandomTestSizePref.getValue();
 			if (value == null) {
 				value = Config.DEFAULT_RANDOM_TEST_SIZE;
@@ -148,7 +137,6 @@ public class SettingsActivity extends PreferenceActivity {
 
 			setOptNumSummary();
 			setWordCountSummary();
-			setTimeGapPrefSummary();
 			setRandomTestSizeSummary();
 		}
 
@@ -181,15 +169,13 @@ public class SettingsActivity extends PreferenceActivity {
 				SharedPreferences sharedPreferences, String key) {
 
 			if (key != null && mOptNumListPref != null
-					&& mWordCountInOneUnitPref != null && mTimeGapPref != null
+					&& mWordCountInOneUnitPref != null
 					&& mReviewNotification != null
 					&& mRandomTestSizePref != null) {
 				if (key.equals(mOptNumListPref.getKey())) {
 					setOptNumSummary();
 				} else if (key.equals(mWordCountInOneUnitPref.getKey())) {
 					setWordCountSummary();
-				} else if (key.equals(mTimeGapPref.getKey())) {
-					setTimeGapPrefSummary();
 				} else if (key.equals(mRandomTestSizePref.getKey())) {
 					setRandomTestSizeSummary();
 				}
@@ -204,19 +190,6 @@ public class SettingsActivity extends PreferenceActivity {
 				if (Debuger.DEBUG) {
 					Log.d(TAG,
 							"setOptNumSummary() " + mOptNumListPref.getValue());
-				}
-			}
-		}
-
-		private static void setTimeGapPrefSummary() {
-			if (mTimeGapPref != null) {
-				mTimeGapPref.setSummary(String.format(mTimeGapSummay,
-						mTimeGapPref.getValue()));
-
-				if (Debuger.DEBUG) {
-					Log.d(TAG,
-							"setTimeGapPrefSummary() "
-									+ mTimeGapPref.getValue());
 				}
 			}
 		}
@@ -262,17 +235,12 @@ public class SettingsActivity extends PreferenceActivity {
 						.setValue(Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT);
 			}
 
-			if (mTimeGapPref != null) {
-				mTimeGapPref.setValue(Config.DEFAULT_TIME_GAP);
-			}
-
 			if (mRandomTestSizePref != null) {
 				mRandomTestSizePref.setValue(Config.DEFAULT_RANDOM_TEST_SIZE);
 			}
 
 			setOptNumSummary();
 			setWordCountSummary();
-			setTimeGapPrefSummary();
 			setRandomTestSizeSummary();
 
 			if (mReviewNotification != null) {

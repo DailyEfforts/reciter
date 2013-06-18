@@ -47,5 +47,13 @@ public class Config {
 	public static String CURRENT_LANGUAGE = LANG_EN;
 
 	public static final String INTENT_EXTRA_BOOK_NAME_RES_ID = "book_name_res_id";
+	public static final String INTENT_EXTRA_TEST_TYPE = "test_type";
+
+	public static final int RANDOM_TEST = 0;
+	public static final int MY_WORD_TEST = 1;
+	public static final int RANDOM_TEST_ZH = 2;
+	public static final int MY_WORD_TEST_ZH = 3;
+	
+	
 
 }

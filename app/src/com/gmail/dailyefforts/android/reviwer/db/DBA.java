@@ -539,6 +539,33 @@ public class DBA extends SQLiteOpenHelper {
 		return result;
 	}
 
+	public void update(String table, String word, ContentValues values) {
+		try {
+			if (Debuger.DEBUG) {
+				Log.d(TAG, "table: " + table + ", update(1) " + word + " - " + values.getAsString(WORD_MEANING));
+			}
+			getWritableDatabase().update(table, values, WORD_WORD + "=?",
+					new String[] { word });
+		} catch (Exception e) {
+			// let go.
+			Log.e(TAG, e.getMessage());
+		}
+	}
+/*	public void update(String table, String word, String meaning) {
+		try {
+			ContentValues values = new ContentValues();
+			values.put(WORD_MEANING, meaning);
+			if (Debuger.DEBUG) {
+				Log.d(TAG, "table: " + table + ", update() " + word + " - " + meaning);
+			}
+			getWritableDatabase().update(table, values, WORD_WORD + "=?",
+					new String[] { word });
+		} catch (Exception e) {
+			// let go.
+			Log.e(TAG, e.getMessage());
+		}
+	}*/
+
 	public void beginTransaction() {
 		getWritableDatabase().beginTransaction();
 	}
@@ -575,7 +602,7 @@ public class DBA extends SQLiteOpenHelper {
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEST_REPORT);
-		db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORD_LIST_REFLETS1U);
+		// db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORD_LIST_REFLETS1U);
 		onCreate(db);
 	}
 

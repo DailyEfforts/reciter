@@ -1,8 +1,6 @@
 package com.gmail.dailyefforts.android.reviwer.fragment;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
@@ -11,16 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
-import com.gmail.dailyefforts.android.reviwer.activity.TestPage;
-import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.word.Word;
 
-public class TestFragment extends Fragment implements View.OnClickListener {
+public class TestFragment extends Fragment {
 	private static final String TAG = TestFragment.class.getSimpleName();
 	private Button mBtnRandom;
 	private Button mBtnMyWordBook;
@@ -40,17 +34,17 @@ public class TestFragment extends Fragment implements View.OnClickListener {
 		}
 
 		if (view != null) {
-			mBtnRandom = (Button) view.findViewById(R.id.btn_test_random);
-			mBtnMyWordBook = (Button) view
-					.findViewById(R.id.btn_test_my_word_book);
-
-			if (mBtnMyWordBook != null) {
-				mBtnMyWordBook.setOnClickListener(this);
-			}
-
-			if (mBtnRandom != null) {
-				mBtnRandom.setOnClickListener(this);
-			}
+//			mBtnRandom = (Button) view.findViewById(R.id.btn_test_random);
+//			mBtnMyWordBook = (Button) view
+//					.findViewById(R.id.btn_test_my_word_book);
+//
+//			if (mBtnMyWordBook != null) {
+//				mBtnMyWordBook.setOnClickListener(this);
+//			}
+//
+//			if (mBtnRandom != null) {
+//				mBtnRandom.setOnClickListener(this);
+//			}
 		}
 
 		return view;
@@ -75,58 +69,7 @@ public class TestFragment extends Fragment implements View.OnClickListener {
 		}
 	}
 
-	public class TestCaseBuilder extends AsyncTask<Integer, Void, Boolean> {
-		private DBA dba;
-		private int mTestKind;
-
-		@Override
-		protected void onPreExecute() {
-			dba = DBA.getInstance(getActivity());
-		}
-
-		@Override
-		protected void onPostExecute(Boolean result) {
-			if (result) {
-				Intent intent = new Intent(getActivity(), TestPage.class);
-				startActivity(intent);
-			} else {
-				if (mTestKind == MY_WORD_TEST) {
-					Toast.makeText(getActivity(),
-							R.string.tip_word_book_is_empty, Toast.LENGTH_LONG)
-							.show();
-				}
-			}
-		}
-
-		@Override
-		protected Boolean doInBackground(Integer... params) {
-			mTestKind = params[0];
-			if (dba == null) {
-				return null;
-			}
-			switch (mTestKind) {
-			case RANDOM_TEST:
-				dba.buildRandomTest(mTestWordsSize);
-				break;
-			case MY_WORD_TEST:
-				dba.buildMyWordBookTest();
-				break;
-			}
-			return Word.getMap().size() > 0;
-		}
-
-	}
-
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.btn_test_my_word_book:
-			new TestCaseBuilder().execute(MY_WORD_TEST);
-			break;
-		case R.id.btn_test_random:
-			new TestCaseBuilder().execute(RANDOM_TEST);
-			break;
-		}
-	}
+	
+	
 
 }
