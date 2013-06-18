@@ -91,7 +91,7 @@ public class TestReportFragment extends ListFragment implements
 				TextView tv2 = (TextView) view
 						.findViewById(R.id.tv_test_report_item_wrong_word_list);
 				if (tv1 != null && tv2 != null) {
-					tv1.setText(String.format("%s (précision: %d%%)",
+					tv1.setText(String.format("%s (%d%%)",
 							DateUtils.getRelativeTimeSpanString(time), accuracy));
 					if (accuracy == 100) {
 						tv2.setVisibility(View.GONE);

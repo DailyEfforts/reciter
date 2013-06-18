@@ -1,47 +1,33 @@
 package com.gmail.dailyefforts.android.reviwer.version;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.DownloadManager;
 import android.app.DownloadManager.Request;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.helper.DownloadHelper;
-import com.gmail.dailyefforts.android.reviwer.helper.FileChecker;
 
-@SuppressWarnings("deprecation")
 public class UpdateConfirm extends Activity {
 
 	private String verInfo;
 	private String verName;
 	private int size;
 	private String updatePromptTitle;
-	private DownloadManager dMgr;
+	private static DownloadManager dMgr;
 	private static String MD5_SUM;
 
-	private static final int DIALOG_DOWNLOAD_YES_NO = 0;
-	private static final int DIALOG_DOWNLOADING = 1;
 	private static final String TAG = UpdateConfirm.class.getSimpleName();
-	private static ProgressDialog mDownloadingProgressDialog;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +44,13 @@ public class UpdateConfirm extends Activity {
 
 		updatePromptTitle = String.format(
 				getString(R.string.update_to_latest_version), verName);
+		showPromptDialog();
+	}
 
-		showDialog(DIALOG_DOWNLOAD_YES_NO, null);
+	private void showPromptDialog() {
+		DialogFragment newFragment = UpdatePromptDialogFragment.newInstance(
+				updatePromptTitle, verInfo);
+		newFragment.show(getFragmentManager(), "dialog");
 	}
 
 	@Override
@@ -74,21 +65,39 @@ public class UpdateConfirm extends Activity {
 		dMgr = null;
 	}
 
-	@Override
-	protected Dialog onCreateDialog(int id, Bundle args) {
-		switch (id) {
-		case DIALOG_DOWNLOAD_YES_NO:
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	public static class UpdatePromptDialogFragment extends DialogFragment {
 
-			builder.setTitle(updatePromptTitle);
-			builder.setMessage(verInfo);
+		public static UpdatePromptDialogFragment newInstance(String title,
+				String message) {
+			UpdatePromptDialogFragment frag = new UpdatePromptDialogFragment();
+			Bundle args = new Bundle();
+			args.putString("title", title);
+			args.putString("message", message);
+			frag.setArguments(args);
+			return frag;
+		}
+
+		@Override
+		public void onDismiss(DialogInterface dialog) {
+			super.onDismiss(dialog);
+			getActivity().finish();
+		}
+
+		@Override
+		public Dialog onCreateDialog(Bundle savedInstanceState) {
+			String title = getArguments().getString("title");
+			String message = getArguments().getString("message");
+
+			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+			builder.setTitle(title);
+			builder.setMessage(message);
 			builder.setPositiveButton(android.R.string.yes,
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog,
 								int whichButton) {
 							DownloadManager.Request request = new DownloadManager.Request(
 									Uri.parse(Config.REMOTE_APK_FILE_URL));
-							request.setTitle(getString(R.string.app_name));
+							request.setTitle("点击安装新版Reciter");
 							request.setDescription("Downloading the latest Reciter APK file...");
 							request.setAllowedNetworkTypes(Request.NETWORK_WIFI
 									| Request.NETWORK_WIFI);
@@ -115,6 +124,11 @@ public class UpdateConfirm extends Activity {
 								}
 							}
 							dMgr.enqueue(request);
+
+							Toast.makeText(getActivity(),
+									"待下载完成后，请点击通知栏进行安装",
+									Toast.LENGTH_LONG).show();
+
 						}
 					});
 			builder.setNegativeButton(android.R.string.no,
@@ -124,17 +138,8 @@ public class UpdateConfirm extends Activity {
 						}
 					});
 
-			AlertDialog dialog = builder.create();
-			dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-				@Override
-				public void onDismiss(DialogInterface dialog) {
-					finish();
-				}
-			});
-			return dialog;
+			return builder.create();
 		}
-		return null;
 	}
 
 }

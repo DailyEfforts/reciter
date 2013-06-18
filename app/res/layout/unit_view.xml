@@ -27,7 +27,7 @@
         android:layout_marginTop="6dp"
         android:textColor="?android:attr/textColorSecondary"
         android:textIsSelectable="false"
-        android:textSize="12sp" />
+        android:textSize="9dp" />
 
     <ImageView
         android:id="@+id/unit_status"
