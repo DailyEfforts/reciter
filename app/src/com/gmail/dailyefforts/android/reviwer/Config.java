@@ -1,6 +1,9 @@
 package com.gmail.dailyefforts.android.reviwer;
 
 public class Config {
+	
+	public static final boolean DEBUG = false;
+	
 	// Actions
 	public static final String ACTION_NAME_CHECK_VERSION = "com.gmail.dailyefforts.android.reviwer.CheckVersion";
 	public static final String ACTION_REVIEW = "com.gmail.dailyefforts.android.reviwer.review";
@@ -54,6 +57,7 @@ public class Config {
 	public static final int RANDOM_TEST_ZH = 2;
 	public static final int MY_WORD_TEST_ZH = 3;
 	
-	
+	public static final String WORD_MEANING_SPLIT = "@";
+
 
 }

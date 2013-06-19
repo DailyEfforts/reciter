@@ -26,13 +26,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.gmail.dailyefforts.android.reviwer.activity.TestPage;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.fragment.TestFragment;
 import com.gmail.dailyefforts.android.reviwer.fragment.UnitSetFragment;
 import com.gmail.dailyefforts.android.reviwer.fragment.WordBookFragment;
-import com.gmail.dailyefforts.android.reviwer.word.Word;
+import com.gmail.dailyefforts.android.reviwer.test.TestFragment;
+import com.gmail.dailyefforts.android.reviwer.test.TestPage;
 
 public class Sessions extends FragmentActivity implements ActionBar.TabListener {
 
@@ -53,7 +51,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sessions);
 
-		if (Debuger.DEBUG) {
+		if (Config.DEBUG) {
 			Log.d(TAG, "onCreate() savedInstanceState: " + savedInstanceState);
 		}
 
@@ -129,7 +127,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		if (Debuger.DEBUG) {
+		if (Config.DEBUG) {
 			Log.d(TAG, "onDestroy()");
 		}
 		RUNNING = false;
@@ -188,7 +186,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 				fragment = new WordBookFragment();
 				break;
 			case 2:
-				if (Debuger.DEBUG) {
+				if (Config.DEBUG) {
 					Log.d(TAG, "getItem() TestFragment: ");
 				}
 				fragment = new TestFragment();

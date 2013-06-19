@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer.activity;
+package com.gmail.dailyefforts.android.reviwer.test;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,11 +28,8 @@ import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.Word;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.fragment.TestReportFragment;
-import com.gmail.dailyefforts.android.reviwer.option.OptionButton;
-import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class TestPage extends Activity implements OnInitListener,
 		View.OnClickListener {
@@ -99,7 +96,7 @@ public class TestPage extends Activity implements OnInitListener,
 			}
 		}
 
-		if (Debuger.DEBUG) {
+		if (Config.DEBUG) {
 			Log.d(TAG, "onPrepareOptionsMenu()");
 		}
 		return true;
@@ -408,7 +405,7 @@ public class TestPage extends Activity implements OnInitListener,
 				// Lanuage data is missing or the language is not supported.
 				Log.e(TAG, "Language is not available.");
 			} else {
-				if (Debuger.DEBUG) {
+				if (Config.DEBUG) {
 					Log.d(TAG, "TTS works fine.");
 				}
 			}

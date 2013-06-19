@@ -15,7 +15,6 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 
 public class DownloadHelper {
 	private static final String TAG = DownloadHelper.class.getSimpleName();
@@ -33,7 +32,7 @@ public class DownloadHelper {
 			// Starts the query
 			conn.connect();
 			int response = conn.getResponseCode();
-			if (Debuger.DEBUG) {
+			if (Config.DEBUG) {
 				Log.d(TAG, "onHandleIntent() The response is: " + response);
 			}
 			if (response == HttpURLConnection.HTTP_OK) {
@@ -107,7 +106,7 @@ public class DownloadHelper {
 			int len = 0;
 			while ((len = in.read(buf)) > 0) {
 				fos.write(buf, 0, len);
-				if (Debuger.DEBUG) {
+				if (Config.DEBUG) {
 					Log.d(TAG, "downLoadApk() downloading..." + buf.length
 							+ ", " + len);
 				}

@@ -14,12 +14,12 @@ import android.widget.ListView;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.setting.SettingsActivity;
 
-public class BookListActivity extends ListActivity implements OnClickListener {
+public class Launcher extends ListActivity implements OnClickListener {
 
 	private Button mBtnExit;
 	private Button mBtnSettings;
 
-	private static final String TAG = BookListActivity.class.getSimpleName();
+	private static final String TAG = Launcher.class.getSimpleName();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

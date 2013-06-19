@@ -6,7 +6,7 @@
     android:paddingTop="2dp" >
 
     <fragment
-        android:name="com.gmail.dailyefforts.android.reviwer.fragment.TestReportListFragment"
+        android:name="com.gmail.dailyefforts.android.reviwer.test.TestReportListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/ll_test_option" />

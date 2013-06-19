@@ -22,7 +22,6 @@ import android.view.MenuItem;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 
 public class SettingsActivity extends PreferenceActivity {
 
@@ -187,7 +186,7 @@ public class SettingsActivity extends PreferenceActivity {
 				mOptNumListPref.setSummary(String.format(mOptNumSummary,
 						mOptNumListPref.getValue()));
 
-				if (Debuger.DEBUG) {
+				if (Config.DEBUG) {
 					Log.d(TAG,
 							"setOptNumSummary() " + mOptNumListPref.getValue());
 				}
@@ -200,7 +199,7 @@ public class SettingsActivity extends PreferenceActivity {
 						mWordCountInOneUnitSummary,
 						mWordCountInOneUnitPref.getValue()));
 
-				if (Debuger.DEBUG) {
+				if (Config.DEBUG) {
 					Log.d(TAG, "setWordCountSummary() "
 							+ mWordCountInOneUnitPref.getValue());
 				}

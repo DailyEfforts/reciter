@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer.option;
+package com.gmail.dailyefforts.android.reviwer.test;
 
 import android.content.Context;
 import android.content.res.Resources;

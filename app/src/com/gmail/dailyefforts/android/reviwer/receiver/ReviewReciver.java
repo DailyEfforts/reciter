@@ -12,9 +12,9 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.Sessions;
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 
 public class ReviewReciver extends BroadcastReceiver {
 
@@ -24,7 +24,7 @@ public class ReviewReciver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 
-		if (Debuger.DEBUG) {
+		if (Config.DEBUG) {
 			Log.d(TAG, "ReviewReciver: onReceive() " + Sessions.RUNNING);
 		}
 
@@ -44,7 +44,7 @@ public class ReviewReciver extends BroadcastReceiver {
 				return;
 			}
 		}
-		if (Debuger.DEBUG) {
+		if (Config.DEBUG) {
 			Log.d(TAG, "ReviewReciver: onReceive() notifi");
 		}
 		Calendar cal = Calendar.getInstance();

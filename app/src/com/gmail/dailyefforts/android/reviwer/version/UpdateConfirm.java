@@ -22,10 +22,8 @@ public class UpdateConfirm extends Activity {
 
 	private String verInfo;
 	private String verName;
-	private int size;
 	private String updatePromptTitle;
 	private static DownloadManager dMgr;
-	private static String MD5_SUM;
 
 	private static final String TAG = UpdateConfirm.class.getSimpleName();
 
@@ -35,13 +33,7 @@ public class UpdateConfirm extends Activity {
 
 		Bundle extras = getIntent().getExtras();
 		verInfo = extras.getString(Config.INTENT_APK_VERSION_INFO);
-
 		verName = extras.getString(Config.INTENT_APK_VERSION_NAME);
-
-		size = extras.getInt(Config.INTENT_APK_VERSION_SIZE);
-
-		MD5_SUM = extras.getString(Config.INTENT_APK_VERSION_MD5);
-
 		updatePromptTitle = String.format(
 				getString(R.string.update_to_latest_version), verName);
 		showPromptDialog();

@@ -13,8 +13,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.util.SparseArray;
 
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
-import com.gmail.dailyefforts.android.reviwer.word.Word;
+import com.gmail.dailyefforts.android.reviwer.Config;
+import com.gmail.dailyefforts.android.reviwer.Word;
 
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();
@@ -281,7 +281,7 @@ public class DBA extends SQLiteOpenHelper {
 			try {
 				if (cursor.moveToFirst()) {
 					int star = cursor.getInt(cursor.getColumnIndex(WORD_STAR));
-					if (Debuger.DEBUG) {
+					if (Config.DEBUG) {
 						long timeStamp = cursor.getInt(cursor
 								.getColumnIndex(WORD_TIMESTAMP));
 						Log.d(TAG, "star() star: " + star);
@@ -303,7 +303,7 @@ public class DBA extends SQLiteOpenHelper {
 
 		for (int i = start; i < end; i++) {
 			String star = getPassValueByIdx(i);
-			if (Debuger.DEBUG) {
+			if (Config.DEBUG) {
 				Log.d(TAG, "isPass() i: " + i + ", star: " + star);
 			}
 
@@ -483,7 +483,7 @@ public class DBA extends SQLiteOpenHelper {
 		Cursor cursor = dba.rawQuery(sql, new String[] { String.valueOf(start),
 				String.valueOf(end) });
 
-		if (Debuger.DEBUG) {
+		if (Config.DEBUG) {
 			Log.d(TAG, "onClick() start: " + start + ", end: " + end);
 		}
 
@@ -497,7 +497,7 @@ public class DBA extends SQLiteOpenHelper {
 						.getColumnIndex(DBA.WORD_WORD));
 				String meanning = cursor.getString(cursor
 						.getColumnIndex(DBA.WORD_MEANING));
-				if (Debuger.DEBUG) {
+				if (Config.DEBUG) {
 					Log.d(TAG, String.format("id: %d, word: %s, meanning: %s",
 							id, word, meanning));
 				}
@@ -529,7 +529,7 @@ public class DBA extends SQLiteOpenHelper {
 			result = getWritableDatabase()
 					.insert(table, nullColumnHack, values);
 
-			if (Debuger.DEBUG) {
+			if (Config.DEBUG) {
 				Log.d(TAG, "table: " + table + ", insert() " + result);
 			}
 		} catch (SQLiteException e) {
@@ -541,7 +541,7 @@ public class DBA extends SQLiteOpenHelper {
 
 	public void update(String table, String word, ContentValues values) {
 		try {
-			if (Debuger.DEBUG) {
+			if (Config.DEBUG) {
 				Log.d(TAG, "table: " + table + ", update(1) " + word + " - " + values.getAsString(WORD_MEANING));
 			}
 			getWritableDatabase().update(table, values, WORD_WORD + "=?",
@@ -555,7 +555,7 @@ public class DBA extends SQLiteOpenHelper {
 		try {
 			ContentValues values = new ContentValues();
 			values.put(WORD_MEANING, meaning);
-			if (Debuger.DEBUG) {
+			if (Config.DEBUG) {
 				Log.d(TAG, "table: " + table + ", update() " + word + " - " + meaning);
 			}
 			getWritableDatabase().update(table, values, WORD_WORD + "=?",

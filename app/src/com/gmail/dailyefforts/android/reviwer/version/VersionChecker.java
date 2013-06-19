@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer.service;
+package com.gmail.dailyefforts.android.reviwer.version;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,9 +14,7 @@ import android.net.NetworkInfo;
 import android.util.Log;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.helper.DownloadHelper;
-import com.gmail.dailyefforts.android.reviwer.version.UpdateConfirm;
 
 public class VersionChecker extends IntentService {
 
@@ -133,7 +131,7 @@ public class VersionChecker extends IntentService {
 				return;
 			}
 
-			if (Debuger.DEBUG) {
+			if (Config.DEBUG) {
 				Log.d(TAG, "onHandleIntent() currentVersionCode: "
 						+ currentVersionCode);
 				Log.d(TAG, "onHandleIntent() serverVersionCode: "
@@ -155,7 +153,7 @@ public class VersionChecker extends IntentService {
 	public void onDestroy() {
 		super.onDestroy();
 		stopSelf();
-		if (Debuger.DEBUG) {
+		if (Config.DEBUG) {
 			Log.d(TAG, "onDestroy()");
 		}
 	}

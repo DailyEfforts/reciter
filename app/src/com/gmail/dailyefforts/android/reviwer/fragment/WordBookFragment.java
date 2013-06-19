@@ -23,10 +23,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.db.WordListProvider;
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 
 public class WordBookFragment extends ListFragment implements
 		LoaderCallbacks<Cursor> {
@@ -76,7 +76,7 @@ public class WordBookFragment extends ListFragment implements
 					SparseBooleanArray arr = listView.getCheckedItemPositions();
 					if (arr != null && arr.size() > 0) {
 						for (int i = 0; i < arr.size(); i++) {
-							if (Debuger.DEBUG) {
+							if (Config.DEBUG) {
 								Log.d(TAG,
 										"onActionItemClicked() " + arr.keyAt(i)
 												+ " - " + arr.valueAt(i));
@@ -88,7 +88,7 @@ public class WordBookFragment extends ListFragment implements
 								if (mCursor.moveToPosition(position)) {
 									String word = mCursor.getString(mCursor
 											.getColumnIndex(DBA.WORD_WORD));
-									if (Debuger.DEBUG) {
+									if (Config.DEBUG) {
 										Log.d(TAG,
 												"onActionItemClicked() position: "
 														+ position + ", word: "
@@ -154,7 +154,7 @@ public class WordBookFragment extends ListFragment implements
 				word = mCursor.getString(mCursor.getColumnIndex(DBA.WORD_WORD));
 				time = mCursor.getLong(mCursor
 						.getColumnIndex(DBA.WORD_TIMESTAMP));
-				if (Debuger.DEBUG) {
+				if (Config.DEBUG) {
 					Log.d(TAG,
 							"getView() "
 									+ String.format("%d - %s", position, word));
@@ -201,7 +201,7 @@ public class WordBookFragment extends ListFragment implements
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		if (mCursor != null) {
-			if (Debuger.DEBUG) {
+			if (Config.DEBUG) {
 				Log.d(TAG, "onListItemClick()");
 			}
 

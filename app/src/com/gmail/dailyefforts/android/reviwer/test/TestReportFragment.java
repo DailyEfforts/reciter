@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer.fragment;
+package com.gmail.dailyefforts.android.reviwer.test;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;

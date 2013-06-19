@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer.word;
+package com.gmail.dailyefforts.android.reviwer;
 
 import java.util.Locale;
 
@@ -8,8 +8,6 @@ public class Word {
 	private String word;
 	private String meaning;
 	private int id;
-	public static final String TIMESTAMP_FORMAT = "yyyy-MM-dd HH:mm:ss";
-	public static final String WORD_MEANING_SPLIT = "@";
 
 	public Word(int id, String word, String meaning) {
 		this.id = id;

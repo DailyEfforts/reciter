@@ -2,13 +2,13 @@ package com.gmail.dailyefforts.android.reviwer.receiver;
 
 import java.util.Calendar;
 
-import com.gmail.dailyefforts.android.reviwer.Config;
-
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+
+import com.gmail.dailyefforts.android.reviwer.Config;
 
 public class BootReciver extends BroadcastReceiver {
 

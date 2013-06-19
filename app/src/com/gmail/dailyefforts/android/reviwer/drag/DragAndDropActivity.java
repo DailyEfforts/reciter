@@ -34,10 +34,9 @@ import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.Word;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 import com.gmail.dailyefforts.android.reviwer.draw.Paper;
-import com.gmail.dailyefforts.android.reviwer.word.Word;
 
 public class DragAndDropActivity extends Activity implements OnDragListener,
 		OnClickListener, OnInitListener {
@@ -117,7 +116,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			}
 		}
 
-		if (Debuger.DEBUG) {
+		if (Config.DEBUG) {
 			Log.d(TAG, "onPrepareOptionsMenu()");
 		}
 		return true;
@@ -203,7 +202,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			public boolean onTouch(View v, MotionEvent event) {
 				switch (event.getActionMasked()) {
 				case MotionEvent.ACTION_DOWN:
-					if (Debuger.DEBUG) {
+					if (Config.DEBUG) {
 						Log.d(TAG, "onTouch() ACTION_DOWN");
 					}
 					ClipData dragData = ClipData.newPlainText("label", "text");
@@ -212,7 +211,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 					v.startDrag(dragData, shadowBuilder, v, 0);
 					return true;
 				case MotionEvent.ACTION_UP:
-					if (Debuger.DEBUG) {
+					if (Config.DEBUG) {
 						Log.d(TAG, "onTouch() ACTION_UP");
 					}
 					break;
@@ -287,7 +286,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			if (w != null) {
 				id = w.getId();
 			}
-			if (Debuger.DEBUG) {
+			if (Config.DEBUG) {
 				Log.d(TAG, "onCreate() id: " + id);
 			}
 			arrList.clear();
@@ -323,7 +322,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 			mTestCases.add(testCase);
 
-			if (Debuger.DEBUG) {
+			if (Config.DEBUG) {
 				Log.d(TAG,
 						"onCreate() test case-" + i + ", "
 								+ testCase.toString());
@@ -370,7 +369,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 				// Lanuage data is missing or the language is not supported.
 				Log.e(TAG, "Language is not available.");
 			} else {
-				if (Debuger.DEBUG) {
+				if (Config.DEBUG) {
 					Log.d(TAG, "TTS works fine.");
 				}
 			}
@@ -487,7 +486,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 	@Override
 	public boolean onDrag(View v, DragEvent event) {
-		if (Debuger.DEBUG) {
+		if (Config.DEBUG) {
 			Log.d(TAG, "onDrag() event.getAction(): " + event.getAction());
 		}
 		switch (event.getAction()) {
@@ -535,7 +534,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			if (word != null) {
 				String w = word.getWord();
 				String m = word.getMeaning();
-				if (Debuger.DEBUG) {
+				if (Config.DEBUG) {
 					Log.d(TAG, "onDrag() w: " + w + ", m: " + m);
 				}
 

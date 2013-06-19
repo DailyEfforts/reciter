@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.util.Log;
 
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
+import com.gmail.dailyefforts.android.reviwer.Config;
 
 public class TestReportsProvider extends ContentProvider {
 	private DBA dba;
@@ -22,7 +22,7 @@ public class TestReportsProvider extends ContentProvider {
 	@Override
 	public boolean onCreate() {
 		dba = DBA.getInstance(getContext().getApplicationContext());
-		if (Debuger.DEBUG) {
+		if (Config.DEBUG) {
 			Log.d(TAG, "onCreate()" + (dba == null ? "null" : dba.getCount()));
 		}
 		return true;

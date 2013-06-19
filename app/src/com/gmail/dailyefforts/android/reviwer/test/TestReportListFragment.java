@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer.fragment;
+package com.gmail.dailyefforts.android.reviwer.test;
 
 import android.database.Cursor;
 import android.net.Uri;
@@ -17,10 +17,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.db.TestReportsProvider;
-import com.gmail.dailyefforts.android.reviwer.debug.Debuger;
 
 public class TestReportListFragment extends ListFragment implements
 		LoaderCallbacks<Cursor> {
@@ -33,7 +33,7 @@ public class TestReportListFragment extends ListFragment implements
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
-		setEmptyText(getActivity().getText(R.string.tip_empty));
+		setEmptyText(getActivity().getText(R.string.test_record_is_empty));
 
 		mLayoutInflater = getActivity().getLayoutInflater();
 
@@ -74,7 +74,7 @@ public class TestReportListFragment extends ListFragment implements
 				accuracy = mCursor.getInt(mCursor
 						.getColumnIndex(DBA.TEST_ACCURACY));
 
-				if (Debuger.DEBUG) {
+				if (Config.DEBUG) {
 					Log.d(TAG,
 							"getView() "
 									+ String.format("%d - %s", position, words));
@@ -119,7 +119,7 @@ public class TestReportListFragment extends ListFragment implements
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		if (mCursor != null) {
-			if (Debuger.DEBUG) {
+			if (Config.DEBUG) {
 				Log.d(TAG, "onListItemClick()");
 			}
 
