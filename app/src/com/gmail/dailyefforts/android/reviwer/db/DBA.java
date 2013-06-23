@@ -37,100 +37,23 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String WORD_OTHER = "other";
 	public static final String WORD_MARKER = "marker";
 	public static final String WORD_TYPE = "type";
-
-	private static final String CREATE_TABLE_WORD_LIST = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_WORD_LIST
-			+ "("
-			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ WORD_WORD
-			+ " TEXT, "
-			+ WORD_MEANING
-			+ " TEXT, "
-			+ WORD_SAMPLE
-			+ " TEXT, "
-			+ WORD_TIMESTAMP
-			+ " DATETIME, "
-			+ WORD_STAR
-			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
-
-	private static final String CREATE_TABLE_WORD_LIST_NCE1 = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_WORD_LIST_NCE1
-			+ "("
-			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ WORD_WORD
-			+ " TEXT, "
-			+ WORD_MEANING
-			+ " TEXT, "
-			+ WORD_SAMPLE
-			+ " TEXT, "
-			+ WORD_TIMESTAMP
-			+ " DATETIME, "
-			+ WORD_STAR
-			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
-
-	private static final String CREATE_TABLE_WORD_LIST_NCE2 = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_WORD_LIST_NCE2
-			+ "("
-			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ WORD_WORD
-			+ " TEXT, "
-			+ WORD_MEANING
-			+ " TEXT, "
-			+ WORD_SAMPLE
-			+ " TEXT, "
-			+ WORD_TIMESTAMP
-			+ " DATETIME, "
-			+ WORD_STAR
-			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
-
-	private static final String CREATE_TABLE_WORD_LIST_NCE3 = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_WORD_LIST_NCE3
-			+ "("
-			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ WORD_WORD
-			+ " TEXT, "
-			+ WORD_MEANING
-			+ " TEXT, "
-			+ WORD_SAMPLE
-			+ " TEXT, "
-			+ WORD_TIMESTAMP
-			+ " DATETIME, "
-			+ WORD_STAR
-			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
-
-	private static final String CREATE_TABLE_WORD_LIST_NCE4 = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_WORD_LIST_NCE4
-			+ "("
-			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ WORD_WORD
-			+ " TEXT, "
-			+ WORD_MEANING
-			+ " TEXT, "
-			+ WORD_SAMPLE
-			+ " TEXT, "
-			+ WORD_TIMESTAMP
-			+ " DATETIME, "
-			+ WORD_STAR
-			+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
-
-	private static final String CREATE_TABLE_WORD_LIST_REFLETS1U = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_WORD_LIST_REFLETS1U
-			+ "("
-			+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ WORD_WORD
-			+ " TEXT, "
-			+ WORD_MEANING
-			+ " TEXT, "
-			+ WORD_SAMPLE
-			+ " TEXT, "
-			+ WORD_TIMESTAMP
-			+ " DATETIME, "
-			+ WORD_STAR
-			+ " INTEGER DEFAULT 0, "
-			+ WORD_MARKER
-			+ " TEXT, "
-			+ WORD_TYPE
-			+ " TEXT, " + WORD_OTHER + " TEXT);";
+	
+	public static String getCreateWordListSql(final String table) {
+		return "CREATE TABLE IF NOT EXISTS "
+				+ table
+				+ "("
+				+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+				+ WORD_WORD
+				+ " TEXT, "
+				+ WORD_MEANING
+				+ " TEXT, "
+				+ WORD_SAMPLE
+				+ " TEXT, "
+				+ WORD_TIMESTAMP
+				+ " DATETIME, "
+				+ WORD_STAR
+				+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
+	}
 
 	public static final String TABLE_TEST_REPORT = "testreport";
 	public static final String TABLE_TEST_REPORT_NCE1 = "testreport_nce1";
@@ -148,120 +71,27 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String TEST_TIMESTAMP = "time_stamp";
 	public static final String TEST_WRONG_WORD_LIST = "wrong_word_list";
 	public static final String TEST_OTHER = "other";
-
-	private static final String CREATE_TABLE_TEST_REPORT = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_TEST_REPORT
-			+ "("
-			+ TEST_REPORT_ID
-			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ TEST_TESTED_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_CORRECT_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ACCURACY
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_DB_SIZE
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ELAPSED_TIME
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_TIMESTAMP
-			+ " DATETIME, "
-			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
-
-	private static final String CREATE_TABLE_TEST_REPORT_NCE1 = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_TEST_REPORT_NCE1
-			+ "("
-			+ TEST_REPORT_ID
-			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ TEST_TESTED_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_CORRECT_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ACCURACY
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_DB_SIZE
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ELAPSED_TIME
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_TIMESTAMP
-			+ " DATETIME, "
-			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
-
-	private static final String CREATE_TABLE_TEST_REPORT_NCE2 = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_TEST_REPORT_NCE2
-			+ "("
-			+ TEST_REPORT_ID
-			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ TEST_TESTED_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_CORRECT_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ACCURACY
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_DB_SIZE
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ELAPSED_TIME
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_TIMESTAMP
-			+ " DATETIME, "
-			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
-
-	private static final String CREATE_TABLE_TEST_REPORT_NCE3 = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_TEST_REPORT_NCE3
-			+ "("
-			+ TEST_REPORT_ID
-			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ TEST_TESTED_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_CORRECT_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ACCURACY
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_DB_SIZE
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ELAPSED_TIME
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_TIMESTAMP
-			+ " DATETIME, "
-			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
-
-	private static final String CREATE_TABLE_TEST_REPORT_NCE4 = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_TEST_REPORT_NCE4
-			+ "("
-			+ TEST_REPORT_ID
-			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ TEST_TESTED_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_CORRECT_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ACCURACY
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_DB_SIZE
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ELAPSED_TIME
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_TIMESTAMP
-			+ " DATETIME, "
-			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
-
-	private static final String CREATE_TABLE_TEST_REPORT_REFLETS1U = "CREATE TABLE IF NOT EXISTS "
-			+ TABLE_TEST_REPORT_REFLETS1U
-			+ "("
-			+ TEST_REPORT_ID
-			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ TEST_TESTED_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_CORRECT_NUMBER
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ACCURACY
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_DB_SIZE
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_ELAPSED_TIME
-			+ " INTEGER DEFAULT 0, "
-			+ TEST_TIMESTAMP
-			+ " DATETIME, "
-			+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
+	
+	public static String getCreateTestTableSql(final String table) {
+		return "CREATE TABLE IF NOT EXISTS "
+				+ table
+				+ "("
+				+ TEST_REPORT_ID
+				+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+				+ TEST_TESTED_NUMBER
+				+ " INTEGER DEFAULT 0, "
+				+ TEST_CORRECT_NUMBER
+				+ " INTEGER DEFAULT 0, "
+				+ TEST_ACCURACY
+				+ " INTEGER DEFAULT 0, "
+				+ TEST_DB_SIZE
+				+ " INTEGER DEFAULT 0, "
+				+ TEST_ELAPSED_TIME
+				+ " INTEGER DEFAULT 0, "
+				+ TEST_TIMESTAMP
+				+ " DATETIME, "
+				+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
+	}
 
 	private static DBA dba = null;
 
@@ -584,19 +414,19 @@ public class DBA extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL(CREATE_TABLE_WORD_LIST);
-		db.execSQL(CREATE_TABLE_WORD_LIST_NCE1);
-		db.execSQL(CREATE_TABLE_WORD_LIST_NCE2);
-		db.execSQL(CREATE_TABLE_WORD_LIST_NCE3);
-		db.execSQL(CREATE_TABLE_WORD_LIST_NCE4);
-		db.execSQL(CREATE_TABLE_WORD_LIST_REFLETS1U);
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST));
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_NCE1));
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_NCE2));
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_NCE3));
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_NCE4));
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_REFLETS1U));
 
-		db.execSQL(CREATE_TABLE_TEST_REPORT);
-		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE1);
-		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE2);
-		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE3);
-		db.execSQL(CREATE_TABLE_TEST_REPORT_NCE4);
-		db.execSQL(CREATE_TABLE_TEST_REPORT_REFLETS1U);
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT));
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_NCE1));
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_NCE2));
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_NCE3));
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_NCE4));
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_REFLETS1U));
 	}
 
 	@Override
