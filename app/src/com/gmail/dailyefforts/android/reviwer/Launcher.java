@@ -2,7 +2,10 @@ package com.gmail.dailyefforts.android.reviwer;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +23,7 @@ public class Launcher extends ListActivity implements OnClickListener {
 	private Button mBtnSettings;
 
 	private static final String TAG = Launcher.class.getSimpleName();
+	private SharedPreferences mSharedPref;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +36,35 @@ public class Launcher extends ListActivity implements OnClickListener {
 		setListAdapter(adapter);
 
 		findViewsAndSetListeners();
+		mSharedPref = PreferenceManager
+				.getDefaultSharedPreferences(getApplicationContext());
+		long lastCheckedForUpdate = mSharedPref.getLong(
+				Config.LAST_TIME_CHECKED_FOR_UPDATE, Config.ZERO);
+		if (needToCheckForUpdate(lastCheckedForUpdate)) {
+			launchVersionChecker();
+		}
+	}
 
-		launchVersionChecker();
+	private boolean needToCheckForUpdate(long lastTime) {
+		boolean ret = false;
+
+		long currentTimeMillis = System.currentTimeMillis();
+		if (currentTimeMillis - lastTime > Config.ONE_DAY) {
+			ret = true;
+			updateLastCheckForUpdateTime(currentTimeMillis);
+		}
+
+		if (Config.DEBUG) {
+			Log.d(TAG, "needToCheckForUpdate() ret: " + ret);
+		}
+		return ret;
+	}
+
+	private void updateLastCheckForUpdateTime(long currentTimeMillis) {
+		Editor editor = mSharedPref.edit();
+		editor.putLong(Config.LAST_TIME_CHECKED_FOR_UPDATE,
+				currentTimeMillis);
+		editor.commit();
 	}
 
 	private void findViewsAndSetListeners() {

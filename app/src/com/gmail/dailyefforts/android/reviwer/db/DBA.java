@@ -38,9 +38,9 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String WORD_MARKER = "marker";
 	public static final String WORD_TYPE = "type";
 	
-	public static String getCreateWordListSql(final String table) {
+	public static String getCreateWordListSql(final String tableName) {
 		return "CREATE TABLE IF NOT EXISTS "
-				+ table
+				+ tableName
 				+ "("
 				+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
 				+ WORD_WORD
@@ -72,9 +72,9 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String TEST_WRONG_WORD_LIST = "wrong_word_list";
 	public static final String TEST_OTHER = "other";
 	
-	public static String getCreateTestTableSql(final String table) {
+	public static String getCreateTestTableSql(final String tableName) {
 		return "CREATE TABLE IF NOT EXISTS "
-				+ table
+				+ tableName
 				+ "("
 				+ TEST_REPORT_ID
 				+ " INTEGER PRIMARY KEY AUTOINCREMENT, "

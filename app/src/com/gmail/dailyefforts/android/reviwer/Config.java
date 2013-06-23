@@ -1,9 +1,10 @@
 package com.gmail.dailyefforts.android.reviwer;
 
+
 public class Config {
-	
-	public static final boolean DEBUG = false;
-	
+
+	public static final boolean DEBUG = true;
+
 	// Actions
 	public static final String ACTION_NAME_CHECK_VERSION = "com.gmail.dailyefforts.android.reviwer.CheckVersion";
 	public static final String ACTION_REVIEW = "com.gmail.dailyefforts.android.reviwer.review";
@@ -56,8 +57,13 @@ public class Config {
 	public static final int MY_WORD_TEST = 1;
 	public static final int RANDOM_TEST_ZH = 2;
 	public static final int MY_WORD_TEST_ZH = 3;
-	
+
 	public static final String WORD_MEANING_SPLIT = "@";
 
+	public static final String TITLE = "title";
+	public static final String MESSAGE = "message";
+	public static final String LAST_TIME_CHECKED_FOR_UPDATE = "last_time_checked_for_update";
+	public static final long ZERO = 0L;
+	public static final long ONE_DAY = 24 * 60 * 60 * 1000L; // MS
 
 }

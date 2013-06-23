@@ -71,5 +71,6 @@
     <string name="test_type_chinese_to_foreign_random">Chinese to Foreign (Random)</string>
     <string name="test_type_chinese_to_foreign_correction_book">Chinese to Foreign (Correction Book)</string>
     <string name="test_record_is_empty">There is no rest record now</string>
+    <string name="downloading_the_latest_reciter_apk_file">Downloading the latest Reciter APK file...</string>
 
 </resources>

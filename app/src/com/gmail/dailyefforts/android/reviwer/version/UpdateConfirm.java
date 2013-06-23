@@ -63,8 +63,8 @@ public class UpdateConfirm extends Activity {
 				String message) {
 			UpdatePromptDialogFragment frag = new UpdatePromptDialogFragment();
 			Bundle args = new Bundle();
-			args.putString("title", title);
-			args.putString("message", message);
+			args.putString(Config.TITLE, title);
+			args.putString(Config.MESSAGE, message);
 			frag.setArguments(args);
 			return frag;
 		}
@@ -77,8 +77,8 @@ public class UpdateConfirm extends Activity {
 
 		@Override
 		public Dialog onCreateDialog(Bundle savedInstanceState) {
-			String title = getArguments().getString("title");
-			String message = getArguments().getString("message");
+			String title = getArguments().getString(Config.TITLE);
+			String message = getArguments().getString(Config.MESSAGE);
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 			builder.setTitle(title);
@@ -90,7 +90,7 @@ public class UpdateConfirm extends Activity {
 							DownloadManager.Request request = new DownloadManager.Request(
 									Uri.parse(Config.REMOTE_APK_FILE_URL));
 							request.setTitle(getString(R.string.click_to_install_reciter));
-							request.setDescription("Downloading the latest Reciter APK file...");
+							request.setDescription(getString(R.string.downloading_the_latest_reciter_apk_file));
 							request.setAllowedNetworkTypes(Request.NETWORK_WIFI
 									| Request.NETWORK_WIFI);
 							request.setDestinationInExternalPublicDir(
