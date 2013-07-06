@@ -393,10 +393,17 @@ public class TestPage extends Activity implements OnInitListener,
 			// Note that a language may not be available, and the result will
 			// indicate this.
 			int result = -1;
-			if (Config.CURRENT_LANGUAGE.equals(Config.LANG_FR)) {
+
+			switch (Config.CURRENT_LANGUAGE) {
+			case French:
 				result = mTts.setLanguage(Locale.FRANCE);
-			} else {
+				break;
+			case English:
 				result = mTts.setLanguage(Locale.ENGLISH);
+				break;
+			default:
+				// TODO: unknown
+				break;
 			}
 			// Try this someday for some interesting results.
 			// int result mTts.setLanguage(Locale.FRANCE);

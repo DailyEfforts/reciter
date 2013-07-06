@@ -15,7 +15,7 @@
     <string name="tip_add_to_word_book">已将 %s 添加到生词本中</string>
     <string name="tip_remove_from_word_book">已将 %s 从生词本中移除</string>
     <string name="about">关于</string>
-    <string name="version">版本</string>
+    <string name="version">版本号</string>
     <string name="test_report_content">测试题目数: %1$d\n答对题目数: %2$d\n花费时间: %3$d秒\n准确率: %4$d%%\n数据库中单词总数: %5$d\n估计已掌握单词数: %6$d</string>
     <string name="update_confirm">需要更新至 %s 吗?</string>
     <string name="add_to_word_book">添加到生词本</string>
@@ -40,12 +40,6 @@
     <string name="update_to_latest_version">下载 v%s ?</string>
     <string name="random_test_question_number">随机测试问题数目</string>
     <string name="build_x_question_in_each_test_case">每次随机测试时生成 %s 道题</string>
-    <string name="mot">基础法语词汇</string>
-    <string name="nce1">新概念英语（第一册）</string>
-    <string name="nce2">新概念英语（第二册）</string>
-    <string name="nce3">本书词源有误，请待更新</string>
-    <string name="nce4">新概念英语（第四册）</string>
-    <string name="reflets_1_uppper">走遍法国（1上）</string>
     <string name="unit_id">第 <b>%d</b> 单元</string>
     <string name="countdown_timer">倒计时器</string>
     <string name="set_countdown_timer">设置倒计时器</string>

@@ -45,7 +45,7 @@
         android:textIsSelectable="true"
         android:textSize="30dp" />
 
-    <com.gmail.dailyefforts.android.reviwer.draw.Paper
+    <com.gmail.dailyefforts.android.reviwer.scribble.Paper
         android:id="@+id/draw_paper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

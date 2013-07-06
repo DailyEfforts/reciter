@@ -1,9 +1,12 @@
 package com.gmail.dailyefforts.android.reviwer;
 
-
 public class Config {
 
 	public static final boolean DEBUG = true;
+
+	public enum Language {
+		English, French
+	}
 
 	// Actions
 	public static final String ACTION_NAME_CHECK_VERSION = "com.gmail.dailyefforts.android.reviwer.CheckVersion";
@@ -13,6 +16,7 @@ public class Config {
 	public static final String URL_VER_JSON = "https://raw.github.com/DailyEfforts/mot/master/ver.json";
 	public static final String REMOTE_APK_FILE_URL = "https://raw.github.com/DailyEfforts/mot/master/Mot.apk";
 	public static final String APK_NAME = "Mot.apk";
+	public static final String TOTAL = "total=";
 
 	// JSON elements
 	public static final String JSON_VERSION_NAME = "name";
@@ -32,23 +36,21 @@ public class Config {
 	// Default values
 	public static final String DEFAULT_OPTION_COUNT = "4";
 	public static final String DEFAULT_WORD_COUNT_OF_ONE_UNIT = "20";
-	public static final String DEFAULT_TIME_GAP = "3";
 	public static final String DEFAULT_RANDOM_TEST_SIZE = "30";
 	public static final boolean DEFAULT_ALLOW_REVIEW_NOTIFICATION = true;
 
-	// Books
+	// Book names
 	public static final String BOOK_NAME_MOT = "mot.txt";
 	public static final String BOOK_NAME_NCE1 = "nce1.txt";
 	public static final String BOOK_NAME_NCE2 = "nce2.txt";
 	public static final String BOOK_NAME_NCE3 = "nce3.txt";
 	public static final String BOOK_NAME_NCE4 = "nce4.txt";
 	public static final String BOOK_NAME_REFLETS1U = "reflets1u.txt";
-	public static String CURRENT_BOOK_NAME = BOOK_NAME_MOT;
+	public static final String BOOK_NAME_LINGUISTICS_GLOSSARY = "linguistics_glossary.txt";
+	public static String CURRENT_BOOK_NAME = BOOK_NAME_REFLETS1U;
 
 	// Languages
-	public static final String LANG_EN = "en";
-	public static final String LANG_FR = "fr";
-	public static String CURRENT_LANGUAGE = LANG_EN;
+	public static Language CURRENT_LANGUAGE = Language.English;
 
 	public static final String INTENT_EXTRA_BOOK_NAME_RES_ID = "book_name_res_id";
 	public static final String INTENT_EXTRA_TEST_TYPE = "test_type";

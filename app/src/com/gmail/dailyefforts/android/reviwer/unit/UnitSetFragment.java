@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer.fragment;
+package com.gmail.dailyefforts.android.reviwer.unit;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -31,7 +30,6 @@ import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.drag.DragAndDropActivity;
-import com.gmail.dailyefforts.android.reviwer.unit.UnitView;
 
 public class UnitSetFragment extends Fragment implements OnItemClickListener {
 	private static final String TAG = UnitSetFragment.class.getSimpleName();
@@ -43,13 +41,6 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 
 	private static int UNIT = Integer
 			.valueOf(Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT);
-
-	private boolean UPDATE_NCE1_DONE;
-	private boolean UPDATE_NCE2_DONE;
-	private boolean UPDATE_NCE4_DONE;
-	private static final String UpdateNce1Done = "update_nce1_done";
-	private static final String UpdateNce2Done = "update_nce2_done";
-	private static final String UpdateNce4Done = "update_nce4_done";
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,10 +62,6 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 			UNIT = Integer.valueOf(mSharedPref.getString(
 					getString(R.string.pref_key_word_count_in_one_unit),
 					Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT));
-
-			UPDATE_NCE1_DONE = mSharedPref.getBoolean(UpdateNce1Done, false);
-			UPDATE_NCE2_DONE = mSharedPref.getBoolean(UpdateNce2Done, false);
-			UPDATE_NCE4_DONE = mSharedPref.getBoolean(UpdateNce4Done, false);
 		}
 
 		mGridView.setOnItemClickListener(this);
@@ -108,7 +95,6 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 					if (Config.DEBUG) {
 						Log.d(TAG, "onPostExecute() " + dba.getCount());
 					}
-
 					int count = dba.getCount();
 
 					int unitSize = count % UNIT == 0 ? count / UNIT : count
@@ -119,7 +105,6 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 					mGridView.setVisibility(View.VISIBLE);
 
 					mGridView.startAnimation(mAnimation);
-
 				}
 
 			}
@@ -134,7 +119,8 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 		protected Boolean doInBackground(Void... params) {
 			AssetManager assetMngr = getActivity().getAssets();
 			if (Config.DEBUG) {
-				Log.d(TAG, "doInBackground() assetMngr: " + assetMngr);
+				Log.d(TAG, "doInBackground() assetMngr: " + assetMngr + ", dba: " + dba);
+				Log.d(TAG, "doInBackground() CURRENT_BOOK_NAME: " + Config.CURRENT_BOOK_NAME);
 			}
 			if (assetMngr == null || dba == null) {
 				return false;
@@ -145,7 +131,7 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 						assetMngr.open(Config.CURRENT_BOOK_NAME)));
 				String str = null;
 				str = reader.readLine();
-				if (str != null && str.contains("total=")) {
+				if (str != null && str.contains(Config.TOTAL)) {
 					int total = Integer
 							.valueOf(str.substring(str.indexOf("=") + 1));
 
@@ -153,49 +139,8 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 						Log.d(TAG, "doInBackground() total : "
 								+ Config.CURRENT_BOOK_NAME + total + ", db: "
 								+ dba.getCount());
-						Log.d(TAG, "doInBackground() UPDATE_NCE1_DONE : "
-								+ UPDATE_NCE1_DONE + ", " + UPDATE_NCE2_DONE
-								+ ", " + UPDATE_NCE4_DONE);
 					}
 					if (total > 200 && dba.getCount() > total - 200) {
-						if ((Config.CURRENT_BOOK_NAME
-								.equals(Config.BOOK_NAME_NCE1) && !UPDATE_NCE1_DONE)
-								|| (Config.CURRENT_BOOK_NAME
-										.equals(Config.BOOK_NAME_NCE2) && !UPDATE_NCE2_DONE)
-								|| (Config.CURRENT_BOOK_NAME
-										.equals(Config.BOOK_NAME_NCE4) && !UPDATE_NCE4_DONE)) {
-							ContentValues values = new ContentValues();
-							dba.beginTransaction();
-							while ((str = reader.readLine()) != null) {
-								String[] arr = str
-										.split(Config.WORD_MEANING_SPLIT);
-								if (arr != null && arr.length == 2) {
-									String word = arr[0].trim();
-									String meanning = arr[1].trim();
-									values.clear();
-									values.put(DBA.WORD_MEANING, meanning);
-									dba.update(DBA.CURRENT_WORD_TABLE, word,
-											values);
-								}
-							}
-							dba.setTransactionSuccessful();
-							dba.endTransaction();
-
-							if (Config.CURRENT_BOOK_NAME
-									.equals(Config.BOOK_NAME_NCE1)) {
-								UPDATE_NCE1_DONE = true;
-								commit(UpdateNce1Done);
-							} else if (Config.CURRENT_BOOK_NAME
-									.equals(Config.BOOK_NAME_NCE2)) {
-								UPDATE_NCE2_DONE = true;
-								commit(UpdateNce2Done);
-							} else if (Config.CURRENT_BOOK_NAME
-									.equals(Config.BOOK_NAME_NCE4)) {
-								UPDATE_NCE4_DONE = true;
-								commit(UpdateNce4Done);
-							}
-
-						}
 						return true;
 					}
 				}
@@ -205,15 +150,18 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 					String[] arr = str.split(Config.WORD_MEANING_SPLIT);
 					if (arr != null && arr.length == 2) {
 						String word = arr[0].trim();
-						String meanning = arr[1].trim();
+						String meaning = arr[1].trim();
+
+						if (dba.exist(word, meaning)) {
+							continue;
+						}
 
 						values.clear();
 						values.put(DBA.WORD_WORD, word);
-						values.put(DBA.WORD_MEANING, meanning);
+						values.put(DBA.WORD_MEANING, meaning);
 						values.put(DBA.WORD_TIMESTAMP,
 								System.currentTimeMillis());
 						dba.insert(DBA.CURRENT_WORD_TABLE, null, values);
-
 					}
 				}
 				dba.setTransactionSuccessful();
@@ -233,14 +181,6 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 			return true;
 		}
 
-	}
-
-	private void commit(String key) {
-		if (mSharedPref != null) {
-			Editor editor = mSharedPref.edit();
-			editor.putBoolean(key, true);
-			editor.commit();
-		}
 	}
 
 	static class UnitViewHolder {

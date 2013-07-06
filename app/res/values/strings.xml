@@ -21,7 +21,7 @@
     <string name="tip_add_to_word_book">Added <b>%s</b> to word book</string>
     <string name="tip_remove_from_word_book">Remove <b>%s</b> from word book</string>
     <string name="about">About</string>
-    <string name="version">Version</string>
+    <string name="version">Version Name</string>
     <string name="test_report_content">Tested number: %1$d\nCorrect number: %2$d\nElapsed time: %3$d\"\nAccuracy rating: %4$d%%\nDatabase Size: %5$d\nMastered word number: %6$d</string>
     <string name="update_confirm">Do you want to update to v%s?</string>
     <string name="add_to_word_book">Add to word book</string>
@@ -48,12 +48,13 @@
     <string name="update_to_latest_version">Download v%s ?</string>
     <string name="random_test_question_number">Random test Q number</string>
     <string name="build_x_question_in_each_test_case">Build %s questions in each random test</string>
-    <string name="mot">Mot</string>
-    <string name="nce1">New Concept English (I)</string>
-    <string name="nce2">New Concept English (II)</string>
-    <string name="nce3">New Concept English (III)</string>
-    <string name="nce4">New Concept English (IV)</string>
-    <string name="reflets_1_uppper">Reflets (I, Upper Part)</string>
+    <string name="mot" translatable="false">Mot</string>
+    <string name="nce1" translatable="false">New Concept English (I)</string>
+    <string name="nce2" translatable="false">New Concept English (II)</string>
+    <string name="nce3" translatable="false">New Concept English (III)</string>
+    <string name="nce4" translatable="false">New Concept English (IV)</string>
+    <string name="reflets_1_uppper" translatable="false">Reflets (I, Upper Part)</string>
+    <string name="linguistics_glossary" translatable="false">Linguistics Glossary</string>
     <string name="unit_id">Unit-<b>%d</b></string>
     <string name="unit_contents_num" translatable="false">(%d ~ %d)</string>
     <string name="countdown_timer">Countdown Timer</string>
@@ -71,6 +72,6 @@
     <string name="test_type_chinese_to_foreign_random">Chinese to Foreign (Random)</string>
     <string name="test_type_chinese_to_foreign_correction_book">Chinese to Foreign (Correction Book)</string>
     <string name="test_record_is_empty">There is no rest record now</string>
-    <string name="downloading_the_latest_reciter_apk_file">Downloading the latest Reciter APK file...</string>
+    <string name="downloading_the_latest_reciter_apk_file">Downloading the latest Reciter APK file&#8230;</string>
 
 </resources>

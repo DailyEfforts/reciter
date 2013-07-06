@@ -1,4 +1,4 @@
-package com.gmail.dailyefforts.android.reviwer.draw;
+package com.gmail.dailyefforts.android.reviwer.scribble;
 
 import android.content.Context;
 import android.graphics.Bitmap;

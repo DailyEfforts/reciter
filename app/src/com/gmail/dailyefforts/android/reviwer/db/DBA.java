@@ -19,7 +19,7 @@ import com.gmail.dailyefforts.android.reviwer.Word;
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();
 	private static final String DATABASE_NAME = "wot.db";
-	private static final int DATABASE_VERSION = 7;
+	private static final int DATABASE_VERSION = 8;
 	public static final String TABLE_WORD_LIST = "wordlist";
 
 	public static final String TABLE_WORD_LIST_NCE1 = "wordlist_nce1";
@@ -27,6 +27,7 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String TABLE_WORD_LIST_NCE3 = "wordlist_nce3";
 	public static final String TABLE_WORD_LIST_NCE4 = "wordlist_nce4";
 	public static final String TABLE_WORD_LIST_REFLETS1U = "wordlist_reflets1u";
+	public static final String TABLE_WORD_LIST_LINGUISTICS_GLOSSARY = "linguistics_glossary";
 
 	public static final String WORD_ID = "_id";
 	public static final String WORD_WORD = "word";
@@ -37,21 +38,12 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String WORD_OTHER = "other";
 	public static final String WORD_MARKER = "marker";
 	public static final String WORD_TYPE = "type";
-	
+
 	public static String getCreateWordListSql(final String tableName) {
-		return "CREATE TABLE IF NOT EXISTS "
-				+ tableName
-				+ "("
-				+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-				+ WORD_WORD
-				+ " TEXT, "
-				+ WORD_MEANING
-				+ " TEXT, "
-				+ WORD_SAMPLE
-				+ " TEXT, "
-				+ WORD_TIMESTAMP
-				+ " DATETIME, "
-				+ WORD_STAR
+		return "CREATE TABLE IF NOT EXISTS " + tableName + "("
+				+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, " + WORD_WORD
+				+ " TEXT, " + WORD_MEANING + " TEXT, " + WORD_SAMPLE
+				+ " TEXT, " + WORD_TIMESTAMP + " DATETIME, " + WORD_STAR
 				+ " INTEGER DEFAULT 0, " + WORD_OTHER + " TEXT);";
 	}
 
@@ -61,6 +53,7 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String TABLE_TEST_REPORT_NCE3 = "testreport_nce3";
 	public static final String TABLE_TEST_REPORT_NCE4 = "testreport_nce4";
 	public static final String TABLE_TEST_REPORT_REFLETS1U = "testreport_reflets1u";
+	public static final String TABLE_TEST_REPORT_INGUISTICS_GLOSSARY = "testreport_linguistics_glossary";
 
 	public static final String TEST_REPORT_ID = "_id";
 	public static final String TEST_TESTED_NUMBER = "tested_number";
@@ -71,25 +64,15 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String TEST_TIMESTAMP = "time_stamp";
 	public static final String TEST_WRONG_WORD_LIST = "wrong_word_list";
 	public static final String TEST_OTHER = "other";
-	
+
 	public static String getCreateTestTableSql(final String tableName) {
-		return "CREATE TABLE IF NOT EXISTS "
-				+ tableName
-				+ "("
-				+ TEST_REPORT_ID
-				+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-				+ TEST_TESTED_NUMBER
-				+ " INTEGER DEFAULT 0, "
-				+ TEST_CORRECT_NUMBER
-				+ " INTEGER DEFAULT 0, "
-				+ TEST_ACCURACY
-				+ " INTEGER DEFAULT 0, "
-				+ TEST_DB_SIZE
-				+ " INTEGER DEFAULT 0, "
-				+ TEST_ELAPSED_TIME
-				+ " INTEGER DEFAULT 0, "
-				+ TEST_TIMESTAMP
-				+ " DATETIME, "
+		return "CREATE TABLE IF NOT EXISTS " + tableName + "(" + TEST_REPORT_ID
+				+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + TEST_TESTED_NUMBER
+				+ " INTEGER DEFAULT 0, " + TEST_CORRECT_NUMBER
+				+ " INTEGER DEFAULT 0, " + TEST_ACCURACY
+				+ " INTEGER DEFAULT 0, " + TEST_DB_SIZE
+				+ " INTEGER DEFAULT 0, " + TEST_ELAPSED_TIME
+				+ " INTEGER DEFAULT 0, " + TEST_TIMESTAMP + " DATETIME, "
 				+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
 	}
 
@@ -212,6 +195,25 @@ public class DBA extends SQLiteOpenHelper {
 		getWritableDatabase().update(CURRENT_WORD_TABLE, values,
 				WORD_WORD + "=?", new String[] { word });
 
+	}
+
+	public boolean exist(String word, String meaning) {
+		boolean ret = false;
+		Cursor cursor = query(CURRENT_WORD_TABLE, null, WORD_WORD + "=?"
+				+ " AND " + WORD_MEANING + "=?",
+				new String[] { word, meaning }, null, null, null);
+		if (cursor != null) {
+			if (cursor.getCount() > 0) {
+				ret = true;
+			}
+			cursor.close();
+		}
+
+		if (Config.DEBUG) {
+			Log.d(TAG, "exist()" + word + " - " + meaning + ", " + ret);
+		}
+
+		return ret;
 	}
 
 	public Word getWordByIdx(int idx) {
@@ -372,7 +374,8 @@ public class DBA extends SQLiteOpenHelper {
 	public void update(String table, String word, ContentValues values) {
 		try {
 			if (Config.DEBUG) {
-				Log.d(TAG, "table: " + table + ", update(1) " + word + " - " + values.getAsString(WORD_MEANING));
+				Log.d(TAG, "table: " + table + ", update(1) " + word + " - "
+						+ values.getAsString(WORD_MEANING));
 			}
 			getWritableDatabase().update(table, values, WORD_WORD + "=?",
 					new String[] { word });
@@ -381,20 +384,16 @@ public class DBA extends SQLiteOpenHelper {
 			Log.e(TAG, e.getMessage());
 		}
 	}
-/*	public void update(String table, String word, String meaning) {
-		try {
-			ContentValues values = new ContentValues();
-			values.put(WORD_MEANING, meaning);
-			if (Config.DEBUG) {
-				Log.d(TAG, "table: " + table + ", update() " + word + " - " + meaning);
-			}
-			getWritableDatabase().update(table, values, WORD_WORD + "=?",
-					new String[] { word });
-		} catch (Exception e) {
-			// let go.
-			Log.e(TAG, e.getMessage());
-		}
-	}*/
+
+	/*
+	 * public void update(String table, String word, String meaning) { try {
+	 * ContentValues values = new ContentValues(); values.put(WORD_MEANING,
+	 * meaning); if (Config.DEBUG) { Log.d(TAG, "table: " + table +
+	 * ", update() " + word + " - " + meaning); }
+	 * getWritableDatabase().update(table, values, WORD_WORD + "=?", new
+	 * String[] { word }); } catch (Exception e) { // let go. Log.e(TAG,
+	 * e.getMessage()); } }
+	 */
 
 	public void beginTransaction() {
 		getWritableDatabase().beginTransaction();
@@ -420,6 +419,7 @@ public class DBA extends SQLiteOpenHelper {
 		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_NCE3));
 		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_NCE4));
 		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_REFLETS1U));
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LINGUISTICS_GLOSSARY));
 
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT));
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_NCE1));
@@ -427,6 +427,7 @@ public class DBA extends SQLiteOpenHelper {
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_NCE3));
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_NCE4));
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_REFLETS1U));
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_INGUISTICS_GLOSSARY));
 	}
 
 	@Override

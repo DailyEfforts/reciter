@@ -27,10 +27,10 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
-import com.gmail.dailyefforts.android.reviwer.fragment.UnitSetFragment;
-import com.gmail.dailyefforts.android.reviwer.fragment.WordBookFragment;
 import com.gmail.dailyefforts.android.reviwer.test.TestFragment;
 import com.gmail.dailyefforts.android.reviwer.test.TestPage;
+import com.gmail.dailyefforts.android.reviwer.unit.UnitSetFragment;
+import com.gmail.dailyefforts.android.reviwer.unit.MistakeCollectionBookFragment;
 
 public class Sessions extends FragmentActivity implements ActionBar.TabListener {
 
@@ -183,7 +183,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 				fragment = new UnitSetFragment();
 				break;
 			case 1:
-				fragment = new WordBookFragment();
+				fragment = new MistakeCollectionBookFragment();
 				break;
 			case 2:
 				if (Config.DEBUG) {
