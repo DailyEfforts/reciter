@@ -1,0 +1,136 @@
+﻿单词				法语					英语 
+-----------------------------------------------------------------------
+accent			口音					口音 
+accord			同意					一致 
+admirer			赞赏，赞美				赞赏者； 羡慕者； 崇拜者 
+adorable			可爱的					可爱的；讨人喜爱的 
+aide				帮助					助手，副手 
+air				申请					空气 
+an				年；岁，年龄				一个 
+argumentation		论据，理由				论证；推论；论据 
+article			商品					文章,论文；物品 
+artiste			艺术家					艺术家 
+atelier			工作室					（艺术家的）工作室；画室 
+attention			注意，专心				注意，专心 
+beau				美丽的					美丽的 
+blonde			金黄色的				金黄色的 
+blond			金黄色的				金黄色的 
+bouquet			（花）束				花束 
+boutique			店铺					精品店；时装店；礼品店 
+bravo			好！真棒！				好！真棒！ 
+Bureau			办公室；办公桌			(政府或组织的)局，所，处；办事处；办工桌 
+cause			原因					原因 
+chance			运气					机会；机遇；偶然；碰巧的 
+chauffeur			司机					司机；私人司机 
+client			顾客					顾客； 当事人； 委托人；<计算机>客户端 
+couple			夫妇					夫妇；一对 
+courage			勇气					勇气 
+cuisine			厨房；烹饪				烹饪，烹调法； 菜肴 
+dimension			尺寸，体积				尺寸 
+euro				欧元					欧元 
+exposition		展览，陈列				阐述；产品博览会 
+face				脸，面部；（物体的）面		脸，面部；（物体的）面 
+franc			法郎					法郎 
+garage			修车厂					车库；汽车修理厂 
+grand			大的，宽的				宏大的，宏伟的； 一千美元； 大钢琴 
+hectare			公顷					公顷 
+importance		重要					重要 
+important			重要的					重要的 
+information		信息，消息				信息 
+instant			片刻					瞬间；片刻；立即的 
+intensive			密集的，强化的			密集的，强化的 
+invitation		邀请					邀请 
+journal			报纸					杂志；日记；报纸 
+judo				柔道					柔道 
+machine			机器					机器 
+mademoiselle		小姐					小姐 
+mannequin			模特					时装模特儿； 人体模型 
+minute			分钟					分钟 
+monsieur			先生					先生，绅士 
+papa				爸爸					<儿>爸爸 
+parents			父母					父母 
+part				份儿，部分				部分 
+patient			耐心的					病人；有耐性的 
+perturbation		干扰，混乱				摄动；微扰；忧虑；不安 
+photo			照片，摄影				照片；相片 
+piano			钢琴					钢琴 
+possible			可能的					可能的 
+provenance		来源，出处				起源；发源地；出处 
+question			问题					问题 
+radio			无线电广播电台；收音机		无线电广播电台；收音机 
+rap				说唱乐					说唱乐 
+rare				罕见的					稀少的；稀罕的；珍贵的；半熟的 
+responsible		负责人					负责的；有责任的；负责任的 
+restaurant		餐馆					餐馆 
+retard			迟到					延迟；减缓；妨碍；笨蛋 
+rose				玫瑰红的				玫瑰花；玫瑰色的 
+silence			沉默，不作声				沉默，不作声 
+solution			答案，解决方案			答案，解决方案 
+sport			体育，运动				体育，运动 
+station			车站					车站 
+style			风格					风格 
+super			太棒了！				顶呱呱的 
+surprise			吃惊的，惊讶的			使惊奇，使诧异；令人吃惊的事物 
+taxi				出租车					出租车 
+tennis			网球					网球 
+Tokyo			东京					东京 
+train			火车					火车 
+transport			交通运输				交通运输
+unique			唯一的					唯一的；独一无二的
+----------------------------------------------------------------------- 
+billet			机票，火车票				给（士兵）提供住处；军队宿舍 
+billet			纸币					部队临时营舍；钢坯；方钢 
+bout				末端；尽头				一次；一阵；一场；（疾病的）发作 
+chose			东西，事物				“choose”的过去式 
+circulation		交通					循环；流通；血液循环 
+coin				角落					硬币 
+collier			项链					运煤船；矿工 
+commune			公共的					公社 
+content			高兴的					内容；目录 
+costume			男士西装				服装；衣服；戏服； 
+course			购物；路程，行程			课程；过程 
+dire				说					其严重的；危急的；极糟的 
+encore			还有					加演的节 
+ensemble			一起					乐团；整体；全体；全套服装 
+facile			简单的，容易的			轻率作出的；轻易可得的 
+gauche			左边					笨拙的；不善社交的；不老练的 
+grave			严重的					坟墓；严重的 
+lever			举起，抬起(身体某部位)		杠杆；杆；控制杆 
+lever			举起;	起床，站起来			杠杆；杆；控制杆 
+lire				读书					里拉(货币单位) 
+lit				床					点燃,点着的;“light”的过去式,过去分词 
+loin				远					腰部；后腰 
+main				手					主要的 
+manger			吃					(动物的）食槽； 
+marcher			行走					游行示威者 
+original			独特的					最初的；原始的 
+or				金子					或者 
+pain				面包					痛苦 
+parfait			完美的					冻糕 
+par				从，经过；用；被，由			票面价值；标准杆数 
+passer			到...去；度过；发生；经过		过路人 
+patron			老板					顾客；资助者；赞助人 
+payer			支付					付款人 
+pendant			在…期间				饰坠儿 
+pied				脚					斑驳的,杂色的 
+place			座位					地方；位置；地点；场所 
+plan				地图；计划				计划；方案 
+plus				（与ne连用）不再			加 
+poser			提出					难题；棘手的事；装腔作势的人 
+poser			放					难题；困难；棘手的事；装腔作势的人 
+pour				为了；至于				涌出； 倾，倒 
+premier			第一的					总理； 首相 
+pull				套头毛衣				拉 
+rouge			红色的					胭脂 
+sac				包，袋					（动植物体内的）囊，液囊，气囊 
+salon			客厅					沙龙，客厅； 画廊； 
+service			部门					服务；客服 
+stage			培训，学习班；实习			舞台；阶段 
+suite			后续					套房；一套家具 
+surface			面积					表面；地面；表面的 
+temps			时间，天气				临时工 
+terrain			场地					地形；地带；地势 
+tour				轮流，轮班				旅行，观光 
+tout				一起，所有的事情			吹捧；兜售；票贩子 
+travail			工作					<文>艰苦劳动； 辛勤努力；分娩的阵痛 
+valise			手提箱					（装衣服的）小旅行包

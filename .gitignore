@@ -27,3 +27,4 @@ app/project.properties
 
 # vim temp file
 *.swp
+.~lock*
