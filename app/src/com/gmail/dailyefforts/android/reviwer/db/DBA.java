@@ -19,7 +19,7 @@ import com.gmail.dailyefforts.android.reviwer.Word;
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();
 	private static final String DATABASE_NAME = "wot.db";
-	private static final int DATABASE_VERSION = 8;
+	private static final int DATABASE_VERSION = 9;
 	public static final String TABLE_WORD_LIST = "wordlist";
 
 	public static final String TABLE_WORD_LIST_NCE1 = "wordlist_nce1";
@@ -216,8 +216,9 @@ public class DBA extends SQLiteOpenHelper {
 		return ret;
 	}
 
-	public Word getWordByIdx(int idx) {
-		Cursor cursor = query(CURRENT_WORD_TABLE, null, WORD_ID + "=?",
+	private Word getWordByIdx(String table, int idx) {
+
+		Cursor cursor = query(table, null, WORD_ID + "=?",
 				new String[] { String.valueOf(idx) }, null, null, null);
 
 		String word = "";
@@ -234,9 +235,14 @@ public class DBA extends SQLiteOpenHelper {
 		}
 
 		return new Word(id, word, meaning);
+
 	}
 
-	public void buildRandomTest(final int size) {
+	public Word getWordByIdx(int idx) {
+		return getWordByIdx(CURRENT_WORD_TABLE, idx);
+	}
+
+	public void buildRandomTest(String table, int size) {
 		SparseArray<Word> map = Word.getMap();
 		map.clear();
 
@@ -256,16 +262,39 @@ public class DBA extends SQLiteOpenHelper {
 
 		while (it.hasNext()) {
 			int idx = it.next();
-			Word word = getWordByIdx(idx);
+			Word word = getWordByIdx(table, idx);
 			map.put(i++, word);
 		}
 	}
 
-	public void buildMyWordBookTest() {
+	public String getOneWordToReview() {
+		Random random = new Random();
+
+		String word = null;
+		int size = buildMyWordBookTest(DBA.TABLE_WORD_LIST_REFLETS1U);
+		int idx = -1;
+		if (size > 0) {
+			idx = random.nextInt(size);
+		} else {
+			buildRandomTest(DBA.TABLE_WORD_LIST_REFLETS1U, 1);
+			idx = 0;
+		}
+
+		if (idx != -1) {
+			try {
+				word = Word.getMap().valueAt(idx).getWord();
+			} catch (Exception e) {
+				Log.e(TAG, "getOneWordToReview() failed.");
+			}
+		}
+		return word;
+	}
+
+	public int buildMyWordBookTest(String table) {
 		SparseArray<Word> map = Word.getMap();
 		map.clear();
 
-		Cursor cursor = query(CURRENT_WORD_TABLE, null, WORD_STAR + ">?",
+		Cursor cursor = query(table, null, WORD_STAR + ">?",
 				new String[] { "0" }, null, null, null);
 
 		int i = 0;
@@ -282,7 +311,7 @@ public class DBA extends SQLiteOpenHelper {
 			}
 			cursor.close();
 		}
-
+		return map.size();
 	}
 
 	private DBA(Context context) {
@@ -432,9 +461,10 @@ public class DBA extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEST_REPORT);
-		// db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORD_LIST_REFLETS1U);
-		onCreate(db);
+		if (newVersion == 9) {
+			db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORD_LIST_NCE3);
+			onCreate(db);
+		}
 	}
 
 }

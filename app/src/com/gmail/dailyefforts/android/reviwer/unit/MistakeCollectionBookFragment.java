@@ -40,7 +40,7 @@ public class MistakeCollectionBookFragment extends ListFragment implements
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
-		setEmptyText(getActivity().getText(R.string.tip_empty));
+		setEmptyText(getActivity().getText(R.string.tip_word_book_is_empty));
 
 		mLayoutInflater = getActivity().getLayoutInflater();
 

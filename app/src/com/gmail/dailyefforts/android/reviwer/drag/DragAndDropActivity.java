@@ -26,8 +26,6 @@ import android.view.View.OnClickListener;
 import android.view.View.OnDragListener;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -82,8 +80,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 	private int mColorError;
 
 	private int mColorBingon;
-
-	private Animation animation;
 
 	private Paper mPaper;
 
@@ -232,9 +228,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 		mDBA = DBA.getInstance(getApplicationContext());
 
-		animation = AnimationUtils.loadAnimation(getApplicationContext(),
-				R.anim.shake);
-
 		mDbCount = mDBA.getCount();
 
 		mOptList = new ArrayList<Button>();
@@ -373,7 +366,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			// int result mTts.setLanguage(Locale.FRANCE);
 			if (result == TextToSpeech.LANG_MISSING_DATA
 					|| result == TextToSpeech.LANG_NOT_SUPPORTED) {
-				// Lanuage data is missing or the language is not supported.
+				// language data is missing or the language is not supported.
 				Log.e(TAG, "Language is not available.");
 			} else {
 				if (Config.DEBUG) {
@@ -433,8 +426,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 		TestCase testCase = mTestCases.get(mWordCounter);
 
-		mBtnCurrentWord.clearAnimation();
-		mBtnCurrentWord.startAnimation(animation);
 		if (mBtnCurrentWord.getVisibility() != View.VISIBLE) {
 			mBtnCurrentWord.setVisibility(View.VISIBLE);
 		}
@@ -521,7 +512,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			if (v.getId() == mBtnCurrentWord.getId()) {
 				if (!mBingo) {
 					mBtnCurrentWord.setVisibility(View.VISIBLE);
-					mBtnCurrentWord.startAnimation(animation);
 				}
 			} else {
 				v.clearAnimation();

@@ -2,11 +2,7 @@ package com.gmail.dailyefforts.android.reviwer;
 
 public class Config {
 
-	public static final boolean DEBUG = true;
-
-	public enum Language {
-		English, French
-	}
+	public static final boolean DEBUG = false;
 
 	// Actions
 	public static final String ACTION_NAME_CHECK_VERSION = "com.gmail.dailyefforts.android.reviwer.CheckVersion";
@@ -31,7 +27,7 @@ public class Config {
 	public static final String INTENT_APK_VERSION_SIZE = "version_size";
 	public static final String INTENT_APK_VERSION_MD5 = "version_md5";
 
-	public static final long INTERVAL_TIME_TO_TIP_REVIEW = 5 * 60 * 60 * 1000;
+	public static final long INTERVAL_TIME_TO_TIP_REVIEW = 3 * 60 * 60 * 1000;
 
 	// Default values
 	public static final String DEFAULT_OPTION_COUNT = "4";

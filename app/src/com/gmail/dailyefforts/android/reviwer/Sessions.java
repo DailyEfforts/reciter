@@ -29,8 +29,8 @@ import android.widget.Toast;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.test.TestFragment;
 import com.gmail.dailyefforts.android.reviwer.test.TestPage;
-import com.gmail.dailyefforts.android.reviwer.unit.UnitSetFragment;
 import com.gmail.dailyefforts.android.reviwer.unit.MistakeCollectionBookFragment;
+import com.gmail.dailyefforts.android.reviwer.unit.UnitSetFragment;
 
 public class Sessions extends FragmentActivity implements ActionBar.TabListener {
 
@@ -301,11 +301,11 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 			switch (mTestType) {
 			case Config.RANDOM_TEST:
 			case Config.RANDOM_TEST_ZH:
-				dba.buildRandomTest(mTestWordsSize);
+				dba.buildRandomTest(DBA.CURRENT_WORD_TABLE, mTestWordsSize);
 				break;
 			case Config.MY_WORD_TEST:
 			case Config.MY_WORD_TEST_ZH:
-				dba.buildMyWordBookTest();
+				dba.buildMyWordBookTest(DBA.CURRENT_WORD_TABLE);
 				break;
 			default:
 				break;

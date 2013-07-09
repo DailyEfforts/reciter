@@ -119,8 +119,10 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 		protected Boolean doInBackground(Void... params) {
 			AssetManager assetMngr = getActivity().getAssets();
 			if (Config.DEBUG) {
-				Log.d(TAG, "doInBackground() assetMngr: " + assetMngr + ", dba: " + dba);
-				Log.d(TAG, "doInBackground() CURRENT_BOOK_NAME: " + Config.CURRENT_BOOK_NAME);
+				Log.d(TAG, "doInBackground() assetMngr: " + assetMngr
+						+ ", dba: " + dba);
+				Log.d(TAG, "doInBackground() CURRENT_BOOK_NAME: "
+						+ Config.CURRENT_BOOK_NAME);
 			}
 			if (assetMngr == null || dba == null) {
 				return false;
@@ -153,6 +155,9 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 						String meaning = arr[1].trim();
 
 						if (dba.exist(word, meaning)) {
+							if (Config.DEBUG) {
+								Log.d(TAG, "exist: " + word + " - " + meaning);
+							}
 							continue;
 						}
 
