@@ -1,4 +1,4 @@
-﻿total=834
+﻿﻿total=826
 new@新的
 student@学生
 French@法国人
@@ -133,7 +133,6 @@ full@满的
 large@大的
 little@小的
 sharp@尖的，锋利的
-small@小的
 blunt@钝的
 box@盒子，箱子
 glass@杯子
@@ -176,7 +175,6 @@ door@门
 picture@图画
 wall@墙
 trousers@(复数)长裤
-shut@关着的
 bedroom@卧室
 untidy@乱，不整齐
 open@开着的
@@ -509,7 +507,6 @@ winner@获胜者
 behind@在…之后
 way@路途
 awful@让人讨厌的，坏的
-telephone@电话；打电话
 time@次(数)
 last@最后的，前一次的
 phone@电话
@@ -621,7 +618,6 @@ plenty@大量
 bar@酒吧
 station@车站，火车站
 miss@想念，思念
-leave@离开
 describe@描述
 zip@拉链
 label@标签
@@ -672,7 +668,6 @@ stale@变馊的
 low@低的，矮的
 loud@大声的
 high@高的
-sweet@甜的
 soft@软的
 sour@酸的
 spell@拼写
@@ -751,12 +746,10 @@ during@在…期间
 trip@旅行
 travel@旅行
 offer@提供
-job@工作
 guess@猜
 grow@长，让…生长
 beard@(下巴上的)胡子，络腮胡子
 kitten@小猫
-water@水
 terribly@非常
 dry@干燥的，干的
 nuisance@讨厌的东西或人
@@ -810,7 +803,6 @@ compact@带镜的化妆盒
 kindly@和蔼地
 ugly@丑陋的
 amused@有趣的
-smile@微笑
 embarrassed@尴尬的，窘迫的
 worried@担心，担忧
 regularly@经常地，定期地

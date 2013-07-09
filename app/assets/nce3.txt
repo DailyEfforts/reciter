@@ -1,4 +1,4 @@
-﻿total=1154
+﻿﻿total=1041
 puma@美洲狮
 spot@看出，发现
 evidence@证据
@@ -311,7 +311,6 @@ luxury@奢侈品，珍品
 associate@联想到
 despise@鄙视
 appeal@引起兴致
-shower@淋浴
 stroll@溜达，散步
 impulse@冲动
 dozen@12个，一打
@@ -416,7 +415,6 @@ corn@谷物
 moonlight@月光
 conscientious@认真的
 suspect@怀疑
-desert@(军队中)开小差
 regiment@(军队)团
 action@战斗
 recluse@隐士
@@ -493,7 +491,6 @@ cherish@期望，渴望；珍爱
 amply@足够地
 masterpiece@杰作
 mere@仅仅的
-prize@珍贵的，宝贵的
 miniature@小巧的，小型的
 composition@构图
 justice@正义，公正；司法
@@ -659,7 +656,6 @@ distinguished@杰出的，著名的
 Everest@珠穆朗玛峰
 wade@涉水
 waterfall@瀑布
-gear@(汽车)排档
 inflatable@可充气的
 rubble@碎瓦，瓦块
 insistent@连续的，不断的
@@ -697,7 +693,6 @@ vertically@垂直地
 torrent@激流，洪流
 rebound@弹回
 positively@绝对地，完全地
-compartment@(轮船的)密封舱
 cramped@窄小的
 stuffy@憋气的，闷气的
 monotonous@枯燥的，乏味的，单调的
@@ -732,7 +727,6 @@ fresh@精神饱满的
 uncrumpled@衣冠整洁的；没有垮下来
 democratic@民主的
 restrict@限制
-abuse@辱骂，责骂
 contention@论点
 quintuplet@五胞胎之一
 obscurity@默默无闻
@@ -814,7 +808,6 @@ fresco@壁画
 abruptly@突然地，意外地
 tramp@徒步行进
 moor@(用绳、链、锚)系(船)
-ferry@渡船
 straggle@蔓延，散乱分布
 dilapidated@陈旧破烂的，倒塌的
 sardine@沙丁鱼，沙丁鱼罐头
@@ -840,7 +833,6 @@ disillusion@使幻想破灭
 industriousness@勤奋
 qualification@资格，能力
 mirth@欢笑，高兴
-stack@(整齐地)堆放，排放；n.堆
 cellar@地窖
 resolution@决心
 mentally@内心里
@@ -896,11 +888,9 @@ dispel@驱散，消除
 outlandish@稀奇古怪的
 acquisition@获得
 cosmetic@化妆品
-outrageous@出人预料的；令人不悦的
 fanciful@想象出来的
 insoluble@不可溶解的
 prompt@敦促，激励
-exclusive@独占的，独家的
 syllable@音节
 bewilderment@迷惑，糊涂
 freckle@雀斑
@@ -908,7 +898,6 @@ evidently@显然地，明显地
 weird@奇异的，古怪的
 concoction@调制品
 intoxicate@陶醉，得意忘形
-blank@空白的
 discreetly@谨慎地
 clutch@抓住
 adorn@装饰，打扮
@@ -928,7 +917,6 @@ alter@改变
 accusation@谴责，指控
 ascertain@查出，查明
 prejudiced@有偏见的，不公平的
-prompt@敦促，激励
 insect@昆虫
 wage@进行(斗争)
 contaminate@弄脏
@@ -1024,7 +1012,7 @@ balcony@阳台
 fussy@大惊小怪的，小题大做的
 amass@积聚，收集
 indiscriminate@不加选择的
-clutter@/v.一堆杂物;乱糟糟地堆满
+clutter@一堆杂物;乱糟糟地堆满
 string@细线, 细绳
 requisite@必需品
 mania@癖好,狂热
@@ -1041,7 +1029,6 @@ contented@心满意足的
 boredom@烦恼，无聊
 punctuality@准时
 rural@农村的
-disregard@不顾，无视
 intellectual@知识分子
 abstruse@深奥的
 coordinate@协调

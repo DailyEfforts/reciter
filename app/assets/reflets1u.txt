@@ -1,4 +1,4 @@
-﻿total=867
+﻿﻿total=849
 accord@同意
 d'accord@同意
 agence@代理处
@@ -95,7 +95,6 @@ Excuse-moi.@请你原谅我
 faim@饥饿
 avoir faim@饿
 femme@女人；妻子
-garçon@男孩
 gentil@亲切的，客气的
 geste@手势
 grand@大的，宽的
@@ -311,7 +310,6 @@ voir@看见；会见
 aborder@靠近某人与其攀谈
 activité@活动
 admiratif@仰慕的，钦佩的
-aller@去
 apprendre@学习
 approcher@走近，靠近
 campagne@乡村
@@ -401,7 +399,6 @@ bleu@蓝色的
 bleue@蓝色的
 blond@金黄色的
 blonde@金黄色的
-boutique@店铺
 brun@棕色的，褐色的
 brune@棕色的，褐色的
 ceinture@腰带
@@ -437,7 +434,6 @@ noire@黑色的
 œuvre@作品
 original@独特的
 parce que@因为
-parents@父母
 Parisien@巴黎人
 parler@谈论
 partir@出发，动身
@@ -448,12 +444,10 @@ sac@包，袋
 sœur@姐妹
 soie@丝绸
 sortir@出去
-sourire@微笑
 super@太棒了！
 tard@晚
 vacances@假期
 vendre@卖，销售
-venir@来
 vente@销售
 verre@玻璃杯
 annoncer@报告，通报
@@ -472,8 +466,6 @@ combien@多少
 commun@公共的
 commune@公共的
 complètement@完全地
-content@高兴的
-contente@高兴的
 culturel@文化的
 de la part de@以…名义，代表
 demi@一半的，半个的
@@ -555,14 +547,12 @@ dynamique@充满活力的
 en général@一般来说
 en moyenne@平均
 en plus@而且
-ensemble@一起
 être en trains de + inf.@正在做
 exagérer@夸张
 fois@次
 garer@停车
 hip-hop@街舞
 humeur@情绪
-immeuble@楼房
 impressionnant@给人印象深刻的
 indemnité@补贴，补偿金
 installer@安装
@@ -604,7 +594,6 @@ trouver@找到
 aérogare@航空站，候机大楼
 aéroport@机场
 après-midi@下午
-attendre@等待
 aussi@如此，这样
 avion@飞机
 capitale@首都
@@ -682,7 +671,6 @@ chaque@各个，每个
 château@城堡
 chauffeur@司机
 confortable@舒适的
-connaître@认识
 conservateur@看护员
 côté@边
 course@路程，行程
@@ -705,7 +693,6 @@ hôtel@饭店
 indiquer@指出
 interdit@禁止的
 interdite@禁止的
-jardin@花园
 libre@空闲的
 monnaie@零钱，硬币
 nombreux@许多的
@@ -716,7 +703,6 @@ plante@植物
 portefeuille@钱包
 pouvoir@能，可以
 prévoir@预料；准备，预备
-prévoir@预料；准备，预备
 quadricycle@四轮车
 rare@罕见的
 reçu@收据
@@ -725,7 +711,6 @@ reposer@休息
 retenir@预订（餐位）
 retourner@转身
 saison@季节
-savoir@知道
 serre@温室，暖房
 sortir@拿出来
 sourcil@眉毛
@@ -748,7 +733,6 @@ debout@站着
 démarchage@推销
 démonstration@示范表演
 devenir@成为
-difficile@困难的
 doigt@手指
 douceur@温和
 en douceur@慢慢地，心平气和地
@@ -771,7 +755,6 @@ oreille@耳朵
 pain@面包
 persuader@说服，使信服
 être persuadé de@对…深信
-peut-être@或许，可能
 plus@（与ne连用）不再
 possible@可能的
 précis@明确的
@@ -783,7 +766,6 @@ rapide@快的
 rapporter@带回
 revoir@再看
 reine@王后
-rire@笑
 rôle@角色
 rouge@红色的
 seulement@只是

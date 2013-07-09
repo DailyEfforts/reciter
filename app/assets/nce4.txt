@@ -1,4 +1,4 @@
-﻿total=1896
+﻿﻿total=1879
 abandon@放弃 
 abruptly@突然 
 absorb@使精神贯注 
@@ -11,7 +11,6 @@ accomplishment@成就
 accord@调和，一致 
 account@考虑 
 accountant@会计 
-accumulate@积累，累积 
 accumulate@积累，累积 
 accusation@罪名，谴责 
 accuse@谴责 
@@ -117,7 +116,6 @@ atmosphere@大气
 attach@系，缚 
 attach@喜爱，依恋 
 attack@攻击 
-attack@攻击 
 attainment@达到 
 attend@照料 
 attic@顶楼，屋顶室 
@@ -166,7 +164,6 @@ birth@出生
 bit@小片 
 bite@咬 
 bitterly@厉害地 
-blackberry@黑莓 
 blackberry@黑莓 
 blacken@使...变黑 
 blame@责怪 
@@ -447,7 +444,6 @@ depict@描绘
 depth@深度 
 descend@突然去访问 
 description@描述 
-description@描述 
 desert@无人居住的 
 desert@擅离 
 deserted@无人的 
@@ -589,7 +585,6 @@ eve@除夕
 event@事件 
 Everest@珠穆朗玛峰 
 evidence@证据 
-evidence@证据 
 evolve@使逐渐形成 
 exact@确切的 
 example@实例 
@@ -612,7 +607,6 @@ expression@表达
 extend@延伸 
 extinct@灭绝的 
 extol@颂扬 
-extraordinarily@特别地 
 extraordinarily@特别地 
 extraordinary@离奇的 
 extravagant@侈奢的 
@@ -814,7 +808,6 @@ human being@人类
 human frame@身躯 
 hunt@捕捉 
 hunt@打猎 
-hunt@捕捉 
 hunting@狩猎 
 hurricane@飓风 
 hypnotize@使入迷 
@@ -896,7 +889,6 @@ intoxicate@使陶醉，醉人
 introduce@引进 
 intruder@入侵者 
 invariably@常常，总是 
-investigate@调查 
 investigate@调查 
 inveterate@积习难改的 
 invisible@无形的 
@@ -1105,7 +1097,6 @@ numerous@许多
 nursery@育婴室 
 objective@目标 
 oblige@迫使 
-oblige@迫使 
 obscure@卑微的，无名的 
 obscurity@默默无闻 
 observant@观察力锐敏的 
@@ -1302,14 +1293,12 @@ publication@出版物
 publish@出版 
 pudding@布丁(一种甜点心) 
 puma@美洲狮 
-puma@美洲狮 
 pump@抽水 
 pump@用泵打... 
 punctuality@准时 
 punctually@准时地 
 punctured@被剌破的 
 punishment@惩罚 
-purchase@购买 
 purchase@购买 
 pursue@实行 
 push@伸 
@@ -1325,7 +1314,6 @@ quintuplet@五胞胎之一
 rabbit@兔 
 radically@急剧地 
 radio astronomy@射电天文学 
-radio transmitter@无线电发报机 
 radio transmitter@无线电发报机 
 raft@木筏 
 rags@破旧衣服 
@@ -1387,7 +1375,6 @@ remote@很少的
 renew@重复 
 repeatedly@反复地 
 repel@排斥 
-report@报告 
 report@报告 
 represent@代表 
 representive@代表 
@@ -1507,7 +1494,6 @@ sequence@序列
 series@系列 
 serious@重要的 
 seriously@认真地 
-seriously@认真地 
 service@交通设施 
 set@(一)套，(一)批 
 settle@安身 
@@ -1549,7 +1535,6 @@ silk@丝绸
 silly@无聊的 
 silver@银器 
 silver-ware@银器 
-similar@相似的 
 similar@相似的 
 similarly@同样 
 simple@简单的 
@@ -1608,7 +1593,6 @@ spiritual@精神上的
 spokesman@代言人 
 spot@发现 
 spot@一点点 
-spot@发现 
 squeeze@挤 
 squint@眯着眼看 
 stack@堆积 
@@ -1870,7 +1854,6 @@ wheel@驾驶盘
 wheelbarrow@手推车 
 wickedly@居心叵测地 
 widely@广泛地 
-wild@野生的 
 wild@野生的 
 wildly@发狂地，荒唐地 
 winch@绞车 

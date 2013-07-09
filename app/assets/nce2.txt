@@ -1,4 +1,4 @@
-﻿total=1147
+﻿﻿total=1133
 ability@能力，才干；技能
 able@能，会；有才能的
 accept@接受，收领，承担
@@ -39,8 +39,6 @@ amusement@娱乐，消遣
 amusing@有趣的，逗人笑的
 ancient@古代的，古老的
 angrily@气愤地
-angrily@气愤地
-angry@发怒的，生气的
 angry@发怒的，生气的
 announce@宣布，宣告，发表
 announcer@播音员，宣告者
@@ -70,12 +68,10 @@ asleep@睡着了的，不活泼的
 astonish@使惊讶
 astronaut@宇宙航行员
 Atlantic@大西洋的
-Atlantic@大西洋的
 attempt@试图，尝试，袭击
 attend@出席，参加；照应
 attention@注意，关心，注意力
 attention@注意，关心；注意力
-aunt@姨母，姑母，伯母
 aunt@姨母，姑母，伯母
 authorities@当局，权力，权威
 average@平均的，通常的
@@ -235,7 +231,6 @@ damage@损害，毁坏 n.损坏
 dance@跳舞，手舞足蹈
 danger@危险，危险物品
 dangerous@危险的
-dark@暗的，黑色的
 dark@暗的，黑色的
 darkness@黑暗，阴暗，秘密
 Darwin@达尔文(城市名)
@@ -536,7 +531,6 @@ lantern@灯笼，灯火室，天窗
 last@ vt.持续 a.最后的
 latch@门闩，门锁 vi.锁上
 late@迟的，晚的 ad.迟
-late@迟的，晚的 ad.迟
 laugh@大笑，发笑 n.笑
 lawyer@律师，法学家
 lay@摆出，放置；使之
@@ -565,7 +559,6 @@ look for@寻找，期待
 lorry@卡车
 Los Angeles@洛杉矶(美国城市)
 lost@丢失的，失败的
-loudly@大声地，高声地
 loudly@大声地，高声地
 loudly@大声地 a.高声的
 lower@放下，降低，削减
@@ -632,7 +625,6 @@ no parking@禁止停车
 noble@崇高的，高尚的
 nod@点头，低头
 none@没有人
-none@没有人
 normal@正常的，合乎规范的
 normally@通常地，正常地
 notice@注意到，提到
@@ -662,7 +654,6 @@ orange-coloured@橘红色的，橘黄色的
 order@秩序，顺序，制度
 ordinary@平常的，平凡的
 ought@ v.应该...
-outside@在外面，向外面
 outside@在外面，向外面
 overhead@在头顶上，在高处
 own@自己的，特有的
@@ -731,7 +722,6 @@ possess@拥有，占有，具有
 possession@拥有，占有；财产
 possible@可能做到的
 postcard@明信片
-postcard@明信片
 post-office@邮政局
 pot@桶，壶，罐，锅
 power@电力，动力，能力
@@ -748,7 +738,6 @@ pretend@，vi.假装，装得...
 prevent@ vi.阻碍，妨碍
 Prime Minister@总理
 prisoner@囚犯，俘虏，拘押犯
-private@私下的，个人的
 private@私下的，个人的
 prize@奖赏，奖品 vt.珍视
 probably@可能，大概，或许
@@ -825,7 +814,6 @@ reward@报偿，报答
 rice@米饭
 ride@(乘车)旅行，骑，乘
 rifle@步枪，来福枪
-ring@(钟、铃)鸣响
 ring@(钟、铃)鸣响
 Rio de Janneiro@里约热内卢(巴西港市)
 risk@冒险，危险
@@ -1022,7 +1010,6 @@ test@试验，考验，化验
 The Globe@环球剧院
 the public@公众，民众
 theatre@剧场，戏院；戏
-theatre@剧场，戏院；戏
 therefore@因此，所以
 thick@厚的，粗的，浓的
 thing@事，物，事物
@@ -1074,7 +1061,6 @@ unlucky@倒霉的，不顺利的
 unnecessary@不必要的，无用的
 unpleasant@使人不愉快的
 unsmiling@板着脸，不笑的
-until@直到...为止
 until@直到...为止
 unusual@不寻常的，不常见的
 unwillingly@不情愿地，勉强地
