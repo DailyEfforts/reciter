@@ -2,7 +2,7 @@ package com.gmail.dailyefforts.android.reviwer;
 
 public class Config {
 
-	public static final boolean DEBUG = false;
+	public static final boolean DEBUG = true;
 
 	// Actions
 	public static final String ACTION_NAME_CHECK_VERSION = "com.gmail.dailyefforts.android.reviwer.CheckVersion";

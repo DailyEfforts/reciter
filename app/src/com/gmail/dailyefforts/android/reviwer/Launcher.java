@@ -1,6 +1,9 @@
 package com.gmail.dailyefforts.android.reviwer;
 
+import android.app.AlarmManager;
 import android.app.ListActivity;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -43,8 +46,18 @@ public class Launcher extends ListActivity implements OnClickListener {
 		if (needToCheckForUpdate(lastCheckedForUpdate)) {
 			launchVersionChecker();
 		}
+		
+
+		setReviewAlarm();
 	}
 
+	private void setReviewAlarm() {
+		AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+		PendingIntent sender = PendingIntent.getBroadcast(this, 0, new Intent(
+				Config.ACTION_REVIEW), PendingIntent.FLAG_CANCEL_CURRENT);
+		am.setRepeating(AlarmManager.RTC, System.currentTimeMillis(),
+				Config.INTERVAL_TIME_TO_TIP_REVIEW, sender);
+	}
 	private boolean needToCheckForUpdate(long lastTime) {
 		boolean ret = false;
 

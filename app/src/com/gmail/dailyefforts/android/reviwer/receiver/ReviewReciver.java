@@ -39,9 +39,7 @@ public class ReviewReciver extends BroadcastReceiver {
 				return false;
 			}
 		}
-		if (Config.DEBUG) {
-			Log.d(TAG, "ReviewReciver: onReceive() notifi");
-		}
+		
 		Calendar cal = Calendar.getInstance();
 
 		int day = cal.get(Calendar.DAY_OF_WEEK);
@@ -74,31 +72,34 @@ public class ReviewReciver extends BroadcastReceiver {
 	private void nofity(Context context, Intent intent) {
 		DBA dba = DBA.getInstance(context);
 		String word = dba.getOneWordToReview();
+		
+		String title = null;
 
-		Notification notification = new Notification();
-		notification.icon = R.drawable.ic_launcher;
+		
 		if (word == null || word.length() == 0) {
-			notification.tickerText = context
+			title = context
 					.getString(R.string.time_to_review_words);
 		} else {
-			notification.tickerText = context.getString(
+			title = context.getString(
 					R.string.time_to_review, word);
 		}
-		notification.flags = Notification.FLAG_AUTO_CANCEL;
-		notification.defaults = Notification.DEFAULT_ALL;
 
 		Intent willing = new Intent(context.getApplicationContext(),
 				Launcher.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
 				willing, 0);
-
-		notification.setLatestEventInfo(context, notification.tickerText,
-				context.getString(R.string.tap_to_start_reciting_words),
-				pendingIntent);
+		
+		Notification.Builder builder = new Notification.Builder(context);
+		builder.setSmallIcon(R.drawable.ic_launcher);
+		builder.setTicker(title);
+		builder.setContentTitle(title);
+		builder.setContentText(context.getString(R.string.tap_to_start_reciting_words));
+		
+		builder.setContentIntent(pendingIntent);
 
 		NotificationManager nm = (NotificationManager) context
 				.getSystemService(Context.NOTIFICATION_SERVICE);
-		nm.notify(R.string.time_to_review, notification);
+		nm.notify(R.string.time_to_review, builder.build());
 	}
 }

@@ -92,12 +92,6 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 
 		RUNNING = true;
 
-		AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-		PendingIntent sender = PendingIntent.getBroadcast(this, 0, new Intent(
-				Config.ACTION_REVIEW), PendingIntent.FLAG_CANCEL_CURRENT);
-		am.setRepeating(AlarmManager.RTC, System.currentTimeMillis(),
-				Config.INTERVAL_TIME_TO_TIP_REVIEW, sender);
-
 		Intent intent = getIntent();
 		if (intent != null && intent.getExtras() != null) {
 			int titleId = intent.getExtras().getInt(
