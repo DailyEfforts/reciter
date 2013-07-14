@@ -68,7 +68,6 @@ public class ReviewReciver extends BroadcastReceiver {
 
 	}
 
-	@SuppressWarnings("deprecation")
 	private void nofity(Context context, Intent intent) {
 		DBA dba = DBA.getInstance(context);
 		String word = dba.getOneWordToReview();

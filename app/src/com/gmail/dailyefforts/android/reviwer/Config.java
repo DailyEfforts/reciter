@@ -51,10 +51,12 @@ public class Config {
 	public static final String INTENT_EXTRA_BOOK_NAME_RES_ID = "book_name_res_id";
 	public static final String INTENT_EXTRA_TEST_TYPE = "test_type";
 
-	public static final int RANDOM_TEST = 0;
-	public static final int MY_WORD_TEST = 1;
-	public static final int RANDOM_TEST_ZH = 2;
-	public static final int MY_WORD_TEST_ZH = 3;
+	public static final int MY_WORD_TEST = 0;
+	public static final int MY_WORD_TEST_ZH = 1;
+	public static final int MY_WORD_SPELL = 2;
+	public static final int RANDOM_TEST = 3;
+	public static final int RANDOM_TEST_ZH = 4;
+	public static final int RANDOM_SPELL = 5;
 
 	public static final String WORD_MEANING_SPLIT = "@";
 
@@ -63,5 +65,9 @@ public class Config {
 	public static final String LAST_TIME_CHECKED_FOR_UPDATE = "last_time_checked_for_update";
 	public static final long ZERO = 0L;
 	public static final long ONE_DAY = 24 * 60 * 60 * 1000L; // MS
+
+	public static enum TestType {
+		MY_WORD_TO_ZH, MY_WORD_FROM_ZH, MY_WORD_SPELL, RANDOM_TO_ZH, RANDOM_FROM_ZH, RANDOM_SPELL
+	}
 
 }

@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
+import com.gmail.dailyefforts.android.reviwer.Config.TestType;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.Word;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
@@ -153,6 +154,9 @@ public class TestPage extends Activity implements OnInitListener,
 
 		Bundle extras = getIntent().getExtras();
 		int testType = extras.getInt(Config.INTENT_EXTRA_TEST_TYPE);
+		if (Config.DEBUG) {
+			Log.d(TAG, "testType: " + testType);
+		}
 		switch (testType) {
 		case Config.RANDOM_TEST_ZH:
 		case Config.MY_WORD_TEST_ZH:

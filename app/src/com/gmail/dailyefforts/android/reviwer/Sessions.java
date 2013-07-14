@@ -3,11 +3,9 @@ package com.gmail.dailyefforts.android.reviwer;
 import java.util.Locale;
 
 import android.app.ActionBar;
-import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.FragmentTransaction;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,6 +24,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.gmail.dailyefforts.android.reviwer.Config.TestType;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
 import com.gmail.dailyefforts.android.reviwer.test.TestFragment;
 import com.gmail.dailyefforts.android.reviwer.test.TestPage;
@@ -246,7 +245,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-							new TestCaseBuilder(getActivity()).execute(which);
+							new TestCaseBuilder(getActivity()).execute(getTestType(which));
 						}
 					});
 			builder.setNegativeButton(android.R.string.cancel, null);
@@ -254,10 +253,23 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 		}
 	}
 
+	private static TestType getTestType(int which) {
+		TestType ret = null;
+		TestType[] types = TestType.values();
+		for (TestType type : types) {
+			if (type.ordinal() == which) {
+				ret = type;
+				break;
+			}
+		}
+
+		return ret;
+	}
+
 	public static class TestCaseBuilder extends
-			AsyncTask<Integer, Void, Boolean> {
+			AsyncTask<TestType, Void, Boolean> {
 		private DBA dba;
-		private int mTestType;
+		private TestType mTestType;
 
 		private Context mContext;
 
@@ -274,31 +286,38 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 		protected void onPostExecute(Boolean result) {
 			if (result) {
 				Intent intent = new Intent(mContext, TestPage.class);
-				intent.putExtra(Config.INTENT_EXTRA_TEST_TYPE, mTestType);
+				intent.putExtra(Config.INTENT_EXTRA_TEST_TYPE, mTestType.ordinal());
 
 				mContext.startActivity(intent);
 			} else {
-				if (mTestType == Config.MY_WORD_TEST
-						|| mTestType == Config.MY_WORD_TEST_ZH) {
-					Toast.makeText(mContext, R.string.tip_word_book_is_empty,
-							Toast.LENGTH_LONG).show();
-				}
+				/*
+				 * if (mTestType == Config.MY_WORD_TEST || mTestType ==
+				 * Config.MY_WORD_TEST_ZH) { Toast.makeText(mContext,
+				 * R.string.tip_word_book_is_empty, Toast.LENGTH_LONG).show(); }
+				 */
 			}
 		}
 
 		@Override
-		protected Boolean doInBackground(Integer... params) {
+		protected Boolean doInBackground(TestType... params) {
 			mTestType = params[0];
 			if (dba == null) {
 				return null;
 			}
+
+			if (Config.DEBUG) {
+				Log.d(TAG, "mTestType: " + mTestType);
+			}
+
 			switch (mTestType) {
-			case Config.RANDOM_TEST:
-			case Config.RANDOM_TEST_ZH:
+			case RANDOM_FROM_ZH:
+			case RANDOM_TO_ZH:
+			case RANDOM_SPELL:
 				dba.buildRandomTest(DBA.CURRENT_WORD_TABLE, mTestWordsSize);
 				break;
-			case Config.MY_WORD_TEST:
-			case Config.MY_WORD_TEST_ZH:
+			case MY_WORD_FROM_ZH:
+			case MY_WORD_TO_ZH:
+			case MY_WORD_SPELL:
 				dba.buildMyWordBookTest(DBA.CURRENT_WORD_TABLE);
 				break;
 			default:

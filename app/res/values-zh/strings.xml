@@ -59,10 +59,12 @@
     <string name="select_test_type">选择测试类型</string>
     <string name="click_notification_to_install_when_download_completed">待下载完成后，请点击通知栏进行安装</string>
     <string name="click_to_install_reciter">点击安装Reciter</string>
-    <string name="test_type_foreign_to_chinese_random">给外语 选中文 (随机)</string>
     <string name="test_type_foreign_to_chinese_correction_book">给外语 选中文 (错题本)</string>
-    <string name="test_type_chinese_to_foreign_random">给中文 选外语 (随机)</string>
     <string name="test_type_chinese_to_foreign_correction_book">给中文 选外语 (错题本)</string>
+    <string name="test_spell_foreign_correction_book">拼写测试 (错题本)</string>
+    <string name="test_type_foreign_to_chinese_random">给外语 选中文 (随机)</string>
+    <string name="test_type_chinese_to_foreign_random">给中文 选外语 (随机)</string>
+    <string name="test_spell_random">拼写测试 (随机)</string>
     <string name="test_record_is_empty">尚无测试记录</string>
     <string name="downloading_the_latest_reciter_apk_file">正在下载新版Reciter&#8230;</string>
     <string name="book_list">词书列表</string>
