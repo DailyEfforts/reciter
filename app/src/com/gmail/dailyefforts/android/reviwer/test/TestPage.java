@@ -8,10 +8,8 @@ import java.util.Random;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.ContentValues;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
@@ -27,7 +25,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Config;
-import com.gmail.dailyefforts.android.reviwer.Config.TestType;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.Word;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
@@ -53,8 +50,6 @@ public class TestPage extends Activity implements OnInitListener,
 	private LinearLayout optCat;
 
 	private ArrayList<OptionButton> mOptList;
-
-	private SharedPreferences mSharedPref;
 
 	int optNum;
 
@@ -139,12 +134,8 @@ public class TestPage extends Activity implements OnInitListener,
 		setProgressBarVisibility(true);
 		mTextViewTestingItem = (TextView) findViewById(R.id.tv_word);
 		getActionBar().setDisplayShowTitleEnabled(false);
-		mSharedPref = PreferenceManager
-				.getDefaultSharedPreferences(getApplicationContext());
 
-		optNum = Integer.valueOf(mSharedPref.getString(
-				getString(R.string.pref_key_options_count),
-				Config.DEFAULT_OPTION_COUNT));
+		optNum = Config.DEFAULT_OPTION_COUNT;
 
 		dba = DBA.getInstance(getApplicationContext());
 

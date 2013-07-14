@@ -51,15 +51,9 @@ public class SettingsActivity extends PreferenceActivity {
 	public static class PrefsFragment extends PreferenceFragment implements
 			OnSharedPreferenceChangeListener, OnPreferenceClickListener {
 
-		private static ListPreference mOptNumListPref;
-		private static ListPreference mWordCountInOneUnitPref;
-		private static String mOptNumSummary;
-		private static String mWordCountInOneUnitSummary;
 		private static SharedPreferences mSharedPref;
 		private Preference mCurrentVersionPref;
 		private static CheckBoxPreference mReviewNotification;
-		private static ListPreference mRandomTestSizePref;
-		private static String mRandomTestSizeSummary;
 		private static Preference mResetPref;
 
 		@Override
@@ -71,18 +65,15 @@ public class SettingsActivity extends PreferenceActivity {
 			mSharedPref = PreferenceManager
 					.getDefaultSharedPreferences(getActivity()
 							.getApplicationContext());
-			mOptNumListPref = (ListPreference) findPreference(getString(R.string.pref_key_options_count));
-			mWordCountInOneUnitPref = (ListPreference) findPreference(getString(R.string.pref_key_word_count_in_one_unit));
 			mCurrentVersionPref = (Preference) findPreference(getString(R.string.pref_key_version));
 			mResetPref = (Preference) findPreference(getString(R.string.pref_key_reset));
 			mReviewNotification = (CheckBoxPreference) findPreference(getString(R.string.pref_key_review_notification));
-			mRandomTestSizePref = (ListPreference) findPreference(getString(R.string.pref_key_random_test_question_number));
 
-			if (mSharedPref == null || mOptNumListPref == null
+			if (mSharedPref == null 
 					|| mCurrentVersionPref == null
 					|| mCurrentVersionPref == null || mResetPref == null
 					|| mReviewNotification == null
-					|| mRandomTestSizePref == null) {
+					 ) {
 				return;
 			}
 
@@ -102,49 +93,9 @@ public class SettingsActivity extends PreferenceActivity {
 				return;
 			}
 
-			mOptNumSummary = String.valueOf(res
-					.getText(R.string.pref_summary_options_count));
-			mWordCountInOneUnitSummary = String.valueOf(res
-					.getText(R.string.pref_summary_word_count));
-
-			mRandomTestSizeSummary = String.valueOf(res
-					.getText(R.string.build_x_question_in_each_test_case));
-
-			String value = mOptNumListPref.getValue();
-
-			if (value == null) {
-				value = Config.DEFAULT_OPTION_COUNT;
-				mOptNumListPref.setValue(value);
-			}
-
-			value = mWordCountInOneUnitPref.getValue();
-
-			if (value == null) {
-				value = Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT;
-				mWordCountInOneUnitPref.setValue(value);
-			}
-
-			value = mRandomTestSizePref.getValue();
-			if (value == null) {
-				value = Config.DEFAULT_RANDOM_TEST_SIZE;
-				mRandomTestSizePref.setValue(value);
-			}
-
 			mReviewNotification.setChecked(mSharedPref.getBoolean(
 					getString(R.string.pref_key_review_notification),
 					Config.DEFAULT_ALLOW_REVIEW_NOTIFICATION));
-
-			setOptNumSummary();
-			setWordCountSummary();
-			setRandomTestSizeSummary();
-		}
-
-		private static void setRandomTestSizeSummary() {
-			if (mRandomTestSizePref != null) {
-				mRandomTestSizePref
-						.setSummary(String.format(mRandomTestSizeSummary,
-								mRandomTestSizePref.getValue()));
-			}
 		}
 
 		@Override
@@ -167,44 +118,8 @@ public class SettingsActivity extends PreferenceActivity {
 		public void onSharedPreferenceChanged(
 				SharedPreferences sharedPreferences, String key) {
 
-			if (key != null && mOptNumListPref != null
-					&& mWordCountInOneUnitPref != null
-					&& mReviewNotification != null
-					&& mRandomTestSizePref != null) {
-				if (key.equals(mOptNumListPref.getKey())) {
-					setOptNumSummary();
-				} else if (key.equals(mWordCountInOneUnitPref.getKey())) {
-					setWordCountSummary();
-				} else if (key.equals(mRandomTestSizePref.getKey())) {
-					setRandomTestSizeSummary();
-				}
-			}
 		}
 
-		private static void setOptNumSummary() {
-			if (mOptNumListPref != null) {
-				mOptNumListPref.setSummary(String.format(mOptNumSummary,
-						mOptNumListPref.getValue()));
-
-				if (Config.DEBUG) {
-					Log.d(TAG,
-							"setOptNumSummary() " + mOptNumListPref.getValue());
-				}
-			}
-		}
-
-		private static void setWordCountSummary() {
-			if (mWordCountInOneUnitPref != null) {
-				mWordCountInOneUnitPref.setSummary(String.format(
-						mWordCountInOneUnitSummary,
-						mWordCountInOneUnitPref.getValue()));
-
-				if (Config.DEBUG) {
-					Log.d(TAG, "setWordCountSummary() "
-							+ mWordCountInOneUnitPref.getValue());
-				}
-			}
-		}
 
 		@Override
 		public boolean onPreferenceClick(Preference preference) {
@@ -225,23 +140,6 @@ public class SettingsActivity extends PreferenceActivity {
 		}
 
 		private static void reset() {
-			if (mOptNumListPref != null) {
-				mOptNumListPref.setValue(Config.DEFAULT_OPTION_COUNT);
-			}
-
-			if (mWordCountInOneUnitPref != null) {
-				mWordCountInOneUnitPref
-						.setValue(Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT);
-			}
-
-			if (mRandomTestSizePref != null) {
-				mRandomTestSizePref.setValue(Config.DEFAULT_RANDOM_TEST_SIZE);
-			}
-
-			setOptNumSummary();
-			setWordCountSummary();
-			setRandomTestSizeSummary();
-
 			if (mReviewNotification != null) {
 				mReviewNotification
 						.setChecked(Config.DEFAULT_ALLOW_REVIEW_NOTIFICATION);

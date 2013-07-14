@@ -102,17 +102,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
-		mTestWordsSize = getRandomTestSize();
-	}
-
-	private int getRandomTestSize() {
-		mSharedPref = PreferenceManager
-				.getDefaultSharedPreferences(getApplicationContext());
-		String tmp = mSharedPref.getString(
-				getResources().getString(
-						R.string.pref_key_random_test_question_number),
-				Config.DEFAULT_RANDOM_TEST_SIZE);
-		return Integer.valueOf(tmp);
+		mTestWordsSize = Config.DEFAULT_RANDOM_TEST_SIZE;
 	}
 
 	public static boolean RUNNING;

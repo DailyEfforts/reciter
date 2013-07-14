@@ -30,9 +30,9 @@ public class Config {
 	public static final long INTERVAL_TIME_TO_TIP_REVIEW = 3 * 60 * 60 * 1000;
 
 	// Default values
-	public static final String DEFAULT_OPTION_COUNT = "4";
-	public static final String DEFAULT_WORD_COUNT_OF_ONE_UNIT = "20";
-	public static final String DEFAULT_RANDOM_TEST_SIZE = "30";
+	public static final int DEFAULT_OPTION_COUNT = 5;
+	public static final int DEFAULT_WORD_COUNT_OF_ONE_UNIT = 5;
+	public static final int DEFAULT_RANDOM_TEST_SIZE = 20;
 	public static final boolean DEFAULT_ALLOW_REVIEW_NOTIFICATION = true;
 
 	// Book names

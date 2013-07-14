@@ -39,8 +39,7 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 	private SharedPreferences mSharedPref;
 	private Animation mAnimation;
 
-	private static int UNIT = Integer
-			.valueOf(Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT);
+	private static int UNIT = Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,14 +54,6 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 
 		mAnimation = AnimationUtils
 				.loadAnimation(getActivity(), R.anim.zoom_in);
-
-		mSharedPref = PreferenceManager
-				.getDefaultSharedPreferences(getActivity());
-		if (mSharedPref != null) {
-			UNIT = Integer.valueOf(mSharedPref.getString(
-					getString(R.string.pref_key_word_count_in_one_unit),
-					Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT));
-		}
 
 		mGridView.setOnItemClickListener(this);
 

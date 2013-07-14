@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <PreferenceCategory android:title="@string/unit" >
-        <ListPreference
-            android:dialogTitle="@string/word_count"
-            android:entries="@array/pref_word_count_list_entries"
-            android:entryValues="@array/pref_word_count_list_entry_values"
-            android:key="@string/pref_key_word_count_in_one_unit"
-            android:persistent="true"
-            android:summary="@string/pref_summary_word_count"
-            android:title="@string/word_count" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="@string/test" >
-        <ListPreference
-            android:dialogTitle="@string/option_count"
-            android:entries="@array/pref_options_count_list_entries"
-            android:entryValues="@array/pref_options_count_list_entry_values"
-            android:key="@string/pref_key_options_count"
-            android:persistent="true"
-            android:summary="@string/pref_summary_options_count"
-            android:title="@string/option_count" />
-        <ListPreference
-            android:dialogTitle="@string/random_test_question_number"
-            android:entries="@array/pref_random_test_question_number_entries"
-            android:entryValues="@array/pref_random_test_question_number_entry_values"
-            android:key="@string/pref_key_random_test_question_number"
-            android:persistent="true"
-            android:summary="@string/build_x_question_in_each_test_case"
-            android:title="@string/random_test_question_number" />
-    </PreferenceCategory>
     <PreferenceCategory android:title="@string/background" >
         <!-- 
         <CheckBoxPreference

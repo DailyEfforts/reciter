@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="pref_options_count_list_entry_values" translatable="false">
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-    </string-array>
-    <string-array name="pref_word_count_list_entry_values" translatable="false">
-        <item>10</item>
-        <item>20</item>
-        <item>30</item>
-        <item>40</item>
-        <item>50</item>
-    </string-array>
-    <string-array name="pref_random_test_question_number_entry_values" translatable="false">
-        <item>10</item>
-        <item>30</item>
-        <item>50</item>
-        <item>70</item>
-        <item>100</item>
-    </string-array>
-    <string-array name="pref_options_count_list_entries">
-        <item>3 options</item>
-        <item>4 options</item>
-        <item>5 options</item>
-        <item>6 options</item>
-    </string-array>
-    <string-array name="pref_word_count_list_entries">
-        <item>10 words</item>
-        <item>20 words</item>
-        <item>30 words</item>
-        <item>40 words</item>
-        <item>50 words</item>
-    </string-array>
-    <string-array name="pref_random_test_question_number_entries">
-        <item>10 questions</item>
-        <item>30 questions</item>
-        <item>50 questions</item>
-        <item>70 questions</item>
-        <item>100 questions</item>
-    </string-array>
     <string-array name="books">
         <item>@string/mot</item>
         <item>@string/nce1</item>
