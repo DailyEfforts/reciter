@@ -6,11 +6,9 @@ import java.io.InputStreamReader;
 
 import android.content.ContentValues;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,7 +34,6 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 	private RelativeLayout loadingTip;
 	private GridView mGridView;
 	private DBA dba;
-	private SharedPreferences mSharedPref;
 	private Animation mAnimation;
 
 	private static int UNIT = Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT;

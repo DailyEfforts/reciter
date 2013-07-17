@@ -91,8 +91,6 @@ public class UpdateConfirm extends Activity {
 									Uri.parse(Config.REMOTE_APK_FILE_URL));
 							request.setTitle(getString(R.string.click_to_install_reciter));
 							request.setDescription(getString(R.string.downloading_the_latest_reciter_apk_file));
-							request.setAllowedNetworkTypes(Request.NETWORK_WIFI
-									| Request.NETWORK_WIFI);
 							request.setDestinationInExternalPublicDir(
 									Environment.DIRECTORY_DOWNLOADS,
 									Config.APK_NAME);
