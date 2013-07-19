@@ -8,7 +8,9 @@ import java.util.Random;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.res.Resources;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
@@ -66,6 +68,8 @@ public class TestPage extends Activity implements OnInitListener,
 	private TextToSpeech mTts;
 
 	private String mTestReport;
+
+	private AudioManager mAudioMngr;
 
 	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
 
@@ -152,7 +156,8 @@ public class TestPage extends Activity implements OnInitListener,
 		case Config.RANDOM_TEST_ZH:
 		case Config.MY_WORD_TEST_ZH:
 			FLAG = true;
-			mTextViewTestingItem.setTextSize(mTextViewTestingItem.getTextSize() / 2.0f);
+			mTextViewTestingItem
+					.setTextSize(mTextViewTestingItem.getTextSize() / 2.0f);
 			break;
 		default:
 			FLAG = false;
@@ -200,6 +205,19 @@ public class TestPage extends Activity implements OnInitListener,
 			mWrongWordList.clear();
 		}
 
+		mAudioMngr = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
+	}
+
+	public boolean isAudible() {
+		boolean ret = false;
+
+		if (mAudioMngr != null
+				&& mAudioMngr.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
+			ret = true;
+		}
+
+		return ret;
 	}
 
 	@Override
@@ -342,7 +360,8 @@ public class TestPage extends Activity implements OnInitListener,
 	}
 
 	private void remember() {
-		if (mWrongWordList != null && !mWrongWordList.contains(mWord) && !mWrongWordList.contains(mMeaning)) {
+		if (mWrongWordList != null && !mWrongWordList.contains(mWord)
+				&& !mWrongWordList.contains(mMeaning)) {
 			if (FLAG) {
 				mWrongWordList.add(mMeaning);
 			} else {
