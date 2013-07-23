@@ -34,7 +34,6 @@ import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.Word;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
-import com.gmail.dailyefforts.android.reviwer.scribble.Paper;
 
 public class DragAndDropActivity extends Activity implements OnDragListener,
 		OnClickListener, OnInitListener {
@@ -80,8 +79,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 	private int mColorError;
 
 	private int mColorBingon;
-
-	private Paper mPaper;
 
 	private AutoForwardHandler mAutoForwardHandler;
 
@@ -177,14 +174,14 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		mBtnOptionTopRight = (Button) findViewById(R.id.btn_drop_meaning_top_right);
 		mBtnOptionBottomLeft = (Button) findViewById(R.id.btn_drop_meaning_bottom_left);
 		mBtnOptionBottomRight = (Button) findViewById(R.id.btn_drop_meaning_bottom_right);
+		
 		mBtnArrowLeft = (ImageButton) findViewById(R.id.btn_drop_arrow_left);
 		mBtnArrowRight = (ImageButton) findViewById(R.id.btn_drop_arrow_right);
-		mPaper = (Paper) findViewById(R.id.draw_paper);
-
+		
 		if (mBtnCurrentWord == null || mBtnOptionTopLeft == null
 				|| mBtnOptionTopRight == null || mBtnOptionBottomLeft == null
 				|| mBtnOptionBottomRight == null || mBtnArrowLeft == null
-				|| mBtnArrowRight == null || mPaper == null) {
+				|| mBtnArrowRight == null) {
 			Log.e(TAG, "onCreate null pointer");
 			finish();
 		}
@@ -421,8 +418,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		}
 
 		mBingo = false;
-
-		mPaper.clear();
 
 		TestCase testCase = mTestCases.get(mWordCounter);
 

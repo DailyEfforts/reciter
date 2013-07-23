@@ -45,19 +45,6 @@
         android:textIsSelectable="true"
         android:textSize="30dp" />
 
-    <com.gmail.dailyefforts.android.reviwer.scribble.Paper
-        android:id="@+id/draw_paper"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/ll_opt_bottom"
-        android:layout_below="@+id/btn_drop_word"
-        android:layout_marginBottom="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/paper_bg"
-        android:visibility="gone" />
-
     <LinearLayout
         android:id="@+id/ll_opt_bottom"
         android:layout_width="match_parent"
