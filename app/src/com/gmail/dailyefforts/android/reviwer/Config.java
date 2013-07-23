@@ -31,7 +31,7 @@ public class Config {
 
 	// Default values
 	public static final int DEFAULT_OPTION_COUNT = 5;
-	public static final int DEFAULT_WORD_COUNT_OF_ONE_UNIT = 5;
+	public static final int DEFAULT_WORD_COUNT_OF_ONE_UNIT = 10;
 	public static final int DEFAULT_RANDOM_TEST_SIZE = 20;
 	public static final boolean DEFAULT_ALLOW_REVIEW_NOTIFICATION = true;
 

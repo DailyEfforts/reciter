@@ -7,7 +7,7 @@
     <string name="app_name">Reciter</string>
     <string name="loading">Loading&#8230;</string>
     <string name="settings">Settings</string>
-    <string name="my_word_book">Correction Note</string>
+    <string name="my_word_book">Correction</string>
     <string name="exit">Exit</string>
     <string name="empty">Empty</string>
     <string name="tip_select_items_to_unstar">Select items to unstar</string>
