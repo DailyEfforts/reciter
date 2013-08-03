@@ -1,4 +1,4 @@
-﻿﻿total=849
+﻿total=849
 accord@同意
 d'accord@同意
 agence@代理处
@@ -115,7 +115,8 @@ femme de ménage@女佣
 mère@母亲
 ou@或者，还是
 ouvrir@打开
-(s')ouvrir@被打开
+ouvrir@被打开
+s'ouvrir@被打开
 papa@爸爸
 parents@父母
 partir@出发，离开
@@ -157,7 +158,8 @@ aider@帮助
 ajouter@增加
 aller@去
 à propos@对啦，想起来啦
-(s')asseoir@坐下
+asseoir@坐下
+s'asseoir@坐下
 avant@在...之前
 avant de +inf.@在做某事之前
 avec@和...在一起
@@ -848,3 +850,683 @@ tout droit@径直向前
 valise@手提箱
 valoir@价值
 vitrine@橱窗
+s'adresser à@对...讲话
+adresser à@对...讲话
+alors@于是，那么
+assiette@盘子
+bleu@极生的，半生不熟的
+bleue@极生的，半生不熟的
+bras@胳膊
+camembert@卡芒贝尔干酪
+changer@更换
+commande@点菜单
+commander@点（菜、饮料）
+comme@作为；因为
+compris@包括在内的
+comprise@包括在呢ide
+consommé,e@被消费的，被吃掉的
+cuit@熟的
+cuite@熟的
+d'abord@首先
+dessert@餐后点心
+devise@座右铭，口号
+eau@水
+entamé,e@被切好的
+entendre@（+avec）与...相处得好
+s'entendre@（+avec）与...相处得好
+entrecôte@（牛）排骨肉
+équipe@团队，组
+espoir@希望
+étonné,e@吃惊的
+fatigant,e@累人的，令人疲劳的
+faute@错误
+fermier@农场的，农庄的
+fermière@农场的，农庄的
+fromage@奶酪
+gachis@浪费
+garçon@服务生
+gazeux@充气的，含气体的
+gazeuse@充气的，含气体的
+inquiéter@担心
+s'inquiéter@担心
+légume@蔬菜
+menu@菜单；套餐
+métier@职业，工作
+moitié@半，一半
+à moitié@一半，部分地
+morceau@(pl. ~x)一块
+non plus@也不
+obtenir@获得
+passage@经过、通过
+au passage@在经过时
+pigeon@鸽子；<俗>受骗上当者
+plat@一道菜
+plat,e@无气的[指饮料]
+platre@石膏
+plié@折叠的
+plie@折叠的
+plusieurs@好几个
+point@圆点；程度，阶段
+à point@（烧、煮得）正好，适中
+poisson@鱼
+poste@职位，工作岗位
+pourboire@小费
+pour le moment@目前
+puis@然后
+réaction@反应
+refaire@重做
+regretter@为...感到骄傲
+rigoler@<俗>开玩笑
+roi@国王，王
+ruine@破产
+sans@没有，无
+serveur@服务员
+serveuse@服务员
+serviette@餐巾
+servir@为...服务
+supplément@额外部分
+table@桌子；餐桌
+être à table@正在吃饭，入席就餐
+tout le temps@一直
+vaisselle@清洗餐具
+viande@肉
+à partir de@从...（时间）开始
+beurre@黄油
+bifteck@牛排
+blanquette@白汁块肉
+boucher@肉店老板，屠夫
+bouchére@肉店老板，屠夫
+camionnette@小卡车
+carotte@胡萝卜
+chèvre@山羊；山羊奶酪
+côte@肋排
+courageux@有勇气的
+courageuse@有勇气的
+coûter@值（多少钱）
+crème@奶油
+douzaine@一打，十二个左右
+en tout@总共
+étiquette@标签
+extra@超乎寻常的
+farine@面粉
+fatigué@疲倦的
+fatigue@疲倦的
+filer@<俗>溜走，逃走
+fruit@水果
+grade@等级，级别
+gruyère@格律耶尔干酪
+habitude@习惯
+d'habitude@通常，平常
+haricot@扁豆，菜豆，四季豆
+kilo@公斤
+kilogramme@公斤
+leçon@教训
+malin@机灵鬼
+maligne@机灵鬼
+marchand@商人
+marchande@商人
+marché@(菜)市场
+faire le marché@到菜市场买东西
+matinal@(pl. matinaux)早晨的；早起的
+matinale@(pl. matinaux)早晨的；早起的
+meilleur@更好的（bon的比较级）
+meilleure@更好的（bon的比较级）
+monter@升高，晋升
+monter en grade@晋级，升级
+œuf@鸡蛋
+oignon@洋葱
+plat de côtes@牛肋排
+poivre@胡椒
+pomme@苹果
+pomme de terre@土豆
+pot-au-feu@蔬菜牛肉浓汤
+poulet@雏鸡；鸡肉
+prix@价格
+production@生产；产品；产物
+promotion@促销
+en promotion@减价，促销
+provisions@采购的食品或生活必需品
+quand même@毕竟[表示强调、愤慨]
+restaurateur,trice@餐馆老板
+restaurateur,trice@餐馆老板
+sel@盐
+servir@为（顾客）服务
+trentaine@三十个左右
+un peu@一点
+veau@小牛肉
+vingtaine@二十个左右
+affaires@（个人的）衣服
+amuser@娱乐，玩耍
+s'amuser@娱乐，玩耍
+armoire@柜子、衣柜
+ascenseur@电梯，升降机
+au fait@顺便说一下，对了，想起来了
+bébé@婴儿
+blouson@夹克衫
+brancher@接通（电）
+chaudière@锅炉
+costume@男式西服套装
+couloir@走廊
+coursier,ère@快递员
+déménager@搬家；搬运（家具等）；搬空
+désordre@混乱，杂乱无章
+dossier@材料，文件
+en@（+衣服）穿
+fond@底部；深处；背景
+au fond de@在...深处
+jeans@牛仔服
+juste@正好，恰好
+local@（pl. locaux）房间，场所
+lumière@光线
+mourir@死亡
+ordinateur@计算机，电脑
+pas du tout@完全不
+P.-D.G.@董事长，总裁
+président-directeur général@总裁（CEO）
+ranger@整理，收拾
+recommencer@重新做；重复
+répartition@分配
+réunion@会议
+rez-de-chaussée@（建筑物的）底层，第一层
+salle@室，厅
+simple@简单的
+taille@大小，面积
+tout de suite@立刻，马上
+transférer@转移，迁移
+urgent@紧急的
+urgente@紧急的
+vide@空的
+vue@视野
+allumé@点亮的
+allume@点亮的
+apparaître@出现
+argentine@阿根廷
+arranger@处理好，顺利解决
+s'arranger@处理好，顺利解决
+arriver@（+à）到达
+attribution@分配，授予
+au-dessus de@在...上面
+au moins@至少
+balai@扫帚
+bloquer@被卡住
+se bloquer@被卡住
+boîte@盒子
+brochure@小册子
+bruyant@杂乱的
+bruyante@杂乱的
+carré@平方
+mètre carré@平方米
+carton@纸盒，纸板盒
+casier@格子书架，文件架
+chaise@椅子
+chef@头儿，领导
+choix@选择
+convaincu@被说服的
+convaincue@被说服的
+de l'autre côté de@在...另一边
+déplacer@搬动
+désigner@指出
+dessus@再上面
+endroit@地点
+erreur@错误
+étranger@国外
+explication@解释
+empilé@堆积的
+empile@堆积的
+en vrac@散装地，乱七八糟地
+essayer@（+ de）力图，试图
+etc.@等等
+et cetera@等等
+évidemment@显然
+fâcher@生气，发怒
+se fâcher@生气，发怒
+fax@传真
+fenêtre@窗户
+gentiment@和蔼地，客气地
+hiver@冬天
+imperturbable@镇静的，不受干扰的
+implantation@（企业内建筑物的）布局
+intendance@后勤部门
+lampadaire@落地灯
+lampe@灯；照明器具
+lieu@（pl. ~x）地方，地点
+main@手
+coup de main@帮助，帮忙
+meuble@家具
+monter@登上，爬上
+numéro@号码
+faire un numéro@拨号
+passage@通道
+passer@给，传递
+photocopie@复印
+pile@一堆东西
+placard@壁厨
+possibilité@可能性
+près de@在...旁边
+proposer@建议
+puisque@既然
+rangement@整理
+rester@剩下
+résumer@总结，概括
+retourner@回到
+situé@位于...的
+situe@位于...的
+sombre@阴暗的
+superbe@好极了的，绝妙的
+toilettes@盥洗室，卫生间，厕所
+voir@看得出来，显然
+se voir@看得出来，显然
+à peine@一点，几乎不
+apprêter@（+à）准备
+s'apprêter@（+à）准备
+après tout@总之，毕竟
+arrière@向后
+cabine@小间（试衣间，公用电话间等）
+camion@卡车
+charme@魔力
+cheveu@（px. ~x）头发
+coiffure@发型
+court@短的
+courte@短的
+critiquer@批评，指责
+dépasser@超越
+dernier@最后的（一个）
+dernière@最后的（一个）
+devoir@可能，大概，想必
+emporter@带走
+essayer@试穿
+fourrière@（警察局存放扣押或待领车辆的）存放处
+garer@（车辆）停放；<俗>停放车辆
+se garer@（车辆）停放；<俗>停放车辆
+glace@镜子
+jaloux@嫉妒的
+jalouse@嫉妒的
+longtemps@长久地，很久
+marche@行驶，航行
+marché arrière@倒车
+mémoire@记忆力
+mesdemoiselles@小姐们
+monde@人，人们，众人
+moniteur@教练员；监视器
+monitrice@教练员
+paquet@包，盒子
+particulier@特别的，特殊的
+particulière@特别的，特殊的
+en particulier@特别
+permis@驾驶证
+permis de conduire@驾驶证
+piéton@步行者，行人
+pietonne@步行者，行人
+place@停车位
+plateau@（pl. ~x）平板车
+plutôt@宁可，不如
+porter@穿，戴
+prêt-à-porter@成衣时装
+prêter@借给
+quelque chose@某事，某物
+réfléchir@思考
+remorqueuse@拖引车
+rentrer@进入
+rêve@梦想
+risquer@冒...危险
+robe@裙子
+souvenir@（+ de）记得
+se souvenir@（+ de）记得
+strict@严肃的，正规的
+stricte@严肃的，正规的
+taille@尺码，大小
+tailleur@西式裙套装
+trouver@认为
+vêtement@衣服
+volant@方向盘
+accuser@指责，控诉，非难
+arriver@发生
+il arrive qch. à qn.@在某人身上发生某事
+calmer@冷静，镇静
+se calmer@冷静，镇静
+clef@钥匙
+commissariat@警察局
+contravention@违章记录单
+coucher@过夜，宿夜
+couper@切、割；切断，打断
+d'ailleurs@况且，此外
+déborder@溢出；浸入，越过
+défendre@（为某人）辩护
+drame@悲剧，戏剧
+faire un drame de qch.@<俗>大惊小怪，把事情看得严重
+en@（+ temps）（做某事）用...
+en fait@事实上
+enlever@脱（衣服）
+en semaine@在平时
+fourrière@（警察局存放扣押或待领车辆的）存放处
+interdiction@禁止，制止
+mettre@置身于，处于
+se mettre@置身于，处于
+se mettre à table@入席，坐下吃饭
+pare-brise@（车辆前部的）挡风玻璃
+parole@话
+pavillon@独家小楼；阁楼，亭子
+pour@（+ temps）引出将持续的时间
+râler@抱怨，发牢骚
+récupérer@取回
+remarquer@注意，觉察
+reprendre@（中断后）再继续，重新开始
+seul@唯一的
+seule@唯一的
+stationner@停车
+téléphoner@打电话
+adulte@成人的
+assurer@保证
+avis@意见，见解
+bas@低的
+basse@低的
+battre@打败，战胜
+cadeau@（pl. ~x）礼物
+ceinture@腰带，皮带
+champion@冠军
+championne@冠军
+classe@班
+combat@格斗；战斗
+construction@结构，构造
+correspondre@（+ à）与...对应
+couleur@颜色
+croissant@牛角面包，羊角面包
+devoir@应该，必须
+envie@欲望，愿望
+éteindre@关（电灯、电视机、手机等）
+exactement@正确地
+fort@（+ en）在某方面很优秀
+forte@（+ en）在某方面很优秀
+gagner@赢得
+garder@照管，照料
+haut@高
+haute@高
+intéressé@有所图的，谋求私利的
+intéresse@有所图的，谋求私利的
+kimono@和服
+logique@有逻辑的
+lycée@高中
+manquer@缺少
+marron@栗子；栗色的
+niveau@（+pl. ~）水平
+nul@无能的
+nulle@无能的
+orange@橙，柑，桔；橙色（的），橘黄（的）
+papier@纸
+presque@几乎
+prévenir@通知，告诉
+professeur@老师，教师
+prof@<口>老师，教师
+progrès@进步
+record@记录
+rédaction@写作
+retirer@脱掉，取下
+service@服务
+son@声音
+à mon avis@在我看来，我认为
+autant@同样多
+avancer@前进；进步，进展
+avantager@给予方便，给予好处
+balle@球
+ballon@球
+basket@篮球
+boisson@饮料
+casser@摔碎，摔断
+se casser@摔碎，摔断
+chaussure@鞋
+compter@算得上，被算进
+concentration@专心，全神贯注
+coordination@协调
+corps@身体
+coup@一步棋
+couvrir@走完
+demander@需要
+dépendre@（+ de）取决于，依...而定
+de toutes façons@无论如何
+diagonale@对角线
+dommage@遗憾，可惜
+droit@权利
+échec et mat@（国际象棋赛中的）将死
+échecs@国际象棋
+en avant@向前
+entraînement@训练
+entraîner@训练
+s'entraîner@训练
+essayer@（+ de）试图，力图
+excuse@借口，托词
+se fatiguer@疲劳，劳累
+fatiguer@疲劳，劳累
+fin@终，末
+fou@（国际象棋中的）象
+genou@（+pl. ~x）膝盖
+hockey@曲棍球
+intellectuel@智力的，用脑力的
+intellectuelle@智力的，用脑力的
+jus@汁
+là-dessus@在这上面
+largement@远远，大大地
+mal@困难
+marche@散步，走路
+marquer@射中得分，投篮得分
+même@甚至
+moyen@方法，手段
+panier@蓝，筐；球蓝
+pareil@同样的，这样的；像
+pareille@同样的，这样的；像
+patin à roulettes@滚轴溜冰鞋，旱冰鞋
+pencher@使倾斜
+pièce (d'échecs)@棋子
+plier@弯曲，屈
+plusieurs@几个人
+quelquefois@有时
+rater@未命中
+récupérer@恢复（体力）
+réflexe@反应
+toucher@碰，走（棋子）
+vitamine@维生素
+appel@电话
+boîte@盒子
+Brésil@巴西
+Brésilien@巴西人
+Bresilienne@巴西人
+confiance@信任，信心
+de bonne heure@一个早
+direction@领导
+documentation@资料
+éloigner@远离
+s'éloigner@远离
+en ligne@通话
+environs@附近
+facilement@容易地
+honneur@尊敬，敬意
+en l'honneur de@向...表示敬意，为庆祝...，为纪念...
+En quel honneur ?@为了什么
+imprévu@意外的，未预见的
+imprevue@意外的，未预见的
+institut@研究所，学院
+jaune@黄色的
+malade@生病的
+mission@任务
+ordre@命令，指示
+ouvrir@打开
+parvis@（建筑前的）空地，广场
+patienter@等待
+personnage@人物
+portable@可携带的，手提的
+raccrocher@挂断
+rater@错过
+remplacement@代替，替换
+retrouver@重新找到，找回
+sculpture@雕塑
+se serrer@相互靠紧，相互握紧
+serrer@相互靠紧，相互握紧
+servir@（+ de）使用
+se servir@（+ de）使用
+stabile@固定雕塑
+statue@塑像
+téléphone@电话
+tour@环绕，环游
+trajet@路程，行程
+urbanisme@城市规划
+urbaniste@城市设计师、建筑师
+actif@活跃的
+active@活跃的
+attirer@吸引
+batterie@电池
+calme@安静，平静
+chemin@安静，平静
+commercial@商务的，商业的
+commerciale@商务的，商业的
+couper@隔离
+décharger@解除负担；放电，消除电荷
+décrocher@摘下（听筒）
+dur@艰难的
+dure@艰难的
+emploi@使用
+énerver@使用
+s'énerver@恼怒
+interrompre@打断
+laisser@离开，丢下
+lessive@洗衣粉
+magasin@商店
+milieu@（pl. ~x）中间
+au milieu de@在...中间
+mode@方式，形式
+mode d'emploi@使用方法
+occupè@忙碌的
+occupe@忙碌的
+paraître@好像，显得
+partie@部分
+portable@手机；笔记本电脑
+rappeler@再打电话
+redescendre@重新下来
+rejoindre@与...会合
+reparler@重说
+se sentir@觉得，感到
+sentir@觉得，感到
+sonner@（铃声）响
+tour@大楼
+vérifier@核实
+vie@生活
+antiquaire@古董商
+approcher@（+ de）向...走近
+art@艺术
+avoir lieu@举行，发生
+Bordeaux@波尔多
+cinquantaine@五十个左右
+commander@订购，定做
+contemporain@当代的
+contemporaine@当代的
+couvert@遮盖的
+couverte@遮盖的
+se décommander@取消约会
+décommander@取消约会
+difficulté@困难
+échantillon@样品
+en fonction de@根据
+exact@正确的
+exacte@正确的
+galerie@画廊
+insister@（+ sur）强调，坚持
+inspirer@（+ de）从...汲取灵感
+s'inspirer@（+ de）从...汲取灵感
+installer@安置，安顿
+motif@花样，图案
+mur@墙
+période@时期
+province@外省，省份
+puce@跳蚤
+quantité@数量
+retraite@退休
+séparer@分离，愤开
+se séparer@分离，分开
+spécialisé@专门的，专业的
+spécialise@专门的，专业的
+se spécialiser@（+ en）专门研究，专攻
+spécialiser@（+ en）专门研究，专攻
+thème@主题
+unité@统一（性），一致（性）
+annuler@取消，废除
+apercevoir@瞥见，瞧见
+avant@先，之前
+causer@引起
+commande@订单
+copain@（男）朋友
+copine@（女）朋友
+cou@脖子
+dès  que@一...就
+discuter@讨论
+disparaître@消失
+en avance@提前
+en raison de@鉴于
+en tout cas@无论怎样
+fameux@（用于名词前）<俗>超棒的
+fameuse@（用于名词前）<俗>超棒的
+fournisseur@供货商
+fournisseuse@供货商
+gros@大的，巨大的
+grosse@大的，巨大的
+intention@意愿，想法
+kilometre@公里
+organiser@组织活动，安排活动
+s'organiser@组织活动，安排活动
+pousser@发出
+préfet@行政长官
+quitter@离开
+recouvrir@遮盖
+region@地区，地带
+se rendre compte de qch.@意识到
+rendre compte de qch.@意识到
+renovation@翻新
+rouleau@（pl. ~x）卷
+si@（+ adj.或adv.）多么，如此
+soupir@叹气，叹息
+suffir@（+ à）满足...的需要
+terminer@结束，完成
+tissu@织物，布料
+traditionnel@传统的
+traditionnelle@传统的
+travaux@工程
+veritable@真正的
+zone@地区
+accéléré@加快的；快动作
+accélère@加快的；快动作
+cela dit@不过，然而
+découper@切，割
+demander@寻思，思忖
+se demander@寻思，思忖
+grimace@鬼脸
+impression@印象
+avoir l'impression que (+ ind.)@感觉到，仿佛觉得
+mal@坏话，坏处
+menteur@说谎的人
+menteuse@说谎的人
+moto-neige@摩托雪橇，雪地机动车
+nostalgie@怀旧，怀念
+parier@打赌
+regretter@惋惜，怀念
+séparation@分离，分别
+socioculturel@社会文化的
+socioculturelle@社会文化的
+achat@购买
+avant-hier@前天
+certainement@肯定地，一定地
+cœur@心，心脏
+de bon cœur@由衷地，乐意地
+colocataire@合租人
+coup@一着
+d'autant  plus que@更何况
+déménagement@搬迁
+départ@离开
+déplacer@移动；出差，旅行
+se deplacer@移动；出差，旅行
+moquer@（+ de）嘲笑
+se moquer@（+ de）嘲笑
+obliger@强迫，迫使
+rappeler@回忆
+se rappeler@回忆
+ressaisir@恢复镇静
+se ressaisir@恢复镇静
+studio@单身公寓
+triste@难过的，悲伤的
+volant@方向盘
