@@ -7,7 +7,7 @@
         <item>@string/nce2</item>
         <item>@string/nce3</item>
         <item>@string/nce4</item>
-        <item>@string/reflets_1_uppper</item>
+        <item>@string/reflets_1</item>
         <item>@string/linguistics_glossary</item>
     </string-array>
     <string-array name="test_types">

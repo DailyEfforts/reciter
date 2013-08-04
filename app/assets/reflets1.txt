@@ -7,8 +7,8 @@ amusant@有趣的
 amusante@有趣的
 arrondissement@行政区；区
 assis@坐着的
-aussi@还，此外
-bon@好
+aussi@还，此外;也，同样;如此，这样
+bon@好;好的
 Ah bon!@真的！
 chanteur@歌手，歌唱家
 chez@在…家，在…那儿
@@ -69,10 +69,8 @@ an@年；岁，年龄
 appartement@公寓
 arrêter@停止，停下
 aujourd'hui@今天
-aussi@也，同样
 autre@另外的，别的
 bien@好
-bon@好的
 ça@这个，那个
 Ça va?@你好吗？
 C'est ça.@是这样。
@@ -596,7 +594,6 @@ trouver@找到
 aérogare@航空站，候机大楼
 aéroport@机场
 après-midi@下午
-aussi@如此，这样
 avion@飞机
 capitale@首都
 chargé@负责…的

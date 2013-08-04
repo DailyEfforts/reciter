@@ -143,7 +143,7 @@ public class Launcher extends ListActivity implements OnClickListener {
 			DBA.CURRENT_TEST_REPORT_TABLE = DBA.TABLE_TEST_REPORT_REFLETS1U;
 			Config.CURRENT_BOOK_NAME = Config.BOOK_NAME_REFLETS1U;
 			Config.CURRENT_LANGUAGE = Language.French;
-			bookNameResId = R.string.reflets_1_uppper;
+			bookNameResId = R.string.reflets_1;
 			break;
 		case 6:
 			DBA.CURRENT_WORD_TABLE = DBA.TABLE_WORD_LIST_LINGUISTICS_GLOSSARY;

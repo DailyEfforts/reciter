@@ -41,7 +41,7 @@ public class Config {
 	public static final String BOOK_NAME_NCE2 = "nce2.txt";
 	public static final String BOOK_NAME_NCE3 = "nce3.txt";
 	public static final String BOOK_NAME_NCE4 = "nce4.txt";
-	public static final String BOOK_NAME_REFLETS1U = "reflets1u.txt";
+	public static final String BOOK_NAME_REFLETS1U = "reflets1.txt";
 	public static final String BOOK_NAME_LINGUISTICS_GLOSSARY = "linguistics_glossary.txt";
 	public static String CURRENT_BOOK_NAME = BOOK_NAME_REFLETS1U;
 
