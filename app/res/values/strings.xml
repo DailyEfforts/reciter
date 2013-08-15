@@ -31,7 +31,7 @@
     <string name="reset_sumarry">Reset all perferences to default ones</string>
     <string name="pref_key_review_notification" translatable="false">pref_key_review_notification</string>
     <string name="pref_key_allow_auto_check_version" translatable="false">pref_key_allow_auto_check_version</string>
-    <string name="time_to_review">Do you remember "%s"?</string>
+    <string name="time_to_review">Remember "%s"?</string>
     <string name="time_to_review_words">Time to review words</string>
     <string name="tap_to_start_reciting_words">Tap to start reciting words</string>
     <string name="background">background</string>
