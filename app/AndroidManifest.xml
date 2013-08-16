@@ -101,15 +101,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/countdown_timer_widget_info" />
         </receiver>
-
-        <activity
-            android:name="com.gmail.dailyefforts.android.reviwer.widget.CountdownTimerWidgetConfigActivity"
-            android:label="@string/set_countdown_timer"
-            android:theme="@style/Activity.Dialog" >
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
-            </intent-filter>
-        </activity>
+        
     </application>
 
 </manifest>

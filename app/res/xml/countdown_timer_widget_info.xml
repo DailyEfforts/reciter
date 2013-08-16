@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:configure="com.gmail.dailyefforts.android.reviwer.widget.CountdownTimerWidgetConfigActivity"
     android:initialLayout="@layout/countdown_timer_widget"
     android:minHeight="39dp"
     android:minWidth="39dp"

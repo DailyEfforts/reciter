@@ -43,10 +43,8 @@
     <string name="reflets_1">走遍法国（第一册）</string>
     <string name="linguistics_glossary">语言学术语</string>
     <string name="unit_id">第 <b>%d</b> 单元</string>
-    <string name="countdown_timer">倒计时器</string>
-    <string name="set_countdown_timer">设置倒计时器</string>
+    <string name="countdown_timer">考研倒计时</string>
     <string name="done">完成</string>
-    <string name="countdown_timer_name">倒计时器名称</string>
     <string name="kaoyan">考研</string>
     <string name="date">日期</string>
     <string name="start_test">开始测试</string>

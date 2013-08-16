@@ -5,7 +5,6 @@ import java.util.Calendar;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -19,48 +18,35 @@ public class CountdownTimerWidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
-		RemoteViews rv = new RemoteViews(context.getPackageName(),
+		RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
 				R.layout.countdown_timer_widget);
-
-		SharedPreferences prefs = context.getSharedPreferences(
-				WidgetConfig.PrefFileName, Context.MODE_PRIVATE);
 
 		for (int i = 0; i < appWidgetIds.length; i++) {
 			int widgetId = appWidgetIds[i];
 			Log.i(TAG, "widgetId: " + widgetId);
+			
+			Calendar cal = Calendar.getInstance();
+			cal.set(2014, Calendar.JANUARY, 4);
 
-			long targetTime = prefs.getLong(String.format(
-					WidgetConfig.CountdownTimerTargetTimeFormat, widgetId), 0);
-			String name = prefs.getString(String.format(
-					WidgetConfig.CountdownTimerNameFormat, widgetId), null);
+			long targetTime = cal.getTimeInMillis();
 
-			if (targetTime == 0) {
-				Log.e(TAG, "onUpdate() target time is 0");
-				return;
-			}
 
-			if (name == null) {
-				Log.e(TAG, "onUpdate() name is null");
-				return;
-			}
-
-			Log.i(TAG, "timer name: " + name);
 			Log.i(TAG, "targetTime: " + targetTime);
 			Log.i(TAG, "curent time: "
 					+ Calendar.getInstance().getTimeInMillis());
 
-			updateKaoyan(appWidgetManager, rv, widgetId, targetTime, name);
+			updateKaoyan(appWidgetManager, remoteViews, widgetId, targetTime, context.getResources().getString(R.string.kaoyan));
 		}
 	}
 
 	private void updateKaoyan(AppWidgetManager appWidgetManager,
-			RemoteViews rv, int widgetId, long targetTime, String name) {
+			RemoteViews remoteViews, int widgetId, long targetTime, String name) {
 		int days = Math.round((targetTime - Calendar.getInstance()
-				.getTimeInMillis()) / WidgetConfig.MillSecondsOfDay + 0.5f);
+				.getTimeInMillis()) / WidgetConfig.MillSecondsOfDay);
 
-		rv.setTextViewText(R.id.tv_count_down_label, name);
-		rv.setTextViewText(R.id.tv_countdown_days, String.valueOf(days));
+		remoteViews.setTextViewText(R.id.tv_count_down_label, name);
+		remoteViews.setTextViewText(R.id.tv_countdown_days, String.valueOf(days));
 
-		appWidgetManager.updateAppWidget(widgetId, rv);
+		appWidgetManager.updateAppWidget(widgetId, remoteViews);
 	}
 }
