@@ -4,6 +4,7 @@
     android:layout_height="match_parent" >
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -81,18 +82,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_drop_word"
-        android:alpha="0.2"
         android:layout_centerVertical="true"
+        android:alpha="0.2"
         android:src="@drawable/btn_arrow_left" />
 
     <ImageButton
-        android:alpha="0.2"
         android:id="@+id/btn_drop_arrow_right"
         style="?android:attr/buttonBarButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/btn_drop_word"
+        android:alpha="0.2"
         android:src="@drawable/btn_arrow_right" />
+
+    <CheckBox
+        android:id="@+id/check_auto_speak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout1"
+        android:text="Auto Speak"
+        android:textAppearance="@android:attr/textAppearanceSmall"
+        android:textColor="@color/gray"
+        android:textStyle="italic" />
 
 </RelativeLayout>

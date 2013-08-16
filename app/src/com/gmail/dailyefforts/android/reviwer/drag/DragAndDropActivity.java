@@ -27,6 +27,7 @@ import android.view.View.OnDragListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -81,6 +82,8 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 	private int mColorBingon;
 
 	private AutoForwardHandler mAutoForwardHandler;
+
+	private CheckBox mCheckBox;
 
 	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
 
@@ -174,10 +177,12 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		mBtnOptionTopRight = (Button) findViewById(R.id.btn_drop_meaning_top_right);
 		mBtnOptionBottomLeft = (Button) findViewById(R.id.btn_drop_meaning_bottom_left);
 		mBtnOptionBottomRight = (Button) findViewById(R.id.btn_drop_meaning_bottom_right);
-		
+
+		mCheckBox = (CheckBox) findViewById(R.id.check_auto_speak);
+
 		mBtnArrowLeft = (ImageButton) findViewById(R.id.btn_drop_arrow_left);
 		mBtnArrowRight = (ImageButton) findViewById(R.id.btn_drop_arrow_right);
-		
+
 		if (mBtnCurrentWord == null || mBtnOptionTopLeft == null
 				|| mBtnOptionTopRight == null || mBtnOptionBottomLeft == null
 				|| mBtnOptionBottomRight == null || mBtnArrowLeft == null
@@ -472,6 +477,10 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			mBtnArrowRight.setVisibility(View.INVISIBLE);
 		} else {
 			mBtnArrowRight.setVisibility(View.VISIBLE);
+		}
+
+		if (mCheckBox != null && mCheckBox.isChecked()) {
+			readIt(mWord);
 		}
 
 		invalidateOptionsMenu();
