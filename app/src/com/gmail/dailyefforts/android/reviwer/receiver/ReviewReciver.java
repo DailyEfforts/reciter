@@ -39,7 +39,7 @@ public class ReviewReciver extends BroadcastReceiver {
 				return false;
 			}
 		}
-		
+
 		Calendar cal = Calendar.getInstance();
 
 		int day = cal.get(Calendar.DAY_OF_WEEK);
@@ -61,7 +61,7 @@ public class ReviewReciver extends BroadcastReceiver {
 		if (Config.DEBUG) {
 			Log.d(TAG, "ReviewReciver: onReceive() " + Sessions.RUNNING);
 		}
-		
+
 		if (shouldNofity(context)) {
 			nofity(context, intent);
 		}
@@ -71,16 +71,13 @@ public class ReviewReciver extends BroadcastReceiver {
 	private void nofity(Context context, Intent intent) {
 		DBA dba = DBA.getInstance(context);
 		String word = dba.getOneWordToReview();
-		
+
 		String title = null;
 
-		
 		if (word == null || word.length() == 0) {
-			title = context
-					.getString(R.string.time_to_review_words);
+			title = context.getString(R.string.time_to_review_words);
 		} else {
-			title = context.getString(
-					R.string.time_to_review, word);
+			title = context.getString(R.string.time_to_review, word);
 		}
 
 		Intent willing = new Intent(context.getApplicationContext(),
@@ -88,13 +85,14 @@ public class ReviewReciver extends BroadcastReceiver {
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
 				willing, 0);
-		
+
 		Notification.Builder builder = new Notification.Builder(context);
 		builder.setSmallIcon(R.drawable.ic_launcher);
 		builder.setTicker(title);
 		builder.setContentTitle(title);
-		builder.setContentText(context.getString(R.string.tap_to_start_reciting_words));
-		
+		builder.setContentText(context
+				.getString(R.string.tap_to_start_reciting_words));
+
 		builder.setContentIntent(pendingIntent);
 
 		NotificationManager nm = (NotificationManager) context

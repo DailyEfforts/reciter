@@ -24,7 +24,8 @@ import com.gmail.dailyefforts.android.reviwer.db.TestReportsProvider;
 
 public class TestReportListFragment extends ListFragment implements
 		LoaderCallbacks<Cursor> {
-	private static final String TAG = TestReportListFragment.class.getSimpleName();
+	private static final String TAG = TestReportListFragment.class
+			.getSimpleName();
 	private Cursor mCursor = null;
 	private ListAdapter mLisAdapter;
 	private LayoutInflater mLayoutInflater;

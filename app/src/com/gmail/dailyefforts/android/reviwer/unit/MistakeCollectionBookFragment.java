@@ -30,7 +30,8 @@ import com.gmail.dailyefforts.android.reviwer.db.WordListProvider;
 
 public class MistakeCollectionBookFragment extends ListFragment implements
 		LoaderCallbacks<Cursor> {
-	private static final String TAG = MistakeCollectionBookFragment.class.getSimpleName();
+	private static final String TAG = MistakeCollectionBookFragment.class
+			.getSimpleName();
 	private Cursor mCursor = null;
 	private ListAdapter mLisAdapter;
 	private LayoutInflater mLayoutInflater;
@@ -105,8 +106,8 @@ public class MistakeCollectionBookFragment extends ListFragment implements
 					}
 
 				}
-				getLoaderManager()
-						.restartLoader(0, null, MistakeCollectionBookFragment.this);
+				getLoaderManager().restartLoader(0, null,
+						MistakeCollectionBookFragment.this);
 				mode.finish();
 				break;
 			default:

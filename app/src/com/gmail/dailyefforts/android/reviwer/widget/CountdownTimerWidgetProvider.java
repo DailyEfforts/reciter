@@ -24,18 +24,18 @@ public class CountdownTimerWidgetProvider extends AppWidgetProvider {
 		for (int i = 0; i < appWidgetIds.length; i++) {
 			int widgetId = appWidgetIds[i];
 			Log.i(TAG, "widgetId: " + widgetId);
-			
+
 			Calendar cal = Calendar.getInstance();
 			cal.set(2014, Calendar.JANUARY, 4);
 
 			long targetTime = cal.getTimeInMillis();
 
-
 			Log.i(TAG, "targetTime: " + targetTime);
 			Log.i(TAG, "curent time: "
 					+ Calendar.getInstance().getTimeInMillis());
 
-			updateKaoyan(appWidgetManager, remoteViews, widgetId, targetTime, context.getResources().getString(R.string.kaoyan));
+			updateKaoyan(appWidgetManager, remoteViews, widgetId, targetTime,
+					context.getResources().getString(R.string.kaoyan));
 		}
 	}
 
@@ -45,7 +45,8 @@ public class CountdownTimerWidgetProvider extends AppWidgetProvider {
 				.getTimeInMillis()) / WidgetConfig.MillSecondsOfDay);
 
 		remoteViews.setTextViewText(R.id.tv_count_down_label, name);
-		remoteViews.setTextViewText(R.id.tv_countdown_days, String.valueOf(days));
+		remoteViews.setTextViewText(R.id.tv_countdown_days,
+				String.valueOf(days));
 
 		appWidgetManager.updateAppWidget(widgetId, remoteViews);
 	}

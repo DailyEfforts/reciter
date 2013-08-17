@@ -67,11 +67,9 @@ public class SettingsActivity extends PreferenceActivity {
 			mResetPref = (Preference) findPreference(getString(R.string.pref_key_reset));
 			mReviewNotification = (CheckBoxPreference) findPreference(getString(R.string.pref_key_review_notification));
 
-			if (mSharedPref == null 
-					|| mCurrentVersionPref == null
+			if (mSharedPref == null || mCurrentVersionPref == null
 					|| mCurrentVersionPref == null || mResetPref == null
-					|| mReviewNotification == null
-					 ) {
+					|| mReviewNotification == null) {
 				return;
 			}
 
@@ -117,7 +115,6 @@ public class SettingsActivity extends PreferenceActivity {
 				SharedPreferences sharedPreferences, String key) {
 
 		}
-
 
 		@Override
 		public boolean onPreferenceClick(Preference preference) {

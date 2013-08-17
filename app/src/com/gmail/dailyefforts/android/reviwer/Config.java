@@ -32,7 +32,7 @@ public class Config {
 	// Default values
 	public static final int DEFAULT_OPTION_COUNT = 5;
 	public static final int DEFAULT_WORD_COUNT_OF_ONE_UNIT = 20;
-	public static final int DEFAULT_RANDOM_TEST_SIZE = 20;
+	public static final int DEFAULT_RANDOM_TEST_SIZE = 5;
 	public static final boolean DEFAULT_ALLOW_REVIEW_NOTIFICATION = true;
 
 	// Book names
@@ -67,7 +67,7 @@ public class Config {
 	public static final long ONE_DAY = 24 * 60 * 60 * 1000L; // MS
 
 	public static enum TestType {
-		MY_WORD_TO_ZH, MY_WORD_FROM_ZH, MY_WORD_SPELL, RANDOM_TO_ZH, RANDOM_FROM_ZH, RANDOM_SPELL
+		MY_WORD_TO_ZH, MY_WORD_FROM_ZH, MY_WORD_SPELL, RANDOM_TO_ZH, RANDOM_FROM_ZH, RANDOM_SPELL, UNKNOWN
 	}
 
 }

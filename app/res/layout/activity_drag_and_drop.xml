@@ -102,6 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/linearLayout1"
+        android:alpha="100"
         android:text="Auto Speak"
         android:textAppearance="@android:attr/textAppearanceSmall"
         android:textColor="@color/gray"

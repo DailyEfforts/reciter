@@ -46,7 +46,6 @@ public class Launcher extends ListActivity implements OnClickListener {
 		if (needToCheckForUpdate(lastCheckedForUpdate)) {
 			launchVersionChecker();
 		}
-		
 
 		setReviewAlarm();
 	}
@@ -58,6 +57,7 @@ public class Launcher extends ListActivity implements OnClickListener {
 		am.setRepeating(AlarmManager.RTC, System.currentTimeMillis(),
 				Config.INTERVAL_TIME_TO_TIP_REVIEW, sender);
 	}
+
 	private boolean needToCheckForUpdate(long lastTime) {
 		boolean ret = false;
 
@@ -75,8 +75,7 @@ public class Launcher extends ListActivity implements OnClickListener {
 
 	private void updateLastCheckForUpdateTime(long currentTimeMillis) {
 		Editor editor = mSharedPref.edit();
-		editor.putLong(Config.LAST_TIME_CHECKED_FOR_UPDATE,
-				currentTimeMillis);
+		editor.putLong(Config.LAST_TIME_CHECKED_FOR_UPDATE, currentTimeMillis);
 		editor.commit();
 	}
 

@@ -40,7 +40,6 @@
     <string name="allow_to_check_latest_version_automatically">Allow to check latest version automatically</string>
     <string name="auto_check_latest_version">Auto check latest version</string>
     <string name="update_to_latest_version">Download v%s ?</string>
-    
     <string name="mot">Mot</string>
     <string name="nce1">New Concept English (I)</string>
     <string name="nce2">New Concept English (II)</string>
@@ -48,7 +47,6 @@
     <string name="nce4">New Concept English (IV)</string>
     <string name="reflets_1">Reflets (I)</string>
     <string name="linguistics_glossary">Linguistics Glossary</string>
-    
     <string name="unit_id">Unit-<b>%d</b></string>
     <string name="unit_contents_num" translatable="false">(%d ~ %d)</string>
     <string name="countdown_timer">Countdown Timer</string>
@@ -68,5 +66,8 @@
     <string name="test_spell_random">Spell Test (Random)</string>
     <string name="book_list">Book List</string>
     <string name="downloading_the_latest_reciter_apk_file">Downloading the latest Reciter APK file&#8230;</string>
+    <string name="title_activity_spell_test">SpellTestActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

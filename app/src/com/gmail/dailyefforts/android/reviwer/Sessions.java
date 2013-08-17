@@ -20,9 +20,11 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reviwer.Config.TestType;
 import com.gmail.dailyefforts.android.reviwer.db.DBA;
+import com.gmail.dailyefforts.android.reviwer.test.SpellTestActivity;
 import com.gmail.dailyefforts.android.reviwer.test.TestFragment;
 import com.gmail.dailyefforts.android.reviwer.test.TestPage;
 import com.gmail.dailyefforts.android.reviwer.unit.MistakeCollectionBookFragment;
@@ -230,7 +232,8 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-							new TestCaseBuilder(getActivity()).execute(getTestType(which));
+							new TestCaseBuilder(getActivity())
+									.execute(getTestType(which));
 						}
 					});
 			builder.setNegativeButton(android.R.string.cancel, null);
@@ -252,7 +255,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 	}
 
 	public static class TestCaseBuilder extends
-			AsyncTask<TestType, Void, Boolean> {
+			AsyncTask<TestType, Void, TestType> {
 		private DBA dba;
 		private TestType mTestType;
 
@@ -268,23 +271,43 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 		}
 
 		@Override
-		protected void onPostExecute(Boolean result) {
-			if (result) {
-				Intent intent = new Intent(mContext, TestPage.class);
-				intent.putExtra(Config.INTENT_EXTRA_TEST_TYPE, mTestType.ordinal());
+		protected void onPostExecute(TestType type) {
 
-				mContext.startActivity(intent);
-			} else {
-				/*
-				 * if (mTestType == Config.MY_WORD_TEST || mTestType ==
-				 * Config.MY_WORD_TEST_ZH) { Toast.makeText(mContext,
-				 * R.string.tip_word_book_is_empty, Toast.LENGTH_LONG).show(); }
-				 */
+			if (type == null || mContext == null) {
+				Log.e(TAG, "TestCaseBuilder.onPostExecute() type: " + type);
+				Log.e(TAG, "TestCaseBuilder.onPostExecute() mContext: "
+						+ mContext);
+				return;
 			}
+			Intent intent = null;
+			switch (type) {
+			case RANDOM_FROM_ZH:
+			case RANDOM_TO_ZH:
+			case MY_WORD_FROM_ZH:
+			case MY_WORD_TO_ZH:
+				intent = new Intent(mContext, TestPage.class);
+				break;
+			case RANDOM_SPELL:
+			case MY_WORD_SPELL:
+				intent = new Intent(mContext, SpellTestActivity.class);
+				break;
+			case UNKNOWN:
+				Toast.makeText(mContext, R.string.tip_word_book_is_empty,
+						Toast.LENGTH_LONG).show();
+			default:
+				break;
+			}
+
+			if (intent != null) {
+				intent.putExtra(Config.INTENT_EXTRA_TEST_TYPE, type.ordinal());
+				mContext.startActivity(intent);
+				intent = null; // Let GC do its work.
+			}
+
 		}
 
 		@Override
-		protected Boolean doInBackground(TestType... params) {
+		protected TestType doInBackground(TestType... params) {
 			mTestType = params[0];
 			if (dba == null) {
 				return null;
@@ -308,7 +331,12 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 			default:
 				break;
 			}
-			return Word.getMap().size() > 0;
+
+			if (Config.DEBUG) {
+				Log.d(TAG, "size: " + Word.getMap().size());
+			}
+
+			return Word.getMap().size() > 0 ? mTestType : TestType.UNKNOWN;
 		}
 
 	}

@@ -4,40 +4,33 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.ClipData;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.speech.tts.TextToSpeech;
-import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.DragEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.DragShadowBuilder;
 import android.view.View.OnClickListener;
 import android.view.View.OnDragListener;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.gmail.dailyefforts.android.reviwer.BaseActivity;
 import com.gmail.dailyefforts.android.reviwer.Config;
 import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reviwer.Word;
-import com.gmail.dailyefforts.android.reviwer.db.DBA;
 
-public class DragAndDropActivity extends Activity implements OnDragListener,
-		OnClickListener, OnInitListener {
+public class DragAndDropActivity extends BaseActivity implements
+		OnDragListener, OnClickListener {
 
 	private static final int TIME_DELAY_TO_AUTO_FORWARD = 600;
 
@@ -45,25 +38,13 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 	private Button mBtnCurrentWord;
 
-	private String mWord;
-
-	private SparseArray<Word> map;
-
 	private SparseArray<Word> pageMap;
 
 	private ArrayList<Button> mOptList;
 
-	private DBA mDBA;
-
 	private int mDbCount;
 
 	private int mRate;
-
-	private String mAddToBook;
-
-	private String mRmFromBook;
-
-	private TextToSpeech mTts;
 
 	private Button mBtnOptionTopLeft;
 
@@ -88,89 +69,9 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
 
 	@Override
-	public boolean onPrepareOptionsMenu(Menu menu) {
-		if (menu != null) {
-			menu.clear();
-		}
-
-		getMenuInflater().inflate(R.menu.action, menu);
-
-		if (mDBA == null || menu == null) {
-			return false;
-		}
-
-		MenuItem star = menu.findItem(R.id.menu_star);
-		if (star != null) {
-			Log.i(TAG, "onPrepareOptionsMenu() mWord: " + mWord + ", star: "
-					+ mDBA.getStar(mWord));
-			if (mDBA.getStar(mWord) <= 0) {
-				star.setIcon(android.R.drawable.star_off);
-				star.setTitle(R.string.add_to_word_book);
-			} else {
-				star.setIcon(android.R.drawable.star_on);
-				star.setTitle(R.string.remove_from_word_book);
-			}
-		}
-
-		if (Config.DEBUG) {
-			Log.d(TAG, "onPrepareOptionsMenu()");
-		}
-		return true;
-	}
-
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-
-		if (mTts != null) {
-			mTts.shutdown();
-		}
-	}
-
-	private void readIt(final String word) {
-		if (mTts != null) {
-			int result = mTts.speak(word, TextToSpeech.QUEUE_FLUSH, null);
-			if (result != TextToSpeech.SUCCESS) {
-				Log.e(TAG, "speak failed");
-			}
-		}
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			finish();
-			return true;
-		case R.id.menu_read:
-			readIt(mWord);
-			return true;
-		case R.id.menu_star:
-			if (mDBA == null) {
-				return false;
-			}
-			if (mDBA.getStar(mWord) <= 0) {
-				mDBA.star(mWord);
-				toast(String.format(mAddToBook, mWord));
-				invalidateOptionsMenu();
-			} else {
-				mDBA.unStar(mWord);
-				toast(String.format(mRmFromBook, mWord));
-				invalidateOptionsMenu();
-			}
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-		requestWindowFeature(Window.FEATURE_PROGRESS);
 		setContentView(R.layout.activity_drag_and_drop);
-		setProgressBarVisibility(true);
-		getActionBar().setDisplayShowTitleEnabled(false);
 
 		mBtnCurrentWord = (Button) findViewById(R.id.btn_drop_word);
 		mBtnOptionTopLeft = (Button) findViewById(R.id.btn_drop_meaning_top_left);
@@ -228,9 +129,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 		mBtnCurrentWord.setOnDragListener(this);
 
-		mDBA = DBA.getInstance(getApplicationContext());
-
-		mDbCount = mDBA.getCount();
+		mDbCount = mDba.getCount();
 
 		mOptList = new ArrayList<Button>();
 		mOptList.add(mBtnOptionTopLeft);
@@ -244,22 +143,10 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 		Resources res = getResources();
 
-		map = Word.getMap();
-
-		if (map == null || map.size() <= 0) {
-			return;
-		}
-
-		mRate = (Window.PROGRESS_END - Window.PROGRESS_START) / map.size();
-
-		mAddToBook = String.valueOf(res.getText(R.string.tip_add_to_word_book));
-		mRmFromBook = String.valueOf(res
-				.getText(R.string.tip_remove_from_word_book));
+		mRate = (Window.PROGRESS_END - Window.PROGRESS_START) / mWordArray.size();
 
 		mColorError = res.getColor(R.color.orange_dark);
 		mColorBingon = res.getColor(R.color.green);
-
-		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		if (savedInstanceState == null) {
 			if (mWrongWordList != null) {
@@ -272,10 +159,10 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 
 		mTestCases.clear();
 
-		for (int i = 0; i < map.size(); i++) {
+		for (int i = 0; i < mWordArray.size(); i++) {
 			TestCase testCase = new TestCase();
 
-			Word w = map.get(i);
+			Word w = mWordArray.get(i);
 			testCase.wordIdx = w.getId();
 			int id = -1;
 			if (w != null) {
@@ -325,12 +212,9 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		}
 		buildTestCase();
 
-		mTts = new TextToSpeech(getApplicationContext(), this);
-
 		mAutoForwardHandler = new AutoForwardHandler();
 	}
 
-	@SuppressLint("HandlerLeak")
 	private class AutoForwardHandler extends Handler {
 		public static final int MSG_MOVE_ON = 0;
 
@@ -342,42 +226,6 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 				removeMessages(MSG_MOVE_ON);
 				break;
 			}
-		}
-	}
-
-	@Override
-	public void onInit(int status) {
-		if (status == TextToSpeech.SUCCESS) {
-			// Set preferred language to US english.
-			// Note that a language may not be available, and the result will
-			// indicate this.
-			int result = -1;
-
-			switch (Config.CURRENT_LANGUAGE) {
-			case French:
-				result = mTts.setLanguage(Locale.FRANCE);
-				break;
-			case English:
-				result = mTts.setLanguage(Locale.ENGLISH);
-				break;
-			default:
-				// TODO: unknown
-				break;
-			}
-			// Try this someday for some interesting results.
-			// int result mTts.setLanguage(Locale.FRANCE);
-			if (result == TextToSpeech.LANG_MISSING_DATA
-					|| result == TextToSpeech.LANG_NOT_SUPPORTED) {
-				// language data is missing or the language is not supported.
-				Log.e(TAG, "Language is not available.");
-			} else {
-				if (Config.DEBUG) {
-					Log.d(TAG, "TTS works fine.");
-				}
-			}
-		} else {
-			// Initialization failed.
-			Log.e(TAG, "Could not initialize TextToSpeech.");
 		}
 	}
 
@@ -398,24 +246,13 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		}
 	}
 
-	@Override
-	protected void onPause() {
-		super.onPause();
-	}
-
-	private void toast(String msg) {
-		Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-	}
-
-	int mWordCounter = 0;
-
 	private boolean mBingo;
 
 	private static ArrayList<Integer> arrList = new ArrayList<Integer>();
 
 	private void buildTestCase() {
 
-		if (mWordCounter >= map.size()) {
+		if (mWordCounter >= mWordArray.size()) {
 			Toast.makeText(getApplicationContext(), "Done.", Toast.LENGTH_SHORT)
 					.show();
 			finish();
@@ -445,11 +282,11 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 		int bottomLeftIdx = testCase.bottomLeftIdx;
 		int bottomRightIdx = testCase.bottomRightIdx;
 
-		Word curentWord = mDBA.getWordByIdx(mWordIdx);
-		Word topLeftWord = mDBA.getWordByIdx(topLeftIdx);
-		Word topRightWord = mDBA.getWordByIdx(topRightIdx);
-		Word bottomLeftWord = mDBA.getWordByIdx(bottomLeftIdx);
-		Word bottomRightWord = mDBA.getWordByIdx(bottomRightIdx);
+		Word curentWord = mDba.getWordByIdx(mWordIdx);
+		Word topLeftWord = mDba.getWordByIdx(topLeftIdx);
+		Word topRightWord = mDba.getWordByIdx(topRightIdx);
+		Word bottomLeftWord = mDba.getWordByIdx(bottomLeftIdx);
+		Word bottomRightWord = mDba.getWordByIdx(bottomRightIdx);
 		pageMap.put(mBtnCurrentWord.getId(), curentWord);
 		pageMap.put(mBtnOptionTopLeft.getId(), topLeftWord);
 		pageMap.put(mBtnOptionTopRight.getId(), topRightWord);
@@ -472,7 +309,7 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 			mBtnArrowLeft.setVisibility(View.VISIBLE);
 		}
 
-		if (mWordCounter == map.size() - 1) {
+		if (mWordCounter == mWordArray.size() - 1) {
 			setProgress(Window.PROGRESS_END);
 			mBtnArrowRight.setVisibility(View.INVISIBLE);
 		} else {
@@ -546,11 +383,11 @@ public class DragAndDropActivity extends Activity implements OnDragListener,
 							btn.setTextColor(mColorBingon);
 							autoForward();
 							mBingo = true;
-							mDBA.setPast(mWord);
+							mDba.setPast(mWord);
 						} else {
 							btn.setTextColor(mColorError);
-							if (mDBA != null) {
-								mDBA.star(mWord);
+							if (mDba != null) {
+								mDba.star(mWord);
 							}
 						}
 						btn.setText(w + "\n" + m);

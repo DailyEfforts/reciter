@@ -9,8 +9,7 @@ import android.os.Bundle;
 
 public class TestReportFragment extends DialogFragment {
 
-	public static TestReportFragment newInstance(String title,
-			String message) {
+	public static TestReportFragment newInstance(String title, String message) {
 		TestReportFragment frag = new TestReportFragment();
 		Bundle args = new Bundle();
 		args.putString("title", title);

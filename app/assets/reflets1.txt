@@ -1,4 +1,4 @@
-﻿total=849
+﻿total=1525
 accord@同意
 d'accord@同意
 agence@代理处
@@ -1040,7 +1040,7 @@ apparaître@出现
 argentine@阿根廷
 arranger@处理好，顺利解决
 s'arranger@处理好，顺利解决
-arriver@（+à）到达
+arriver@（+à）到达；发生
 attribution@分配，授予
 au-dessus de@在...上面
 au moins@至少
@@ -1177,7 +1177,6 @@ trouver@认为
 vêtement@衣服
 volant@方向盘
 accuser@指责，控诉，非难
-arriver@发生
 il arrive qch. à qn.@在某人身上发生某事
 calmer@冷静，镇静
 se calmer@冷静，镇静
@@ -1275,7 +1274,7 @@ compter@算得上，被算进
 concentration@专心，全神贯注
 coordination@协调
 corps@身体
-coup@一步棋
+coup@一步棋；一着
 couvrir@走完
 demander@需要
 dépendre@（+ de）取决于，依...而定
@@ -1487,7 +1486,6 @@ travaux@工程
 veritable@真正的
 zone@地区
 accéléré@加快的；快动作
-accélère@加快的；快动作
 cela dit@不过，然而
 découper@切，割
 demander@寻思，思忖
@@ -1511,8 +1509,7 @@ certainement@肯定地，一定地
 cœur@心，心脏
 de bon cœur@由衷地，乐意地
 colocataire@合租人
-coup@一着
-d'autant  plus que@更何况
+d'autant plus que@更何况
 déménagement@搬迁
 départ@离开
 déplacer@移动；出差，旅行
