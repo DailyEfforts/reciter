@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gmail.dailyefforts.android.reviwer"
+    package="com.gmail.dailyefforts.android.reciter"
     android:versionCode="25"
     android:versionName="2.0.1" >
 
@@ -20,63 +20,63 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.gmail.dailyefforts.android.reviwer.test.TestPage"
+            android:name="com.gmail.dailyefforts.android.reciter.test.TestPage"
             android:label=""
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.gmail.dailyefforts.android.reviwer.setting.SettingsActivity"
+            android:name="com.gmail.dailyefforts.android.reciter.setting.SettingsActivity"
             android:label="@string/settings" >
         </activity>
 
         <provider
-            android:name="com.gmail.dailyefforts.android.reviwer.db.WordListProvider"
-            android:authorities="com.gmail.dailyefforts.android.reviwer.wordlist"
+            android:name="com.gmail.dailyefforts.android.reciter.db.WordListProvider"
+            android:authorities="com.gmail.dailyefforts.android.reciter.wordlist"
             android:exported="false" >
         </provider>
         <provider
-            android:name="com.gmail.dailyefforts.android.reviwer.db.TestReportsProvider"
-            android:authorities="com.gmail.dailyefforts.android.reviwer.testreport"
+            android:name="com.gmail.dailyefforts.android.reciter.db.TestReportsProvider"
+            android:authorities="com.gmail.dailyefforts.android.reciter.testreport"
             android:exported="false" >
         </provider>
 
         <service
-            android:name="com.gmail.dailyefforts.android.reviwer.version.VersionChecker"
+            android:name="com.gmail.dailyefforts.android.reciter.version.VersionChecker"
             android:exported="false" >
             <intent-filter>
-                <action android:name="com.gmail.dailyefforts.android.reviwer.CheckVersion" />
+                <action android:name="com.gmail.dailyefforts.android.reciter.CheckVersion" />
             </intent-filter>
         </service>
 
         <activity
-            android:name="com.gmail.dailyefforts.android.reviwer.version.UpdateConfirm"
+            android:name="com.gmail.dailyefforts.android.reciter.version.UpdateConfirm"
             android:label=""
             android:theme="@style/ActivityTheme.Translucent" >
         </activity>
         <activity
-            android:name="com.gmail.dailyefforts.android.reviwer.Sessions"
+            android:name="com.gmail.dailyefforts.android.reciter.Sessions"
             android:label="@string/app_name" >
         </activity>
 
-        <receiver android:name="com.gmail.dailyefforts.android.reviwer.receiver.BootReciver" >
+        <receiver android:name="com.gmail.dailyefforts.android.reciter.receiver.BootReciver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.gmail.dailyefforts.android.reviwer.receiver.ReviewReciver"
+            android:name="com.gmail.dailyefforts.android.reciter.receiver.ReviewReciver"
             android:exported="false" >
             <intent-filter>
-                <action android:name="com.gmail.dailyefforts.android.reviwer.review" />
+                <action android:name="com.gmail.dailyefforts.android.reciter.review" />
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.gmail.dailyefforts.android.reviwer.drag.DragAndDropActivity" >
+        <activity android:name="com.gmail.dailyefforts.android.reciter.test.drag.DragAndDropActivity" >
         </activity>
-        <activity android:name="com.gmail.dailyefforts.android.reviwer.version.DownloadConfirm" >
+        <activity android:name="com.gmail.dailyefforts.android.reciter.version.DownloadConfirm" >
         </activity>
         <activity
-            android:name="com.gmail.dailyefforts.android.reviwer.Launcher"
+            android:name="com.gmail.dailyefforts.android.reciter.Launcher"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -86,7 +86,7 @@
         </activity>
 
         <receiver
-            android:name="com.gmail.dailyefforts.android.reviwer.widget.CountdownTimerWidgetProvider"
+            android:name="com.gmail.dailyefforts.android.reciter.widget.CountdownTimerWidgetProvider"
             android:label="@string/countdown_timer" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -98,7 +98,7 @@
         </receiver>
 
         <activity
-            android:name="com.gmail.dailyefforts.android.reviwer.test.SpellTestActivity"
+            android:name="com.gmail.dailyefforts.android.reciter.test.SpellTestActivity"
             android:label="@string/title_activity_spell_test">
         </activity>
     </application>
