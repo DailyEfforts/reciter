@@ -16,8 +16,7 @@
         <item>@string/test_spell_foreign_correction_book</item>
         <item>@string/test_type_foreign_to_chinese_random</item>
         <item>@string/test_type_chinese_to_foreign_random</item>
-        <item>@string/test_spell_random</item>
-<!--         <item>拼写测试</item> -->
+        <item>@string/random_completion_test</item>
     </string-array>
 
 </resources>

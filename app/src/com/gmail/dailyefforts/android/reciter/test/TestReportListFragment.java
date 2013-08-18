@@ -18,9 +18,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reciter.Config;
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reciter.db.DBA;
 import com.gmail.dailyefforts.android.reciter.db.TestReportsProvider;
-import com.gmail.dailyefforts.android.reciter.R;
 
 public class TestReportListFragment extends ListFragment implements
 		LoaderCallbacks<Cursor> {

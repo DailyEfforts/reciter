@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.widget.Button;
 import android.widget.LinearLayout.LayoutParams;
 
-import com.gmail.dailyefforts.android.reciter.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class OptionButton extends Button {
 

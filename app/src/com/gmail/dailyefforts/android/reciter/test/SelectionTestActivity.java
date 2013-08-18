@@ -6,9 +6,7 @@ import java.util.Random;
 
 import android.app.DialogFragment;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.res.Resources;
-import android.media.AudioManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseArray;
@@ -19,13 +17,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reciter.Config;
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reciter.Word;
 import com.gmail.dailyefforts.android.reciter.db.DBA;
-import com.gmail.dailyefforts.android.reciter.R;
 
-public class TestPage extends AbstractTestActivity implements View.OnClickListener {
+public class SelectionTestActivity extends AbstractTestActivity implements
+		View.OnClickListener {
 
-	private static final String TAG = TestPage.class.getSimpleName();
+	private static final String TAG = SelectionTestActivity.class
+			.getSimpleName();
 
 	private TextView mTextViewTestingItem;
 
@@ -41,29 +41,21 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 
 	private ArrayList<OptionButton> mOptList;
 
-	int optNum;
-
 	private int mDbCount;
 
-	private int mRate;
-
 	private String mTestReport;
-
-	private AudioManager mAudioMngr;
 
 	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_test_page);
+		setContentView(R.layout.activity_selection_test);
 		mTextViewTestingItem = (TextView) findViewById(R.id.tv_word);
-
-		optNum = Config.DEFAULT_OPTION_COUNT;
 
 		mDbCount = mDba.getCount();
 		optCat = (LinearLayout) findViewById(R.id.opt_category);
-		optCat.setWeightSum(optNum);
+		optCat.setWeightSum(Config.DEFAULT_OPTION_COUNT);
 
 		Bundle extras = getIntent().getExtras();
 		int testType = extras.getInt(Config.INTENT_EXTRA_TEST_TYPE);
@@ -84,7 +76,7 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 
 		mOptList = new ArrayList<OptionButton>();
 
-		for (int i = 0; i < optNum; i++) {
+		for (int i = 0; i < Config.DEFAULT_OPTION_COUNT; i++) {
 			OptionButton btn = new OptionButton(this, i);
 			mOptList.add(btn);
 		}
@@ -97,15 +89,12 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 
 		Resources res = getResources();
 
-		mRate = (Window.PROGRESS_END - Window.PROGRESS_START) / mWordArray.size();
+		mProgressStep = (Window.PROGRESS_END - Window.PROGRESS_START)
+				/ mWordList.size();
 
 		mTestReport = String.valueOf(res.getText(R.string.test_report_content));
 
-		mAddToBook = String.valueOf(res.getText(R.string.tip_add_to_word_book));
-		mRmFromBook = String.valueOf(res
-				.getText(R.string.tip_remove_from_word_book));
-
-		buildTestCase(optNum);
+		buildTestCase();
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -114,20 +103,7 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 		if (mWrongWordList != null) {
 			mWrongWordList.clear();
 		}
-
-		mAudioMngr = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-
-	}
-
-	public boolean isAudible() {
-		boolean ret = false;
-
-		if (mAudioMngr != null
-				&& mAudioMngr.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
-			ret = true;
-		}
-
-		return ret;
+		mStartTime = System.currentTimeMillis();
 	}
 
 	@Override
@@ -138,15 +114,15 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 		}
 	}
 
-	int mWordCounter = 0;
-
 	private long mStartTime;
 
-	private void buildTestCase(int optNum) {
+	@Override
+	protected void buildTestCase() {
+		super.buildTestCase();
 		Random random = new Random();
 
-		mWord = mWordArray.get(mWordCounter).getWord();
-		mMeaning = mWordArray.get(mWordCounter).getMeaning();
+		mWord = mWordList.get(mWordIdx).getWord();
+		mMeaning = mWordList.get(mWordIdx).getMeaning();
 		if (FLAG) {
 			mTextViewTestingItem.setText(mMeaning);
 		} else {
@@ -163,14 +139,14 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 
 		// make sure the option is not duplicate.
 		ArrayList<Integer> arrList = new ArrayList<Integer>();
-		while (arrList.size() < optNum - 1) {
+		while (arrList.size() < Config.DEFAULT_OPTION_COUNT - 1) {
 			int tmp = random.nextInt(mDbCount);
-			if (tmp != 0 && tmp != mWordCounter && !arrList.contains(tmp)) {
+			if (tmp != 0 && tmp != mWordIdx && !arrList.contains(tmp)) {
 				arrList.add(tmp);
 			}
 		}
 
-		int answerIdx = random.nextInt(optNum);
+		int answerIdx = random.nextInt(Config.DEFAULT_OPTION_COUNT);
 
 		for (int i = 0; i < mOptList.size(); i++) {
 			OptionButton btn = mOptList.get(i);
@@ -180,7 +156,7 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 				} else {
 					btn.setText(mMeaning);
 				}
-				mWordsMeaningsMap.put(btn.getId(), mWordArray.get(mWordCounter));
+				mWordsMeaningsMap.put(btn.getId(), mWordList.get(mWordIdx));
 			} else {
 
 				int tmp = 0;
@@ -189,7 +165,7 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 					tmp = arrList.get(0);
 					arrList.remove(0);
 				} else {
-					tmp = random.nextInt(mWordArray.size());
+					tmp = random.nextInt(mWordList.size());
 				}
 
 				if (mDba != null) {
@@ -206,9 +182,6 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 		}
 
 		isFirstTouch = true;
-
-		setProgress((mWordCounter * mRate));
-		mWordCounter++;
 	}
 
 	private boolean FLAG = false;
@@ -224,10 +197,10 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 				if (isFirstTouch) {
 					mBingoNum++;
 				}
-				if (mWordCounter == mWordArray.size()) {
-					showTestReport();
+				if (hasNext()) {
+					forward();
 				} else {
-					buildTestCase(optNum);
+					showTestReport();
 				}
 			} else {
 				if (mDba != null) {
@@ -240,10 +213,6 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 				((Button) v).setText(w.getWord() + "\n" + w.getMeaning());
 				((Button) v).setEnabled(false);
 			}
-		}
-
-		if (mStartTime == 0) {
-			mStartTime = System.currentTimeMillis();
 		}
 	}
 
@@ -263,11 +232,11 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 
 		long elapsedTime = Math
 				.round((System.currentTimeMillis() - mStartTime) / 1000.0);
-		int accuracy = (int) (mBingoNum * 100.0f / mWordCounter);
+		int accuracy = (int) (mBingoNum * 100.0f / mWordList.size());
 
 		if (mDba != null) {
 			ContentValues values = new ContentValues();
-			values.put(DBA.TEST_TESTED_NUMBER, mWordCounter);
+			values.put(DBA.TEST_TESTED_NUMBER, mWordList.size());
 			values.put(DBA.TEST_CORRECT_NUMBER, mBingoNum);
 			values.put(DBA.TEST_ELAPSED_TIME, elapsedTime);
 			values.put(DBA.TEST_ACCURACY, accuracy);
@@ -280,9 +249,9 @@ public class TestPage extends AbstractTestActivity implements View.OnClickListen
 			mDba.insert(DBA.CURRENT_TEST_REPORT_TABLE, null, values);
 		}
 
-		String message = String.format(mTestReport, mWordCounter, mBingoNum,
-				elapsedTime, accuracy, mDba.size(),
-				(int) (mDba.size() * (mBingoNum * 1.0f / mWordCounter)));
+		String message = String.format(mTestReport, mWordList.size(),
+				mBingoNum, elapsedTime, accuracy, mDba.size(),
+				(int) (mDba.size() * (mBingoNum * 1.0f / mWordList.size())));
 		DialogFragment newFragment = TestReportFragment.newInstance(
 				getString(R.string.test_report), message);
 		newFragment.show(getFragmentManager(), "dialog");

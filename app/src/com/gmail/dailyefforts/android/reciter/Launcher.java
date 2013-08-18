@@ -17,9 +17,9 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reciter.db.DBA;
 import com.gmail.dailyefforts.android.reciter.setting.SettingsActivity;
-import com.gmail.dailyefforts.android.reciter.R;
 
 public class Launcher extends ListActivity implements OnClickListener {
 

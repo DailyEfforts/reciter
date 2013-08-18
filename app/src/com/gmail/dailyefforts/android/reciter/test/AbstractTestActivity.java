@@ -3,7 +3,11 @@ package com.gmail.dailyefforts.android.reciter.test;
 import java.util.Locale;
 
 import android.app.Activity;
+import android.content.Context;
+import android.media.AudioManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
@@ -14,40 +18,90 @@ import android.view.Window;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reciter.Config;
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reciter.Word;
 import com.gmail.dailyefforts.android.reciter.db.DBA;
-import com.gmail.dailyefforts.android.reciter.R;
 
 public abstract class AbstractTestActivity extends Activity implements
 		OnInitListener {
-	private static final String TAG = AbstractTestActivity.class.getSimpleName();
-	
+	private static final String TAG = AbstractTestActivity.class
+			.getSimpleName();
+
+	protected static final int TIME_DELAY_TO_AUTO_FORWARD = 600;
+
+	// 当前正在测试的外语单词
 	protected String mWord;
+
+	// 此番测试中要测试的单词列表
+	protected SparseArray<Word> mWordList;
+
+	// 当前正在测试的单词的索引
+	protected int mWordIdx = 0;
+
+	// 数据库管理负责人
 	protected DBA mDba;
+
+	// Speech负责人
 	protected TextToSpeech mTts;
-	protected String mRmFromBook;
-	protected String mAddToBook;
-	protected int mWordCounter = 0;
-	protected SparseArray<Word> mWordArray;
+
+	private String mStrRemoveFromCorrectionBook;
+	private String mStrAddToCorrectionBook;
+
+	protected AudioManager mAudioMngr;
+
+	protected int mProgressStep;
+
+	protected AutoForwardHandler mAutoForwardHandler;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setWindowFeatures();
+
+		mDba = DBA.getInstance(getApplicationContext());
+		mWordList = Word.getMap();
+
+		if (mWordList == null || mWordList.size() <= 0) {
+			Log.e(TAG, "onCreate() mWordArray: " + mWordList);
+			return;
+		}
+
+		mProgressStep = (Window.PROGRESS_END - Window.PROGRESS_START)
+				/ mWordList.size();
+
+		mTts = new TextToSpeech(getApplicationContext(), this);
+		mAudioMngr = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
+		perpareTipStr();
+
+		mAutoForwardHandler = new AutoForwardHandler();
+	}
+
+	private class AutoForwardHandler extends Handler {
+		public static final int MSG_MOVE_ON = 0;
+
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+			case MSG_MOVE_ON:
+				forward();
+				removeMessages(MSG_MOVE_ON);
+				break;
+			}
+		}
+	}
+
+	private void setWindowFeatures() {
 		requestWindowFeature(Window.FEATURE_PROGRESS);
 		getActionBar().setDisplayShowTitleEnabled(false);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		setProgressBarVisibility(true);
-		mDba = DBA.getInstance(getApplicationContext());
-		mWordArray = Word.getMap();
-		if (mWordArray == null || mWordArray.size() <= 0) {
-			return;
-		}
+	}
 
-		mTts = new TextToSpeech(getApplicationContext(), this);
-
-		mAddToBook = String.valueOf(getResources().getText(
+	private void perpareTipStr() {
+		mStrAddToCorrectionBook = String.valueOf(getResources().getText(
 				R.string.tip_add_to_word_book));
-		mRmFromBook = String.valueOf(getResources().getText(
+		mStrRemoveFromCorrectionBook = String.valueOf(getResources().getText(
 				R.string.tip_remove_from_word_book));
 	}
 
@@ -60,27 +114,52 @@ public abstract class AbstractTestActivity extends Activity implements
 		getMenuInflater().inflate(R.menu.action, menu);
 
 		if (mDba == null || menu == null) {
+			Log.e(TAG, "onPrepareOptionsMenu() mDba: " + mDba + ", menu: "
+					+ menu);
 			return false;
 		}
 
-		MenuItem star = menu.findItem(R.id.menu_star);
-		if (star != null) {
+		MenuItem starMenu = menu.findItem(R.id.menu_star);
+		if (starMenu != null) {
 			Log.i(TAG, "onPrepareOptionsMenu() mWord: " + mWord + ", star: "
 					+ mDba.getStar(mWord));
 			if (mDba.getStar(mWord) <= 0) {
-				star.setIcon(android.R.drawable.star_off);
-				star.setTitle(R.string.add_to_word_book);
+				starMenu.setIcon(android.R.drawable.star_off);
+				starMenu.setTitle(R.string.add_to_word_book);
 			} else {
-				star.setIcon(android.R.drawable.star_on);
-				star.setTitle(R.string.remove_from_word_book);
+				starMenu.setIcon(android.R.drawable.star_on);
+				starMenu.setTitle(R.string.remove_from_word_book);
 			}
 		}
 
-		if (Config.DEBUG) {
-			Log.d(TAG, "onPrepareOptionsMenu()");
-		}
-
 		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			finish();
+			return true;
+		case R.id.menu_read:
+			read(mWord);
+			return true;
+		case R.id.menu_star:
+			if (mDba == null) {
+				return false;
+			}
+			if (mDba.getStar(mWord) <= 0) {
+				mDba.star(mWord);
+				toast(String.format(mStrAddToCorrectionBook, mWord));
+				invalidateOptionsMenu();
+			} else {
+				mDba.unStar(mWord);
+				toast(String.format(mStrRemoveFromCorrectionBook, mWord));
+				invalidateOptionsMenu();
+			}
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
@@ -92,43 +171,18 @@ public abstract class AbstractTestActivity extends Activity implements
 		}
 	}
 
-	protected void readIt(final String word) {
+	protected void read(String word) {
 		if (mTts != null) {
 			int result = mTts.speak(word, TextToSpeech.QUEUE_FLUSH, null);
 			if (result != TextToSpeech.SUCCESS) {
 				Log.e(TAG, "speak failed");
 			}
+		} else {
+			Log.e(TAG, "read() mTts: " + mTts);
 		}
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			finish();
-			return true;
-		case R.id.menu_read:
-			readIt(mWord);
-			return true;
-		case R.id.menu_star:
-			if (mDba == null) {
-				return false;
-			}
-			if (mDba.getStar(mWord) <= 0) {
-				mDba.star(mWord);
-				toast(String.format(mAddToBook, mWord));
-				invalidateOptionsMenu();
-			} else {
-				mDba.unStar(mWord);
-				toast(String.format(mRmFromBook, mWord));
-				invalidateOptionsMenu();
-			}
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-	protected void toast(String msg) {
+	private void toast(String msg) {
 		Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
 	}
 
@@ -156,6 +210,60 @@ public abstract class AbstractTestActivity extends Activity implements
 			}
 		} else {
 			Log.e(TAG, "Could not initialize TextToSpeech.");
+		}
+	}
+
+	private boolean isAudible() {
+		if (mAudioMngr != null
+				&& mAudioMngr.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
+			return true;
+		}
+
+		return false;
+	}
+
+	protected void forward() {
+		mWordIdx++;
+
+		if (mWordIdx > mWordList.size()) {
+			mWordIdx = mWordList.size();
+		}
+		buildTestCase();
+	}
+
+	protected void backward() {
+		mWordIdx--;
+		if (mWordIdx < 0) {
+			mWordIdx = 0;
+		}
+		buildTestCase();
+	}
+
+	protected void buildTestCase() {
+		setProgress((mWordIdx * mProgressStep));
+		cancelAutoForward();
+	}
+
+	private void cancelAutoForward() {
+		if (mAutoForwardHandler != null
+				&& mAutoForwardHandler
+						.hasMessages(AutoForwardHandler.MSG_MOVE_ON)) {
+			mAutoForwardHandler.removeMessages(AutoForwardHandler.MSG_MOVE_ON);
+		}
+	}
+
+	protected boolean hasNext() {
+		if (Config.DEBUG) {
+			Log.d(TAG, "hasNext() mWordIdx / mWordList.size() : " + mWordIdx
+					+ " / " + mWordList.size());
+		}
+		return mWordIdx < mWordList.size() - 1;
+	}
+
+	protected void startAutoForward() {
+		if (mAutoForwardHandler != null) {
+			mAutoForwardHandler.sendEmptyMessageDelayed(
+					AutoForwardHandler.MSG_MOVE_ON, TIME_DELAY_TO_AUTO_FORWARD);
 		}
 	}
 }

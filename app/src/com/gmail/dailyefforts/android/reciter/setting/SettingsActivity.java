@@ -19,7 +19,7 @@ import android.preference.PreferenceManager;
 import android.view.MenuItem;
 
 import com.gmail.dailyefforts.android.reciter.Config;
-import com.gmail.dailyefforts.android.reciter.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class SettingsActivity extends PreferenceActivity {
 

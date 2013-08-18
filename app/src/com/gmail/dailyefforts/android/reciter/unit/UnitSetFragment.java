@@ -25,9 +25,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reciter.Config;
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reciter.db.DBA;
-import com.gmail.dailyefforts.android.reciter.test.drag.DragAndDropActivity;
-import com.gmail.dailyefforts.android.reciter.R;
+import com.gmail.dailyefforts.android.reciter.test.drag.DragAndDropTestActivity;
 
 public class UnitSetFragment extends Fragment implements OnItemClickListener {
 	private static final String TAG = UnitSetFragment.class.getSimpleName();
@@ -271,7 +271,7 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 		int start = position * UNIT + 1;
 		int end = (position + 1) * UNIT;
 		dba.loadUnitWords(start, end);
-		Intent intent = new Intent(getActivity(), DragAndDropActivity.class);
+		Intent intent = new Intent(getActivity(), DragAndDropTestActivity.class);
 		getActivity().startActivity(intent);
 	}
 }

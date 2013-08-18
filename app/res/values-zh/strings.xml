@@ -53,12 +53,13 @@
     <string name="click_to_install_reciter">点击安装Reciter</string>
     <string name="test_type_foreign_to_chinese_correction_book">外 -> 中 (错题本)</string>
     <string name="test_type_chinese_to_foreign_correction_book">中 -> 外 (错题本)</string>
-    <string name="test_spell_foreign_correction_book">拼写 (错题本)</string>
+    <string name="test_spell_foreign_correction_book">补全测试 (错题本)</string>
     <string name="test_type_foreign_to_chinese_random">外 -> 中 (随机)</string>
     <string name="test_type_chinese_to_foreign_random">中 -> 外 (随机)</string>
-    <string name="test_spell_random">拼写 (随机)</string>
+    <string name="random_completion_test">补全测试 (随机)</string>
     <string name="test_record_is_empty">尚无测试记录</string>
     <string name="downloading_the_latest_reciter_apk_file">正在下载新版Reciter&#8230;</string>
     <string name="book_list">词书列表</string>
-
+    <string name="next">下一个</string>
+    <string name="skip">跳过</string>
 </resources>

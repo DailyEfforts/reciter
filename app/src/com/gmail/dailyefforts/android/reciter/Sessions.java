@@ -22,14 +22,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reciter.Config.TestType;
 import com.gmail.dailyefforts.android.reciter.db.DBA;
-import com.gmail.dailyefforts.android.reciter.test.SpellTestActivity;
+import com.gmail.dailyefforts.android.reciter.test.CompletionTestActivity;
+import com.gmail.dailyefforts.android.reciter.test.SelectionTestActivity;
 import com.gmail.dailyefforts.android.reciter.test.TestFragment;
-import com.gmail.dailyefforts.android.reciter.test.TestPage;
 import com.gmail.dailyefforts.android.reciter.unit.MistakeCollectionBookFragment;
 import com.gmail.dailyefforts.android.reciter.unit.UnitSetFragment;
-import com.gmail.dailyefforts.android.reciter.R;
 
 public class Sessions extends FragmentActivity implements ActionBar.TabListener {
 
@@ -286,11 +286,11 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 			case RANDOM_TO_ZH:
 			case MY_WORD_FROM_ZH:
 			case MY_WORD_TO_ZH:
-				intent = new Intent(mContext, TestPage.class);
+				intent = new Intent(mContext, SelectionTestActivity.class);
 				break;
 			case RANDOM_SPELL:
 			case MY_WORD_SPELL:
-				intent = new Intent(mContext, SpellTestActivity.class);
+				intent = new Intent(mContext, CompletionTestActivity.class);
 				break;
 			case UNKNOWN:
 				Toast.makeText(mContext, R.string.tip_word_book_is_empty,

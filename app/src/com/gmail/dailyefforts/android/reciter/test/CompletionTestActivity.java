@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -18,22 +19,22 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reciter.Config;
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reciter.Word;
-import com.gmail.dailyefforts.android.reciter.R;
 
-public class SpellTestActivity extends AbstractTestActivity implements OnClickListener {
+public class CompletionTestActivity extends AbstractTestActivity implements
+		OnClickListener {
 
-	private static final String TAG = SpellTestActivity.class.getSimpleName();
+	private static final String TAG = CompletionTestActivity.class
+			.getSimpleName();
 	private TextView mTextviewChinese;
 	private LinearLayout mCandidatesContainer;
 	private Button mBtnNext;
 	private Button mBtnSkip;
 	private Animation mAnimation;
 
-	private static final char[] OPTIONS = "àâçéèêëîïôûùüÿœabcdefghijklmnopqrstuvwxyz"
+	private static final char[] OPTIONS = "abcdefghijklmnopqrstuvwxyzàâçéèêëîïôûùüÿœ"
 			.toCharArray();
-
-	private int mCounter;
 
 	private List<Button> mOptionList;
 	private LayoutParams mLayoutParams;
@@ -42,11 +43,11 @@ public class SpellTestActivity extends AbstractTestActivity implements OnClickLi
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_spell_test);
+		setContentView(R.layout.activity_completion_test);
 
 		if (Config.DEBUG) {
-			for (int i = 0; i < mWordArray.size(); i++) {
-				Log.d(TAG, "word: " + i + ": " + mWordArray.get(i).toString());
+			for (int i = 0; i < mWordList.size(); i++) {
+				Log.d(TAG, "word: " + i + ": " + mWordList.get(i).toString());
 			}
 		}
 
@@ -73,7 +74,7 @@ public class SpellTestActivity extends AbstractTestActivity implements OnClickLi
 			mOptionList.add(btn);
 			btn.setOnClickListener(this);
 		}
-		build();
+		buildTestCase();
 
 		mAnimation = AnimationUtils.loadAnimation(this, R.anim.wave_scale);
 		// mBtnNext.setEnabled(false);
@@ -91,34 +92,35 @@ public class SpellTestActivity extends AbstractTestActivity implements OnClickLi
 			if (v instanceof Button) {
 				String str = String.valueOf(((Button) v).getText());
 				if (str.equals(String.valueOf(mTestCase.letter))) {
-					mTextviewSpelling.setText(mCurrentWord.getWord());
+					mTextviewSpelling.setText(mWord);
 					mTextviewSpelling.startAnimation(mAnimation);
 					mBtnNext.setEnabled(true);
+					if (hasNext()) {
+						startAutoForward();
+					} else {
+						setProgress(Window.PROGRESS_END);
+					}
 				} else {
 					((Button) v).setEnabled(false);
 				}
 			}
 			break;
 		case R.id.btn_spell_test_next:
-			if (noMore()) {
-				finish();
+			if (hasNext()) {
+				forward();
 			} else {
-				build();
+				finish();
 			}
 			break;
 		case R.id.btn_spell_test_skip:
-			build();
+			forward();
 			break;
 		}
 	}
 
-	private boolean noMore() {
-		return mCounter >= mWordArray.size();
-	}
-
 	private static List<Integer> mTestPointList = new ArrayList<Integer>();
 
-	private List<TestCase> mTestCases = new ArrayList<SpellTestActivity.TestCase>();
+	private List<TestCase> mTestCases = new ArrayList<CompletionTestActivity.TestCase>();
 
 	private class TestCase {
 		public int index;
@@ -159,26 +161,27 @@ public class SpellTestActivity extends AbstractTestActivity implements OnClickLi
 	}
 
 	private TestCase mTestCase;
-	private Word mCurrentWord;
 
-	private void build() {
+	@Override
+	protected void buildTestCase() {
+		super.buildTestCase();
 
-		mCurrentWord = mWordArray.get(mCounter++);
+		Word word = mWordList.get(mWordIdx);
 
-		if (noMore()) {
-			mBtnNext.setText("Done");
-			mBtnSkip.setEnabled(false);
-		} else {
+		if (hasNext()) {
 			mBtnNext.setEnabled(false);
+		} else {
+			mBtnNext.setText(R.string.done);
+			mBtnSkip.setEnabled(false);
 		}
 
-		if (mCurrentWord == null) {
+		if (word == null) {
 			return;
 		}
 
-		mTextviewChinese.setText(mCurrentWord.getMeaning());
+		mTextviewChinese.setText(word.getMeaning());
 
-		mWord = mCurrentWord.getWord();
+		mWord = word.getWord();
 
 		mTestCase = getTextCase(mWord);
 
@@ -210,6 +213,7 @@ public class SpellTestActivity extends AbstractTestActivity implements OnClickLi
 			mOptionList.get(i).setText(String.valueOf(options.get(i)));
 		}
 
+		word = null; // Let GC do its work.
 	}
 
 }

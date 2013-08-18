@@ -8,8 +8,6 @@ import android.content.ClipData;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.DragEvent;
@@ -18,23 +16,21 @@ import android.view.View;
 import android.view.View.DragShadowBuilder;
 import android.view.View.OnClickListener;
 import android.view.View.OnDragListener;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reciter.Config;
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reciter.Word;
 import com.gmail.dailyefforts.android.reciter.test.AbstractTestActivity;
-import com.gmail.dailyefforts.android.reciter.R;
 
-public class DragAndDropActivity extends AbstractTestActivity implements
+public class DragAndDropTestActivity extends AbstractTestActivity implements
 		OnDragListener, OnClickListener {
 
-	private static final int TIME_DELAY_TO_AUTO_FORWARD = 600;
-
-	private static final String TAG = DragAndDropActivity.class.getSimpleName();
+	private static final String TAG = DragAndDropTestActivity.class
+			.getSimpleName();
 
 	private Button mBtnCurrentWord;
 
@@ -43,8 +39,6 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 	private ArrayList<Button> mOptList;
 
 	private int mDbCount;
-
-	private int mRate;
 
 	private Button mBtnOptionTopLeft;
 
@@ -62,8 +56,6 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 
 	private int mColorBingon;
 
-	private AutoForwardHandler mAutoForwardHandler;
-
 	private CheckBox mCheckBox;
 
 	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
@@ -71,7 +63,7 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_drag_and_drop);
+		setContentView(R.layout.activity_drag_and_drop_test);
 
 		mBtnCurrentWord = (Button) findViewById(R.id.btn_drop_word);
 		mBtnOptionTopLeft = (Button) findViewById(R.id.btn_drop_meaning_top_left);
@@ -143,8 +135,6 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 
 		Resources res = getResources();
 
-		mRate = (Window.PROGRESS_END - Window.PROGRESS_START) / mWordArray.size();
-
 		mColorError = res.getColor(R.color.orange_dark);
 		mColorBingon = res.getColor(R.color.green);
 
@@ -159,10 +149,10 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 
 		mTestCases.clear();
 
-		for (int i = 0; i < mWordArray.size(); i++) {
+		for (int i = 0; i < mWordList.size(); i++) {
 			TestCase testCase = new TestCase();
 
-			Word w = mWordArray.get(i);
+			Word w = mWordList.get(i);
 			testCase.wordIdx = w.getId();
 			int id = -1;
 			if (w != null) {
@@ -212,24 +202,9 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 		}
 		buildTestCase();
 
-		mAutoForwardHandler = new AutoForwardHandler();
 	}
 
-	private class AutoForwardHandler extends Handler {
-		public static final int MSG_MOVE_ON = 0;
-
-		@Override
-		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case MSG_MOVE_ON:
-				forward();
-				removeMessages(MSG_MOVE_ON);
-				break;
-			}
-		}
-	}
-
-	private static ArrayList<TestCase> mTestCases = new ArrayList<DragAndDropActivity.TestCase>();
+	private static ArrayList<TestCase> mTestCases = new ArrayList<DragAndDropTestActivity.TestCase>();
 
 	private class TestCase {
 		public int wordIdx;
@@ -250,9 +225,10 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 
 	private static ArrayList<Integer> arrList = new ArrayList<Integer>();
 
-	private void buildTestCase() {
-
-		if (mWordCounter >= mWordArray.size()) {
+	@Override
+	protected void buildTestCase() {
+		super.buildTestCase();
+		if (mWordIdx >= mWordList.size()) {
 			Toast.makeText(getApplicationContext(), "Done.", Toast.LENGTH_SHORT)
 					.show();
 			finish();
@@ -261,7 +237,7 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 
 		mBingo = false;
 
-		TestCase testCase = mTestCases.get(mWordCounter);
+		TestCase testCase = mTestCases.get(mWordIdx);
 
 		if (mBtnCurrentWord.getVisibility() != View.VISIBLE) {
 			mBtnCurrentWord.setVisibility(View.VISIBLE);
@@ -276,13 +252,13 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 		}
 
 		pageMap = new SparseArray<Word>();
-		int mWordIdx = testCase.wordIdx;
+		int idxInDb = testCase.wordIdx;
 		int topLeftIdx = testCase.topLeftIdx;
 		int topRightIdx = testCase.topRightIdx;
 		int bottomLeftIdx = testCase.bottomLeftIdx;
 		int bottomRightIdx = testCase.bottomRightIdx;
 
-		Word curentWord = mDba.getWordByIdx(mWordIdx);
+		Word curentWord = mDba.getWordByIdx(idxInDb);
 		Word topLeftWord = mDba.getWordByIdx(topLeftIdx);
 		Word topRightWord = mDba.getWordByIdx(topRightIdx);
 		Word bottomLeftWord = mDba.getWordByIdx(bottomLeftIdx);
@@ -300,24 +276,22 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 		mBtnOptionTopRight.setText(topRightWord.getMeaning());
 		mBtnOptionBottomLeft.setText(bottomLeftWord.getMeaning());
 		mBtnOptionBottomRight.setText(bottomRightWord.getMeaning());
+		System.out.println("DragAndDropTestActivity.buildTestCase() mWordIdx: " + mWordIdx);
 
-		setProgress((mWordCounter * mRate));
-
-		if (mWordCounter == 0) {
+		if (mWordIdx == 0) {
 			mBtnArrowLeft.setVisibility(View.INVISIBLE);
 		} else {
 			mBtnArrowLeft.setVisibility(View.VISIBLE);
 		}
 
-		if (mWordCounter == mWordArray.size() - 1) {
-			setProgress(Window.PROGRESS_END);
-			mBtnArrowRight.setVisibility(View.INVISIBLE);
-		} else {
+		if (hasNext()) {
 			mBtnArrowRight.setVisibility(View.VISIBLE);
+		} else {
+			mBtnArrowRight.setVisibility(View.INVISIBLE);
 		}
 
 		if (mCheckBox != null && mCheckBox.isChecked()) {
-			readIt(mWord);
+			read(mWord);
 		}
 
 		invalidateOptionsMenu();
@@ -381,7 +355,7 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 						Button btn = (Button) v;
 						if (mWord.equals(w)) {
 							btn.setTextColor(mColorBingon);
-							autoForward();
+							startAutoForward();
 							mBingo = true;
 							mDba.setPast(mWord);
 						} else {
@@ -397,13 +371,6 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 			}
 		}
 		v.clearAnimation();
-	}
-
-	private void autoForward() {
-		if (mAutoForwardHandler != null) {
-			mAutoForwardHandler.sendEmptyMessageDelayed(
-					AutoForwardHandler.MSG_MOVE_ON, TIME_DELAY_TO_AUTO_FORWARD);
-		}
 	}
 
 	@Override
@@ -422,16 +389,6 @@ public class DragAndDropActivity extends AbstractTestActivity implements
 			judge(v);
 			break;
 		}
-	}
-
-	private void forward() {
-		mWordCounter++;
-		buildTestCase();
-	}
-
-	private void backward() {
-		mWordCounter--;
-		buildTestCase();
 	}
 
 }
