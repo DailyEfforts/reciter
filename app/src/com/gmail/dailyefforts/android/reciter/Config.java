@@ -2,7 +2,7 @@ package com.gmail.dailyefforts.android.reciter;
 
 public class Config {
 
-	public static final boolean DEBUG = true;
+	public static final boolean DEBUG = false;
 
 	// Actions
 	public static final String ACTION_NAME_CHECK_VERSION = "com.gmail.dailyefforts.android.reciter.CheckVersion";
@@ -31,8 +31,8 @@ public class Config {
 
 	// Default values
 	public static final int DEFAULT_OPTION_COUNT = 5;
-	public static final int DEFAULT_WORD_COUNT_OF_ONE_UNIT = 5;
-	public static final int DEFAULT_RANDOM_TEST_SIZE = 5;
+	public static final int DEFAULT_WORD_COUNT_OF_ONE_UNIT = 20;
+	public static final int DEFAULT_RANDOM_TEST_SIZE = 20;
 	public static final boolean DEFAULT_ALLOW_REVIEW_NOTIFICATION = true;
 
 	// Book names

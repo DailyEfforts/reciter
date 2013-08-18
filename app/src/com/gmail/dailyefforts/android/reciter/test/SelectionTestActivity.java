@@ -43,8 +43,6 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 
 	private int mDbCount;
 
-	private String mTestReport;
-
 	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
 
 	@Override
@@ -87,12 +85,6 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 			tmp.setOnClickListener(this);
 		}
 
-		Resources res = getResources();
-
-		mProgressStep = (Window.PROGRESS_END - Window.PROGRESS_START)
-				/ mWordList.size();
-
-		mTestReport = String.valueOf(res.getText(R.string.test_report_content));
 
 		buildTestCase();
 
@@ -103,7 +95,7 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 		if (mWrongWordList != null) {
 			mWrongWordList.clear();
 		}
-		mStartTime = System.currentTimeMillis();
+		
 	}
 
 	@Override
@@ -113,8 +105,6 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 			mDba.star(mWord);
 		}
 	}
-
-	private long mStartTime;
 
 	@Override
 	protected void buildTestCase() {
@@ -249,7 +239,7 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 			mDba.insert(DBA.CURRENT_TEST_REPORT_TABLE, null, values);
 		}
 
-		String message = String.format(mTestReport, mWordList.size(),
+		String message = String.format(mTestReportStr, mWordList.size(),
 				mBingoNum, elapsedTime, accuracy, mDba.size(),
 				(int) (mDba.size() * (mBingoNum * 1.0f / mWordList.size())));
 		DialogFragment newFragment = TestReportFragment.newInstance(

@@ -461,7 +461,7 @@ public class DBA extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		if (newVersion == 9) {
+		if (oldVersion < 9) {
 			db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORD_LIST_NCE3);
 			onCreate(db);
 		}

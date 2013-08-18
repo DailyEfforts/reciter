@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import android.app.DialogFragment;
+import android.content.ContentValues;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -19,8 +22,10 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reciter.Config;
-import com.gmail.dailyefforts.android.reviwer.R;
+import com.gmail.dailyefforts.android.reciter.Language;
 import com.gmail.dailyefforts.android.reciter.Word;
+import com.gmail.dailyefforts.android.reciter.db.DBA;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class CompletionTestActivity extends AbstractTestActivity implements
 		OnClickListener {
@@ -33,12 +38,16 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 	private Button mBtnSkip;
 	private Animation mAnimation;
 
-	private static final char[] OPTIONS = "abcdefghijklmnopqrstuvwxyzàâçéèêëîïôûùüÿœ"
+	private boolean isFirstTouch;
+	private ArrayList<String> mWrongWordList;
+
+	private static final char[] OPTIONS_FR = "abcdefghijklmnopqrstuvwxyzàâçéèêëîïôûùüÿœ"
 			.toCharArray();
 
 	private List<Button> mOptionList;
 	private LayoutParams mLayoutParams;
 	private TextView mTextviewSpelling;
+	private int mTestedSize;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +66,14 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 
 		mBtnSkip = (Button) findViewById(R.id.btn_spell_test_skip);
 		mBtnNext = (Button) findViewById(R.id.btn_spell_test_next);
+
+		if (mTextviewChinese == null || mTextviewSpelling == null
+				|| mCandidatesContainer == null || mBtnSkip == null
+				|| mBtnNext == null) {
+			Log.e(TAG, "onCreate() null pointer issue.");
+			return;
+		}
+
 		mBtnSkip.setOnClickListener(this);
 		mBtnNext.setOnClickListener(this);
 
@@ -66,10 +83,12 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 		mLayoutParams.gravity = Gravity.CENTER_VERTICAL;
 
 		mOptionList = new ArrayList<Button>();
+
 		for (int i = 0; i < 5; i++) {
 			Button btn = new Button(this);
 			btn.setId(i);
 			btn.setLayoutParams(mLayoutParams);
+			btn.setTextColor(Color.LTGRAY);
 			mCandidatesContainer.addView(btn);
 			mOptionList.add(btn);
 			btn.setOnClickListener(this);
@@ -78,7 +97,15 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 
 		mAnimation = AnimationUtils.loadAnimation(this, R.anim.wave_scale);
 		// mBtnNext.setEnabled(false);
+		mWrongWordList = new ArrayList<String>();
 
+		mTestedSize = mWordList.size();
+	}
+
+	private void remember() {
+		if (mWrongWordList != null && !mWrongWordList.contains(mWord)) {
+			mWrongWordList.add(mWord);
+		}
 	}
 
 	@Override
@@ -98,9 +125,14 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 					if (hasNext()) {
 						startAutoForward();
 					} else {
-						setProgress(Window.PROGRESS_END);
+						showTestReport();
 					}
 				} else {
+					if (isFirstTouch) {
+						isFirstTouch = false;
+						remember();
+					}
+					star(mWord);
 					((Button) v).setEnabled(false);
 				}
 			}
@@ -113,6 +145,7 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 			}
 			break;
 		case R.id.btn_spell_test_skip:
+			mTestedSize--;
 			forward();
 			break;
 		}
@@ -199,21 +232,67 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 		List<Character> options = new ArrayList<Character>();
 		options.add(mTestCase.letter);
 
-		while (options.size() < mOptionList.size()) {
-			char opt = OPTIONS[random.nextInt(OPTIONS.length)];
-			if (!options.contains(opt)) {
-				options.add(opt);
+		int size = mOptionList.size();
+		if (Language.English.equals(Config.CURRENT_LANGUAGE)) {
+			while (options.size() < size) {
+				char opt = (char) ('a' + random.nextInt(26));
+				if (!options.contains(opt)) {
+					options.add(opt);
+				}
+			}
+		} else {
+			while (options.size() < size) {
+				char opt = OPTIONS_FR[random.nextInt(OPTIONS_FR.length)];
+				if (!options.contains(opt)) {
+					options.add(opt);
+				}
 			}
 		}
 
 		Collections.sort(options);
 
-		for (int i = 0; i < mOptionList.size() && i < options.size(); i++) {
+		for (int i = 0; i < size && i < options.size(); i++) {
 			mOptionList.get(i).setEnabled(true);
 			mOptionList.get(i).setText(String.valueOf(options.get(i)));
 		}
 
 		word = null; // Let GC do its work.
+		isFirstTouch = true;
 	}
 
+	private void showTestReport() {
+		setProgress(Window.PROGRESS_END);
+
+		long elapsedTime = Math
+				.round((System.currentTimeMillis() - mStartTime) / 1000.0);
+		int bingoNum = mTestedSize - mWrongWordList.size();
+
+		if (mTestedSize <= 0 || bingoNum < 0) {
+			return;
+		}
+
+		int accuracy = (int) (bingoNum * 100.0f / mTestedSize);
+
+		if (mDba != null) {
+			ContentValues values = new ContentValues();
+			values.put(DBA.TEST_TESTED_NUMBER, mTestedSize);
+			values.put(DBA.TEST_CORRECT_NUMBER, bingoNum);
+			values.put(DBA.TEST_ELAPSED_TIME, elapsedTime);
+			values.put(DBA.TEST_ACCURACY, accuracy);
+			values.put(DBA.TEST_DB_SIZE, mDba.size());
+			values.put(DBA.TEST_TIMESTAMP, System.currentTimeMillis());
+			if (mWrongWordList != null) {
+				Collections.sort(mWrongWordList);
+				values.put(DBA.TEST_WRONG_WORD_LIST, mWrongWordList.toString());
+			}
+			mDba.insert(DBA.CURRENT_TEST_REPORT_TABLE, null, values);
+		}
+
+		String message = String.format(mTestReportStr, mTestedSize, bingoNum,
+				elapsedTime, accuracy, mDba.size(),
+				(int) (mDba.size() * (bingoNum * 1.0f / mTestedSize)));
+		DialogFragment newFragment = TestReportFragment.newInstance(
+				getString(R.string.test_report), message);
+		newFragment.show(getFragmentManager(), "dialog");
+	}
 }

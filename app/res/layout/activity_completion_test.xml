@@ -14,27 +14,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/holo_green_dark"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:gravity="center"
+        android:text="@string/unknown"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/holo_green_dark" />
 
     <TextView
         android:id="@+id/tv_spell_test_word_spelling"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="2"
-        android:text="Spelling"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_weight="3"
+        android:text="@string/unknown"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/holo_blue_bright"
-        android:textSize="30dp"
+        android:textColor="@color/holo_blue_dark"
+        android:textSize="30sp"
          />
 
     <RelativeLayout
         android:id="@+id/ll_spell_test_word_chars_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:orientation="horizontal" >
 
         <Button
@@ -44,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
+            android:textColor="@color/gray"
             android:alpha="100"
             android:text="@string/skip"
             android:textStyle="bold" />
@@ -56,7 +60,9 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:alpha="100"
-            android:text="@string/next" />
+            android:text="@string/next"
+            android:textColor="@color/gray" />
+
     </RelativeLayout>
 
     <LinearLayout

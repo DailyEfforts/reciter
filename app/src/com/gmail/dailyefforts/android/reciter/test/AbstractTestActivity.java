@@ -27,7 +27,7 @@ public abstract class AbstractTestActivity extends Activity implements
 	private static final String TAG = AbstractTestActivity.class
 			.getSimpleName();
 
-	protected static final int TIME_DELAY_TO_AUTO_FORWARD = 600;
+	protected static final int TIME_DELAY_TO_AUTO_FORWARD = 1000;
 
 	// 当前正在测试的外语单词
 	protected String mWord;
@@ -53,6 +53,10 @@ public abstract class AbstractTestActivity extends Activity implements
 
 	protected AutoForwardHandler mAutoForwardHandler;
 
+	protected long mStartTime;
+
+	protected String mTestReportStr;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -75,6 +79,7 @@ public abstract class AbstractTestActivity extends Activity implements
 		perpareTipStr();
 
 		mAutoForwardHandler = new AutoForwardHandler();
+		mStartTime = System.currentTimeMillis();
 	}
 
 	private class AutoForwardHandler extends Handler {
@@ -103,6 +108,8 @@ public abstract class AbstractTestActivity extends Activity implements
 				R.string.tip_add_to_word_book));
 		mStrRemoveFromCorrectionBook = String.valueOf(getResources().getText(
 				R.string.tip_remove_from_word_book));
+		mTestReportStr = String.valueOf(getResources().getText(R.string.test_report_content));
+
 	}
 
 	@Override
@@ -160,6 +167,12 @@ public abstract class AbstractTestActivity extends Activity implements
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	protected void star(String word) {
+		if (mDba != null && mDba.getStar(word) <= 0) {
+			mDba.star(word);
+		}
 	}
 
 	@Override
