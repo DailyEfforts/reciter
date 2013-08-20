@@ -14,16 +14,15 @@ import android.util.Log;
 
 import com.gmail.dailyefforts.android.reciter.Config;
 import com.gmail.dailyefforts.android.reciter.Launcher;
-import com.gmail.dailyefforts.android.reviwer.R;
-import com.gmail.dailyefforts.android.reciter.Sessions;
 import com.gmail.dailyefforts.android.reciter.db.DBA;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class ReviewReciver extends BroadcastReceiver {
 
 	private static final String TAG = ReviewReciver.class.getSimpleName();
 
 	private boolean shouldNofity(Context context) {
-		if (Sessions.RUNNING) {
+		if (Config.IS_RUNNING) {
 			return false;
 		}
 
@@ -59,7 +58,7 @@ public class ReviewReciver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 
 		if (Config.DEBUG) {
-			Log.d(TAG, "ReviewReciver: onReceive() " + Sessions.RUNNING);
+			Log.d(TAG, "ReviewReciver: onReceive() " + Config.IS_RUNNING);
 		}
 
 		if (shouldNofity(context)) {

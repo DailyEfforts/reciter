@@ -61,5 +61,7 @@
     <string name="downloading_the_latest_reciter_apk_file">正在下载新版Reciter&#8230;</string>
     <string name="book_list">词书列表</string>
     <string name="next">下一个</string>
+    <string name="previous">上一个</string>
     <string name="skip">跳过</string>
+
 </resources>

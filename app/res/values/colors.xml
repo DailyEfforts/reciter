@@ -8,7 +8,7 @@
     <color name="green">#00ff00</color>
     <color name="green_transparent">#0600ff00</color>
     <color name="green_half_transparent">#2299cc00</color>
-    <color name="yellow">#FFBB33</color>
+    <color name="yellow">#ffbb33</color>
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>
     <color name="black_half_transparent">#66000000</color>
@@ -20,6 +20,8 @@
     <color name="bingo_rate_text_color">#ddd</color>
     <color name="rect_stroke_color">#FF000000</color>
     <color name="orange_dark">#ff8c00</color>
+    <color name="pink">#88ff00ff</color>
+    
     <color name="orange_red">#ff4500</color>
     <color name="pink_deep">#ff1493</color>
     <color name="light_beige">#f5f5dc</color>

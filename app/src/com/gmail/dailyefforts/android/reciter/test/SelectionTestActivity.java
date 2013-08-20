@@ -6,7 +6,6 @@ import java.util.Random;
 
 import android.app.DialogFragment;
 import android.content.ContentValues;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseArray;
@@ -17,9 +16,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reciter.Config;
-import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reciter.Word;
 import com.gmail.dailyefforts.android.reciter.db.DBA;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class SelectionTestActivity extends AbstractTestActivity implements
 		View.OnClickListener {

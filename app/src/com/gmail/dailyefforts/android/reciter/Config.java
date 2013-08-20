@@ -69,5 +69,7 @@ public class Config {
 	public static enum TestType {
 		MY_WORD_TO_ZH, MY_WORD_FROM_ZH, MY_WORD_SPELL, RANDOM_TO_ZH, RANDOM_FROM_ZH, RANDOM_SPELL, UNKNOWN
 	}
+	
+	public static boolean IS_RUNNING;
 
 }

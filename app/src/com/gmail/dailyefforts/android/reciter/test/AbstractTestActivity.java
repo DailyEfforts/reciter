@@ -27,7 +27,7 @@ public abstract class AbstractTestActivity extends Activity implements
 	private static final String TAG = AbstractTestActivity.class
 			.getSimpleName();
 
-	protected static final int TIME_DELAY_TO_AUTO_FORWARD = 1000;
+	protected static final int TIME_DELAY_TO_AUTO_FORWARD = 2000;
 
 	// 当前正在测试的外语单词
 	protected String mWord;
@@ -226,14 +226,14 @@ public abstract class AbstractTestActivity extends Activity implements
 		}
 	}
 
-	private boolean isAudible() {
-		if (mAudioMngr != null
-				&& mAudioMngr.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
-			return true;
-		}
-
-		return false;
-	}
+//	private boolean isAudible() {
+//		if (mAudioMngr != null
+//				&& mAudioMngr.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
+//			return true;
+//		}
+//
+//		return false;
+//	}
 
 	protected void forward() {
 		mWordIdx++;

@@ -88,8 +88,6 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 					.setTabListener(this));
 		}
 
-		RUNNING = true;
-
 		Intent intent = getIntent();
 		if (intent != null && intent.getExtras() != null) {
 			int titleId = intent.getExtras().getInt(
@@ -104,16 +102,6 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 		mTestWordsSize = Config.DEFAULT_RANDOM_TEST_SIZE;
 	}
 
-	public static boolean RUNNING;
-
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		if (Config.DEBUG) {
-			Log.d(TAG, "onDestroy()");
-		}
-		RUNNING = false;
-	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

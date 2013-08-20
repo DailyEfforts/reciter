@@ -7,18 +7,16 @@ import java.util.Random;
 
 import android.app.DialogFragment;
 import android.content.ContentValues;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reciter.Config;
@@ -45,9 +43,15 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 			.toCharArray();
 
 	private List<Button> mOptionList;
-	private LayoutParams mLayoutParams;
 	private TextView mTextviewSpelling;
 	private int mTestedSize;
+	private Random mRandom;
+	private CheckBox mCheckBox;
+
+	private static final int[] ColorArray = { R.color.pink,
+			R.color.holo_green_light, R.color.holo_blue_dark,
+			R.color.light_goldenrod, R.color.gray_light, R.color.yellow,
+			R.color.white, R.color.holo_blue_light, R.color.light_wheat };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,16 +64,19 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 			}
 		}
 
+		mRandom = new Random();
+
 		mTextviewChinese = (TextView) findViewById(R.id.tv_spell_test_word_chinese);
 		mTextviewSpelling = (TextView) findViewById(R.id.tv_spell_test_word_spelling);
 		mCandidatesContainer = (LinearLayout) findViewById(R.id.ll_spell_test_word_candidates_container);
 
 		mBtnSkip = (Button) findViewById(R.id.btn_spell_test_skip);
 		mBtnNext = (Button) findViewById(R.id.btn_spell_test_next);
+		mCheckBox = (CheckBox) findViewById(R.id.cb_spell_test_auto_speak);
 
 		if (mTextviewChinese == null || mTextviewSpelling == null
 				|| mCandidatesContainer == null || mBtnSkip == null
-				|| mBtnNext == null) {
+				|| mBtnNext == null || mCheckBox == null) {
 			Log.e(TAG, "onCreate() null pointer issue.");
 			return;
 		}
@@ -77,22 +84,12 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 		mBtnSkip.setOnClickListener(this);
 		mBtnNext.setOnClickListener(this);
 
-		mLayoutParams = new LayoutParams(mCandidatesContainer.getLayoutParams());
-		mLayoutParams.weight = 1f;
-		mLayoutParams.width = 0;
-		mLayoutParams.gravity = Gravity.CENTER_VERTICAL;
-
 		mOptionList = new ArrayList<Button>();
 
-		for (int i = 0; i < 5; i++) {
-			Button btn = new Button(this);
-			btn.setId(i);
-			btn.setLayoutParams(mLayoutParams);
-			btn.setTextColor(Color.LTGRAY);
-			mCandidatesContainer.addView(btn);
-			mOptionList.add(btn);
-			btn.setOnClickListener(this);
+		for (int i = 0; i < mCandidatesContainer.getChildCount(); i++) {
+			mOptionList.add((Button) mCandidatesContainer.getChildAt(i));
 		}
+
 		buildTestCase();
 
 		mAnimation = AnimationUtils.loadAnimation(this, R.anim.wave_scale);
@@ -111,21 +108,22 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case 0:
-		case 1:
-		case 2:
-		case 3:
-		case 4:
+		case R.id.btn_spell_test_opt_1:
+		case R.id.btn_spell_test_opt_2:
+		case R.id.btn_spell_test_opt_3:
+		case R.id.btn_spell_test_opt_4:
+		case R.id.btn_spell_test_opt_5:
 			if (v instanceof Button) {
 				String str = String.valueOf(((Button) v).getText());
 				if (str.equals(String.valueOf(mTestCase.letter))) {
 					mTextviewSpelling.setText(mWord);
+					if (mCheckBox != null && mCheckBox.isChecked()) {
+						read(mWord);
+					}
 					mTextviewSpelling.startAnimation(mAnimation);
 					mBtnNext.setEnabled(true);
 					if (hasNext()) {
 						startAutoForward();
-					} else {
-						showTestReport();
 					}
 				} else {
 					if (isFirstTouch) {
@@ -141,7 +139,7 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 			if (hasNext()) {
 				forward();
 			} else {
-				finish();
+				showTestReport();
 			}
 			break;
 		case R.id.btn_spell_test_skip:
@@ -171,11 +169,10 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 		}
 	}
 
-	private TestCase getTextCase(String spelling) {
+	private TestCase getTestCase(String spelling) {
 		if (spelling == null) {
 			return null;
 		}
-		Random random = new Random();
 
 		mTestPointList.clear();
 		mTestCases.clear();
@@ -189,8 +186,8 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 		}
 
 		int len = mTestCases.size();
-
-		return mTestCases.get(random.nextInt(len));
+		mRandom.setSeed(System.currentTimeMillis());
+		return mTestCases.get(mRandom.nextInt(len));
 	}
 
 	private TestCase mTestCase;
@@ -216,7 +213,7 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 
 		mWord = word.getWord();
 
-		mTestCase = getTextCase(mWord);
+		mTestCase = getTestCase(mWord);
 
 		char[] arr = mWord.toCharArray();
 
@@ -225,9 +222,10 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 				arr[i] = '?';
 			}
 		}
+		mRandom.setSeed(System.currentTimeMillis());
+		mTextviewSpelling.setTextColor(getResources().getColor(
+				ColorArray[mRandom.nextInt(ColorArray.length)]));
 		mTextviewSpelling.setText(String.valueOf(arr));
-
-		Random random = new Random();
 
 		List<Character> options = new ArrayList<Character>();
 		options.add(mTestCase.letter);
@@ -235,14 +233,14 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 		int size = mOptionList.size();
 		if (Language.English.equals(Config.CURRENT_LANGUAGE)) {
 			while (options.size() < size) {
-				char opt = (char) ('a' + random.nextInt(26));
+				char opt = (char) ('a' + mRandom.nextInt(26));
 				if (!options.contains(opt)) {
 					options.add(opt);
 				}
 			}
 		} else {
 			while (options.size() < size) {
-				char opt = OPTIONS_FR[random.nextInt(OPTIONS_FR.length)];
+				char opt = OPTIONS_FR[mRandom.nextInt(OPTIONS_FR.length)];
 				if (!options.contains(opt)) {
 					options.add(opt);
 				}

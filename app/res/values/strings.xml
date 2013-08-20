@@ -67,6 +67,7 @@
     <string name="book_list">Book List</string>
     <string name="downloading_the_latest_reciter_apk_file">Downloading the latest Reciter APK file&#8230;</string>
     <string name="next">Next</string>
+    <string name="previous">Previous</string>
     <string name="skip">Skip</string>
 
 </resources>
