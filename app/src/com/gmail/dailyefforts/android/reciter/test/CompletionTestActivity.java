@@ -219,7 +219,7 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 
 		for (int i = 0; i < arr.length; i++) {
 			if (i == mTestCase.index) {
-				arr[i] = '?';
+				arr[i] = '*';
 			}
 		}
 		mRandom.setSeed(System.currentTimeMillis());
