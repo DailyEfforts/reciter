@@ -8,7 +8,6 @@ public class Config {
 	public static final String ACTION_NAME_CHECK_VERSION = "com.gmail.dailyefforts.android.reciter.CheckVersion";
 	public static final String ACTION_REVIEW = "com.gmail.dailyefforts.android.reciter.review";
 
-	public static final String SDCARD_FOLDER_NAME = "Mot";
 	public static final String URL_VER_JSON = "https://raw.github.com/DailyEfforts/mot/master/ver.json";
 	public static final String REMOTE_APK_FILE_URL = "https://raw.github.com/DailyEfforts/mot/master/Mot.apk";
 	public static final String APK_NAME = "Mot.apk";

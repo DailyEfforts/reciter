@@ -120,9 +120,8 @@ public class UpdateConfirm extends Activity {
 									R.string.click_notification_to_install_when_download_completed,
 									Toast.LENGTH_LONG).show();
 							try {
-								File dir = new File(Environment
-										.getExternalStorageDirectory(),
-										Config.SDCARD_FOLDER_NAME);
+								File dir = new File(
+										Environment.DIRECTORY_DOWNLOADS);
 								if (dir != null && dir.exists()) {
 									File[] subFiles = dir.listFiles();
 									if (subFiles != null) {

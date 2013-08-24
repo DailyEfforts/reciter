@@ -56,7 +56,6 @@ public class ReviewReciver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-
 		if (Config.DEBUG) {
 			Log.d(TAG, "ReviewReciver: onReceive() " + Config.IS_RUNNING);
 		}
@@ -64,7 +63,6 @@ public class ReviewReciver extends BroadcastReceiver {
 		if (shouldNofity(context)) {
 			nofity(context, intent);
 		}
-
 	}
 
 	private void nofity(Context context, Intent intent) {
