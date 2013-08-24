@@ -116,7 +116,7 @@ public class SettingsActivity extends PreferenceActivity {
 			}
 		}
 
-		public class ResetAlertDialogFragment extends DialogFragment {
+		private class ResetAlertDialogFragment extends DialogFragment {
 
 			@Override
 			public Dialog onCreateDialog(Bundle savedInstanceState) {
