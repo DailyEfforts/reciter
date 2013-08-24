@@ -81,7 +81,6 @@ public class DragAndDropTestActivity extends AbstractTestActivity implements
 				|| mBtnOptionBottomRight == null || mBtnArrowLeft == null
 				|| mBtnArrowRight == null) {
 			Log.e(TAG, "onCreate null pointer");
-			finish();
 		}
 
 		mBtnArrowLeft.setOnClickListener(this);

@@ -17,8 +17,7 @@
             android:layout_gravity="left"
             android:layout_marginRight="6dp"
             android:layout_weight="1"
-            android:minHeight="@dimen/activity_drag_drop_opt_mini_height"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+             />
 
         <com.gmail.dailyefforts.android.reciter.test.drag.DragOptBtn
             android:id="@+id/btn_drop_meaning_top_right"
@@ -27,8 +26,7 @@
             android:layout_gravity="right"
             android:layout_marginLeft="6dp"
             android:layout_weight="1"
-            android:minHeight="@dimen/activity_drag_drop_opt_mini_height"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            />
     </LinearLayout>
 
     <Button
@@ -58,8 +56,7 @@
             android:layout_gravity="left"
             android:layout_marginRight="6dp"
             android:layout_weight="1"
-            android:minHeight="@dimen/activity_drag_drop_opt_mini_height"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+             />
 
         <com.gmail.dailyefforts.android.reciter.test.drag.DragOptBtn
             android:id="@+id/btn_drop_meaning_bottom_right"
@@ -68,8 +65,7 @@
             android:layout_gravity="right"
             android:layout_marginLeft="6dp"
             android:layout_weight="1"
-            android:minHeight="@dimen/activity_drag_drop_opt_mini_height"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            />
     </LinearLayout>
 
     <ImageButton

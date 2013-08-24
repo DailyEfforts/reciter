@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="activity_drag_drop_opt_mini_height">50dp</dimen>
+    <dimen name="activity_drag_drop_opt_mini_height">60dp</dimen>
 
 </resources>

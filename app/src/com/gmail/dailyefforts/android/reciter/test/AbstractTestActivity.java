@@ -27,8 +27,6 @@ public abstract class AbstractTestActivity extends Activity implements
 	private static final String TAG = AbstractTestActivity.class
 			.getSimpleName();
 
-	protected static final int TIME_DELAY_TO_AUTO_FORWARD = 2000;
-
 	// 当前正在测试的外语单词
 	protected String mWord;
 
@@ -108,7 +106,8 @@ public abstract class AbstractTestActivity extends Activity implements
 				R.string.tip_add_to_word_book));
 		mStrRemoveFromCorrectionBook = String.valueOf(getResources().getText(
 				R.string.tip_remove_from_word_book));
-		mTestReportStr = String.valueOf(getResources().getText(R.string.test_report_content));
+		mTestReportStr = String.valueOf(getResources().getText(
+				R.string.test_report_content));
 
 	}
 
@@ -226,14 +225,14 @@ public abstract class AbstractTestActivity extends Activity implements
 		}
 	}
 
-//	private boolean isAudible() {
-//		if (mAudioMngr != null
-//				&& mAudioMngr.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
-//			return true;
-//		}
-//
-//		return false;
-//	}
+	// private boolean isAudible() {
+	// if (mAudioMngr != null
+	// && mAudioMngr.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
+	// return true;
+	// }
+	//
+	// return false;
+	// }
 
 	protected void forward() {
 		mWordIdx++;
@@ -276,7 +275,8 @@ public abstract class AbstractTestActivity extends Activity implements
 	protected void startAutoForward() {
 		if (mAutoForwardHandler != null) {
 			mAutoForwardHandler.sendEmptyMessageDelayed(
-					AutoForwardHandler.MSG_MOVE_ON, TIME_DELAY_TO_AUTO_FORWARD);
+					AutoForwardHandler.MSG_MOVE_ON,
+					Config.TIME_DELAY_TO_AUTO_FORWARD);
 		}
 	}
 }
