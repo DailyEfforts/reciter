@@ -71,4 +71,5 @@ public class Config {
 	
 	public static boolean IS_RUNNING;
 
+	public static final char MISSED_CHAR = '*';
 }
