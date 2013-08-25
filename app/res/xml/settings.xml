@@ -2,12 +2,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory android:title="@string/background" >
-        <!-- 
-        <CheckBoxPreference
-            android:key="@string/pref_key_allow_auto_check_version"
-            android:summary="@string/allow_to_check_latest_version_automatically"
-            android:title="@string/auto_check_latest_version" />
-             -->
         <CheckBoxPreference
             android:key="@string/pref_key_allow_review_notification"
             android:summary="@string/notify_to_review_in_regular_time"
@@ -23,9 +17,14 @@
         <Preference
             style="?android:attr/preferenceInformationStyle"
             android:key="@string/pref_key_version"
-            android:summary="@string/unknown"
             android:persistent="true"
+            android:summary="@string/unknown"
             android:title="@string/version" />
+        <Preference
+            android:key="@string/pref_key_announce"
+            android:title="@string/announce" >
+            <intent android:action="com.gmail.dailyefforts.android.reciter.LAUNCH_ANNOUNCE_ACTIVITY" />
+        </Preference>
     </PreferenceCategory>
 
 </PreferenceScreen>

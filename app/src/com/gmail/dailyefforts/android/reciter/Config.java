@@ -7,6 +7,7 @@ public class Config {
 	// Actions
 	public static final String ACTION_NAME_CHECK_VERSION = "com.gmail.dailyefforts.android.reciter.CheckVersion";
 	public static final String ACTION_REVIEW = "com.gmail.dailyefforts.android.reciter.review";
+	public static final String ACTION_LAUNCH_ANNOUNCEACTIVITY = "com.gmail.dailyefforts.android.reciter.LAUNCH_ANNOUNCE_ACTIVITY";
 
 	public static final String URL_VER_JSON = "https://raw.github.com/DailyEfforts/mot/master/ver.json";
 	public static final String REMOTE_APK_FILE_URL = "https://raw.github.com/DailyEfforts/mot/master/Mot.apk";
@@ -69,7 +70,7 @@ public class Config {
 	public static enum TestType {
 		MY_WORD_TO_ZH, MY_WORD_FROM_ZH, MY_WORD_SPELL, RANDOM_TO_ZH, RANDOM_FROM_ZH, RANDOM_SPELL, UNKNOWN
 	}
-	
+
 	public static boolean IS_RUNNING;
 
 	public static final char MISSED_CHAR = '*';

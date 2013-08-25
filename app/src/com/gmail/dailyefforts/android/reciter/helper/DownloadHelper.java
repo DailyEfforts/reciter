@@ -85,7 +85,7 @@ public class DownloadHelper {
 			Log.e(TAG, "downLoadApk() InputStream is null.");
 			return null;
 		}
-		
+
 		File dir = new File(Environment.DIRECTORY_DOWNLOADS);
 
 		if (!dir.exists()) {

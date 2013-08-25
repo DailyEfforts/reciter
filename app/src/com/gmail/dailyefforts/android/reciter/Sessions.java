@@ -102,7 +102,6 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 		mTestWordsSize = Config.DEFAULT_RANDOM_TEST_SIZE;
 	}
 
-
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -229,7 +228,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 			builder.setNegativeButton(android.R.string.cancel, null);
 			return builder.create();
 		}
-		
+
 		@Override
 		public void onConfigurationChanged(Configuration newConfig) {
 			dismiss();

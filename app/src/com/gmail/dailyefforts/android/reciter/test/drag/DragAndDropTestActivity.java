@@ -275,7 +275,8 @@ public class DragAndDropTestActivity extends AbstractTestActivity implements
 		mBtnOptionTopRight.setText(topRightWord.getMeaning());
 		mBtnOptionBottomLeft.setText(bottomLeftWord.getMeaning());
 		mBtnOptionBottomRight.setText(bottomRightWord.getMeaning());
-		System.out.println("DragAndDropTestActivity.buildTestCase() mWordIdx: " + mWordIdx);
+		System.out.println("DragAndDropTestActivity.buildTestCase() mWordIdx: "
+				+ mWordIdx);
 
 		if (mWordIdx == 0) {
 			mBtnArrowLeft.setVisibility(View.INVISIBLE);

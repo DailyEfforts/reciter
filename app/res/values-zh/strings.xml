@@ -6,6 +6,7 @@
     <string name="settings">设置</string>
     <string name="my_word_book">错题本</string>
     <string name="exit">退出</string>
+    <string name="announce">致谢与通告</string>
     <string name="empty">空</string>
     <string name="tip_select_items_to_unstar">选择已掌握的单词</string>
     <string name="tip_add_to_word_book">已将 %s 添加到生词本中</string>
@@ -63,5 +64,6 @@
     <string name="next">下一个</string>
     <string name="previous">上一个</string>
     <string name="skip">跳过</string>
+    
 
 </resources>

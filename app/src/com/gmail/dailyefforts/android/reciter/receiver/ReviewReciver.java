@@ -31,8 +31,8 @@ public class ReviewReciver extends BroadcastReceiver {
 		if (mSharedPref == null) {
 			return false;
 		} else {
-			boolean allowed = mSharedPref.getBoolean(
-					context.getString(R.string.pref_key_allow_review_notification),
+			boolean allowed = mSharedPref.getBoolean(context
+					.getString(R.string.pref_key_allow_review_notification),
 					false);
 			if (!allowed) {
 				return false;

@@ -84,7 +84,6 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 			tmp.setOnClickListener(this);
 		}
 
-
 		buildTestCase();
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -94,7 +93,7 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 		if (mWrongWordList != null) {
 			mWrongWordList.clear();
 		}
-		
+
 	}
 
 	@Override

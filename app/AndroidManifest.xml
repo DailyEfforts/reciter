@@ -102,6 +102,16 @@
             android:name="com.gmail.dailyefforts.android.reciter.test.CompletionTestActivity"
             android:label="" >
         </activity>
+        <activity
+            android:name="com.gmail.dailyefforts.android.reciter.setting.AnnounceActivity"
+            android:exported="false"
+            android:label="@string/announce" >
+            <intent-filter>
+                <action android:name="com.gmail.dailyefforts.android.reciter.LAUNCH_ANNOUNCE_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -45,7 +45,7 @@ public class SettingsActivity extends PreferenceActivity {
 		return false;
 	}
 
-	public class PrefsFragment extends PreferenceFragment {
+	public static class PrefsFragment extends PreferenceFragment {
 
 		private SharedPreferences mSharedPref;
 		private Preference mVersionPref;
