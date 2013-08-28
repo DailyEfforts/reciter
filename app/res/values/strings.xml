@@ -72,6 +72,6 @@
     <string name="previous">Previous</string>
     <string name="skip">Skip</string>
     <string name="action_settings">Settings</string>
-    <string name="announce_content">本软件中的单词源部分取自网络，部分取自相关图书。如果侵犯了您版权，请及时联系作者(dailyefforts@gmail.com)。一经确认，我会及时移除相关内容。</string>
+    <string name="announce_content">本软件中的单词源部分取自网络，部分取自相关图书，在此向付出努力的人们表示感谢。如果侵犯了您版权，请及时联系作者(dailyefforts@gmail.com)。一经确认，我会及时移除相关内容。</string>
 
 </resources>
