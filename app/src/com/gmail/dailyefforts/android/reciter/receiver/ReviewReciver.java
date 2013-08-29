@@ -87,6 +87,7 @@ public class ReviewReciver extends BroadcastReceiver {
 		builder.setSmallIcon(R.drawable.ic_launcher);
 		builder.setTicker(title);
 		builder.setContentTitle(title);
+		builder.setAutoCancel(true);
 		builder.setContentText(context
 				.getString(R.string.tap_to_start_reciting_words));
 
