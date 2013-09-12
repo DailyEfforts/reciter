@@ -49,6 +49,10 @@
     <string name="nce4">New Concept English (IV)</string>
     <string name="reflets_1">Reflets (I)</string>
     <string name="linguistics_glossary">Linguistics Glossary</string>
+    <string name="pro_en_core">Pro English</string>
+    <string name="liuyi_5000">Liu Yi 5000</string>
+    <string name="liuyi_10000">Liu Yi 10000</string>
+    <string name="liuyi_22000">Liu Yi 22000</string>
     <string name="unit_id">Unit-<b>%d</b></string>
     <string name="unit_contents_num" translatable="false">(%d ~ %d)</string>
     <string name="countdown_timer">Countdown Timer</string>

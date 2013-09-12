@@ -158,6 +158,34 @@ public class Launcher extends ListActivity implements OnClickListener {
 			Config.CURRENT_LANGUAGE = Language.English;
 			bookNameResId = R.string.linguistics_glossary;
 			break;
+		case 7:
+			DBA.CURRENT_WORD_TABLE = DBA.TABLE_WORD_LIST_PRO_EN_CORE;
+			DBA.CURRENT_TEST_REPORT_TABLE = DBA.TABLE_TEST_REPORT_PRO_EN_CORE;
+			Config.CURRENT_BOOK_NAME = Config.BOOK_NAME_PRO_EN_CORE;
+			Config.CURRENT_LANGUAGE = Language.English;
+			bookNameResId = R.string.pro_en_core;
+			break;
+		case 8:
+			DBA.CURRENT_WORD_TABLE = DBA.TABLE_WORD_LIST_LIUYI_5000;
+			DBA.CURRENT_TEST_REPORT_TABLE = DBA.TABLE_TEST_REPORT_LIUYI_5000;
+			Config.CURRENT_BOOK_NAME = Config.BOOK_NAME_PRO_LIUYI_5000;
+			Config.CURRENT_LANGUAGE = Language.English;
+			bookNameResId = R.string.liuyi_5000;
+			break;
+		case 9:
+			DBA.CURRENT_WORD_TABLE = DBA.TABLE_WORD_LIST_LIUYI_10000;
+			DBA.CURRENT_TEST_REPORT_TABLE = DBA.TABLE_TEST_REPORT_LIUYI_10000;
+			Config.CURRENT_BOOK_NAME = Config.BOOK_NAME_PRO_LIUYI_10000;
+			Config.CURRENT_LANGUAGE = Language.English;
+			bookNameResId = R.string.liuyi_10000;
+			break;
+		case 10:
+			DBA.CURRENT_WORD_TABLE = DBA.TABLE_WORD_LIST_LIUYI_22000;
+			DBA.CURRENT_TEST_REPORT_TABLE = DBA.TABLE_TEST_REPORT_LIUYI_22000;
+			Config.CURRENT_BOOK_NAME = Config.BOOK_NAME_PRO_LIUYI_22000;
+			Config.CURRENT_LANGUAGE = Language.English;
+			bookNameResId = R.string.liuyi_22000;
+			break;
 		}
 
 		Intent intent = new Intent(getApplicationContext(), Sessions.class);

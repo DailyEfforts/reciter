@@ -1,4 +1,4 @@
-﻿﻿total=1133
+﻿total=1133
 ability@能力，才干；技能
 able@能，会；有才能的
 accept@接受，收领，承担

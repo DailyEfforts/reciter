@@ -43,6 +43,10 @@ public class Config {
 	public static final String BOOK_NAME_NCE4 = "nce4.txt";
 	public static final String BOOK_NAME_REFLETS1U = "reflets1.txt";
 	public static final String BOOK_NAME_LINGUISTICS_GLOSSARY = "linguistics_glossary.txt";
+	public static final String BOOK_NAME_PRO_EN_CORE = "pro_en_core.txt";
+	public static final String BOOK_NAME_PRO_LIUYI_5000 = "liuyi_5000.txt";
+	public static final String BOOK_NAME_PRO_LIUYI_10000 = "liuyi_10000.txt";
+	public static final String BOOK_NAME_PRO_LIUYI_22000 = "liuyi_22000.txt";
 	public static String CURRENT_BOOK_NAME = BOOK_NAME_REFLETS1U;
 
 	// Languages

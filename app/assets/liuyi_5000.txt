@@ -1,0 +1,1034 @@
+﻿Barren@adj.贫瘠的=sterile#The barren land could produce little food.
+Bump@v.碰撞 菜#The room was dark and I bumped my head against the door.
+Devise@v.设计；发明=invent#He devised a new method for teaching the blind.
+Exert@v.使用=use#My wife's been exerting a lot of pressure on me to change my job.
+Intrigue@n.阴谋=conspiracy#The king's younger brother took part in the intrigue to make himself king.
+Intrigue@v.引起…的兴趣#The book's unusual title intrigued me into reading it.
+Oath@n.宣誓；誓言=pledge#He placed his right hand on the Bible as he spoke the oath of office.
+Postpone@v.延期=adjourn#The had to postpone their trip because of rain.
+Refuge@n.避难所；避难=shelter#The cat took refuge from the dog behind a tree.
+Regain@n.恢复=recover#It took her a long time to regain her health.
+Shatter@v.破灭；粉碎=smash#Their hope of finding him alive was shattered when his dead body was found.
+Tease@v.嘲弄=vex#At school, the other children always teased me because I was fat.
+Tilt@v.倾斜=incline#He tilted his chair back too far and fell on the floor.
+Version@n.翻译=translation#Do you have the English version of this book?
+Version@n.叙述#Your version of the accident differs from that of the other witness.
+Absurd@adj.荒谬的`reasonable#His belief that he was too clever to be caught in his wrongdoing was absurd.
+Alien@adj.外国的`domestic#After ten years his alien speech was still noticeable.
+Amiable@adj.和蔼可亲的`spiteful#She is an amiable girl and gets along with everyone in the office.
+Ban@v.禁止`allow#In most countries the sale of liquor to children is banned.
+Figurative@adj.比喻的`literal#"The sweet temper" is a figurative expression,but "sweet coffee" is not.
+Genuine@adj.真正的`false#Her wedding ring is made of genuine diamond.
+Hoist@v.升起`lower#They hoist the national flag at six o'clock every morning.
+Incorrect@adj.不正确的`accurate#The newspaper gave an incorrect account of the traffic accident.
+Massive@adj.巨大的`tiny#The house was build on a massive rock.
+Stale@adj.不新鲜的`fresh#There was only a piece of stale cake left in the refrigerator.
+Thrive@v.茂盛`decline#Most flowers will not thrive without water and sunshine.
+Wholesale@n.批发`retail#The buy at wholesale and sell at retail.
+Annoy@v.骚扰#The baby is always annoying his sister by pulling her hair.
+Celebrate@v.庆祝#We celebrated Christmas with trees and presents.
+Diplomat@n.外交家#The unsociable person is hardly fit for a diplomat.
+Foresee@v.预知#It is impossible to foresee whether she'll be well enough to come home from hospital next month.
+Induce@v.说服#We couldn't induce the old lady to travel by air.
+Mobilize@v.动员#Our country is in great danger;we must mobilize the army.
+Precede@v.在前#Mr. Eisenhower preceded Mr. Kennedy as president of the United States.
+Predetermine@v.预先决定#Some people believe that man's destiny is predetermined.
+Prevail@v.流行#Making resolutions on New Year's Day is a custom that still prevails.
+Subtle@adj.精致的；淡的#Her subtle smile made him curious.
+Transact@v.办理#The man transacts many affairs connected with the purchase of a home.
+Treason@n.叛国#Helping the enemies of one's country is an apparent treason.
+Utilize@v.利用#How can we utilize his knowledge and skill to our advantage?
+Bosom@n.胸#She wore a flower on the bosom of her dress.
+Diploma@n.文凭#When a person has successfully completed a certain course of study, he is given a diploma by the school.
+Dramatic@adj.戏剧的#The meeting between the mother and her blind son was dramatic.
+Fume@n.烟；气体#The strong fumes of the automobile exhaust early choked him.
+Hurrah@n.欢呼声#"hurrah!" they shouted as the team scored again.
+Miniature 1.@n.缩小之模型 2.@n.缩小物#In the museum there is a miniature of the ship "Mayflower."#The child was playing on the floor with his collection of miniature farm animals.
+Parcel@n.包裹#On her birthday her arms were filled with gift parcels.
+Pill@n.药丸#The pill stuck in his throat but an extra drink of water washed it down.
+Racket@n.喧哗#The students made a big racket as they left the school.
+Rhyme@n.音#The poet used the word "flight" as a rhyme for the word "night".
+Scar@n.疤#The man looks terrible; he has many scars on his cheeks.
+Sculpture@n.雕刻#There are many famous sculptures in the museum.
+Skip@v.跳#When I read a book, I usually skip over; he uninteresting part.
+Apparatus@n.仪器=equipment#The town has recently purchased some new fire-fighting apparatus.
+Assert@v.断言=insist#The witness asserted that the salesman was dishonest.
+Assign@v.分派=allot#He was pleased that he was assigned such an easy task in the company.
+Compensate@v.赔偿=reward#He gave me a new knife to compensate for the one of mine he lost.
+Deem@v.认为=consider#He would deem it an honor if the minister came to see him.
+Inviolable@adj.不可侵犯的=sacred#Freedom of action is one of the inviolable rules of human behavior.
+Specimen@n.标本=sample#He collects specimens of all kinds of rocks and minerals.
+Stimulate@v.刺激；鼓舞=excite#The beating of a drum on the battlefield stimulated the soldiers to fight more bravely.
+Tendency@n.趋势=inclination#Boys have a stronger tendency to fight than girls.
+Testify@v.证明=prove#He testified that the car was being driven slowly at the time of the accident.
+Tourist@n.观光客=traveller#Each year, many foreign tourists visit Taiwan for sight-seeing.
+Utility@n.效用=usefulness#Their furniture was chosen for utility rather than for elegance.
+Blunt@adj.钝的`sharp#Too much alcohol makes all your senses blunt.
+Elastic@adj.有弹性的`inflexible#Toy balloons , sponges and steel springs are elastic.
+Exit@n. 1.出口`entrance 2.离去#He left the building through the rear exit.#When the cat came in, the little mouse made a hasty exit.
+Fatigue@n.疲劳`vigor#He was pale with fatigue after his sleepless night.
+Heir@n.（男）继承人`heiress#When he died, his young nephew was the only heir to his great wealth.
+Inflate@v.膨胀`deflate#As the currency of a country is inflated, the prices of goods begin to rise.
+Plump 1.@adj.丰满`thin 2.@v.忽然落下#She is too plump to fit into this dress.#Utterly exhausted, she plumped down on a chair.
+Recall@v. 1.忆起`forget 2.召回#Mother could recalled stories that she had heard years ago.#The government recalled the general after he lost the battle.
+Shun@v.避开`encounter#You can hardly shun meeting her if you and she both work in the same office.
+Sneer@v.轻蔑；嘲笑`admire#The mean girl sneered at the poor girl's cheap clothes.
+Adjoin@v.临近#Canada and Mexico adjoin the United States of America.
+Ally 1.@v.同盟#Great Britain, France and Italy were allied during the First World War.#Great Britain and the United States were allies in both World Wars.
+Chaste@adj.贞洁的#Her parents teach her to be chaste and decent in her behavior.
+Confide@v. 1.依赖（告知秘密）#When she was a child she always confided her problems to her sister.#We can't confide in his words , for he often breaks his promises.
+Defy@v.藐视@n. defiance#The driver of the car was defying the traffic law by speeding.
+Disrupt@v. 1.使中断 2.使分裂@adj. disruptive#An accident has disrupted railway service into and out of the city.#Slavery seemed likely to disrupt the Union.
+Enable@v.使能够@n. ablility#The bird's large wings enable it to fly very fast.
+Fantastic@adj.怪诞的@n. fantasy#The wall was covered with many fantastic pictures and photographs.
+Impact@n.冲击@adj. impactive#The force of the impact threw the driver out of the car.
+Interfere@v.干涉@n. interference#It is best not to interfere in other people's arguments.
+Minimize@v.将…减至最小程度@n. minimum#You can minimize the dangers of driving, by taking care to obey all he rules of the road.
+Narrate@v.叙述@adj. narrative#Shall I narrate a strange experience of mine?
+Visual@adj.视觉的@n. vision#The contrasting colors created an interesting visual effect.
+Appliance@n.. 1.电器用品 2.应用#The modern house has many useful electrical appliances.#The appliance of electricity to household tasks makes house.
+Brood 1.@n.孵；窝 2.@v.沉思#There are twelve chickens in this brood.#She brooded on her past mistakes so much that she became ill.
+Fringe@n.边缘#The woodcutter had a little house on the fringe of the forest.
+Gravel@n.碎石#The path to the house was covered with gravel.
+Hut@n.小屋#In the storm, they found a shabby hut in the forest.
+Lure 1.@n.诱饵 2.@v.引诱#The fisherman had some bright colored lures to attract fish.#The hope of high profits lured him into questionable dealings.
+Perch 1.@n.栖身处 2.@v.栖息#The bird flew down from its perch in the cage.#The bird perched on the woman's shoulder.
+Retail@n.零售#Most people buy meat and groceries at retail.
+Stride@n.大步#Great strides have been made in science since 1900.
+Swarm 1.@n.群 2.@v.蜂拥#A swarm of people surrounded the car to see the famous actress in it.#Rural populations swarmed into near by towns.
+Twig@n.小树枝#The tree bears so many apples that the twigs seem almost broken down.
+Wade@v.涉水#The bridge is far away from here; we'd better wade across the stream.
+Wrinkle@n.皱纹#She is beginning to get many wrinkles around her eyes.
+Alter@v.改变=change#If the coat is too large , the tailor can alter it to fit you.
+Doom@n.命运；劫数=fate#As the ship sank, they faced their doom.
+Fragile@adj.易碎的=breakable#This old dish is in a very fragile condition.
+Fruitful@adj.有收获的=profitable#We had a very fruitful discussion in the classroom.
+Garrison@n.要塞=fort#The japanese garrison on wake surrendered at the end of World War Ⅱ.
+Hurl@v.用力投掷=cast#The hunter hurled a long, sharp spear at the bear.
+Jail@n.监狱=prison#The judge sent him to jail for six days.
+Quest@n.探询=pursuit#She went to the library in quest of something to read.
+Refrain@v.抑制=abstain#In order to lose weight, she refrained from eating candy.
+Script@n.字迹=handwriting#I could easily recognize my father's careful script.
+Shabby@adj.简陋的=worn#You look rather shabby in those clothes.
+Temporary@adj.暂时的=transient#Many students find temporary jobs during their summer holidays.
+Urgent@adj.紧急的=imminent#The refugees are in urgent need of medical supplies.
+Alert@adj.留心的`heedless#A good hunting dog is alert to every sound and movement in the field.
+Artificial@adj. 1.人造的`natural 2.虚伪的#The artificial flowers were made of paper and cloth.#She welcomed us with an artificial smile on her face.
+Ascend@v.上升`descend#He watched the airplane ascend higher and higher.
+Disgrace@n.耻辱`honor#A doctor like him is a disgrace to our hospital.
+Grudge@n.怨恨`favorr#I always feel she has a grudge against me, although I don't know what wrong I have done to her.
+Nun@n.修女；尼姑`monk#My aunt is a nun; she can't get married, and has to live a life of prayer and worship.
+Random@adj.随便的`deliberate#The room was filled with a random selection of furniture.
+Steadfast@adj.坚定的`inconstant#He was so steadfast to his principles that we couldn't move him.
+Subordinate 1.@adj.下级`superior 2.@n.属下#A clerk in a business occupies a subordinate position to that of the owner.#A good leader is the one that is respected by his subordinates.
+Thrift@n.节俭`waste#Her thrift saved them enough money to buy a hourse.
+Treacherous@adj.叛逆的`loyal#The treacherous soldier carried some important pieces of information to the enemy.
+Troublesome@adj.麻烦的`pleasing#He is a troublesome child; he is not obedient to his parents.
+Alternative@n.二选一@adj. alternate#Her father gave her the alternative of staying in high school or going to work.
+Bulge@n.凸出@adj. bulgy#The bag of candy made a bulge in the child's pocket.
+Congratulate@v.祝贺n. congratulation#Let me congratulate you on the birth of your son.
+Contradiction@n. 1.反驳 2.矛盾@adj. contradictory#Contradiction by the students always makes my teacher angry.#It is a contradiction tosay you support the government but would not vote for it in an election.
+Detect@v.发现@n. detection#Small quantities of poison were detected in the dead man's stomach.
+Execute@v.实现@n. execution#The plan was good in every respect, but it was badly executed.
+Intervene@v.插入；介于其间@n. intervention#A week intervenes between Christmas and New Year's Day.
+Monster@n.怪物@adj. monstrous#That dog is a real monster; I have never seen such a big one.
+Paralyze@v.使麻痹@n. paralysis#His arm was paralyzed as the result of the accident.
+Revive@v.复活；苏醒@n. revival#He was nearly drowned, but we revived him.
+Stagger@v.蹒跚@adj. staggering#The boy staggered and fell under the heavy load of books.
+Subsequent@adj.后来的@n. subsequence#The story will be continued in subsequent issues of the magazine.
+Cling@v.粘着#The two friends cling together wherever they go.
+Countenance@n.面容；表情#The actor had a handsome and distinguished countenace.
+Dimension@n.尺寸#He ordered wallpaper for a room of the following dimensions; 16ft. long, 12ft. wide, and 8ft. high.
+Erase@v.抹去#He erased the wrong answer and wrote in the right one.
+Growl@v.咆哮#The dog was angry and growled at the stranger.
+Lick@v.舔#The cat licked up the drops of milk from the floor.
+Postage@v.邮资#The postage for airmail is greater than that for regular mail.
+Poultry@n.家禽#This market has fresh poultry for sale at the beginning of every month.
+Prick@v.刺#When she was sewing she pricked her finger and made it bleed.
+Skim@v. 1.掠去（液体上不要的漂浮物） 2.掠过#The cook skimmed the fat from the soup.#I watched many seabirds skimming the waves looking for food.
+Stitch@n.一针#She made a neat row of stitches along the edge of her skirt.
+Undergo@v.承受#She underwent a thorough examination at the hospital according to the doctor's order.
+Wharf@n.码头#Passengers were waiting on the wharf to board the ship.
+Bellow@v.吼叫=roar#He bellowed with pain when the tooth was pulled out.
+Beverage@n.饮料=drink#In some countries, it is illegal to sell alcoholic beverages on Sundays.
+Calculate@v.计算=compute#You must calculate all the advantages and disadvantages before coming to a discussion.
+Glamour@n.魔力=charm#The glamour of the life of an actress made her give up her study.
+Outfit@n.用具=equipment#She bought him a baseball outfit for his birthday.
+Rascal@n.流氓=rogue#Two rascals tricked the old man out of his money.
+Render@v.1.给予=give 2.致使#The organization renders great service to the community.#His fatness renders him unable to touch his toes.
+Safeguard@n.保持=protection#Keeping clean is a safeguard against disease.
+schedule@1.n.时刻表=timetable@v.排定#According to the production schedule, the factory is supposed to turn out a hundred cars a day.#The President's speech is scheduled on next Friday.
+Strap@n.皮带=thong#The general wore straps on the shoulders of his uniform.
+Tomb@n.坟墓=grave#When the king died the people placed his body in a large tomb made of stone.
+Transmit@v.传送=convey#Her illness was transmitted to other members of the family.
+Wrath@n.愤怒=rage#The king's unjust laws raised a great wrath among the people.
+Baggy@adj.松弛的`tight#Old people sometimes have baggy skin under their eyes.
+Beneficial@adj.有益的`harmful#The new hospital will be beneficial to the poor people.
+Disgust@1.n.憎恶`favor 2.v.令人厌恶的#The smell of the rotten meat filled her with disgust.#The impolite manner of that man disgusted many people.
+Drought@n.干旱`flood#The water level in the reservoir was low because of the long drought.
+Exterior@adj.外部的`interior#The exterior surface of the house was bleached by the sunlight.
+Eliminate@v.削减`include#A part of the program was eliminated to save time.
+Gorgeous@adj.华丽的`shabby#Children shouted when they saw the peacock spread his gorgeous tail.
+Illegal@adj.不合法的`lawful#He was arrested for the illegal sale of guns.
+Lad@n.少年`lass#We lived on a peaceful farm when I was a lad.
+Retain@v.保留`lose#In the United States most married women do not retain their maiden names.
+Tilt@v.倾斜`erect#You tilt your head forward when you bow.
+Veto@1.n.否决`approval 2.v.否决#The governor's veto kept the bill from becoming a law.#His parents vetoed his plan to buy a new motorcycle.
+Abbreviate@v.减缩@n.abbreviation#His book was abbreviated and appeared in a public magazine.  Available@adj.可利用的；可获得的@v. avail#There were no tickets available for Friday's music performance.
+Bribe@n.贿赂@n. bribery#The judge was accused of taking a bribe to free the prisoner.
+Chat@n.闲谈@adj. chatty#The woman chatted on the phone for almost an hour.
+Contempt@v.轻视@adj. contemptible#We feel contempt for a liar or a thief.
+Fraction@n.部分@adj. fractional#She's careful with her money and spends only a fraction of her earnings.
+Idol@n.偶像；神像@v. idolize#A stone idol stood at the entrance of the village.
+Inherit@v.继承@n.inheritance#After the farmer's death his wife and children will inherit the farm.
+Reproduce@v.再生@adj.reproductive#She reproduced the contents her husband's letter from memory.
+Shrink@v.萎缩@n.shrinkage#Washing wool in hot water will make it shrink.
+Tempt@v.引诱@n.temptation#The sight of the food tempted the hungry man to steal.
+Vital@adj.生命的；致命的@v.vitalize#He was lucky that the bullet had not entered a vital organ.
+Abuse@滥用 1.v 2.n#Don't abuse your health by working when you ought to be sleeping or resting.#His abuse of power has turned his friends against him.
+Brand@1.n.品牌 2.v.烙印#What brand of cigarette do you want to smoke?#On big farms, cattle are usually branded to identify the owner of them.
+Compress@v.压缩#Compressed air has a great deal of force when it released.
+Corridor@n.走廊#You will find Room 101 at the end of the corridor.
+Hatch@v.1.图谋；计划 2.孵#The spies hatched a scheme to steal government secrets.#We hatch the eggs by keeping them in a warm place.
+Imply@v.暗示#Her letter implies that she wishes to meet you.
+Logic@n.逻辑；理学#Logic is not the science of belief, but science of proof or evidence.
+Merchandise@n.商品#The store had a large stock of merchandise.
+Preside@v.主持#The mayor presided over the town meeting.
+Procure@v.1.取得 2.促成#They procured the money needed to build the hospital.#The traitors procured the death of the prince.
+Ruffle@v.弄绉#A sudden breeze ruffled the surface of the calm lake.
+Soar@v.高升#The price of sugar soars when sugar is scare.
+Surplus@n.剩余#He kept enough corn to feed his cattle and sold the surplus.
+Anticipate@v.预期=expect#Mother anticipated my hunger and baked cookies for me.
+aspire@v.渴望=desire#In his childhood, he aspired to become a great general.
+Attorney@n.律师=lawyer#The court appointed and attorney for the accused man.
+Counsel@1.n.忠告=advice 2.v.劝告#They refused to listen to the old man's counsel.#They counseled against travelling at night in such a dangerous country.
+Falter@v.1.动摇；胆怯=hesitate 2.蹒跚而行#The soldiers faltered for a moment as their captain fell.#The sick man faltered for few steps, and then fell down.
+Ghastly@adj.可怕的=ghostlike#After a sleepless night, she looked very ghastly.
+Gratitude@n.感激=thankfulness#She showed me her gratitude by inviting me to dinner.
+Plume@n.羽毛=feather#The rooster lost one of his plumes in the fight with the cat.
+Promote@v.1.升迁=advance 2.促进#The young army officer was promoted to captain.#An understanding of the culture of other countries may promote peace.
+Shudder@v.战栗=shrive#She shuddered at the sight of the dead body.
+Swamp@n.沼泽=marsh#The land is useless growing crops; it's mainly swamp.
+Terrific@adj.1.可怕的=awful 2.极好的#The terrific storm destroyed most of the houses in the city.#It was such a terrific party that I didn't feel like going back home.
+Villain@n.恶棍=rogue#The villain was caught by the police and brought to trial.
+Absent-minded@adj.心不在焉的`attentive#The absent-minded man put salt in his coffee and sugar on his egg.
+Acute@adj.敏感的`dull#A dog has a very acute sense of smell.
+Entry@1.入口`exit 2.进入#Leave the boxes in the entry and we will carry them up latter.#His sudden entry startled all of us.
+Immigrate@v.迁入`emigrate#During the 1800's many thousands of people from Europe immigrated into the United States to make a new home.
+Intensify@v.加强`weaken#My first failure only intensified my desire to succeed.
+Invariable@adj.不变的`inconstant#After dinner it was his invariable habit to take a nap for a while.
+Latitude@n.纬度`longitude#One degree of latitude on the earth's surface equals almost 70 miles.
+Secondhand@adj.用过的；旧的`new#The books in the secondhand bookstore are very cheap.
+Specify@v.轻视`outline#Please specify when you will be at home tomorrow.
+Trivial@adj.不重要的`important#Your composition has only a few trivial mistakes.
+Vulgar@adj.粗俗的`noble#She is a very vulgar woman to shout like that at the top of her voice.
+Accommodate@v.1.容纳n. accommodation 2.适应#The airplane is large enough to accommodate over 400 passengers.#We have to accommodate ourselves to our changed circumstances.
+Bewilder@v.迷惑 bewilderment#The old woman from the country was bewildered by the crowds and traffic in the big city.
+Circulate@v.流通@n. circulation#Money circulates as it goes from person to person.
+Deceive@v.欺骗@n. deception#I trust him because I know he would never deceive me.
+Define@v.下定义@n. definition#Some words are hard to define because they have many different uses.
+Disrupt@v.使分裂；使中断@n. disruption#The accident disrupted railway service into and out of the city.
+Heredity@n.遗传@adj. hereditary#Some disease develop because of the bad conditions one lives in and others are present by heredity.
+Myth@n.神话@adj. mythical#There are many myths about how the world first began.
+Outrage@n.暴行；迫害@adj. outrageous#The use of atomic bombs would be an outrage against humanity.
+Patriot@n.爱国者@adj. patriotic#Many patriots died while fighting in the war for independence.
+Penetrate@v.穿过@n. penetration#A bullet can penetrate this board, or two inches into that wall.
+Restrict@v.限制@n. restriction#In the United States the sale of liquor is restricted to people over twenty-one years old.
+Temperament@n.性情；资质@adj. temperamental#Whether a person likes sports or not depends largely upon his temperament.
+Blink@v.1.眨眼 2.闪烁#She blinked her eyes as the bright light shone on her.#As the ship drew near to port in the darkness, we could see the lights blinking on land.
+Earthquake@n.地震#Many buildings were damaged or completely destroyed by the earthquake last night.
+Exploit@1.n.功绩 2.v.开发#The sergeant won the Medal of Honor for his exploits during the Korean War.#They are planning to exploit the oil under the sea.
+Famine@n.饥荒#Many people died of hunger during the famine in India.
+Fraud@n.欺骗#He carried out a number of frauds on trusting people who lent him money.
+Murmur@v.低吟#The children murmured as they memorized the poem.
+Patrol@v.巡逻#Policemen patrol the city day and night so as to protect the lives and properties of the citizens.
+Prime@adj.首要的#Safety is a matter of prime importance.
+Recess@n.休息期间#There will be a short recess before the next meeting.
+Reptile@n.爬虫类#Some reptiles, such as snakes or lizards, move very fast.
+Rustle@v.发沙沙声#Her long silk dress rustled as she walked down the stairs.
+Scowl@v.蹙额#He scowled at me when I asked for more money.
+Wretch@n.可怜的人#The poor wretch asked for food and place to sleep in.
+Avenue@n.大街=road#Many people walked down the avenue through the center of the park.
+Bestow@v.赠予=confer#The president of the college bestowed honors on the best students.
+Brim@1.n.（杯，碗，盘等的）边=brink 2.n.（帽的）缘#Please don't fill my cup up to the brim.#The wide brim of her hat protected her face from the sun.
+Drastic@adj.激烈的=extreme#Drastic changes are necessary to improve the government of the country.
+Insight@n.洞察力=penetration#We study science to gain insight into the world we live in.
+Plea@n.1辩解=pretext 2.恳求#The driver's plea was that he did not see the stop sign.#The kind man answered her plea for aid.
+Prestige@n.声望=reputation#The doctor had great prestige among the members of his profession.
+Ripple@n.涟漪=wave#Throw a stone into still water and watch the ripples spread in rings.
+Shrill@adj.声音尖锐的=sharp#The boys mother shouted his name in a shrill voice.
+Stray@v.迷路=wander#The little lamb had strayed from the flock; we couldn't find it.
+Trend@n.趋势=tendency#The trend of modern living is away from many old customs.
+Wreath@n.花环=garland#Many people hang wreaths on the window at Christmas.
+Abstract@adj.抽象的`concrete#Some authors are not popular because their writings are too abstract.
+Accumulate@v.积聚`scatter#Through the years he accumulated sufficient money to buy a farm.
+Ample@adj.充足的；广大的`scanty#He has received ample praise for the work he did.
+Corrupt@adj.腐败的`conscientious#If a government official accepts money to do things that he ought not to do, we say that he is corrupt.
+Extinct@adj.灭种的`existent#Many animals that lived thousands of years ago are now extinct.
+Illuminate@v. 1.照明`darken 2.说明#The room was illuminated by four large lamps.#Our interesting teacher could illuminate almost any subject we studied.
+Incredible@adj.难以置信的 反believable#These results are incredible; I can't believe that they are accurate.
+Lament@v.哀悼`rejoice#All the people lamented the death of their President.
+Profound@adj.极深的`shallow#Having taken the medicine, he fell into a profound sleep,
+Systematic@adj.有系统的；有组织的`disorderly#They made a systematic search for the lost car.
+Vivid@adj.鲜明的`dull#The terrible car accident is still vivid in my mind.
+Betray@v. 1.辜负；出卖 2.显示#She betrayed her friends by breaking her promise.#The boys wet shoes betrayed the fact that he had walked in the rain.
+Comical@adj.滑稽的#That's a comical hat you're wearing, with all those flowers!
+Drowsy@adj.昏昏欲睡#Warm weather makes everyone become drowsy.
+Embarrass@v.使困窘#They were embarrassed because there was not enough food for all the guests.
+Fabric@n. 1.布；质地 2.结构#Suits and dresses are made of cloths of different fabric.#The whole fabric of society was changed by the war.
+Hesitate@v.犹豫#I hesitated about taking his side until I knew the whole story.
+Pregnant@adj.怀孕的#The newly wedded woman has been pregnant for five month.
+React@v.反应#He reacted to my question with much surprise.
+Repulse@v.击退#Our soldiers repulsed the enemy forces, which invaded the front line area.
+Tenant@n.客房#That building has apartments for one hundred tenants.
+Unconscious@adj.无知觉的#He was knocked unconscious when the car struck him.
+Aristocrat@n.贵族#For many years only aristocrats were members of the government.
+Biography@n.传记#After reading a biography of Lincoln I was able to tell many stories about the President.
+Channel@n.海峡；水道#There's a channel in the middle of the old street to help water flow away when it rains.
+Cherish@v. 1.珍爱 2.怀抱（希望等）#The old woman cherishes the girl as if she were her daughter.#All the women cherished the hope of their husband's safe return from fishing on the sea.
+Daze@v.使晕眩#A blow on the head dazed him so that he could not find his way home.
+Dismay@v.惊慌#He was dismayed by the sight of the burning house.
+Haul@v.拖#The logs were loaded on the wagons and hauled to the mill by horses.
+Mess@n.肮脏的一团#I've never seen so much mess and disorder anywhere.
+Mound@n.土堆#The explorers climbed a mound to survey the land around them.
+Ranch@n.大农场#The children spent the summer vocation on their grandfather's ranch.
+Repeal@v.撤消#The new government repealed many old laws.
+Rumble@n.隆隆声#She was awakened during the storm by the rumbles of thunder.
+Tuck@v.折；卷#She tucked up her shirt and climbed over the fence.
+Batter@v.重击=beat#There is someone battering at the door you'd better let him in.
+Clutch@v.紧握=grasp#The mother clutched her baby in her arms.
+Contemplate@v.审视；考虑=ponder#The police contemplated various kinds of trouble after the football match between the two universities.
+Garbage@n.垃圾=refuse#Please leave your garbage in a can outside the door.
+Obstacle@n.障碍=obstruction#A fallen tree across the road was an obstacle to our car.
+Pious@adj.虔诚的=religious#She is a pious woman who goes to church every morning.
+Regulate@v. 1.管理=control 2.调整#The school adopted new rules to regulate the behavior of students.#My watch is losing time; I will have to regulate it.
+Riot@n.暴动=religious#The riot during the election was put down by the police.
+Shovel@n.铲子=spade#We had better move this tree to our garden. Would you please bring the shovel?
+Stately@adj.堂皇的=majestic#We were much impressed by the general's stately appearance.
+Tow@v.拖=draw#They towed the wrecked car to the nearest garage.
+Upset@v.扰乱=overturn#Her plans were upset by the change of the weather.
+Vex@v.激怒=annoy#His father was vexed by the child's impolite behavior.
+Communism@n.共产主义#Communism is expressed in various movements, but Russian sovietism if often referred to as a good sample.
+Dignify@v.使尊荣`degrade#They dignified her job by giving her a special title.
+Disaster@n.灾难`fortune#A great flood, fire, earthquake, or great loss of money is a disaster.
+Gloom@n.幽暗`brightness#The maple shade provided him with a rich gloom for sleeping.
+Hospitable@adj.善于待客的`hostile#He is hospitable to anybody; he likes to give attention to the needs of others.
+Infant@n.婴儿`adult#The woman was carrying and infant in he arms.
+Mature@adj.成熟的`immature#You mustn't be jealous when your sister gets presents; you must learns to behavior in a more mature way.
+Prejudice@n.偏见`fairness#She has a prejudice against popular music.
+Simplify@v.简化`complicate#The theory was simplified to make it easier to understand.
+Tranquil@adj.宁静的`noisy#After he retired, he lived a tranquil life in the country.
+Unworthy@adj.无价值的`valuable#You shouldn't trust him; he is unworthy of your trust.
+Valid@adj.正确的`invalid#His objections to the plan on the basis of cost are valid.
+Ally@v.联合#The workers of the factories allied against the big employers and asked them for better wages.
+Approximate 1.@adj.近似的 2.@v.接近#The approximate length of a meter is 40 inches; the exact length is 39.37 inches.#Your account of what happened approximates truth,but there are several small errors.
+Athlete@n.运动员#The young athlete was much admired for his speed.
+Certify@v.证明#This diploma certifies that you have completed high school.
+Coincide@v.一致#My religious beliefs and yours do not coincide.
+Convey@v.传送#A truck conveyed my furniture to my new home.
+Discreet@adj.言行谨慎的#It wasn't discreet of you to call him around midnight.
+Evolve@v.发展#The British political system has evolved over several centuries.
+Identify@v. 1.视为同一 2.认明#The good king identified the wellbeing of his people with his own.#I could identify the coat at once; it was my brother's.
+Radiate@v.发出#The sun radiates light and heat.
+Supervise@v.监督#The architect supervised the building of the house.
+Torrent@n.急流#A torrent of water swept down the valley.
+Anniversary@n.周年#My parents invited their friends to their 30th wedding anniversary.
+Barracks@n. pl.兵营#You can't expect soldiers to live in a barracks like that.
+Creed@n.教条#"honesty is the best policy" was his creed through his whole life.
+Drip@v.滴下#We have to fix the roof; water is dripping down from the ceiling.
+Hound@n.猎犬#A good hound should have a sharp sense of smell.
+Jerk 1.@v.急动 2.@n.急动#As the water was unexpectedly hot, he jerked his hand out.#As he stopped the car with a jerk, we were all thrown to the floor.
+Mold@v.塑造#The artist molded the clay into a figure of a child.
+Paste@n.浆糊#The clerk used thick paste to put the label on the package.
+Patron@n. 1.老主顾 2.赞助人#She has been a patron of this store for many years.#The patrons of the museum contributed the money for the new museum building.
+Razor@n.刮胡刀#John shaved off his beard with an electric razor.
+Slap@v.掌掴#She slapped the boy on the cheek for disobedience, and he began to cry.
+Suicide@n.自杀#The police think that the death was by suicide.
+Telegraph@n.电报#Mother sent me a message by telegraph that she would arrive home by afternoon plane.
+Abrupt@adj. 1.突然的=sudden 2.陡峭的#He made an abrupt turn to avoid hitting another car.#The road made an abrupt rise up the hill.
+Acknowledge@承认=admit 函谢；承认收到#I am sure that she will soon acknowledge her own faults.#We should always acknowledge gifts as soon as we receive them.
+Beware@v.小心=heed#You should beware of bad companions; they may corrupt you.
+Dwell@v.定居=reside#They dwell in the country but work in the city.
+Endow@v. 1.捐赠=donate 2.赋予#The rich man endowed the college he had attended.#Nature endowed her with both a good mind and good looks.
+Pathetic@adj.可怜的=pitible#The lost child I met on the street was very pathetic.
+Reap@v.收割=harvest#Giant machines reap the wheat grown in the field.
+Reproach@v.责备=scold#When he came home drunk, his wife reproached him with a loud angry voice.
+Rigorous@adj. 1.严酷的=rigid 2.严密的#Rigorous exercise can damage health instead of improving it.#He made a rigorous study of the plants in the tropical area.
+Sustain@v.支持=maintain#The large columns sustained the weight of the roof.
+Torment@v.使痛苦=annoy#She is often tormented with violent headaches.
+Abolish@v.废止`establish#Slavery was abolished in the United States in 1865.
+Anguish@n.痛苦的`comfort#The injured soldier moaned in anguish until the doctor arrived.
+Awkward@adj. 1.笨拙的`skillful 2.不方便的#He needs a great deal of driving practice; he is still awkward with his car.#The meeting was at nine o'clock, which was an awkward time for many people.
+Bliss@n.极大的幸福`misery#What bliss it is to be able to lie in bed instead of working.
+Expenditure@n.费用`income#Such a great work requires the expenditure of much money and time.
+Primitive@adj.原始的`modern#Primitive people lived in caves and made tools from stones and animal bones.
+Prolong@v.延长`reduce#The old woman's life was prolonged by the doctor's good care.
+Rural@adj.乡村的`urban#They lived in a small rural community.
+Suspend@v.暂停`continue#The hurricane suspended all ferry service for there days.
+Undistinguished@adj.不著名的`prominent#The book is very interesting although it was written by an undistinguished author.
+Concession@n.让步#To reach agreement, both sides must make concessions.
+Deceit@n.欺骗；诡计#The merchant always used deceit in his business dealings.
+Dedicate@v.奉献#The land on which the battle of Gettysburg was fought was dedicated to the soldiers who had died there.
+Dizzy@adj.晕眩的#When you spin round and round, and stop suddenly, you feel dizzy.
+Economical@adj.经济的；节约的#A good manager should be economical in the use of his funds.
+Infect@v.传染#She infected the whole class with her influenza.
+Intolerant@adj.不宽容的#The old man did not smoke himself and was so intolerant that he did not allow his friends to smoke when they visited him.
+Respective@adj.各自的#The party ended and we all went off to our respective rooms.
+Scholar@n.学者#He was respected as a great scholar of history.
+Technique@n.技巧#The pianist's technique was excellent, though his interpretation of the work was poor.
+Tedious@adj.冗长乏味的#The long wait at the airport was really tedious.
+Bristle@v.（毛发）竖立#He was so frightened that his hair seemed to bristle.
+Commodity@n.商品#Price of household commodities have risen since the war began.
+Dispatch@v.派遣#The captain dispatched a boat to bring a doctor on board the ship.
+Formal@adj.正式的#You must write a formal acceptance to this invitation.
+Frantic@adj.疯狂的#Frantic efforts were made escape the sinking ship.
+Heave@v.用力举起#He heaved the heavy box into the wagon.
+Hemisphere@n.半球#North America and South America are in the Western Hemisphere.
+Install@v. 1.装设 2.使就位#The new owner of the house installed a telephone.#The cat installed itself in a chair near the fireplace.
+Lash@n.鞭策#I gave my horse a lash that sounded through the forest.
+Pension@n.养老金#He will start receiving a pensive when he retires at sixty.
+Scope@n.范围#This book has greater scope than others on the same subject.
+Species@n.种#The wolf and the dog belong to the same species.
+Assail@v.攻击=assault#The enemy may assail our defense positions tomorrow.
+Barrier@n.界线=hindrance#Countries can no longer depend on mountain barriers for protection.
+Burglar@n.夜贼=thief#A burglar broke into my house last night.
+Devour@v.吞灭=gulp#The fire devoured twenty square miles of forest.
+Dreary@adj.阴沉的=gloomy#It was a dreary day, cold and without sunshine.
+Fling@v.投掷=cast#Boys like to fling stones into water.
+Homage@n.尊崇=reverence#He bowed in homage to the Unknown Soldier.
+Inescapable@adj.不可避免的=unavoidable#Death is inescapable; it comes to everyone.
+Radical@adj. 1.基本的=fundamental 2.极端的#There are radical differences between the two systems.#His ideas are too radical to be acceptable to most people.
+Shiver@v.颤抖=quiver#The boys and girls were shivering all over with cold.
+Sly@adj.狡猾的=crafty#The sly cat stole the meat while the cook's back was turned.
+Stall@n.畜舍=stable#Each horse was put in a separate stall.
+Vanquish@v.征服=overcome#At first she shivered from her fear but at last she could vanquish it.
+Clumsy@adj.笨拙的`skillful#He asked me such a clumsy question that I did not know what to reply.
+Conservative@adj.保守的`progressive#Old people are usually more conservative than young people.
+Exhale@v.呼气`inhale#He lit his pipe and exhaled clouds of smoke.
+Homely@adj.不漂亮的`pretty#I was very disappointed to see her sister; she was a homely girl.
+Indefinite@adj.不确定的`definite#"Maybe" or "perhaps" is a very indefinite answer.
+Obedient@adj.顺从的`disobedient#The obedient dog quickly responded to his master's whistle.
+Precise@adj.精确的`approximate#He gave a precise account of how much money he had spent.
+Rational@adj.理智的`irrational#When people are very angry. They seldom act in a rational way.
+Rigid@adj.严格的`mild#In our home it is a rigid rule to wash one's hands before eating.
+Timid@adj.胆小的`bold#A timid child is apt to cry when he sees a strange person.
+Vertical@adj.垂直的`horizontal#A vertical take-off aircraft can rise straight from the ground, without running along for some distance.
+Wholesome@adj.有益的`harmful#Such a movie is not wholesome for young children.
+Abandon@v.离弃#He abandoned his wife and went away with all their money.
+Barbarian@n.野蛮人#People who behave like barbarians are not welcome at this hotel.
+Essence@n.精髓；本质#The essence of his religious teaching is love for all men.
+Harmony@n.协调；和睦#My cat and dog never fight; they live together in perfect harmony.
+Indulge@v.放任#He indulged his desire for cigarettes to a harmful extent.
+Intrude@v.侵扰；闯入#I was unwilling to intrude upon them so late at night.
+Modify@v. 1.修改 2.修饰#The company modified the design of the automobile in order to make it more attractive.#In the phrase "a green hat", the adjective "green" modifies the noun "hat".
+Oppress@v.压迫#A good government will not oppress the people.
+Proficient@adj.精通的#His mother is very proficient in music.
+Sequence@n.顺序#The books should be arranged in sequence according to author.
+Suburb@n.市郊#They would rather live in the suburbs than in the city.
+Summary@n.摘要#This history book has a summary at the end of each chapter.
+Vacancy@n.空缺#There are many vacancies in the parking lot when the stores are closed.
+Alley@n.巷#The truck was too large to pass through the alley.
+Apologize@v.道歉#I apologized to her for stepping on her foot.
+Dairy@n.牛奶棚#We could see lots of milk products in the dairy.
+Discern@v.辨认#I was not able to discern the road in the dark.
+Jaw@n.颚#The meat was so tough that his jaws hurt from chewing it.
+Limp@v.跛行#After falling down the stairs, he limped for several days.
+Pillar@n.柱子#The roof of the porch was supported by brick pillars.
+Potential@adj.可能的；潜在的#He is regarded as a potential leader of our political party.
+Refrigerator@n.电冰箱#In summer we have to keep milk and meat in the refrigerator.
+Skull@n.头盖骨#He was knocked unconscious by a sudden blow on the skull.
+Strategy@n.战略#Tactics refers to the disposition of armed forces in combat whereas strategy refers to the overall plan of a nation at war.
+Trench@n.战壕#The soldiers dug trenches to protect themselves against enemy fire or attack.
+Undertake@v. 1.担任 2.尝试#I will undertake the responsibility of feeding your dogs while you are away.#He always undertakes more than he can do.
+Adore@v.崇拜=worship#All the girls in our school adore the handsome mathematics teacher who happens to be a bachelor.
+Blend@v. 1.混合=mix 2.调和#A grocer must know how to blend different kinds of tea.#These houses seem to blend well with the trees and the countryside.
+Breadth@n.宽度=width#The wise man has a great breadth of understanding.
+Commend@v.称赞=praise#Many children were commended for their good deeds on Children's Day.
+Conspicuous@adj.明显的=noticeable#There are several conspicuous errors in your composition.
+Delusion@n.谬见；幻想#She is under the delusion that I'm going to give her a lot of money.
+Impatient@adj.不耐烦的；焦急的=hasty#As she was impatient to start to school, she forgot to take her homework.
+Miracle@n.奇迹=prodigy#According to the bible, Christ worked many miracles.
+Provisional@adj.临时的=tentative#Let's arrange the provisional meeting for next Tuesday, even though we may have to change it.
+Restrain@v.阻止；抑制=suppress#She could not restrain the children from running into the street.
+Stroll@v.漫步=ramble#The old couple were strolling under the trees arm in arm.
+Cradle@n.摇篮`grave#The frightened baby refused to sleep in his cradle.
+Deny@v.否认；拒绝给予`admit#Justice must not be denied to anyone, however poor he may be.
+Disperse@v.散布；分散`gather#The crowd dispersed when the rain fell suddenly.
+Endanger@v.危机`secure#You will endanger your health if you work so hard every night.
+Fiction@n.小说`fact#Works of fiction are reviewed in the Sunday papers in England.
+Initial@adj.最初的`last#His initial effort at skating was a failure, but he succeeded the second time that he tried.
+Intimacy@n.亲密（的行为）`unfamiliarity#The intimacy with which the two friends talked showed how fond they were of each other.
+Invade@v.侵略`defend#At the beginning of World War II, Hitler invaded Poland without a declaration of war.
+Selfish@adj.自私的`altruistic#He was too selfish to share his candy with his little brother.
+Thrifty@adj.节俭的`wasteful#Mr. Thompson is thrifty that he is able to save more than half of his weekly salary.
+Voluntary@adj.自愿的`compulsory#Voluntary workers built a road to the boy's camp.
+Absorb@v. 1.吸收 2.使专心#Anything black absorbs most of the light rays that fall on it.#He was so absorbed in his reading that he did not hear the telephone.
+Accuse@v.控告#It is wrong to accuse a person of a crime unless you have proof that his is guilty.
+Adjust@v.调节#You can adjust your chair to make it more comfortable.
+Erroneous@adj.错误的#Years ago many people held the erroneous belief that the earth was flat.
+Expend@v.花费#He had expended much time and energy on that experiment.
+Fury@n.愤怒#It's no use trying to argue with you when you fly into a fury.
+Liberate@v.释放；解放#Abraham Lincoln is the President who tried to liberate slaves.
+Perplex@v.使迷惑#He was so perplexed that he asked many persons for advice.
+Sovereign@adj.独立的#When the thirteen colonies won the Revolutionary War, America became a sovereign nation.
+Temperate@adj.温和的#The temperate areas of the world are found to be the north and south of the tropics.
+Bout@n.一个回合；比赛#Those are the two boxers who will appear in the main bout tonight.
+Category@n.种；类#The selfish man places all people in two categories: those he likes and those he dislikes.
+Choir@n.唱诗班#As the choir rose to sing, the people joined in, filling the church with the music of the first hymn.
+Compact@adj.紧密的#The salesman tied the customer's purchases into a compact bundle.
+Concentrate@v.集中#The defeated troops were ordered to scatter and then concentrate fifty miles to the south.
+Emigrate@v.自本国迁居到他国#In the 19th century many Europeans emigrated to America.
+Navigate@v.驾驶（船，飞机）#He navigated the shop across the Atlantic Ocean.
+Pane@n.窗玻璃片#The broken pane in the window was replaced by a man whose son threw a stone and broke it.
+Pest@n.令人讨厌的人或物#We have to get rid of pests in the garden.
+Salute@v.向…敬礼#The soldiers saluted the flag by raising the right hand to the forehead as they passed it.
+Severe@adj.严厉的#The students who cheat in examinations will be given a severe punishment.
+Abode@n.住处=residence#The woodcutter's abode was a house in the forest.
+Annual@adj.一年一次的=yearly#The company allows us an annual vacation of two weeks.
+Coax@v.诱哄=cajole#The mother coaxed the boy to take the medicine, but he refused to take it.
+Colleague@n.同事=associate#The teacher's colleagues taught his classes while he was ill.
+Dispense@v.分配=distribute#The Red Across dispensed food and clothing to the flood victims.
+Gingerly@adv.极度小心；谨慎的=cautiously#In the darkness, he turned to the left, stepping gingerly.
+Hug@v.抱紧=embrace#The mother hugged her lost child and kissed him.
+Humiliate@v.使丢脸=disgrace#The boys humiliated their parents by behaving badly in front of the guest.
+Obstruct@v.阻隔；遮断=impede#The mountain roads were obstructed by falling rocks.
+Overthrow@v.推翻=upset#The government was overthrown.
+Recapture@v.收复=retake#The soldiers recaptured the city lost to the enemy.
+Slim@adj.细长的=slender#He was very slim, being six feet tall and weighting only 130 pounds.
+Vicinity@n. 1.附近=neighborhood 2.接近#There are no houses for sale in this vicinity.#The vicinity of the apartment to his office was an advantage on rainy days.
+Arctic@n.北极地区`antarctic#The Arctic has an extremely cold winter.
+Attic@n.阁楼；顶楼`basement#We store trunks in the attic of the house.
+Diminish@v.减少`enlarge#Poor crops so diminished the food supply that people were starving.
+Dishonest@adj.不诚实的`candid#A person who lies, cheats, or steals is dishonest.
+Drunken@adj.醉的`sober#The noisy drunken man on the street was soon arrested by the police.
+Foe@n.敌人`friend#The person who holds ill feelings against you is your foe.
+Foresee@v.预知`retrospect#He foresaw that his journey would be delayed by bad weather.
+Jolly@adj.愉快的`gloomy#Everyone at the party was very jolly, and didn't want to leave the party.
+Maximum@n.最大量`minimum#Sixteen miles in a day was the maximum distance we could walk.
+Mistress@n.女主人`master#She felt she was no longer mistress in her own house when her husband's mother came to stay.
+Prefix@n. 前缀词缀`suffix#"Under" in underline, "dis-" in disappear, and "pre-" in prepaid are prefixes.
+Relax@v.松懈；放松`strain#Discipline can't be relaxed until the last day of school has passed.
+Superficial@adj.肤浅`internal#The speaker had only a superficial knowledge of the subject.
+Allege@v.声称#The storekeeper alleged that the boy had stolen some fruit.
+Current@adj.现在的#We read the daily newspaper to keep up with the current situation.
+Exalt@v.赞扬#They were exalted by their son's success.
+Expand@v.膨胀#The balloon expanded as it was filled with air.
+Industrialize@v.使工业化#We have to make our every effort to industrialize our country.
+Justify@v.证明为正当#Your wish to go for walk does not justify your leaving the baby alone in the house.
+Prescribe@v. 1.开处方 2.规定#The doctor prescribed a new medicine for the pain in my joints.#Good citizens do what the laws prescribe.
+Presume@v.推测#John didn't say when he would return, but I presume he'll be back for dinner.
+Slaughter@n.屠宰#The cattle were sent to the city for slaughter.
+Statistics@n.统计表；统计学#These statistics show that the population of the country will be doubled in ten years.
+Supplement@n.附刊#Today's newspaper has a supplement on the new automobile models.
+Trifle@n.琐事#You will not succeed if you waste your time on trifles such as movies and dances.
+Withdraw@n.收回#He quickly withdrew his hand from the hot stove.
+Armor@n.铁甲#Nothing could break through the armor of the new tank.
+Buzz@v.使作嗡嗡声#The radio should be fixed; it buzzed whenever I turn it on.
+Cancer@n.癌#A great many cancers can be cured, but only if properly treated before they have begun to spread.
+Collapse@v. 1.倒塌 2.折叠#The roof collapsed as a result of the fire.#This table can be collapsed, so I can store it easily when I'm not using it.
+Contemporary@adj. 1.同时代的 2.现代的#In 1066 William landed in England, and a contemporary Englishman wrote the report of his landing.#Our teacher reads the books of many contemporary authors to us.
+Exile@v.放逐#The political leaders were exiled to an island far away from the country.
+Infantry@n.步兵#Men in the infantry often march long distance.
+Monk@n.修道士#He left his successful business and life of luxury to become a monk.
+Orchard@n.果园#These oranges come from an orchard in Florida.
+Pirate@n.海盗#The terrible pirates attacked a merchant ship again.
+Sullen@adj.闷闷不乐的#That boy becomes sullen if he is punished by is teacher.
+Telescope@n.望远镜#He was studying the stars through a telescope.
+Usher@n.引导员#The usher of the theater helped us find our seats.
+Appropriate 1.@adj.适合的=proper 2.占有@v.=embezzle#Thick , woolen clothes would not be appropriate for a hot summer day.#You should not appropriate other people's belongings without their permission.
+Coarse@adj.粗鲁的=vulgar#You mustn't use such coarse language when talking to innocent young girls.
+Legend@n.传奇=tradition#The stories about king Arthur and his Knights of the Round Table are legends, not history.
+Mischief@n.伤害=harm#He apologized for the mischief his false story had caused.
+Persist@v. 1.坚持=insist 2.持续=remain#If you persist in breaking the law you will go to prison.#In spite of washing, many stains persisted on the tablecloth.
+Prudent@adj.谨慎的=careful#In order to make a prudent decision, you must consider all of the possibilities carefully.
+Simultaneous@adj.同时的=coincident#Everyone in the audience burst into simultaneous applause.
+Splash@v.溅（水，泥等）=spatter#The children were splashing water on each other in the swimming pool.
+Stubborn@adj.固执的=obstinate#The stubborn boy refused to listen to reasons for not going out in the rain.
+Symptom@n.征兆=token#A cough is sometimes a symptom of a serious disease.
+Trait@n.特点=characteristic#The chief traits in the American character are generosity and energy.
+Vile@adj.极坏的=evil#She has a vile temper; it is impossible to live with her.
+Adequate@adj.足够的`insufficient#His wages are not adequate to support his wife and children.
+Careless@adj. 1.粗心的`attentive 2.不关心的#A boy who is careless in what the does will never succeed.#The brave soldiers did their duty, careless of dangers and discomforts.
+Chaos@n.混合`order#His room was in a state of chaos after the burglar had left.
+Eminent@adj.闻名的`common#The most eminent doctors treated the king in his illness.
+Enlarge@v.扩大`reduce#The factory was enlarged to make room for more machinery.
+Fertile@adj.肥沃的`sterile#This land is fertile; it is rich in material needed to sustain plant growth.
+Futile@adj.无效的`useful#All his attempts to unlock the door were futile, because he was using the wrong key.
+Grim@adj.严厉的`mild#The judge's expression was grim when he told them they were to be shot.
+Impolite@adj.不礼貌的`courteous#It is impolite behavior to smoke in a crowded bus.
+Vague@adj.模糊的`distinct#The directions were so vague that it was impossible to complete the assignment.
+Astronomy@n.天文学#Astronomy deals with the motion of the sun, moon and stars.
+Controversy@n.争论#There was a controversy about the location of the new school.
+Hazard@n.危险#The ice on the roads is a hazard for driving and walking.
+Magnify@v.放大#A lens magnifies the size of the words on the paper.
+Nominate@v.提名#Three times we nominated Tom for president of our club, but he was never elected.
+Provoke@v. 1.激怒 2.引起#The dog is very dangerous when it is provoked.#Don't throw one bone to two dogs; you will only provoke a fight between them.
+Recite@v.背诵#My daughter is going to recite a poem at he Mother's Day program.
+Restore@v. 1.归还 2.重建#The honest boy restored the money he had found to its owner.#It took more than a year to restore the ancient castle.
+Tension@n. 1.拉紧 2.紧张状态#If you increase the tension of that violin string it will break.#The doctor said I was suffering from nervous tension.
+Tyrant@n.暴君#There is no tyrant who admit that he is a tyrant.
+Vigor@n.体力#The vigor of a person's body lessens as he grows old.
+Blot@n. 1.污点 2.缺点#The spilled ink left a blot on the letter paper.#The ugly advertisement is a blot on the beautiful landscape.
+Caress@n.抚抱#His mother's caress calmed the frightened child.
+Chuckle@v.低声轻笑#He was chuckling to himself as he read that funny story.
+Claw@n.爪#The cat usually catches a mouse with its claws.
+Craft@n. 1.手工艺 2.船舰#The arts and crafts of the people are an important part of their cultures.#All kinds of craft come into New York harbor every day.
+Dainty@adj.娇嫩的#The violet and the dandelion are dainty spring flowers, which could be seen in early March.
+Hermit@n.隐士；隐居#He lives in that forest alone; he is enjoying the hermit's life.
+Panel@n.讨论会#Professor Wang participated in a panel to discuss the energy crisis.
+Phenomenon@n.现象#Snow in Egypt is an almost unknown phenomenon of nature.
+Spectator@n.观众#There were many spectators at the National Football League.
+Thrash@v.鞭打#The host of the market thrashed the little boy for stealing apples.
+Appeal@v. 1.恳请=implore 2.吸引#The government is appealing to everyone to save water.#The music is too old-fashioned to appeal to people any longer.
+Bustle@n.喧扰的活动=fuss#There was a great bustle as the children got ready for the party.
+Crave@v.渴望=fuss#I'm craving for a cup of tea. I've not had one all day.
+Discord@n.争论=disagreement#Various discords have arisen in the university over this question.
+Drill@n.练习=training#The English teacher gave the class plenty of drills in pronunciation.
+Eventually@adv.最后=ultimately#We waited more than an hour for him, but eventually we had to leave without him.
+Futile@adj.无用的=vain#Please don't waste time by asking such futile questions.
+Ingredient@n.成分=component#The ingredients of a cake usually include eggs, sugar, and flour.
+Predict@v.预测=foretell#The weather service predicts heavy rain for tomorrow.
+Raid@n.突然搜索=attack#During their raid on the house, the police found a lot of dangerous drugs.
+Repel@v.击退=repulse#The enemy in the city was repelled by our troops.
+Rouse@v.激励=awaken#The speaker tried to rouse the massed from their lack of interest.
+Tolerate@v.容忍=endure#I can't tolerant your bad manners any longer.
+Utmost@adj.极端的=extreme#She was standing at the utmost edge of the cliff to kill herself.
+Assault@n.攻击`defense#We are ready to meet the enemy's assault on our fort.
+Hostile@adj.怀有敌意的`hospitable#Their hostile looks showed that I was unwelcome.
+Independent@adj.自立的`dependent#Since she inherited her father's fortune, she is completely independent of her husband.
+Inevitable@adj.不可避免的`avoidable#They ran short of money during the tour, and their return was inevitable.
+Link@v.连接`separate#The new road links all the towns in the state.
+Obscure@adj.偏僻的`distinct#We had difficulty in finding the obscure path through the forest.
+Optimism@n.乐观`pessimism#The candidate's optimism about his chances of winning encouraged his supporters.
+Serene@adj.宁静的`agitated#He kept serene and calm, knowing nothing of the dangers, which surrounded him.
+Submit@v.屈服`conquer#No one would submit silently to such an insult.
+Summit@n.顶峰`bottom#At last the mountain climbers reached the summit of the mountain.
+Unique@adj.唯一的`common#This proposal seems to be the unique solution to our problem.
+Vacuum@n.真空`fullness#For that experiment you need a complete vacuum.
+Veteran@adj.老练的@n.老手`apprerntice#At the age of 12, the boy was already a veteran traveler, having flown all over the world with his father.
+Abide@v. 1.容忍 2.遵守#A good housekeeper can't abide dust.#If you join the club you must abide by its rules.
+Allegiance@v.忠诚#His allegiance to his country lasted all his life.
+Analyze@v.分析#The food was analyzed and found to contain small amounts of poison.
+Consume@v.用尽#He consumed almost all the money he earned last summer.
+Dictate@v. 1.口述 2.指定#The president of the company dictated a letter to his secretary.#The country that won the war dictated the terms of peace to the conquered country.
+Fluent@adj.流畅的#He is very fluent in English, but not in French,
+Friction@n.摩擦#Friction against the rock, combined with the weight of the climber, caused his rope to break.
+Miser@n.吝啬鬼#A miser liver poorly in order to save money and keep it.
+Monarch@n.帝王#The national band played for the visiting monarch.
+Partition@n.划分#The partition of the country into two parts caused many problems.
+Qualify@v.使胜任#Being the son of a member of parliament doesn't qualify him to talk about politics.
+Succession@n.连续#After a succession of warm days, the weather became cold.
+Tribute@n. 1.贡物 2.表示尊敬#Many conquered nations had to pay tribute to the rulers of ancient Rome.#By erecting this statue we have paid a tribute to the memory of the founder of our college.
+Clue@n.线索#The police could find no fingerprints or other clues to help them in solving the robbery.
+Cluster@n.串#She bought two clusters of grapes for her little son.
+Flush@v. 1.脸红 2.泛滥#Her face flushed when she could not answer the easy question.#The stream was flushing after the heavy rain.
+Germ@n.细菌#The wound must be kept clean so that germs do not infect it.
+Grunt@v.抱怨声#"I'm too tired," he grunted, and then fell asleep again.
+Junction@n.会合处#The two rivers make their junction near the sea.
+Pinch@v.捏#He pinched fruit to see if it was soft.
+Prairie@n.大草原#The prairie was ideal for growing wheat.
+Rim@n.边；缘#The basketball hit the rim of the basket and bounced off.
+Shove@v.推挤#There was a lot of pushing and shoving to get on the bus.
+Stammer@v.口吃#"Th-th-thank" you "v-v-very" much, he stammered.
+Technical@adj.工艺的#He is studying automobile repairs at a technical school.
+Tint@n.淡色#The picture was painted in several tints of blue.
+Amaze@v.使惊讶=surprise#They were all amazed at the mighty power of nature.
+Bargain@n. 1.协定=contract 2.廉价货#The boys made a bargain with one another to exchange baseball gloves.#These good shoes are a real bargain at such a low price.
+Belongings@n.财产=possessions#She packed all her belongings in a box and took them with her.
+Besiege@v. 1.围攻=attack 2.围困=congregate#Troy was besieged by the Greeks for ten years.#The teacher was besieged with the questions and requests from pupils.
+Fowl@n.家禽=poultry#I prefer the taste of chicken to that of other kinds of fowl.
+Harsh@adj.刺耳=coarse#At the end of the football game, the cheer leader's voice became harsh.
+Menace@n.威胁=intimidation#The crossroad in front of the school is a menace to the children's safety.
+Rapture@n.出神=ecstasy#The beauty of the sunset filled everybody with rapture.
+Renowned@adj.著名的=famous#Ladies and gentlemen, now I will introduce to you the renowned star of the stage and screen, John Wayne.
+Stool@n.凳子=chair#I pulled the stool near the wall to hang a picture.
+Verify@v.证明=certify#We will repeat the experiment twice in order to verify the results.
+Abnormal@adj.异常的`normal#His abnormal behavior shows that something is wrong.
+Abundance@n.丰富`shortage#At the party there was food and drink in abundance.
+Apprentice@n.学徒`expert#He worked seven years at the printing company as an apprentice.
+Bearable@adj.可忍受的`intolerable#She said to the doctor that her pain would be just bearable.
+Immortal@adj.不朽的`dying#Most people believe that a man's body dies but his soul is immortal.
+Innumerable@adj.无数的`countable#The sun is one of the innumerable stars in the universe.
+Preliminary@adj.预备的`consequent#The chairman made a preliminary statement before beginning the main business meeting.
+Remote@adj.遥远的`near#Some of your statements are rather remote from the subject we are discussing.
+Repose@n.休息；睡眠`work#His brief repose was interrupted by her sudden arrival.
+Shrewd@adj.精明的`stupid#Although he had no formal education, he is one of the shrewd businessmen in the steel company.
+Temporary@adj.临时的`permanent#He has a temporary job, which ends in two weeks,
+Automatic@adj.自动的#An automatic timer turns the street light on at night and off in the morning.
+Comprehend@v.理解#The child read the story but did not comprehend its meaning.
+Cordial@adj.真诚的#When one of his former students visited him, the teacher gave him a cordial welcome.
+Elaborate 1.@adj.精心的 2.@v.详细拟定#The scientists made an elaborate plan for landing a man on the moon.#The inventor elaborated his plan for a new engine, spending several months in his laboratory.
+Expire@v.期满#His term of office as president will expire next year.
+External@adj. 1.外在的 2.国外的#He judges people by mere external clothes rather than internal character.#This newspaper doesn't pay enough attention to external affairs.
+Glorify@v.赞美#Singing hymns is one of the ways to glorify god.
+Priority@n.优先#The badly wounded take priority for medical attention over those slightly hurt.
+Reliable@adj.可信赖的#Send the boy to the bank for money; he is a reliable boy.
+repetition@n.反复#Repetition of the sentence helped him to memorize it.
+Survive@v.残留#Only three of the fifty passengers survived the shipwreck,
+Behalf@n.代表#My husband can't be here today, so I'm going to speak on his behalf.
+Breed@v.饲养#The farmer breeds cattle and horses for market,
+Disguise@v.掩饰@n.伪装#She disguised her writing by writing with her left hand.#The thief wore a false beard and glasses as a disguise.
+Domain@n. 1.版图 2.知识领域#The king is respected throughout his domain.#I can't answer your question about photography; it is not in my domain.
+Morsel@n.少量#The dinner must have been good because there is not even a morsel of it left over.
+Routine@n.惯例#Getting up and going to bed are parts of your daily routine.
+Transit@n.通行#The points of transit from one country to another are carefully guarded.
+Transform@改观#That dress transforms her from a little girl into a young lady.
+Ultimate@adj.最终的#Her ultimate goal is to receive her degree and return to her country to work as a teacher.
+Warily@adv.留心的#The hikers climbed warily up the dangerous path.
+allot@分配#The profits from the candy sale have been allotted equally to the Boy Scouts and the Girl Scouts.
+banner@旗帜#The banners of many countries fly outside of the headquarters of the United Nations.
+cliff@悬崖 同bluff#Standing at the edge of the cliff, she could see the waves below.
+Crook@弯曲 同bend#I crooked my leg around the branch to keep from falling.
+Ensue@跟着发生#In his anger he hit the man, and a fight#ensued.
+gap@缺口#The cows ran away through a gap in the fence.
+hoard@贮藏2.囤积#They have a hoard of food in the basement.
+marsh@沼泽 同swamp#When sugar, coffee, and other foods were scarce, many people hoarded them.#It is not easy to cross the marsh on foot, we'd better go round it.
+moan@呻吟声 同groan 2.呻吟#From time to time, during the night, there was a moan of pain from the sick man.#The sick child moaned a little, and then tell asleep.
+notorious@恶名昭彰的 同infamous#The notorious thief was finally caught and put to prison for his many crimes.
+sermon@说教 同preach#After the guests left, father gave a sermon on table manners to the children.
+site@位置#The big house on the hill has one of the best sites in town.
+Suppress@镇压#The police suppressed the riot by firing over the heads of the crowd.
+Agony@痛苦 反joy#He has suffered agonies from his broken arm
+desolate@孤独的 反cozy#I was very desolate when my mother died last year.
+everlasting@永久的 反transient#We do not want to be involved in any war, we wish for everlasting peace.
+excess@超过#Passengers must pay for excess baggage on an airplane.
+gross@总的 反net#The gross weight of the sack of flour is more than the net weight of the flour alone.
+idiot@白痴 反genius#He is intelligent, but sometimes he behaves like an idiot.
+infinite@无限的 极大的 反finite#Teaching little children usually requires infinite patience.
+integrate@综合 反disintegrate#The committee will try to integrate the different ideas into one uniform plan.
+liable@有责任的 反irresponsible 2.易于..的#He stated that he was not liable for his wife's debts.#You are liable to catch a cold if you go out without an overcoat.
+miscellaneous@各种的 反sole#The boy had a miscellaneous collection of stamps, stones, and many other things.
+revenue@收入 反expenditure#The government got much revenue from taxes last year.
+trifling@微小的，无光紧要的#The friends treated their quarrel as only a trifling matter.
+Amend@修正#The Constitution of the United States was amended so that women could vote.
+architecture@建筑#Greek architecture was quite different from modern architecture.
+Clarify@澄清#The teacher's explanation clarified the puzzling problems.
+concept@观念#Some people still believe in the old concept that the sun moves round the earth.
+dominant@统治的#John had a very dominant nature, we all did what he wanted.
+portrait@人像#She had her portrait painted by a famous artist.
+precaution@预防#They took heavy coats as a precaution against the possibility of cold weather.
+pulse@脉搏#The doctor began to measure my pulse rate per minute.
+Renew@恢复#I came back from my holiday with renewed strength.
+transparent@透明的#The silk dress she was wearing at the party was almost transparent.
+universal@普遍的#It is a subject of universal interest, everyone is interested in it.
+bullet@枪弹#The captain was killed in the battle by an enemy's bullet.
+congressman@国会议员#Mary is very proud of her father, he is a congressman.
+flake@薄片#The snow was falling on the ground in large flakes.
+index@索引#The teacher taught the pupils how to use the index of their textbook.
+nuisance@讨厌的人或物#Don't make a nuisance of yourself, sit down and be quiet!
+panic@惊慌#When the theater caught fire, there was panic in the audience.
+scramble@1.爬2.争夺#We scrambled up the rock for a better look at the sea.#When the money fell on the floor, everyone scrambled to get some.
+Squeeze@挤，压榨#She squeezed the juice out of several oranges.
+Strait@海峡#This ship sails through the Strait of Gibraltar, where the water is often rough.
+Vehicle@交通工具#The Main Street is crowded with vehicles every morning.
+Weave@织#My mother is weaving a winter sweater for me.
+attain@获得#They fought against the tyranny to attain freedom.
+awe@敬畏#We feel awe when we stand near vast mountains.
+Commence@开始#The ceremony will commence as soon as the minister arrives.
+Conceit@自负 同pride#Her conceit about her beauty angered many people.
+Dismiss@解雇 同discharge#He was dismissed from the company because he was always late#for work.
+glisten@闪烁 同glitter#Her eyes glistened with tears as she struggled to control her#emotions.
+grab@抢夺#The dog grabbed the bone and ran off with it in his mouth.
+Hearty@热诚的 同cordial#We gave our old friends a hearty welcome.
+Kin@亲戚#All our kin came to the family reunion.
+peep@窥视 同peek#The girls peeped at the guests through the partly openes door.
+Realm@国土，领域 同kingdom#The queen visited every town in her realm.
+accurate@正确的 反incorrect#Her report is always accurate and well written.
+ancestor@祖先 反descendant#His ancestors came to America on the Mayflower.
+dwarf@矮子 反giant#Children of the world love to read the story of Snow White and the seven dwarfs.
+Emerge@出现#After the rain, the sun emerged from behind the clouds.
+Illusion@错觉#It was an illusion that made me think I saw a man in the shadow.
+Multitude@多数的 反minority#A multitude of European plants have been naturalized in America.
+Vicious@恶意的 反virtuous#He gave the dog a vicious blow with his long stick.
+void@1.无效的 反valid 2.空的 没有的 缺乏的#An agreement signed by a child to repay borrowed money is void.#That part of the town is completely void of interest for visitors.
+debate@讨论#We were debating whether to go to the mountains or to the seaside for our summer holidays.
+Extract@1.取出，拔出 2.夺取#He extracted several paragraphs from the newspaper article to read at#the meeting.#Did you manage to extract any information from him?
+facilitate@使容易#The broken lock facilitated my entrance into the empty house.
+frail@虚弱的，易损的#The sick woman's frail hands could hardly hold a cup.
+Insignificant@无关重要的#The ideas of an insignificant person have no influence.
+inspect@视察，审查#In this state,every car must be inspected annually by the highway patrol.
+Prohibit@禁止#Smoking is prohibit in public buidings or in the crowded bus.
+repent@忏悔#The criminal repented his crimes before the priest.
+Resolute@坚决的#Despite the opposition from his family, he remained resolute in his decision.
+Suspend@1.暂停 2.悬吊#The train schedule was suspended until the railroad tracks were repaired.#The swing was suspended from a branch of tree.
+bleak@荒凉的#In winter, when the trees are bare and snow covers the ground,the landscape is very bleak.
+brisk@轻快的#A brisk walk brings him home from work in a short time.
+Chip@碎屑#When you sharpen a pencil, you make chips.
+Hearth@炉边#We talked about his death all nights,sitting around the hearth.
+Laundry@洗衣店，洗烫过的衣服#They sent their dirty clothes to the laundry.
+Overwhelm@1.压倒 2.淹没#At the beginning of the Second World War, the weapons that the enemy had overwhelmed ours.#The village was overwhelmed when the floods came.
+Prevalent@普遍的#The habit of traveling by aircraft is becoming more prevalent each year.
+Rumor@谣传#I heared a rumor that there would be a change in the Cabinet.
+Scold@责骂#His parents scolded him for staying out so late at night.
+shrug@耸肩#When I asked him about his plans, he only shrugged his shoulders.
+Streak@1.条纹2.飞奔#There are streaks of grey appearing in his black hair.#The cat streaked across the road with the dog behind it.
+tug@拉#The small child tugged the table across the room and broke the milk
+Blunder@n.错误=mistake#It was his great blunder to have ordered the soldiers to attack the enemy in the daytime.
+Brink@n.边缘=verge#He fell over the brink of the cliff, but he was only slightly hurt.
+Cab@n.计程车=taxi#It is very hard to catch a cab in the rush hour.
+Cast@v.掷；抛=fling#The fisherman cast their nets into the sea.
+Component@n.成分=ingredient#A chemist can separate a medicine into its components.
+Convention@n. 1.习俗=custom 2.会议#It is a matter of convention that men should open doors for ladies.#Businessmen attended conventions to learn of new developments and products.
+Expel@v.驱逐=banish#A pupil who cheats or steals may be expelled from school.
+Notable@adj.显著的=remarkable#China has made notable development since 1978.
+Spectacle@n. 1.景象=sight 2.（复数）眼镜#The sunrise as seen from the top of the mountain was a great spectacle.#The old man bought a new pair of spectacles.
+Tackle@n. 1.用具=equipment@v. 2.捕捉#He bought some fishing tackle in the store.#The robber tried to run away, but a brave man ran and tackled him.
+Throng@n.群众=crowd#At the railroad station I saw throngs of passengers waiting for their trains.
+Waver@v.摆动=sway#As I opened the window, the flame waved and then went out.
+Affirmative@adj.肯定的`negative#Her final answer to my question would be affirmative.
+Amid@prep.在其中`around#The woman teacher stood amid the crowd of little children.
+Appease@v.使平静`stir#The angry man was not appeased until I said I was sorry.
+Eternal@adj.永恒的`momentary#Most religionsn the world promise eternal life after one's death.
+Gallant@adj. 1.勇敢的`timid 2.壮丽的#Mr. Johnson was one of the most gallant soldiers in our unit during World War II.#Our garden was is gallant with roses and tulips.
+Gratify@v.使满足`disappoint#Now that she has a job in France, she can gratify her desire to see Paris.
+Petty@adj.细小的`significant#The children's quarrels usually concern a petty problem.
+Sturdy@adj.坚强的`weak#Children need sturdy clothes, because they like to play so violently.
+Tropical@adj.热带的；很热的`polar#It is very hard to work in such tropical weather.
+Zoology@n.动物学`botany#Zoology and botany(植物学) are the two main branches of biology(生物学).
+Administer@v.管理#In the United States, the Secretary of State administers foreign affairs.
+Coordinate@v.调和#If we coordinate our efforts we should be able to defeat the enemy.
+Deprive@v.剥夺#They deprived the criminal of his right to vote.
+Heritage@n.遗产#Many foreigners say that Chinese have a great cultural heritage.
+Insert@v.插入#He inserted the key into the lock, but found it was a wrong key.
+Irritate@v.激怒#When she has a headache, the slightest noise irritates her.
+Legitimate@adj.正当的#The boy couldn't give a legitimate reason for being absent from school.
+Margin@n. 1.边缘 2.余裕#He made some important notes in the margin of the book.#Allow a margin of money for unexpected expenses.
+Punctual@adj.守时的#She's never punctual in answering letters; she's always late.
+Restrain@v.抑制#She could not restrain her curiosity to see what was in the box.
+Sensitive@adj.敏感的#The girl is very sensitive about her ugly appearance.
+Significant@adj.重大的#October 1, 1949, was a significant day for China.
+Altar@n.祭坛#The altars is the most sacred part of a church or temple.
+Bounce@n.反跃#I caught the ball on the first bounce.
+Bugle@n.号角 [bju:ɡl]#Bugles have been used in military forces for sounding calls and orders.
+Charcoal@n.炭#We cooked our food over burning charcoal.
+Crisis@n.危机#The patient passed the crisis, and began to regain his strength.
+Deputy@n.代理人#John will be my deputy while I am away.
+Grind@v.磨碎（成粉）#The stone was grind into dust.
+Missionary@n.传教士#The missionary will be sent to Africa to teach and spread Christianity there.
+Premier@n.首相#Winston Chichill is one of the well-known premiers of Great Britain.
+Recruit@n.新会员；新兵#The recruits were already given their uniforms, and now they are being drilled on the parade ground.
+Salvation@n.救助#He proposed government loans for the salvation of several shaky business companies.
+Standstill@n.停顿#When I was walking along the street, a car came to a standstill near me.
+Trample@v.践踏#The herd of wild cattle trampled the farmer's crops.
+Yoke@n.支配#Slaves are under the yoke of their masters.
+Adorn@v.装饰；美化=decorate#He adorned his story with all sorts of adventures that never happened.
+Baggage@n.行李=luggage#I need a man to carry my baggage to the train.
+Bunch@n.串；束=cluster#We sent him a bunch of flowers on his birthday.
+Clap@v.鼓掌=applaud#The children clapped when he finished his speech on children's day.
+Deliberate@adj. 1.从容不迫=considerate@v. 2.考虑=reflect#A statesman should be deliberate in his political speeches.#We were deliberating whether we should buy a new motorcar.
+Enclose@v. 1.围以篱笆，墙=surround 2.附寄#We are going to enclose our back yard to keep dogs out.#I enclosed a check or 10$ with the letter.
+Frontier@n.边界=border#There were many guards and soldiers along the frontier.
+Implement@n.工具=tool#Plow and threshing machine are farm implements.
+Leap@n.跳跃=jump#He went over the fence with a single leap.
+Luster@n.光辉=brilliance#This shampoo adds more luster to your hair than any other brand.
+Perfume@n.香味=fragrance#We enjoyed the perfume of the flowers in the garden.
+Swear@v.发誓=pledge#Will you swear to the truth of your statement?
+Acquire@v.获得`lose#You must work hard to acquire a good command of a foreign language.
+Benevolent@adj.慈善的`malevolent#The free food was given to a beggar by a benevolent person.
+Compliment@n.称赞`reprimand#The famous actress was used to hearing audience's compliments.
+Courtesy@n.礼貌`impoliteness#Giving one's seat to a lady in a crowded bus is a sign of courtesy.
+Equivalent@adj.相等的`different#He changed his pounds for the equivalent amount of dollars.
+Ingenious@adj.敏捷的`clumsy#My brother is so ingenious that he will think of a way to do the work more easily.
+Internal@adj.内部的`external#An accident often causes internal injuries as well as cuts and wounds.
+Irresponsible@adj.无责任感的`reliable#An irresponsible person deserves to be blamed and punished.
+Miserable@adj.可怜的`happy#The child is cold, hungry, and tired, so of course he is miserable.
+Respond@v.回应`ask#When John insulted Tom, he responded with a kick.
+Tentative@adj.暂时的`decisive#We've made tentative plans for a holiday but haven't decided anything certain yet.
+Appetite@n.食欲#The disgusting food made me lose appetite.
+Assume@v. 1.假定 2.担当#They assumed that the war would end in six months, but it proved wrong in a short time.#He assumed the responsibility for planning and preparing the picnic.
+Conform@v.遵从#A citizen is expected to conform to the law of his country.
+Defer@v. 1.延期 2.顺从#The ship deferred its sailing because of bad weather.#Do you always defer to your parent's wishes?
+Distract@v.转移#What can we do to distract her mind from sorrow?
+Mutual@adj.相互的#A family has a mutual affection when each person likes the others and is liked by them.
+Pacify@v.使镇定#She pacified the crying child by giving him milk.
+Prominent@adj. 1.明显的 2.著名的#She hung the picture in a prominent position in the living room,#Several prominent people were present at the meeting.
+Receipt@n. 1.收据 2.领收#Ask the shop for a receipt when you pay the bill.#Please notify me upon receipt of the package.
+Variable@adj.易变的#The amount of heat produced by this electrical apparatus is variable by turning a small handle.
+Associate@1.v.结交 2.n.伙伴#Don't associate with bad and dishonest boys.#He has been my associate in several business enterprises.
+Chauffeur@n.司机#They rented a car with a chauffeur for the winter trip.
+Dump@v.卸下#Don't dump that trash in the middle of the path.
+Dye@v.染色#Many women like to dye their hair blonde.
+Feat@n.伟绩#The first flight into space was a brilliant feat.
+Nasty@adj. 1.令人作呕的 2.恶劣的#The medicine has a nasty smell and a nastier taste.#Be tactful when you tell him because he has a very nasty temper.
+Plunder@v.抢劫#The pirates entered the harbor and began to plunder the town.
+Speck@n.污点#I found a few specks of dirt on the wallpaper.
+Strife@n.争吵#There has always been strife between the two countries.
+Strip@v.剥去#The monkey stripped the banana by taking off the skins.
+Tutor@n.私人教师#Her farther employed a tutor for her during her long illness.
+Twinkle@v.闪烁#His eyes twinkled with delight when he heard the news that he had passed the entrance examination.
+Cite@v.引用=quote#He cited a paragraph from the book to prove his statement.
+Esteem@n.尊敬=respect#All his friends held him in high esteem, for he was very sincere and diligent.
+Grumble@v.抱怨=mutter#He was always grumbling about his low salary.
+Hideous@adj.丑恶的=horrible#The old woman had such a hideous face that the girls couldn't even get close to her.
+Loiter@v.闲荡=linger#She loitered along the street, looking into all the show windows.
+Rip@v.撕开=tear#She ripped her stocking on a sharp nail.
+Specs@n.眼镜=eyeglasses#She has very poor eyesight; she can read nothing without her specs.
+Threshold@n.开端；人口=doorway#Scientists are now on the threshold of a better understanding of how the human brain works.
+Token@n.象征=symbol#All the family wore black as a token of their grief.
+Traitor@n.卖国贼=betrayer#The traitor sold our important military secrets to enemy.
+Uphold@v.支持；确认=support#The judge upheld the decision of the lower court.
+Yawn@v.打呵气=gape#He jawed several times during the lecture; he was not interested in it.
+Advocate 1.@v.主张`object 2.@n.拥护者#The professor advocates building more schools than roads.#Many scientists who supported the production of atomic bombs are advocates of peace.
+Denial@n.否认`acceptance#The minister asked the newspaper to print a denial of the untrue story.
+Depart@v.离开`arrive#We arrived in the village in the morning, and departed that night.
+Flexible@adj.易弯曲的`stiff#Leather and rubber are flexible; glass and iron are not.
+Formidable@adj.难以克服的`feeble#The enemy's attack was more formidable than we had expected.
+Gale@n.强风`breeze#The old tree at the top of the hill was blown down in the gale.
+Sane@adj.神志清明的`crazy#The court judged the man sane and therefore responsible for his acts.
+Underworld@n.地狱`heaven#Those who live by vice and crime would go to the underworld after death.
+Vanity@n. 1.虚荣心`humbleness 2.空幻#The girl's vanity made her look in the mirror often.#Fame, power, wealth-all is vanity before death.
+Convict 1.@v.宣告有罪 2.@n.罪犯#The judge convicted the accused man of theft.#The policeman was chasing a convict who escaped from prison last night.
+Employee@n.员工#That large factory has more than 1000 employees who make cars.
+Envy@n.羡慕#Some boys were full of envy when they saw my new bicycle.
+Impose@v.加（负担，惩罚于）#The judge imposed a fine of 500$ on the guilty man.
+Invest@v.投资#If I had any money, I would invest it in land.
+Legislate@v.立法#In the united states the congress has the power to legislate.
+Maintain@v.保持#He maintained a speed of 60 miles an hour on the highway.
+Petition@n.请愿#The people signed a petition to stop destruction of the historic buildings.
+Reconcile@v.和解#They quarreled last week but now they are completely reconciled.
+Sensation@n. 1.感觉 2.骚动；大事件#I knew the train had stopped, but I had the sensation that it was moving backwards.#The show was a great sensation for several weeks.
+Sociable@adj.好交际的#The secretary doesn't seem sociable; she likes to be left in office alone.
+All-out@adj.完全#He made an all-out effort to be the best students in his class.
+Aptitude@n.才能#The student shows a great aptitude for languages; he can learn a foreign language much faster than others.
+Axis@n.轴#It takes 24 hours for the earth to make one rotation on its axis.
+Budget@n.预算#They planned a monthly budget for their family.
+Cargo@n.（船，飞机等所载）货物#A cargo of steel was lost at sea.
+Clergy@n.牧师#Members of the clergy are serious students of religion.
+Cripple@n.跛子#He became a cripple as a result of the accident.
+Dodge@v.闪避#The man jumped aside to dodge the speeding truck.
+Grin@v.露齿而笑#The boy grinned with pleasure when I gave him candy.
+Headquarters@n.总部#The policeman was ordered to report to the police headquarters.
+Retort@v.反驳#"your question is not worth answering," he retorted.
+Textile@n.织物#We need to produce more textiles, especially silk and cotton.
+Thigh@n.大腿；股#The fisherman's boots came up to his thighs.
+Toilet@n.洗手间#The youngest child has not yet learned how to use the toilet.
+Attribute 1.@v.归于=ascribe 2.@n.品性=characteristic#We attribute Edison's success to intelligence and hard work.#Politeness and kindness are attributes of a gentleman.
+Banish@v.放逐=exile#England once banished many criminals to Australia.
+Barrier@n.障碍=hindrance#The Sahara desert is a natural barrier that separates Northern and Central Africa.
+Code@n. 1.法规=rule 2.暗号，密码#The city building code limits the height of new buildings.#The enemy could not understand the code in which the general's letter was written.
+Hinder@v.妨碍=prevent#You're hindering me in my work by talking all the time.
+Isolate@v.使隔离=separate#Several villages in the north have been isolated by heavy snowfall.
+Mist@n.雾=fog#During the autumn the mountain top is always covered in mist.
+Porter@n.脚夫=carrier#The hotel porter carried their suitcases to their room.
+Subdue@v.征服=conquer#They subdued the enemy and captured the city after a long battle.
+Tempest@n.暴风雨=storm#The tempest forced the ship onto the rocks.
+Transform@v.使改观=change#The beautiful dress transformed the girl into a pretty young lady.
+Amenable@adj.应服从的`disobedient#People living in a country are amenable to its laws.
+Casual@adj.偶然的`intentional#Our long friendship began with a casual meeting at a Christmas party.
+Condense@v.缩写`expand#A long story can sometimes be condensed into a few sentences.
+Detach@v. 1.分开`attach 2.派遣#The engine was detached from the body of the train.#One squad of soldiers was detached to guard the important road and bridge.
+Exaggerate@v.夸大`underestimate#He exaggerated the dangers of the trip in order to frighten them into not going.
+Inadequate@adj.不充分的`sufficient#He was tired because he had had inadequate sleep last night.
+Literate@adj.受过教育的`uneducated#A literate person can get knowledge through reading many books.
+Mansion@n.大厦`hut#That old mansion has more than twenty rooms.
+Meek@adj.温顺的`violent#He isn't bad-tempered; he is as meek as a lamb.
+Zeal@n.热诚`negligence#A good citizen works with zeal for his country's interests.
+Aggression@n.侵略#We need a self-defense posture to deter the possible aggression.
+Agitate@v. 1.扰乱 2.摇摆#We thought that the bad news would upset tom, but it didn't seem to agitate him.#The slightest wind agitates the leaves of the trees.
+Architect@n.建筑师#We employed an architect to design our summer house.
+Bond@n. 1.结合 2.合同；契约#There is a close bond of affection between the two sisters.#He is so honest that his spoken promise is as good as a bond.
+Dominate@v.支配#The chairman's strong will dominated the committee, which did what he wanted without arguing.
+Integrate@v.合而为一#He integrated ideas from several philosopher into his own philosophy.
+Publicity@n.出风头#His rescue of the child from the burning house brought him much publicity.
+Rely@v.信赖#Nowadays, we repy increasingly on computers for help.
+Retract@v. 1.缩回 2.收回（声明，承诺）#A cat can retract its claws, but a dog can't.#You can depend on Frank. Once he has given his promise, he will not retract it.
+Unify@v.使统一#We should make every effort to unify china.
+Broil@v. 1.烤 2.争斗#Flames flared as he broiled the meat a fire in the backyard.#When I left, two women were quarreling noisily; when I returned an hour later, they were still broiling.
+Desolate@adj. 1.荒废的 2.孤独的#A few desolate houses stood in the former mining town.#She had led a desolate life since her husband's death.
+Gamble@v.赌博#A reckless young man gambled his fortune on a turn of cards in one night.
+Improve@v.改进#I'll improve the shape of the handle so that it's easier to use.
+Incense 1.@v.激怒 2.@n.香#The official was incensed at the lack of respect shown to him.#Incense is burnt in some religious services.
+Marine@adj.海的#Many kinds of marine life are found in this ocean.
+Nourish@v.滋养#There are hundreds of children in the slums, who need to be nourished,
+Phase@n.阶段#The old man overcame the critical phase of his illness.
+Spur@n.刺马钉；激励#The horse leaped over the fence at the touch of the spur.
+Thaw@v. 1.溶解 2.变温和#Exposed to the warm air, the frozen meat thawed rapidly.#At first the visitors were shy, but after drinking a glass of wine they thawed.
+Allure@v.引诱=fascinate#The beautiful beaches of Hawaii allure many tourists from the mainland of the United States.
+Anew@adv.重新；再=again#He made so many mistakes that he had to begin his work anew.
+Banquet@n.宴会=feast#A banquet was given to honor the retiring president.
+Crouch@v.蹲伏=squat#The cat saw the bird and crouched down ready to jump.
+Flank@n.侧翼=side#The enemy may attack us on the left flank.
+Indignant@adj.愤慨的=wrathful#I was very indignant at the man, for he had treated me so badly.
+Meadow@n.草地=pasture#They raise many cows and sheep in the meadow.
+Mobile@adj.动的；富流动性的=movable#Many workmen aren't mobile; if they move to new employment they have difficulties in moving their families.
+Reverse 1.@adj.颠倒的=contrary 2.@v.颠倒#Would you play the reverse side of that phonograph record, please?#Reverse your sweater or you will put it on wrong side out.
+Roam@v.闲逛；漫游=wander#The lovers roamed around the fields in complete forgetfulness of the time.
+Withstand@v.抵抗；耐=resist#Children's furniture must withstand kicks and blows.
+Concrete@adj.具体的`abstract#Do you have any concrete ideas on how to deal with this difficulty?
+Exclude@v.拒绝`include#They committee decided to exclude all foreigners from joining the club.
+Incomplete@adj.不完全的；未完成的`perfect#My homework is incomplete, but I'll finish it by 3 o'clock this afternoon.
+Intellectual@adj.智力的`physical#Teaching or counseling is an intellectual occupation.
+Plural@adj.复数的`sigular#Dog is a singular noun; dogs is a plural noun.
+Quaint@adj.古怪而有趣的`common#American visitors to China admire our quaint traditions and customs.
+Savory@adj.味香的`unsavory#The savory smell of cooking pleased us when we entered the house.
+Submerge@v.淹没`float#The flooded river submerged most of the farmland in the valley.
+Ultimate@adj.最后的`primary#After many defeats, the war ended for us in ultimate victory.
+Violate@v.违法`observe#He violated the law and was arrested by the police.
+Array@v. 1.布置 2.盛装#The soldiers were arrayed for battle in front of the general.#She was arrayed like a queen in her colorful dress.
+Bald@adj.秃头#The old man's bald headed glistened in the sun.
+Classify@v.分类#In a library, books are usually classified by subjects.
+Context@n.上下文#In some contexts mad means crazy, but in others it may mean angry or foolish.
+Destine@v.命中注定#I never thought I would marry her, but I suppose it was destined.
+Formulate@v.用公式表示；有系统地陈述#Formulate your ideas before you begin to write.
+Hoarse@adj.嘶哑的#A person with a bad cold usually had a hoarse voice.
+Inaugurate@v.举行就职典礼#The new president of the united stars will be inaugurated on January 20.
+Psychology@n.心理学#Child psychology is a required course in teacher training.
+Refine@v.精炼#Sugar, oil and metals are refined before being used.
+Vengeance@n.报仇#He took vengeance on the men who had killed his father.
+Aisle@n.走道#The aisle was wide enough for only one person.
+Booth@n.哨岗；电话亭#He went into the telephone booth to call his wife.
+Bulletin@n.快报#Sports bulletins and weather bulletins are published in most newspapers.
+Corpse@n.尸体#A man has reported to the police that he saw a corpse under the bridge.
+Extracurricular@adj.课外的#Swimming and skating are popular extracurricular activities in our high school.
+Garage@n.汽车间；修车厂#You'd better keep your car in a garage while it's snowing.
+Knob@n.圆形或球形门柄#He turned the door knob to open the door.
+License@n.执照#While driving a car, you have to carry yours license with you.
+Parallel@adj.平行的#Parallel lines run side by side, but never get nearer to or farther away from each other.
+Skeleton@n.骨骼#The skeleton of the missing man was discovered in the cave
+Tariff@n.关税#There is a very high tariff on imported jewelry.
+Tickle@v.搔痒#She tickled the baby's feet and made him laugh.
+Tray@n.盘#The waiter carried the dishes on a tray.
+Adjourn@v.延期=postpone#The members of the club voted to adjourn their meeting until 5p.m.
+Astonish@v.使惊异=astound#She was astonished to hear the news that she had won the first prize in the speech contest.
+Attire@v.穿衣=array#The queen was attired in blue for her birthday party.
+Candidate@n.侯选人=applicant#There are three candidates for president of the club.
+Discipline@n. 1.训练=training 2.纪律#The discipline of his early hardships contributed to his success.#Military schools are known for their strict discipline.
+Interpret@v.解释=translate#Please interpret the meaning of this foreign word that I've never heard.
+Lounge@v.闲逛；漫步=loiter#There were some men and women who were lounging along the beach.
+Secure 1.@v.使安全=protect 2.@adj.无虑的#By strengthening the river banks, the city secured itself against floods.#Are you worried about passing the final exam, or do you feel secure?
+Siege@n.围攻=besiegement#The country was in a state of siege, and tanks were lined up in front of the presidential palace.
+Strive@v.努力=endeavor#We should strive for the truth.
+Vocation@n.职业=profession#Teaching children ought to be a vocation as well as a way of earning money.
+Amiable@adj.和蔼可亲的；温柔的`unpleasant#Charlotte is an amiable child; everybody loves her.
+Capture@v. 1.逮捕`release 2.吸引#The traitor was captured trying to escape from the country.#Her beauty captured him and he swore to stay with her forever.
+Congregate@v.聚集`disperse#The crowds congregated in the square in front of the palace when they heard the news of the king's death.
+Cowardly@adj.胆小的`brave#When I was a boy, I was too cowardly to go out at night.
+Feeble@adj.衰弱的`robust#The old lady's feeble hands could hardly hold a small cup.
+Identical@adj.完全相同的`different#It is the identical coat that I lost a month ago,.
+Perpetual@adj.永久的`temporary#Bathing in the fountain of youth is supposed to assure perpetual beauty.
+Twilight@n.黄昏`dawn#The old man likes to take a walk in the twilight.
+Unfair@adj.不公平的`just#The spectators were disappointed at the unfair decision by the unfair.
+Vacant@adj.空的`occupied#She had a few vacant rooms to rent for the students.
+Veracity@n.诚实`falsehood#Since you have lied to us in the past, you should not wonder that we doubt your veracity.
+Applause@n.鼓掌以示赞许#When the singer ended his song on the stage, there was a great applause in the concert hall.
+Brutal@adj.残忍的#The murder was so brutal that the jury was not allowed to see the police photographs.
+Defiance@n.违抗#He shouted in defiance of the policeman's warning to be quiet.
+Demonstrate@v.证明#How can you demonstrate that the world is round?
+Eloquence@n.雄辩；口才#The eloquence of the president moved all hearts who listened to him.
+Exclusive@adj. 1.严格限制的；不许外人加入的 2.独有的#He donated a lot of money to join the exclusive club.#I have the exclusive rights for the sale of ford cars in this town.
+Initiative@n.初步；主动#She took the initiative in getting acquainted with her neighbors.
+Reluctant@adj.勉强的#He was very reluctant to give his money away.
+Risky@adj.危险的#Because of advances in medical technology, heart surgery is not as risky as it formerly was.
+Terminate@v.终止#The policeman terminated the quarrel by sending the boys home.
+Typify@v.代表；作…的典型#Abraham Lincoln typifies the politician who rises from humble origins to a position of power and influence.
+Adapt@v.使适应#When you go to a foreign country, you must adapt yourself to new manners and customs.
+Clash 1.@v.作撞击声 2.@n.冲突#She clashed the two pans together to wake us up.#There are many clashes of opinion in that family, for no two of them think alike.
+Compromise@n.和解；让步了事#The disagreement about the boundary between the two countries was settle by compromise.
+Era@n.历史上的时代#The years from 1817 to 1824 in the united states history are often called the era of good feeling.
+Gulp@v.吞饮#After running 1000 meters, the runner became thirsty and gulped a bowl of water.
+Proprietor@n.所有者#I wasn't satisfied with our treatment at that hotel; I shall write and complain to the proprietor.
+Revise@v.改变#When you known the facts, you may revise your opinion.
+Superstition@n.迷信#She has a superstition that breaking a mirror brings bad luck.
+Tract@n.广阔的地区#During last summer's flood, a large tract of farmland was underwater.
+Wail@v.哭号#The little baby wailed until his mother entered the room
+Wither@v.枯萎#The grass withered and died for lack of water under hot sun.

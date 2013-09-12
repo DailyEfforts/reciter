@@ -19,7 +19,7 @@ import com.gmail.dailyefforts.android.reciter.Word;
 public class DBA extends SQLiteOpenHelper {
 	private static final String TAG = DBA.class.getSimpleName();
 	private static final String DATABASE_NAME = "wot.db";
-	private static final int DATABASE_VERSION = 9;
+	private static final int DATABASE_VERSION = 10;
 	public static final String TABLE_WORD_LIST = "wordlist";
 
 	public static final String TABLE_WORD_LIST_NCE1 = "wordlist_nce1";
@@ -28,6 +28,10 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String TABLE_WORD_LIST_NCE4 = "wordlist_nce4";
 	public static final String TABLE_WORD_LIST_REFLETS1U = "wordlist_reflets1u";
 	public static final String TABLE_WORD_LIST_LINGUISTICS_GLOSSARY = "linguistics_glossary";
+	public static final String TABLE_WORD_LIST_PRO_EN_CORE = "pro_en_core";
+	public static final String TABLE_WORD_LIST_LIUYI_5000 = "liuyi_5000";
+	public static final String TABLE_WORD_LIST_LIUYI_10000 = "liuyi_10000";
+	public static final String TABLE_WORD_LIST_LIUYI_22000 = "liuyi_22000";
 
 	public static final String WORD_ID = "_id";
 	public static final String WORD_WORD = "word";
@@ -54,7 +58,11 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String TABLE_TEST_REPORT_NCE4 = "testreport_nce4";
 	public static final String TABLE_TEST_REPORT_REFLETS1U = "testreport_reflets1u";
 	public static final String TABLE_TEST_REPORT_INGUISTICS_GLOSSARY = "testreport_linguistics_glossary";
-
+	public static final String TABLE_TEST_REPORT_PRO_EN_CORE = "testreport_pro_en_core";
+	public static final String TABLE_TEST_REPORT_LIUYI_5000 = "testreport_liuyi_5000";
+	public static final String TABLE_TEST_REPORT_LIUYI_10000 = "testreport_liuyi_10000";
+	public static final String TABLE_TEST_REPORT_LIUYI_22000 = "testreport_liuyi_22000";
+	
 	public static final String TEST_REPORT_ID = "_id";
 	public static final String TEST_TESTED_NUMBER = "tested_number";
 	public static final String TEST_CORRECT_NUMBER = "correct_number";
@@ -449,6 +457,10 @@ public class DBA extends SQLiteOpenHelper {
 		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_NCE4));
 		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_REFLETS1U));
 		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LINGUISTICS_GLOSSARY));
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_PRO_EN_CORE));
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LIUYI_10000));
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LIUYI_5000));
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LIUYI_22000));
 
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT));
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_NCE1));
@@ -457,14 +469,18 @@ public class DBA extends SQLiteOpenHelper {
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_NCE4));
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_REFLETS1U));
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_INGUISTICS_GLOSSARY));
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_PRO_EN_CORE));
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_LIUYI_5000));
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_LIUYI_10000));
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_LIUYI_22000));
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		if (oldVersion < 9) {
 			db.execSQL("DROP TABLE IF EXISTS " + TABLE_WORD_LIST_NCE3);
-			onCreate(db);
 		}
+		onCreate(db);
 	}
 
 }
