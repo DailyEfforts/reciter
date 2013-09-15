@@ -1,4 +1,5 @@
-﻿Barren@adj.贫瘠的#The barren land could produce little food.
+﻿total=1152
+Barren@adj.贫瘠的#The barren land could produce little food.
 Bump@v.碰撞 菜#The room was dark and I bumped my head against the door.
 Devise@v.设计；发明#He devised a new method for teaching the blind.
 Exert@v.使用#My wife's been exerting a lot of pressure on me to change my job.
@@ -13,7 +14,7 @@ Tease@v.嘲弄#At school, the other children always teased me because I was fat.
 Tilt@v.倾斜#He tilted his chair back too far and fell on the floor.
 Version@n.翻译#Do you have the English version of this book?
 Version@n.叙述#Your version of the accident differs from that of the other witness.
-Absurd@adj.荒谬的#His belief that he was too clever to be caught in his wrongdoing was absurd.
+Absurd@adj.荒谬的#His belief that he was too clever to be caught in his wrong doing was absurd.
 Alien@adj.外国的#After ten years his alien speech was still noticeable.
 Amiable@adj.和蔼可亲的#She is an amiable girl and gets along with everyone in the office.
 Ban@v.禁止#In most countries the sale of liquor to children is banned.
@@ -136,8 +137,8 @@ Subordinate@n.属下#A good leader is the one that is respected by his subordina
 Thrift@n.节俭#Her thrift saved them enough money to buy a hourse.
 Treacherous@adj.叛逆的#The treacherous soldier carried some important pieces of information to the enemy.
 Troublesome@adj.麻烦的#He is a troublesome child; he is not obedient to his parents.
-Alternative@n.二选一@adj. alternate#Her father gave her the alternative of staying in high school or going to work.
-Bulge@n.凸出@adj. bulgy#The bag of candy made a bulge in the child's pocket.
+Alternative@n.二选一#Her father gave her the alternative of staying in high school or going to work.
+Bulge@n.凸出#The bag of candy made a bulge in the child's pocket.
 Congratulate@v.祝贺n. congratulation#Let me congratulate you on the birth of your son.
 Contradiction@n.反驳#Contradiction by the students always makes my teacher angry.
 Contradiction@矛盾#It is a contradiction tosay you support the government but would not vote for it in an election.
@@ -194,15 +195,15 @@ Veto@n.否决#The governor's veto kept the bill from becoming a law.
 Veto@v.否决#His parents vetoed his plan to buy a new motorcycle.
 Abbreviate@v.减缩#His book was abbreviated and appeared in a public magazine.
 Abbreviate@adj.可利用的；可获得的#There were no tickets available for Friday's music performance.
-Bribe@n.贿赂@n. bribery#The judge was accused of taking a bribe to free the prisoner.
-Chat@n.闲谈@adj. chatty#The woman chatted on the phone for almost an hour.
-Contempt@v.轻视@adj. contemptible#We feel contempt for a liar or a thief.
-Fraction@n.部分@adj. fractional#She's careful with her money and spends only a fraction of her earnings.
-Idol@n.偶像；神像@v. idolize#A stone idol stood at the entrance of the village.
-Inherit@v.继承@n.inheritance#After the farmer's death his wife and children will inherit the farm.
-Reproduce@v.再生@adj.reproductive#She reproduced the contents her husband's letter from memory.
-Shrink@v.萎缩@n.shrinkage#Washing wool in hot water will make it shrink.
-Tempt@v.引诱@n.temptation#The sight of the food tempted the hungry man to steal.
+Bribe@n.贿赂#The judge was accused of taking a bribe to free the prisoner.
+Chat@n.闲谈#The woman chatted on the phone for almost an hour.
+Contempt@v.轻视#We feel contempt for a liar or a thief.
+Fraction@n.部分#She's careful with her money and spends only a fraction of her earnings.
+Idol@n.偶像；神像#A stone idol stood at the entrance of the village.
+Inherit@v.继承#After the farmer's death his wife and children will inherit the farm.
+Reproduce@v.再生#She reproduced the contents her husband's letter from memory.
+Shrink@v.萎缩#Washing wool in hot water will make it shrink.
+Tempt@v.引诱#The sight of the food tempted the hungry man to steal.
 Vital@adj.生命的；致命的#He was lucky that the bullet had not entered a vital organ.
 Abuse@滥用#Don't abuse your health by working when you ought to be sleeping or resting.
 Abuse@滥用#His abuse of power has turned his friends against him.
@@ -671,7 +672,7 @@ Submit@v.屈服#No one would submit silently to such an insult.
 Summit@n.顶峰#At last the mountain climbers reached the summit of the mountain.
 Unique@adj.唯一的#This proposal seems to be the unique solution to our problem.
 Vacuum@n.真空#For that experiment you need a complete vacuum.
-Veteran@adj.老练的@n.老手#At the age of 12, the boy was already a veteran traveler, having flown all over the world with his father.
+Veteran@adj.老练的#At the age of 12, the boy was already a veteran traveler, having flown all over the world with his father.
 Abide@v.容忍#A good housekeeper can't abide dust.
 Abide@v.遵守#If you join the club you must abide by its rules.
 Allegiance@v.忠诚#His allegiance to his country lasted all his life.
@@ -1046,13 +1047,13 @@ Desolate@adj.荒废的#A few desolate houses stood in the former mining town.
 Desolate@adj.孤独的#She had led a desolate life since her husband's death.
 Gamble@v.赌博#A reckless young man gambled his fortune on a turn of cards in one night.
 Improve@v.改进#I'll improve the shape of the handle so that it's easier to use.
-Incense@v.激怒 #The official was incensed at the lack of respect shown to him.
+Incense@v.激怒#The official was incensed at the lack of respect shown to him.
 Incense@n.香#Incense is burnt in some religious services.
 Marine@adj.海的#Many kinds of marine life are found in this ocean.
 Nourish@v.滋养#There are hundreds of children in the slums, who need to be nourished,
 Phase@n.阶段#The old man overcame the critical phase of his illness.
 Spur@n.刺马钉；激励#The horse leaped over the fence at the touch of the spur.
-Thaw@v..溶解 #Exposed to the warm air, the frozen meat thawed rapidly.
+Thaw@v..溶解#Exposed to the warm air, the frozen meat thawed rapidly.
 Thaw@v.变温和#At first the visitors were shy, but after drinking a glass of wine they thawed.
 Allure@v.引诱#The beautiful beaches of Hawaii allure many tourists from the mainland of the United States.
 Anew@adv.重新；再#He made so many mistakes that he had to begin his work anew.
@@ -1062,7 +1063,7 @@ Flank@n.侧翼#The enemy may attack us on the left flank.
 Indignant@adj.愤慨的#I was very indignant at the man, for he had treated me so badly.
 Meadow@n.草地#They raise many cows and sheep in the meadow.
 Mobile@adj.动的；富流动性的#Many workmen aren't mobile; if they move to new employment they have difficulties in moving their families.
-Reverse@adj.颠倒的 #Would you play the reverse side of that phonograph record, please?
+Reverse@adj.颠倒的#Would you play the reverse side of that phonograph record, please?
 Reverse@v.颠倒#Reverse your sweater or you will put it on wrong side out.
 Roam@v.闲逛；漫游#The lovers roamed around the fields in complete forgetfulness of the time.
 Withstand@v.抵抗；耐#Children's furniture must withstand kicks and blows.
@@ -1109,7 +1110,7 @@ Discipline@n.训练#The discipline of his early hardships contributed to his suc
 Discipline@n.纪律#Military schools are known for their strict discipline.
 Interpret@v.解释#Please interpret the meaning of this foreign word that I've never heard.
 Lounge@v.闲逛；漫步#There were some men and women who were lounging along the beach.
-Secure@v.使安全 #By strengthening the river banks, the city secured itself against floods.
+Secure@v.使安全#By strengthening the river banks, the city secured itself against floods.
 Secure@adj.无虑的#Are you worried about passing the final exam, or do you feel secure?
 Siege@n.围攻#The country was in a state of siege, and tanks were lined up in front of the presidential palace.
 Strive@v.努力#We should strive for the truth.

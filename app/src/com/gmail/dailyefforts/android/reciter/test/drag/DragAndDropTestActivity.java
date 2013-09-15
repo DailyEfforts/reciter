@@ -19,6 +19,7 @@ import android.view.View.OnDragListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gmail.dailyefforts.android.reciter.Config;
@@ -58,6 +59,8 @@ public class DragAndDropTestActivity extends AbstractTestActivity implements
 
 	private CheckBox mCheckBox;
 
+	private TextView mTextViewSample;
+
 	private static ArrayList<String> mWrongWordList = new ArrayList<String>();
 
 	@Override
@@ -70,6 +73,7 @@ public class DragAndDropTestActivity extends AbstractTestActivity implements
 		mBtnOptionTopRight = (Button) findViewById(R.id.btn_drop_meaning_top_right);
 		mBtnOptionBottomLeft = (Button) findViewById(R.id.btn_drop_meaning_bottom_left);
 		mBtnOptionBottomRight = (Button) findViewById(R.id.btn_drop_meaning_bottom_right);
+		mTextViewSample = (TextView) findViewById(R.id.tv_sample);
 
 		mCheckBox = (CheckBox) findViewById(R.id.check_auto_speak);
 
@@ -275,8 +279,19 @@ public class DragAndDropTestActivity extends AbstractTestActivity implements
 		mBtnOptionTopRight.setText(topRightWord.getMeaning());
 		mBtnOptionBottomLeft.setText(bottomLeftWord.getMeaning());
 		mBtnOptionBottomRight.setText(bottomRightWord.getMeaning());
-		System.out.println("DragAndDropTestActivity.buildTestCase() mWordIdx: "
-				+ mWordIdx);
+		if (mTextViewSample != null) {
+			String sample = curentWord.getSample();
+			if (sample != null) {
+				mTextViewSample.setText(sample);
+				if (mTextViewSample.getVisibility() != View.VISIBLE) {
+					mTextViewSample.setVisibility(View.VISIBLE);
+				}
+			} else {
+				if (mTextViewSample.getVisibility() != View.GONE) {
+					mTextViewSample.setVisibility(View.GONE);
+				}
+			}
+		}
 
 		if (mWordIdx == 0) {
 			mBtnArrowLeft.setVisibility(View.INVISIBLE);

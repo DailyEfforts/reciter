@@ -62,7 +62,7 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String TABLE_TEST_REPORT_LIUYI_5000 = "testreport_liuyi_5000";
 	public static final String TABLE_TEST_REPORT_LIUYI_10000 = "testreport_liuyi_10000";
 	public static final String TABLE_TEST_REPORT_LIUYI_22000 = "testreport_liuyi_22000";
-	
+
 	public static final String TEST_REPORT_ID = "_id";
 	public static final String TEST_TESTED_NUMBER = "tested_number";
 	public static final String TEST_CORRECT_NUMBER = "correct_number";
@@ -229,8 +229,9 @@ public class DBA extends SQLiteOpenHelper {
 		Cursor cursor = query(table, null, WORD_ID + "=?",
 				new String[] { String.valueOf(idx) }, null, null, null);
 
-		String word = "";
-		String meaning = "";
+		String word = null;
+		String meaning = null;
+		String sample = null;
 		int id = -1;
 		if (cursor != null) {
 			if (cursor.moveToFirst()) {
@@ -238,11 +239,12 @@ public class DBA extends SQLiteOpenHelper {
 
 				word = cursor.getString(cursor.getColumnIndex(WORD_WORD));
 				meaning = cursor.getString(cursor.getColumnIndex(WORD_MEANING));
+				sample = cursor.getString(cursor.getColumnIndex(WORD_SAMPLE));
 			}
 			cursor.close();
 		}
 
-		return new Word(id, word, meaning);
+		return new Word(id, word, meaning, sample);
 
 	}
 
@@ -306,15 +308,17 @@ public class DBA extends SQLiteOpenHelper {
 				new String[] { "0" }, null, null, null);
 
 		int i = 0;
-		String word = "";
-		String meaning = "";
+		String word = null;
+		String meaning = null;
+		String sample = null;
 		int id = -1;
 		if (cursor != null) {
 			while (cursor.moveToNext()) {
 				id = cursor.getInt(cursor.getColumnIndex(WORD_ID));
 				word = cursor.getString(cursor.getColumnIndex(WORD_WORD));
 				meaning = cursor.getString(cursor.getColumnIndex(WORD_MEANING));
-				Word value = new Word(id, word, meaning);
+				sample = cursor.getString(cursor.getColumnIndex(WORD_SAMPLE));
+				Word value = new Word(id, word, meaning, sample);
 				map.put(i++, value);
 			}
 			cursor.close();
@@ -346,12 +350,12 @@ public class DBA extends SQLiteOpenHelper {
 
 	public void loadUnitWords(int start, int end) {
 		String sql = "select " + DBA.WORD_ID + ", " + DBA.WORD_WORD + ", "
-				+ DBA.WORD_MEANING + " from " + DBA.CURRENT_WORD_TABLE
+				+ DBA.WORD_MEANING + ", " + WORD_SAMPLE + " from " + DBA.CURRENT_WORD_TABLE
 				+ " where " + DBA.WORD_ID + ">=? AND " + DBA.WORD_ID + "<=?;";
 
 		Cursor cursor = dba.rawQuery(sql, new String[] { String.valueOf(start),
 				String.valueOf(end) });
-
+		
 		if (Config.DEBUG) {
 			Log.d(TAG, "onClick() start: " + start + ", end: " + end);
 		}
@@ -360,17 +364,22 @@ public class DBA extends SQLiteOpenHelper {
 			SparseArray<Word> map = Word.getMap();
 			map.clear();
 			int idx = 0;
+			String word = null;
+			String meanning = null;
+			String sample = null;
 			while (cursor.moveToNext()) {
 				int id = cursor.getInt(cursor.getColumnIndex(DBA.WORD_ID));
-				String word = cursor.getString(cursor
-						.getColumnIndex(DBA.WORD_WORD));
-				String meanning = cursor.getString(cursor
+				word = cursor.getString(cursor.getColumnIndex(DBA.WORD_WORD));
+				meanning = cursor.getString(cursor
 						.getColumnIndex(DBA.WORD_MEANING));
+				sample = cursor.getString(cursor
+						.getColumnIndex(DBA.WORD_SAMPLE));
 				if (Config.DEBUG) {
-					Log.d(TAG, String.format("id: %d, word: %s, meanning: %s",
-							id, word, meanning));
+					Log.d(TAG, String.format(
+							"id: %d, word: %s, meanning: %s, sample: %s", id,
+							word, meanning, sample));
 				}
-				Word newWord = new Word(id, word, meanning);
+				Word newWord = new Word(id, word, meanning, sample);
 				map.put(idx++, newWord);
 			}
 			cursor.close();
@@ -457,10 +466,10 @@ public class DBA extends SQLiteOpenHelper {
 		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_NCE4));
 		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_REFLETS1U));
 		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LINGUISTICS_GLOSSARY));
-		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_PRO_EN_CORE));
-		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LIUYI_10000));
+		// db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_PRO_EN_CORE));
+		// db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LIUYI_10000));
 		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LIUYI_5000));
-		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LIUYI_22000));
+		// db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LIUYI_22000));
 
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT));
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_NCE1));
@@ -469,10 +478,10 @@ public class DBA extends SQLiteOpenHelper {
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_NCE4));
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_REFLETS1U));
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_INGUISTICS_GLOSSARY));
-		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_PRO_EN_CORE));
+		// db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_PRO_EN_CORE));
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_LIUYI_5000));
-		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_LIUYI_10000));
-		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_LIUYI_22000));
+		// db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_LIUYI_10000));
+		// db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_LIUYI_22000));
 	}
 
 	@Override

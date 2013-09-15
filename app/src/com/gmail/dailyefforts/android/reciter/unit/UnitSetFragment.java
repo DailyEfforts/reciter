@@ -136,11 +136,16 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 				}
 				ContentValues values = new ContentValues();
 				dba.beginTransaction();
+
+				String word = null;
+				String meaning = null;
+				String example = null;
+				int i = 1;
 				while ((str = reader.readLine()) != null) {
 					String[] arr = str.split(Config.WORD_MEANING_SPLIT);
 					if (arr != null && arr.length == 2) {
-						String word = arr[0].trim();
-						String meaning = arr[1].trim();
+						word = arr[0].trim();
+						meaning = arr[1].trim();
 
 						if (dba.exist(word, meaning)) {
 							if (Config.DEBUG) {
@@ -150,10 +155,28 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 						}
 
 						values.clear();
+						if (Config.CURRENT_BOOK_NAME == Config.BOOK_NAME_PRO_LIUYI_5000) {
+							if (meaning != null) {
+								int indexOf = meaning.indexOf("#");
+								if (indexOf != -1) {
+									example = meaning.substring(indexOf + 1);
+									meaning = meaning.substring(0, indexOf);
+									if (meaning != null) {
+										int idx = meaning.indexOf(".");
+										if (idx != -1) {
+											meaning = meaning
+													.substring(idx + 1);
+										}
+									}
+									values.put(DBA.WORD_SAMPLE, example);
+								}
+							}
+						}
 						values.put(DBA.WORD_WORD, word);
 						values.put(DBA.WORD_MEANING, meaning);
 						values.put(DBA.WORD_TIMESTAMP,
 								System.currentTimeMillis());
+
 						dba.insert(DBA.CURRENT_WORD_TABLE, null, values);
 					}
 				}

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gmail.dailyefforts.android.reviwer"
-    android:versionCode="26"
-    android:versionName="2.1.1" >
+    android:versionCode="27"
+    android:versionName="2.2" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -72,7 +72,9 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.gmail.dailyefforts.android.reciter.test.drag.DragAndDropTestActivity" >
+        <activity
+            android:name="com.gmail.dailyefforts.android.reciter.test.drag.DragAndDropTestActivity"
+            android:screenOrientation="portrait" >
         </activity>
         <activity android:name="com.gmail.dailyefforts.android.reciter.version.DownloadConfirm" >
         </activity>

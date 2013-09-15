@@ -9,10 +9,10 @@
         <item>@string/nce4</item>
         <item>@string/reflets_1</item>
         <item>@string/linguistics_glossary</item>
-        <item>@string/pro_en_core</item>
         <item>@string/liuyi_5000</item>
-        <item>@string/liuyi_10000</item>
-        <item>@string/liuyi_22000</item>
+<!--          <item>@string/pro_en_core</item> -->
+<!--         <item>@string/liuyi_10000</item>
+        <item>@string/liuyi_22000</item> -->
     </string-array>
     <string-array name="test_types">
         <item>@string/test_type_foreign_to_chinese_correction_book</item>

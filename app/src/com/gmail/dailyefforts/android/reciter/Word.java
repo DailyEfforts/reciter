@@ -7,12 +7,18 @@ import android.util.SparseArray;
 public class Word {
 	private String word;
 	private String meaning;
+	private String sample;
 	private int id;
 
 	public Word(int id, String word, String meaning) {
+		this(id, word, meaning, null);
+	}
+
+	public Word(int id, String word, String meaning, String sample) {
 		this.id = id;
 		this.word = word;
 		this.meaning = meaning;
+		this.sample = sample;
 	}
 
 	public String getWord() {
@@ -21,6 +27,10 @@ public class Word {
 
 	public int getId() {
 		return id;
+	}
+
+	public String getSample() {
+		return sample;
 	}
 
 	public String getMeaning() {
@@ -35,7 +45,7 @@ public class Word {
 
 	@Override
 	public String toString() {
-		return String.format(Locale.getDefault(), "[%d, %s, %s]", id, word,
-				meaning);
+		return String.format(Locale.getDefault(), "[%d, %s, %s, %s]", id, word,
+				meaning, sample);
 	}
 }

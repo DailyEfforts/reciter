@@ -44,9 +44,9 @@
     <string name="reflets_1">走遍法国（第一册）</string>
     <string name="linguistics_glossary">语言学术语</string>
     <string name="pro_en_core">英语专业核心词汇</string>
-    <string name="liuyi_5000">刘毅 5,000</string>
-    <string name="liuyi_10000">刘毅 10,000</string>
-    <string name="liuyi_22000">刘毅 22,000</string>
+    <string name="liuyi_5000">刘毅 5, 000</string>
+    <string name="liuyi_10000">刘毅 10, 000</string>
+    <string name="liuyi_22000">刘毅 22, 000</string>
     <string name="unit_id">第 <b>%d</b> 单元</string>
     <string name="countdown_timer">考研倒计时</string>
     <string name="done">完成</string>

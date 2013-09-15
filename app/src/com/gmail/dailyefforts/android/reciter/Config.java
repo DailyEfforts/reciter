@@ -2,7 +2,7 @@ package com.gmail.dailyefforts.android.reciter;
 
 public class Config {
 
-	public static final boolean DEBUG = true;
+	public static final boolean DEBUG = false;
 
 	// Actions
 	public static final String ACTION_NAME_CHECK_VERSION = "com.gmail.dailyefforts.android.reciter.CheckVersion";
