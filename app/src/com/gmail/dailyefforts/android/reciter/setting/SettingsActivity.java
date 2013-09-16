@@ -70,8 +70,7 @@ public class SettingsActivity extends PreferenceActivity {
 			mAllowReviewNotifyPref = (CheckBoxPreference) findPreference(getString(R.string.pref_key_allow_review_notification));
 
 			if (mSharedPref == null || mVersionPref == null
-					|| mVersionPref == null || mResetPref == null
-					|| mAllowReviewNotifyPref == null) {
+					|| mResetPref == null || mAllowReviewNotifyPref == null) {
 				return;
 			}
 

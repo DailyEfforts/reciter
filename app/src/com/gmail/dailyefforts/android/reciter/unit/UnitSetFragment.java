@@ -140,7 +140,7 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 				String word = null;
 				String meaning = null;
 				String example = null;
-				int i = 1;
+				
 				while ((str = reader.readLine()) != null) {
 					String[] arr = str.split(Config.WORD_MEANING_SPLIT);
 					if (arr != null && arr.length == 2) {

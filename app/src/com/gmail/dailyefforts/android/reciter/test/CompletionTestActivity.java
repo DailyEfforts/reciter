@@ -260,6 +260,11 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 
 	private void showTestReport() {
 		setProgress(Window.PROGRESS_END);
+		if (mWrongWordList == null || mDba == null) {
+			Log.e(TAG, "showTestReport() mWrongWordList: " + mWrongWordList);
+			Log.e(TAG, "showTestReport() mDba: " + mDba);
+			return;
+		}
 
 		long elapsedTime = Math
 				.round((System.currentTimeMillis() - mStartTime) / 1000.0);
@@ -271,20 +276,18 @@ public class CompletionTestActivity extends AbstractTestActivity implements
 
 		int accuracy = (int) (bingoNum * 100.0f / mTestedSize);
 
-		if (mDba != null) {
-			ContentValues values = new ContentValues();
-			values.put(DBA.TEST_TESTED_NUMBER, mTestedSize);
-			values.put(DBA.TEST_CORRECT_NUMBER, bingoNum);
-			values.put(DBA.TEST_ELAPSED_TIME, elapsedTime);
-			values.put(DBA.TEST_ACCURACY, accuracy);
-			values.put(DBA.TEST_DB_SIZE, mDba.size());
-			values.put(DBA.TEST_TIMESTAMP, System.currentTimeMillis());
-			if (mWrongWordList != null) {
-				Collections.sort(mWrongWordList);
-				values.put(DBA.TEST_WRONG_WORD_LIST, mWrongWordList.toString());
-			}
-			mDba.insert(DBA.CURRENT_TEST_REPORT_TABLE, null, values);
+		ContentValues values = new ContentValues();
+		values.put(DBA.TEST_TESTED_NUMBER, mTestedSize);
+		values.put(DBA.TEST_CORRECT_NUMBER, bingoNum);
+		values.put(DBA.TEST_ELAPSED_TIME, elapsedTime);
+		values.put(DBA.TEST_ACCURACY, accuracy);
+		values.put(DBA.TEST_DB_SIZE, mDba.size());
+		values.put(DBA.TEST_TIMESTAMP, System.currentTimeMillis());
+		if (mWrongWordList != null) {
+			Collections.sort(mWrongWordList);
+			values.put(DBA.TEST_WRONG_WORD_LIST, mWrongWordList.toString());
 		}
+		mDba.insert(DBA.CURRENT_TEST_REPORT_TABLE, null, values);
 
 		String message = String.format(mTestReportStr, mTestedSize, bingoNum,
 				elapsedTime, accuracy, mDba.size(),
