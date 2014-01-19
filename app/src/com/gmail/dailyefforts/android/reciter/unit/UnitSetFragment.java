@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -25,9 +27,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.gmail.dailyefforts.android.reciter.Config;
-import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.android.reciter.db.DBA;
 import com.gmail.dailyefforts.android.reciter.test.drag.DragAndDropTestActivity;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class UnitSetFragment extends Fragment implements OnItemClickListener {
 	private static final String TAG = UnitSetFragment.class.getSimpleName();
@@ -115,6 +117,18 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 			if (assetMngr == null || dba == null) {
 				return false;
 			}
+			SQLiteDatabase db = null;
+			try {
+				db = dba.getWritableDatabase();
+			} catch (SQLiteException e) {
+				Log.d(TAG, "doInBackground() " + e.getMessage());
+			}
+			
+			if (db == null) {
+				return false;
+			}
+			
+			db.beginTransaction();
 			BufferedReader reader = null;
 			try {
 				reader = new BufferedReader(new InputStreamReader(
@@ -135,12 +149,11 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 					}
 				}
 				ContentValues values = new ContentValues();
-				dba.beginTransaction();
 
 				String word = null;
 				String meaning = null;
 				String example = null;
-				
+
 				while ((str = reader.readLine()) != null) {
 					String[] arr = str.split(Config.WORD_MEANING_SPLIT);
 					if (arr != null && arr.length == 2) {
@@ -177,14 +190,14 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 						values.put(DBA.WORD_TIMESTAMP,
 								System.currentTimeMillis());
 
-						dba.insert(DBA.CURRENT_WORD_TABLE, null, values);
+						db.insert(DBA.CURRENT_WORD_TABLE, null, values);
 					}
 				}
-				dba.setTransactionSuccessful();
-				dba.endTransaction();
+				db.setTransactionSuccessful();
 			} catch (IOException e) {
 				e.printStackTrace();
 			} finally {
+				db.endTransaction();
 				if (reader != null) {
 					try {
 						reader.close();

@@ -441,20 +441,8 @@ public class DBA extends SQLiteOpenHelper {
 	 * e.getMessage()); } }
 	 */
 
-	public void beginTransaction() {
-		getWritableDatabase().beginTransaction();
-	}
-
-	public void setTransactionSuccessful() {
-		getWritableDatabase().setTransactionSuccessful();
-	}
-
 	public int delete(String table, String whereClause, String[] whereArgs) {
 		return getWritableDatabase().delete(table, whereClause, whereArgs);
-	}
-
-	public void endTransaction() {
-		getWritableDatabase().endTransaction();
 	}
 
 	@Override
