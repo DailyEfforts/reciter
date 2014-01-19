@@ -1,6 +1,8 @@
 package com.gmail.dailyefforts.android.reciter;
 
 public class Config {
+	private Config() {
+	}
 
 	public static final boolean DEBUG = false;
 
