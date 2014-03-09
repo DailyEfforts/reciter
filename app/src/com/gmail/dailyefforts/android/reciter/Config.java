@@ -49,6 +49,7 @@ public class Config {
 	public static final int BOOK_NAME_LINGUISTICS_GLOSSARY = R.raw.linguistics_glossary;
 	public static final int BOOK_NAME_PRO_EN_CORE = R.raw.pro_en_core;
 	public static final int BOOK_NAME_PRO_LIUYI_5000 = R.raw.liuyi_5000;
+	public static final int BOOK_NAME_OGDEN = R.raw.ogden;
 	public static int CURRENT_BOOK_NAME = BOOK_NAME_REFLETS1U;
 
 	// Languages

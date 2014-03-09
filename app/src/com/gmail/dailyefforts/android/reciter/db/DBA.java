@@ -32,6 +32,7 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String TABLE_WORD_LIST_LIUYI_5000 = "liuyi_5000";
 	public static final String TABLE_WORD_LIST_LIUYI_10000 = "liuyi_10000";
 	public static final String TABLE_WORD_LIST_LIUYI_22000 = "liuyi_22000";
+	public static final String TABLE_WORD_LIST_OGDEN = "ogden";
 
 	public static final String WORD_ID = "_id";
 	public static final String WORD_WORD = "word";
@@ -60,6 +61,7 @@ public class DBA extends SQLiteOpenHelper {
 	public static final String TABLE_TEST_REPORT_INGUISTICS_GLOSSARY = "testreport_linguistics_glossary";
 	public static final String TABLE_TEST_REPORT_PRO_EN_CORE = "testreport_pro_en_core";
 	public static final String TABLE_TEST_REPORT_LIUYI_5000 = "testreport_liuyi_5000";
+	public static final String TABLE_TEST_REPORT_OGDEN = "testreport_ogden";
 	public static final String TABLE_TEST_REPORT_LIUYI_10000 = "testreport_liuyi_10000";
 	public static final String TABLE_TEST_REPORT_LIUYI_22000 = "testreport_liuyi_22000";
 
@@ -457,6 +459,7 @@ public class DBA extends SQLiteOpenHelper {
 		// db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_PRO_EN_CORE));
 		// db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LIUYI_10000));
 		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LIUYI_5000));
+		db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_OGDEN));
 		// db.execSQL(getCreateWordListSql(TABLE_WORD_LIST_LIUYI_22000));
 
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT));
@@ -468,6 +471,7 @@ public class DBA extends SQLiteOpenHelper {
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_INGUISTICS_GLOSSARY));
 		// db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_PRO_EN_CORE));
 		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_LIUYI_5000));
+		db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_OGDEN));
 		// db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_LIUYI_10000));
 		// db.execSQL(getCreateTestTableSql(TABLE_TEST_REPORT_LIUYI_22000));
 	}
