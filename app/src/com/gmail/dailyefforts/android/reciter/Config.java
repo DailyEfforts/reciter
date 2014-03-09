@@ -1,5 +1,7 @@
 package com.gmail.dailyefforts.android.reciter;
 
+import com.gmail.dailyefforts.android.reviwer.R;
+
 public class Config {
 	private Config() {
 	}
@@ -38,18 +40,16 @@ public class Config {
 	public static final boolean DEFAULT_ALLOW_REVIEW_NOTIFICATION = true;
 
 	// Book names
-	public static final String BOOK_NAME_MOT = "mot.txt";
-	public static final String BOOK_NAME_NCE1 = "nce1.txt";
-	public static final String BOOK_NAME_NCE2 = "nce2.txt";
-	public static final String BOOK_NAME_NCE3 = "nce3.txt";
-	public static final String BOOK_NAME_NCE4 = "nce4.txt";
-	public static final String BOOK_NAME_REFLETS1U = "reflets1.txt";
-	public static final String BOOK_NAME_LINGUISTICS_GLOSSARY = "linguistics_glossary.txt";
-	public static final String BOOK_NAME_PRO_EN_CORE = "pro_en_core.txt";
-	public static final String BOOK_NAME_PRO_LIUYI_5000 = "liuyi_5000.txt";
-	public static final String BOOK_NAME_PRO_LIUYI_10000 = "liuyi_10000.txt";
-	public static final String BOOK_NAME_PRO_LIUYI_22000 = "liuyi_22000.txt";
-	public static String CURRENT_BOOK_NAME = BOOK_NAME_REFLETS1U;
+	public static final int BOOK_NAME_MOT = R.raw.mot;
+	public static final int BOOK_NAME_NCE1 = R.raw.nce1;
+	public static final int BOOK_NAME_NCE2 = R.raw.nce2;
+	public static final int BOOK_NAME_NCE3 = R.raw.nce3;
+	public static final int BOOK_NAME_NCE4 = R.raw.nce4;
+	public static final int BOOK_NAME_REFLETS1U = R.raw.reflets1;
+	public static final int BOOK_NAME_LINGUISTICS_GLOSSARY = R.raw.linguistics_glossary;
+	public static final int BOOK_NAME_PRO_EN_CORE = R.raw.pro_en_core;
+	public static final int BOOK_NAME_PRO_LIUYI_5000 = R.raw.liuyi_5000;
+	public static int CURRENT_BOOK_NAME = BOOK_NAME_REFLETS1U;
 
 	// Languages
 	public static Language CURRENT_LANGUAGE = Language.English;

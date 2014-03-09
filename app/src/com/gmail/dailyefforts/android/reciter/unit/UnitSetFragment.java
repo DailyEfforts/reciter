@@ -2,6 +2,7 @@ package com.gmail.dailyefforts.android.reciter.unit;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import android.content.ContentValues;
@@ -123,16 +124,18 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 			} catch (SQLiteException e) {
 				Log.d(TAG, "doInBackground() " + e.getMessage());
 			}
-			
+
 			if (db == null) {
 				return false;
 			}
-			
+
 			db.beginTransaction();
 			BufferedReader reader = null;
 			try {
-				reader = new BufferedReader(new InputStreamReader(
-						assetMngr.open(Config.CURRENT_BOOK_NAME)));
+				InputStream in = getResources().openRawResource(
+						Config.CURRENT_BOOK_NAME);
+				reader = new BufferedReader(new InputStreamReader(in));
+				// getResources().openRawResource(R.)
 				String str = null;
 				str = reader.readLine();
 				if (str != null && str.contains(Config.TOTAL)) {
