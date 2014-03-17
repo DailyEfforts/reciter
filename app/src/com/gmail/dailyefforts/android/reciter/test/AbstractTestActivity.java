@@ -1,5 +1,6 @@
 package com.gmail.dailyefforts.android.reciter.test;
 
+import java.lang.ref.WeakReference;
 import java.util.Locale;
 
 import android.app.Activity;
@@ -76,20 +77,28 @@ public abstract class AbstractTestActivity extends Activity implements
 
 		perpareTipStr();
 
-		mAutoForwardHandler = new AutoForwardHandler();
+		mAutoForwardHandler = new AutoForwardHandler(this);
 		mStartTime = System.currentTimeMillis();
 	}
 
-	private class AutoForwardHandler extends Handler {
+	private static class AutoForwardHandler extends Handler {
 		public static final int MSG_MOVE_ON = 0;
+		private final WeakReference<AbstractTestActivity> mRef;
+
+		public AutoForwardHandler(AbstractTestActivity activity) {
+			mRef = new WeakReference<AbstractTestActivity>(activity);
+		}
 
 		@Override
 		public void handleMessage(Message msg) {
-			switch (msg.what) {
-			case MSG_MOVE_ON:
-				forward();
-				removeMessages(MSG_MOVE_ON);
-				break;
+			AbstractTestActivity ac = mRef.get();
+			if (ac != null) {
+				switch (msg.what) {
+				case MSG_MOVE_ON:
+					ac.forward();
+					removeMessages(MSG_MOVE_ON);
+					break;
+				}
 			}
 		}
 	}
@@ -224,15 +233,6 @@ public abstract class AbstractTestActivity extends Activity implements
 			Log.e(TAG, "Could not initialize TextToSpeech.");
 		}
 	}
-
-	// private boolean isAudible() {
-	// if (mAudioMngr != null
-	// && mAudioMngr.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
-	// return true;
-	// }
-	//
-	// return false;
-	// }
 
 	protected void forward() {
 		mWordIdx++;
