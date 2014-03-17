@@ -86,7 +86,7 @@ public class DBA extends SQLiteOpenHelper {
 				+ TEST_WRONG_WORD_LIST + " TEXT, " + TEST_OTHER + " TEXT);";
 	}
 
-	private static DBA dba = null;
+	private static DBA sDba = null;
 
 	public static String CURRENT_WORD_TABLE = TABLE_WORD_LIST;
 	public static String CURRENT_TEST_REPORT_TABLE = TABLE_TEST_REPORT;
@@ -333,10 +333,10 @@ public class DBA extends SQLiteOpenHelper {
 	}
 
 	public static DBA getInstance(Context context) {
-		if (dba == null) {
-			dba = new DBA(context.getApplicationContext());
+		if (sDba == null) {
+			sDba = new DBA(context.getApplicationContext());
 		}
-		return dba;
+		return sDba;
 	}
 
 	public Cursor query(String table, String[] columns, String selection,
@@ -352,12 +352,13 @@ public class DBA extends SQLiteOpenHelper {
 
 	public void loadUnitWords(int start, int end) {
 		String sql = "select " + DBA.WORD_ID + ", " + DBA.WORD_WORD + ", "
-				+ DBA.WORD_MEANING + ", " + WORD_SAMPLE + " from " + DBA.CURRENT_WORD_TABLE
-				+ " where " + DBA.WORD_ID + ">=? AND " + DBA.WORD_ID + "<=?;";
+				+ DBA.WORD_MEANING + ", " + WORD_SAMPLE + " from "
+				+ DBA.CURRENT_WORD_TABLE + " where " + DBA.WORD_ID + ">=? AND "
+				+ DBA.WORD_ID + "<=?;";
 
-		Cursor cursor = dba.rawQuery(sql, new String[] { String.valueOf(start),
+		Cursor cursor = sDba.rawQuery(sql, new String[] { String.valueOf(start),
 				String.valueOf(end) });
-		
+
 		if (Config.DEBUG) {
 			Log.d(TAG, "onClick() start: " + start + ", end: " + end);
 		}

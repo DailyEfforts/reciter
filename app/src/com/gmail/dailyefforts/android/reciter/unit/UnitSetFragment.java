@@ -34,9 +34,9 @@ import com.gmail.dailyefforts.android.reviwer.R;
 
 public class UnitSetFragment extends Fragment implements OnItemClickListener {
 	private static final String TAG = UnitSetFragment.class.getSimpleName();
-	private RelativeLayout loadingTip;
+	private RelativeLayout mLoadingTip;
 	private GridView mGridView;
-	private DBA dba;
+	private DBA mDba;
 	private Animation mAnimation;
 
 	private static int UNIT = Config.DEFAULT_WORD_COUNT_OF_ONE_UNIT;
@@ -46,9 +46,9 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_unit_grid, container,
 				false);
-		loadingTip = (RelativeLayout) view.findViewById(R.id.rl_loading);
+		mLoadingTip = (RelativeLayout) view.findViewById(R.id.rl_loading);
 
-		dba = DBA.getInstance(getActivity());
+		mDba = DBA.getInstance(getActivity());
 
 		mGridView = (GridView) view.findViewById(R.id.gv_unit);
 
@@ -79,14 +79,14 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 			super.onPostExecute(result);
 
 			if (result) {
-				if (loadingTip != null) {
-					loadingTip.setVisibility(View.GONE);
+				if (mLoadingTip != null) {
+					mLoadingTip.setVisibility(View.GONE);
 				}
-				if (mGridView != null && dba != null) {
+				if (mGridView != null && mDba != null) {
 					if (Config.DEBUG) {
-						Log.d(TAG, "onPostExecute() " + dba.getCount());
+						Log.d(TAG, "onPostExecute() " + mDba.getCount());
 					}
-					int count = dba.getCount();
+					int count = mDba.getCount();
 
 					int unitSize = count % UNIT == 0 ? count / UNIT : count
 							/ UNIT + 1;
@@ -111,16 +111,16 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 			AssetManager assetMngr = getActivity().getAssets();
 			if (Config.DEBUG) {
 				Log.d(TAG, "doInBackground() assetMngr: " + assetMngr
-						+ ", dba: " + dba);
+						+ ", mDba: " + mDba);
 				Log.d(TAG, "doInBackground() CURRENT_BOOK_NAME: "
 						+ Config.CURRENT_BOOK_NAME);
 			}
-			if (assetMngr == null || dba == null) {
+			if (assetMngr == null || mDba == null) {
 				return false;
 			}
 			SQLiteDatabase db = null;
 			try {
-				db = dba.getWritableDatabase();
+				db = mDba.getWritableDatabase();
 			} catch (SQLiteException e) {
 				Log.d(TAG, "doInBackground() " + e.getMessage());
 			}
@@ -145,9 +145,9 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 					if (Config.DEBUG) {
 						Log.d(TAG, "doInBackground() total : "
 								+ Config.CURRENT_BOOK_NAME + total + ", db: "
-								+ dba.getCount());
+								+ mDba.getCount());
 					}
-					if (total > 200 && dba.getCount() > total - 200) {
+					if (total > 200 && mDba.getCount() > total - 200) {
 						return true;
 					}
 				}
@@ -163,7 +163,7 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 						word = arr[0].trim();
 						meaning = arr[1].trim();
 
-						if (dba.exist(word, meaning)) {
+						if (mDba.exist(word, meaning)) {
 							if (Config.DEBUG) {
 								Log.d(TAG, "exist: " + word + " - " + meaning);
 							}
@@ -266,7 +266,7 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 			}
 
 			if (convertView instanceof UnitView) {
-				// TODO dba non-null check
+				// TODO mDba non-null check
 				UnitView tmp = ((UnitView) convertView);
 				tmp.id = position;
 				tmp.start = position * UNIT + 1;
@@ -289,7 +289,7 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 				}
 
 				if (holder.status != null) {
-					if (dba != null && dba.isPass(tmp.start, tmp.end)) {
+					if (mDba != null && mDba.isPass(tmp.start, tmp.end)) {
 						holder.status
 								.setImageResource(android.R.drawable.presence_online);
 					} else {
@@ -309,7 +309,7 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 			long id) {
 		int start = position * UNIT + 1;
 		int end = (position + 1) * UNIT;
-		dba.loadUnitWords(start, end);
+		mDba.loadUnitWords(start, end);
 		Intent intent = new Intent(getActivity(), DragAndDropTestActivity.class);
 		getActivity().startActivity(intent);
 	}

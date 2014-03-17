@@ -36,17 +36,17 @@ public class FileChecker {
 
 	private static String getMd5Sum(final File file) {
 		String md5 = null;
-
+		InputStream is = null;
 		try {
 			MessageDigest digester = MessageDigest.getInstance("MD5");
 
-			InputStream in = new FileInputStream(file);
+			is = new FileInputStream(file);
 
 			byte[] bytes = new byte[8192];
 
 			int byteCount;
 
-			while ((byteCount = in.read(bytes)) > 0) {
+			while ((byteCount = is.read(bytes)) > 0) {
 				digester.update(bytes, 0, byteCount);
 			}
 
@@ -59,6 +59,15 @@ public class FileChecker {
 			Log.e(TAG, e.getMessage());
 		} catch (IOException e) {
 			Log.e(TAG, e.getMessage());
+		} finally {
+			if (is != null) {
+				try {
+					is.close();
+				} catch (IOException e) {
+					Log.e(TAG, e.getMessage());
+				}
+				is = null;
+			}
 		}
 
 		// BigInteger bigInt = new BigInteger(1, digest);

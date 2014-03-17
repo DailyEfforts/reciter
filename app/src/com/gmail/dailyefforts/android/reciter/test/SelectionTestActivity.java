@@ -34,9 +34,9 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 
 	private int mBingoNum;
 
-	private boolean isFirstTouch;
+	private boolean bIsFirstTouch;
 
-	private LinearLayout optCat;
+	private LinearLayout mOptCat;
 
 	private ArrayList<OptionButton> mOptList;
 
@@ -51,8 +51,8 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 		mTextViewTestingItem = (TextView) findViewById(R.id.tv_word);
 
 		mDbCount = mDba.getCount();
-		optCat = (LinearLayout) findViewById(R.id.opt_category);
-		optCat.setWeightSum(Config.DEFAULT_OPTION_COUNT);
+		mOptCat = (LinearLayout) findViewById(R.id.opt_category);
+		mOptCat.setWeightSum(Config.DEFAULT_OPTION_COUNT);
 
 		Bundle extras = getIntent().getExtras();
 		int testType = extras.getInt(Config.INTENT_EXTRA_TEST_TYPE);
@@ -79,7 +79,7 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 		}
 
 		for (OptionButton tmp : mOptList) {
-			optCat.addView(tmp);
+			mOptCat.addView(tmp);
 			// tmp.setOnTouchListener(this);
 			tmp.setOnClickListener(this);
 		}
@@ -99,7 +99,7 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 	@Override
 	protected void onPause() {
 		super.onPause();
-		if (!isFirstTouch && mDba != null && mDba.getStar(mWord) <= 0) {
+		if (!bIsFirstTouch && mDba != null && mDba.getStar(mWord) <= 0) {
 			mDba.star(mWord);
 		}
 	}
@@ -169,7 +169,7 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 			}
 		}
 
-		isFirstTouch = true;
+		bIsFirstTouch = true;
 	}
 
 	private boolean FLAG = false;
@@ -182,7 +182,7 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 		Word w = mWordsMeaningsMap.get(v.getId());
 		if (w != null && mWord != null) {
 			if (mWord.equals(w.getWord())) {
-				if (isFirstTouch) {
+				if (bIsFirstTouch) {
 					mBingoNum++;
 				}
 				if (hasNext()) {
@@ -194,8 +194,8 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 				if (mDba != null) {
 					mDba.star(mWord);
 				}
-				if (isFirstTouch) {
-					isFirstTouch = false;
+				if (bIsFirstTouch) {
+					bIsFirstTouch = false;
 				}
 				remember();
 				((Button) v).setText(w.getWord() + "\n" + w.getMeaning());
@@ -217,29 +217,32 @@ public class SelectionTestActivity extends AbstractTestActivity implements
 
 	private void showTestReport() {
 		setProgress(Window.PROGRESS_END);
+		if (mDba == null) {
+			Log.e(TAG, "showTestReport() mDba: " + mDba);
+			return;
+		}
 
 		long elapsedTime = Math
 				.round((System.currentTimeMillis() - mStartTime) / 1000.0);
 		int accuracy = (int) (mBingoNum * 100.0f / mWordList.size());
 
-		if (mDba != null) {
-			ContentValues values = new ContentValues();
-			values.put(DBA.TEST_TESTED_NUMBER, mWordList.size());
-			values.put(DBA.TEST_CORRECT_NUMBER, mBingoNum);
-			values.put(DBA.TEST_ELAPSED_TIME, elapsedTime);
-			values.put(DBA.TEST_ACCURACY, accuracy);
-			values.put(DBA.TEST_DB_SIZE, mDba.size());
-			values.put(DBA.TEST_TIMESTAMP, System.currentTimeMillis());
-			if (mWrongWordList != null) {
-				Collections.sort(mWrongWordList);
-				values.put(DBA.TEST_WRONG_WORD_LIST, mWrongWordList.toString());
-			}
-			mDba.insert(DBA.CURRENT_TEST_REPORT_TABLE, null, values);
+		ContentValues values = new ContentValues();
+		values.put(DBA.TEST_TESTED_NUMBER, mWordList.size());
+		values.put(DBA.TEST_CORRECT_NUMBER, mBingoNum);
+		values.put(DBA.TEST_ELAPSED_TIME, elapsedTime);
+		values.put(DBA.TEST_ACCURACY, accuracy);
+		final int dbSize = mDba.size();
+		values.put(DBA.TEST_DB_SIZE, dbSize);
+		values.put(DBA.TEST_TIMESTAMP, System.currentTimeMillis());
+		if (mWrongWordList != null) {
+			Collections.sort(mWrongWordList);
+			values.put(DBA.TEST_WRONG_WORD_LIST, mWrongWordList.toString());
 		}
+		mDba.insert(DBA.CURRENT_TEST_REPORT_TABLE, null, values);
 
 		String message = String.format(mTestReportStr, mWordList.size(),
-				mBingoNum, elapsedTime, accuracy, mDba.size(),
-				(int) (mDba.size() * (mBingoNum * 1.0f / mWordList.size())));
+				mBingoNum, elapsedTime, accuracy, dbSize,
+				(int) (dbSize * (mBingoNum * 1.0f / mWordList.size())));
 		DialogFragment newFragment = TestReportFragment.newInstance(
 				getString(R.string.test_report), message);
 		newFragment.show(getFragmentManager(), "dialog");

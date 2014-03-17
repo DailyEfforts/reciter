@@ -11,7 +11,7 @@ import android.util.Log;
 import com.gmail.dailyefforts.android.reciter.Config;
 
 public class TestReportsProvider extends ContentProvider {
-	private DBA dba;
+	private DBA mDba;
 	private static final String AUTHORITY = "com.gmail.dailyefforts.android.reciter.testreport";
 	private static final String BASE_PATH = DBA.CURRENT_TEST_REPORT_TABLE;
 	public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY
@@ -20,9 +20,9 @@ public class TestReportsProvider extends ContentProvider {
 
 	@Override
 	public boolean onCreate() {
-		dba = DBA.getInstance(getContext().getApplicationContext());
+		mDba = DBA.getInstance(getContext().getApplicationContext());
 		if (Config.DEBUG) {
-			Log.d(TAG, "onCreate()" + (dba == null ? "null" : dba.getCount()));
+			Log.d(TAG, "onCreate()" + (mDba == null ? "null" : mDba.getCount()));
 		}
 		return true;
 	}
@@ -36,7 +36,7 @@ public class TestReportsProvider extends ContentProvider {
 		// Set the table
 		queryBuilder.setTables(DBA.CURRENT_TEST_REPORT_TABLE);
 
-		SQLiteDatabase db = dba.getWritableDatabase();
+		SQLiteDatabase db = mDba.getWritableDatabase();
 		Cursor cursor = queryBuilder.query(db, projection, selection,
 				selectionArgs, null, null, sortOrder);
 		// Make sure that potential listeners are getting notified
@@ -56,7 +56,7 @@ public class TestReportsProvider extends ContentProvider {
 
 	@Override
 	public int delete(Uri uri, String selection, String[] selectionArgs) {
-		SQLiteDatabase db = dba.getWritableDatabase();
+		SQLiteDatabase db = mDba.getWritableDatabase();
 		return db.delete(DBA.CURRENT_TEST_REPORT_TABLE, selection,
 				selectionArgs);
 	}
@@ -64,7 +64,7 @@ public class TestReportsProvider extends ContentProvider {
 	@Override
 	public int update(Uri uri, ContentValues values, String selection,
 			String[] selectionArgs) {
-		SQLiteDatabase db = dba.getWritableDatabase();
+		SQLiteDatabase db = mDba.getWritableDatabase();
 		return db.update(DBA.CURRENT_TEST_REPORT_TABLE, values, selection,
 				selectionArgs);
 	}

@@ -42,7 +42,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 	 */
 	ViewPager mViewPager;
 
-	private static Integer mTestWordsSize;
+	private static Integer sTestWordsSize;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +99,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
-		mTestWordsSize = Config.DEFAULT_RANDOM_TEST_SIZE;
+		sTestWordsSize = Config.DEFAULT_RANDOM_TEST_SIZE;
 	}
 
 	@Override
@@ -315,7 +315,7 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 			case RANDOM_FROM_ZH:
 			case RANDOM_TO_ZH:
 			case RANDOM_SPELL:
-				dba.buildRandomTest(DBA.CURRENT_WORD_TABLE, mTestWordsSize);
+				dba.buildRandomTest(DBA.CURRENT_WORD_TABLE, sTestWordsSize);
 				break;
 			case MY_WORD_FROM_ZH:
 			case MY_WORD_TO_ZH:

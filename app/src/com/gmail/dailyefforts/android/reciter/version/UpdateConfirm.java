@@ -20,9 +20,9 @@ import com.gmail.dailyefforts.android.reviwer.R;
 
 public class UpdateConfirm extends Activity {
 
-	private String verInfo;
-	private String verName;
-	private String updatePromptTitle;
+	private String mVerInfo;
+	private String mVerName;
+	private String mUpdatePromptTitle;
 	private static DownloadManager dMgr;
 
 	private static final String TAG = UpdateConfirm.class.getSimpleName();
@@ -32,16 +32,16 @@ public class UpdateConfirm extends Activity {
 		super.onCreate(savedInstanceState);
 
 		Bundle extras = getIntent().getExtras();
-		verInfo = extras.getString(Config.INTENT_APK_VERSION_INFO);
-		verName = extras.getString(Config.INTENT_APK_VERSION_NAME);
-		updatePromptTitle = String.format(
-				getString(R.string.update_to_latest_version), verName);
+		mVerInfo = extras.getString(Config.INTENT_APK_VERSION_INFO);
+		mVerName = extras.getString(Config.INTENT_APK_VERSION_NAME);
+		mUpdatePromptTitle = String.format(
+				getString(R.string.update_to_latest_version), mVerName);
 		showPromptDialog();
 	}
 
 	private void showPromptDialog() {
 		DialogFragment newFragment = UpdatePromptDialogFragment.newInstance(
-				updatePromptTitle, verInfo);
+				mUpdatePromptTitle, mVerInfo);
 		newFragment.show(getFragmentManager(), "dialog");
 	}
 

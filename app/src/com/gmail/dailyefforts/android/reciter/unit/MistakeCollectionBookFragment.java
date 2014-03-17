@@ -35,7 +35,7 @@ public class MistakeCollectionBookFragment extends ListFragment implements
 	private Cursor mCursor = null;
 	private ListAdapter mLisAdapter;
 	private LayoutInflater mLayoutInflater;
-	private DBA dba;
+	private DBA mDba;
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class MistakeCollectionBookFragment extends ListFragment implements
 
 		setListShown(false);
 
-		dba = DBA.getInstance(getActivity());
+		mDba = DBA.getInstance(getActivity());
 
 		ListView lv = getListView();
 		lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
@@ -96,8 +96,8 @@ public class MistakeCollectionBookFragment extends ListFragment implements
 														+ word);
 									}
 
-									if (dba != null) {
-										dba.unStar(word);
+									if (mDba != null) {
+										mDba.unStar(word);
 									}
 								}
 							}

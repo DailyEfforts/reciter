@@ -156,11 +156,13 @@ public class DragAndDropTestActivity extends AbstractTestActivity implements
 			TestCase testCase = new TestCase();
 
 			Word w = mWordList.get(i);
-			testCase.wordIdx = w.getId();
-			int id = -1;
-			if (w != null) {
-				id = w.getId();
+
+			if (w == null) {
+				continue;
 			}
+
+			testCase.wordIdx = w.getId();
+			int id = w.getId();
 			if (Config.DEBUG) {
 				Log.d(TAG, "onCreate() id: " + id);
 			}
@@ -174,23 +176,23 @@ public class DragAndDropTestActivity extends AbstractTestActivity implements
 
 			int answerIdx = random.nextInt(optNum);
 
-			for (int ii = 0; ii < optNum; ii++) {
-				if (ii == answerIdx) {
-					arrList.set(ii, id);
+			for (int j = 0; j < optNum; j++) {
+				if (j == answerIdx) {
+					arrList.set(j, id);
 				}
 
-				switch (ii) {
+				switch (j) {
 				case 0:
-					testCase.topLeftIdx = arrList.get(ii);
+					testCase.topLeftIdx = arrList.get(j);
 					break;
 				case 1:
-					testCase.topRightIdx = arrList.get(ii);
+					testCase.topRightIdx = arrList.get(j);
 					break;
 				case 2:
-					testCase.bottomLeftIdx = arrList.get(ii);
+					testCase.bottomLeftIdx = arrList.get(j);
 					break;
 				case 3:
-					testCase.bottomRightIdx = arrList.get(ii);
+					testCase.bottomRightIdx = arrList.get(j);
 					break;
 				}
 			}

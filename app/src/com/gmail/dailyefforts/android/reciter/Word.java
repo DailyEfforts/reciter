@@ -5,47 +5,47 @@ import java.util.Locale;
 import android.util.SparseArray;
 
 public class Word {
-	private String word;
-	private String meaning;
-	private String sample;
-	private int id;
+	private int mId;
+	private String mWord;
+	private String mMeaning;
+	private String mSample;
 
 	public Word(int id, String word, String meaning) {
 		this(id, word, meaning, null);
 	}
 
 	public Word(int id, String word, String meaning, String sample) {
-		this.id = id;
-		this.word = word;
-		this.meaning = meaning;
-		this.sample = sample;
+		this.mId = id;
+		this.mWord = word;
+		this.mMeaning = meaning;
+		this.mSample = sample;
 	}
 
 	public String getWord() {
-		return word;
+		return mWord;
 	}
 
 	public int getId() {
-		return id;
+		return mId;
 	}
 
 	public String getSample() {
-		return sample;
+		return mSample;
 	}
 
 	public String getMeaning() {
-		return meaning;
+		return mMeaning;
 	}
 
-	private static SparseArray<Word> map = new SparseArray<Word>();
+	private static SparseArray<Word> sMap = new SparseArray<Word>();
 
 	public static SparseArray<Word> getMap() {
-		return map;
+		return sMap;
 	}
 
 	@Override
 	public String toString() {
-		return String.format(Locale.getDefault(), "[%d, %s, %s, %s]", id, word,
-				meaning, sample);
+		return String.format(Locale.getDefault(), "[%d, %s, %s, %s]", mId,
+				mWord, mMeaning, mSample);
 	}
 }

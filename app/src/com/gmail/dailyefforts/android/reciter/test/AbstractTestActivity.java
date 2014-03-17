@@ -237,9 +237,12 @@ public abstract class AbstractTestActivity extends Activity implements
 	protected void forward() {
 		mWordIdx++;
 
-		if (mWordIdx > mWordList.size()) {
-			mWordIdx = mWordList.size();
+		final int size = mWordList.size();
+
+		if (mWordIdx > size) {
+			mWordIdx = size;
 		}
+
 		buildTestCase();
 	}
 
