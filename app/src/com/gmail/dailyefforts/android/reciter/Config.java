@@ -72,7 +72,7 @@ public class Config {
 	public static final String LAST_TIME_CHECKED_FOR_UPDATE = "last_time_checked_for_update";
 	public static final long ZERO = 0L;
 	public static final long ONE_DAY = 24 * 60 * 60 * 1000L; // MS
-	public static final int TIME_DELAY_TO_AUTO_FORWARD = 1000;
+	public static final int TIME_DELAY_TO_AUTO_FORWARD = 100;
 
 	public static enum TestType {
 		MY_WORD_TO_ZH, MY_WORD_FROM_ZH, MY_WORD_SPELL, RANDOM_TO_ZH, RANDOM_FROM_ZH, RANDOM_SPELL, UNKNOWN
