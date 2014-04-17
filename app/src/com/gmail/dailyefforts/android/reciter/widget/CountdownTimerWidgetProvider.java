@@ -26,7 +26,7 @@ public class CountdownTimerWidgetProvider extends AppWidgetProvider {
 			Log.i(TAG, "widgetId: " + widgetId);
 
 			Calendar cal = Calendar.getInstance();
-			cal.set(2014, Calendar.JANUARY, 4);
+			cal.set(2015, Calendar.JANUARY, 4);
 
 			long targetTime = cal.getTimeInMillis();
 

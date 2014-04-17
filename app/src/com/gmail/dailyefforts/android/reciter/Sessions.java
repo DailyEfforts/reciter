@@ -136,6 +136,11 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 	 */
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+		private static final int POS_UNITS = 0;
+		private static final int POS_MISTAKES = 1;
+		private static final int POS_TESTPAGE = 2;
+		private static final int PAGE_SIZE = 3;
+
 		public SectionsPagerAdapter(FragmentManager fm) {
 			super(fm);
 		}
@@ -148,13 +153,13 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 			Fragment fragment = null;
 
 			switch (position) {
-			case 0:
+			case POS_UNITS:
 				fragment = new UnitSetFragment();
 				break;
-			case 1:
+			case POS_MISTAKES:
 				fragment = new MistakeCollectionBookFragment();
 				break;
-			case 2:
+			case POS_TESTPAGE:
 				if (Config.DEBUG) {
 					Log.d(TAG, "getItem() TestFragment: ");
 				}
@@ -166,19 +171,18 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 
 		@Override
 		public int getCount() {
-			// Show 3 total pages.
-			return 3;
+			return PAGE_SIZE;
 		}
 
 		@Override
 		public CharSequence getPageTitle(int position) {
 			Locale l = Locale.getDefault();
 			switch (position) {
-			case 0:
+			case POS_UNITS:
 				return getString(R.string.unit).toUpperCase(l);
-			case 1:
+			case POS_MISTAKES:
 				return getString(R.string.my_word_book).toUpperCase(l);
-			case 2:
+			case POS_TESTPAGE:
 				return getString(R.string.test).toUpperCase(l);
 			}
 			return null;
@@ -202,17 +206,19 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 
 	public static class TestTypeListDialogFragment extends DialogFragment {
 
+		private static final String KEY_TITLE = "title";
+
 		public static TestTypeListDialogFragment newInstance(int title) {
 			TestTypeListDialogFragment frag = new TestTypeListDialogFragment();
 			Bundle args = new Bundle();
-			args.putInt("title", title);
+			args.putInt(KEY_TITLE, title);
 			frag.setArguments(args);
 			return frag;
 		}
 
 		@Override
 		public Dialog onCreateDialog(Bundle savedInstanceState) {
-			int title = getArguments().getInt("title");
+			int title = getArguments().getInt(KEY_TITLE);
 
 			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 			builder.setTitle(title);
@@ -326,11 +332,12 @@ public class Sessions extends FragmentActivity implements ActionBar.TabListener 
 				break;
 			}
 
+			final int size = Word.getMap().size();
 			if (Config.DEBUG) {
-				Log.d(TAG, "size: " + Word.getMap().size());
+				Log.d(TAG, "size: " + size);
 			}
 
-			return Word.getMap().size() > 0 ? mTestType : TestType.UNKNOWN;
+			return size > 0 ? mTestType : TestType.UNKNOWN;
 		}
 
 	}

@@ -122,7 +122,7 @@ public class UnitSetFragment extends Fragment implements OnItemClickListener {
 			try {
 				db = mDba.getWritableDatabase();
 			} catch (SQLiteException e) {
-				Log.d(TAG, "doInBackground() " + e.getMessage());
+				Log.e(TAG, "doInBackground() " + e.getMessage());
 			}
 
 			if (db == null) {
