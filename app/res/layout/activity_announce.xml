@@ -9,9 +9,9 @@
     tools:context=".AnnounceActivity" >
 
     <TextView
+        style="@style/AnnounceText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:autoLink="all"
         android:text="@string/announce_content" />
 
 </RelativeLayout>
