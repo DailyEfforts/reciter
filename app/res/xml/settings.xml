@@ -23,7 +23,7 @@
         <Preference
             android:key="@string/pref_key_announce"
             android:title="@string/announce" >
-            <intent android:action="com.gmail.dailyefforts.android.reciter.LAUNCH_ANNOUNCE_ACTIVITY" />
+            <intent android:action="com.gmail.dailyefforts.reciter.LAUNCH_ANNOUNCE_ACTIVITY" />
         </Preference>
     </PreferenceCategory>
 

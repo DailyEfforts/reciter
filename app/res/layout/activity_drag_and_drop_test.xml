@@ -10,7 +10,7 @@
         android:layout_alignParentTop="true"
         android:orientation="horizontal" >
 
-        <com.gmail.dailyefforts.android.reciter.test.drag.DragOptBtn
+        <com.gmail.dailyefforts.reciter.test.drag.DragOptBtn
             android:id="@+id/btn_drop_meaning_top_left"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
             android:layout_marginRight="6dp"
             android:layout_weight="1" />
 
-        <com.gmail.dailyefforts.android.reciter.test.drag.DragOptBtn
+        <com.gmail.dailyefforts.reciter.test.drag.DragOptBtn
             android:id="@+id/btn_drop_meaning_top_right"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
 
-        <com.gmail.dailyefforts.android.reciter.test.drag.DragOptBtn
+        <com.gmail.dailyefforts.reciter.test.drag.DragOptBtn
             android:id="@+id/btn_drop_meaning_bottom_left"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
             android:layout_marginRight="6dp"
             android:layout_weight="1" />
 
-        <com.gmail.dailyefforts.android.reciter.test.drag.DragOptBtn
+        <com.gmail.dailyefforts.reciter.test.drag.DragOptBtn
             android:id="@+id/btn_drop_meaning_bottom_right"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
