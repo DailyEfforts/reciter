@@ -18,7 +18,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
 
-import com.gmail.dailyefforts.reciter.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.reciter.Config;
 import com.gmail.dailyefforts.reciter.Word;
 import com.gmail.dailyefforts.reciter.db.DBA;
@@ -28,19 +28,14 @@ public abstract class AbstractTestActivity extends Activity implements
 	private static final String TAG = AbstractTestActivity.class
 			.getSimpleName();
 
-	// 当前正在测试的外语单词	
 	protected String mWord;
 
-	// 此番测试中要测试的单词列表
 	protected SparseArray<Word> mWordList;
 
-	// 当前正在测试的单词的索引
 	protected int mWordIdx = 0;
 
-	// 数据库管理负责人
 	protected DBA mDba;
 
-	// Speech管理者
 	protected TextToSpeech mTts;
 
 	private String mStrRemoveFromCorrectionBook;

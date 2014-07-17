@@ -356,8 +356,8 @@ public class DBA extends SQLiteOpenHelper {
 				+ DBA.CURRENT_WORD_TABLE + " where " + DBA.WORD_ID + ">=? AND "
 				+ DBA.WORD_ID + "<=?;";
 
-		Cursor cursor = sDba.rawQuery(sql, new String[] { String.valueOf(start),
-				String.valueOf(end) });
+		Cursor cursor = sDba.rawQuery(sql, new String[] {
+				String.valueOf(start), String.valueOf(end) });
 
 		if (Config.DEBUG) {
 			Log.d(TAG, "onClick() start: " + start + ", end: " + end);

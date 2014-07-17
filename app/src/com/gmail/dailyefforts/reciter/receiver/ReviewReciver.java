@@ -12,7 +12,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.gmail.dailyefforts.reciter.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.reciter.Config;
 import com.gmail.dailyefforts.reciter.Launcher;
 import com.gmail.dailyefforts.reciter.db.DBA;

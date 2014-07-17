@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.gmail.dailyefforts.reciter.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.reciter.Config;
 
 public class TestFragment extends Fragment {

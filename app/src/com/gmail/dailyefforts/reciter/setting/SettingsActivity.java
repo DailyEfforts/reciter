@@ -17,7 +17,7 @@ import android.preference.PreferenceScreen;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.gmail.dailyefforts.reciter.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 import com.gmail.dailyefforts.reciter.Config;
 
 public class SettingsActivity extends PreferenceActivity {
@@ -115,7 +115,7 @@ public class SettingsActivity extends PreferenceActivity {
 			}
 		}
 
-		private class ResetAlertDialogFragment extends DialogFragment {
+		public class ResetAlertDialogFragment extends DialogFragment {
 
 			@Override
 			public Dialog onCreateDialog(Bundle savedInstanceState) {

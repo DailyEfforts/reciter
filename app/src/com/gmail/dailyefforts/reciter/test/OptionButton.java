@@ -7,13 +7,12 @@ import android.util.AttributeSet;
 import android.widget.Button;
 import android.widget.LinearLayout.LayoutParams;
 
-import com.gmail.dailyefforts.reciter.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class OptionButton extends Button {
 
 	public OptionButton(Context context, int id) {
 		super(context);
-		// TODO Auto-generated constructor stub
 		setTextAppearance(context, android.R.style.TextAppearance_Medium);
 		setTextColor(Color.LTGRAY);
 		setBackgroundResource(R.drawable.btn_dark_bg);

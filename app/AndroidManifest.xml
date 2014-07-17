@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gmail.dailyefforts.reciter"
+    package="com.gmail.dailyefforts.android.reviwer"
     android:versionCode="28"
     android:versionName="2.5(Beta)" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="16"
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" />

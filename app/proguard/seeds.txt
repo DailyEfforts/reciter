@@ -6,47 +6,47 @@ android.support.v4.view.PagerTabStrip$2: void onClick(android.view.View)
 android.support.v4.view.ViewPager
 android.support.v4.view.ViewPager: ViewPager(android.content.Context)
 android.support.v4.view.ViewPager: ViewPager(android.content.Context,android.util.AttributeSet)
-com.gmail.dailyefforts.android.reciter.Launcher
-com.gmail.dailyefforts.android.reciter.Launcher: Launcher()
-com.gmail.dailyefforts.android.reciter.Launcher: void onClick(android.view.View)
-com.gmail.dailyefforts.android.reciter.Sessions
-com.gmail.dailyefforts.android.reciter.Sessions: Sessions()
-com.gmail.dailyefforts.android.reciter.Sessions: void onStartTesting(android.view.View)
-com.gmail.dailyefforts.android.reciter.Sessions$TestTypeListDialogFragment$1: void onClick(android.content.DialogInterface,int)
-com.gmail.dailyefforts.android.reciter.db.TestReportsProvider
-com.gmail.dailyefforts.android.reciter.db.TestReportsProvider: TestReportsProvider()
-com.gmail.dailyefforts.android.reciter.db.WordListProvider
-com.gmail.dailyefforts.android.reciter.db.WordListProvider: WordListProvider()
-com.gmail.dailyefforts.android.reciter.receiver.BootReciver
-com.gmail.dailyefforts.android.reciter.receiver.BootReciver: BootReciver()
-com.gmail.dailyefforts.android.reciter.receiver.ReviewReciver
-com.gmail.dailyefforts.android.reciter.receiver.ReviewReciver: ReviewReciver()
-com.gmail.dailyefforts.android.reciter.setting.AnnounceActivity
-com.gmail.dailyefforts.android.reciter.setting.AnnounceActivity: AnnounceActivity()
-com.gmail.dailyefforts.android.reciter.setting.SettingsActivity
-com.gmail.dailyefforts.android.reciter.setting.SettingsActivity: SettingsActivity()
-com.gmail.dailyefforts.android.reciter.setting.SettingsActivity$PrefsFragment$ResetAlertDialogFragment$1: void onClick(android.content.DialogInterface,int)
-com.gmail.dailyefforts.android.reciter.test.AbstractTestActivity: AbstractTestActivity()
-com.gmail.dailyefforts.android.reciter.test.CompletionTestActivity
-com.gmail.dailyefforts.android.reciter.test.CompletionTestActivity: CompletionTestActivity()
-com.gmail.dailyefforts.android.reciter.test.CompletionTestActivity: void onClick(android.view.View)
-com.gmail.dailyefforts.android.reciter.test.SelectionTestActivity
-com.gmail.dailyefforts.android.reciter.test.SelectionTestActivity: SelectionTestActivity()
-com.gmail.dailyefforts.android.reciter.test.SelectionTestActivity: void onClick(android.view.View)
-com.gmail.dailyefforts.android.reciter.test.TestReportFragment$1: void onClick(android.content.DialogInterface,int)
-com.gmail.dailyefforts.android.reciter.test.TestReportListFragment
-com.gmail.dailyefforts.android.reciter.test.TestReportListFragment: TestReportListFragment()
-com.gmail.dailyefforts.android.reciter.test.drag.DragAndDropTestActivity
-com.gmail.dailyefforts.android.reciter.test.drag.DragAndDropTestActivity: DragAndDropTestActivity()
-com.gmail.dailyefforts.android.reciter.test.drag.DragAndDropTestActivity: void onClick(android.view.View)
-com.gmail.dailyefforts.android.reciter.test.drag.DragOptBtn
-com.gmail.dailyefforts.android.reciter.test.drag.DragOptBtn: DragOptBtn(android.content.Context,android.util.AttributeSet)
-com.gmail.dailyefforts.android.reciter.unit.UnitView
-com.gmail.dailyefforts.android.reciter.unit.UnitView: UnitView(android.content.Context,android.util.AttributeSet)
-com.gmail.dailyefforts.android.reciter.version.UpdateConfirm
-com.gmail.dailyefforts.android.reciter.version.UpdateConfirm: UpdateConfirm()
-com.gmail.dailyefforts.android.reciter.version.UpdateConfirm$UpdatePromptDialogFragment$1: void onClick(android.content.DialogInterface,int)
-com.gmail.dailyefforts.android.reciter.version.VersionChecker
-com.gmail.dailyefforts.android.reciter.version.VersionChecker: VersionChecker()
-com.gmail.dailyefforts.android.reciter.widget.CountdownTimerWidgetProvider
-com.gmail.dailyefforts.android.reciter.widget.CountdownTimerWidgetProvider: CountdownTimerWidgetProvider()
+com.gmail.dailyefforts.reciter.Launcher
+com.gmail.dailyefforts.reciter.Launcher: Launcher()
+com.gmail.dailyefforts.reciter.Launcher: void onClick(android.view.View)
+com.gmail.dailyefforts.reciter.Sessions
+com.gmail.dailyefforts.reciter.Sessions: Sessions()
+com.gmail.dailyefforts.reciter.Sessions: void onStartTesting(android.view.View)
+com.gmail.dailyefforts.reciter.Sessions$TestTypeListDialogFragment$1: void onClick(android.content.DialogInterface,int)
+com.gmail.dailyefforts.reciter.db.TestReportsProvider
+com.gmail.dailyefforts.reciter.db.TestReportsProvider: TestReportsProvider()
+com.gmail.dailyefforts.reciter.db.WordListProvider
+com.gmail.dailyefforts.reciter.db.WordListProvider: WordListProvider()
+com.gmail.dailyefforts.reciter.receiver.BootReciver
+com.gmail.dailyefforts.reciter.receiver.BootReciver: BootReciver()
+com.gmail.dailyefforts.reciter.receiver.ReviewReciver
+com.gmail.dailyefforts.reciter.receiver.ReviewReciver: ReviewReciver()
+com.gmail.dailyefforts.reciter.setting.AnnounceActivity
+com.gmail.dailyefforts.reciter.setting.AnnounceActivity: AnnounceActivity()
+com.gmail.dailyefforts.reciter.setting.SettingsActivity
+com.gmail.dailyefforts.reciter.setting.SettingsActivity: SettingsActivity()
+com.gmail.dailyefforts.reciter.setting.SettingsActivity$PrefsFragment$ResetAlertDialogFragment$1: void onClick(android.content.DialogInterface,int)
+com.gmail.dailyefforts.reciter.test.AbstractTestActivity: AbstractTestActivity()
+com.gmail.dailyefforts.reciter.test.CompletionTestActivity
+com.gmail.dailyefforts.reciter.test.CompletionTestActivity: CompletionTestActivity()
+com.gmail.dailyefforts.reciter.test.CompletionTestActivity: void onClick(android.view.View)
+com.gmail.dailyefforts.reciter.test.SelectionTestActivity
+com.gmail.dailyefforts.reciter.test.SelectionTestActivity: SelectionTestActivity()
+com.gmail.dailyefforts.reciter.test.SelectionTestActivity: void onClick(android.view.View)
+com.gmail.dailyefforts.reciter.test.TestReportFragment$1: void onClick(android.content.DialogInterface,int)
+com.gmail.dailyefforts.reciter.test.TestReportListFragment
+com.gmail.dailyefforts.reciter.test.TestReportListFragment: TestReportListFragment()
+com.gmail.dailyefforts.reciter.test.drag.DragAndDropTestActivity
+com.gmail.dailyefforts.reciter.test.drag.DragAndDropTestActivity: DragAndDropTestActivity()
+com.gmail.dailyefforts.reciter.test.drag.DragAndDropTestActivity: void onClick(android.view.View)
+com.gmail.dailyefforts.reciter.test.drag.DragOptBtn
+com.gmail.dailyefforts.reciter.test.drag.DragOptBtn: DragOptBtn(android.content.Context,android.util.AttributeSet)
+com.gmail.dailyefforts.reciter.unit.UnitView
+com.gmail.dailyefforts.reciter.unit.UnitView: UnitView(android.content.Context,android.util.AttributeSet)
+com.gmail.dailyefforts.reciter.version.UpdateConfirm
+com.gmail.dailyefforts.reciter.version.UpdateConfirm: UpdateConfirm()
+com.gmail.dailyefforts.reciter.version.UpdateConfirm$UpdatePromptDialogFragment$1: void onClick(android.content.DialogInterface,int)
+com.gmail.dailyefforts.reciter.version.VersionChecker
+com.gmail.dailyefforts.reciter.version.VersionChecker: VersionChecker()
+com.gmail.dailyefforts.reciter.widget.CountdownTimerWidgetProvider
+com.gmail.dailyefforts.reciter.widget.CountdownTimerWidgetProvider: CountdownTimerWidgetProvider()
