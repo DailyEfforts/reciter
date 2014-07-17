@@ -42,11 +42,11 @@ public class Launcher extends ListActivity implements OnClickListener {
 		findViewsAndSetListeners();
 		mSharedPref = PreferenceManager
 				.getDefaultSharedPreferences(getApplicationContext());
-		long lastCheckedForUpdate = mSharedPref.getLong(
-				Config.LAST_TIME_CHECKED_FOR_UPDATE, Config.ZERO);
-		if (needToCheckForUpdate(lastCheckedForUpdate)) {
-			launchVersionChecker();
-		}
+//		long lastCheckedForUpdate = mSharedPref.getLong(
+//				Config.LAST_TIME_CHECKED_FOR_UPDATE, Config.ZERO);
+//		if (needToCheckForUpdate(lastCheckedForUpdate)) {
+//			launchVersionChecker();
+//		}
 		Config.IS_RUNNING = true;
 		setReviewAlarm();
 	}
