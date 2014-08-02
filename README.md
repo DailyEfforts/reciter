@@ -3,7 +3,7 @@ Reciter
 
 An application that helps foreign language learners to recite and review new words.
 
-========
+---
 
 Design principle:
 - Don't write duplicate code.  
