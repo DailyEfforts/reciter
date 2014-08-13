@@ -18,7 +18,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
 
-import com.gmail.dailyefforts.android.reviwer.R;
+import com.gmail.dailyefforts.reciter.R;
 import com.gmail.dailyefforts.reciter.Config;
 import com.gmail.dailyefforts.reciter.Word;
 import com.gmail.dailyefforts.reciter.db.DBA;

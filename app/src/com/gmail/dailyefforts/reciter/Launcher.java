@@ -17,7 +17,7 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.gmail.dailyefforts.android.reviwer.R;
+import com.gmail.dailyefforts.reciter.R;
 import com.gmail.dailyefforts.reciter.db.DBA;
 import com.gmail.dailyefforts.reciter.setting.SettingsActivity;
 

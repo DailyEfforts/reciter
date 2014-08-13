@@ -8,7 +8,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-import com.gmail.dailyefforts.android.reviwer.R;
+import com.gmail.dailyefforts.reciter.R;
 
 public class CountdownTimerWidgetProvider extends AppWidgetProvider {
 
