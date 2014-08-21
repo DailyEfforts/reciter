@@ -928,22 +928,7 @@ android.support.v4.widget.SearchViewCompatIcs$MySearchView
 android.support.v4.widget.SimpleCursorAdapter
 android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter
 android.support.v4.widget.SimpleCursorAdapter$ViewBinder
-com.gmail.dailyefforts.android.reviwer.BuildConfig
-com.gmail.dailyefforts.android.reviwer.R
-com.gmail.dailyefforts.android.reviwer.R$anim
-com.gmail.dailyefforts.android.reviwer.R$animator
-com.gmail.dailyefforts.android.reviwer.R$array
-com.gmail.dailyefforts.android.reviwer.R$attr
-com.gmail.dailyefforts.android.reviwer.R$color
-com.gmail.dailyefforts.android.reviwer.R$dimen
-com.gmail.dailyefforts.android.reviwer.R$drawable
-com.gmail.dailyefforts.android.reviwer.R$id
-com.gmail.dailyefforts.android.reviwer.R$layout
-com.gmail.dailyefforts.android.reviwer.R$menu
-com.gmail.dailyefforts.android.reviwer.R$raw
-com.gmail.dailyefforts.android.reviwer.R$string
-com.gmail.dailyefforts.android.reviwer.R$style
-com.gmail.dailyefforts.android.reviwer.R$xml
+com.gmail.dailyefforts.reciter.BuildConfig
 com.gmail.dailyefforts.reciter.Config:
     public static final boolean DEBUG
     public static final java.lang.String ACTION_NAME_CHECK_VERSION
@@ -1003,6 +988,21 @@ com.gmail.dailyefforts.reciter.Launcher:
     69:80:private boolean needToCheckForUpdate(long)
     84:87:private void updateLastCheckForUpdateTime(long)
     103:106:private void launchVersionChecker()
+com.gmail.dailyefforts.reciter.R
+com.gmail.dailyefforts.reciter.R$anim
+com.gmail.dailyefforts.reciter.R$animator
+com.gmail.dailyefforts.reciter.R$array
+com.gmail.dailyefforts.reciter.R$attr
+com.gmail.dailyefforts.reciter.R$color
+com.gmail.dailyefforts.reciter.R$dimen
+com.gmail.dailyefforts.reciter.R$drawable
+com.gmail.dailyefforts.reciter.R$id
+com.gmail.dailyefforts.reciter.R$layout
+com.gmail.dailyefforts.reciter.R$menu
+com.gmail.dailyefforts.reciter.R$raw
+com.gmail.dailyefforts.reciter.R$string
+com.gmail.dailyefforts.reciter.R$style
+com.gmail.dailyefforts.reciter.R$xml
 com.gmail.dailyefforts.reciter.Sessions$SectionsPagerAdapter:
     private static final int POS_UNITS
     private static final int POS_MISTAKES

@@ -50030,7 +50030,7 @@ Constant Pool (count = 440):
   - Integer [2131623944]
   - Integer [2131623945]
   - Float [100.0]
-  - String [abcdefghijklmnopqrstuvwxyz¨¤??¨¦¨¨¨º?????¨´¨¹??]
+  - String [abcdefghijklmnopqrstuvwxyzÃ Ã¢Ã§Ã©Ã¨ÃªÃ«Ã®Ã¯Ã´Ã»Ã¹Ã¼Ã¿Å“]
   - String [accuracy]
   - String [correct_number]
   - String [db_size]
@@ -50339,7 +50339,7 @@ Constant Pool (count = 440):
   - Utf8 [[C]
   - Utf8 [[I]
   - Utf8 [a]
-  - Utf8 [abcdefghijklmnopqrstuvwxyz¨¤??¨¦¨¨¨º?????¨´¨¹??]
+  - Utf8 [abcdefghijklmnopqrstuvwxyzÃ Ã¢Ã§Ã©Ã¨ÃªÃ«Ã®Ã¯Ã´Ã»Ã¹Ã¼Ã¿Å“]
   - Utf8 [accuracy]
   - Utf8 [add]
   - Utf8 [android/app/DialogFragment]
@@ -50518,7 +50518,7 @@ Methods (count = 5):
       [5] putstatic #79
         - Fieldref [com/gmail/dailyefforts/reciter/test/CompletionTestActivity.g Ljava/lang/String;]
       [8] ldc #21
-        - String [abcdefghijklmnopqrstuvwxyz¨¤??¨¦¨¨¨º?????¨´¨¹??]
+        - String [abcdefghijklmnopqrstuvwxyzÃ Ã¢Ã§Ã©Ã¨ÃªÃ«Ã®Ã¯Ã´Ã»Ã¹Ã¼Ã¿Å“]
       [10] invokevirtual #151
         - Methodref [java/lang/String.toCharArray ()[C]
       [13] putstatic #87
