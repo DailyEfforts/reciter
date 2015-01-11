@@ -24,7 +24,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.gmail.dailyefforts.reciter.R;
 import com.gmail.dailyefforts.reciter.Config.TestType;
 import com.gmail.dailyefforts.reciter.db.DBA;
 import com.gmail.dailyefforts.reciter.test.CompletionTestActivity;
@@ -32,6 +31,7 @@ import com.gmail.dailyefforts.reciter.test.SelectionTestActivity;
 import com.gmail.dailyefforts.reciter.test.TestFragment;
 import com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment;
 import com.gmail.dailyefforts.reciter.unit.UnitSetFragment;
+import com.gmail.dailyefforts.reviwer.R;
 
 public class SessionsActivity extends FragmentActivity implements ActionBar.TabListener {
 

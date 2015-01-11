@@ -21,9 +21,9 @@ import android.widget.TextView;
 
 import com.gmail.dailyefforts.reciter.Config;
 import com.gmail.dailyefforts.reciter.Language;
-import com.gmail.dailyefforts.reciter.R;
 import com.gmail.dailyefforts.reciter.Word;
 import com.gmail.dailyefforts.reciter.db.DBA;
+import com.gmail.dailyefforts.reviwer.R;
 
 public class CompletionTestActivity extends AbstractTestActivity implements
         OnClickListener {

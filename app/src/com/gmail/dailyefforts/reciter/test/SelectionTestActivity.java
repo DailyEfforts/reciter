@@ -15,10 +15,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.gmail.dailyefforts.reciter.R;
 import com.gmail.dailyefforts.reciter.Config;
 import com.gmail.dailyefforts.reciter.Word;
 import com.gmail.dailyefforts.reciter.db.DBA;
+import com.gmail.dailyefforts.reviwer.R;
 
 public class SelectionTestActivity extends AbstractTestActivity implements
 		View.OnClickListener {

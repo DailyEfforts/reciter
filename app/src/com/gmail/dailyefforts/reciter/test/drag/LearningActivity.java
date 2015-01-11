@@ -24,9 +24,9 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.gmail.dailyefforts.reciter.Config;
-import com.gmail.dailyefforts.reciter.R;
 import com.gmail.dailyefforts.reciter.Word;
 import com.gmail.dailyefforts.reciter.test.AbstractTestActivity;
+import com.gmail.dailyefforts.reviwer.R;
 
 public class LearningActivity extends AbstractTestActivity implements
         OnDragListener, OnClickListener {

@@ -15,8 +15,8 @@ import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.gmail.dailyefforts.reciter.R;
 import com.gmail.dailyefforts.reciter.Config;
+import com.gmail.dailyefforts.reviwer.R;
 
 public class UpdateConfirm extends Activity {
 

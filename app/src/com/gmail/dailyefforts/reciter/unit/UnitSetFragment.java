@@ -28,10 +28,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.gmail.dailyefforts.reciter.R;
 import com.gmail.dailyefforts.reciter.Config;
 import com.gmail.dailyefforts.reciter.db.DBA;
 import com.gmail.dailyefforts.reciter.test.drag.LearningActivity;
+import com.gmail.dailyefforts.reviwer.R;
 
 public class UnitSetFragment extends Fragment implements OnItemClickListener {
     private static final String TAG = UnitSetFragment.class.getSimpleName();

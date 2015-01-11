@@ -928,7 +928,6 @@ android.support.v4.widget.SearchViewCompatIcs$MySearchView
 android.support.v4.widget.SimpleCursorAdapter
 android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter
 android.support.v4.widget.SimpleCursorAdapter$ViewBinder
-com.gmail.dailyefforts.reciter.BuildConfig
 com.gmail.dailyefforts.reciter.Config:
     public static final boolean DEBUG
     public static final java.lang.String ACTION_NAME_CHECK_VERSION
@@ -980,30 +979,15 @@ com.gmail.dailyefforts.reciter.Config:
     public static final long ONE_DAY
     public static final int TIME_DELAY_TO_AUTO_FORWARD
     public static final char MISSED_CHAR
-    6:7:private Config()
+    7:8:private Config()
 com.gmail.dailyefforts.reciter.Config$TestType:
     1:1:public static com.gmail.dailyefforts.reciter.Config$TestType valueOf(java.lang.String)
 com.gmail.dailyefforts.reciter.Language:
     1:1:public static com.gmail.dailyefforts.reciter.Language valueOf(java.lang.String)
 com.gmail.dailyefforts.reciter.MainActivity:
-    161:172:private boolean needToCheckForUpdate(long)
-    176:179:private void updateLastCheckForUpdateTime(long)
-    195:198:private void launchVersionChecker()
-com.gmail.dailyefforts.reciter.R
-com.gmail.dailyefforts.reciter.R$anim
-com.gmail.dailyefforts.reciter.R$animator
-com.gmail.dailyefforts.reciter.R$array
-com.gmail.dailyefforts.reciter.R$attr
-com.gmail.dailyefforts.reciter.R$color
-com.gmail.dailyefforts.reciter.R$dimen
-com.gmail.dailyefforts.reciter.R$drawable
-com.gmail.dailyefforts.reciter.R$id
-com.gmail.dailyefforts.reciter.R$layout
-com.gmail.dailyefforts.reciter.R$menu
-com.gmail.dailyefforts.reciter.R$raw
-com.gmail.dailyefforts.reciter.R$string
-com.gmail.dailyefforts.reciter.R$style
-com.gmail.dailyefforts.reciter.R$xml
+    162:173:private boolean needToCheckForUpdate(long)
+    177:180:private void updateLastCheckForUpdateTime(long)
+    196:199:private void launchVersionChecker()
 com.gmail.dailyefforts.reciter.SessionsActivity$SectionsPagerAdapter:
     private static final int POS_UNITS
     private static final int POS_MISTAKES
@@ -1082,3 +1066,19 @@ com.gmail.dailyefforts.reciter.test.OptionButton:
 com.gmail.dailyefforts.reciter.test.drag.DragOptBtn
 com.gmail.dailyefforts.reciter.test.drag.LearningActivity$MyHandler:
     public static final int MSG_FORWOARD
+com.gmail.dailyefforts.reviwer.BuildConfig
+com.gmail.dailyefforts.reviwer.R
+com.gmail.dailyefforts.reviwer.R$anim
+com.gmail.dailyefforts.reviwer.R$animator
+com.gmail.dailyefforts.reviwer.R$array
+com.gmail.dailyefforts.reviwer.R$attr
+com.gmail.dailyefforts.reviwer.R$color
+com.gmail.dailyefforts.reviwer.R$dimen
+com.gmail.dailyefforts.reviwer.R$drawable
+com.gmail.dailyefforts.reviwer.R$id
+com.gmail.dailyefforts.reviwer.R$layout
+com.gmail.dailyefforts.reviwer.R$menu
+com.gmail.dailyefforts.reviwer.R$raw
+com.gmail.dailyefforts.reviwer.R$string
+com.gmail.dailyefforts.reviwer.R$style
+com.gmail.dailyefforts.reviwer.R$xml
