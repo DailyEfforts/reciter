@@ -98,7 +98,10 @@ public class TestReportListFragment extends ListFragment implements
 						tv2.setVisibility(View.GONE);
 					} else {
 						if (words != null && words.length() > 2) {
-							tv2.setText(words.subSequence(1, words.length() - 1));
+							final String list = String.valueOf(words.subSequence(1, words.length() - 1));
+							if (list != null) {
+                            tv2.setText(list.replace(", ", "\n"));
+							}
 						} else {
 							tv2.setVisibility(View.GONE);
 						}

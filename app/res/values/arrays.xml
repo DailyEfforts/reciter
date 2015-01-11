@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="books">
-        <item>@string/mot</item>
-        <item>@string/nce1</item>
-        <item>@string/nce2</item>
-        <item>@string/nce3</item>
-        <item>@string/nce4</item>
-        <item>@string/reflets_1</item>
-        <item>@string/linguistics_glossary</item>
-        <item>@string/liuyi_5000</item>
-        <item>@string/ogden</item>
-<!--          <item>@string/pro_en_core</item> -->
-<!--         <item>@string/liuyi_10000</item>
-        <item>@string/liuyi_22000</item> -->
-    </string-array>
     <string-array name="test_types">
         <item>@string/test_type_foreign_to_chinese_correction_book</item>
         <item>@string/test_type_chinese_to_foreign_correction_book</item>
@@ -22,6 +8,16 @@
         <item>@string/test_type_foreign_to_chinese_random</item>
         <item>@string/test_type_chinese_to_foreign_random</item>
         <item>@string/random_completion_test</item>
+    </string-array>
+    
+    
+    <string-array name="test_types_literature">
+        <item>@string/test_type_foreign_to_chinese_correction_book_literature</item>
+        <item>@string/test_type_chinese_to_foreign_correction_book_literature</item>
+        <item>@string/test_spell_foreign_correction_book_literature</item>
+        <item>@string/test_type_foreign_to_chinese_random_literature</item>
+        <item>@string/test_type_chinese_to_foreign_random_literature</item>
+        <item>@string/random_completion_test_literature</item>
     </string-array>
 
 </resources>

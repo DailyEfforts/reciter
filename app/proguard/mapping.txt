@@ -145,7 +145,7 @@ android.support.v4.app.Fragment -> android.support.v4.a.f:
     void onAttach(android.app.Activity) -> a
     android.view.animation.Animation onCreateAnimation$24236ca7() -> p
     void onCreate(android.os.Bundle) -> a
-    android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
     void onViewCreated(android.view.View,android.os.Bundle) -> a
     android.view.View getView() -> q
     void onActivityCreated(android.os.Bundle) -> c
@@ -163,7 +163,7 @@ android.support.v4.app.Fragment -> android.support.v4.a.f:
     void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
     void performCreate(android.os.Bundle) -> g
-    android.view.View performCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+    android.view.View performCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> b
     void performActivityCreated(android.os.Bundle) -> h
     void performStart() -> v
     void performResume() -> w
@@ -403,7 +403,7 @@ android.support.v4.app.ListFragment -> android.support.v4.a.z:
     android.view.View mListContainer -> U
     java.lang.CharSequence mEmptyText -> V
     boolean mListShown -> W
-    android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
     void onViewCreated(android.view.View,android.os.Bundle) -> a
     void onDestroyView() -> f
     void onListItemClick$42a3bb55(int) -> a
@@ -1051,16 +1051,32 @@ com.gmail.dailyefforts.reciter.Language -> com.gmail.dailyefforts.reciter.c:
     com.gmail.dailyefforts.reciter.Language French -> b
     com.gmail.dailyefforts.reciter.Language[] ENUM$VALUES -> c
     com.gmail.dailyefforts.reciter.Language[] values() -> a
-com.gmail.dailyefforts.reciter.Launcher -> com.gmail.dailyefforts.reciter.Launcher:
+com.gmail.dailyefforts.reciter.MainActivity -> com.gmail.dailyefforts.reciter.MainActivity:
     android.widget.Button mBtnExit -> a
     android.widget.Button mBtnSettings -> b
     void onCreate(android.os.Bundle) -> onCreate
     void onDestroy() -> onDestroy
-    void onListItemClick(android.widget.ListView,android.view.View,int,long) -> onListItemClick
+    boolean onChildClick(android.widget.ExpandableListView,android.view.View,int,int,long) -> onChildClick
     void onClick(android.view.View) -> onClick
-com.gmail.dailyefforts.reciter.Sessions -> com.gmail.dailyefforts.reciter.Sessions:
+com.gmail.dailyefforts.reciter.MainActivity$BooksAdapter -> com.gmail.dailyefforts.reciter.d:
+    int[] groups -> a
+    int[][] children -> b
+    com.gmail.dailyefforts.reciter.MainActivity this$0 -> c
+    int getGroupCount() -> getGroupCount
+    int getChildrenCount(int) -> getChildrenCount
+    java.lang.Object getGroup(int) -> getGroup
+    java.lang.Object getChild(int,int) -> getChild
+    long getGroupId(int) -> getGroupId
+    long getChildId(int,int) -> getChildId
+    boolean hasStableIds() -> hasStableIds
+    android.view.View getGroupView(int,boolean,android.view.View,android.view.ViewGroup) -> getGroupView
+    android.view.View getChildView(int,int,boolean,android.view.View,android.view.ViewGroup) -> getChildView
+    boolean isChildSelectable(int,int) -> isChildSelectable
+com.gmail.dailyefforts.reciter.MainActivity$ViewHolder -> com.gmail.dailyefforts.reciter.e:
+    android.widget.TextView tv -> a
+com.gmail.dailyefforts.reciter.SessionsActivity -> com.gmail.dailyefforts.reciter.SessionsActivity:
     java.lang.String TAG -> e
-    com.gmail.dailyefforts.reciter.Sessions$SectionsPagerAdapter mSectionsPagerAdapter -> f
+    com.gmail.dailyefforts.reciter.SessionsActivity$SectionsPagerAdapter mSectionsPagerAdapter -> f
     android.support.v4.view.ViewPager mViewPager -> g
     java.lang.Integer sTestWordsSize -> h
     void onCreate(android.os.Bundle) -> onCreate
@@ -1069,16 +1085,16 @@ com.gmail.dailyefforts.reciter.Sessions -> com.gmail.dailyefforts.reciter.Sessio
     void onTabUnselected(android.app.ActionBar$Tab,android.app.FragmentTransaction) -> onTabUnselected
     void onTabReselected(android.app.ActionBar$Tab,android.app.FragmentTransaction) -> onTabReselected
     void onStartTesting(android.view.View) -> onStartTesting
-    com.gmail.dailyefforts.reciter.Config$TestType access$0(int) -> a
-    java.lang.String access$1() -> e
+    java.lang.String access$0() -> e
+    com.gmail.dailyefforts.reciter.Config$TestType access$1(int) -> a
     java.lang.Integer access$2() -> f
-com.gmail.dailyefforts.reciter.Sessions$1 -> com.gmail.dailyefforts.reciter.d:
+com.gmail.dailyefforts.reciter.SessionsActivity$1 -> com.gmail.dailyefforts.reciter.f:
     android.app.ActionBar val$actionBar -> a
     void onPageSelected(int) -> a
-com.gmail.dailyefforts.reciter.Sessions$SectionsPagerAdapter -> com.gmail.dailyefforts.reciter.e:
-    com.gmail.dailyefforts.reciter.Sessions this$0 -> a
+com.gmail.dailyefforts.reciter.SessionsActivity$SectionsPagerAdapter -> com.gmail.dailyefforts.reciter.g:
+    com.gmail.dailyefforts.reciter.SessionsActivity this$0 -> a
     android.support.v4.app.Fragment getItem(int) -> a
-com.gmail.dailyefforts.reciter.Sessions$TestCaseBuilder -> com.gmail.dailyefforts.reciter.f:
+com.gmail.dailyefforts.reciter.SessionsActivity$TestCaseBuilder -> com.gmail.dailyefforts.reciter.h:
     com.gmail.dailyefforts.reciter.db.DBA dba -> a
     com.gmail.dailyefforts.reciter.Config$TestType mTestType -> b
     android.content.Context mContext -> c
@@ -1087,14 +1103,14 @@ com.gmail.dailyefforts.reciter.Sessions$TestCaseBuilder -> com.gmail.dailyeffort
     void onPostExecute(java.lang.Object) -> onPostExecute
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
     int[] $SWITCH_TABLE$com$gmail$dailyefforts$reciter$Config$TestType() -> a
-com.gmail.dailyefforts.reciter.Sessions$TestTypeListDialogFragment -> com.gmail.dailyefforts.reciter.g:
-    com.gmail.dailyefforts.reciter.Sessions$TestTypeListDialogFragment newInstance(int) -> a
+com.gmail.dailyefforts.reciter.SessionsActivity$TestTypeListDialogFragment -> com.gmail.dailyefforts.reciter.i:
+    com.gmail.dailyefforts.reciter.SessionsActivity$TestTypeListDialogFragment newInstance(int) -> a
     android.app.Dialog onCreateDialog$5709b310() -> c
     void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
-com.gmail.dailyefforts.reciter.Sessions$TestTypeListDialogFragment$1 -> com.gmail.dailyefforts.reciter.h:
-    com.gmail.dailyefforts.reciter.Sessions$TestTypeListDialogFragment this$1 -> a
+com.gmail.dailyefforts.reciter.SessionsActivity$TestTypeListDialogFragment$1 -> com.gmail.dailyefforts.reciter.j:
+    com.gmail.dailyefforts.reciter.SessionsActivity$TestTypeListDialogFragment this$1 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-com.gmail.dailyefforts.reciter.Word -> com.gmail.dailyefforts.reciter.i:
+com.gmail.dailyefforts.reciter.Word -> com.gmail.dailyefforts.reciter.k:
     int mId -> a
     java.lang.String mWord -> b
     java.lang.String mMeaning -> c
@@ -1112,19 +1128,18 @@ com.gmail.dailyefforts.reciter.db.DBA -> com.gmail.dailyefforts.reciter.db.a:
     java.lang.String CURRENT_WORD_TABLE -> a
     java.lang.String CURRENT_TEST_REPORT_TABLE -> b
     java.lang.String FLAG_PASS -> e
-    java.lang.String getCreateWordListSql(java.lang.String) -> f
-    java.lang.String getCreateTestTableSql(java.lang.String) -> g
+    java.lang.String getCreateWordListSql(java.lang.String) -> e
+    java.lang.String getCreateTestTableSql(java.lang.String) -> f
     void star(java.lang.String) -> a
     boolean isPass(int,int) -> a
-    void setPast(java.lang.String) -> b
-    int getStar(java.lang.String) -> c
-    void unStar(java.lang.String) -> d
+    int getStar(java.lang.String) -> b
+    void unStar(java.lang.String) -> c
     boolean exist(java.lang.String,java.lang.String) -> a
     com.gmail.dailyefforts.reciter.Word getWordByIdx(java.lang.String,int) -> b
     com.gmail.dailyefforts.reciter.Word getWordByIdx(int) -> a
     void buildRandomTest(java.lang.String,int) -> a
     java.lang.String getOneWordToReview() -> a
-    int buildMyWordBookTest(java.lang.String) -> e
+    int buildMyWordBookTest(java.lang.String) -> d
     com.gmail.dailyefforts.reciter.db.DBA getInstance(android.content.Context) -> a
     android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String) -> a
     void loadUnitWords(int,int) -> b
@@ -1137,6 +1152,7 @@ com.gmail.dailyefforts.reciter.db.TestReportsProvider -> com.gmail.dailyefforts.
     com.gmail.dailyefforts.reciter.db.DBA mDba -> b
     java.lang.String BASE_PATH -> c
     android.net.Uri CONTENT_URI -> a
+    java.lang.String TAG -> d
     boolean onCreate() -> onCreate
     android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String) -> query
     java.lang.String getType(android.net.Uri) -> getType
@@ -1147,6 +1163,7 @@ com.gmail.dailyefforts.reciter.db.WordListProvider -> com.gmail.dailyefforts.rec
     com.gmail.dailyefforts.reciter.db.DBA mDba -> b
     java.lang.String BASE_PATH -> c
     android.net.Uri CONTENT_URI -> a
+    java.lang.String TAG -> d
     boolean onCreate() -> onCreate
     android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String) -> query
     java.lang.String getType(android.net.Uri) -> getType
@@ -1161,6 +1178,7 @@ com.gmail.dailyefforts.reciter.helper.DownloadHelper -> com.gmail.dailyefforts.r
 com.gmail.dailyefforts.reciter.receiver.BootReciver -> com.gmail.dailyefforts.reciter.receiver.BootReciver:
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
 com.gmail.dailyefforts.reciter.receiver.ReviewReciver -> com.gmail.dailyefforts.reciter.receiver.ReviewReciver:
+    java.lang.String TAG -> a
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
 com.gmail.dailyefforts.reciter.setting.AnnounceActivity -> com.gmail.dailyefforts.reciter.setting.AnnounceActivity:
     void onCreate(android.os.Bundle) -> onCreate
@@ -1204,21 +1222,19 @@ com.gmail.dailyefforts.reciter.test.AbstractTestActivity -> com.gmail.dailyeffor
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
     void star(java.lang.String) -> a
     void onDestroy() -> onDestroy
-    void read(java.lang.String) -> b
-    void toast(java.lang.String) -> c
+    void toast(java.lang.String) -> b
     void onInit(int) -> onInit
     void forward() -> a
     void backward() -> b
     void buildTestCase() -> c
     boolean hasNext() -> d
-    void startAutoForward() -> e
-    int[] $SWITCH_TABLE$com$gmail$dailyefforts$reciter$Language() -> f
+    int[] $SWITCH_TABLE$com$gmail$dailyefforts$reciter$Language() -> e
 com.gmail.dailyefforts.reciter.test.AbstractTestActivity$AutoForwardHandler -> com.gmail.dailyefforts.reciter.test.b:
     java.lang.ref.WeakReference mRef -> a
     void handleMessage(android.os.Message) -> handleMessage
 com.gmail.dailyefforts.reciter.test.CompletionTestActivity -> com.gmail.dailyefforts.reciter.test.CompletionTestActivity:
     java.lang.String TAG -> g
-    android.widget.TextView mTextviewChinese -> h
+    android.widget.TextView mQuestion -> h
     android.widget.LinearLayout mCandidatesContainer -> i
     android.widget.Button mBtnNext -> j
     android.widget.Button mBtnSkip -> k
@@ -1226,23 +1242,30 @@ com.gmail.dailyefforts.reciter.test.CompletionTestActivity -> com.gmail.dailyeff
     boolean isFirstTouch -> m
     java.util.ArrayList mWrongWordList -> n
     char[] OPTIONS_FR -> o
-    java.util.List mOptionList -> p
-    android.widget.TextView mTextviewSpelling -> q
+    java.util.List mOptions -> p
+    android.widget.TextView mAnswer -> q
     int mTestedSize -> r
     java.util.Random mRandom -> s
-    android.widget.CheckBox mCheckBox -> t
-    int[] ColorArray -> u
-    java.util.List mTestPointList -> v
-    java.util.List mTestCases -> w
-    com.gmail.dailyefforts.reciter.test.CompletionTestActivity$TestCase mTestCase -> x
+    int[] ColorArray -> t
+    java.lang.String mPuzzle -> u
+    android.widget.TextView mSample -> v
+    java.util.List mTestPointList -> w
+    java.util.List mTestCases -> x
+    com.gmail.dailyefforts.reciter.test.CompletionTestActivity$TestCase mTestCase -> y
     void onCreate(android.os.Bundle) -> onCreate
     void onClick(android.view.View) -> onClick
     void buildTestCase() -> c
-com.gmail.dailyefforts.reciter.test.CompletionTestActivity$TestCase -> com.gmail.dailyefforts.reciter.test.c:
+    android.widget.TextView access$0(com.gmail.dailyefforts.reciter.test.CompletionTestActivity) -> a
+com.gmail.dailyefforts.reciter.test.CompletionTestActivity$1 -> com.gmail.dailyefforts.reciter.test.c:
+    com.gmail.dailyefforts.reciter.test.CompletionTestActivity this$0 -> a
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+com.gmail.dailyefforts.reciter.test.CompletionTestActivity$TestCase -> com.gmail.dailyefforts.reciter.test.d:
     int index -> a
     char letter -> b
     java.lang.String toString() -> toString
-com.gmail.dailyefforts.reciter.test.OptionButton -> com.gmail.dailyefforts.reciter.test.d:
+com.gmail.dailyefforts.reciter.test.OptionButton -> com.gmail.dailyefforts.reciter.test.e:
 com.gmail.dailyefforts.reciter.test.SelectionTestActivity -> com.gmail.dailyefforts.reciter.test.SelectionTestActivity:
     java.lang.String TAG -> g
     android.widget.TextView mTextViewTestingItem -> h
@@ -1259,18 +1282,20 @@ com.gmail.dailyefforts.reciter.test.SelectionTestActivity -> com.gmail.dailyeffo
     void onPause() -> onPause
     void buildTestCase() -> c
     void onClick(android.view.View) -> onClick
-com.gmail.dailyefforts.reciter.test.TestFragment -> com.gmail.dailyefforts.reciter.test.e:
-    android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
-com.gmail.dailyefforts.reciter.test.TestReportFragment -> com.gmail.dailyefforts.reciter.test.f:
+com.gmail.dailyefforts.reciter.test.TestFragment -> com.gmail.dailyefforts.reciter.test.f:
+    java.lang.String TAG -> M
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.gmail.dailyefforts.reciter.test.TestReportFragment -> com.gmail.dailyefforts.reciter.test.g:
     com.gmail.dailyefforts.reciter.test.TestReportFragment newInstance(java.lang.String,java.lang.String) -> a
     android.app.Dialog onCreateDialog(android.os.Bundle) -> onCreateDialog
-com.gmail.dailyefforts.reciter.test.TestReportFragment$1 -> com.gmail.dailyefforts.reciter.test.g:
+com.gmail.dailyefforts.reciter.test.TestReportFragment$1 -> com.gmail.dailyefforts.reciter.test.h:
     com.gmail.dailyefforts.reciter.test.TestReportFragment this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
 com.gmail.dailyefforts.reciter.test.TestReportListFragment -> com.gmail.dailyefforts.reciter.test.TestReportListFragment:
-    android.database.Cursor mCursor -> N
-    android.widget.ListAdapter mLisAdapter -> O
-    android.view.LayoutInflater mLayoutInflater -> P
+    java.lang.String TAG -> N
+    android.database.Cursor mCursor -> O
+    android.widget.ListAdapter mLisAdapter -> P
+    android.view.LayoutInflater mLayoutInflater -> Q
     void onActivityCreated(android.os.Bundle) -> c
     void onResume() -> r
     void onListItemClick$42a3bb55(int) -> a
@@ -1279,53 +1304,55 @@ com.gmail.dailyefforts.reciter.test.TestReportListFragment -> com.gmail.dailyeff
     void onLoaderReset$5dda1f52() -> b_
     void onLoadFinished(android.support.v4.content.Loader,java.lang.Object) -> a
     android.database.Cursor access$1(com.gmail.dailyefforts.reciter.test.TestReportListFragment) -> a
-    android.view.LayoutInflater access$2(com.gmail.dailyefforts.reciter.test.TestReportListFragment) -> b
-com.gmail.dailyefforts.reciter.test.TestReportListFragment$MyAdapter -> com.gmail.dailyefforts.reciter.test.h:
+    java.lang.String access$2() -> c
+    android.view.LayoutInflater access$3(com.gmail.dailyefforts.reciter.test.TestReportListFragment) -> b
+com.gmail.dailyefforts.reciter.test.TestReportListFragment$MyAdapter -> com.gmail.dailyefforts.reciter.test.i:
     com.gmail.dailyefforts.reciter.test.TestReportListFragment this$0 -> a
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.gmail.dailyefforts.reciter.test.drag.DragAndDropTestActivity -> com.gmail.dailyefforts.reciter.test.drag.DragAndDropTestActivity:
+com.gmail.dailyefforts.reciter.test.drag.LearningActivity -> com.gmail.dailyefforts.reciter.test.drag.LearningActivity:
     java.lang.String TAG -> g
     android.widget.Button mBtnCurrentWord -> h
-    android.util.SparseArray pageMap -> i
-    java.util.ArrayList mOptList -> j
-    int mDbCount -> k
-    android.widget.Button mBtnOptionTopLeft -> l
-    android.widget.Button mBtnOptionTopRight -> m
-    android.widget.Button mBtnOptionBottomLeft -> n
-    android.widget.Button mBtnOptionBottomRight -> o
-    android.widget.ImageButton mBtnArrowLeft -> p
-    android.widget.ImageButton mBtnArrowRight -> q
-    int mColorError -> r
-    int mColorBingon -> s
-    android.widget.CheckBox mCheckBox -> t
-    android.widget.TextView mTextViewSample -> u
-    java.util.ArrayList mWrongWordList -> v
-    java.util.ArrayList mTestCases -> w
-    boolean mBingo -> x
-    java.util.ArrayList arrList -> y
+    int mDbCount -> i
+    android.widget.Button mBtnArrowLeft -> j
+    android.widget.Button mBtnArrowRight -> k
+    android.widget.ViewFlipper mFlipper -> l
+    android.widget.TextView mMeaning -> m
+    java.util.ArrayList mWrongWordList -> n
+    com.gmail.dailyefforts.reciter.test.drag.LearningActivity$MyHandler mHandler -> o
+    android.widget.Button mBtnShow -> p
+    android.view.animation.Animation mAnimaScale -> q
+    android.widget.TextView mSample -> r
+    java.util.ArrayList mTestCases -> s
+    boolean mBingo -> t
+    java.util.ArrayList arrList -> u
     void onCreate(android.os.Bundle) -> onCreate
     void buildTestCase() -> c
     boolean onDrag(android.view.View,android.view.DragEvent) -> onDrag
-    void judge(android.view.View) -> a
     void onClick(android.view.View) -> onClick
-com.gmail.dailyefforts.reciter.test.drag.DragAndDropTestActivity$1 -> com.gmail.dailyefforts.reciter.test.drag.a:
+    android.widget.ViewFlipper access$0(com.gmail.dailyefforts.reciter.test.drag.LearningActivity) -> a
+    android.widget.Button access$1(com.gmail.dailyefforts.reciter.test.drag.LearningActivity) -> b
+    java.lang.String access$2() -> e
+com.gmail.dailyefforts.reciter.test.drag.LearningActivity$1 -> com.gmail.dailyefforts.reciter.test.drag.a:
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.gmail.dailyefforts.reciter.test.drag.DragAndDropTestActivity$TestCase -> com.gmail.dailyefforts.reciter.test.drag.b:
+com.gmail.dailyefforts.reciter.test.drag.LearningActivity$MyHandler -> com.gmail.dailyefforts.reciter.test.drag.b:
+    java.lang.ref.WeakReference mRef -> a
+    void handleMessage(android.os.Message) -> handleMessage
+com.gmail.dailyefforts.reciter.test.drag.LearningActivity$TestCase -> com.gmail.dailyefforts.reciter.test.drag.c:
     int wordIdx -> a
     int topLeftIdx -> b
     int topRightIdx -> c
     int bottomLeftIdx -> d
     int bottomRightIdx -> e
     java.lang.String toString() -> toString
-com.gmail.dailyefforts.reciter.test.drag.DragOptBtn -> com.gmail.dailyefforts.reciter.test.drag.DragOptBtn:
 com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment -> com.gmail.dailyefforts.reciter.unit.a:
-    android.database.Cursor mCursor -> N
-    android.widget.ListAdapter mLisAdapter -> O
-    android.view.LayoutInflater mLayoutInflater -> P
-    com.gmail.dailyefforts.reciter.db.DBA mDba -> Q
+    java.lang.String TAG -> N
+    android.database.Cursor mCursor -> O
+    android.widget.ListAdapter mLisAdapter -> P
+    android.view.LayoutInflater mLayoutInflater -> Q
+    com.gmail.dailyefforts.reciter.db.DBA mDba -> R
     void onActivityCreated(android.os.Bundle) -> c
     void onResume() -> r
     void onListItemClick$42a3bb55(int) -> a
@@ -1333,9 +1360,10 @@ com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment -> com.gmail.d
     android.support.v4.content.Loader onCreateLoader$e57f803() -> a_
     void onLoaderReset$5dda1f52() -> b_
     void onLoadFinished(android.support.v4.content.Loader,java.lang.Object) -> a
-    android.database.Cursor access$1(com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment) -> a
-    com.gmail.dailyefforts.reciter.db.DBA access$2(com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment) -> b
-    android.view.LayoutInflater access$3(com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment) -> c
+    java.lang.String access$1() -> c
+    android.database.Cursor access$2(com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment) -> a
+    com.gmail.dailyefforts.reciter.db.DBA access$3(com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment) -> b
+    android.view.LayoutInflater access$4(com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment) -> c
 com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment$ModeCallback -> com.gmail.dailyefforts.reciter.unit.b:
     com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment this$0 -> a
     boolean onCreateActionMode(android.view.ActionMode,android.view.Menu) -> onCreateActionMode
@@ -1360,17 +1388,17 @@ com.gmail.dailyefforts.reciter.unit.UnitSetFragment -> com.gmail.dailyefforts.re
     android.view.animation.Animation mAnimation -> Q
     int UNIT -> R
     com.gmail.dailyefforts.reciter.unit.UnitSetFragment$UnitAdapter mUnitAdapter -> S
-    android.view.View onCreateView$469ccb8a(android.view.LayoutInflater,android.view.ViewGroup) -> a
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
     void onResume() -> r
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     android.widget.RelativeLayout access$0(com.gmail.dailyefforts.reciter.unit.UnitSetFragment) -> a
     android.widget.GridView access$1(com.gmail.dailyefforts.reciter.unit.UnitSetFragment) -> b
     com.gmail.dailyefforts.reciter.db.DBA access$2(com.gmail.dailyefforts.reciter.unit.UnitSetFragment) -> c
-    int access$3() -> a
-    void access$4(com.gmail.dailyefforts.reciter.unit.UnitSetFragment,com.gmail.dailyefforts.reciter.unit.UnitSetFragment$UnitAdapter) -> a
-    com.gmail.dailyefforts.reciter.unit.UnitSetFragment$UnitAdapter access$5(com.gmail.dailyefforts.reciter.unit.UnitSetFragment) -> d
-    android.view.animation.Animation access$6(com.gmail.dailyefforts.reciter.unit.UnitSetFragment) -> e
-    java.lang.String access$7() -> c
+    java.lang.String access$3() -> a
+    int access$4() -> c
+    void access$5(com.gmail.dailyefforts.reciter.unit.UnitSetFragment,com.gmail.dailyefforts.reciter.unit.UnitSetFragment$UnitAdapter) -> a
+    com.gmail.dailyefforts.reciter.unit.UnitSetFragment$UnitAdapter access$6(com.gmail.dailyefforts.reciter.unit.UnitSetFragment) -> d
+    android.view.animation.Animation access$7(com.gmail.dailyefforts.reciter.unit.UnitSetFragment) -> e
 com.gmail.dailyefforts.reciter.unit.UnitSetFragment$LoadWordsList -> com.gmail.dailyefforts.reciter.unit.f:
     com.gmail.dailyefforts.reciter.unit.UnitSetFragment this$0 -> a
     void onPreExecute() -> onPreExecute
@@ -1424,6 +1452,3 @@ com.gmail.dailyefforts.reciter.version.VersionChecker$Version -> com.gmail.daily
     java.lang.String info -> d
     java.lang.String md5 -> e
     java.lang.String toString() -> toString
-com.gmail.dailyefforts.reciter.widget.CountdownTimerWidgetProvider -> com.gmail.dailyefforts.reciter.widget.CountdownTimerWidgetProvider:
-    java.lang.String TAG -> a
-    void onUpdate(android.content.Context,android.appwidget.AppWidgetManager,int[]) -> onUpdate

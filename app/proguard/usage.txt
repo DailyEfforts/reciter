@@ -963,6 +963,7 @@ com.gmail.dailyefforts.reciter.Config:
     public static final int BOOK_NAME_PRO_EN_CORE
     public static final int BOOK_NAME_PRO_LIUYI_5000
     public static final int BOOK_NAME_OGDEN
+    public static final int BOOK_NAME_LITERATURE
     public static final java.lang.String INTENT_EXTRA_BOOK_NAME_RES_ID
     public static final java.lang.String INTENT_EXTRA_TEST_TYPE
     public static final int MY_WORD_TEST
@@ -984,10 +985,10 @@ com.gmail.dailyefforts.reciter.Config$TestType:
     1:1:public static com.gmail.dailyefforts.reciter.Config$TestType valueOf(java.lang.String)
 com.gmail.dailyefforts.reciter.Language:
     1:1:public static com.gmail.dailyefforts.reciter.Language valueOf(java.lang.String)
-com.gmail.dailyefforts.reciter.Launcher:
-    69:80:private boolean needToCheckForUpdate(long)
-    84:87:private void updateLastCheckForUpdateTime(long)
-    103:106:private void launchVersionChecker()
+com.gmail.dailyefforts.reciter.MainActivity:
+    161:172:private boolean needToCheckForUpdate(long)
+    176:179:private void updateLastCheckForUpdateTime(long)
+    195:198:private void launchVersionChecker()
 com.gmail.dailyefforts.reciter.R
 com.gmail.dailyefforts.reciter.R$anim
 com.gmail.dailyefforts.reciter.R$animator
@@ -1003,12 +1004,12 @@ com.gmail.dailyefforts.reciter.R$raw
 com.gmail.dailyefforts.reciter.R$string
 com.gmail.dailyefforts.reciter.R$style
 com.gmail.dailyefforts.reciter.R$xml
-com.gmail.dailyefforts.reciter.Sessions$SectionsPagerAdapter:
+com.gmail.dailyefforts.reciter.SessionsActivity$SectionsPagerAdapter:
     private static final int POS_UNITS
     private static final int POS_MISTAKES
     private static final int POS_TESTPAGE
     private static final int PAGE_SIZE
-com.gmail.dailyefforts.reciter.Sessions$TestTypeListDialogFragment:
+com.gmail.dailyefforts.reciter.SessionsActivity$TestTypeListDialogFragment:
     private static final java.lang.String KEY_TITLE
 com.gmail.dailyefforts.reciter.Word:
     14:15:public Word(int,java.lang.String,java.lang.String)
@@ -1027,6 +1028,7 @@ com.gmail.dailyefforts.reciter.db.DBA:
     public static final java.lang.String TABLE_WORD_LIST_LIUYI_10000
     public static final java.lang.String TABLE_WORD_LIST_LIUYI_22000
     public static final java.lang.String TABLE_WORD_LIST_OGDEN
+    public static final java.lang.String TABLE_WORD_LIST_LITERATURE
     public static final java.lang.String WORD_ID
     public static final java.lang.String WORD_WORD
     public static final java.lang.String WORD_MEANING
@@ -1048,6 +1050,7 @@ com.gmail.dailyefforts.reciter.db.DBA:
     public static final java.lang.String TABLE_TEST_REPORT_OGDEN
     public static final java.lang.String TABLE_TEST_REPORT_LIUYI_10000
     public static final java.lang.String TABLE_TEST_REPORT_LIUYI_22000
+    public static final java.lang.String TABLE_TEST_REPORT_LITERATURE
     public static final java.lang.String TEST_REPORT_ID
     public static final java.lang.String TEST_TESTED_NUMBER
     public static final java.lang.String TEST_CORRECT_NUMBER
@@ -1057,9 +1060,10 @@ com.gmail.dailyefforts.reciter.db.DBA:
     public static final java.lang.String TEST_TIMESTAMP
     public static final java.lang.String TEST_WRONG_WORD_LIST
     public static final java.lang.String TEST_OTHER
-    186:198:public boolean exist(java.lang.String)
-    429:435:public void update(java.lang.String,java.lang.String,android.content.ContentValues)
-    448:448:public int delete(java.lang.String,java.lang.String,java.lang.String[])
+    168:174:public void setPast(java.lang.String)
+    199:213:public boolean exist(java.lang.String)
+    450:461:public void update(java.lang.String,java.lang.String,android.content.ContentValues)
+    474:474:public int delete(java.lang.String,java.lang.String,java.lang.String[])
 com.gmail.dailyefforts.reciter.db.TestReportsProvider:
     private static final java.lang.String AUTHORITY
 com.gmail.dailyefforts.reciter.db.WordListProvider:
@@ -1069,8 +1073,12 @@ com.gmail.dailyefforts.reciter.helper.DownloadHelper:
     84:138:private static java.io.File downloadApkFile(java.io.InputStream)
 com.gmail.dailyefforts.reciter.helper.FileChecker
 com.gmail.dailyefforts.reciter.helper.ScreenInfo
+com.gmail.dailyefforts.reciter.test.AbstractTestActivity:
+    274:279:protected void startAutoForward()
 com.gmail.dailyefforts.reciter.test.AbstractTestActivity$AutoForwardHandler:
     public static final int MSG_MOVE_ON
 com.gmail.dailyefforts.reciter.test.OptionButton:
     45:46:private OptionButton(android.content.Context,android.util.AttributeSet)
-com.gmail.dailyefforts.reciter.widget.WidgetConfig
+com.gmail.dailyefforts.reciter.test.drag.DragOptBtn
+com.gmail.dailyefforts.reciter.test.drag.LearningActivity$MyHandler:
+    public static final int MSG_FORWOARD

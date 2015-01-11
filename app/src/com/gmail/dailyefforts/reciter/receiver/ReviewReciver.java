@@ -14,7 +14,7 @@ import android.util.Log;
 
 import com.gmail.dailyefforts.reciter.R;
 import com.gmail.dailyefforts.reciter.Config;
-import com.gmail.dailyefforts.reciter.Launcher;
+import com.gmail.dailyefforts.reciter.MainActivity;
 import com.gmail.dailyefforts.reciter.db.DBA;
 
 public class ReviewReciver extends BroadcastReceiver {
@@ -78,7 +78,7 @@ public class ReviewReciver extends BroadcastReceiver {
 		}
 
 		Intent willing = new Intent(context.getApplicationContext(),
-				Launcher.class);
+				MainActivity.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,
 				willing, 0);

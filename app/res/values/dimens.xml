@@ -11,10 +11,10 @@
     <dimen name="height_unit_view">60dp</dimen>
     <dimen name="horizontal_spacing">3dp</dimen>
     <dimen name="vertical_spacing">6dp</dimen>
-    <dimen name="opt_btn_margin_left">6dp</dimen>
-    <dimen name="opt_btn_margin_top">6dp</dimen>
-    <dimen name="opt_btn_margin_right">6dp</dimen>
-    <dimen name="opt_btn_margin_bottom">6dp</dimen>
+    <dimen name="opt_btn_margin_left">10dp</dimen>
+    <dimen name="opt_btn_margin_top">10dp</dimen>
+    <dimen name="opt_btn_margin_right">10dp</dimen>
+    <dimen name="opt_btn_margin_bottom">10dp</dimen>
     <dimen name="dash_gap">3dp</dimen>
     <dimen name="activity_horizontal_margin">8dp</dimen>
     <dimen name="activity_vertical_margin">8dp</dimen>

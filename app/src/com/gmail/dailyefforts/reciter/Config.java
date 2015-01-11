@@ -6,7 +6,7 @@ public class Config {
 	private Config() {
 	}
 
-	public static final boolean DEBUG = false;
+	public static final boolean DEBUG = true;
 
 	// Actions
 	public static final String ACTION_NAME_CHECK_VERSION = "com.gmail.dailyefforts.reciter.CheckVersion";
@@ -36,8 +36,8 @@ public class Config {
 	// Default values
 	public static final int DEFAULT_OPTION_COUNT = 5;
 	public static final int DEFAULT_WORD_COUNT_OF_ONE_UNIT = 20;
-	public static final int DEFAULT_RANDOM_TEST_SIZE = 20;
-	public static final boolean DEFAULT_ALLOW_REVIEW_NOTIFICATION = true;
+	public static final int DEFAULT_RANDOM_TEST_SIZE = 10;
+	public static final boolean DEFAULT_ALLOW_REVIEW_NOTIFICATION = false;
 
 	// Book names
 	public static final int BOOK_NAME_MOT = R.raw.mot;
@@ -50,7 +50,8 @@ public class Config {
 	public static final int BOOK_NAME_PRO_EN_CORE = R.raw.pro_en_core;
 	public static final int BOOK_NAME_PRO_LIUYI_5000 = R.raw.liuyi_5000;
 	public static final int BOOK_NAME_OGDEN = R.raw.ogden;
-	public static int CURRENT_BOOK_NAME = BOOK_NAME_REFLETS1U;
+	public static final int BOOK_NAME_LITERATURE = R.raw.literature;
+	public static int CURRENT_BOOK_NAME = BOOK_NAME_LITERATURE;
 
 	// Languages
 	public static Language CURRENT_LANGUAGE = Language.English;
@@ -72,7 +73,7 @@ public class Config {
 	public static final String LAST_TIME_CHECKED_FOR_UPDATE = "last_time_checked_for_update";
 	public static final long ZERO = 0L;
 	public static final long ONE_DAY = 24 * 60 * 60 * 1000L; // MS
-	public static final int TIME_DELAY_TO_AUTO_FORWARD = 100;
+	public static final int TIME_DELAY_TO_AUTO_FORWARD = 1000;
 
 	public static enum TestType {
 		MY_WORD_TO_ZH, MY_WORD_FROM_ZH, MY_WORD_SPELL, RANDOM_TO_ZH, RANDOM_FROM_ZH, RANDOM_SPELL, UNKNOWN

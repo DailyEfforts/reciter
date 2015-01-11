@@ -64,19 +64,32 @@
     <string name="select_test_type">Select Test Type</string>
     <string name="click_notification_to_install_when_download_completed">Click notification to install when download completed</string>
     <string name="click_to_install_reciter">Click to install reciter</string>
-    <string name="test_type_foreign_to_chinese_random">Foreign to Chinese (Random)</string>
-    <string name="test_type_foreign_to_chinese_correction_book">Foreign to Chinese (Correction Book)</string>
-    <string name="test_type_chinese_to_foreign_random">Chinese to Foreign (Random)</string>
-    <string name="test_type_chinese_to_foreign_correction_book">Chinese to Foreign (Correction Book)</string>
-    <string name="test_record_is_empty">There is no rest record now</string>
+    <string name="test_type_foreign_to_chinese_random">Foreign - Chinese (Random)</string>
+    <string name="test_type_foreign_to_chinese_correction_book">Foreign - Chinese (Correction Book)</string>
+    <string name="test_type_chinese_to_foreign_random">Chinese - Foreign (Random)</string>
+    <string name="test_type_chinese_to_foreign_correction_book">Chinese - Foreign (Correction Book)</string>
     <string name="test_spell_foreign_correction_book">Spell Test(Correction Book)</string>
     <string name="random_completion_test">Spell Test (Random)</string>
+    <string name="test_type_foreign_to_chinese_random_literature">Work - Author (Random)</string>
+    <string name="test_type_foreign_to_chinese_correction_book_literature">Work - Author (Correction Book)</string>
+    <string name="test_type_chinese_to_foreign_random_literature">Author - Work (Random)</string>
+    <string name="test_type_chinese_to_foreign_correction_book_literature">Author - Work (Correction Book)</string>
+    <string name="test_spell_foreign_correction_book_literature">Spell Test(Correction Book)</string>
+    <string name="random_completion_test_literature">Spell Test (Random)</string>
+    <string name="test_record_is_empty">There is no rest record now</string>
     <string name="book_list">Book List</string>
     <string name="downloading_the_latest_reciter_apk_file">Downloading the latest Reciter APK file&#8230;</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
     <string name="skip">Skip</string>
     <string name="action_settings" translatable="false">Settings</string>
     <string name="announce_content" translatable="false">本软件中的单词源部分取自网络，部分取自相关图书，在此向付出努力的人们表示感谢。如果侵犯了您版权，请及时联系作者(vhow@163.com)。一经确认，相关内容会被及时移除。</string>
+    <string name="english">English</string>
+    <string name="french">French</string>
+    <string name="linguistics">Linguistics</string>
+    <string name="literature">Literature</string>
+    <string name="american_literature">American Literature</string>
 
 </resources>

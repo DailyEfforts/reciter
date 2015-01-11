@@ -16,8 +16,7 @@
         android:background="@android:color/transparent"
         android:text="@string/empty"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/holo_blue_bright"
-        android:textSize="30dp" />
+        android:textColor="@color/holo_blue_bright" />
 
     <LinearLayout
         android:id="@+id/opt_category"

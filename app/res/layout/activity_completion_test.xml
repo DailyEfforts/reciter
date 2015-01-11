@@ -9,30 +9,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".CompletionTestActivity" >
 
-    <FrameLayout
+    <TextView
+        android:id="@+id/tv_spell_test_word_chinese"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" >
-
-        <CheckBox
-            android:id="@+id/cb_spell_test_auto_speak"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.5"
-            android:text="Auto Speak"
-            android:textAppearance="@android:attr/textAppearanceSmall"
-            android:textStyle="italic" />
-
-        <TextView
-            android:id="@+id/tv_spell_test_word_chinese"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="center"
-            android:text="@string/unknown"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/holo_green_dark" />
-    </FrameLayout>
+        android:layout_gravity="center_vertical"
+        android:layout_weight="2"
+        android:gravity="center_horizontal|bottom"
+        android:text="@string/unknown"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/holo_green_dark" />
 
     <TextView
         android:id="@+id/tv_spell_test_word_spelling"
@@ -45,6 +31,16 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/holo_blue_dark"
         android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_spell_test_word_sample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textIsSelectable="true"
+        android:text="@string/unknown"
+        android:alpha="0.5"
+        android:gravity="center" />
 
     <RelativeLayout
         android:id="@+id/ll_spell_test_word_chars_container"
@@ -61,7 +57,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:text="@string/skip" />
+            android:text="@string/skip"
+            android:textColor="@color/gray_light"
+            android:textSize="12dp"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/btn_spell_test_next"
@@ -70,7 +69,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="@string/next" />
+            android:text="@string/next"
+            android:textSize="12dp" />
     </RelativeLayout>
 
     <LinearLayout

@@ -20,11 +20,13 @@
             android:persistent="true"
             android:summary="@string/unknown"
             android:title="@string/version" />
+        <!--
         <Preference
             android:key="@string/pref_key_announce"
             android:title="@string/announce" >
             <intent android:action="com.gmail.dailyefforts.reciter.LAUNCH_ANNOUNCE_ACTIVITY" />
         </Preference>
+        -->
     </PreferenceCategory>
 
 </PreferenceScreen>
