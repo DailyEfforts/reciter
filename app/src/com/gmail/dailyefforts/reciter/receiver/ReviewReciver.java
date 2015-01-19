@@ -15,7 +15,7 @@ import android.util.Log;
 import com.gmail.dailyefforts.reciter.Config;
 import com.gmail.dailyefforts.reciter.MainActivity;
 import com.gmail.dailyefforts.reciter.db.DBA;
-import com.gmail.dailyefforts.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class ReviewReciver extends BroadcastReceiver {
 

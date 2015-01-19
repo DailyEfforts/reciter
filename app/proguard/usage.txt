@@ -928,6 +928,22 @@ android.support.v4.widget.SearchViewCompatIcs$MySearchView
 android.support.v4.widget.SimpleCursorAdapter
 android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter
 android.support.v4.widget.SimpleCursorAdapter$ViewBinder
+com.gmail.dailyefforts.android.reviwer.BuildConfig
+com.gmail.dailyefforts.android.reviwer.R
+com.gmail.dailyefforts.android.reviwer.R$anim
+com.gmail.dailyefforts.android.reviwer.R$animator
+com.gmail.dailyefforts.android.reviwer.R$array
+com.gmail.dailyefforts.android.reviwer.R$attr
+com.gmail.dailyefforts.android.reviwer.R$color
+com.gmail.dailyefforts.android.reviwer.R$dimen
+com.gmail.dailyefforts.android.reviwer.R$drawable
+com.gmail.dailyefforts.android.reviwer.R$id
+com.gmail.dailyefforts.android.reviwer.R$layout
+com.gmail.dailyefforts.android.reviwer.R$menu
+com.gmail.dailyefforts.android.reviwer.R$raw
+com.gmail.dailyefforts.android.reviwer.R$string
+com.gmail.dailyefforts.android.reviwer.R$style
+com.gmail.dailyefforts.android.reviwer.R$xml
 com.gmail.dailyefforts.reciter.Config:
     public static final boolean DEBUG
     public static final java.lang.String ACTION_NAME_CHECK_VERSION
@@ -1066,19 +1082,3 @@ com.gmail.dailyefforts.reciter.test.OptionButton:
 com.gmail.dailyefforts.reciter.test.drag.DragOptBtn
 com.gmail.dailyefforts.reciter.test.drag.LearningActivity$MyHandler:
     public static final int MSG_FORWOARD
-com.gmail.dailyefforts.reviwer.BuildConfig
-com.gmail.dailyefforts.reviwer.R
-com.gmail.dailyefforts.reviwer.R$anim
-com.gmail.dailyefforts.reviwer.R$animator
-com.gmail.dailyefforts.reviwer.R$array
-com.gmail.dailyefforts.reviwer.R$attr
-com.gmail.dailyefforts.reviwer.R$color
-com.gmail.dailyefforts.reviwer.R$dimen
-com.gmail.dailyefforts.reviwer.R$drawable
-com.gmail.dailyefforts.reviwer.R$id
-com.gmail.dailyefforts.reviwer.R$layout
-com.gmail.dailyefforts.reviwer.R$menu
-com.gmail.dailyefforts.reviwer.R$raw
-com.gmail.dailyefforts.reviwer.R$string
-com.gmail.dailyefforts.reviwer.R$style
-com.gmail.dailyefforts.reviwer.R$xml

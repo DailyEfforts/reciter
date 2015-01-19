@@ -18,7 +18,7 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.gmail.dailyefforts.reciter.Config;
-import com.gmail.dailyefforts.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class SettingsActivity extends PreferenceActivity {
 

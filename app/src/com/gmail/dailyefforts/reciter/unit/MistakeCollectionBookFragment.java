@@ -26,7 +26,7 @@ import android.widget.Toast;
 import com.gmail.dailyefforts.reciter.Config;
 import com.gmail.dailyefforts.reciter.db.DBA;
 import com.gmail.dailyefforts.reciter.db.WordListProvider;
-import com.gmail.dailyefforts.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class MistakeCollectionBookFragment extends ListFragment implements
 		LoaderCallbacks<Cursor> {

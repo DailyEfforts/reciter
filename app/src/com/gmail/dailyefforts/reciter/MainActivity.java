@@ -21,7 +21,7 @@ import android.widget.TextView;
 
 import com.gmail.dailyefforts.reciter.db.DBA;
 import com.gmail.dailyefforts.reciter.setting.SettingsActivity;
-import com.gmail.dailyefforts.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class MainActivity extends ExpandableListActivity implements
 		OnClickListener {

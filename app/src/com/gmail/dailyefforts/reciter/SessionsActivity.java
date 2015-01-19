@@ -31,7 +31,7 @@ import com.gmail.dailyefforts.reciter.test.SelectionTestActivity;
 import com.gmail.dailyefforts.reciter.test.TestFragment;
 import com.gmail.dailyefforts.reciter.unit.MistakeCollectionBookFragment;
 import com.gmail.dailyefforts.reciter.unit.UnitSetFragment;
-import com.gmail.dailyefforts.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class SessionsActivity extends FragmentActivity implements ActionBar.TabListener {
 

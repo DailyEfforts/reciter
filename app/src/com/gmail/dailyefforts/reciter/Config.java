@@ -1,6 +1,6 @@
 package com.gmail.dailyefforts.reciter;
 
-import com.gmail.dailyefforts.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 
 public class Config {

@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.gmail.dailyefforts.reciter.Config;
-import com.gmail.dailyefforts.reviwer.R;
+import com.gmail.dailyefforts.android.reviwer.R;
 
 public class TestFragment extends Fragment {
 	private static final String TAG = TestFragment.class.getSimpleName();
